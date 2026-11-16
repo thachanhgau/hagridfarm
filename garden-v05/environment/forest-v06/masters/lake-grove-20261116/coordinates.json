@@ -1,0 +1,35 @@
+{
+  "id": "grove",
+  "native": {
+    "width": 190,
+    "height": 136,
+    "pivotX": 95,
+    "pivotY": 134,
+    "maxInkWidth": 186,
+    "maxInkHeight": 132
+  },
+  "hd": {
+    "width": 380,
+    "height": 272,
+    "density": 2
+  },
+  "axes": {
+    "column": [
+      32,
+      16
+    ],
+    "row": [
+      -32,
+      16
+    ],
+    "up": [
+      0,
+      -1
+    ]
+  },
+  "scope": [
+    "normal",
+    "winter"
+  ],
+  "rule": "Same base positions, size and clearance as original grove, shared seasonal master export, no post-export skew."
+}

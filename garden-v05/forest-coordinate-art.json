@@ -2,6 +2,62 @@
   "version": 1,
   "items": [
     {
+      "id": "lake-forest-grove-20261116",
+      "targetKind": "forest",
+      "master": "environment/forest-v06/masters/lake-grove-20261116/normal.png",
+      "masterSha256": "9525a22553d065a0984b13d0987eaf36a9265af309cdc3dcdb5a21408b31ee04",
+      "frameRecords": [
+        {
+          "master": "environment/forest-v06/masters/lake-grove-20261116/normal.png",
+          "masterSha256": "9525a22553d065a0984b13d0987eaf36a9265af309cdc3dcdb5a21408b31ee04",
+          "file": "environment/forest-v06/grove.png",
+          "sourceRect": {
+            "left": 105,
+            "top": 64,
+            "width": 1326,
+            "height": 872
+          },
+          "width": 190,
+          "height": 136,
+          "pivotX": 95,
+          "pivotY": 134,
+          "bounds": {
+            "x": 4,
+            "y": 13,
+            "w": 183,
+            "h": 121
+          },
+          "sha256": "486d83c392f9146cf4c91cc03c323537428943ee631910f20034434585cb6efc",
+          "hdFile": "environment/forest-v06/masters/lake-grove-20261116/published-0.png",
+          "hdSha256": "bc2ccd8c2a91db10b1bf7a593a216437bdeb1410b6e131592018a4ec7600e6d0"
+        },
+        {
+          "master": "environment/forest-v06/masters/lake-grove-20261116/winter.png",
+          "masterSha256": "a03801435646a662b4784980ad53ca4c6826e6662f055491bf0bca5d192310eb",
+          "file": "environment/winter/grove.png",
+          "sourceRect": {
+            "left": 105,
+            "top": 64,
+            "width": 1326,
+            "height": 872
+          },
+          "width": 190,
+          "height": 136,
+          "pivotX": 95,
+          "pivotY": 134,
+          "bounds": {
+            "x": 2,
+            "y": 12,
+            "w": 186,
+            "h": 122
+          },
+          "sha256": "cee497d9022646874fdf6c44c1a1a139753d06d202065f21ddef1a429dd9a476",
+          "hdFile": "environment/forest-v06/masters/lake-grove-20261116/published-1.png",
+          "hdSha256": "e7e4eedcf24d24c04dfbfa621ba3608b19fc20254ad673358e865547c58de3b1"
+        }
+      ]
+    },
+    {
       "id": "lake-forest-oak-20261116",
       "targetKind": "forest",
       "master": "environment/forest-v06/masters/lake-ring-20261116/normal.png",

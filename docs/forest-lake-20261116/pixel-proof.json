@@ -1,16 +1,39 @@
 {
-  "winterCanopy": {
-    "region": [
-      0,
-      0,
-      190,
-      105
-    ],
-    "previousOpaque": 3979,
-    "newOpaque": 12852,
-    "ratio": 3.2299572756974113
-  },
   "frames": [
+    {
+      "file": "environment/forest-v06/grove.png",
+      "masterSha256": "9525a22553d065a0984b13d0987eaf36a9265af309cdc3dcdb5a21408b31ee04",
+      "sha256": "486d83c392f9146cf4c91cc03c323537428943ee631910f20034434585cb6efc",
+      "native": [
+        190,
+        136
+      ],
+      "pivot": [
+        95,
+        134
+      ],
+      "observedRootBottom": 133,
+      "opaquePixels": 14176,
+      "HD": "decor-assets/hd/405c5b720a0c1b3ce7b56d2e.webp",
+      "hdPreviewPixelIdentical": true
+    },
+    {
+      "file": "environment/winter/grove.png",
+      "masterSha256": "a03801435646a662b4784980ad53ca4c6826e6662f055491bf0bca5d192310eb",
+      "sha256": "cee497d9022646874fdf6c44c1a1a139753d06d202065f21ddef1a429dd9a476",
+      "native": [
+        190,
+        136
+      ],
+      "pivot": [
+        95,
+        134
+      ],
+      "observedRootBottom": 133,
+      "opaquePixels": 14948,
+      "HD": "decor-assets/hd/4492ec9dd1276c41507d73b2.webp",
+      "hdPreviewPixelIdentical": true
+    },
     {
       "file": "environment/forest-v06/oak.png",
       "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
@@ -46,12 +69,40 @@
       "hdPreviewPixelIdentical": true
     }
   ],
+  "winterCanopies": [
+    {
+      "id": "grove",
+      "region": [
+        0,
+        0,
+        190,
+        81
+      ],
+      "previousOpaque": 3080,
+      "newOpaque": 8027,
+      "ratio": 2.6061688311688314
+    },
+    {
+      "id": "oak",
+      "region": [
+        0,
+        0,
+        190,
+        105
+      ],
+      "previousOpaque": 3979,
+      "newOpaque": 12852,
+      "ratio": 3.2299572756974113
+    }
+  ],
   "changedHDSelections": [
+    "environment/forest-v06/grove.png",
     "environment/forest-v06/oak.png",
+    "environment/winter/grove.png",
     "environment/winter/oak.png"
   ],
-  "otherHDSelectionsUnchanged": 1556,
+  "otherHDSelectionsUnchanged": 1554,
   "placementAndClearanceUnchanged": true,
-  "camera": "Organic canopy and roots use frozen 64x32 guide and original pivot; no fabricated straight-edge certification for tree contours.",
+  "camera": "Organic canopy/roots follow frozen64x32 guide and original pivots; no fabricated straight-edge certification of foliage.",
   "errors": []
 }

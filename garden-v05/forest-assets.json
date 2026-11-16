@@ -70,13 +70,24 @@
       "file": "environment/forest-v06/grove.png",
       "pivotX": 95,
       "pivotY": 134,
-      "sourceRect": [
-        0,
-        575,
-        850,
-        449
-      ],
-      "sha256": "67fee48c44ba552599a5e1039d8832c92cf36f601322d9e3dc0eeca571ff661f"
+      "sourceRect": {
+        "left": 105,
+        "top": 64,
+        "width": 1326,
+        "height": 872
+      },
+      "sha256": "486d83c392f9146cf4c91cc03c323537428943ee631910f20034434585cb6efc",
+      "master": "environment/forest-v06/masters/lake-grove-20261116/normal.png",
+      "masterSha256": "9525a22553d065a0984b13d0987eaf36a9265af309cdc3dcdb5a21408b31ee04",
+      "bounds": {
+        "x": 4,
+        "y": 13,
+        "w": 183,
+        "h": 121
+      },
+      "hdFile": "environment/forest-v06/masters/lake-grove-20261116/published-0.png",
+      "hdSha256": "bc2ccd8c2a91db10b1bf7a593a216437bdeb1410b6e131592018a4ec7600e6d0",
+      "replacement": "lake-grove-20261116"
     },
     {
       "id": "log",

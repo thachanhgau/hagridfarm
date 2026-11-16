@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "tool": "built-in image_gen",
+  "actualMasterCanvas": [
+    1536,
+    1024
+  ],
+  "guide": "environment/forest-v06/masters/lake-grove-20261116/guide.png",
+  "crop": {
+    "left": 105,
+    "top": 64,
+    "width": 1326,
+    "height": 872
+  },
+  "placement": {
+    "left": 2,
+    "top": 12,
+    "width": 186,
+    "height": 122
+  },
+  "method": "Shared source crop and uniform master export, native190x136 / pivot95,134 for both seasons; no post-export skew.",
+  "frames": [
+    {
+      "master": "environment/forest-v06/masters/lake-grove-20261116/normal.png",
+      "masterSha256": "9525a22553d065a0984b13d0987eaf36a9265af309cdc3dcdb5a21408b31ee04",
+      "file": "environment/forest-v06/grove.png"
+    },
+    {
+      "master": "environment/forest-v06/masters/lake-grove-20261116/winter.png",
+      "masterSha256": "a03801435646a662b4784980ad53ca4c6826e6662f055491bf0bca5d192310eb",
+      "file": "environment/winter/grove.png"
+    }
+  ]
+}

@@ -153,4 +153,6 @@ Camera clarification from house-Noel calibration: the garden uses azimuth 45° a
 
 ### Vành rừng Hồ Cấm (16/11/2026)
 
-Cụm cổ thụ dùng master thường/tuyết đồng bộ; bản tuyết giữ tán dày theo yêu cầu chủ dự án, không lấy lại hình cành trơ từ winter-sheet cũ. Giữ canvas190×176, pivot95,174 và toàn bộ gốc cây/clearance hiện có. Nguồn và phép xuất: `build-forest-oak.mjs`, `environment/forest-v06/masters/lake-ring-20261116/`; xem `docs/forest-lake-20261116/` trước khi dựng lại atlas rừng.
+Cụm cổ thụ dùng master thường/tuyết đồng bộ; bản tuyết giữ tán dày theo yêu cầu chủ dự án, không lấy lại hình cành trơ từ winter-sheet cũ. Giữ oak190×176/pivot95,174 và grove190×136/pivot95,134 và toàn bộ gốc cây/clearance hiện có. Nguồn và phép xuất: `build-forest-refresh.mjs`, `environment/forest-v06/masters/lake-ring-20261116/`; xem `docs/forest-lake-20261116/` trước khi dựng lại atlas rừng.
+
+Vành Bờ hồ chọn `[grove,pine,oak,grove]`: `grove` là ảnh cụm ba cây riêng, không phải `oak`. Khi sửa rừng trơ cành phải kiểm đủ cả hai họ ảnh thường/tuyết trên cảnh thật, giữ đường ra và toàn bộ ranh giới mở rộng.
