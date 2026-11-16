@@ -1185,7 +1185,8 @@ export async function createGarden(canvas, options = {}) {
     .then((r) => (r.ok ? r.json() : null)).then((source) => groundStore(source?.commit, options.groundHost)).catch(() => null)
     .then((store) => { if (!store) groundStoreOff = true; return store; });
   const groundLookups = new Map();
-  let shownTerrain = null, winterWanted = false;
+  let shownTerrain = null, winterWanted = false, winterAsked = null;
+  const WINTER_WAIT_MS = 3000;
   function terrainCache(withGrid, withForest) {
     const key = `${stageKey(currentStage)}:${activeWeather}:${withGrid ? 'grid' : 'plain'}:${withForest ? 'forest' : 'bare'}`;
     if (terrainCaches.has(key)) return (shownTerrain = terrainCaches.get(key));
@@ -1196,6 +1197,9 @@ export async function createGarden(canvas, options = {}) {
     }
     const found = groundStoreOff ? 'miss' : groundLookups.get(stored);
     if (found === 'pending') return shownTerrain;
+    // Snow wants the winter art: a ground built before it arrives is thrown away a second later (3 builds on entry,
+    // 16/11/2026), so wait for it, at most WINTER_WAIT_MS after the first ask.
+    if (found === 'miss' && winterWanted && !winterArt && performance.now() - (winterAsked ??= performance.now()) < WINTER_WAIT_MS) return shownTerrain;
     // One cached ground at a time: its memory is reserved against the HD budget.
     terrainCaches.clear();
     if (found !== 'miss') { groundLookups.delete(stored); terrainCaches.set(key, found); return (shownTerrain = found); }
