@@ -1,6 +1,6 @@
-import {PLOT_SCENERY_ART} from './plot-scenery-art.mjs?v=26.4';
-import {stageContains} from './garden-growth.mjs?v=26.4';
-import {densityOf,deviceLine,snapRects} from './device-pixels.mjs?v=26.4';
+import {PLOT_SCENERY_ART} from './plot-scenery-art.mjs?v=26.5';
+import {stageContains} from './garden-growth.mjs?v=26.5';
+import {densityOf,deviceLine,snapRects} from './device-pixels.mjs?v=26.5';
 function insidePolygon(x,y,points){
  let inside=false;
  for(let i=0,j=points.length-1;i<points.length;j=i++){
