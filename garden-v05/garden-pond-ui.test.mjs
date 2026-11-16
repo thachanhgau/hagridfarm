@@ -161,7 +161,8 @@ test('Forbidden Lake is larger, stays on shore land, and clears beds, nook and i
   assert.ok(rect.c0>=L.col&&rect.c1<=L.right&&rect.r0>=L.rowTop&&rect.r1<=L.rowBottom);
   assert.equal((rect.c0+rect.c1)/2,20.5,'approach remains centred');assert.ok(L.rowBottom-rect.r1>=3,'front path stays clear');
   assert.ok(disjoint(rect,decorFootprintRect(...POND_NOOK.at,POND_NOOK.footprint)),'nook must clear enlarged shore');
-  for(const b of pondBedRects(at,built,10))assert.ok(disjoint(rect,b),'paddies must stay outside lake');
+  for(const b of pondBedRects(at,built,10)){assert.ok(disjoint(rect,b),'paddies must stay outside lake');assert.ok(disjoint(decorFootprintRect(...POND_NOOK.at,POND_NOOK.footprint),b),'nook stays off the paddies');}
+  assert.ok(rect.c0-decorFootprintRect(...POND_NOOK.at,POND_NOOK.footprint).c1>=2,'nook stands clear of the lake woodland');
   if(first)assert.deepEqual(rect,first,'upgrading does not move the lake');first=rect;
  }
 });
