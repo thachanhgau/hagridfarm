@@ -2085,7 +2085,7 @@ export async function createGarden(canvas, options = {}) {
       });
     }
     if (activeWinter) kit.drawWinterLayer(context, {width: map.width, height: map.height, lanterns, mode: atmosphereMode, clock});
-    if (kit && atmosphereMode !== 'day') for (const object of objects) { const glow = kit.statueGlow(object, clock); if (glow) { context.save(); context.globalAlpha=glow.opacity; drawAsset(glow, object.xy[0], object.xy[1]); context.restore(); } }
+    if (kit && atmosphereMode !== 'day') for (const object of objects) { const glow = kit.statueGlow(object, clock); if (glow) { kit.drawStatueAura?.(context,object,clock); context.save(); context.globalAlpha=glow.opacity; drawAsset(glow, object.xy[0], object.xy[1]); context.restore(); } }
     if (eventMode && eventMode !== 'none') {
       drawEventOverlay(context, map.width, map.height, {
         eventMode,
