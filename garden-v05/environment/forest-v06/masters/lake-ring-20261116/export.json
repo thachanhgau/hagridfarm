@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "tool": "built-in image_gen",
+  "guide": "environment/forest-v06/masters/lake-ring-20261116/guide.png",
+  "crop": {
+    "left": 18,
+    "top": 58,
+    "width": 1218,
+    "height": 1113
+  },
+  "placement": {
+    "left": 2,
+    "top": 4,
+    "width": 186,
+    "height": 170
+  },
+  "method": "Shared source crop and uniform master export, native190x176 / pivot95,174 for both seasons; no skew or post-export resize.",
+  "frames": [
+    {
+      "master": "environment/forest-v06/masters/lake-ring-20261116/normal.png",
+      "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
+      "file": "environment/forest-v06/oak.png"
+    },
+    {
+      "master": "environment/forest-v06/masters/lake-ring-20261116/winter.png",
+      "masterSha256": "1edc6a930309e0704c69a51b1411e4935e5ed2a0019afd6f4dbd096aef9fc941",
+      "file": "environment/winter/oak.png"
+    }
+  ]
+}

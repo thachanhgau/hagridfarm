@@ -9644,12 +9644,12 @@
       "sha256": "7625ab0995b418a3d3d4047e301a655cd0279b491c5995e6f0d72737f2569956"
     },
     "environment/forest-v06/grove.png": {
-      "file": "decor-assets/hd/b2aec60607544efa5c4e2fff.webp",
+      "file": "decor-assets/hd/405c5b720a0c1b3ce7b56d2e.webp",
       "density": 2,
       "width": 190,
       "height": 136,
-      "bytes": 10274,
-      "sha256": "b2aec60607544efa5c4e2fff8b9c6346ddd6a3720c4bc6e4b87d71c79c931c43"
+      "bytes": 19730,
+      "sha256": "405c5b720a0c1b3ce7b56d2ef29426292d9f6422fd63f2bb1bb4c1cc5a5a858d"
     },
     "environment/forest-v06/log.png": {
       "file": "decor-assets/hd/99f4450e3b347f5cee8b603f.webp",
@@ -9660,12 +9660,12 @@
       "sha256": "99f4450e3b347f5cee8b603fb0f5f364938068994c66a7f21bc3b740defb9350"
     },
     "environment/forest-v06/oak.png": {
-      "file": "decor-assets/hd/4c34abb290d36209b18292c8.webp",
+      "file": "decor-assets/hd/c63ebea2d4dc096e110e3d89.webp",
       "density": 2,
       "width": 190,
       "height": 176,
-      "bytes": 11692,
-      "sha256": "4c34abb290d36209b18292c89397c724e2cc2516f608e6405c5c42852348a681"
+      "bytes": 23302,
+      "sha256": "c63ebea2d4dc096e110e3d8926c130459ff431bcc9f547ec13838b063007ce52"
     },
     "environment/forest-v06/pine.png": {
       "file": "decor-assets/hd/2ec5622bb17f2951fe1866b6.webp",
@@ -10212,12 +10212,12 @@
       "sha256": "087f1f65a9322e8fa87444c4881aa8df8c1fe192513d1849cf86899f8de22375"
     },
     "environment/winter/grove.png": {
-      "file": "decor-assets/hd/7a756eed44fdd5649935938f.webp",
+      "file": "decor-assets/hd/4492ec9dd1276c41507d73b2.webp",
       "density": 2,
       "width": 190,
       "height": 136,
-      "bytes": 8124,
-      "sha256": "7a756eed44fdd5649935938f0d9de78af034fd1014afffe5d8bf2dd743b5359e"
+      "bytes": 23420,
+      "sha256": "4492ec9dd1276c41507d73b2fa9653c8913cd36bd2a0f51d8b7c349195699820"
     },
     "environment/winter/habitat-crup-snow.png": {
       "file": "decor-assets/hd/01ebafbbba77aa6b7b63ee5f.webp",
@@ -10348,12 +10348,12 @@
       "sha256": "675f8c3343b0c4b100d4c51e65af7fb7f3a5b7b06d87239fc5e873f785d9baf4"
     },
     "environment/winter/oak.png": {
-      "file": "decor-assets/hd/7bdc7d61b690bdf7a1dfdec2.webp",
+      "file": "decor-assets/hd/13228be0e6fe4e15bcd8d5b6.webp",
       "density": 2,
       "width": 190,
       "height": 176,
-      "bytes": 9882,
-      "sha256": "7bdc7d61b690bdf7a1dfdec2578e2854bf6b33d69c71eabea955a71ebf1456fb"
+      "bytes": 31256,
+      "sha256": "13228be0e6fe4e15bcd8d5b6ccbfa9cb84fe469c98a9f2caeed015f69e7ca6ed"
     },
     "environment/winter/pine.png": {
       "file": "decor-assets/hd/902c2c0f00715d35939c1827.webp",
@@ -12928,7 +12928,7 @@
       "totalFrames": 8
     }
   },
-  "runtimeBytes": 11093496,
+  "runtimeBytes": 11151232,
   "provenance": [
     {
       "native": "isometric-hd-assets/published-native/decor_pumpkin_lantern/frame-0.png",
@@ -22727,6 +22727,70 @@
       "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-1.png",
       "hdSha256": "810af1f93d4e3022dc6238635d58ee5f4915e6aa201a9917af55053c5786f187",
       "silhouetteIoU": 0.995
+    },
+    {
+      "native": "environment/forest-v06/grove.png",
+      "file": "decor-assets/hd/405c5b720a0c1b3ce7b56d2e.webp",
+      "master": "environment/forest-v06/masters/lake-grove-20261116/normal.png",
+      "masterSha256": "9525a22553d065a0984b13d0987eaf36a9265af309cdc3dcdb5a21408b31ee04",
+      "sourceRect": {
+        "left": 105,
+        "top": 64,
+        "width": 1326,
+        "height": 872
+      },
+      "method": "same uniform master export at density 2",
+      "hdFile": "environment/forest-v06/masters/lake-grove-20261116/published-0.png",
+      "hdSha256": "bc2ccd8c2a91db10b1bf7a593a216437bdeb1410b6e131592018a4ec7600e6d0",
+      "silhouetteIoU": 0.952
+    },
+    {
+      "native": "environment/winter/grove.png",
+      "file": "decor-assets/hd/4492ec9dd1276c41507d73b2.webp",
+      "master": "environment/forest-v06/masters/lake-grove-20261116/normal.png",
+      "masterSha256": "9525a22553d065a0984b13d0987eaf36a9265af309cdc3dcdb5a21408b31ee04",
+      "sourceRect": {
+        "left": 105,
+        "top": 64,
+        "width": 1326,
+        "height": 872
+      },
+      "method": "same uniform master export at density 2",
+      "hdFile": "environment/forest-v06/masters/lake-grove-20261116/published-1.png",
+      "hdSha256": "e7e4eedcf24d24c04dfbfa621ba3608b19fc20254ad673358e865547c58de3b1",
+      "silhouetteIoU": 0.964
+    },
+    {
+      "native": "environment/forest-v06/oak.png",
+      "file": "decor-assets/hd/c63ebea2d4dc096e110e3d89.webp",
+      "master": "environment/forest-v06/masters/lake-ring-20261116/normal.png",
+      "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
+      "sourceRect": {
+        "left": 18,
+        "top": 58,
+        "width": 1218,
+        "height": 1113
+      },
+      "method": "same uniform master export at density 2",
+      "hdFile": "environment/forest-v06/masters/lake-ring-20261116/published-0.png",
+      "hdSha256": "c3eb6710e095fdc2fb4dea4597d314ad764c4b12557d43a73e9b9363baf69efc",
+      "silhouetteIoU": 0.967
+    },
+    {
+      "native": "environment/winter/oak.png",
+      "file": "decor-assets/hd/13228be0e6fe4e15bcd8d5b6.webp",
+      "master": "environment/forest-v06/masters/lake-ring-20261116/normal.png",
+      "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
+      "sourceRect": {
+        "left": 18,
+        "top": 58,
+        "width": 1218,
+        "height": 1113
+      },
+      "method": "same uniform master export at density 2",
+      "hdFile": "environment/forest-v06/masters/lake-ring-20261116/published-1.png",
+      "hdSha256": "8655c4406dab631df1b7343a0374f056b254b7adc267889e1c60b4c4c7becee6",
+      "silhouetteIoU": 0.983
     },
     {
       "native": "noel-50-assets/native/nx_snitch_wreath/frame-01.png",
@@ -34487,6 +34551,216 @@
       },
       "legacyAlphaMask": false,
       "silhouetteIoU": 0.973
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-01.png",
+      "file": "decor-assets/hd/0adc8476c960fcf771e85301.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 59,
+        "top": 80,
+        "width": 213,
+        "height": 263
+      },
+      "logicalBounds": {
+        "x": 13,
+        "y": 34,
+        "w": 37,
+        "h": 46
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-02.png",
+      "file": "decor-assets/hd/9d9f3ddb91135264910f792f.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 354,
+        "top": 81,
+        "width": 221,
+        "height": 262
+      },
+      "logicalBounds": {
+        "x": 13,
+        "y": 34,
+        "w": 39,
+        "h": 46
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.96
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-03.png",
+      "file": "decor-assets/hd/2355ba1a637565b5ea7eeb88.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 658,
+        "top": 80,
+        "width": 223,
+        "height": 263
+      },
+      "logicalBounds": {
+        "x": 13,
+        "y": 34,
+        "w": 39,
+        "h": 46
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.924
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-04.png",
+      "file": "decor-assets/hd/32197844d991dd111f4f243b.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 953,
+        "top": 80,
+        "width": 230,
+        "height": 261
+      },
+      "logicalBounds": {
+        "x": 11,
+        "y": 34,
+        "w": 40,
+        "h": 46
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.961
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-05.png",
+      "file": "decor-assets/hd/5d0e9cdc0bbb2470e9d3f1b5.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 32,
+        "top": 446,
+        "width": 196,
+        "height": 223
+      },
+      "logicalBounds": {
+        "x": 14,
+        "y": 41,
+        "w": 34,
+        "h": 39
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.966
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-06.png",
+      "file": "decor-assets/hd/14db53335bfedaeebd4efebc.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 274,
+        "top": 445,
+        "width": 205,
+        "height": 225
+      },
+      "logicalBounds": {
+        "x": 15,
+        "y": 41,
+        "w": 36,
+        "h": 39
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.958
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-07.png",
+      "file": "decor-assets/hd/dd0b5da30c2ec0694df8ddff.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 523,
+        "top": 460,
+        "width": 176,
+        "height": 210
+      },
+      "logicalBounds": {
+        "x": 16,
+        "y": 43,
+        "w": 31,
+        "h": 37
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.968
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-08.png",
+      "file": "decor-assets/hd/b96406c269b9541e058e2156.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 719,
+        "top": 401,
+        "width": 308,
+        "height": 270
+      },
+      "logicalBounds": {
+        "x": 3,
+        "y": 33,
+        "w": 54,
+        "h": 47
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.757
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-09.png",
+      "file": "decor-assets/hd/8af50dbd890093eb1c64f7d3.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 1043,
+        "top": 432,
+        "width": 220,
+        "height": 239
+      },
+      "logicalBounds": {
+        "x": 13,
+        "y": 38,
+        "w": 39,
+        "h": 42
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.962
+    },
+    {
+      "native": "native-crop-complete/silverkelp/frame-10.png",
+      "file": "decor-assets/hd/4af7c87e88eaa27fefafdb33.webp",
+      "trayCut": true,
+      "master": "masters-crop-complete/silverkelp-motion-v01.png",
+      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
+      "sourceRect": {
+        "left": 1286,
+        "top": 404,
+        "width": 223,
+        "height": 267
+      },
+      "logicalBounds": {
+        "x": 12,
+        "y": 33,
+        "w": 39,
+        "h": 47
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.941
     },
     {
       "native": "native-crop-complete/starbean/frame-01.png",
@@ -64305,6 +64579,75 @@
       "silhouetteIoU": 0.91
     },
     {
+      "native": "native-levels/silverkelp/frame-02.png",
+      "file": "decor-assets/hd/09e36c4a36de42387ec55504.webp",
+      "trayCut": true,
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 329,
+        "top": 694,
+        "width": 374,
+        "height": 392
+      },
+      "logicalBounds": {
+        "x": 13,
+        "y": 45,
+        "w": 38,
+        "h": 35,
+        "count": 726,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.798
+    },
+    {
+      "native": "native-levels/silverkelp/frame-03.png",
+      "file": "decor-assets/hd/ec480174a066f00a33072147.webp",
+      "trayCut": true,
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 703,
+        "top": 694,
+        "width": 360,
+        "height": 392
+      },
+      "logicalBounds": {
+        "x": 12,
+        "y": 25,
+        "w": 40,
+        "h": 55,
+        "count": 1127,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.897
+    },
+    {
+      "native": "native-levels/silverkelp/frame-04.png",
+      "file": "decor-assets/hd/3a9f1faa3c0b4880ebde3537.webp",
+      "trayCut": true,
+      "master": "masters-levels/crops-d.png",
+      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
+      "sourceRect": {
+        "left": 1063,
+        "top": 694,
+        "width": 385,
+        "height": 392
+      },
+      "logicalBounds": {
+        "x": 5,
+        "y": 14,
+        "w": 53,
+        "h": 66,
+        "count": 2016,
+        "edge": false
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.922
+    },
+    {
       "native": "native-levels/moonherb/frame-01.png",
       "file": "decor-assets/hd/19f0ee3c7025f7494b39954d.webp",
       "master": "masters-levels/crops-e.png",
@@ -68170,26 +68513,6 @@
       "silhouetteIoU": 0.988
     },
     {
-      "native": "environment/forest-v06/oak.png",
-      "file": "decor-assets/hd/4c34abb290d36209b18292c8.webp",
-      "master": "masters-forest/forest-atlas-v06.png",
-      "masterSha256": "ba2cdb12c85132594739ee0b07e882cecbb36f9927e6d85d494038e9544122e8",
-      "sourceRect": {
-        "left": 0,
-        "top": 0,
-        "width": 850,
-        "height": 575
-      },
-      "logicalBounds": {
-        "x": 2,
-        "y": 33,
-        "w": 186,
-        "h": 141
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.977
-    },
-    {
       "native": "environment/forest-v06/pine.png",
       "file": "decor-assets/hd/2ec5622bb17f2951fe1866b6.webp",
       "master": "masters-forest/forest-atlas-v06.png",
@@ -68208,26 +68531,6 @@
       },
       "legacyAlphaMask": false,
       "silhouetteIoU": 0.98
-    },
-    {
-      "native": "environment/forest-v06/grove.png",
-      "file": "decor-assets/hd/b2aec60607544efa5c4e2fff.webp",
-      "master": "masters-forest/forest-atlas-v06.png",
-      "masterSha256": "ba2cdb12c85132594739ee0b07e882cecbb36f9927e6d85d494038e9544122e8",
-      "sourceRect": {
-        "left": 0,
-        "top": 575,
-        "width": 850,
-        "height": 449
-      },
-      "logicalBounds": {
-        "x": 2,
-        "y": 6,
-        "w": 186,
-        "h": 128
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.965
     },
     {
       "native": "environment/forest-v06/log.png",
@@ -68483,21 +68786,6 @@
       "silhouetteIoU": 0.986
     },
     {
-      "native": "environment/winter/oak.png",
-      "file": "decor-assets/hd/7bdc7d61b690bdf7a1dfdec2.webp",
-      "master": "environment/winter/masters/winter-sheet.png",
-      "masterSha256": "812008daf59b2500029d7676a4cf1fc550b738b64c7f2e56b8d2acc3c9c63a53",
-      "sourceInkBox": [
-        15,
-        73,
-        486,
-        461
-      ],
-      "nativeMismatchPixels": 58,
-      "method": "S3 centre-sampled export at density 2",
-      "silhouetteIoU": 0.947
-    },
-    {
       "native": "environment/winter/pine.png",
       "file": "decor-assets/hd/902c2c0f00715d35939c1827.webp",
       "master": "environment/winter/masters/winter-sheet.png",
@@ -68511,21 +68799,6 @@
       "nativeMismatchPixels": 0,
       "method": "S3 centre-sampled export at density 2",
       "silhouetteIoU": 0.986
-    },
-    {
-      "native": "environment/winter/grove.png",
-      "file": "decor-assets/hd/7a756eed44fdd5649935938f.webp",
-      "master": "environment/winter/masters/winter-sheet.png",
-      "masterSha256": "812008daf59b2500029d7676a4cf1fc550b738b64c7f2e56b8d2acc3c9c63a53",
-      "sourceInkBox": [
-        4,
-        43,
-        485,
-        410
-      ],
-      "nativeMismatchPixels": 0,
-      "method": "S3 centre-sampled export at density 2",
-      "silhouetteIoU": 0.925
     },
     {
       "native": "environment/winter/log.png",
@@ -68869,285 +69142,6 @@
       "method": "build-submerged-creatures rasterize at density 2",
       "flop": true,
       "silhouetteIoU": 0.951
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-01.png",
-      "file": "decor-assets/hd/0adc8476c960fcf771e85301.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 59,
-        "top": 80,
-        "width": 213,
-        "height": 263
-      },
-      "logicalBounds": {
-        "x": 13,
-        "y": 34,
-        "w": 37,
-        "h": 46
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.962
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-02.png",
-      "file": "decor-assets/hd/9d9f3ddb91135264910f792f.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 354,
-        "top": 81,
-        "width": 221,
-        "height": 262
-      },
-      "logicalBounds": {
-        "x": 13,
-        "y": 34,
-        "w": 39,
-        "h": 46
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.96
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-03.png",
-      "file": "decor-assets/hd/2355ba1a637565b5ea7eeb88.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 658,
-        "top": 80,
-        "width": 223,
-        "height": 263
-      },
-      "logicalBounds": {
-        "x": 13,
-        "y": 34,
-        "w": 39,
-        "h": 46
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.924
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-04.png",
-      "file": "decor-assets/hd/32197844d991dd111f4f243b.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 953,
-        "top": 80,
-        "width": 230,
-        "height": 261
-      },
-      "logicalBounds": {
-        "x": 11,
-        "y": 34,
-        "w": 40,
-        "h": 46
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.961
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-05.png",
-      "file": "decor-assets/hd/5d0e9cdc0bbb2470e9d3f1b5.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 32,
-        "top": 446,
-        "width": 196,
-        "height": 223
-      },
-      "logicalBounds": {
-        "x": 14,
-        "y": 41,
-        "w": 34,
-        "h": 39
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.966
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-06.png",
-      "file": "decor-assets/hd/14db53335bfedaeebd4efebc.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 274,
-        "top": 445,
-        "width": 205,
-        "height": 225
-      },
-      "logicalBounds": {
-        "x": 15,
-        "y": 41,
-        "w": 36,
-        "h": 39
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.958
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-07.png",
-      "file": "decor-assets/hd/dd0b5da30c2ec0694df8ddff.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 523,
-        "top": 460,
-        "width": 176,
-        "height": 210
-      },
-      "logicalBounds": {
-        "x": 16,
-        "y": 43,
-        "w": 31,
-        "h": 37
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.968
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-08.png",
-      "file": "decor-assets/hd/b96406c269b9541e058e2156.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 719,
-        "top": 401,
-        "width": 308,
-        "height": 270
-      },
-      "logicalBounds": {
-        "x": 3,
-        "y": 33,
-        "w": 54,
-        "h": 47
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.757
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-09.png",
-      "file": "decor-assets/hd/8af50dbd890093eb1c64f7d3.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 1043,
-        "top": 432,
-        "width": 220,
-        "height": 239
-      },
-      "logicalBounds": {
-        "x": 13,
-        "y": 38,
-        "w": 39,
-        "h": 42
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.962
-    },
-    {
-      "native": "native-crop-complete/silverkelp/frame-10.png",
-      "file": "decor-assets/hd/4af7c87e88eaa27fefafdb33.webp",
-      "trayCut": true,
-      "master": "masters-crop-complete/silverkelp-motion-v01.png",
-      "masterSha256": "da30235cd746de9e8e4072f8ed20b1cc68b6e6b18c2748f463162e044ef78eac",
-      "sourceRect": {
-        "left": 1286,
-        "top": 404,
-        "width": 223,
-        "height": 267
-      },
-      "logicalBounds": {
-        "x": 12,
-        "y": 33,
-        "w": 39,
-        "h": 47
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.941
-    },
-    {
-      "native": "native-levels/silverkelp/frame-02.png",
-      "file": "decor-assets/hd/09e36c4a36de42387ec55504.webp",
-      "trayCut": true,
-      "master": "masters-levels/crops-d.png",
-      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
-      "sourceRect": {
-        "left": 329,
-        "top": 694,
-        "width": 374,
-        "height": 392
-      },
-      "logicalBounds": {
-        "x": 13,
-        "y": 45,
-        "w": 38,
-        "h": 35,
-        "count": 726,
-        "edge": false
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.798
-    },
-    {
-      "native": "native-levels/silverkelp/frame-03.png",
-      "file": "decor-assets/hd/ec480174a066f00a33072147.webp",
-      "trayCut": true,
-      "master": "masters-levels/crops-d.png",
-      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
-      "sourceRect": {
-        "left": 703,
-        "top": 694,
-        "width": 360,
-        "height": 392
-      },
-      "logicalBounds": {
-        "x": 12,
-        "y": 25,
-        "w": 40,
-        "h": 55,
-        "count": 1127,
-        "edge": false
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.897
-    },
-    {
-      "native": "native-levels/silverkelp/frame-04.png",
-      "file": "decor-assets/hd/3a9f1faa3c0b4880ebde3537.webp",
-      "trayCut": true,
-      "master": "masters-levels/crops-d.png",
-      "masterSha256": "ddf979455cf7e3e1279d8cf2bb8976c0c585cefce5bd6cd694a13fbf6fa8f09d",
-      "sourceRect": {
-        "left": 1063,
-        "top": 694,
-        "width": 385,
-        "height": 392
-      },
-      "logicalBounds": {
-        "x": 5,
-        "y": 14,
-        "w": 53,
-        "h": 66,
-        "count": 2016,
-        "edge": false
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.922
     }
   ],
   "skipped": [
@@ -69284,23 +69278,7 @@
       "reason": "replaced by a later builder"
     },
     {
-      "native": "environment/pond/pond-3.png",
-      "reason": "stale frame record"
-    },
-    {
-      "native": "environment/winter/pond-1-snow.png",
-      "reason": "stale frame record"
-    },
-    {
-      "native": "environment/winter/pond-2-snow.png",
-      "reason": "stale frame record"
-    },
-    {
       "native": "environment/winter/pond-nook-snow.png",
-      "reason": "stale frame record"
-    },
-    {
-      "native": "environment/winter/pond-3-snow.png",
       "reason": "stale frame record"
     },
     {

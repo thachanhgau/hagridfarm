@@ -17,13 +17,24 @@
       "file": "environment/forest-v06/oak.png",
       "pivotX": 95,
       "pivotY": 174,
-      "sourceRect": [
-        0,
-        0,
-        850,
-        575
-      ],
-      "sha256": "972b4729789c398c99db359b045f51185a5703d8f752ac96436c38355401e042"
+      "sourceRect": {
+        "left": 18,
+        "top": 58,
+        "width": 1218,
+        "height": 1113
+      },
+      "sha256": "d9d29733c6b9c5724b24f71f5e68e87770a67846eb831961aa5605dd97e5a2cc",
+      "master": "environment/forest-v06/masters/lake-ring-20261116/normal.png",
+      "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
+      "bounds": {
+        "x": 2,
+        "y": 6,
+        "w": 186,
+        "h": 167
+      },
+      "hdFile": "environment/forest-v06/masters/lake-ring-20261116/published-0.png",
+      "hdSha256": "c3eb6710e095fdc2fb4dea4597d314ad764c4b12557d43a73e9b9363baf69efc",
+      "replacement": "lake-ring-20261116"
     },
     {
       "id": "pine",
@@ -59,13 +70,24 @@
       "file": "environment/forest-v06/grove.png",
       "pivotX": 95,
       "pivotY": 134,
-      "sourceRect": [
-        0,
-        575,
-        850,
-        449
-      ],
-      "sha256": "67fee48c44ba552599a5e1039d8832c92cf36f601322d9e3dc0eeca571ff661f"
+      "sourceRect": {
+        "left": 105,
+        "top": 64,
+        "width": 1326,
+        "height": 872
+      },
+      "sha256": "486d83c392f9146cf4c91cc03c323537428943ee631910f20034434585cb6efc",
+      "master": "environment/forest-v06/masters/lake-grove-20261116/normal.png",
+      "masterSha256": "9525a22553d065a0984b13d0987eaf36a9265af309cdc3dcdb5a21408b31ee04",
+      "bounds": {
+        "x": 4,
+        "y": 13,
+        "w": 183,
+        "h": 121
+      },
+      "hdFile": "environment/forest-v06/masters/lake-grove-20261116/published-0.png",
+      "hdSha256": "bc2ccd8c2a91db10b1bf7a593a216437bdeb1410b6e131592018a4ec7600e6d0",
+      "replacement": "lake-grove-20261116"
     },
     {
       "id": "log",

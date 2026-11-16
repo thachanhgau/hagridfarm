@@ -1,0 +1,15 @@
+{
+  "tool": "built-in image_gen",
+  "normal": "Create ONE COMPACT WOODLAND GROVE production sprite to replace reference2's three thin repeated saplings around Hagrid's Forbidden Lake. Reference1 is the locked camera/size guide; reference3 is the approved new ancient oak style. Three distinct medium trees growing together: one leaning old broadleaf tree, one compact upright dark evergreen, one younger gnarled tree, all with DENSE layered crowns; tangled roots, ivy, moss, ferns and low brambles fill gaps near ground. Vary trunk curves and crown heights for an asymmetrical natural grove. Do NOT draw three isolated bare trunks; do not make a whole large forest scene or sprite sheet. Broad low silhouette for native190x136, pivot95,134; all roots aligned to elevated2:1 garden camera with world axes(32,16),(-32,16),vertical(0,-1). Fit within guide outer rectangle, roots on guide ground plane with front root at pivot, no visible diamond tile or floating slab. NORMAL-SEASON version, no snow. Clean rich HD pixel art matching reference3's useful detail and strong clusters, selective #231F2E dark outline, muted #24483F #3F6A45 #71934B forest greens, #735044 #A57554 weathered trunks, #41465C slate. Upper-left light, readable at native size. Entire grove isolated on TRUE TRANSPARENT 1536x1024 canvas, generous empty margins. No creatures, flowers, buildings, lights, text, guide marks, gradients, fog, glow, blur or photorealism.",
+  "winter": "Winter edit of this EXACT compact three-tree woodland grove. Keep every root, trunk, crown, evergreen, fern, stone and camera angle in precisely the same place on the same1536x1024 canvas; no recentering, scaling or redesign. Keep all THREE DENSE CANOPIES: heavy irregular ivory snow caps sit on the broadleaf crown shelves and evergreen branches, with dark green foliage visible underneath. DO NOT strip leaves or return to bare trunks. Thin snow accents on roots, brambles, fern bases and stones. It is an ancient magical forest around Hagrid's dark Forbidden Lake. Same elevated2:1 camera, vertical trunks, native190x136/pivot95,134 after export. Match crisp clean HD pixel clusters and selective #231F2E outlines, muted forest greens and brown wood, plus winter ivory #E8F0ED and ice pale-blue #B7DEE0. Upper-left light. TRUE TRANSPARENT empty background, no exterior glow/haze/fog or background ground tile; hard alpha silhouette. No text, falling snowflakes, creatures or new objects. Entire compact grove visible, exact matching normal-season geometry.",
+  "references": {
+    "normal": [
+      "guide.png",
+      "original grove at source d827bbc",
+      "new ancient oak master"
+    ],
+    "winter": [
+      "normal.png"
+    ]
+  }
+}

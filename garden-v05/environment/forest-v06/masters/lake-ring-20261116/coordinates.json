@@ -1,0 +1,57 @@
+{
+  "id": "oak",
+  "native": {
+    "width": 190,
+    "height": 176,
+    "pivotX": 95,
+    "pivotY": 174,
+    "maxInkWidth": 186,
+    "maxInkHeight": 172
+  },
+  "hd": {
+    "width": 380,
+    "height": 352,
+    "density": 2
+  },
+  "axes": {
+    "column": [
+      32,
+      16
+    ],
+    "row": [
+      -32,
+      16
+    ],
+    "up": [
+      0,
+      -1
+    ]
+  },
+  "generationCanvas": [
+    1024,
+    1024
+  ],
+  "groundGuide": [
+    [
+      512,
+      605
+    ],
+    [
+      812,
+      755
+    ],
+    [
+      512,
+      905
+    ],
+    [
+      212,
+      755
+    ]
+  ],
+  "scope": [
+    "normal",
+    "winter"
+  ],
+  "placement": "Existing forest roots, sizes, clearance and reserved pond land remain unchanged; one shared uniform export for both seasons."
+}

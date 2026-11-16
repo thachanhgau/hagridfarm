@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "eb63387e2626",
+  "revision": "d8c8f9117f37",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -15876,10 +15876,10 @@
       "file": "runtime-webp/environment/forest-v06/grove.webp",
       "width": 190,
       "height": 136,
-      "sourceBytes": 6015,
-      "bytes": 3992,
-      "sourceSha256": "67fee48c44ba552599a5e1039d8832c92cf36f601322d9e3dc0eeca571ff661f",
-      "sha256": "fbddd7c1424b60f903d8aac992c397713835387fde483a97e48b193bd0e015d1"
+      "sourceBytes": 8924,
+      "bytes": 5888,
+      "sourceSha256": "486d83c392f9146cf4c91cc03c323537428943ee631910f20034434585cb6efc",
+      "sha256": "3b85dbcd271426a5a3b2427dfedf132fe19637b266ea8276ed1d0fc9f1991499"
     },
     {
       "source": "environment/forest-v06/log.png",
@@ -15896,10 +15896,10 @@
       "file": "runtime-webp/environment/forest-v06/oak.webp",
       "width": 190,
       "height": 176,
-      "sourceBytes": 6788,
-      "bytes": 4310,
-      "sourceSha256": "972b4729789c398c99db359b045f51185a5703d8f752ac96436c38355401e042",
-      "sha256": "3dec34d25f94f1fd9a4ca581a2c2b024c9b903ccf93eeaa6ab0041b892b2f6f0"
+      "sourceBytes": 11151,
+      "bytes": 7284,
+      "sourceSha256": "d9d29733c6b9c5724b24f71f5e68e87770a67846eb831961aa5605dd97e5a2cc",
+      "sha256": "1e74a3a9cc6063922d19bbc975ae075b7144084e8b093025f4c80e8c94eb53e1"
     },
     {
       "source": "environment/forest-v06/pine.png",
@@ -16776,10 +16776,10 @@
       "file": "runtime-webp/environment/winter/grove.webp",
       "width": 190,
       "height": 136,
-      "sourceBytes": 5063,
-      "bytes": 3154,
-      "sourceSha256": "b53b0bcc1ffd4bdb4f03b7dd6f9472a4a67083dbc528ae55f89694ce00cbce7c",
-      "sha256": "62da308d6004df24bcea276a79da97ff165f8c6f564b7095e7aa0f7f3dc30198"
+      "sourceBytes": 10352,
+      "bytes": 6670,
+      "sourceSha256": "cee497d9022646874fdf6c44c1a1a139753d06d202065f21ddef1a429dd9a476",
+      "sha256": "a3420285dbe600cae995890f423d7057869f7957383c2492001d7530ac92e6ff"
     },
     {
       "source": "environment/winter/habitat-crup-snow.png",
@@ -16946,10 +16946,10 @@
       "file": "runtime-webp/environment/winter/oak.webp",
       "width": 190,
       "height": 176,
-      "sourceBytes": 5977,
-      "bytes": 3930,
-      "sourceSha256": "40b80e5cb5357db38bd52c8ffcb4847fc546809a86bbc0b8b91b05101d86a7fa",
-      "sha256": "c2459d8d29b8aa35439772ac4af7fe065d9d2eaa7d19c739b33550ff935392ae"
+      "sourceBytes": 14000,
+      "bytes": 9224,
+      "sourceSha256": "5f7b0f522cb34ed529984a067f7eebb8443d616dc1d6de5c4b904f6a313bf736",
+      "sha256": "aab0ef72304ed1b005ac08c5487d78c88097b082b7bc17bde091052b7b3e16d0"
     },
     {
       "source": "environment/winter/pine.png",
@@ -17902,6 +17902,11 @@
       "file": "decor-assets/hd/12caab07a105af3802119b92.webp",
       "bytes": 1708,
       "sha256": "12caab07a105af3802119b9217f4d4d43677ee3cc78e36046cd719a444f2d98f"
+    },
+    {
+      "file": "decor-assets/hd/13228be0e6fe4e15bcd8d5b6.webp",
+      "bytes": 31256,
+      "sha256": "13228be0e6fe4e15bcd8d5b6ccbfa9cb84fe469c98a9f2caeed015f69e7ca6ed"
     },
     {
       "file": "decor-assets/hd/1352bd55bbc6fb5bd050bd1b.webp",
@@ -19144,6 +19149,11 @@
       "sha256": "40318d56f9a5835f19a9b3773a74127e94b9784032c49591690ccd577700a110"
     },
     {
+      "file": "decor-assets/hd/405c5b720a0c1b3ce7b56d2e.webp",
+      "bytes": 19730,
+      "sha256": "405c5b720a0c1b3ce7b56d2ef29426292d9f6422fd63f2bb1bb4c1cc5a5a858d"
+    },
+    {
       "file": "decor-assets/hd/406369764040679a5bc2057b.webp",
       "bytes": 2032,
       "sha256": "406369764040679a5bc2057b28cbd76e0c362ecd799db64fb035edfaa7543337"
@@ -19257,6 +19267,11 @@
       "file": "decor-assets/hd/44146699c17c4be0f35c2f9c.webp",
       "bytes": 4542,
       "sha256": "44146699c17c4be0f35c2f9cb36f0ab125da3d86fc1a877169072afaf579021e"
+    },
+    {
+      "file": "decor-assets/hd/4492ec9dd1276c41507d73b2.webp",
+      "bytes": 23420,
+      "sha256": "4492ec9dd1276c41507d73b2fa9653c8913cd36bd2a0f51d8b7c349195699820"
     },
     {
       "file": "decor-assets/hd/4497a31d417203a0a500fc3a.webp",
@@ -19437,11 +19452,6 @@
       "file": "decor-assets/hd/4c2fbbf0b05e05f04b701d08.webp",
       "bytes": 9610,
       "sha256": "4c2fbbf0b05e05f04b701d084200dec7693c92558d1e36e436c3e593453e67bf"
-    },
-    {
-      "file": "decor-assets/hd/4c34abb290d36209b18292c8.webp",
-      "bytes": 11692,
-      "sha256": "4c34abb290d36209b18292c89397c724e2cc2516f608e6405c5c42852348a681"
     },
     {
       "file": "decor-assets/hd/4c7c1e47c6eb00f574faf381.webp",
@@ -20629,11 +20639,6 @@
       "sha256": "7a1f94217d2e241157babc8841df247d8b1bf423b8a347edea557ce68afb80ca"
     },
     {
-      "file": "decor-assets/hd/7a756eed44fdd5649935938f.webp",
-      "bytes": 8124,
-      "sha256": "7a756eed44fdd5649935938f0d9de78af034fd1014afffe5d8bf2dd743b5359e"
-    },
-    {
       "file": "decor-assets/hd/7a810fd5287866030c34bc5a.webp",
       "bytes": 3106,
       "sha256": "7a810fd5287866030c34bc5ac0c11d6afc9cf8e54f723117a9113cebbf246dbd"
@@ -20692,11 +20697,6 @@
       "file": "decor-assets/hd/7bd1f5780893b4cc5f2cee6f-atlas.webp",
       "bytes": 8176,
       "sha256": "7bd1f5780893b4cc5f2cee6f006d52cbe6d6363ee2a797beafc95f6d7671802e"
-    },
-    {
-      "file": "decor-assets/hd/7bdc7d61b690bdf7a1dfdec2.webp",
-      "bytes": 9882,
-      "sha256": "7bdc7d61b690bdf7a1dfdec2578e2854bf6b33d69c71eabea955a71ebf1456fb"
     },
     {
       "file": "decor-assets/hd/7c0c02cf4c380b6b3fcea4f3.webp",
@@ -22204,11 +22204,6 @@
       "sha256": "b28f44ac84dbc8edab912effcc2d4f680eb4afa366975395850a49f1cbfcf789"
     },
     {
-      "file": "decor-assets/hd/b2aec60607544efa5c4e2fff.webp",
-      "bytes": 10274,
-      "sha256": "b2aec60607544efa5c4e2fff8b9c6346ddd6a3720c4bc6e4b87d71c79c931c43"
-    },
-    {
       "file": "decor-assets/hd/b2b11d549f740240965d8a68.webp",
       "bytes": 3522,
       "sha256": "b2b11d549f740240965d8a68444c35d9850c4c0b761f0272f41ea4b6e33a70d0"
@@ -22772,6 +22767,11 @@
       "file": "decor-assets/hd/c6248cbb5df10272718fe724.webp",
       "bytes": 1234,
       "sha256": "c6248cbb5df10272718fe7244f78c3f86f4fc85594e8dae62fc8e11adcf8563d"
+    },
+    {
+      "file": "decor-assets/hd/c63ebea2d4dc096e110e3d89.webp",
+      "bytes": 23302,
+      "sha256": "c63ebea2d4dc096e110e3d8926c130459ff431bcc9f547ec13838b063007ce52"
     },
     {
       "file": "decor-assets/hd/c648322bec8e0cec1f7691dc.webp",
@@ -24522,9 +24522,9 @@
   "totals": {
     "converted": 1741,
     "existingWebp": 1417,
-    "originalBytes": 17973276,
-    "webpBytes": 15195264,
-    "savedBytes": 2778012,
-    "savedPercent": 15.46
+    "originalBytes": 18051596,
+    "webpBytes": 15266680,
+    "savedBytes": 2784916,
+    "savedPercent": 15.43
   }
 }

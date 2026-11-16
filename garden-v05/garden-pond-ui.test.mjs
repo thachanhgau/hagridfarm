@@ -166,3 +166,11 @@ test('Forbidden Lake is larger, stays on shore land, and clears beds, nook and i
   if(first)assert.deepEqual(rect,first,'upgrading does not move the lake');first=rect;
  }
 });
+
+test('willow nook leaves the front meadow open and stays in the west shore gap',async()=>{
+ const {POND_NOOK}=await import('./default-decor.mjs'),{decorFootprintRect}=await import('./decor-runtime.mjs');
+ const rect=decorFootprintRect(...POND_NOOK.at,POND_NOOK.footprint);
+ assert.ok(rect.r1<=-6,'front meadow and both fence approaches stay open');
+ assert.ok(rect.c0>=10&&rect.c1<=13,'between the ten-bed paddy and the lake woodland');
+ assert.ok(rect.r0>=-13.5,'inside the authored shore land');
+});

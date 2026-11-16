@@ -1,3 +1,4 @@
+import {pondMeadowOutline,pondMeadowMap,pondMeadowTrees} from './pond-meadow.mjs?v=26.1';
 import {HD_ART} from './hd-art.mjs?v=26.1';
 import {createResolution,tagArt,ART_SOURCE,clientToWorld} from './render-resolution.mjs?v=26.1';
 export {clientToWorld} from './render-resolution.mjs?v=26.1';
@@ -28,7 +29,7 @@ import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=26.1';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=26.1';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=26.1';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=26.1';
-import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,POND_LAND,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=26.1';
+import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=26.1';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=26.1';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=26.1';
 import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=26.1';
@@ -65,7 +66,7 @@ const layoutSnapshots = new WeakMap();
 
 function clipToStage(context, stage, scene, draw) {
   context.save?.();
-  const points = stageBoundary(stage).map(([col, row]) => iso(col, row, scene));
+  const points = pondMeadowOutline(stage).map(([col, row]) => iso(col, row, scene));
   context.beginPath();
   context.moveTo(points[0][0], points[0][1]);
   for (const [x, y] of points.slice(1)) context.lineTo(x, y);
@@ -1074,16 +1075,10 @@ export async function createGarden(canvas, options = {}) {
   // The unfenced Bờ hồ meadow (garden-growth POND_LAND) ends in trees, not a straight grass line: a loose row just
   // outside its west, north and east edges, behind everything on the meadow (it is terrain).
   function drawMeadowEdge(target) {
-    const {col, right, rowTop} = POND_LAND, spots = [];
-    for (let r = rowTop + 1; r < -4; r += 1.7) spots.push([col - .9, r]);
-    for (let c = col; c <= right; c += 1.7) spots.push([c, rowTop - .9]);
-    for (let r = rowTop + 1; r < -1.5; r += 1.7) spots.push([right + 1.1, r]);
-    const ids = ['grove', 'pine', 'oak', 'grove'];
-    spots.map(([c, r], i) => {
-      const h = ((i + 7) * 2654435761) >>> 0, u = (h & 1023) / 1023 - .5, v = ((h >>> 10) & 1023) / 1023 - .5;
-      const asset = forestAssets.get(ids[(h >>> 20) % 4]), [x, y] = iso(c + u * .5, r + v * .5), k = nativePixelScale(.62 + ((h >>> 24) & 255) / 255 * .25);
+    pondMeadowTrees().map(({col,row,id,scale:k,flip}) => {
+      const asset = forestAssets.get(id), [x,y] = iso(col,row);
       const w = Math.round(asset.width * k), ht = Math.round(asset.height * k);
-      return {img: forestImages.get(asset.id), rect: {left: Math.round(x - w / 2), top: Math.round(y - ht), right: Math.round(x + w / 2), bottom: Math.round(y)}, w, h: ht, flip: (h >>> 8) & 1};
+      return {img: forestImages.get(asset.id), rect: {left: Math.round(x - w / 2), top: Math.round(y - ht), right: Math.round(x + w / 2), bottom: Math.round(y)}, w, h: ht, flip};
     }).filter(tree=>canopyInsideWorld(tree.rect,map)).sort((a, b) => a.rect.bottom - b.rect.bottom).forEach((tree) => tree.img && drawCanopy(target, tree));
   }
 
@@ -1120,13 +1115,13 @@ export async function createGarden(canvas, options = {}) {
     cachedContext.setTransform?.(layerDensity, 0, 0, layerDensity, 0, 0);
     cachedContext.imageSmoothingEnabled = false;
     if (withForest) {
-      drawScenicTerrain(cachedContext, {...map, farmBoundary: stageBoundary(stage)}, {grassImage: imageFor(grassTile.file),backdrop:scenicBackdrop});
+      drawScenicTerrain(cachedContext, {...map, farmBoundary: pondMeadowOutline(stage)}, {grassImage: imageFor(grassTile.file),backdrop:scenicBackdrop});
     } else {
       cachedContext.fillStyle = '#142620';
       cachedContext.fillRect(0, 0, map.width, map.height);
     }
     clipToStage(cachedContext, stage, map, () => {
-      drawNaturalMeadow(cachedContext, map, {grid: withGrid, grassImage: imageFor(grassTile.file)});
+      drawNaturalMeadow(cachedContext, pondMeadowMap(map,stage), {grid: withGrid, grassImage: imageFor(grassTile.file)});
       cachedContext.save();cachedContext.fillStyle='rgba(15,40,38,.14)';cachedContext.fillRect(0,0,map.width,map.height);cachedContext.restore();
       drawGardenPathDetails(cachedContext,{...map,pondPath:Boolean(stage?.pond),edgePath:stage?.id===8});
       if (withForest) drawMeadowDetails(cachedContext, map, [...map.plots.map(p=>plotPhysicalBounds(p)), ...decorationPlacements(map), ...keepsakePlacements(map)], (x,y,index) => {

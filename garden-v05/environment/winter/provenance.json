@@ -120,8 +120,8 @@
       ],
       "inkBox": [
         2,
-        34,
-        187,
+        4,
+        188,
         174
       ],
       "sourceCell": [
@@ -136,7 +136,10 @@
         486,
         461
       ],
-      "sha256": "40b80e5cb5357db38bd52c8ffcb4847fc546809a86bbc0b8b91b05101d86a7fa"
+      "sha256": "5f7b0f522cb34ed529984a067f7eebb8443d616dc1d6de5c4b904f6a313bf736",
+      "master": "environment/forest-v06/masters/lake-ring-20261116/winter.png",
+      "masterSha256": "1edc6a930309e0704c69a51b1411e4935e5ed2a0019afd6f4dbd096aef9fc941",
+      "replacement": "lake-ring-20261116"
     },
     {
       "file": "pine.png",
@@ -190,7 +193,7 @@
       ],
       "inkBox": [
         2,
-        6,
+        12,
         188,
         134
       ],
@@ -206,7 +209,10 @@
         485,
         410
       ],
-      "sha256": "b53b0bcc1ffd4bdb4f03b7dd6f9472a4a67083dbc528ae55f89694ce00cbce7c"
+      "sha256": "cee497d9022646874fdf6c44c1a1a139753d06d202065f21ddef1a429dd9a476",
+      "master": "environment/forest-v06/masters/lake-grove-20261116/winter.png",
+      "masterSha256": "a03801435646a662b4784980ad53ca4c6826e6662f055491bf0bca5d192310eb",
+      "replacement": "lake-grove-20261116"
     },
     {
       "file": "log.png",

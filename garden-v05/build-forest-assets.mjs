@@ -1,6 +1,7 @@
 // Technical sprite extraction from the new ImageGen atlas. Original art is
 // retained; exports use nearest sampling and the garden's existing palette.
 import fs from 'node:fs/promises';
+import {publishForestTree} from './build-forest-refresh.mjs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
@@ -20,6 +21,7 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
 const result=[];
 await fs.mkdir(path.join(root,'environment/forest-v06'),{recursive:true});
 for(const spec of specs){
+  if(['oak','grove'].includes(spec.id)){result.push({...spec,...await publishForestTree(spec.id)});continue;}
   const [left,top,width,height]=spec.rect;
   const {data,info}=await sharp(path.join(root,source)).extract({left,top,width,height}).ensureAlpha().raw().toBuffer({resolveWithObject:true});
   let minX=width,minY=height,maxX=-1,maxY=-1;
