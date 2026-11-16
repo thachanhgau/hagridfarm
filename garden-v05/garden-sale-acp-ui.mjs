@@ -129,12 +129,23 @@ export function createSaleAcp({call,notify}){
    catch(e){status.textContent=e.message;}
    finally{saving=false;render();}
   };
+  // «Mở hết» (owner 16/11/2026): every land and building the HPH's level allows, finished at once (server garden-sale-admin openAll).
+  const openAll=async()=>{
+   saving=true;render();
+   try{const r=(await call({mode:'open'})).open;
+    status.textContent=r.added?`Đã mở ${num(r.added)} đất và công trình.`:'Vườn đã mở hết đất và công trình của cấp này.';notify?.(status.textContent);
+    if(r.added)setTimeout(()=>location.reload(),900);
+   }
+   catch(e){status.textContent=e.message;}
+   finally{saving=false;render();}
+  };
   return [el('fieldset',{class:'acp-sale'},[
     field('Tên thành viên (trống = vườn của mình)',el('input',{type:'text',maxlength:'40',autocomplete:'off',value:jump.username,oninput:e=>{jump.username=e.target.value;}})),
     field('Nhảy tới cấp (1–10.000, chỉ lên)',el('input',{type:'number',min:'1',max:'10000',step:'1',inputmode:'numeric',value:jump.level,oninput:e=>{jump.level=e.target.value;}})),
    ]),
    el('div',{class:'acp-actions'},[
     iconButton('plus','Nhận mọi đồ trang trí vào vườn mình',takeDecor,{text:'Nhận mọi đồ trang trí',disabled:saving}),
+    iconButton('plus','Mở hết đất và công trình của vườn mình',openAll,{text:'Mở hết đất & công trình',disabled:saving}),
     iconButton('check','Nhảy cấp',send,{text:saving?'Đang làm…':'Nhảy cấp',class:'primary',disabled:saving}),
    ])];
  }
