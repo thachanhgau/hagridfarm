@@ -1425,7 +1425,7 @@ export async function createGarden(canvas, options = {}) {
         const stems = slots.flatMap((slot, i) => {
           if (!WATER_CROPS.includes(slot?.species) || i >= plot.width * plot.height || growthFor(slot, logicalNow).stage < 1) return [];
           const [x, y] = iso(...plotCellPosition(map.plots[index], i));
-          return [[x, y - WATERLINE_LIFT[slot.species]]];
+          return [[x, y]]; // the stem stands at the cell centre (the sprite is lowered to match, below)
         });
         drawWaterBed(context, plotCorners(map.plots[index]), {weatherMode: activeWeather, index, stems});
         if (!showGrid) continue;
@@ -1973,6 +1973,9 @@ export async function createGarden(canvas, options = {}) {
         if (!entry) continue;
         const [col,row] = plotCellPosition(map.plots[plotIndex],slot);
         const crop = actorObject(entry, col, row, logicalNow, clock, {plot: plotIndex, cell: slot});
+        // Owner 16/11/2026 «nằm giữa các ô vuông»: a water crop's stems meet the water WATERLINE_LIFT px above its foot,
+        // so the sprite drops by that much and its stems stand on the cell centre.
+        if (WATER_CROPS.includes(entry.species) && Array.isArray(crop.xy)) crop.xy = [crop.xy[0], crop.xy[1] + WATERLINE_LIFT[entry.species]];
         // Ripe crops in the selected (or tutorial) plot give a short authored tug now and
         // then, saying "ready"; the tutorial repeats it faster. Crops without an action
         // clip fall back to a whole-pixel wiggle in the tutorial only.
