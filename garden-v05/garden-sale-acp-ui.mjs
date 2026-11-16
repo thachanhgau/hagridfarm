@@ -139,6 +139,16 @@ export function createSaleAcp({call,notify}){
    catch(e){status.textContent=e.message;}
    finally{saving=false;render();}
   };
+  // «Mở hết sinh vật» (owner 16/11/2026): every species adopted, grown, top bond, all tricks (server allCreatures).
+  const allCreatures=async()=>{
+   saving=true;render();
+   try{const r=(await call({mode:'creatures'})).creatures;const done=r.adopted||r.grown;
+    status.textContent=done?`Đã nhận ${num(r.adopted)} sinh vật, ${num(r.total)} con trưởng thành, đủ kỹ năng.`:'Vườn đã đủ sinh vật và kỹ năng của cấp này.';notify?.(status.textContent);
+    setTimeout(()=>location.reload(),900);
+   }
+   catch(e){status.textContent=e.message;}
+   finally{saving=false;render();}
+  };
   return [el('fieldset',{class:'acp-sale'},[
     field('Tên thành viên (trống = vườn của mình)',el('input',{type:'text',maxlength:'40',autocomplete:'off',value:jump.username,oninput:e=>{jump.username=e.target.value;}})),
     field('Nhảy tới cấp (1–10.000, chỉ lên)',el('input',{type:'number',min:'1',max:'10000',step:'1',inputmode:'numeric',value:jump.level,oninput:e=>{jump.level=e.target.value;}})),
@@ -146,6 +156,7 @@ export function createSaleAcp({call,notify}){
    el('div',{class:'acp-actions'},[
     iconButton('plus','Nhận mọi đồ trang trí vào vườn mình',takeDecor,{text:'Nhận mọi đồ trang trí',disabled:saving}),
     iconButton('plus','Mở hết đất và công trình của vườn mình',openAll,{text:'Mở hết đất & công trình',disabled:saving}),
+    iconButton('plus','Nhận mọi sinh vật, trưởng thành, đủ kỹ năng',allCreatures,{text:'Mở hết sinh vật',disabled:saving}),
     iconButton('check','Nhảy cấp',send,{text:saving?'Đang làm…':'Nhảy cấp',class:'primary',disabled:saving}),
    ])];
  }
