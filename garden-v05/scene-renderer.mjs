@@ -1150,8 +1150,8 @@ export async function createGarden(canvas, options = {}) {
   }
 
   // Night statues are re-lit above the tint. Replaying the sprite over the finished scene covered whatever stands in
-  // front (owner 16/11/2026: «Quầy bia bơ» under «Tượng Dobby Hắc Ám»), so the lit copy is the scene itself before the
-  // tint (the statue as drawn, HD and covered by its front), kept to the statue's silhouette, minus the sprites in front.
+  // front (owner 16/11/2026: «Quầy bia bơ» under «Tượng Dobby Hắc Ám»), so the lit copy is the statue as the scene draws
+  // it (HD, snow cap) minus the sprites in front of it.
   const statueCopies = new Map();
   function litStatues(objects, clock) {
     const out = [], d = Math.max(1, canvas.width / map.width);
@@ -1178,10 +1178,11 @@ export async function createGarden(canvas, options = {}) {
         const w = Math.round(box.w * d), h = Math.round(box.h * d);
         if (lit.width !== w || lit.height !== h) { lit.width = w; lit.height = h; }
         const c = lit.getContext('2d'); if (!c) return;
-        c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'copy'; c.imageSmoothingEnabled = false;
-        c.drawImage(canvas, Math.round(box.l * d), Math.round(box.t * d), w, h, 0, 0, w, h);
+        // The statue as the scene draws it (same frame, HD and snow cap), never a read-back of the main canvas: Safari
+        // stalls the GPU on every read-back, a jank on each statue frame while panning (iPhone 17 Simulator, 16/11/2026).
+        c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'source-over'; c.imageSmoothingEnabled = false; c.clearRect(0, 0, w, h);
         c.setTransform(d, 0, 0, d, -box.l * d, -box.t * d);
-        c.globalCompositeOperation = 'destination-in'; drawAssetTo(c, glow, object.xy[0], object.xy[1]);
+        drawAssetTo(c, {...glow, noSnowCap: object.asset?.noSnowCap}, object.xy[0], object.xy[1]);
         c.globalCompositeOperation = 'destination-out';
         for (const front of fronts) drawAssetTo(c, front.asset, front.xy[0] + (front.drift || 0), front.xy[1] + (front.hop || 0), null, front.motion, front.facing === 'right' && !front.authoredFacing);
         copy.key = key;
