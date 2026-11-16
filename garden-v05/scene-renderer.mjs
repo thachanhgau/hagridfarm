@@ -19,6 +19,7 @@ import {resolveCreatureHomes,spotPoint} from './creature-homes.mjs?v=26.1';
 import {drawGardenPathDetails} from './garden-path-details.mjs?v=26.1';
 import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=26.1';
 import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=26.1';
+import {groundStore} from './ground-store.mjs?v=26.1';
 import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=26.1';
 import {drawV24Ground} from './garden-v24-scenery.mjs?v=26.1';
 import {WATER_CROPS,WATERLINE_LIFT,isWaterPlot,drawWaterBed} from './water-crop-art.mjs?v=26.1';
@@ -965,7 +966,7 @@ export async function createGarden(canvas, options = {}) {
   publishBackdrop();
   function prepareWeather(weather,depth=1,winter=false){
     if(winter)for(const file of kit.WINTER_FILES)imageFor(file);
-    const art=winter&&kit.WINTER_FILES.every(file=>images.has(file));
+    const art=winter&&kit.WINTER_FILES.every(file=>images.has(file));winterWanted=winter;
     if(weather===activeWeather&&depth===activeSnowDepth&&art===winterArt)return;
     activeWeather=weather;activeSnowDepth=depth;winterArt=art;seasonalImages.clear();terrainCaches.clear();
     // Bound memory to the current season. Never retain four world-size caches.
@@ -1138,11 +1139,64 @@ export async function createGarden(canvas, options = {}) {
     return cachedCanvas;
   }
 
+  // Night statues are re-lit above the tint. Replaying the sprite over the finished scene covered whatever stands in
+  // front (owner 16/11/2026: «Quầy bia bơ» under «Tượng Dobby Hắc Ám»), so the lit copy is the scene itself before the
+  // tint (the statue as drawn, HD and covered by its front), kept to the statue's silhouette, minus the sprites in front.
+  const statueCopies = new Map();
+  function litStatues(objects, clock) {
+    const out = [], d = Math.max(1, canvas.width / map.width);
+    objects.forEach((object, index) => {
+      const glow = kit.statueGlow(object, clock), b = glow && ((object.facing === 'right' && glow.rightBounds) || glow.bounds);
+      if (!b) return;
+      const box = {l: Math.floor(object.xy[0] - glow.pivotX + b.x), t: Math.floor(object.xy[1] - glow.pivotY + b.y), w: Math.ceil(b.w) + 1, h: Math.ceil(b.h) + 1};
+      let lit = statueCopies.get(object.id + ':' + object.slot);
+      if (!lit) statueCopies.set(object.id + ':' + object.slot, lit = makeCanvas(canvas, 1, 1));
+      lit.width = Math.round(box.w * d); lit.height = Math.round(box.h * d);
+      const c = lit.getContext('2d'); if (!c) return;
+      c.imageSmoothingEnabled = false;
+      c.drawImage(canvas, Math.round(box.l * d), Math.round(box.t * d), lit.width, lit.height, 0, 0, lit.width, lit.height);
+      c.setTransform(d, 0, 0, d, -box.l * d, -box.t * d);
+      c.globalCompositeOperation = 'destination-in'; drawAssetTo(c, glow, object.xy[0], object.xy[1]);
+      c.globalCompositeOperation = 'destination-out';
+      for (const front of objects.slice(index + 1)) {
+        const a = front.asset, fb = a && ((front.facing === 'right' && a.rightBounds) || a.bounds);
+        if (!fb || !Array.isArray(front.xy)) continue;
+        const l = front.xy[0] - a.pivotX + fb.x, t = front.xy[1] - a.pivotY + fb.y;
+        if (l >= box.l + box.w || l + fb.w <= box.l || t >= box.t + box.h || t + fb.h <= box.t) continue;
+        drawAssetTo(c, a, front.xy[0] + (front.drift || 0), front.xy[1] + (front.hop || 0), null, front.motion, front.facing === 'right' && !front.authoredFacing);
+      }
+      out.push({object, glow, lit, box});
+    });
+    return out;
+  }
+  // A ground built once is stored on the device (ground-store.mjs) and later visits decode it off the main thread. While
+  // that lookup runs the previous ground stays on screen (on entry: the plain backdrop fill for a few frames).
+  // No IndexedDB (tests, old browsers) or no runtime SOURCE.json (the source demos): build as before, never wait.
+  let groundStoreOff = typeof indexedDB === 'undefined' || typeof createImageBitmap !== 'function';
+  const groundStoreReady = groundStoreOff ? Promise.resolve(null) : fetch(new URL('./SOURCE.json', import.meta.url), {cache: 'no-cache'})
+    .then((r) => (r.ok ? r.json() : null)).then((source) => groundStore(source?.commit)).catch(() => null)
+    .then((store) => { if (!store) groundStoreOff = true; return store; });
+  const groundLookups = new Map();
+  let shownTerrain = null, winterWanted = false;
   function terrainCache(withGrid, withForest) {
     const key = `${stageKey(currentStage)}:${activeWeather}:${withGrid ? 'grid' : 'plain'}:${withForest ? 'forest' : 'bare'}`;
+    if (terrainCaches.has(key)) return (shownTerrain = terrainCaches.get(key));
+    const stored = `${key}|${activeSnowDepth}|${winterArt}|${resolution.layer()}|${terrainLayoutKey}`;
+    if (!groundStoreOff && !groundLookups.has(stored)) {
+      groundLookups.set(stored, 'pending');
+      groundStoreReady.then((store) => (store ? store.load(stored) : null)).then((bitmap) => groundLookups.set(stored, bitmap || 'miss'), () => groundLookups.set(stored, 'miss'));
+    }
+    const found = groundStoreOff ? 'miss' : groundLookups.get(stored);
+    if (found === 'pending') return shownTerrain;
     // One cached ground at a time: its memory is reserved against the HD budget.
-    if (!terrainCaches.has(key)) { terrainCaches.clear(); terrainCaches.set(key, buildTerrainCache(withGrid, withForest, currentStage)); }
-    return terrainCaches.get(key);
+    terrainCaches.clear();
+    if (found !== 'miss') { groundLookups.delete(stored); terrainCaches.set(key, found); return (shownTerrain = found); }
+    groundLookups.delete(stored);
+    const built = buildTerrainCache(withGrid, withForest, currentStage);
+    terrainCaches.set(key, built);
+    // Store only a finished ground: every HD image it asked for is in, and the winter art when winter wants it.
+    if (!groundStoreOff && !resolution.layerPending() && (!winterWanted || winterArt)) groundStoreReady.then((store) => store?.save(stored, built));
+    return (shownTerrain = built);
   }
 
   function drawAsset(asset, x, y, breeze = null, actorMotion = null, flipX = false) {
@@ -1407,7 +1461,7 @@ export async function createGarden(canvas, options = {}) {
         const stems = slots.flatMap((slot, i) => {
           if (!WATER_CROPS.includes(slot?.species) || i >= plot.width * plot.height || growthFor(slot, logicalNow).stage < 1) return [];
           const [x, y] = iso(...plotCellPosition(map.plots[index], i));
-          return [[x, y - WATERLINE_LIFT[slot.species]]];
+          return [[x, y]]; // the stem stands at the cell centre (the sprite is lowered to match, below)
         });
         drawWaterBed(context, plotCorners(map.plots[index]), {weatherMode: activeWeather, index, stems});
         if (!showGrid) continue;
@@ -1847,7 +1901,7 @@ export async function createGarden(canvas, options = {}) {
     context.fillStyle = '#142620';
     context.fillRect(0, 0, map.width, map.height);
     const terrain = terrainCache(grid, propsVisible);
-    context.drawImage(terrain, 0, 0, map.width, map.height);
+    if (terrain) context.drawImage(terrain, 0, 0, map.width, map.height);
     drawPlotSoil(state, logicalNow, grid);
     drawV24Ground(context,{weatherMode,clock,iso,stage:currentStage,map});
     const hasEdge = currentStage.id === 8, builtIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id?.id : id)));
@@ -1956,6 +2010,9 @@ export async function createGarden(canvas, options = {}) {
         if (!entry) continue;
         const [col,row] = plotCellPosition(map.plots[plotIndex],slot);
         const crop = actorObject(entry, col, row, logicalNow, clock, {plot: plotIndex, cell: slot});
+        // Owner 16/11/2026 «nằm giữa các ô vuông»: a water crop's stems meet the water WATERLINE_LIFT px above its foot,
+        // so the sprite drops by that much and its stems stand on the cell centre.
+        if (WATER_CROPS.includes(entry.species) && Array.isArray(crop.xy)) crop.xy = [crop.xy[0], crop.xy[1] + WATERLINE_LIFT[entry.species]];
         // Ripe crops in the selected (or tutorial) plot give a short authored tug now and
         // then, saying "ready"; the tutorial repeats it faster. Crops without an action
         // clip fall back to a whole-pixel wiggle in the tutorial only.
@@ -2075,6 +2132,7 @@ export async function createGarden(canvas, options = {}) {
     // Owner 27/10/2026: the four slanted sun shafts read as stray stripes over the garden; removed.
     // Winter fence lanterns glow through the atmosphere overlay.
     const lanterns = activeWinter && propsVisible ? kit.winterFenceLights(boundaryFence) : [];
+    const statueLights = kit && atmosphereMode !== 'day' ? litStatues(objects, clock) : [];
     if (atmosphereMode !== 'day' || (weatherMode && weatherMode !== 'clear')) {
       drawAtmosphereOverlay(context, map.width, map.height, {
         mode: atmosphereMode,
@@ -2085,7 +2143,7 @@ export async function createGarden(canvas, options = {}) {
       });
     }
     if (activeWinter) kit.drawWinterLayer(context, {width: map.width, height: map.height, lanterns, mode: atmosphereMode, clock});
-    if (kit && atmosphereMode !== 'day') for (const object of objects) { const glow = kit.statueGlow(object, clock); if (glow) { kit.drawStatueAura?.(context,object,clock); context.save(); context.globalAlpha=glow.opacity; drawAsset(glow, object.xy[0], object.xy[1]); context.restore(); } }
+    for (const {object, glow, lit, box} of statueLights) { kit.drawStatueAura?.(context,object,clock); context.save(); context.globalAlpha=glow.opacity; context.drawImage(lit, box.l, box.t, box.w, box.h); context.restore(); }
     if(atmosphereMode!=='day')for(const object of objects){
       const lit=object.kind==='decoration'?{...object,asset:earnedDecorArt(object.id,object.facing)}:object,options={clock,mode:atmosphereMode,hd:resolution.stats().density>1,drawAsset};
       drawDecorIllumination(context,lit,options);drawCreatureEmber(context,object,options);

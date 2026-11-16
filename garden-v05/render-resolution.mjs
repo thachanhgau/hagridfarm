@@ -82,7 +82,7 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
  function begin(scope=''){const rect=canvas.getBoundingClientRect?.(),key=[Math.round((rect?.left||0)/64),Math.round((rect?.top||0)/64),rect?.width,density,scope].join(':');if(key!==viewKey){budgetFallbacks.clear();viewKey=key;}context.setTransform?.(density,0,0,density,0,0);context.imageSmoothingEnabled=false;}
  begin();
  function setEnabled(value){enabled=value;density=enabled&&context.setTransform?surfaceDensity(world.width,world.height,pixelRatio??view.devicePixelRatio??1,mobile):1;canvas.width=Math.round(world.width*density);canvas.height=Math.round(world.height*density);if(canvas.dataset)canvas.dataset.pixelDensity=density;begin();}
- return {context,begin,setEnabled,layer,adopt,stats:()=>({density,logical:[world.width,world.height],backing:[canvas.width,canvas.height],budget,bytes,peakBytes,requests,hits,pending:pending.size,active,queued:queue.length,failed:failed.size,budgetFallbacks:budgetFallbacks.size})};
+ return {context,begin,setEnabled,layer,adopt,layerPending:()=>layerWaiting.size,stats:()=>({density,logical:[world.width,world.height],backing:[canvas.width,canvas.height],budget,bytes,peakBytes,requests,hits,pending:pending.size,active,queued:queue.length,failed:failed.size,budgetFallbacks:budgetFallbacks.size})};
 }
 
 /** Pointer coordinates always resolve into the logical world, independently of backing density. */

@@ -10,6 +10,7 @@ test('every module, style and JSON the page loads carries the release stamp show
   if(seen.has(file))return;seen.add(file);const text=read(file);
   const refs=file.endsWith('.html')?[...text.matchAll(/\b(?:src|href)="([\w./-]+\.(?:m?js|css))(\?[^"]*)?"/g)]:[...text.matchAll(/['"](\.\/[\w./-]+\.(?:m?js|json))(\?[^'"]*)?['"]/g)];
   for(const [,ref,query] of refs){
+   if(ref==='./SOURCE.json')continue; // written by the HPVNN sync per build and fetched no-cache (ground-store key)
    // index.html tags left bare are hash-stamped by the HPVNN sync (stampAssetVersions); everything else needs the release stamp.
    if(query!==`?v=${version}`&&!(file==='index.html'&&!query))bad.push(`${file} → ${ref}${query||''}`);
    visit(ref.replace(/^\.\//,''));
