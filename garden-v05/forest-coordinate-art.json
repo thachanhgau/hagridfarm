@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "lake-forest-oak-20261116",
+      "targetKind": "forest",
+      "master": "environment/forest-v06/masters/lake-ring-20261116/normal.png",
+      "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
+      "frameRecords": [
+        {
+          "master": "environment/forest-v06/masters/lake-ring-20261116/normal.png",
+          "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
+          "file": "environment/forest-v06/oak.png",
+          "sourceRect": {
+            "left": 18,
+            "top": 58,
+            "width": 1218,
+            "height": 1113
+          },
+          "width": 190,
+          "height": 176,
+          "pivotX": 95,
+          "pivotY": 174,
+          "bounds": {
+            "x": 2,
+            "y": 6,
+            "w": 186,
+            "h": 167
+          },
+          "sha256": "d9d29733c6b9c5724b24f71f5e68e87770a67846eb831961aa5605dd97e5a2cc",
+          "hdFile": "environment/forest-v06/masters/lake-ring-20261116/published-0.png",
+          "hdSha256": "c3eb6710e095fdc2fb4dea4597d314ad764c4b12557d43a73e9b9363baf69efc"
+        },
+        {
+          "master": "environment/forest-v06/masters/lake-ring-20261116/winter.png",
+          "masterSha256": "1edc6a930309e0704c69a51b1411e4935e5ed2a0019afd6f4dbd096aef9fc941",
+          "file": "environment/winter/oak.png",
+          "sourceRect": {
+            "left": 18,
+            "top": 58,
+            "width": 1218,
+            "height": 1113
+          },
+          "width": 190,
+          "height": 176,
+          "pivotX": 95,
+          "pivotY": 174,
+          "bounds": {
+            "x": 2,
+            "y": 4,
+            "w": 186,
+            "h": 170
+          },
+          "sha256": "5f7b0f522cb34ed529984a067f7eebb8443d616dc1d6de5c4b904f6a313bf736",
+          "hdFile": "environment/forest-v06/masters/lake-ring-20261116/published-1.png",
+          "hdSha256": "8655c4406dab631df1b7343a0374f056b254b7adc267889e1c60b4c4c7becee6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "tool": "built-in image_gen",
+  "normal": "Create ONE production forest sprite for Hagrid's Forbidden Lake garden, not a whole scene or sprite sheet. Use guide reference1 for native190x176 canvas/pivot95,174 and ground camera: column(32,16),row(-32,16),vertical(0,-1), elevated 2:1 view. Reference2 is the old oak to replace, reference3 is the approved dense Forbidden Lake forest style. A compact dense ancient woodland grove: ONE huge gnarled broadleaf oak with a second smaller intertwined trunk, generous lush dark green layered canopy, twisting brown bark, hanging moss and ivy, dense ferns, a few small dark slate mossy rocks around exposed roots. Asymmetrical crown with deep negative spaces and varied organic branches; the tree remains lush and magical, not dead or leafless. Clear readable silhouette with thick structural shapes and fine useful HD pixel detail, match the game's existing pixel art, selective #231F2E dark outlines. Mature old forest, muted #24483F #3F6A45 #71934B greens, #735044 #A57554 bark, #41465C #687486 slate, restrained upper-left light. No oversaturated lime, flowers, pumpkins, lights, houses or creatures. Roots sit on the 2:1 ground plane in the guide, tree trunks vertical, no perspective vanishing point. Canopy may rise/overhang root diamond but stays in guide's outer rectangle, frontmost roots at red pivot; no visible rectangular ground tile, disk or floating slab. 1024x1024 TRUE TRANSPARENT canvas, entire sprite visible and centred, generous transparent padding. No text, guide lines, grid, snow, fog, glow, gradients, blurry or painted texture. Author high-resolution crisp pixel clusters; export to native from this master, not coarse pixel enlargement. NORMAL-SEASON version.",
+  "winter": "Create the WINTER version of this exact ancient woodland sprite. Preserve the same canvas, identical trunk and root shapes, crown and branch positions, scale, asymmetrical silhouette, two intertwined trunks, slate stones and undergrowth. KEEP THE DENSE CANOPY: do NOT turn it into a bare leafless tree. Heavy irregular snow caps rest across the existing dark green leafy canopy shelves and branch tops; some dark green foliage remains visible under the snow. Snow highlights on mossy roots, stones and fern bases, brown brambles between the ferns. Dense magical old forest beside the Forbidden Lake. Original isometric2:1 camera and vertical trunks remain unchanged. Crisp HD pixel art, clean readable clusters and selective #231F2E outlines, existing game palette plus snow ivory #E8F0ED and ice pale #B7DEE0, upper-left light. No visible ground tile/slab, no new trees or objects, creatures, labels, falling snowflakes, atmospheric haze, glow or blur. TRUE transparent background and empty margins. Entire sprite in the same position, no cropping/recentering, no camera changes. Production winter sprite for native190x176 pivot95,174, matching original exactly.",
+  "references": {
+    "normal": [
+      "guide.png",
+      "original oak at source d827bbc",
+      "approved Forbidden Lake master"
+    ],
+    "winter": [
+      "normal.png"
+    ]
+  }
+}

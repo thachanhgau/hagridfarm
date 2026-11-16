@@ -120,8 +120,8 @@
       ],
       "inkBox": [
         2,
-        34,
-        187,
+        4,
+        188,
         174
       ],
       "sourceCell": [
@@ -136,7 +136,10 @@
         486,
         461
       ],
-      "sha256": "40b80e5cb5357db38bd52c8ffcb4847fc546809a86bbc0b8b91b05101d86a7fa"
+      "sha256": "5f7b0f522cb34ed529984a067f7eebb8443d616dc1d6de5c4b904f6a313bf736",
+      "master": "environment/forest-v06/masters/lake-ring-20261116/winter.png",
+      "masterSha256": "1edc6a930309e0704c69a51b1411e4935e5ed2a0019afd6f4dbd096aef9fc941",
+      "replacement": "lake-ring-20261116"
     },
     {
       "file": "pine.png",

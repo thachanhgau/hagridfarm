@@ -150,3 +150,7 @@ Kiểm: node garden-v05/build-flow-art.mjs;node garden-v05/build-decor-flow.mjs;
 Với món mới chưa có tọa độ lưu, xoay phải tìm gợi ý hợp lệ gần nhất trên toàn vùng đã mở và đưa camera theo preview. Vật đã bày giữ tìm kiếm cục bộ trong hai ô; không ghi hoặc dời save khi chỉ thử góc. Fixture đầy đủ phải qua restoreChecked/server trước khi dùng làm bằng chứng: giữ ba thửa khởi đầu, tối đa ba loài mỗi thửa và đầy đủ schema sinh vật. Render fixture vẫn tách biệt với kiểm đăng nhập/iframe/save thật.
 
 Camera clarification from house-Noel calibration: the garden uses azimuth 45° and elevation 30° (2:1 dimetric), not the common true-isometric elevation 35.264° whose axes drift toward 0.577. Name this distinction in redraw prompts and still measure the exported raster; prompt wording does not prove acceptance. Scene references must be explicitly context-only so a nearby gazebo does not become the requested freestanding mirror.
+
+### Vành rừng Hồ Cấm (16/11/2026)
+
+Cụm cổ thụ dùng master thường/tuyết đồng bộ; bản tuyết giữ tán dày theo yêu cầu chủ dự án, không lấy lại hình cành trơ từ winter-sheet cũ. Giữ canvas190×176, pivot95,174 và toàn bộ gốc cây/clearance hiện có. Nguồn và phép xuất: `build-forest-oak.mjs`, `environment/forest-v06/masters/lake-ring-20261116/`; xem `docs/forest-lake-20261116/` trước khi dựng lại atlas rừng.

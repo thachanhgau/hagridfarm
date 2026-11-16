@@ -17,13 +17,24 @@
       "file": "environment/forest-v06/oak.png",
       "pivotX": 95,
       "pivotY": 174,
-      "sourceRect": [
-        0,
-        0,
-        850,
-        575
-      ],
-      "sha256": "972b4729789c398c99db359b045f51185a5703d8f752ac96436c38355401e042"
+      "sourceRect": {
+        "left": 18,
+        "top": 58,
+        "width": 1218,
+        "height": 1113
+      },
+      "sha256": "d9d29733c6b9c5724b24f71f5e68e87770a67846eb831961aa5605dd97e5a2cc",
+      "master": "environment/forest-v06/masters/lake-ring-20261116/normal.png",
+      "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
+      "bounds": {
+        "x": 2,
+        "y": 6,
+        "w": 186,
+        "h": 167
+      },
+      "hdFile": "environment/forest-v06/masters/lake-ring-20261116/published-0.png",
+      "hdSha256": "c3eb6710e095fdc2fb4dea4597d314ad764c4b12557d43a73e9b9363baf69efc",
+      "replacement": "lake-ring-20261116"
     },
     {
       "id": "pine",

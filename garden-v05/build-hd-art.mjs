@@ -41,7 +41,7 @@ async function recover(master,frame){
 }
 // Reviewed replacements win before legacy records: a similar silhouette is not proof of the right master.
 const replacements=await read('isometric-hd-manifest.json');
-replacements.items.push(...(await read('pond-coordinate-art.json')).items);
+replacements.items.push(...(await read('pond-coordinate-art.json')).items,...(await read('forest-coordinate-art.json')).items);
 for(const item of replacements.items){
  if(sha(await fs.readFile(path.join(root,item.master)))!==item.masterSha256)throw Error('Replacement master changed '+item.id);
  for(const f of item.frameRecords.filter(f=>!f.effectBaseFile)){if(f.hdFile){const bytes=await fs.readFile(path.join(root,f.hdFile));if(sha(bytes)!==f.hdSha256)throw Error('Replacement HD changed '+f.file);const raw=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true});await save(f.file,raw.data,raw.info.width,raw.info.height,{master:item.master,masterSha256:item.masterSha256,sourceRect:f.sourceRect,method:'same uniform master export at density 2',hdFile:f.hdFile,hdSha256:f.hdSha256,palette:item.paletteColors});}else await recover(item.master,{...f,palette:item.paletteColors});}
@@ -146,7 +146,7 @@ for(const id of [...Object.keys(ELF_SOURCES),...Object.keys(FRIEND_SOURCES)])for
 {const sign=renderSign(density);await save('environment/layers/hagrid-farm-sign.png',sign.output,sign.width,sign.height,{...SIGN_SOURCE,method:'build-sign-art renderSign at density 2'});}
 // Forest ring (build-forest-assets.mjs): each prop's authored panel of the hash-checked atlas, fitted to the native ink box.
 {const forest=await read('forest-assets.json');if(sha(await fs.readFile(path.join(root,forest.source)))!==forest.sourceSha256)throw Error('Master changed '+forest.source);
- for(const a of forest.assets){const [x,y,w,h]=a.rect;await recover(forest.source,{file:a.file,sha256:a.sha256,sourceRect:{x,y,w,h},bounds:inkBounds(await rgba(a.file))});}}
+ for(const a of forest.assets){if(a.replacement)continue;const [x,y,w,h]=a.rect;await recover(forest.source,{file:a.file,sha256:a.sha256,sourceRect:{x,y,w,h},bounds:inkBounds(await rgba(a.file))});}}
 // Decorative pond (build-scene.mjs exportProp: rect [880,0,1536,600] of props-v03, 4 px side pad).
 await recover('environment/props-v03.png',{file:'environment/layers/pond.png',sourceRect:{x:880,y:0,w:656,h:600},bounds:inkBounds(await rgba('environment/layers/pond.png'))});
 // Grass/soil tiles (build-scene.mjs): the terrain master's ink box resized onto the exact diamond; only used when it reproduces the shipped tile at 1×.
@@ -174,7 +174,7 @@ const mismatch=async(file,raw)=>{const now=(await rgba(file)).data;let n=0;for(l
 // snapped to sprite24 + snow white. Exact at 1× except 58 of the oak's 33,440 pixels.
 {const winter=await read('environment/winter/provenance.json'),bytes=await fs.readFile(path.join(root,'environment/winter',winter.master));if(sha(bytes)!==winter.masterSha256)throw Error('Master changed '+winter.master);
  const M=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true}),pal=winter.colors.map(h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16))),snow=new Map(),snap=(r,g,b)=>{const k=(r<<16)|(g<<8)|b;if(!snow.has(k))snow.set(k,pal.reduce((a,p)=>{const d=(p[0]-r)**2+(p[1]-g)**2+(p[2]-b)**2;return d<a[1]?[p,d]:a;},[null,Infinity])[0]);return snow.get(k);};
- for(const a of winter.assets){const file='environment/winter/'+a.file;if(sha(await fs.readFile(path.join(root,file)))!==a.sha256)continue; // hut-snow: replaced by the homestead master above
+ for(const a of winter.assets){if(a.replacement)continue;const file='environment/winter/'+a.file;if(sha(await fs.readFile(path.join(root,file)))!==a.sha256)continue; // hut-snow: replaced by the homestead master above
   const [cx,cy]=a.sourceCell,[sx0,sy0,sx1,sy1]=a.sourceInkBox,[ox0,oy0,ox1,oy1]=a.originalInkBox;
   const render=d=>{const W=a.width*d,dw=(ox1-ox0)*d,dh=(oy1-oy0)*d,out=Buffer.alloc(W*a.height*d*4);for(let y=0;y<dh;y++)for(let x=0;x<dw;x++){const i=((cy+sy0+Math.floor((y+.5)*(sy1-sy0)/dh))*M.info.width+cx+sx0+Math.floor((x+.5)*(sx1-sx0)/dw))*4;if(M.data[i+3]<192)continue;const o=((oy0*d+y)*W+ox0*d+x)*4;out.set(snap(M.data[i],M.data[i+1],M.data[i+2]),o);out[o+3]=255;}return out;};
   const off=await mismatch(file,render(1));if(off>a.width*a.height*0.002){skipped.push({native:file,reason:'builder no longer reproduces',pixels:off});continue;}

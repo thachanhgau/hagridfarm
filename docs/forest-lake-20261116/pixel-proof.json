@@ -1,0 +1,57 @@
+{
+  "winterCanopy": {
+    "region": [
+      0,
+      0,
+      190,
+      105
+    ],
+    "previousOpaque": 3979,
+    "newOpaque": 12852,
+    "ratio": 3.2299572756974113
+  },
+  "frames": [
+    {
+      "file": "environment/forest-v06/oak.png",
+      "masterSha256": "8be30dba0ed38637319e40ef2a4faee694b49b57437a4925348f7cac27ca0f20",
+      "sha256": "d9d29733c6b9c5724b24f71f5e68e87770a67846eb831961aa5605dd97e5a2cc",
+      "native": [
+        190,
+        176
+      ],
+      "pivot": [
+        95,
+        174
+      ],
+      "observedRootBottom": 172,
+      "opaquePixels": 18926,
+      "HD": "decor-assets/hd/c63ebea2d4dc096e110e3d89.webp",
+      "hdPreviewPixelIdentical": true
+    },
+    {
+      "file": "environment/winter/oak.png",
+      "masterSha256": "1edc6a930309e0704c69a51b1411e4935e5ed2a0019afd6f4dbd096aef9fc941",
+      "sha256": "5f7b0f522cb34ed529984a067f7eebb8443d616dc1d6de5c4b904f6a313bf736",
+      "native": [
+        190,
+        176
+      ],
+      "pivot": [
+        95,
+        174
+      ],
+      "observedRootBottom": 173,
+      "opaquePixels": 20878,
+      "HD": "decor-assets/hd/13228be0e6fe4e15bcd8d5b6.webp",
+      "hdPreviewPixelIdentical": true
+    }
+  ],
+  "changedHDSelections": [
+    "environment/forest-v06/oak.png",
+    "environment/winter/oak.png"
+  ],
+  "otherHDSelectionsUnchanged": 1556,
+  "placementAndClearanceUnchanged": true,
+  "camera": "Organic canopy and roots use frozen 64x32 guide and original pivot; no fabricated straight-edge certification for tree contours.",
+  "errors": []
+}
