@@ -1,46 +1,46 @@
-import {creatureRest,drawSleepSigns,CREATURE_SLEEP_FILES} from './creature-sleep.mjs?v=26.2';
-import {drawDecorIllumination,drawCreatureEmber} from './decor-lights.mjs?v=26.2';
-import {clipToScenicStage as clipToStage,pondMeadowOutline,pondMeadowMap,pondMeadowTrees} from './pond-meadow.mjs?v=26.2';
-import {HD_ART} from './hd-art.mjs?v=26.2';
-import {createResolution,tagArt,ART_SOURCE,clientToWorld} from './render-resolution.mjs?v=26.2';
-export {clientToWorld} from './render-resolution.mjs?v=26.2';
-import {WOODLAND_FILES,pondWoodlandObjects} from './pond-woodland.mjs?v=26.2';
-import {drawPlacementGrid} from './placement-grid.mjs?v=26.2';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=26.2';
-import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=26.2';
-import {EXTENSION_PENS,FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=26.2';
-export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=26.2';
-import {creatureView,creatureViewFrames} from './creature-view.mjs?v=26.2';
-import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=26.2';
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=26.2';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.2';
-import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=26.2';
-import {resolveCreatureHomes,spotPoint} from './creature-homes.mjs?v=26.2';
-import {drawGardenPathDetails} from './garden-path-details.mjs?v=26.2';
-import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=26.2';
-import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=26.2';
-import {groundStore} from './ground-store.mjs?v=26.2';
-import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=26.2';
-import {drawV24Ground} from './garden-v24-scenery.mjs?v=26.2';
-import {WATER_CROPS,WATERLINE_LIFT,isWaterPlot,drawWaterBed} from './water-crop-art.mjs?v=26.2';
-import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=26.2';
-import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=26.2';
-import {decorObjects,decorFootprintRect,depthSort,footLift,orientedFootprint} from './decor-runtime.mjs?v=26.2';
-import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=26.2';
-import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=26.2';
-import {backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=26.2';
-import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=26.2';
-import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=26.2';
-import {drawNaturalMeadow} from './meadow-ground.mjs?v=26.2';
-import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=26.2';
-import {EDGE_LAYOUT,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=26.2';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=26.2';
-import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=26.2';
-import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=26.2';
-import {EDGE_SCENERY} from './edge-art.mjs?v=26.2';
-import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=26.2';
-import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=26.2';
-import {drawIcon} from './pixel-icons.mjs?v=26.2';
+import {creatureRest,drawSleepSigns,CREATURE_SLEEP_FILES} from './creature-sleep.mjs?v=26.3';
+import {drawDecorIllumination,drawCreatureEmber} from './decor-lights.mjs?v=26.3';
+import {clipToScenicStage as clipToStage,pondMeadowOutline,pondMeadowMap,pondMeadowTrees} from './pond-meadow.mjs?v=26.3';
+import {HD_ART} from './hd-art.mjs?v=26.3';
+import {createResolution,tagArt,ART_SOURCE,clientToWorld} from './render-resolution.mjs?v=26.3';
+export {clientToWorld} from './render-resolution.mjs?v=26.3';
+import {WOODLAND_FILES,pondWoodlandObjects} from './pond-woodland.mjs?v=26.3';
+import {drawPlacementGrid} from './placement-grid.mjs?v=26.3';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorSpot,DECORATION_LAYOUT,pondHome,pondBedRects,POND_NOOK} from './default-decor.mjs?v=26.3';
+import {gardenObjectMetrics,decorFootprint} from './garden-object-metrics.mjs?v=26.3';
+import {EXTENSION_PENS,FARM_LAYOUT,ISO_TILE,nativePixelScale,worldToGrid,tileWidth,tileHeight,iso,worldToCell,plotBounds,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=26.3';
+export {FARM_LAYOUT,ISO_TILE,iso,worldToCell,plotCellScale,plotCellPosition,plotPhysicalBounds} from './garden-grid.mjs?v=26.3';
+import {creatureView,creatureViewFrames} from './creature-view.mjs?v=26.3';
+import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-object-art.mjs?v=26.3';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=26.3';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.3';
+import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=26.3';
+import {resolveCreatureHomes,spotPoint} from './creature-homes.mjs?v=26.3';
+import {drawGardenPathDetails} from './garden-path-details.mjs?v=26.3';
+import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=26.3';
+import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=26.3';
+import {groundStore} from './ground-store.mjs?v=26.3';
+import {FESTIVAL_FILES,festivalObjects,weatherizeCanvas,drawSeasonalFence,drawRoofWeather,drawHeroMotion} from './garden-seasonal-world.mjs?v=26.3';
+import {drawV24Ground} from './garden-v24-scenery.mjs?v=26.3';
+import {WATER_CROPS,WATERLINE_LIFT,isWaterPlot,drawWaterBed} from './water-crop-art.mjs?v=26.3';
+import {FARM_SIGN_ART,canopyWallpaper,canopyInsideWorld,forestExitTrail,backdropExitTrail,overlapsTrail,drawExitTrail} from './forest-composition.mjs?v=26.3';
+import {drawScenicTerrain,drawScenicBackdrop} from './scenic-terrain.mjs?v=26.3';
+import {decorObjects,decorFootprintRect,depthSort,footLift,orientedFootprint} from './decor-runtime.mjs?v=26.3';
+import {wizardObjects,wizardTargets} from './wizard-scenery.mjs?v=26.3';
+import {elfObjects,elfFiles,elfWorkFiles,norbertFiles,norbertObject,CHEER_MS} from './garden-elves.mjs?v=26.3';
+import {backdropTints,drawAtmosphereOverlay,hagridSpeechFor,drawHagridSpeechBubble,drawCreatureBubble} from './garden-atmosphere.mjs?v=26.3';
+import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=26.3';
+import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=26.3';
+import {drawNaturalMeadow} from './meadow-ground.mjs?v=26.3';
+import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=26.3';
+import {EDGE_LAYOUT,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=26.3';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=26.3';
+import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=26.3';
+import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=26.3';
+import {EDGE_SCENERY} from './edge-art.mjs?v=26.3';
+import {SUBMERGED_CREATURE_FILES,submergedCreatureFrame} from './pond-creature-art.mjs?v=26.3';
+import {POND_SCENERY, pondScenery, pondTier, tierScale, tierFootprint} from './garden-pond-ui.mjs?v=26.3';
+import {drawIcon} from './pixel-icons.mjs?v=26.3';
 import {
   animationFrameAt,
   idleFrameAt,
@@ -53,12 +53,12 @@ import {
   harvestPop,
   selectAnimation,
   stableHash,
-} from './scene-animation.mjs?v=26.2';
+} from './scene-animation.mjs?v=26.3';
 import {
   FOREST_ASSETS,
   FOREST_ASSET_FILES,
   createForestSurround,
-} from './forest-surround.mjs?v=26.2';
+} from './forest-surround.mjs?v=26.3';
 
 const root = typeof window === 'undefined' ? globalThis : window;
 const map = root.FARM_SCENE;
@@ -302,7 +302,7 @@ function penAliases(pen) {
   return [String(pen.id)];
 }
 
-export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=26.2';
+export {DECORATION_LAYOUT, DECORATION_IDS, decorationPlacements} from './default-decor.mjs?v=26.3';
 
 /** Keepsakes are displayed as small labelled tokens in the final south plaza. */
 export function keepsakePlacements(scene = map) {
@@ -1096,10 +1096,14 @@ export async function createGarden(canvas, options = {}) {
   function buildTerrainCache(withGrid, withForest, stage) {
     // The ground follows the render density (logical coordinates unchanged) and swaps its art for HD, rebuilding once
     // the HD images it asked for arrive. A device that cannot allocate the dense layer gets the 1× one.
+    // Safari (owner 16/11/2026, snow froze an iPhone 17 for ~37 s a build): its default canvas is GPU-backed, where the
+    // ground's ~1M fillRects and the snow pass's getImageData crawl. Build on a CPU canvas (willReadFrequently), then
+    // copy the finished ground once into a GPU canvas, because a CPU canvas drawn every frame re-uploads every frame.
+    const readable = {willReadFrequently: true};
     let layerDensity = resolution.layer(), cachedCanvas = makeCanvas(canvas, Math.round(map.width * layerDensity), Math.round(map.height * layerDensity));
-    let cachedContext = cachedCanvas.getContext('2d');
+    let cachedContext = cachedCanvas.getContext('2d', readable);
     if (!cachedContext && layerDensity > 1) {
-      layerDensity = 1; cachedCanvas = makeCanvas(canvas, map.width, map.height); cachedContext = cachedCanvas.getContext('2d');
+      layerDensity = 1; cachedCanvas = makeCanvas(canvas, map.width, map.height); cachedContext = cachedCanvas.getContext('2d', readable);
     }
     resolution.adopt(cachedContext, () => terrainCaches.clear());
     cachedContext.setTransform?.(layerDensity, 0, 0, layerDensity, 0, 0);
@@ -1136,7 +1140,11 @@ export async function createGarden(canvas, options = {}) {
       if(stage.pond)drawMeadowEdge(cachedContext);
       drawFutureGrovesLayer(cachedContext,stage,trail);
     }
-    return cachedCanvas;
+    const shown = makeCanvas(canvas, cachedCanvas.width, cachedCanvas.height), shownContext = shown.getContext('2d');
+    if (!shownContext) return cachedCanvas;
+    shownContext.drawImage(cachedCanvas, 0, 0);
+    cachedCanvas.width = cachedCanvas.height = 0;
+    return shown;
   }
 
   // Night statues are re-lit above the tint. Replaying the sprite over the finished scene covered whatever stands in

@@ -1,5 +1,5 @@
-import {$,el,button} from './ui-utils.mjs?v=26.2';
-import {pixelIcon} from './pixel-icons.mjs?v=26.2';
+import {$,el,button} from './ui-utils.mjs?v=26.3';
+import {pixelIcon} from './pixel-icons.mjs?v=26.3';
 const avatarIcons=['profile','seed','scenery','festival','pen','build'];
 const avatars=['✿','☘','☾','✦','♧','♜'];
 export function setupProfile(notify,onClose){
