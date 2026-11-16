@@ -1,10 +1,10 @@
 // «Đàn thú: tâm trạng và tương tác» (25.0 S4, server garden-mood-core): one creature's mood and this cycle's
 // interactions (action tendCreature), its tricks and its rare-coat grooming. The server keeps every number; this
 // panel only shows snapshot.mood. mobile-game imports it on the first «Chăm bé» tap or a tap on Norbert.
-import {$,el,icon,duration} from './ui-utils.mjs?v=26.3';
-import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.3';
-import {COAT_STEPS} from './garden-winter.mjs?v=26.3';
-import {skillCard,skillText} from './garden-skills-card.mjs?v=26.3';
+import {$,el,icon,duration} from './ui-utils.mjs?v=26.4';
+import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.4';
+import {COAT_STEPS} from './garden-winter.mjs?v=26.4';
+import {skillCard,skillText} from './garden-skills-card.mjs?v=26.4';
 
 export const NORBERT='norbert';
 // Play toys (roadmap §4: Đào mỏ – đồ lấp lánh, Kneazle – cuộn len, Chó ba đầu – thổi sáo cho ngủ, HP1).
