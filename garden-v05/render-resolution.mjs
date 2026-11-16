@@ -29,10 +29,10 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
  if(canvas.style&&!canvas.style.width)canvas.style.width=world.width+'px';
  if(canvas.dataset){canvas.dataset.logicalWidth=world.width;canvas.dataset.logicalHeight=world.height;canvas.dataset.pixelDensity=density;}
  const original=context.drawImage.bind(context),cache=new Map(),pending=new Set(),failed=new Map(),budget=(mobile?24:48)*1024*1024;let bytes=0,peakBytes=0,requests=0,active=0,hits=0;
- const queue=[];
+ const queue=[],budgetFallbacks=new Set();let viewKey='';
  function pump(){while(active<2&&queue.length){const job=queue.shift();active++;job().finally(()=>{active--;pump();});}}
  function request(key,source,record){
-  if(queue.length>=64||pending.has(key)||(failed.has(key)&&Date.now()-failed.get(key)<5000)||record.width*record.height*record.density**2*4>budget)return;
+  if(budgetFallbacks.has(key)||queue.length>=64||pending.has(key)||(failed.has(key)&&Date.now()-failed.get(key)<5000)||record.width*record.height*record.density**2*4>budget)return;
   pending.add(key);queue.push(async()=>{
    try{
     const image=new view.Image();image.crossOrigin='anonymous';await new Promise((resolve,reject)=>{image.onload=resolve;image.onerror=reject;image.src=imageUrl(record.file);});requests++;if(image.width!==record.width*record.density||image.height!==record.height*record.density)throw Error('HD dimensions mismatch');
@@ -63,7 +63,9 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
  }
  const onScreen=(args,record)=>visibleDraw(context,canvas,args,{width:record.width,height:record.height},{width:view.innerWidth||1280,height:view.innerHeight||800});
  context.drawImage=function(image,...args){return draw(original,image,args,onScreen);};
- function trim(weight){while(cache.size&&bytes+weight>budget){const oldest=cache.keys().next().value;bytes-=cache.get(oldest).weight;cache.delete(oldest);}}
+ // Once evicted, use native art for this view instead of ping-pong fetching an over-budget working set.
+ // A pan, zoom, quality or weather/stage change reopens admission; the memory limit is unchanged.
+ function trim(weight){while(cache.size&&bytes+weight>budget){const oldest=cache.keys().next().value;bytes-=cache.get(oldest).weight;cache.delete(oldest);budgetFallbacks.add(oldest);}}
  // The pre-composited ground: a whole-world layer at the surface density. It is the size of the surface itself, which
  // surfaceDensity caps at 16 MP, so it has its own allowance next to the HD image budget (owner left the call to us
  // 15/11/2026: 44 MB extra at 2560×1440 on desktop, 18 MB on phones). adopt() gives a layer's context the same HD swap
@@ -77,10 +79,10 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
   const own=layerContext.drawImage.bind(layerContext);
   layerContext.drawImage=function(image,...args){return draw(own,image,args,null);};
  }
- function begin(){context.setTransform?.(density,0,0,density,0,0);context.imageSmoothingEnabled=false;}
+ function begin(scope=''){const rect=canvas.getBoundingClientRect?.(),key=[Math.round((rect?.left||0)/64),Math.round((rect?.top||0)/64),rect?.width,density,scope].join(':');if(key!==viewKey){budgetFallbacks.clear();viewKey=key;}context.setTransform?.(density,0,0,density,0,0);context.imageSmoothingEnabled=false;}
  begin();
  function setEnabled(value){enabled=value;density=enabled&&context.setTransform?surfaceDensity(world.width,world.height,pixelRatio??view.devicePixelRatio??1,mobile):1;canvas.width=Math.round(world.width*density);canvas.height=Math.round(world.height*density);if(canvas.dataset)canvas.dataset.pixelDensity=density;begin();}
- return {context,begin,setEnabled,layer,adopt,stats:()=>({density,logical:[world.width,world.height],backing:[canvas.width,canvas.height],budget,bytes,peakBytes,requests,hits,pending:pending.size,active,queued:queue.length,failed:failed.size})};
+ return {context,begin,setEnabled,layer,adopt,stats:()=>({density,logical:[world.width,world.height],backing:[canvas.width,canvas.height],budget,bytes,peakBytes,requests,hits,pending:pending.size,active,queued:queue.length,failed:failed.size,budgetFallbacks:budgetFallbacks.size})};
 }
 
 /** Pointer coordinates always resolve into the logical world, independently of backing density. */

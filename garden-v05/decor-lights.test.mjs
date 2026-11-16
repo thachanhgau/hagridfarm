@@ -19,11 +19,11 @@ test('lighting follows the exact authored animation cell and facing with no kit 
 test('day and placement previews emit nothing; reduced motion is deterministic and canvas state restored',()=>{
  const asset=manifest.items.find(a=>a.id==='sp_xmas_weasley_tree'),obj={id:asset.id,kind:'store-decor',asset,xy:[400,500]};
  const render=(mode,preview=false)=>{const ops=[],ctx=new Proxy({},{get:(o,k)=>k==='createRadialGradient'?()=>({addColorStop(){}}):k in o?o[k]:(...args)=>ops.push([k,...args]),set:(o,k,v)=>(o[k]=v,true)});drawDecorIllumination(ctx,{...obj,preview},{mode,clock:0,drawAsset:(...args)=>ops.push(['sprite',...args])});return ops;};
- assert.deepEqual(render('day'),[]);assert.deepEqual(render('night',true),[]);assert.deepEqual(render('night'),render('night'));const ops=render('night');assert.equal(ops[0][0],'save');assert.equal(ops.at(-1)[0],'restore');assert.equal(ops.filter(a=>a[0]==='sprite').length,1);
+ assert.deepEqual(render('day'),[]);assert.deepEqual(render('night',true),[]);assert.deepEqual(render('night'),render('night'));const ops=render('night');assert.equal(ops[0][0],'save');assert.equal(ops.at(-1)[0],'restore');assert.equal(ops.filter(a=>a[0]==='sprite').length,0);
 });
 
 test('fire creatures retain the exact current pose, coat and facing; sleep dims embers',async()=>{
  const {drawCreatureEmber}=await import('./decor-lights.mjs'),calls=[],ctx=new Proxy({},{get:(o,k)=>k==='createRadialGradient'?()=>({addColorStop(){}}):k in o?o[k]:()=>{},set:(o,k,v)=>(o[k]=v,true)}),asset={file:'current-pose.webp',coat:'gold',pivotX:32,pivotY:48,bounds:{x:5,y:8,w:54,h:40}};
- for(const species of ['dragon','salamander']){const o={species,asset,xy:[100,200],sleeping:true,facing:'right',authoredFacing:false};assert.ok(drawCreatureEmber(ctx,o,{mode:'night',drawAsset:(...a)=>calls.push(a)}));assert.equal(calls.at(-1)[0],asset);assert.equal(calls.at(-1)[5],true);}
+ for(const species of ['dragon','salamander']){const o={species,asset,xy:[100,200],sleeping:true,facing:'right',authoredFacing:false};assert.ok(drawCreatureEmber(ctx,o,{mode:'night',drawAsset:(...a)=>calls.push(a)}));assert.equal(calls.length,0,'must never repaint through foreground rails');assert.equal(o.asset,asset);}
  assert.equal(drawCreatureEmber(ctx,{species:'unicorn',asset,xy:[0,0]},{mode:'night'}),false);
 });

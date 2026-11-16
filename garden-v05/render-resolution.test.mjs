@@ -82,3 +82,12 @@ test('shop, dock and bag <img> get a 2× srcset from HD_ART through el(); no HD,
  const source=(await import('node:fs')).readFileSync(new URL('./decor-placement-ui.mjs',import.meta.url),'utf8');
  assert.match(source,/thumb\.srcset=hdSrcset\(thumbFile,HD_ART,runtimeImageUrl\);thumb\.src=runtimeImageUrl\(thumbFile\)/);
 });
+
+test('a working set over budget settles to native fallbacks instead of re-fetching evicted HD every frame',async()=>{
+ const loaded=[];let left=0;class FakeImage{width=2048;height=2048;set src(v){loaded.push(v);queueMicrotask(()=>this.onload());}}
+ const ctx={drawImage(){},setTransform(){},getTransform:()=>({a:1,b:0,c:0,d:1,e:0,f:0})},canvas={style:{},dataset:{},getContext:()=>ctx,getBoundingClientRect:()=>({left,top:0,width:500,height:400}),ownerDocument:{defaultView:{innerWidth:390,innerHeight:844,devicePixelRatio:3,Image:FakeImage}}};
+ const art=Object.fromEntries(['a','b','c'].map(id=>[id+'.png',{file:id+'.webp',density:2,width:1024,height:1024}])),surface=createResolution(canvas,{width:500,height:400},{art,imageUrl:f=>f}),images=['a','b','c'].map(id=>tagArt({width:1024,height:1024},id+'.png'));
+ const frames=async()=>{for(let i=0;i<12;i++){surface.begin('snow');for(const im of images)ctx.drawImage(im,10,10);await new Promise(r=>setTimeout(r,0));}};
+ await frames();assert.equal(loaded.length,3,'each visible HD variant admitted at most once per view');assert.equal(surface.stats().pending,0);assert.ok(surface.stats().peakBytes<=surface.stats().budget);
+ left=-100;await frames();assert.ok(loaded.length>3,'panning permits a fresh HD selection');assert.ok(loaded.length<=6,'new view also settles');
+});

@@ -20,10 +20,8 @@ export function drawDecorIllumination(ctx,object,{clock=0,mode='night',hd=false,
  const light=nightDecorFrame(object,clock,{hd});if(!light)return false;
  const a=light.asset,[x,y]=object.xy,pulse=clock>0?1+Math.sin(clock/1700+(object.slot??0))*.055:1,strength=mode==='dusk'?.6:1;
  ctx.save();
- // Restore the exact current authored sprite through the night tint, as with the Dobby statues.
- // No new raster surfaces or image requests; native/HD/atlas selection stays renderer-owned.
- ctx.globalAlpha=(light.kind==='scene'?.16:light.kind==='tree'?.62:.78)*strength;
- if(light.kind!=='scene')drawAsset?.(a,x,y);
+ // Light is additive only. Replaying an opaque body after the tint would cover foreground rails/actors.
+ // Authored sprites, their coats and native/HD atlas cells stay in the depth-sorted scene pass.
  ctx.globalAlpha=1;ctx.globalCompositeOperation='lighter';
  ctx.save();ctx.translate(x,y-2);ctx.scale(1,.5);halo(ctx,0,0,light.kind==='tree'?72:44,'255,207,116',.22*strength);ctx.restore();
  for(const [sx,sy,color]of light.points){
@@ -42,9 +40,9 @@ export const FIRE_CREATURES=Object.freeze(['dragon','salamander']);
 export function drawCreatureEmber(ctx,object,{clock=0,mode='night',drawAsset}={}){
  if(mode==='day'||!FIRE_CREATURES.includes(object?.species)||!object.asset||!object.xy)return false;
  const a=object.asset,b=a.bounds||{x:0,y:0,w:a.width,h:a.height},[x,y]=object.xy,rest=object.sleeping?.55:1,strength=(mode==='dusk'?.6:1)*rest;
- ctx.save();ctx.globalAlpha=.65*strength;drawAsset?.(a,x+(object.drift||0),y+(object.hop||0),null,object.motion,object.facing==='right'&&!object.authoredFacing);
+ ctx.save();
  ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1;
- const px=x-a.pivotX+b.x+b.w/2,py=y-a.pivotY+b.y+b.h*.55;
- halo(ctx,px,py,Math.max(28,b.w*.65),'255,128,45',.27*strength);
+ const center=x-a.pivotX+b.x+b.w/2,px=(object.facing==='right'&&!object.authoredFacing?2*x-center:center)+(object.drift||0)+(object.motion?.swayX||0),py=y-a.pivotY+b.y+b.h*.55+(object.hop||0)+(object.motion?.bobY||0);
+ halo(ctx,px,py,Math.max(28,b.w*.65),'255,128,45',.38*strength);
  ctx.save();ctx.translate(x,y);ctx.scale(1,.5);halo(ctx,0,0,Math.max(38,b.w*.6),'255,171,72',.24*strength);ctx.restore();ctx.restore();return true;
 }

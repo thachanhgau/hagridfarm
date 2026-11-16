@@ -1836,7 +1836,7 @@ export async function createGarden(canvas, options = {}) {
     lastPlotReady = map.plots.map((_, index) => plotIsBuilt(state, index, logicalNow));
 
     context.imageSmoothingEnabled = false;
-    resolution.begin();
+    resolution.begin(activeWeather+':'+currentStage.id);
     context.clearRect(0, 0, map.width, map.height);
     context.fillStyle = '#142620';
     context.fillRect(0, 0, map.width, map.height);
