@@ -11,7 +11,18 @@ export function nightDecorFrame(object,clock=0,{hd=false}={}){
  if(!record)return null;
  return {id,...spec,asset:{...object.asset,...frame},points:record[hd?'hd':'native']};
 }
+// Night lag (owner 16/11/2026): a new radial gradient per bulb every draw cost ~4.5× a stamped sprite. Each colour and
+// strength is drawn once at 256 px, then scaled; with no canvas (tests) the gradient path below stays.
+const HALO=128,haloSprites=new Map();
+function haloSprite(rgb,alpha){
+ const key=rgb+'|'+alpha;if(haloSprites.has(key))return haloSprites.get(key);
+ const c=typeof OffscreenCanvas==='function'?new OffscreenCanvas(HALO*2,HALO*2):globalThis.document?.createElement?.('canvas'),g=c?.getContext?.('2d');
+ let sprite=null;
+ if(g){c.width=c.height=HALO*2;const s=g.createRadialGradient(HALO,HALO,0,HALO,HALO,HALO);s.addColorStop(0,`rgba(${rgb},${alpha})`);s.addColorStop(.3,`rgba(${rgb},${alpha*.45})`);s.addColorStop(1,`rgba(${rgb},0)`);g.fillStyle=s;g.fillRect(0,0,HALO*2,HALO*2);sprite=c;}
+ haloSprites.set(key,sprite);return sprite;
+}
 function halo(ctx,x,y,r,rgb,alpha){
+ const sprite=haloSprite(rgb,alpha);if(sprite){ctx.drawImage(sprite,x-r,y-r,r*2,r*2);return;}
  const gradient=ctx.createRadialGradient?.(x,y,0,x,y,r);if(!gradient?.addColorStop)return;
  gradient.addColorStop(0,`rgba(${rgb},${alpha})`);gradient.addColorStop(.3,`rgba(${rgb},${alpha*.45})`);gradient.addColorStop(1,`rgba(${rgb},0)`);ctx.fillStyle=gradient;ctx.fillRect(x-r,y-r,r*2,r*2);
 }

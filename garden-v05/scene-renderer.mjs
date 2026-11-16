@@ -1159,21 +1159,32 @@ export async function createGarden(canvas, options = {}) {
       const glow = kit.statueGlow(object, clock), b = glow && ((object.facing === 'right' && glow.rightBounds) || glow.bounds);
       if (!b) return;
       const box = {l: Math.floor(object.xy[0] - glow.pivotX + b.x), t: Math.floor(object.xy[1] - glow.pivotY + b.y), w: Math.ceil(b.w) + 1, h: Math.ceil(b.h) + 1};
-      let lit = statueCopies.get(object.id + ':' + object.slot);
-      if (!lit) statueCopies.set(object.id + ':' + object.slot, lit = makeCanvas(canvas, 1, 1));
-      lit.width = Math.round(box.w * d); lit.height = Math.round(box.h * d);
-      const c = lit.getContext('2d'); if (!c) return;
-      c.imageSmoothingEnabled = false;
-      c.drawImage(canvas, Math.round(box.l * d), Math.round(box.t * d), lit.width, lit.height, 0, 0, lit.width, lit.height);
-      c.setTransform(d, 0, 0, d, -box.l * d, -box.t * d);
-      c.globalCompositeOperation = 'destination-in'; drawAssetTo(c, glow, object.xy[0], object.xy[1]);
-      c.globalCompositeOperation = 'destination-out';
-      for (const front of objects.slice(index + 1)) {
+      const fronts = objects.slice(index + 1).filter((front) => {
         const a = front.asset, fb = a && ((front.facing === 'right' && a.rightBounds) || a.bounds);
-        if (!fb || !Array.isArray(front.xy)) continue;
+        if (!fb || !Array.isArray(front.xy)) return false;
         const l = front.xy[0] - a.pivotX + fb.x, t = front.xy[1] - a.pivotY + fb.y;
-        if (l >= box.l + box.w || l + fb.w <= box.l || t >= box.t + box.h || t + fb.h <= box.t) continue;
-        drawAssetTo(c, a, front.xy[0] + (front.drift || 0), front.xy[1] + (front.hop || 0), null, front.motion, front.facing === 'right' && !front.authoredFacing);
+        return !(l >= box.l + box.w || l + fb.w <= box.l || t >= box.t + box.h || t + fb.h <= box.t);
+      });
+      // Night lag (owner 16/11/2026): reading the main canvas back and reallocating the copy cost ~4 ms a statue every
+      // draw. The copy only changes with the statue's frame, its place, the density, the weather or what stands in front.
+      const cell = (a) => `${frameFile(a)}@${a.atlasRect?.x ?? ''},${a.atlasRect?.y ?? ''}`;
+      const key = [cell(glow), glow.bobY || 0, glow.swayX || 0, box.l, box.t, box.w, box.h, d, activeWeather,
+        ...fronts.map((f) => `${cell(f.asset)}:${f.xy}:${f.drift || 0}:${f.hop || 0}:${f.motion?.swayX || 0}:${f.motion?.bobY || 0}:${f.facing}`)].join('|');
+      const id = object.id + ':' + object.slot;
+      let copy = statueCopies.get(id);
+      if (!copy) statueCopies.set(id, copy = {lit: makeCanvas(canvas, 1, 1), key: ''});
+      const lit = copy.lit;
+      if (copy.key !== key) {
+        const w = Math.round(box.w * d), h = Math.round(box.h * d);
+        if (lit.width !== w || lit.height !== h) { lit.width = w; lit.height = h; }
+        const c = lit.getContext('2d'); if (!c) return;
+        c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'copy'; c.imageSmoothingEnabled = false;
+        c.drawImage(canvas, Math.round(box.l * d), Math.round(box.t * d), w, h, 0, 0, w, h);
+        c.setTransform(d, 0, 0, d, -box.l * d, -box.t * d);
+        c.globalCompositeOperation = 'destination-in'; drawAssetTo(c, glow, object.xy[0], object.xy[1]);
+        c.globalCompositeOperation = 'destination-out';
+        for (const front of fronts) drawAssetTo(c, front.asset, front.xy[0] + (front.drift || 0), front.xy[1] + (front.hop || 0), null, front.motion, front.facing === 'right' && !front.authoredFacing);
+        copy.key = key;
       }
       out.push({object, glow, lit, box});
     });
