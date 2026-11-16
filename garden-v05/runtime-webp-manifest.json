@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "0120362ac3a4",
+  "revision": "225fe8670e20",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -16376,10 +16376,10 @@
       "file": "runtime-webp/environment/layers/hut.webp",
       "width": 256,
       "height": 224,
-      "sourceBytes": 10641,
-      "bytes": 6714,
-      "sourceSha256": "0b1bd47ef3ea8343348feb915956946c0fcafcbb43197043ba20dd8b219de4a2",
-      "sha256": "a88b21796d4d72b6e742365d0164fbe5e31bfca333db597c3064030dac57ea50"
+      "sourceBytes": 15671,
+      "bytes": 10176,
+      "sourceSha256": "6d7aca331794eb46530f48abb69d2873635440117dbbb4a4fd2eadde12739ae9",
+      "sha256": "2f32130b0aa19f49f55784114f534a87f03f5e7a9bbb594ac1368ce7c325075a"
     },
     {
       "source": "environment/layers/oak.png",
@@ -16876,10 +16876,10 @@
       "file": "runtime-webp/environment/winter/hut-snow.webp",
       "width": 256,
       "height": 224,
-      "sourceBytes": 11160,
-      "bytes": 7228,
-      "sourceSha256": "4f3d62022da1d150dcb7eb2c29bca41e3aa0b735547143791600c36161688306",
-      "sha256": "9f441ba6d3fd7b18234eea26fd021e1e5f93b32713a612a12d2d4fa2098ffcac"
+      "sourceBytes": 16119,
+      "bytes": 10706,
+      "sourceSha256": "76ecb29745d0417aab1f9c858d2a7753d6f166bf3c069f1a2f12c9976bd61484",
+      "sha256": "c5db26604e308383e5781f8ff1819cec5e2601264c988450eb50002b402fa1f5"
     },
     {
       "source": "environment/winter/iso-habitat_niffler-0.png",
@@ -17997,11 +17997,6 @@
       "file": "decor-assets/hd/174b640b89c37140e70ce18e.webp",
       "bytes": 10154,
       "sha256": "174b640b89c37140e70ce18e5a469ad1658f56e0fe15d504497c06e1ab512083"
-    },
-    {
-      "file": "decor-assets/hd/1762fe33b7772b8234cbc03b.webp",
-      "bytes": 19634,
-      "sha256": "1762fe33b7772b8234cbc03bc99a1894946ed66ae5a69bfc1856f7355efff021"
     },
     {
       "file": "decor-assets/hd/17689659c34e94afb084e81c.webp",
@@ -20844,11 +20839,6 @@
       "sha256": "802ce9e9bac13ce72f80c02943fbe4be09fe4ca4edf3b69c6b11a20f1c06e8df"
     },
     {
-      "file": "decor-assets/hd/803b312d5b6d5ca78cf153aa.webp",
-      "bytes": 18518,
-      "sha256": "803b312d5b6d5ca78cf153aaa3bb5651cfd8c20a7eb0a8934d44292546a5c029"
-    },
-    {
       "file": "decor-assets/hd/809d41f4b329343e98878ab4-atlas.webp",
       "bytes": 15950,
       "sha256": "809d41f4b329343e98878ab4a5af792c6baa0d7c6813f75dc1c7cd6d2238261c"
@@ -21612,6 +21602,11 @@
       "file": "decor-assets/hd/9b54b25e361da55e37fb0e86.webp",
       "bytes": 10340,
       "sha256": "9b54b25e361da55e37fb0e8600d9b31446dadf813f144016cc41ee995b526c9f"
+    },
+    {
+      "file": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp",
+      "bytes": 28634,
+      "sha256": "9b86a305188d1e7fd0129aafa89708cb0b341b17e1b4363710530ed02111bd4b"
     },
     {
       "file": "decor-assets/hd/9b9b942c148011ba56d8a48f.webp",
@@ -24159,6 +24154,11 @@
       "sha256": "f14bf06f0dcdeb172d490eab98b01f9d3b6b18ae801907e1e609454f0a59beeb"
     },
     {
+      "file": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp",
+      "bytes": 29752,
+      "sha256": "f17882a6b8edfe356ef129d48e20b56b29b9ac5a4fa1d4b6fc244cf8804095d6"
+    },
+    {
       "file": "decor-assets/hd/f1969c003a745906ec459e2d.webp",
       "bytes": 336,
       "sha256": "f1969c003a745906ec459e2dff801620bc368c35e57b10a6a7b1004f3cff8c7b"
@@ -24542,9 +24542,9 @@
   "totals": {
     "converted": 1741,
     "existingWebp": 1421,
-    "originalBytes": 17708086,
-    "webpBytes": 15008948,
-    "savedBytes": 2699138,
-    "savedPercent": 15.24
+    "originalBytes": 17738309,
+    "webpBytes": 15036122,
+    "savedBytes": 2702187,
+    "savedPercent": 15.23
   }
 }

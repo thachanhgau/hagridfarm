@@ -1,0 +1,7 @@
+# Owner corrections, 16 November 2026
+
+The owner rejected the smaller Hagrid cottage replacement. Restore both native normal/winter sprites and both original HD selections byte-for-byte from bf55d963. `isometric-hd-preserve.json` now protects `scenery_hut` as well as the ghost well. The publishing acceptance/manifest exclude the rejected hut; 107 replacements remain. Geometry, placement and the existing cottage master are unchanged.
+
+Both current elf statues need matching night lighting. The old twelve night sprites contained the previous statue silhouettes. Night/dusk now relight the current animation atlas frame, including its exact source rectangle, facing and pivot, after the atmosphere tint. Existing warm/cool light halos remain; illumination breathes slowly and clock 0 is still. No independently redrawn silhouette is introduced. The twelve historical night images remain recovery material and are never requested by this path.
+
+Verification: preservation check (13 files), published pixel check (107 models, 243 native records, 213 exact HD exports, 416 atlas cells), and all 20 festival/winter tests pass. A new regression was first observed failing on the stale night sprite, then passes for both statues, both facings and four clocks. Source-only result; HPVNN import and browser proof recorded separately.

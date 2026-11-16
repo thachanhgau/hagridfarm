@@ -182,6 +182,46 @@
         "decor-assets/native/hw_ghost_well_right.png": null,
         "decor-assets/native/hw_ghost_well_atlas.png": null
       }
+    },
+    {
+      "id": "scenery_hut",
+      "kind": "scenery",
+      "reason": "Owner rejected the smaller redraw on 2026-11-16; retain the existing Hagrid cottage, original size, normal/winter and original HD. Baseline bf55d963",
+      "files": [
+        {
+          "file": "environment/layers/hut.png",
+          "sha256": "6d7aca331794eb46530f48abb69d2873635440117dbbb4a4fd2eadde12739ae9"
+        },
+        {
+          "file": "environment/winter/hut-snow.png",
+          "sha256": "76ecb29745d0417aab1f9c858d2a7753d6f166bf3c069f1a2f12c9976bd61484"
+        },
+        {
+          "file": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp",
+          "sha256": "9b86a305188d1e7fd0129aafa89708cb0b341b17e1b4363710530ed02111bd4b"
+        },
+        {
+          "file": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp",
+          "sha256": "f17882a6b8edfe356ef129d48e20b56b29b9ac5a4fa1d4b6fc244cf8804095d6"
+        }
+      ],
+      "hdEntries": {
+        "environment/layers/hut.png": {
+          "file": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp",
+          "density": 2,
+          "width": 256,
+          "height": 224
+        },
+        "environment/winter/hut-snow.png": {
+          "file": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp",
+          "density": 2,
+          "width": 256,
+          "height": 224
+        }
+      },
+      "winterMappings": {
+        "environment/layers/hut.png": "environment/winter/hut-snow.png"
+      }
     }
   ]
 }

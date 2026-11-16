@@ -10020,12 +10020,12 @@
       "sha256": "dafa3a40aae74f7b72bfb10cbc0f068e6853915c28314a01a3c2836646a56052"
     },
     "environment/layers/hut.png": {
-      "file": "decor-assets/hd/803b312d5b6d5ca78cf153aa.webp",
+      "file": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp",
       "density": 2,
       "width": 256,
       "height": 224,
-      "bytes": 18518,
-      "sha256": "803b312d5b6d5ca78cf153aaa3bb5651cfd8c20a7eb0a8934d44292546a5c029"
+      "bytes": 28634,
+      "sha256": "9b86a305188d1e7fd0129aafa89708cb0b341b17e1b4363710530ed02111bd4b"
     },
     "environment/layers/pond.png": {
       "file": "decor-assets/hd/5450f31c6097e5e49ba477b7.webp",
@@ -10292,12 +10292,12 @@
       "sha256": "4497a31d417203a0a500fc3a7a7c64efae869e069419b3ad35e86a792235575f"
     },
     "environment/winter/hut-snow.png": {
-      "file": "decor-assets/hd/1762fe33b7772b8234cbc03b.webp",
+      "file": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp",
       "density": 2,
       "width": 256,
       "height": 224,
-      "bytes": 19634,
-      "sha256": "1762fe33b7772b8234cbc03bc99a1894946ed66ae5a69bfc1856f7355efff021"
+      "bytes": 29752,
+      "sha256": "f17882a6b8edfe356ef129d48e20b56b29b9ac5a4fa1d4b6fc244cf8804095d6"
     },
     "environment/winter/iso-habitat_niffler-0.png": {
       "file": "decor-assets/hd/1578399c5382e991c75bb907.webp",
@@ -12928,7 +12928,7 @@
       "totalFrames": 8
     }
   },
-  "runtimeBytes": 10708856,
+  "runtimeBytes": 10729090,
   "provenance": [
     {
       "native": "isometric-hd-assets/published-native/decor_pumpkin_lantern/frame-0.png",
@@ -22161,90 +22161,6 @@
         "#B7DEE0"
       ],
       "silhouetteIoU": 0.968
-    },
-    {
-      "native": "environment/layers/hut.png",
-      "file": "decor-assets/hd/803b312d5b6d5ca78cf153aa.webp",
-      "master": "isometric-architecture-refinements/masters/scenery_hut-refined.png",
-      "masterSha256": "0ff67d88e2e1e40a56932d94643f7cccc2a872ec93c538d154aac230a4272a09",
-      "sourceRect": {
-        "x": 133,
-        "y": 103,
-        "w": 657,
-        "h": 680
-      },
-      "method": "same uniform master export at density 2",
-      "hdFile": "isometric-extra-assets/hd-preview/scenery_hut/frame-01.png",
-      "hdSha256": "533b221fff5f692ffc90b61194513012eb9ff3e312bedc9661b0abd70bbdcc63",
-      "palette": [
-        "#231F2E",
-        "#4A3042",
-        "#735044",
-        "#A57554",
-        "#41465C",
-        "#687486",
-        "#A6B1AE",
-        "#D6D8BF",
-        "#24483F",
-        "#3F6A45",
-        "#71934B",
-        "#B0BD67",
-        "#8B4A3F",
-        "#C97952",
-        "#E7AE73",
-        "#F5D69A",
-        "#874056",
-        "#C75B4B",
-        "#ED8A45",
-        "#FFC36B",
-        "#3E3B70",
-        "#6961A6",
-        "#70A8B6",
-        "#B7DEE0"
-      ],
-      "silhouetteIoU": 0.992
-    },
-    {
-      "native": "environment/winter/hut-snow.png",
-      "file": "decor-assets/hd/1762fe33b7772b8234cbc03b.webp",
-      "master": "isometric-architecture-refinements/masters/scenery_hut-refined.png",
-      "masterSha256": "0ff67d88e2e1e40a56932d94643f7cccc2a872ec93c538d154aac230a4272a09",
-      "sourceRect": {
-        "x": 984,
-        "y": 103,
-        "w": 657,
-        "h": 680
-      },
-      "method": "same uniform master export at density 2",
-      "hdFile": "isometric-extra-assets/hd-preview/scenery_hut/frame-05.png",
-      "hdSha256": "74129bb8c95a07adc4f89578b08d356914a5e8f9bd02e7976ab6d0e9c94f9e5d",
-      "palette": [
-        "#231F2E",
-        "#4A3042",
-        "#735044",
-        "#A57554",
-        "#41465C",
-        "#687486",
-        "#A6B1AE",
-        "#D6D8BF",
-        "#24483F",
-        "#3F6A45",
-        "#71934B",
-        "#B0BD67",
-        "#8B4A3F",
-        "#C97952",
-        "#E7AE73",
-        "#F5D69A",
-        "#874056",
-        "#C75B4B",
-        "#ED8A45",
-        "#FFC36B",
-        "#3E3B70",
-        "#6961A6",
-        "#70A8B6",
-        "#B7DEE0"
-      ],
-      "silhouetteIoU": 0.993
     },
     {
       "native": "native-complete-objects/herbology_greenhouse/frame-01.png",
@@ -60063,6 +59979,46 @@
       "silhouetteIoU": 0.972
     },
     {
+      "native": "environment/layers/hut.png",
+      "file": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp",
+      "master": "environment/homestead-20261108/masters/master.png",
+      "masterSha256": "bff9af864d4996a3fbec97b227dc325801fa52a6fc9c89000d3aed0af46b8b40",
+      "sourceRect": {
+        "left": 18,
+        "top": 11,
+        "width": 949,
+        "height": 766
+      },
+      "logicalBounds": {
+        "x": 4,
+        "y": 20,
+        "w": 248,
+        "h": 200
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.995
+    },
+    {
+      "native": "environment/winter/hut-snow.png",
+      "file": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp",
+      "master": "environment/homestead-20261108/masters/master.png",
+      "masterSha256": "bff9af864d4996a3fbec97b227dc325801fa52a6fc9c89000d3aed0af46b8b40",
+      "sourceRect": {
+        "left": 1010,
+        "top": 11,
+        "width": 949,
+        "height": 766
+      },
+      "logicalBounds": {
+        "x": 4,
+        "y": 20,
+        "w": 248,
+        "h": 200
+      },
+      "legacyAlphaMask": false,
+      "silhouetteIoU": 0.996
+    },
+    {
       "native": "world-v241/hero-yule.png",
       "file": "decor-assets/hd/2659fba420694f4ac5248f27.webp",
       "master": "world-v241/masters/isometric-hd-audit-20261115/hero-yule.png",
@@ -69256,14 +69212,6 @@
     }
   ],
   "skipped": [
-    {
-      "native": "environment/layers/hut.png",
-      "reason": "stale frame record"
-    },
-    {
-      "native": "environment/winter/hut-snow.png",
-      "reason": "stale frame record"
-    },
     {
       "native": "environment/plot-props/potion_bench.png",
       "reason": "stale frame record"
