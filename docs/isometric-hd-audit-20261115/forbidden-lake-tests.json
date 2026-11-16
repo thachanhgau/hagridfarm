@@ -1,0 +1,32 @@
+{
+  "source": {
+    "tests": 498,
+    "pass": 495,
+    "fail": 1,
+    "skipped": 2,
+    "preexistingFailure": "progression-engine.test.mjs:476 MAX_LEVEL10000 vs expected500"
+  },
+  "focused": {
+    "pass": 27,
+    "fail": 0
+  },
+  "server": {
+    "pass": 14,
+    "fail": 0
+  },
+  "preservation": {
+    "files": 13,
+    "errors": 0
+  },
+  "pixelProof": {
+    "otherModels": 107,
+    "native": 243,
+    "HD": 213,
+    "atlasCells": 416
+  },
+  "WebP": {
+    "conversions": 1741,
+    "existing": 1417
+  },
+  "balance": "Only three footprint arrays in source/server DB changed. All prices, capacity and economy fields unchanged."
+}

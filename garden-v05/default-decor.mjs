@@ -59,12 +59,12 @@ export function defaultDecorFootprint(id) {
   return d ? [d.height, d.width] : [1, 1];
 }
 
-/** The built pond's ground [long, short] by tier (balance pond_1..3: [5, 4], [7, 5], [9, 6]), null before «Ao cá». */
+/** The built pond's ground [long, short] by tier (balance pond_1..3: [11, 8]), null before «Ao cá». */
 export const pondFootprint = (built = []) => DB.expansions.filter(e => e.kind === 'pond' && built?.includes?.(e.id)).at(-1)?.footprint ?? null;
 
 /** «Bờ hồ» (owner 08/11/2026): the built pond is fixed and faces right (long side along the columns, mirrored art)
  *  on the open meadow behind the north fence (garden-growth POND_LAND), centred on the col-20.5 path (owner «lối … ra
- *  thẳng trung tâm của hồ»): ground cols 16–25, back row −11.5, bank on row −5.5. Null without a pond. */
+ *  thẳng trung tâm của hồ»): ground cols 15–26, back row −11.5, bank on row −3.5. Null without a pond. */
 export const POND_FACING = 'right';
 export function pondHome(scene, built = []) {
   const size = pondFootprint(built);
@@ -84,7 +84,7 @@ export function pondBedRects(at, built = [], count = 0) {
   });
 }
 /** «Góc nghỉ» (owner «khu vực giữa … tạo tiểu cảnh»): the 3×3 vignette's foot, between the paddies and the pond. */
-export const POND_NOOK = Object.freeze({at: [15, -3], footprint: [3, 3]}); // ground cols 12.5–15.5 × rows −5.5…−2.5
+export const POND_NOOK = Object.freeze({at: [14, -3], footprint: [3, 3]}); // ground cols 11.5–14.5 × rows −5.5…−2.5; clears the expanded Forbidden Lake
 /** Pond beds by tier (server garden-pond-core): 4 at «Ao cá», 7 at «Hồ rong», 10 at «Hồ sâu». */
 export const pondBedCount = built => (built?.includes?.('pond_3') ? 10 : built?.includes?.('pond_2') ? 7 : built?.includes?.('pond_1') ? 4 : 0);
 

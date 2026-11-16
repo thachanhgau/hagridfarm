@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "225fe8670e20",
+  "revision": "4c9fbb2ec21c",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -16574,32 +16574,32 @@
     {
       "source": "environment/pond/pond-1.png",
       "file": "runtime-webp/environment/pond/pond-1.webp",
-      "width": 480,
-      "height": 298,
-      "sourceBytes": 14555,
-      "bytes": 8804,
-      "sourceSha256": "54aba62d69904fafdd0f524c02636864add132a60b212fe7c016d817e2e01547",
-      "sha256": "5330906f0ced17db0b29b93f048cf792dda4f84fabf301528a53ffe86a6e8646"
+      "width": 608,
+      "height": 486,
+      "sourceBytes": 40166,
+      "bytes": 23842,
+      "sourceSha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+      "sha256": "b8d79d7e1492eac5d60019bfd2135e44c2baf16cda7655d52bda49d7f4f04709"
     },
     {
       "source": "environment/pond/pond-2.png",
       "file": "runtime-webp/environment/pond/pond-2.webp",
-      "width": 480,
-      "height": 298,
-      "sourceBytes": 16245,
-      "bytes": 9744,
-      "sourceSha256": "e2df038429e4d2002717569117ecc020752f89c4c78781c1dd12f3bc36c7f90e",
-      "sha256": "3091c19c95997b1e23c37c833898d2b112880ac6b13388f71f2c527db26d91ec"
+      "width": 608,
+      "height": 486,
+      "sourceBytes": 40166,
+      "bytes": 23842,
+      "sourceSha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+      "sha256": "b8d79d7e1492eac5d60019bfd2135e44c2baf16cda7655d52bda49d7f4f04709"
     },
     {
       "source": "environment/pond/pond-3.png",
       "file": "runtime-webp/environment/pond/pond-3.webp",
-      "width": 480,
-      "height": 298,
-      "sourceBytes": 9628,
-      "bytes": 3868,
-      "sourceSha256": "e4630a58d4f2bbe8c3866473ca5bdb2e7d974c7d2269759746d3bd3ab4c04c50",
-      "sha256": "4e37cce99ecc799679afe64ce76dcf0b0548e30614afde010fb31165db097250"
+      "width": 608,
+      "height": 486,
+      "sourceBytes": 40166,
+      "bytes": 23842,
+      "sourceSha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+      "sha256": "b8d79d7e1492eac5d60019bfd2135e44c2baf16cda7655d52bda49d7f4f04709"
     },
     {
       "source": "environment/pond/pond-bed.png",
@@ -17104,32 +17104,32 @@
     {
       "source": "environment/winter/pond-1-snow.png",
       "file": "runtime-webp/environment/winter/pond-1-snow.webp",
-      "width": 480,
-      "height": 298,
-      "sourceBytes": 8635,
-      "bytes": 4552,
-      "sourceSha256": "c1d8254c05a5134d4474befa89f05fdd3f49a477cb967c1e09b62991982b2e0f",
-      "sha256": "ae9d04ee48ac79d53fc027fc7c7d1723293839886292d8ef1696a404f9ea55e8"
+      "width": 608,
+      "height": 486,
+      "sourceBytes": 52375,
+      "bytes": 32304,
+      "sourceSha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+      "sha256": "c8011d81f955f906ed6fe66329425cbb44e4476374fe57cd6804c1be1b6b0e67"
     },
     {
       "source": "environment/winter/pond-2-snow.png",
       "file": "runtime-webp/environment/winter/pond-2-snow.webp",
-      "width": 480,
-      "height": 298,
-      "sourceBytes": 8886,
-      "bytes": 3674,
-      "sourceSha256": "29fa4faf3815e3db7e88ae0a8ad5f2627c442b47c9112a528023fd73983ff77d",
-      "sha256": "74902e21f98246f6322818a98ca85e94c3645701f144dbfadff96f8da8e4f25c"
+      "width": 608,
+      "height": 486,
+      "sourceBytes": 52375,
+      "bytes": 32304,
+      "sourceSha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+      "sha256": "c8011d81f955f906ed6fe66329425cbb44e4476374fe57cd6804c1be1b6b0e67"
     },
     {
       "source": "environment/winter/pond-3-snow.png",
       "file": "runtime-webp/environment/winter/pond-3-snow.webp",
-      "width": 480,
-      "height": 298,
-      "sourceBytes": 11109,
-      "bytes": 5902,
-      "sourceSha256": "2fd50911087dca77ee9fa5a4e4f206b9cf4bf22ccd81a2394cf9d1d762a4748f",
-      "sha256": "80a08756bd09097b00b8ea985bcd98aabbd33bb5d48c403cbe91289a27e87554"
+      "width": 608,
+      "height": 486,
+      "sourceBytes": 52375,
+      "bytes": 32304,
+      "sourceSha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+      "sha256": "c8011d81f955f906ed6fe66329425cbb44e4476374fe57cd6804c1be1b6b0e67"
     },
     {
       "source": "environment/winter/pond-bed-snow.png",
@@ -18609,11 +18609,6 @@
       "sha256": "2ec5622bb17f2951fe1866b6fe7780fcc64459124018d6332a35b0a7ca1f5748"
     },
     {
-      "file": "decor-assets/hd/2ee708ac705f0d8bde0e8564.webp",
-      "bytes": 23726,
-      "sha256": "2ee708ac705f0d8bde0e856407a16b225d32818d64b3618e807d0338ba9830bc"
-    },
-    {
       "file": "decor-assets/hd/2f8a2200005af3378623bb00.webp",
       "bytes": 1656,
       "sha256": "2f8a2200005af3378623bb006c1de897691870022eecc2bc39e381fdc95e6d80"
@@ -18917,11 +18912,6 @@
       "file": "decor-assets/hd/375f265069253864ada74530.webp",
       "bytes": 1142,
       "sha256": "375f265069253864ada745307d0a6d8289961ada4a8cd896ab64bdf85857cb15"
-    },
-    {
-      "file": "decor-assets/hd/376f6f6c08d509000b29d220.webp",
-      "bytes": 19040,
-      "sha256": "376f6f6c08d509000b29d220f43c18ee78172dc6d07febe3347bfaeaf5b9b46d"
     },
     {
       "file": "decor-assets/hd/3794490a5148ccf62106b033-atlas.webp",
@@ -19559,11 +19549,6 @@
       "sha256": "4f2eb170e56c4f2f0af689e9ef8d583402a0258a859063fa7d42b34426085017"
     },
     {
-      "file": "decor-assets/hd/4f2f9f7cf00d547076ccd2f7.webp",
-      "bytes": 22436,
-      "sha256": "4f2f9f7cf00d547076ccd2f708acfff344eaf213910433ec00b7f9cbdad388b7"
-    },
-    {
       "file": "decor-assets/hd/4f38e88251ed844e356a86f9.webp",
       "bytes": 3500,
       "sha256": "4f38e88251ed844e356a86f99857e93d591a05db36ad7078be42d87076385f96"
@@ -20127,11 +20112,6 @@
       "file": "decor-assets/hd/66ec9c4e2b6ca3edb3b18381.webp",
       "bytes": 5168,
       "sha256": "66ec9c4e2b6ca3edb3b183819a989c308b3dc6a16135fecfb9d839ef2ffc408f"
-    },
-    {
-      "file": "decor-assets/hd/66fc649c53e611793164627e.webp",
-      "bytes": 26560,
-      "sha256": "66fc649c53e611793164627efcb2fcde87d42fcbb0423bd4c539357c2c70bc68"
     },
     {
       "file": "decor-assets/hd/67201b182beac553ce4351c1.webp",
@@ -21889,11 +21869,6 @@
       "sha256": "a54c017aba24058c918faf4ec02c5066cb82e35f43601102b2b61ff541d081d4"
     },
     {
-      "file": "decor-assets/hd/a55d535005b2e35632c0b18d.webp",
-      "bytes": 20628,
-      "sha256": "a55d535005b2e35632c0b18d5bd440df0fdc93a75d874abad4dc55c88832f275"
-    },
-    {
       "file": "decor-assets/hd/a5771003dfb9aa9d65e01b8a-atlas.webp",
       "bytes": 4646,
       "sha256": "a5771003dfb9aa9d65e01b8a528db0ba9517f95c985b7a1e516f1bdb9f435331"
@@ -22007,11 +21982,6 @@
       "file": "decor-assets/hd/aa32ceb8d306f951a68250e1.webp",
       "bytes": 4960,
       "sha256": "aa32ceb8d306f951a68250e10e0c3504785d8e696f9460b47a9fb0b3204be5c2"
-    },
-    {
-      "file": "decor-assets/hd/aa9788a247b7b8c45ec6024a.webp",
-      "bytes": 20706,
-      "sha256": "aa9788a247b7b8c45ec6024a06e133482b18a80d3676a6a423281e5f712759ec"
     },
     {
       "file": "decor-assets/hd/aab0b3bb3dc95c29b375a1c0.webp",
@@ -22314,6 +22284,11 @@
       "sha256": "b4d67a5fbefeb72e1fc8a4518cc7a51350bacf31decff1323d05eb55161f0df4"
     },
     {
+      "file": "decor-assets/hd/b4ed69adc47e441802244b8d.webp",
+      "bytes": 98212,
+      "sha256": "b4ed69adc47e441802244b8dd87b73bbda5f9ea64c1eb5d14c469f899c952134"
+    },
+    {
       "file": "decor-assets/hd/b50c36b732e7802fe38b1efe-atlas.webp",
       "bytes": 14282,
       "sha256": "b50c36b732e7802fe38b1efe1c9ae51c5e27ea07572161287959cbb025149288"
@@ -22362,6 +22337,11 @@
       "file": "decor-assets/hd/b6614516a54321f99bf34f61.webp",
       "bytes": 1850,
       "sha256": "b6614516a54321f99bf34f617209d23485a76496be8eb73d1f8cae3d015b6c3c"
+    },
+    {
+      "file": "decor-assets/hd/b668accaa9949963dbdea503.webp",
+      "bytes": 69424,
+      "sha256": "b668accaa9949963dbdea50308d103878d1d9750c8f6b2e778cb253526ef9dbc"
     },
     {
       "file": "decor-assets/hd/b679c6ddea1e4ad455b3c85b.webp",
@@ -24541,10 +24521,10 @@
   ],
   "totals": {
     "converted": 1741,
-    "existingWebp": 1421,
-    "originalBytes": 17738309,
-    "webpBytes": 15036122,
-    "savedBytes": 2702187,
-    "savedPercent": 15.23
+    "existingWebp": 1417,
+    "originalBytes": 17981414,
+    "webpBytes": 15202556,
+    "savedBytes": 2778858,
+    "savedPercent": 15.45
   }
 }

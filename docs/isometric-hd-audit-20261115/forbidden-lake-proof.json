@@ -1,0 +1,151 @@
+{
+  "frames": [
+    {
+      "file": "environment/pond/pond-1.png",
+      "nativeSha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+      "hd": "decor-assets/hd/b668accaa9949963dbdea503.webp",
+      "width": 608,
+      "height": 486,
+      "density": 2,
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8"
+    },
+    {
+      "file": "environment/winter/pond-1-snow.png",
+      "nativeSha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+      "hd": "decor-assets/hd/b4ed69adc47e441802244b8d.webp",
+      "width": 608,
+      "height": 486,
+      "density": 2,
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff"
+    },
+    {
+      "file": "environment/pond/pond-2.png",
+      "nativeSha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+      "hd": "decor-assets/hd/b668accaa9949963dbdea503.webp",
+      "width": 608,
+      "height": 486,
+      "density": 2,
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8"
+    },
+    {
+      "file": "environment/winter/pond-2-snow.png",
+      "nativeSha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+      "hd": "decor-assets/hd/b4ed69adc47e441802244b8d.webp",
+      "width": 608,
+      "height": 486,
+      "density": 2,
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff"
+    },
+    {
+      "file": "environment/pond/pond-3.png",
+      "nativeSha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
+      "hd": "decor-assets/hd/b668accaa9949963dbdea503.webp",
+      "width": 608,
+      "height": 486,
+      "density": 2,
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8"
+    },
+    {
+      "file": "environment/winter/pond-3-snow.png",
+      "nativeSha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
+      "hd": "decor-assets/hd/b4ed69adc47e441802244b8d.webp",
+      "width": 608,
+      "height": 486,
+      "density": 2,
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff"
+    }
+  ],
+  "observedTimberSegment": {
+    "method": "observed lower brown edge of the unoccluded normal-season landing plank; limited local support, not whole-shore or exact-corner certification",
+    "points": [
+      [
+        166,
+        713
+      ],
+      [
+        167,
+        711
+      ],
+      [
+        168,
+        711
+      ],
+      [
+        169,
+        711
+      ],
+      [
+        170,
+        710
+      ],
+      [
+        171,
+        709
+      ],
+      [
+        172,
+        708
+      ],
+      [
+        173,
+        708
+      ],
+      [
+        174,
+        708
+      ],
+      [
+        175,
+        709
+      ],
+      [
+        176,
+        709
+      ],
+      [
+        177,
+        707
+      ],
+      [
+        178,
+        708
+      ],
+      [
+        179,
+        707
+      ],
+      [
+        180,
+        707
+      ]
+    ],
+    "density": 2,
+    "default": {
+      "axis": "row",
+      "slope": -0.5,
+      "intercept": 795.5,
+      "span": 7,
+      "maxDistance": 0.75,
+      "samples": 15
+    },
+    "mirrored": {
+      "axis": "column",
+      "slope": 0.5,
+      "intercept": 188,
+      "span": 7,
+      "maxDistance": 0.75,
+      "samples": 15
+    }
+  },
+  "organicCamera": "Irregular shoreline, roots and canopy are reviewed against the coordinate guide and rendered grid; no fabricated straight-edge proof for organic contours. Winter snow hides the measured plank.",
+  "footprint": [
+    11,
+    8
+  ],
+  "previous": [
+    9,
+    6
+  ],
+  "areaIncrease": 0.6296296296296295,
+  "errors": []
+}

@@ -39,6 +39,7 @@ async function recover(master,frame){
 }
 // Reviewed replacements win before legacy records: a similar silhouette is not proof of the right master.
 const replacements=await read('isometric-hd-manifest.json');
+replacements.items.push(...(await read('pond-coordinate-art.json')).items);
 for(const item of replacements.items){
  if(sha(await fs.readFile(path.join(root,item.master)))!==item.masterSha256)throw Error('Replacement master changed '+item.id);
  for(const f of item.frameRecords.filter(f=>!f.effectBaseFile)){if(f.hdFile){const bytes=await fs.readFile(path.join(root,f.hdFile));if(sha(bytes)!==f.hdSha256)throw Error('Replacement HD changed '+f.file);const raw=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true});await save(f.file,raw.data,raw.info.width,raw.info.height,{master:item.master,masterSha256:item.masterSha256,sourceRect:f.sourceRect,method:'same uniform master export at density 2',hdFile:f.hdFile,hdSha256:f.hdSha256,palette:item.paletteColors});}else await recover(item.master,{...f,palette:item.paletteColors});}

@@ -1,7 +1,7 @@
 {
   "density": 2,
   "files": 1558,
-  "uniqueMasterFrames": 2624,
+  "uniqueMasterFrames": 2620,
   "runtime": {
     "native/bowtruckle/frame-01.png": {
       "file": "decor-assets/hd/4eaeb195bdb2ba0a51eb725b.webp",
@@ -10164,28 +10164,28 @@
       "sha256": "d42bb4287dd9d777621b1e62d4035654736c83e116356a5ca00863eef45bbdb8"
     },
     "environment/pond/pond-1.png": {
-      "file": "decor-assets/hd/4f2f9f7cf00d547076ccd2f7.webp",
+      "file": "decor-assets/hd/b668accaa9949963dbdea503.webp",
       "density": 2,
-      "width": 480,
-      "height": 298,
-      "bytes": 22436,
-      "sha256": "4f2f9f7cf00d547076ccd2f708acfff344eaf213910433ec00b7f9cbdad388b7"
+      "width": 608,
+      "height": 486,
+      "bytes": 69424,
+      "sha256": "b668accaa9949963dbdea50308d103878d1d9750c8f6b2e778cb253526ef9dbc"
     },
     "environment/pond/pond-2.png": {
-      "file": "decor-assets/hd/2ee708ac705f0d8bde0e8564.webp",
+      "file": "decor-assets/hd/b668accaa9949963dbdea503.webp",
       "density": 2,
-      "width": 480,
-      "height": 298,
-      "bytes": 23726,
-      "sha256": "2ee708ac705f0d8bde0e856407a16b225d32818d64b3618e807d0338ba9830bc"
+      "width": 608,
+      "height": 486,
+      "bytes": 69424,
+      "sha256": "b668accaa9949963dbdea50308d103878d1d9750c8f6b2e778cb253526ef9dbc"
     },
     "environment/pond/pond-3.png": {
-      "file": "decor-assets/hd/a55d535005b2e35632c0b18d.webp",
+      "file": "decor-assets/hd/b668accaa9949963dbdea503.webp",
       "density": 2,
-      "width": 480,
-      "height": 298,
-      "bytes": 20628,
-      "sha256": "a55d535005b2e35632c0b18d5bd440df0fdc93a75d874abad4dc55c88832f275"
+      "width": 608,
+      "height": 486,
+      "bytes": 69424,
+      "sha256": "b668accaa9949963dbdea50308d103878d1d9750c8f6b2e778cb253526ef9dbc"
     },
     "environment/pond/pond-bed.png": {
       "file": "decor-assets/hd/f27feaa3cd92522223c28120.webp",
@@ -10476,28 +10476,28 @@
       "sha256": "38bf32613473cd3470d5cb88426518ad52b7c7f9a595b9844d88366db89f50ee"
     },
     "environment/winter/pond-1-snow.png": {
-      "file": "decor-assets/hd/aa9788a247b7b8c45ec6024a.webp",
+      "file": "decor-assets/hd/b4ed69adc47e441802244b8d.webp",
       "density": 2,
-      "width": 480,
-      "height": 298,
-      "bytes": 20706,
-      "sha256": "aa9788a247b7b8c45ec6024a06e133482b18a80d3676a6a423281e5f712759ec"
+      "width": 608,
+      "height": 486,
+      "bytes": 98212,
+      "sha256": "b4ed69adc47e441802244b8dd87b73bbda5f9ea64c1eb5d14c469f899c952134"
     },
     "environment/winter/pond-2-snow.png": {
-      "file": "decor-assets/hd/376f6f6c08d509000b29d220.webp",
+      "file": "decor-assets/hd/b4ed69adc47e441802244b8d.webp",
       "density": 2,
-      "width": 480,
-      "height": 298,
-      "bytes": 19040,
-      "sha256": "376f6f6c08d509000b29d220f43c18ee78172dc6d07febe3347bfaeaf5b9b46d"
+      "width": 608,
+      "height": 486,
+      "bytes": 98212,
+      "sha256": "b4ed69adc47e441802244b8dd87b73bbda5f9ea64c1eb5d14c469f899c952134"
     },
     "environment/winter/pond-3-snow.png": {
-      "file": "decor-assets/hd/66fc649c53e611793164627e.webp",
+      "file": "decor-assets/hd/b4ed69adc47e441802244b8d.webp",
       "density": 2,
-      "width": 480,
-      "height": 298,
-      "bytes": 26560,
-      "sha256": "66fc649c53e611793164627efcb2fcde87d42fcbb0423bd4c539357c2c70bc68"
+      "width": 608,
+      "height": 486,
+      "bytes": 98212,
+      "sha256": "b4ed69adc47e441802244b8dd87b73bbda5f9ea64c1eb5d14c469f899c952134"
     },
     "environment/winter/pond-bed-snow.png": {
       "file": "decor-assets/hd/8a9df866b5d9a1f1ed85d122.webp",
@@ -12928,7 +12928,7 @@
       "totalFrames": 8
     }
   },
-  "runtimeBytes": 10729090,
+  "runtimeBytes": 11098902,
   "provenance": [
     {
       "native": "isometric-hd-assets/published-native/decor_pumpkin_lantern/frame-0.png",
@@ -22707,6 +22707,26 @@
         "#B7DEE0"
       ],
       "silhouetteIoU": 0.983
+    },
+    {
+      "native": "environment/pond/pond-1.png",
+      "file": "decor-assets/hd/b668accaa9949963dbdea503.webp",
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+      "method": "same uniform master export at density 2",
+      "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-0.png",
+      "hdSha256": "b38f4783ec70aa466bbc4921c7d590a87234a7a25134d09d6a6c9978054e6b28",
+      "silhouetteIoU": 0.994
+    },
+    {
+      "native": "environment/winter/pond-1-snow.png",
+      "file": "decor-assets/hd/b4ed69adc47e441802244b8d.webp",
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+      "method": "same uniform master export at density 2",
+      "hdFile": "environment/pond/masters/coordinate-locked-20261116/published-1.png",
+      "hdSha256": "810af1f93d4e3022dc6238635d58ee5f4915e6aa201a9917af55053c5786f187",
+      "silhouetteIoU": 0.995
     },
     {
       "native": "noel-50-assets/native/nx_snitch_wreath/frame-01.png",
@@ -66957,20 +66977,6 @@
       "silhouetteIoU": 0.993
     },
     {
-      "native": "environment/pond/pond-1.png",
-      "file": "decor-assets/hd/4f2f9f7cf00d547076ccd2f7.webp",
-      "master": "environment/pond/masters/pond-1.png",
-      "method": "scenery placement at density 2",
-      "silhouetteIoU": 0.989
-    },
-    {
-      "native": "environment/pond/pond-2.png",
-      "file": "decor-assets/hd/2ee708ac705f0d8bde0e8564.webp",
-      "master": "environment/pond/masters/pond-2.png",
-      "method": "scenery placement at density 2",
-      "silhouetteIoU": 0.99
-    },
-    {
       "native": "environment/edge/trail.png",
       "file": "decor-assets/hd/38eca9b4f3e0a1bcdab17e97.webp",
       "master": "environment/edge/masters/trail.png",
@@ -67076,86 +67082,6 @@
       },
       "legacyAlphaMask": false,
       "silhouetteIoU": 0.989
-    },
-    {
-      "native": "environment/pond/pond-3.png",
-      "file": "decor-assets/hd/a55d535005b2e35632c0b18d.webp",
-      "master": "environment/winter/masters/expansion-20261108/pond-3-organic-v2.png",
-      "masterSha256": "31736aec43462dd93efca44008e929594fad4c0e43916f4ae0be8ff8a7da3114",
-      "sourceRect": {
-        "left": 0,
-        "top": 0,
-        "width": 1591,
-        "height": 989
-      },
-      "logicalBounds": {
-        "x": 2,
-        "y": 2,
-        "w": 474,
-        "h": 294
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.983
-    },
-    {
-      "native": "environment/winter/pond-1-snow.png",
-      "file": "decor-assets/hd/aa9788a247b7b8c45ec6024a.webp",
-      "master": "environment/winter/masters/expansion-20261108/pond-1-snow.png",
-      "masterSha256": "f0f42c6097f6bc1c4a60bf4788654e4a4c408f7217efe4398ef8d3048586a93c",
-      "sourceRect": {
-        "left": 0,
-        "top": 0,
-        "width": 1591,
-        "height": 988
-      },
-      "logicalBounds": {
-        "x": 2,
-        "y": 10,
-        "w": 476,
-        "h": 286
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.984
-    },
-    {
-      "native": "environment/winter/pond-2-snow.png",
-      "file": "decor-assets/hd/376f6f6c08d509000b29d220.webp",
-      "master": "environment/winter/masters/expansion-20261108/pond-2-snow.png",
-      "masterSha256": "6a252c95ae8c9dd20b5d077f25c02f607705444eb0237d574f438594192e9288",
-      "sourceRect": {
-        "left": 0,
-        "top": 0,
-        "width": 1591,
-        "height": 988
-      },
-      "logicalBounds": {
-        "x": 2,
-        "y": 2,
-        "w": 474,
-        "h": 294
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.979
-    },
-    {
-      "native": "environment/winter/pond-3-snow.png",
-      "file": "decor-assets/hd/66fc649c53e611793164627e.webp",
-      "master": "environment/winter/masters/expansion-20261108/pond-3-snow-organic-v2.png",
-      "masterSha256": "46b86fbc6ff2d5c031e9714376490011fb6fd51192666239d10d7055a35c50f1",
-      "sourceRect": {
-        "left": 0,
-        "top": 0,
-        "width": 1591,
-        "height": 989
-      },
-      "logicalBounds": {
-        "x": 2,
-        "y": 2,
-        "w": 474,
-        "h": 294
-      },
-      "legacyAlphaMask": false,
-      "silhouetteIoU": 0.985
     },
     {
       "native": "environment/edge/tree-pear-0.png",
@@ -69293,10 +69219,6 @@
       "reason": "stale frame record"
     },
     {
-      "native": "environment/pond/pond-3.png",
-      "reason": "replaced by a later builder"
-    },
-    {
       "native": "environment/pond/pond-bed.png",
       "reason": "replaced by a later builder"
     },
@@ -69349,7 +69271,23 @@
       "reason": "replaced by a later builder"
     },
     {
+      "native": "environment/pond/pond-3.png",
+      "reason": "stale frame record"
+    },
+    {
+      "native": "environment/winter/pond-1-snow.png",
+      "reason": "stale frame record"
+    },
+    {
+      "native": "environment/winter/pond-2-snow.png",
+      "reason": "stale frame record"
+    },
+    {
       "native": "environment/winter/pond-nook-snow.png",
+      "reason": "stale frame record"
+    },
+    {
+      "native": "environment/winter/pond-3-snow.png",
       "reason": "stale frame record"
     },
     {

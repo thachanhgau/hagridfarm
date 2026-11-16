@@ -5,51 +5,57 @@
   "assets": [
     {
       "id": "pond-3",
-      "master": "environment/winter/masters/expansion-20261108/pond-3-organic-v2.png",
-      "masterSha256": "31736aec43462dd93efca44008e929594fad4c0e43916f4ae0be8ff8a7da3114",
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
       "file": "environment/pond/pond-3.png",
-      "width": 480,
-      "height": 298,
-      "prompt": "Completely redesign the first reference's lake, preserving ONLY its game palette, overall isometric camera and 480x298 logical canvas proportions. Style reference 2 is the existing garden pixel art. Make a BEAUTIFUL NATURAL BLACK LAKE of a mysterious British wizarding-school forest. Organic irregular curved shoreline, a broad low oval of almost-black indigo water, naturally eroded rocky banks with a few small low moss tufts, layered dark slate cliffs at the BACK edge only. Water occupies at least 75% of the sprite, open calm dark centre with 4-5 widely spaced short subtle blue-grey reflections. The lake should feel deep, old, still and spacious. One VERY TINY timber boathouse tucked partly behind the far bank at upper-right (less than 8% sprite width), and one thin short abandoned wooden landing at left shore; these are small supporting details. Asymmetrical pleasing composition, lush but restrained muted forest green accents, varied large rock clusters instead of a uniform stone rim. NO rectangular or diamond base plate, NO straight polygon shoreline, NO bathtub, NO ornamental ring, NO stone posts, NO reed fence, NO scattered giant props, NO visible squid or sea-monster shape/logo, NO tropical colours. True handmade chunky pixel art, carefully shaped large flat clusters with only 2-3 tones per material, dark aubergine outlines, effective 240x149 pixel grid, no antialiasing, blur, microtexture, airbrush or gradients. Restrained garden palette: #231F2E #4A3042 #41465C #687486 #24483F #3F6A45 #71934B #735044 #A57554 #3E3B70 #70A8B6. Slightly raised far bank supplies depth, shoreline sides low so water reads clearly. Entire isolated lake within transparent margins, TRUE TRANSPARENT background. No terrain rectangle, no text, no shadow outside sprite. NORMAL non-snow season.",
-      "sha256": "e4630a58d4f2bbe8c3866473ca5bdb2e7d974c7d2269759746d3bd3ab4c04c50",
+      "width": 608,
+      "height": 486,
+      "prompt": "Enlarged 11x8 Forbidden Lake, dark open centre, dense ancient woodland; original 64x32 camera guide and matching winter master. See coordinate-locked-20261116 generation record.",
+      "sha256": "fb0f4220c4285107b8f809024d823a68d5b79d085dd0ce91a3f90cfc1bfba17e",
       "bounds": {
-        "x": 2,
-        "y": 2,
-        "w": 474,
-        "h": 294
-      }
+        "x": 7,
+        "y": 126,
+        "w": 594,
+        "h": 357
+      },
+      "pixelGrid": 1,
+      "export": "build-coordinate-pond.mjs"
     },
     {
       "id": "pond-1-snow",
-      "master": "environment/winter/masters/expansion-20261108/pond-1-snow.png",
-      "masterSha256": "f0f42c6097f6bc1c4a60bf4788654e4a4c408f7217efe4398ef8d3048586a93c",
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
       "file": "environment/winter/pond-1-snow.png",
-      "width": 480,
-      "height": 298,
-      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Create the WINTER version of this exact pond. Preserve composition, footprint, shoreline, geometry and dimensions. Broad irregular ivory snow caps on every shore stone and reed base, reeds bare brown, water partially frozen in broad muted pale blue patches around the rim, dark water open in centre for creatures. Simple stepped ice cracks, no floating snowflakes, no cast shadows outside silhouette. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 240x149, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
-      "sha256": "c1d8254c05a5134d4474befa89f05fdd3f49a477cb967c1e09b62991982b2e0f",
+      "width": 608,
+      "height": 486,
+      "prompt": "Enlarged 11x8 Forbidden Lake, dark open centre, dense ancient woodland; original 64x32 camera guide and matching winter master. See coordinate-locked-20261116 generation record.",
+      "sha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
       "bounds": {
-        "x": 2,
-        "y": 10,
-        "w": 476,
-        "h": 286
-      }
+        "x": 6,
+        "y": 121,
+        "w": 596,
+        "h": 363
+      },
+      "pixelGrid": 1,
+      "export": "build-coordinate-pond.mjs"
     },
     {
       "id": "pond-2-snow",
-      "master": "environment/winter/masters/expansion-20261108/pond-2-snow.png",
-      "masterSha256": "6a252c95ae8c9dd20b5d077f25c02f607705444eb0237d574f438594192e9288",
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
       "file": "environment/winter/pond-2-snow.png",
-      "width": 480,
-      "height": 298,
-      "prompt": "Production pixel-game sprite on TRUE TRANSPARENT background. Create the WINTER version of this exact pond. Preserve composition, footprint, shoreline, geometry and dimensions. Snow banks on its shore stones and submerged log, bare frozen reeds, broad pale blue ice shelf framing a dark indigo open centre. Keep log and weed placement clearly recognizable. Simple ice fissures and a couple tiny frozen lily pads. Match attached game's chunky pixel art exactly: large CLEAN FLAT pixel clusters, dark #231F2E outline, only 2-3 shades per material, restrained 24-color garden palette of indigo, muted slate, moss and warm brown with snow ivory #E8F0ED and pale blue #B7DEE0. NO smooth gradients, photorealism, antialiasing, painterly texture, microdetails, bloom, text, labels, ground background. Effective logical pixel grid 240x149, enlarged with nearest-neighbor. Entire sprite visible and isolated with transparent margins. Input is the edit target and style reference.",
-      "sha256": "29fa4faf3815e3db7e88ae0a8ad5f2627c442b47c9112a528023fd73983ff77d",
+      "width": 608,
+      "height": 486,
+      "prompt": "Enlarged 11x8 Forbidden Lake, dark open centre, dense ancient woodland; original 64x32 camera guide and matching winter master. See coordinate-locked-20261116 generation record.",
+      "sha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
       "bounds": {
-        "x": 2,
-        "y": 2,
-        "w": 474,
-        "h": 294
-      }
+        "x": 6,
+        "y": 121,
+        "w": 596,
+        "h": 363
+      },
+      "pixelGrid": 1,
+      "export": "build-coordinate-pond.mjs"
     },
     {
       "id": "pond-bed-snow",
@@ -85,19 +91,21 @@
     },
     {
       "id": "pond-3-snow",
-      "master": "environment/winter/masters/expansion-20261108/pond-3-snow-organic-v2.png",
-      "masterSha256": "46b86fbc6ff2d5c031e9714376490011fb6fd51192666239d10d7055a35c50f1",
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
       "file": "environment/winter/pond-3-snow.png",
-      "width": 480,
-      "height": 298,
-      "prompt": "Create the winter seasonal variant of this EXACT natural Black Lake pixel art sprite. Preserve every shoreline bend, rock cluster, bank height, tree silhouette, tiny boathouse, little jetty, perspective and object size precisely. Add restrained broad flat stepped snow caps to the tops of rocks, far bank, tree branches and roof. A thin irregular muted blue ice shelf at the shoreline ONLY; keep the large nearly black open-water centre and its few subtle reflections. Snow does NOT fill or whiten the water. Keep trees dark underneath snow, tiny boathouse discreet. Same chunky pixel scale, dark aubergine outlines, flat 2-3-shade clusters; NO gradients, blur, antialiasing, microtexture, glow, falling snow, monster shapes, additional objects, text or background. Palette of the input plus ivory #E8F0ED and pale blue #B7DEE0. TRUE transparent background, entire silhouette visible with margins, same 480x298 logical canvas, effective 240x149 coarse pixel grid.",
-      "sha256": "2fd50911087dca77ee9fa5a4e4f206b9cf4bf22ccd81a2394cf9d1d762a4748f",
+      "width": 608,
+      "height": 486,
+      "prompt": "Enlarged 11x8 Forbidden Lake, dark open centre, dense ancient woodland; original 64x32 camera guide and matching winter master. See coordinate-locked-20261116 generation record.",
+      "sha256": "6fddf5f3994d8cc6bd0dc29dd5bc8fc3c56545eaa1d32bac9f8772c206e2eb37",
       "bounds": {
-        "x": 2,
-        "y": 2,
-        "w": 474,
-        "h": 294
-      }
+        "x": 6,
+        "y": 121,
+        "w": 596,
+        "h": 363
+      },
+      "pixelGrid": 1,
+      "export": "build-coordinate-pond.mjs"
     }
   ]
 }

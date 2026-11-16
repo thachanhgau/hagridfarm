@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "width": 608,
+  "height": 486,
+  "pivotX": 304,
+  "pivotY": 476,
+  "groundCentre": {
+    "x": 304,
+    "y": 332
+  },
+  "footprint": [
+    11,
+    8
+  ],
+  "tool": "built-in image_gen",
+  "guide": "environment/pond/masters/coordinate-locked-20261116/forbidden-guide.png",
+  "crop": {
+    "left": 102,
+    "top": 180,
+    "width": 1376,
+    "height": 837
+  },
+  "placement": {
+    "left": 6,
+    "top": 121,
+    "width": 596,
+    "height": 363
+  },
+  "method": "Single shared source crop and uniform master export for both seasons; rounded target dimensions, no post-export skew/rotation.",
+  "frames": [
+    {
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+      "file": "environment/pond/pond-1.png",
+      "sourceInkBounds": [
+        106,
+        190,
+        1474,
+        1014
+      ]
+    },
+    {
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
+      "file": "environment/winter/pond-1-snow.png",
+      "sourceInkBounds": [
+        102,
+        180,
+        1477,
+        1016
+      ]
+    },
+    {
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+      "file": "environment/pond/pond-2.png",
+      "sourceInkBounds": [
+        106,
+        190,
+        1474,
+        1014
+      ]
+    },
+    {
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
+      "file": "environment/winter/pond-2-snow.png",
+      "sourceInkBounds": [
+        102,
+        180,
+        1477,
+        1016
+      ]
+    },
+    {
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-normal-v2.png",
+      "masterSha256": "9db82c96dbc7431d74944488c1099f265c4c34a102a890804d95a27b55d1b5f8",
+      "file": "environment/pond/pond-3.png",
+      "sourceInkBounds": [
+        106,
+        190,
+        1474,
+        1014
+      ]
+    },
+    {
+      "master": "environment/pond/masters/coordinate-locked-20261116/forbidden-winter.png",
+      "masterSha256": "ae28c1cbd1dd5d0d2d9efd26cf8b49cea6113382156600585e0129ad930abbff",
+      "file": "environment/winter/pond-3-snow.png",
+      "sourceInkBounds": [
+        102,
+        180,
+        1477,
+        1016
+      ]
+    }
+  ]
+}

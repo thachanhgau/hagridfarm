@@ -16,6 +16,6 @@ export function drawStatueAura(ctx,object,clock=0){
   ctx.save();ctx.translate(object.xy[0],object.xy[1]-3);ctx.scale(1,.5);const pool=ctx.createRadialGradient?.(0,0,1,0,0,58*pulse);if(pool?.addColorStop){pool.addColorStop(0,`rgba(${rgb},.36)`);pool.addColorStop(.5,`rgba(${rgb},.18)`);pool.addColorStop(1,`rgba(${rgb},0)`);ctx.fillStyle=pool;ctx.fillRect(-64,-64,128,128);}ctx.restore();
   ctx.globalAlpha=1;
   // A fixed small particle budget; clock zero freezes every sparkle for reduced motion.
-  for(let i=0;i<9;i++){const u=((i*.381966+(t?t/6500:0))%1),sx=x+Math.sin(i*2.4)*48,sy=object.xy[1]-12-u*(b.h+28),size=i%3===0?3:2;ctx.globalAlpha=.35+Math.sin(u*Math.PI)*.6;ctx.fillStyle=i%3===0?'#fff4cf':`rgb(${rgb})`;ctx.fillRect(Math.round(sx)-size,Math.round(sy),size*2+1,1);ctx.fillRect(Math.round(sx),Math.round(sy)-size,1,size*2+1);}
+  for(let i=0;i<9;i++){const u=((i*.381966+(t?t/6500:0))%1),sx=x+Math.sin(i*2.4)*48,sy=object.xy[1]-12-u*(b.h+28),size=i%3===0?3:2;ctx.globalAlpha=.35+Math.sin(u*Math.PI)*.6;ctx.fillStyle=i%3===0?'#F5D69A':`rgb(${rgb})`;ctx.fillRect(Math.round(sx)-size,Math.round(sy),size*2+1,1);ctx.fillRect(Math.round(sx),Math.round(sy)-size,1,size*2+1);}
   ctx.restore();
 }
