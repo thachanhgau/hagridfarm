@@ -24,6 +24,7 @@ export function roofSnowCoverage(kind,x,y,width,height){
  if(x>=8&&x<=39&&y<61)return y>=12&&y<=16;
  return insidePolygon(x,y,[[81,2],[162,72],[162,83],[94,111],[50,80],[16,100],[2,85],[2,74]]);
 }
+const SNOW_LIP=[166,177,174],SNOW_RIM=[232,240,237],SNOW_SHADES=[[135,168,180],[177,202,211],[216,231,234],[242,246,235]];
 // All variants derive from immutable native pixels, once per weather change.
 export function seasonPixel(r,g,b,x,y,width,height,kind,weather,covered=null){
  const green=g>r*.97&&g>b*1.08,lum=(r+g+b)/3;
@@ -41,12 +42,12 @@ export function seasonPixel(r,g,b,x,y,width,height,kind,weather,covered=null){
   // 25.0 S3: thin winter snow lies in patches (covered, from garden-winter.mjs) with a shaded lip and lit rim.
   if(green&&kind==='ground'&&covered){
    if(!covered(x,y))return [Math.round(r*.7),Math.round(g*.78),Math.round(b*.95+12)];
-   if(!covered(x,y+2))return [166,177,174];
-   if(!covered(x,y-2))return [232,240,237];
+   if(!covered(x,y+2))return [...SNOW_LIP];
+   if(!covered(x,y-2))return [...SNOW_RIM];
   }
   if(green&&(kind==='ground'||kind==='tree'&&lum>35&&patch>.15)){
    const shade=Math.min(3,Math.floor(lum/45));
-   return [[135,168,180],[177,202,211],[216,231,234],[242,246,235]][shade];
+   return [...SNOW_SHADES[shade]];
   }
   if(green)return [Math.round(r*.7),Math.round(g*.78),Math.round(b*.95+12)];
  }
@@ -57,12 +58,36 @@ export function seasonPixel(r,g,b,x,y,width,height,kind,weather,covered=null){
  if(weather==='rain')return [Math.round(r*.71),Math.round(g*.78),Math.round(b*.85+5)];
  return [r,g,b];
 }
+// Snow patches per logical pixel, built once per size and depth: the ground cache is rebuilt as HD and winter art
+// arrive, and asking the noise for every device pixel (up to 3 lookups each) froze the garden for seconds on entry.
+const snowMasks=new WeakMap();
+export function snowMask(kit,w,h,depth){
+ const masks=snowMasks.get(kit)??new Map(),key=`${w}x${h}:${depth}`,W=w+2;let m=masks.get(key);
+ if(!m){
+  m=new Uint8Array(W*(h+6));
+  for(let y=-2;y<h+4;y++)for(let x=0;x<W;x++)m[(y+2)*W+x]=kit.snowCovered(x,y,depth)?1:0;
+  if(masks.size>=4)masks.clear(); // ponytail: a few masks per session (one per canvas size), not an LRU
+  masks.set(key,m);snowMasks.set(kit,masks);
+ }
+ return (x,y)=>x>=0&&x<W&&y>=-2&&y<h+4?m[(y+2)*W+x]===1:kit.snowCovered(x,y,depth);
+}
 export function weatherizeCanvas(canvas,kind,weather,depth=1,kit=null,pixelDensity=1){
  if(weather==='clear')return canvas;
  const c=canvas.getContext('2d'),im=c.getImageData(0,0,canvas.width,canvas.height),d=im.data;
  if(kind==='cap'){if(weather==='snow'&&kit)c.putImageData(kit.snowCapImageData(im,pixelDensity),0,0);return canvas;}
- const covered=depth<1&&kit?(x,y)=>kit.snowCovered(x,y,depth):null,k=pixelDensity,lw=Math.round(im.width/k),lh=Math.round(im.height/k);
+ const k=pixelDensity,lw=Math.round(im.width/k),lh=Math.round(im.height/k),covered=depth<1&&kit?snowMask(kit,lw,lh,depth):null;
  // Patterns read logical pixels, so a denser canvas gets the same snow and frost layout.
+ if(kind==='ground'&&weather==='snow'){
+  // seasonPixel's ground-snow branch inlined (no array a pixel): only green pixels change. Test keeps them equal.
+  for(let y=0;y<im.height;y++){const ly=Math.floor(y/k);for(let x=0;x<im.width;x++){
+   const i=(y*im.width+x)*4,r=d[i],g=d[i+1],b=d[i+2];if(!d[i+3]||!(g>r*.97&&g>b*1.08))continue;
+   const lx=Math.floor(x/k);let s;
+   if(covered&&!covered(lx,ly)){d[i]=Math.round(r*.7);d[i+1]=Math.round(g*.78);d[i+2]=Math.round(b*.95+12);continue;}
+   if(covered&&!covered(lx,ly+2))s=SNOW_LIP;else if(covered&&!covered(lx,ly-2))s=SNOW_RIM;else s=SNOW_SHADES[Math.min(3,Math.floor((r+g+b)/3/45))];
+   d[i]=s[0];d[i+1]=s[1];d[i+2]=s[2];
+  }}
+  c.putImageData(im,0,0);return canvas;
+ }
  for(let y=0;y<im.height;y++)for(let x=0;x<im.width;x++){
   const i=(y*im.width+x)*4;if(!d[i+3])continue;
   const rgb=seasonPixel(d[i],d[i+1],d[i+2],Math.floor(x/k),Math.floor(y/k),lw,lh,kind,weather,covered);

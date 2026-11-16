@@ -79,3 +79,14 @@ test('weather on a denser canvas reads logical pixels, so the snow layout does n
  weatherizeCanvas(one,'ground','snow',.6,{snowCovered:(x,y)=>(x*5+y*11)%3===0},1);weatherizeCanvas(two,'ground','snow',.6,{snowCovered:(x,y)=>(x*5+y*11)%3===0},2);
  for(let y=0;y<48;y++)for(let x=0;x<80;x++)assert.deepEqual([...two.out().slice((y*80+x)*4,(y*80+x)*4+4)],[...one.out().slice(((y>>1)*40+(x>>1))*4,((y>>1)*40+(x>>1))*4+4)]);
 });
+test('the inlined ground-snow pass gives exactly seasonPixel, covered or not',()=>{
+ const w=60,h=40,data=new Uint8ClampedArray(w*h*4);for(let i=0;i<w*h;i++)data.set([(i*37)%256,(i*91+40)%256,(i*53)%256,i%7?255:0],i*4);
+ const src=data.slice(),kit={snowCovered:(x,y)=>(x*5+y*11)%3!==0};let out;
+ const canvas={width:w,height:h,getContext:()=>({getImageData:()=>({width:w,height:h,data}),putImageData:im=>{out=im.data;}})};
+ for(const depth of [.6,1]){
+  data.set(src);weatherizeCanvas(canvas,'ground','snow',depth,kit,1);
+  const covered=depth<1?(x,y)=>kit.snowCovered(x,y,depth):null;
+  for(let i=0;i<w*h;i++){if(!src[i*4+3])continue;const want=seasonPixel(src[i*4],src[i*4+1],src[i*4+2],i%w,Math.floor(i/w),w,h,'ground','snow',covered);
+   assert.deepEqual([...out.slice(i*4,i*4+3)],want,`pixel ${i} depth ${depth}`);}
+ }
+});

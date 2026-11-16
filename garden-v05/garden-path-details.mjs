@@ -37,15 +37,53 @@ function point(map, col, row) {
 // reading as hand-laid pixel art rather than a smooth vector stroke. A fine stamp steps every device pixel (the HD
 // outline, a clean 2:1 edge); the bed keeps the 1× 2 px rows (its plank stripes) and, above density 1, each row
 // takes the narrowest outline row it spans so the bed never pokes past the fine outline.
-function pathStamp(ctx, x, y, radius, color, d = 1, fine = false) {
-  const px = Math.round(x);
-  const py = Math.round(y);
+// The ground cache stamps thousands of these (one fillRect a device row each), which froze the garden on entry. A stamp
+// lands on whole logical pixels, so at a whole density under a plain scale it is the same pixels every time: draw it
+// once and copy it. Other contexts (tests, a fractional density, the world-anchored bed pattern) fill directly.
+const stampSprites = new Map();
+function stampSprite(ctx, radius, color, d, fine) {
+  const t = ctx.getTransform?.(), doc = ctx.canvas?.ownerDocument;
+  if (typeof color !== 'string' || !doc || !Number.isInteger(d) || !t || t.a !== d || t.d !== d || t.b || t.c || !Number.isInteger(t.e) || !Number.isInteger(t.f)) return null;
+  const key = `${radius}|${color}|${d}|${fine}`;
+  if (!stampSprites.has(key)) {
+    const halfRows = Math.floor(radius / 2), sprite = doc.createElement('canvas');
+    sprite.width = 2 * radius * d; sprite.height = (2 * halfRows + 2) * d;
+    const brush = sprite.getContext('2d'); brush.setTransform(d, 0, 0, d, 0, 0);
+    stampRows(brush, radius, halfRows, radius, color, d, fine);
+    stampSprites.set(key, sprite);
+  }
+  return stampSprites.get(key);
+}
+const stampShapes = new Map();
+function stampShape(radius, d, fine) {
+  if (typeof Path2D !== 'function' || typeof DOMMatrix !== 'function' || !Number.isInteger(d)) return null;
+  const key = `${radius}|${d}|${fine}`;
+  if (!stampShapes.has(key)) {
+    const shape = new Path2D();
+    stampRows({set fillStyle(_) {}, fillRect: (x, y, w, h) => shape.rect(x, y, w, h)}, 0, 0, radius, null, d, fine);
+    stampShapes.set(key, shape);
+  }
+  return stampShapes.get(key);
+}
+function stampRows(ctx, px, py, radius, color, d, fine) {
   const halfRows = Math.floor(radius / 2);
   const step = fine ? 1 / d : 2, inner = d > 1 ? 2 - 1 / d : 0;
   for (let k = 0, dy = -halfRows; dy <= halfRows + 2 - step; k += 1, dy = -halfRows + k * step) {
     const half = Math.max(2, Math.round((radius - Math.max(Math.abs(dy), fine ? 0 : Math.abs(dy + inner)) * 2) * d) / d);
     fillAt(ctx, px - half, py + dy, half * 2, step, color, d);
   }
+}
+function pathStamp(ctx, x, y, radius, color, d = 1, fine = false) {
+  const px = Math.round(x), py = Math.round(y), sprite = stampSprite(ctx, radius, color, d, fine);
+  if (!sprite) {
+    // The bed pattern is anchored to the world, so it cannot be copied: one fill of the stamp's outline instead.
+    const shape = typeof color !== 'string' && stampShape(radius, d, fine);
+    if (!shape || typeof ctx.fill !== 'function') return stampRows(ctx, px, py, radius, color, d, fine);
+    const placed = new Path2D(); placed.addPath(shape, new DOMMatrix([1, 0, 0, 1, px, py]));
+    ctx.fillStyle = color; return ctx.fill(placed);
+  }
+  const halfRows = Math.floor(radius / 2);
+  ctx.drawImage(sprite, px - radius, py - halfRows, 2 * radius, 2 * halfRows + 2);
 }
 
 // HD bed (density > 1): the 1× look (olive dashes in rows on the dark bed) at device pixels: 2 px dashes on a 4 px
