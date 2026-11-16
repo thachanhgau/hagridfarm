@@ -83,9 +83,9 @@ export function pondBedRects(at, built = [], count = 0) {
     return {c0, c1: c0 + 1, r0, r1: r0 + 3};
   });
 }
-/** «Góc nghỉ» (owner 16/11/2026 «để ko che hết mấy cái hồ nhỏ»): the willow's canopy is 7 screen columns wide, so it
- *  stands west of the col-7.5 path by the greenhouse, where it overhangs no paddy (garden-pond-ui.test). */
-export const POND_NOOK = Object.freeze({at: [6, -1], footprint: [3, 3]}); // ground cols 3.5–6.5 × rows −3.5…−0.5
+/** «Góc nghỉ» (owner 16/11/2026 «để ko che hết mấy cái hồ nhỏ», then «dời cái cây lên đây»): in the gap of the meadow's
+ *  north-west treeline, behind the paddies, so its canopy overhangs none of them (garden-pond-ui.test). */
+export const POND_NOOK = Object.freeze({at: [4, -11], footprint: [3, 3]}); // ground cols 1.5–4.5 × rows −13.5…−10.5
 /** Pond beds by tier (server garden-pond-core): 4 at «Ao cá», 7 at «Hồ rong», 10 at «Hồ sâu». */
 export const pondBedCount = built => (built?.includes?.('pond_3') ? 10 : built?.includes?.('pond_2') ? 7 : built?.includes?.('pond_1') ? 4 : 0);
 

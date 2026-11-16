@@ -156,7 +156,7 @@ test('Bờ hồ meadow takes decorations once the pond is dug, off the lake, pad
   assert.notEqual(on(13, -2, last), '', 'no meadow before the pond');
   assert.match(on(20, -8), /hồ/);
   assert.match(on(7, -10), /ruộng nước/);
-  assert.match(on(6.5, -2), /cảnh vật/);
+  assert.match(on(4.5, -11), /cảnh vật/);
   assert.match(on(13, -0.5), /rào/);
 });
 
