@@ -175,4 +175,6 @@ test('willow nook overhangs no paddy and keeps off the col-7.5 path (owner 16/11
  const rect=decorFootprintRect(...POND_NOOK.at,POND_NOOK.footprint);
  assert.ok(rect.c1<=7,'clear of the col-7.5 path');
  assert.ok(inPondLand(c,r)&&rect.r0>=-13.5,'foot on the shore meadow, behind the paddies');
+ const scene=JSON.parse((await import('node:fs')).readFileSync(new URL('./scene-data.json',import.meta.url)));
+ assert.ok(scene.origin.y+(c+r)*16-art.pivotY+art.bounds.y>=0,'crown inside the scene top (owner «cây bị cắt»)');
 });
