@@ -1182,7 +1182,7 @@ export async function createGarden(canvas, options = {}) {
   // No IndexedDB (tests, old browsers) or no runtime SOURCE.json (the source demos): build as before, never wait.
   let groundStoreOff = typeof indexedDB === 'undefined' || typeof createImageBitmap !== 'function';
   const groundStoreReady = groundStoreOff ? Promise.resolve(null) : fetch(new URL('./SOURCE.json', import.meta.url), {cache: 'no-cache'})
-    .then((r) => (r.ok ? r.json() : null)).then((source) => groundStore(source?.commit)).catch(() => null)
+    .then((r) => (r.ok ? r.json() : null)).then((source) => groundStore(source?.commit, options.groundHost)).catch(() => null)
     .then((store) => { if (!store) groundStoreOff = true; return store; });
   const groundLookups = new Map();
   let shownTerrain = null, winterWanted = false;
