@@ -2,6 +2,7 @@ import {setupBuildDecorDock} from './build-decor-dock.mjs?v=26.1';
 import { setAction, pixelIcon } from './pixel-icons.mjs?v=26.1';
 import { $, button, el, duration, hours, levelName, num, realHours, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=26.1';
 import { DB } from './balance-data.mjs?v=26.1';
+import { WATER_CROPS } from './water-crop-art.mjs?v=26.1';
 import { makeRecipeIcon } from './recipe-art-ui.mjs?v=26.1';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
@@ -113,12 +114,13 @@ export function restockPlan({ recipe, state, batches = 1, db = DB, supplies = nu
     const seeds = supplies ? Number(supplies.seeds?.[id] ?? 0) : Infinity;
     if (seeds < cells) plan.seeds[id] = cells - seeds;
     let left = Math.min(cells, seeds);
-    if (water < left) { plan.water += left - water; left = water; }
+    const wet = !WATER_CROPS.includes(id); // water crops sow without «Nước tưới» (owner 16/11/2026)
+    if (wet && water < left) { plan.water += left - water; left = water; }
     cells = left;
     const sown = plantLines(plots, id, left, now, db.limits.maxCropSpeciesPerPlot);
     plan.steps.push(...sown.steps);
     left = sown.left;
-    water -= cells - left;
+    if (wet) water -= cells - left;
     if (left > 0) plan.later[id] = left * perCell;
   }
   return plan;
@@ -158,7 +160,7 @@ export function fillPlotPlan({ state, plotIndex, species, db = DB, supplies = nu
   const seeds = supplies ? Number(supplies.seeds?.[species] ?? 0) : Infinity, water = supplies ? Number(supplies.water ?? 0) : Infinity;
   let cells = plan.free;
   if (seeds < cells) { plan.seeds[species] = cells - seeds; cells = seeds; }
-  if (water < cells) { plan.water = cells - water; cells = water; }
+  if (!WATER_CROPS.includes(species) && water < cells) { plan.water = cells - water; cells = water; }
   const plots = state.plots.map(p => ({ slots: [...p.slots], cooldowns: p.cooldowns ?? [] }));
   plan.steps = plantLines(plots, species, cells, now, db.limits.maxCropSpeciesPerPlot, plotIndex).steps;
   return plan;

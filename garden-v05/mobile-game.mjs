@@ -19,6 +19,7 @@ import {elfLine,elfShiftText} from './garden-elves.mjs?v=26.1';
 import {setupCamera} from './camera.mjs?v=26.1';
 import {createPanels} from './progression-panels.mjs?v=26.1';
 import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=26.1';
+import {WATER_CROPS} from './water-crop-art.mjs?v=26.1';
 import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=26.1';
 import {createGardenAudio,comboStep} from './garden-audio.mjs?v=26.1';
 import {createJuice,rewardDeltas} from './garden-juice.mjs?v=26.1';
@@ -637,7 +638,7 @@ function refresh(){
  else if(c.level>state.level)$('seedTime').textContent='Mở cấp '+c.level;
  else stats($('seedTime'),[['clock',shortHours(realHours(c,state.level)),'Chín sau '+hours(realHours(c,state.level))],['xp',c.totalXP,c.totalXP+' XP mỗi ô']]);
  const sow=sowCells(),occupied=sow.length<sowCount||sow.some(i=>slots[i]),cooling=sow.some(i=>state.plots[selectedPlot].cooldowns[i]>now);
- const typeCap=types.size>=3&&!types.has(seed),seedsLeft=wallet?.snapshot?.garden.supplies.seeds[seed]||0,waterLeft=wallet?.snapshot?.garden.supplies.water||0;
+ const typeCap=types.size>=3&&!types.has(seed),seedsLeft=wallet?.snapshot?.garden.supplies.seeds[seed]||0,waterLeft=WATER_CROPS.includes(seed)?Infinity:wallet?.snapshot?.garden.supplies.water||0;
  const plantAction=plantingAction({loaded,connected,walletReady,unlocked:c.level<=state.level,occupied,cooling,typeCap,seedsLeft,waterLeft,count:sowCount});
  $('plantButton').dataset.restock=plantAction.restock;$('plantButton').disabled=plantAction.disabled;
  setAction($('plantButton'),{icon:plantAction.restock||'sow',label:plantAction.disabled?plantAction.text:plantAction.restock?'Mua':'Gieo',count:plantAction.disabled||plantAction.restock?'':'×'+sowCount,text:plantAction.title});

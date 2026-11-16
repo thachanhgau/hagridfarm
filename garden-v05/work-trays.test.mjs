@@ -403,4 +403,8 @@ test('«Gieo cả thửa» fills only the free cells of one plot, line by line, 
   assert.equal(short.steps.reduce((n, step) => n + step.cells.length, 0), 4);
   assert.deepEqual(short.seeds, { pumpkin: 5 });
   assert.equal(fillPlotPlan({ state, plotIndex: 1, species: 'pumpkin', supplies: { water: 2, seeds: { pumpkin: 9 } }, now }).water, 7);
+  // Water crops sow without «Nước tưới» (owner 16/11/2026): a dry barrel still fills the plot.
+  const kelp = fillPlotPlan({ state, plotIndex: 1, species: 'silverkelp', supplies: { water: 0, seeds: { silverkelp: 9 } }, now });
+  assert.equal(kelp.water, 0);
+  assert.equal(kelp.steps.reduce((n, step) => n + step.cells.length, 0), 9);
 });

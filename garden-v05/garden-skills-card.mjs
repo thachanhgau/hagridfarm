@@ -16,7 +16,7 @@ const WHAT=Object.freeze({
  'three-headed-dog':['22:00–06:00 ma lùm không ăn cây','Thêm đuổi 1 ma lùm mỗi ngày'],dragon:['Dọn thửa khô hoặc thửa ma lùm phá','4 thửa mỗi ngày'],
  grindylow:['Hồ không đục, tự kéo lưới cá chín','Câu trúng rộng gấp đôi, thêm 1 cá con mỗi ngày'],crup:['Ăn 1 ma lùm mỗi ngày','3 ma lùm mỗi ngày'],
  knarl:['1 thửa hết đất mỏi','2 thửa mỗi ngày'],salamander:['Giữ 2 thửa khi cháy và tuần sương giá','4 thửa'],
- kappa:['Hạn hán: cây 3 giờ tốn 1 Nước mỗi ô','Ruộng nước gieo không tốn Nước'],porlock:['Bằng-Mã, Vong mã, Kỳ lân không dưới 50 tâm trạng','Không dưới 60'],
+ kappa:['Hạn hán: cây 3 giờ tốn 1 Nước mỗi ô','Hạn hán: cây 3 giờ gieo không tốn Nước'],porlock:['Bằng-Mã, Vong mã, Kỳ lân không dưới 50 tâm trạng','Không dưới 60'],
 });
 export const WHY=Object.freeze({'skills-off':'Kỹ năng đang tạm tắt','fled':'Bé đang ở Rừng Cấm','locked':'Bậc 1: trưởng thành và gắn bó cấp 3','sick':'Bé đang ốm','roaming':'Bé đang đi rông','sad':'Bé buồn: cần tâm trạng từ 50'});
 const RANK=['Chưa có','Bậc 1','Bậc 2','Bậc 3 · Tinh thông'];
