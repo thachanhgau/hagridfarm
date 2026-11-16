@@ -88,7 +88,7 @@ const findCanonicalServerModule = () => {
 };
 
 test('placement space matches the final 33.5-row scene edge', () => {
-  assert.deepEqual(DECORATION_SPACE, {minCol: -5, maxCol: 33, minRow: -1, maxRow: 33.5});
+  assert.deepEqual(DECORATION_SPACE, {minCol: -5, maxCol: 33, minRow: -13.5, maxRow: 33.5});
   // Every species has a final-plaza statue spot (garden expansion phase 2 added Thủy quái and the three land species).
   assert.equal(KEEPSAKE_DISPLAY_LAYOUT.length, Object.keys(CREATURE).length);
   assert.deepEqual(KEEPSAKE_DISPLAY_LAYOUT.map(entry => entry.species), Object.keys(CREATURE));

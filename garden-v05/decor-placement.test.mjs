@@ -148,3 +148,14 @@ test('full garden: no footprint covers a plot, pen, scenery or another piece, an
     }
   }
 });
+
+test('Bờ hồ meadow takes decorations once the pond is dug, off the lake, paddies, willow and fence (owner 16/11/2026)', () => {
+  const built = ['pond_1', 'pond_2', 'pond_3'], pond = {...last, pond: true};
+  const on = (col, row, stage = pond) => decorSpotProblem(col, row, {map: scene, stage, state: {decorations: [], built}, decorations, itemId: 'decor_mandrake_planter'});
+  assert.equal(on(13, -2), '', 'open shore meadow');
+  assert.notEqual(on(13, -2, last), '', 'no meadow before the pond');
+  assert.match(on(20, -8), /hồ/);
+  assert.match(on(7, -10), /ruộng nước/);
+  assert.match(on(6.5, -2), /cảnh vật/);
+  assert.match(on(13, -0.5), /rào/);
+});

@@ -8,7 +8,7 @@ import {inEdgeStrip,inPondLand,stageContains} from './garden-growth.mjs?v=26.1';
 export const DECORATION_SPACE = Object.freeze({
   minCol: -5,
   maxCol: 33,
-  minRow: -1,
+  minRow: -13.5, // «Bờ hồ» meadow back row (garden-growth POND_LAND), owner 16/11/2026
   maxRow: 33.5,
 });
 

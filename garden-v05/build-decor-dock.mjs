@@ -29,6 +29,7 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
  const tabs=el('div',{class:'build-decor-tabs',role:'group','aria-label':'Xây dựng và trang trí'});
  let section='build',selected=null;
  const entries=new Map();
+ const artKey=row=>row.facing+(getAssets()?.get?.(row.id)?'|art':'');
  function show(next){section=next;refresh();if(next==='decor')entries.get(selected)?.control.scrollIntoView({block:'nearest',inline:'nearest'});}
  const buildTab=button('',()=>show('build'),{id:'buildSectionButton','aria-pressed':'true','aria-controls':'buildWorkPane'});
  const decorTab=button('',()=>show('decor'),{id:'decorSectionButton','aria-pressed':'false','aria-controls':'decorWorkPane'});
@@ -82,11 +83,12 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
     // Owner 13/11/2026: a piece in the garden → the camera goes to it; a stored one → placing starts at once, mid-screen.
     const control=button('',()=>{selected=row.id;refresh();const now=current();if(!now||!getReady())return;if(now.placed)focusDecor?.(now);else place.click();},{'data-decor-id':row.id,class:'decor-dock-choice'});
     control.append(rowIcon(items,row,getAssets()),el('span',{class:'decor-choice-name',text:row.label}),state);
-    tray.append(control);entries.set(row.id,{control,state,facing:row.facing});
+    tray.append(control);entries.set(row.id,{control,state,art:artKey(row)});
    }
    const entry=entries.get(row.id);
-   // Earned decor turns in place; swap only the icon so focus/scroll stay put.
-   if(entry.facing!==row.facing){entry.control.firstElementChild.replaceWith(rowIcon(items,row,getAssets()));entry.facing=row.facing;}
+   // Earned decor turns in place, and the manifest may land after the tray was drawn (owner 16/11/2026: a tall piece
+   // drawn before it shrank to a dot at the frame's foot): swap only the icon so focus/scroll stay put.
+   if(entry.art!==artKey(row)){entry.control.firstElementChild.replaceWith(rowIcon(items,row,getAssets()));entry.art=artKey(row);}
    entry.control.setAttribute('aria-pressed',row.id===selected);
    entry.control.setAttribute('aria-label',`${row.label} · ${row.placed?'Đang bày':'Đang cất'}`);
    entry.state.textContent=row.placed?'Đang bày':'Đang cất';

@@ -1,5 +1,6 @@
 import {createPlacementInput} from './placement-input.mjs?v=26.1';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot} from './default-decor.mjs?v=26.1';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot,pondHome,pondFootprint,pondBedRects,pondBedCount,POND_NOOK,POND_FACING} from './default-decor.mjs?v=26.1';
+import {SHORE_THICKETS} from './pond-woodland.mjs?v=26.1';
 import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=26.1';
 import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=26.1';
 export {decorFootprint} from './garden-object-metrics.mjs?v=26.1';
@@ -24,6 +25,16 @@ const FENCE_CLEARANCE=0.9;
 const SMALL_FENCE_CLEARANCE=0.4;
 // Paths are one cell wide (centre ± half a cell): a large piece may touch one, never cover it.
 const PATH_CLEARANCE=0.5;
+const POND_PATHS=Object.freeze([[[7.5,-.5],[7.5,-5.5]],[[20.5,-.5],[20.5,-3.5]]]); // garden-path-details pondPath
+const grow=(r,n)=>({c0:r.c0-n,c1:r.c1+n,r0:r.r0-n,r1:r.r1+n});
+function pondLandProblem(rect,built,big){
+ const size=pondFootprint(built);
+ if(size&&rectsOverlap(rect,grow(decorFootprintRect(...pondHome(null,built),size,POND_FACING),1)))return 'Chỗ này là hồ.';
+ if(pondBedRects(null,built,pondBedCount(built)).some(b=>rectsOverlap(rect,b)))return 'Chỗ này là ruộng nước.';
+ if(rectsOverlap(rect,decorFootprintRect(...POND_NOOK.at,POND_NOOK.footprint))||SHORE_THICKETS.some(([c,r])=>rectsOverlap(rect,{c0:c-1,c1:c+1,r0:r-1,r1:r+1})))return 'Chỗ này vướng cảnh vật.';
+ if(big&&POND_PATHS.some(([a,b])=>segmentRectDistance(a,b,rect)<PATH_CLEARANCE))return 'Món lớn không được chắn lối đi.';
+ return '';
+}
 // Owner 27/10/2026: only the ground decides. A piece may stand in front of or behind another sprite (the
 // renderer sorts by depth); the 25/10 screen-overlap rule left a full garden ~5× fewer free cells.
 // The cottage corner is art without a scene object; its ground sits under iso(-2, 5.5).
@@ -69,7 +80,15 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const rect=decorFootprintRect(col,row,footprint,facing);
  const inset=0.05,margin=big?FENCE_CLEARANCE:SMALL_FENCE_CLEARANCE;
  if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
-  if(!stageContains(stage,c,r)||inEdgeStrip(c,r)||inPondLand(c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
+  if(!stageContains(stage,c,r)||inEdgeStrip(c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
+ }
+ // Owner 16/11/2026: the «Bờ hồ» meadow takes decorations too (stageContains has it once the pond is dug), never
+ // astride its north fence, and off the lake with its woodland, the paddies, the willow, the thickets and both paths.
+ if(stage?.pond){
+  const sides=new Set();
+  for(const c of [rect.c0-margin+inset,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,rect.r1+margin-inset])sides.add(inPondLand(c,r));
+  if(sides.size>1)return 'Không đặt vắt ngang rào Bờ hồ.';
+  if(sides.has(true)){const why=pondLandProblem(rect,state?.built??[],big);if(why)return why;}
  }
  // Owner 20/10/2026: unbuilt bases are free ground; building there asks to move the piece first (decorOnGround).
  const queued=new Set((state?.construction??[]).map(j=>j.id)),built=new Set(state?.built??[]);
@@ -108,7 +127,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
 export function decorSpotGrid(stage,problemAt,snap=at=>at){
  const list=[];
  if(!stage)return list;
- for(let row=-1;row<=stage.bottom;row+=GRID_STEP)for(let col=-5;col<=stage.right;col+=GRID_STEP){
+ for(let row=stage.pond?-13.5:-1;row<=stage.bottom;row+=GRID_STEP)for(let col=-5;col<=stage.right;col+=GRID_STEP){
   const [c,r]=snap([col,row]);
   if(c===col&&r===row&&stageContains(stage,col,row))list.push({at:[col,row],ok:!problemAt([col,row])});
  }

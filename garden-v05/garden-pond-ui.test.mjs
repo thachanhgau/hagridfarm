@@ -167,10 +167,12 @@ test('Forbidden Lake is larger, stays on shore land, and clears beds, nook and i
  }
 });
 
-test('willow nook leaves the front meadow open and stays in the west shore gap',async()=>{
- const {POND_NOOK}=await import('./default-decor.mjs'),{decorFootprintRect}=await import('./decor-runtime.mjs');
+test('willow nook overhangs no paddy and keeps off the col-7.5 path (owner 16/11 «ko che hết mấy cái hồ nhỏ»)',async()=>{
+ const {POND_NOOK,pondBedRects}=await import('./default-decor.mjs'),{decorFootprintRect}=await import('./decor-runtime.mjs');
+ const {POND_SCENERY:POND_ART}=await import('./pond-art.mjs'),{inPondLand}=await import('./garden-growth.mjs');
+ const art=POND_ART['pond-nook'],half=Math.max(art.pivotX,art.width-art.pivotX)/32,[c,r]=POND_NOOK.at; // 32 px per screen column
+ for(const b of pondBedRects(null,['pond_3'],10))for(const bc of [b.c0,b.c1])for(const br of [b.r0,b.r1])assert.ok(bc-br>=c-r+half,'canopy clears every paddy');
  const rect=decorFootprintRect(...POND_NOOK.at,POND_NOOK.footprint);
- assert.ok(rect.r1<=-6,'front meadow and both fence approaches stay open');
- assert.ok(rect.c0>=10&&rect.c1<=13,'between the ten-bed paddy and the lake woodland');
- assert.ok(rect.r0>=-13.5,'inside the authored shore land');
+ assert.ok(rect.c1<=7,'clear of the col-7.5 path');
+ for(const x of [rect.c0+.1,rect.c1-.1])for(const y of [rect.r0+.1,rect.r1-.1])assert.ok(inPondLand(x,y)||x>=-.5&&y>=-3.5,'on the shore meadow');
 });
