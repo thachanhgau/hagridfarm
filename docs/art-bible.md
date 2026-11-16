@@ -156,3 +156,5 @@ Camera clarification from house-Noel calibration: the garden uses azimuth 45° a
 Cụm cổ thụ dùng master thường/tuyết đồng bộ; bản tuyết giữ tán dày theo yêu cầu chủ dự án, không lấy lại hình cành trơ từ winter-sheet cũ. Giữ oak190×176/pivot95,174 và grove190×136/pivot95,134 và toàn bộ gốc cây/clearance hiện có. Nguồn và phép xuất: `build-forest-refresh.mjs`, `environment/forest-v06/masters/lake-ring-20261116/`; xem `docs/forest-lake-20261116/` trước khi dựng lại atlas rừng.
 
 Vành Bờ hồ chọn `[grove,pine,oak,grove]`: `grove` là ảnh cụm ba cây riêng, không phải `oak`. Khi sửa rừng trơ cành phải kiểm đủ cả hai họ ảnh thường/tuyết trên cảnh thật, giữ đường ra và toàn bộ ranh giới mở rộng.
+
+Bờ hồ không có hàng rào: mép đất tuyết dùng `pond-meadow.mjs` cho cả clip sân và nền rừng, trải texture đến hết phần đất hồ để không lộ đường cắt của terrainExtensions cũ. Cây bìa hồ giữ scale đồng dạng phân số; không gọi nativePixelScale cho dải .6–1.45 vì hàm đó làm tròn tất cả về 1. Logical stage/collision vẫn giữ lưới64×32; chỉ outline cảnh nền uốn tự nhiên. Góc nghỉ liễu tại [12.5,-8], giữa ruộng nước và rừng phía tây hồ, giải phóng khoảng sân trước hồ (chủ dự án16/11).

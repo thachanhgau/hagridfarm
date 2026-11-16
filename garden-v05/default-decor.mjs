@@ -83,8 +83,8 @@ export function pondBedRects(at, built = [], count = 0) {
     return {c0, c1: c0 + 1, r0, r1: r0 + 3};
   });
 }
-/** «Góc nghỉ» (owner «khu vực giữa … tạo tiểu cảnh»): the 3×3 vignette's foot, between the paddies and the pond. */
-export const POND_NOOK = Object.freeze({at: [12.5, -3], footprint: [3, 3]}); // ground cols 10–13 × rows −5.5…−2.5: two cols off the Forbidden Lake woodland (owner 16/11 «dời cái cây chỗ khác cho hợp»)
+/** «Góc nghỉ»: tucked into the west woodland gap, leaving the front shore meadow open. */
+export const POND_NOOK = Object.freeze({at: [12.5, -8], footprint: [3, 3]}); // ground cols 10–13 × rows −10.5…−7.5, clear of paddies and lake
 /** Pond beds by tier (server garden-pond-core): 4 at «Ao cá», 7 at «Hồ rong», 10 at «Hồ sâu». */
 export const pondBedCount = built => (built?.includes?.('pond_3') ? 10 : built?.includes?.('pond_2') ? 7 : built?.includes?.('pond_1') ? 4 : 0);
 
