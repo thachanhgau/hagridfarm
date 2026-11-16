@@ -25,6 +25,8 @@ const FENCE_CLEARANCE=0.9;
 const SMALL_FENCE_CLEARANCE=0.4;
 // Paths are one cell wide (centre ± half a cell): a large piece may touch one, never cover it.
 const PATH_CLEARANCE=0.5;
+// Owner 16/11/2026 «cái cổng này đáng lẽ đặt lên lối đi được chứ»: gates and arches are walked through, so they may stand on paths.
+export const walksThrough=id=>/(?:^|_)(?:gate|arch)(?:_|$)|_veil$/.test(String(id));
 const POND_PATHS=Object.freeze([[[7.5,-.5],[7.5,-5.5]],[[20.5,-.5],[20.5,-3.5]]]); // garden-path-details pondPath
 const grow=(r,n)=>({c0:r.c0-n,c1:r.c1+n,r0:r.r0-n,r1:r.r1+n});
 function pondLandProblem(rect,built,big){
@@ -88,7 +90,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
   const sides=new Set();
   for(const c of [rect.c0-margin+inset,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,rect.r1+margin-inset])sides.add(inPondLand(c,r));
   if(sides.size>1)return 'Không đặt vắt ngang rào Bờ hồ.';
-  if(sides.has(true)){const why=pondLandProblem(rect,state?.built??[],big);if(why)return why;}
+  if(sides.has(true)){const why=pondLandProblem(rect,state?.built??[],big&&!walksThrough(itemId));if(why)return why;}
  }
  // Owner 20/10/2026: unbuilt bases are free ground; building there asks to move the piece first (decorOnGround).
  const queued=new Set((state?.construction??[]).map(j=>j.id)),built=new Set(state?.built??[]);
@@ -113,7 +115,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  if(rectsOverlap(rect,HEARTH_GROUND))return 'Chỗ này là lò sưởi Giáng sinh.';
  if(rectsOverlap(rect,FEAST_GROUND))return 'Chỗ này là bàn tiệc Đêm Noel.';
  for(const w of Object.values(WIZARD_LAYOUT)){const id={gardener:'gardener_friend',greenhouse:'herbology_greenhouse',owl:'owl_post',fang:'fang'}[w.id];if(rectsOverlap(rect,sceneryGroundRect(id,w.col,w.row)))return 'Chỗ này vướng công trình.';}
- if(big)for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
+ if(big&&!walksThrough(itemId))for(const path of GARDEN_PATHS)for(let i=1;i<path.length;i++)if(segmentRectDistance(path[i-1],path[i],rect)<PATH_CLEARANCE)return 'Món lớn không được chắn lối đi.';
  for(const raw of decorations?.placements??[]){
   const other=typeof raw==='object'&&raw!==null?(raw.itemId??raw.id):raw;
   if(!other||other===itemId)continue;

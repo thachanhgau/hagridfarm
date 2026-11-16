@@ -159,3 +159,11 @@ test('Bờ hồ meadow takes decorations once the pond is dug, off the lake, pad
   assert.match(on(6.5, -2), /cảnh vật/);
   assert.match(on(13, -0.5), /rào/);
 });
+
+test('gates and arches may stand on a path; other large pieces may not (owner 16/11/2026)', async () => {
+  const {walksThrough} = await import('./decor-placement-ui.mjs');
+  assert.deepEqual(['sp_department_veil', 'decor_vine_arch', 'nh_gryffindor_sword_holly_gate', 'nh_ravenclaw_constellation_arch', 'nh_gryffindor_commonroom_hearth', 'decor_cauldron'].map(walksThrough), [true, true, true, true, false, false]);
+  const on = id => decorSpotProblem(20, 23, {map: scene, stage: last, state: {decorations: []}, decorations: {}, itemId: id, footprint: [2, 2]});
+  assert.match(on('nh_gryffindor_commonroom_hearth'), /lối đi/);
+  assert.doesNotMatch(on('sp_department_veil'), /lối đi/);
+});
