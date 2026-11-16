@@ -60,6 +60,7 @@ export function renderPetCareButtons(items,supplies={}) {
   ['rotateCreatureButton','Xoay','Đổi hướng nhìn của sinh vật','replay',null,'sky'],
   ['moodButton','Chăm bé','Chơi, chải lông, dạy trò','care',null,'rose'],
   ['coatButton','Bộ lông','Đổi bộ lông hiếm (chỉ để ngắm)','festival',null,'violet'],
+  ['homeButton','Dời chuồng','Dời sang chuồng khác','pen',null,'leaf'],
   ['affinityButton','Gắn kết','Quà gắn kết','chest',null,'gold'],
   ['mealBoostButton','Nước phép','Nước phép','boost','boost','sky'],
   ['premium-prime_meal','Thượng hạng','Bữa thượng hạng','prime_meal','primeMeal','amber'],
@@ -88,7 +89,7 @@ export function renderPetCareButtons(items,supplies={}) {
  }
 }
 
-export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null,getFoodAction=()=>null,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {
+export function setupPetControls({E,items,canMoveHome=()=>false,getMood=()=>null,getFavourite=()=>null,getFoodAction=()=>null,getState,getSpecies,getNow,getReady,onSelect,onHelp}) {
  let group='owned',lastPortrait='',previousOwned=false,lastFavourite='';
  const favSlot=el('span',{class:'pet-favourite-slot',hidden:true});
  $('petPortrait')?.parentElement?.append(favSlot);
@@ -162,6 +163,7 @@ export function setupPetControls({E,items,getMood=()=>null,getFavourite=()=>null
   $('petButton').disabled=!getReady();
   if($('rotateCreatureButton'))$('rotateCreatureButton').hidden=!animal;
   if($('coatButton'))$('coatButton').hidden=!animal;
+  if($('homeButton'))$('homeButton').hidden=!animal||!canMoveHome(species);
   if($('moodButton'))$('moodButton').hidden=!animal||getMood(species)==null;
   const primary=animal?(animal.meal?'claimAnimalButton':'feedButton'):'adoptButton';
   const hand=primary==='feedButton'&&E.HAND_FEED_SPECIES?.has(species)===true; // Nhím quậy: «Cho ăn tận tay» (phase 2)

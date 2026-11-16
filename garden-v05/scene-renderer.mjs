@@ -15,6 +15,7 @@ import {COMPLETE_SCENERY,KEEPSAKE_ART,completeObjectFiles} from './complete-obje
 import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=26.1';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.1';
 import {habitatResidents,habitatObjects} from './garden-creature-habitats.mjs?v=26.1';
+import {resolveCreatureHomes,spotPoint} from './creature-homes.mjs?v=26.1';
 import {drawGardenPathDetails} from './garden-path-details.mjs?v=26.1';
 import {drawPenHabitat,penFencePieces,drawPenFence} from './garden-pen-details.mjs?v=26.1';
 import {drawRaisedPlotBorder,drawCottageGround,drawPlotOutline} from './garden-cottage-details.mjs?v=26.1';
@@ -31,7 +32,7 @@ import {drawEventOverlay,eventConfig} from './garden-events.mjs?v=26.1';
 import {drawGardenFire,fireSpots} from './garden-fire.mjs?v=26.1';
 import {drawNaturalMeadow} from './meadow-ground.mjs?v=26.1';
 import {insideFarm, createBoundaryFence, drawBoundaryFence, drawMeadowDetails} from './garden-landscape.mjs?v=26.1';
-import {EDGE_LAYOUT,PASTURE_ROAMERS,pastureSpot,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=26.1';
+import {EDGE_LAYOUT,treeStage,EDGE_STAGE,fitBounds,gardenStage,stageBoundary,fenceOpenings,stageContains,stageWorldBounds,futureGroves,keepsakeAnchorRow} from './garden-growth.mjs?v=26.1';
 import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=26.1';
 import {KEEPSAKE_DISPLAY_LAYOUT,KEEPSAKE_LEGACY_LAYOUT,keepsakeAnchor,keepsakeDisplayPlacements} from './decor-placement-geometry.mjs?v=26.1';
 import {CREATURE, CROP, growth, nowFor, POND_SPECIES} from './progression-engine.mjs?v=26.1';
@@ -1174,6 +1175,11 @@ export async function createGarden(canvas, options = {}) {
   let authoredEffectEventIds = new Set();
 
   const landCreatures = (state) => asArray(state?.creatures).filter((entry) => !POND_SPECIES.has(entry?.species));
+  // «Dời chuồng»: [col,row] per land creature, resolved once per render (props, effects and sprites follow it).
+  let creaturePoints = [];
+  const resolveCreaturePoints = (state, decorations, builtIds) => {
+    creaturePoints = resolveCreatureHomes(landCreatures(state), decorations?.creatureHomes, {built: builtIds}).map((s) => spotPoint(map, s));
+  };
   const landIndex = (state, index) => (index < 0 || POND_SPECIES.has(asArray(state?.creatures)[index]?.species) ? -1 : landCreatures({creatures: asArray(state?.creatures).slice(0, index)}).length);
 
   // Garden expansion phase 1 «Hồ nuôi» (docs/garden-expansion-plan.md §2.1, §6): the built pond replaces the decorative
@@ -1453,7 +1459,7 @@ export async function createGarden(canvas, options = {}) {
     });
   }
   function drawBuiltPen(pen,state,clock){
-    const residents=habitatResidents(pen,landCreatures(state),map.creatureSpots,iso);
+    const residents=habitatResidents(pen,landCreatures(state),creaturePoints,iso);
     const sharedEast=Math.abs(currentStage.right-(pen.col+pen.width))<0.001;
     const enclosure=pen;
     const corners=penCorners(enclosure),key=activeWeather+'@'+resolution.layer()+':'+JSON.stringify([corners,residents]);
@@ -1553,7 +1559,7 @@ export async function createGarden(canvas, options = {}) {
       const [x,y]=iso(pen.col-.75,pen.row+pen.height*.5),px=Math.ceil(10*labelScale);
       const text=construction&&!construction.ready?`Chuồng ${index+1} · ${Math.round(construction.progress*100)}%`:(isBuilt||queued)?`Chuồng ${index+1}`:`Lv ${pen.requiredLevel}`;
       // Season 2: a star for a ready skill, Kneazle's meal-done and sick-soon marks, from the pen's residents.
-      const marks=isBuilt&&skillMarks?.pens.size?[...new Set(habitatResidents(pen,landCreatures(state),map.creatureSpots,iso).flatMap(r=>skillMarks.pens.get(r.species)||[]))]:null;
+      const marks=isBuilt&&skillMarks?.pens.size?[...new Set(habitatResidents(pen,landCreatures(state),creaturePoints,iso).flatMap(r=>skillMarks.pens.get(r.species)||[]))]:null;
       const boxes=plotSign(context,[[text,isBuilt||queued?'#f5d69a':'#a6b1ae']],Math.round(x),Math.round(y),px,null,marks);
       // The plaque stays above the pen's rails, but a creature standing in front of it (feet lower on screen) covers it
       // again (owner 13/11/2026): redraw those creatures clipped to the plaque, so nothing else is painted twice.
@@ -1705,12 +1711,12 @@ export async function createGarden(canvas, options = {}) {
     if (guestActor && event.species === guestActor.species && event.plot === undefined
       && !asArray(state?.creatures).some((entry) => entry?.species === event.species)) return [iso(guestActor.col, guestActor.row)];
     if (event.species && event.creatureIndex !== undefined) {
-      const spot = map.creatureSpots[landIndex(state, event.creatureIndex)];
+      const spot = creaturePoints[landIndex(state, event.creatureIndex)];
       return Array.isArray(spot) ? [iso(spot[0], spot[1])] : [];
     }
     if (event.species && event.plot === undefined) {
       const index = asArray(state?.creatures).findIndex((entry) => entry?.species === event.species);
-      const spot = map.creatureSpots[landIndex(state, index)];
+      const spot = creaturePoints[landIndex(state, index)];
       return Array.isArray(spot) ? [iso(spot[0], spot[1])] : [];
     }
     if (event.plot === undefined || !map.plots[event.plot]) return [];
@@ -1845,6 +1851,7 @@ export async function createGarden(canvas, options = {}) {
     drawPlotSoil(state, logicalNow, grid);
     drawV24Ground(context,{weatherMode,clock,iso,stage:currentStage,map});
     const hasEdge = currentStage.id === 8, builtIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id?.id : id)));
+    resolveCreaturePoints(state, options.decorations, builtIds);
     map.columns = hasEdge ? 46 : 34;
     if (hasEdge) drawEdgeGround(context, builtIds);
     drawSelection(state, selectedPlot, lineCells);
@@ -1976,14 +1983,10 @@ export async function createGarden(canvas, options = {}) {
     for (let index = 0, land = 0; index < asArray(state.creatures).length; index += 1) {
       const entry = state.creatures[index];
       if (POND_SPECIES.has(entry?.species)) continue;
-      let spot = map.creatureSpots[land++];
+      let spot = creaturePoints[land++];
       if (!Array.isArray(spot) || spot.length < 2 || !entry) continue;
       let facing = creatureFacings[entry.species] === 'right' ? 'right' : 'default';
       if (entry.species === 'salamander' && campfire) spot = [campfire.col + 0.7, campfire.row + 0.2];
-      if (builtIds.has('edge_2') && PASTURE_ROAMERS.includes(entry.species)) {
-        const roam = pastureSpot(PASTURE_ROAMERS.indexOf(entry.species));
-        spot = [roam.col, roam.row];
-      }
       // A page without creature-motion-data.js (tests, older embeds) has no sprite for the newer species: a small drawn stand-in.
       if (!items.get(entry.species)) { objects.push(creatureStandIn(entry, spot, index)); continue; }
       const actor = actorObject(entry, spot[0], spot[1], logicalNow, clock, {creatureIndex: index, facing});

@@ -88,7 +88,7 @@ export function setupCamera({viewport,canvas,map,iso,plotCorners,getRenderer,onP
   camera.y=(safeTop+safeBottom)/2-(top+bottom)/2*camera.scale;
   frameFirstPlot=false;frameOverview=false;apply();
  }
- function focusCreature(index){if(frameOverview){overview();return;}const p=map.creatureSpots[index];if(p){const [x,y]=iso(...p);centerAt(x,y-45,viewport.clientHeight<450?1.1:1.35);}}
+ function focusCreature(index){if(frameOverview){overview();return;}const p=Array.isArray(index)?index:map.creatureSpots[index];if(p){const [x,y]=iso(...p);centerAt(x,y-45,viewport.clientHeight<450?1.1:1.35);}}
  function overview(){
   const {bounds:b,left,right,top,bottom}=overviewFrame();
   camera.scale=fitScale;

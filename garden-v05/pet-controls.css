@@ -92,3 +92,9 @@
  .pet-detail{padding-top:4px;gap:8px}
  .pet-care-tools{padding-top:4px}
 }
+/* «Dời chuồng» (creature-homes.mjs): one cream cell per spot, grouped by pen. */
+.creature-homes .home-group h3{margin:10px 0 5px;font:700 13px/1.2 system-ui,sans-serif;color:#483325}
+.creature-homes .home-cells{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.creature-homes .is-pasture .home-cells{grid-template-columns:repeat(3,minmax(0,1fr))}
+.creature-homes .home-cell{min-height:40px;padding:6px;border:1px solid #c9b07a;border-radius:4px;background:#fbf3dc;color:#493524;font:700 12px/1.2 system-ui,sans-serif;cursor:pointer}
+.creature-homes .home-cell.is-here{background:#304b36;border-color:#62774b;color:#f7e6b8;cursor:default}

@@ -2,6 +2,7 @@ import {refreshPremiumControls} from './garden-premium-controls.mjs?v=26.1';
 import {setupPetControls,renderPetCareButtons,petControlState} from './pet-controls.mjs?v=26.1';
 import {openGardenLayout} from './garden-layout-ui.mjs?v=26.1';
 import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=26.1';
+import {CREATURE_HOMES_LEVEL,resolveCreatureHomes,spotPoint,swapHome,homeChoices,openCreatureHomes} from './creature-homes.mjs?v=26.1';
 import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=26.1';
 import {setupGardenControls} from './garden-controls-ui.mjs?v=26.1';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=26.1';
@@ -30,7 +31,7 @@ import {loadVisualPrefs,saveVisualPrefs,createHpvnBridge,VISUAL_PREFS_STORAGE_KE
 import {HONOR_GARDENS,buildHonorGardenSnapshot,loadTourProgress,helpHonorGarden} from './garden-tour.mjs?v=26.1';
 import {evaluateAchievements,selectKeeperTitle,claimAchievementReward,useServerAchievements,ACHIEVEMENTS_STORAGE_KEY} from './garden-achievements.mjs?v=26.1';
 import {eventConfig,loadEventState,saveEventState,recordFestivalAction,claimEventMilestone,hasClaimableEventMilestone,useServerFestival,useServerBonding,festivalMilestone,evaluateCreatureAffinity,recordCreatureAffinity,claimAffinityGift} from './garden-events.mjs?v=26.1';
-import {pixelIcon,lineIconUrl,setAction,tanSucMark} from './pixel-icons.mjs?v=26.1';
+import {iconButton,pixelIcon,lineIconUrl,setAction,tanSucMark} from './pixel-icons.mjs?v=26.1';
 import {weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=26.1';
 import {nextGoal} from './next-goal.mjs?v=26.1';
 import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=26.1';
@@ -517,7 +518,18 @@ async function run(action,text='Đã hoàn tất.',command=null){
 function switchSession(next,level){if(connected)return;session=next;key=prefix+'-'+session;selectStorage();if(next==='lab'&&level!==undefined){state=E.testProfile(level,Date.now());saveAvailable=true;saveProblem='';checkSaveSupport();save();}else{loadSession();checkSaveSupport();}const url=new URL(location.href);if(next==='lab')url.searchParams.set('lab','1');else url.searchParams.delete('lab');history.replaceState(null,'',url);location.reload();}
 function exportSave(){const blob=new Blob([JSON.stringify(connected?{kind:'garden-emulator-recovery',capturedAt:new Date().toISOString(),snapshot:wallet.snapshot}:state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a',{href:url,download:'hagrid-v05-'+session+'-level-'+state.level+'.json'});a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function selectCrop(id){seed=id;setMode('plant');$('seedTray').querySelector('[aria-pressed=true]')?.scrollIntoView({block:'nearest',inline:'nearest'});}
-function selectCreature(id){species=id;petControls?.select(id);setMode('creature');const i=state.creatures.filter(e=>!E.POND_SPECIES.has(e.species)).findIndex(e=>e.species===id);if(i>=0)camera.focusCreature(i);$('creatureTray').querySelector('[aria-pressed=true]')?.scrollIntoView({block:'nearest',inline:'nearest'});}
+// «Dời chuồng» (level 130): land creatures and the spot each stands on (creature-homes.mjs, same rule as the renderer).
+function creatureHomesView(){const land=state.creatures.filter(e=>!E.POND_SPECIES.has(e.species)),built=new Set((state.built||[]).map(id=>String(typeof id==='object'?id?.id:id)));return {land,built,spots:resolveCreatureHomes(land,currentDecorations()?.creatureHomes,{built})};}
+const canMoveHome=sp=>connected&&walletReady&&!activeTourSnapshot&&state.level>=CREATURE_HOMES_LEVEL&&!E.POND_SPECIES.has(sp)&&state.creatures.some(e=>e.species===sp);
+function openCreatureHome(sp=species){
+ if(!canMoveHome(sp))return;
+ const v=creatureHomesView(),i=v.land.findIndex(e=>e.species===sp),labelOf=s=>CREATURE[s]?.label||s;
+ openCreatureHomes({el,iconButton,label:labelOf(sp),labelOf,groups:homeChoices(v.land,v.spots,{built:v.built}),current:v.spots[i],move:async(target,name)=>{
+  await run(null,`Đã dời ${labelOf(sp)} sang ${name}.`,{action:'setCreatureHomes',homes:swapHome(v.land,v.spots,sp,target)});
+  if(currentDecorations()?.creatureHomes?.[sp]!==target)return false;
+  camera.focusCreature(spotPoint(map,target));return true;}});
+}
+function selectCreature(id){species=id;petControls?.select(id);setMode('creature');const v=creatureHomesView(),i=v.land.findIndex(e=>e.species===id);if(i>=0)camera.focusCreature(spotPoint(map,v.spots[i]));$('creatureTray').querySelector('[aria-pressed=true]')?.scrollIntoView({block:'nearest',inline:'nearest'});}
 function focusPlot(index){selectedPlot=index;setMode('plant');camera.focusPlot(index);}
 function setMode(next){
  mode=next;$('playDock').classList.toggle('pet-mode',next==='creature');guideEvent('mode:'+next,false);
@@ -796,7 +808,7 @@ $('feedButton').onclick=()=>{const hand=E.HAND_FEED_SPECIES?.has(species)===true
 $('claimAnimalButton').onclick=()=>run(s=>E.claimAnimals(s,species,Date.now()),'Đã nhận kết quả chăm sóc '+CREATURE[species].label+'.',{action:'claimAnimals',species});
 for(const [id,name]of Object.entries({levelButton:'profile',plotsButton:'plots',inventoryButton:'inventory',menuButton:'menu'}))$(id).onclick=()=>panels.show(name);
 window.addEventListener('storage',e=>{if(connected)return;if(e.key!==gardenStorage.storageKey||!e.newValue||busy)return;try{const raw=gardenStorage.getItem(key);if(!raw)return;state=E.restoreChecked(raw,Date.now());refresh();panels.refresh();message('Đã cập nhật tiến độ từ tab còn lại.');}catch{message('Bản lưu ở tab khác không hợp lệ; giữ phiên đang mở.');}});
-petControls=setupPetControls({E,items,getMood:sp=>moodOf(sp)?.mood,getFavourite:moodOf,getState:()=>state,getSpecies:()=>species,getNow:logical,getReady:()=>loaded&&(!connected||walletReady)&&!busy,onSelect:selectCreature,getFoodAction:view=>workTrays?.feedAction(view.config.feed,view.shortage),onHelp:(help,view)=>help==='food'?(workTrays.feedAction(view.config.feed,view.shortage).store?openStore('food',$('petHelp'),view.config.feed,view.shortage):workTrays.quickFeed(view.config.feed,view.shortage)):help==='build'?setMode('build'):help==='pond'?setMode(currentPond()?'pond':'build'):panels.show('roadmap')});
+petControls=setupPetControls({E,items,canMoveHome,getMood:sp=>moodOf(sp)?.mood,getFavourite:moodOf,getState:()=>state,getSpecies:()=>species,getNow:logical,getReady:()=>loaded&&(!connected||walletReady)&&!busy,onSelect:selectCreature,getFoodAction:view=>workTrays?.feedAction(view.config.feed,view.shortage),onHelp:(help,view)=>help==='food'?(workTrays.feedAction(view.config.feed,view.shortage).store?openStore('food',$('petHelp'),view.config.feed,view.shortage):workTrays.quickFeed(view.config.feed,view.shortage)):help==='build'?setMode('build'):help==='pond'?setMode(currentPond()?'pond':'build'):panels.show('roadmap')});
 workTrays=setupWorkTrays({E,items,labels,onBusy:()=>refresh(),getSupplies:()=>connected?wallet?.snapshot?.garden?.supplies:null,notify:(text,action)=>message(text,null,action),openSeedStore,openStore,getState:()=>state,getReady:()=>loaded&&(!connected||walletReady)&&!busy,run,showPanel:name=>panels.show(name),getGalleons,decor:{getDecorations:currentDecorations,getAssets:()=>decorAssets,openDecorate:openDecoration,openStore,getState:()=>state,getRotations:()=>({...state?.decorationRotations,...earnedDecorRotations}),setDefaultVisible:setDefaultDecorVisibility,openDefault:openDefaultDecoration,focusDecor}});
 $('craftTool').onclick=()=>setMode('craft');$('buildTool').onclick=()=>setMode('build');
 // Garden expansion phase 1 «Hồ nuôi» (docs/garden-expansion-plan.md §2.1): the «Hồ» dock from level 130 with the wallet's
@@ -883,7 +895,7 @@ function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.
 $('closeCelebration').onclick=closeCelebration;
 $('levelCelebration').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closeCelebration();}if(e.key==='Tab'){e.preventDefault();$('closeCelebration').focus();}});
 const rotateCreatureBtn=button('Xoay',()=>{rotateCreatureFacing(species);},{id:'rotateCreatureButton','aria-label':'Đổi hướng nhìn của sinh vật'});
-$('petButton')?.after(rotateCreatureBtn,button('Chăm bé',()=>{openMoodCare(species);},{id:'moodButton','aria-label':'Chơi, chải lông, dạy trò'}),button('Bộ lông',()=>{cycleCreatureCoat(species);},{id:'coatButton','aria-label':'Đổi bộ lông hiếm'}),button('Quà gắn kết',()=>{panels.show('affinity');},{id:'affinityButton'}));
+$('petButton')?.after(rotateCreatureBtn,button('Chăm bé',()=>{openMoodCare(species);},{id:'moodButton','aria-label':'Chơi, chải lông, dạy trò'}),button('Bộ lông',()=>{cycleCreatureCoat(species);},{id:'coatButton','aria-label':'Đổi bộ lông hiếm'}),button('Dời chuồng',()=>{openCreatureHome(species);},{id:'homeButton','aria-label':'Dời sang chuồng khác'}),button('Quà gắn kết',()=>{panels.show('affinity');},{id:'affinityButton'}));
 $('careAllButton').onclick=()=>{panels.show('creatures');};
 renderPetCareButtons(items);
 $('seedOptionsButton').onclick=()=>$('seedOptions').showModal();
