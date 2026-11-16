@@ -1,0 +1,269 @@
+[
+  {
+    "id": "habitat_diricawl",
+    "kind": "roundbase",
+    "guide": "garden-v05/isometric-architecture-refinements/coordinate-locks/solid/habitat_diricawl.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_unicorn",
+    "kind": "roundbase",
+    "guide": "garden-v05/isometric-architecture-refinements/coordinate-locks/solid/habitat_unicorn.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "scenery_hut",
+    "kind": "roundhut",
+    "guide": "garden-v05/isometric-architecture-refinements/coordinate-locks/solid/scenery_hut.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          50.66666666666667,
+          25.333333333333336
+        ],
+        "axisRow": [
+          -50.66666666666667,
+          25.333333333333336
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          50.66666666666667,
+          25.333333333333336
+        ],
+        "axisRow": [
+          -50.66666666666667,
+          25.333333333333336
+        ]
+      }
+    ]
+  },
+  {
+    "id": "festival_hero_event_herbology_fair",
+    "kind": "marketstall",
+    "guide": "garden-v05/isometric-architecture-refinements/coordinate-locks/solid/festival_hero_event_herbology_fair.png",
+    "width": 384,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            315
+          ],
+          [
+            344,
+            391
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            40,
+            391
+          ]
+        ],
+        "axisColumn": [
+          76,
+          38
+        ],
+        "axisRow": [
+          -76,
+          38
+        ]
+      }
+    ]
+  }
+]

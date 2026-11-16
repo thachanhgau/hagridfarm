@@ -31,13 +31,20 @@ async function recover(master,frame){
  for(let y=0;y<original.info.height;y++)for(let x=0;x<original.info.width;x++){const i=(y*original.info.width+x)*4;if(original.data[i+3]<192){original.data[i+3]=0;continue;}original.data[i+3]=255;opaque++;x0=Math.min(x0,x);x1=Math.max(x1,x);y0=Math.min(y0,y);y1=Math.max(y1,y);}
  if(x1<0)throw Error('Empty source '+master);
  const nativePixels=await rgba(native),width=nativePixels.info.width*density,height=nativePixels.info.height*density;
- const w=b.w*density,h=b.h*density,ink=(frame.palette?snapTo(frame.palette):quantize)(await sharp(original.data,{raw:original.info}).extract({left:x0,top:y0,width:x1-x0+1,height:y1-y0+1}).resize(w,h,{kernel:'nearest',fit:'fill'}).flop(!!frame.flop).raw().toBuffer()),out=Buffer.alloc(width*height*4);
+ const w=b.w*density,h=b.h*density,ink=(frame.preserveColors?buf=>buf:frame.palette?snapTo(frame.palette):quantize)(await sharp(original.data,{raw:original.info}).extract({left:x0,top:y0,width:x1-x0+1,height:y1-y0+1}).resize(w,h,{kernel:'nearest',fit:'fill'}).flop(!!frame.flop).raw().toBuffer()),out=Buffer.alloc(width*height*4);
  // Old opaque-sheet sources retain the already-reviewed native alpha mask; transparent masters keep their fine contour.
  const legacyMask=opaque===original.info.width*original.info.height;
  for(let y=0;y<h;y++)for(let x=0;x<w;x++){const dx=b.x*density+x,dy=b.y*density+y;if(dx<0||dy<0||dx>=width||dy>=height)throw Error('HD clipping '+native);const si=(y*w+x)*4,ni=(Math.floor(dy/density)*nativePixels.info.width+Math.floor(dx/density))*4;if(!legacyMask||nativePixels.data[ni+3])ink.copy(out,(dy*width+dx)*4,si,si+4);}
  // Water crops (water-crop-art.mjs): the same tray cut at density 2, found from the HD rim itself.
  const trayCut=TRAY_ART.test(native)&&cutTray(out,width,height,density)>0;
  await save(native,out,width,height,{...trayCut&&{trayCut},master,masterSha256:sha(await fs.readFile(path.join(root,master))),sourceRect:crop,logicalBounds:b,legacyAlphaMask:legacyMask,...frame.palette&&{palette:frame.palette}});
+}
+// Reviewed replacements win before legacy records: a similar silhouette is not proof of the right master.
+const replacements=await read('isometric-hd-manifest.json');
+for(const item of replacements.items){
+ if(sha(await fs.readFile(path.join(root,item.master)))!==item.masterSha256)throw Error('Replacement master changed '+item.id);
+ for(const f of item.frameRecords.filter(f=>!f.effectBaseFile)){if(f.hdFile){const bytes=await fs.readFile(path.join(root,f.hdFile));if(sha(bytes)!==f.hdSha256)throw Error('Replacement HD changed '+f.file);const raw=await sharp(bytes).ensureAlpha().raw().toBuffer({resolveWithObject:true});await save(f.file,raw.data,raw.info.width,raw.info.height,{master:item.master,masterSha256:item.masterSha256,sourceRect:f.sourceRect,method:'same uniform master export at density 2',hdFile:f.hdFile,hdSha256:f.hdSha256,palette:item.paletteColors});}else await recover(item.master,{...f,palette:item.paletteColors});}
+ for(const baseFile of new Set(item.frameRecords.map(f=>f.effectBaseFile).filter(Boolean)))await effectFrames(baseFile,item.frameRecords.filter(f=>f.effectBaseFile===baseFile).map(f=>f.file),{master:item.master,masterSha256:item.masterSha256});
 }
 const manifests=['noel-50-assets/manifest.json','house-noel-assets/manifest.json','complete-objects-manifest.json','crop-complete-manifest.json','flow-art-manifest.json','decor-flow-manifest.json','item-art-manifest.json'];
 for(const name of manifests){const data=await read(name);walk(data);const items=Array.isArray(data.items)?data.items:Object.values(data.items||{});
@@ -93,6 +100,10 @@ for(const [i,frame]of homestead.outputs.entries()){
 }
 // Whole-master recovery: the master's ink box fits the native ink rectangle the builder placed it in.
 const whole=async(master,frame)=>{const m=await sharp(path.join(root,master)).metadata();await recover(master,{...frame,sourceRect:{x:0,y:0,w:m.width,h:m.height}});};
+// Festival routes and Halloween plot pockets are explicitly included; the ordinary scene census does not visit every event.
+{const festival=await read('world-v241/masters/isometric-hd-audit-20261115/provenance.json');for(const a of festival.assets){if(sha(await fs.readFile(path.join(root,a.master)))!==a.sha256)throw Error('Festival master changed');await whole(a.master,{file:a.native,bounds:inkBounds(await rgba(a.native)),preserveColors:a.preserveColors});}}
+{const gate=await read('environment/masters/halloween-gate-20261109/provenance.json');if(sha(await fs.readFile(path.join(root,gate.master)))!==gate.sha256)throw Error('Halloween gateway master changed');const cells=authoredCells(await sharp(path.join(root,gate.master)).ensureAlpha().raw().toBuffer({resolveWithObject:true}),[2]);for(const [i,f]of gate.outputs.entries())await recover(gate.master,{...f,sourceRect:cells[i].sourceRect,bounds:inkBounds(await rgba(f.file))});}
+{const plots=await read('environment/masters/plot-variety-20261109/provenance.json');for(const group of plots.assets){if(sha(await fs.readFile(path.join(root,group.master)))!==group.sha256)throw Error('Plot-pocket master changed');const columns=group.master.endsWith('/workshop.png')?4:3,cells=authoredCells(await sharp(path.join(root,group.master)).ensureAlpha().raw().toBuffer({resolveWithObject:true}),Array(4).fill(columns));for(const [i,f]of group.outputs.entries())await recover(group.master,{...f,sourceRect:cells[i].sourceRect});}}
 // Legacy sheets (build-native.mjs): motion-data.json records each frame's master cell and native ink bounds.
 const motion=await read('motion-data.json');
 for(const item of motion.items){if(sha(await fs.readFile(path.join(root,item.source)))!==item.sourceSha256)throw Error('Master changed '+item.source);for(const frame of item.frames)await recover(item.source,frame);}
@@ -184,14 +195,15 @@ const mismatch=async(file,raw)=>{const now=(await rgba(file)).data;let n=0;for(l
    await save(right,hd,128*density,96*density,source);await save(`creature-motion-assets/submerged-native/${spec.id}/left-${index}.png`,await sharp(hd,{raw:{width:128*density,height:96*density,channels:4}}).flop().raw().toBuffer(),128*density,96*density,{...source,flop:true});}}}
 walk(await read('decor-assets-manifest.json'));
 // Atlas metadata shares the original logical rectangles; each recovered cell is copied at doubled density.
-const registry={};
+const registry={},replacementAtlases=new Set(replacements.items.filter(i=>i.targetKind==='store-decoration').map(i=>`decor-assets/native/${i.id}_atlas.png`));
 for(const [file]of inventory){const raw=await rgba(file),hit=recovered.get(sha(raw.data));if(hit)registry[file]=hit;}
 for(const [file,rectangles]of atlasSpecs){if(!inventory.has(file))continue;const raw=await rgba(file),layers=[];
  for(const r of rectangles.values()){
   const cell=await sharp(raw.data,{raw:raw.info}).extract({left:r.x,top:r.y,width:r.w,height:r.h}).raw().toBuffer(),hit=recovered.get(sha(cell));if(hit)layers.push({input:path.join(root,hit.file),left:r.x*density,top:r.y*density});
  }
  if(!layers.length)continue;
- const base=await sharp(raw.data,{raw:raw.info}).resize(raw.info.width*density,raw.info.height*density,{kernel:'nearest'}).png().toBuffer();
+ if(replacementAtlases.has(file)&&layers.length!==rectangles.size)throw Error('Incomplete reviewed HD atlas '+file);
+ const base=replacementAtlases.has(file)?await sharp({create:{width:raw.info.width*density,height:raw.info.height*density,channels:4,background:{r:0,g:0,b:0,alpha:0}}}).png().toBuffer():await sharp(raw.data,{raw:raw.info}).resize(raw.info.width*density,raw.info.height*density,{kernel:'nearest'}).png().toBuffer();
  const bytes=await sharp(base).composite(layers).webp({lossless:true,exact:true}).toBuffer(),output=`decor-assets/hd/${sha(bytes).slice(0,24)}-atlas.webp`;await fs.writeFile(path.join(root,output),bytes);
  registry[file]={file:output,density,width:raw.info.width,height:raw.info.height,bytes:bytes.length,sha256:sha(bytes),recoveredFrames:layers.length,totalFrames:rectangles.size};
 }

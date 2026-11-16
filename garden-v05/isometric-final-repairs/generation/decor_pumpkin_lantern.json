@@ -1,0 +1,13 @@
+{
+  "id": "decor_pumpkin_lantern",
+  "prompt": "Redraw the SAME pumpkin lantern in images3 and4. Keep their ROUND ribbed orange jack-o-lantern, green curling stem, amber triangular eyes and jagged friendly grin, rough oak post and thin square wooden cap. Correct ONLY the camera of the thin timber cap and square post to match image1: axes exactly TWO-across ONE-down, slopes\u00b10.500, verticals vertical. The pumpkin MUST stay round and organic, NEVER a cube, square box or rectangular lantern. No extra pedestal or floor. Output TWO isolated poses in one row, default left and90-degree world turn right, same scale and upper-left light. Dense readable handcrafted HD pixel art in the existing garden palette, actual transparent alpha and wide gutters. Image2 is garden context; do not copy scenery. Use the head shapes and style of the two original references literally.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-1b3a5753-9781-4736-a089-5d9a3730036f.png",
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-final-repairs/generation-inputs/decor_pumpkin_lantern-e93e624ca7e2.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/decor-assets/masters/decor_pumpkin_lantern.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/decor-assets/masters/decor_pumpkin_lantern_right.png"
+  ],
+  "guide": "isometric-final-repairs/generation-inputs/decor_pumpkin_lantern-e93e624ca7e2.png",
+  "guideSha256": "e93e624ca7e268c1f01da30d601730e3edf8314ea9f376934b5370702ef73d49"
+}

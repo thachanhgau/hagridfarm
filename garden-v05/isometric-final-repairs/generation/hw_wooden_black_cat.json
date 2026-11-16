@@ -1,0 +1,12 @@
+{
+  "id": "hw_wooden_black_cat",
+  "prompt": "Edit the TWO original carved wooden cat statuettes in image1. Preserve their exact rounded three-dimensional carved cat bodies, warm dark-purple woodgrain, curled tails, pointed ears, amber eyes, orange neck bow, poses, lighting and scale. Do not flatten them into boards or redesign them. Correct only their low circular LOG-SLICE wooden feet: horizontal top rims must be exactly2:1 ellipses, twice as wide as high, matching image2 geometry. Same little log-slice foot with visible bark sides, no pole, plinth, extra base or ground. The original two world directions remain left/default and right quarter-turn. Keep the same crisp handmade HD pixel style. Fully transparent outside the two complete isolated objects, no shadow or extra marks. Image3 is actual garden context.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-5d2abe1b-a175-4870-9955-ad0a4a792ddc.png",
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/halloween-assets/masters/hw_wooden_black_cat.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-final-repairs/generation-inputs/hw_wooden_black_cat-1c8202be9216.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ],
+  "guide": "isometric-final-repairs/generation-inputs/hw_wooden_black_cat-1c8202be9216.png",
+  "guideSha256": "1c8202be9216fe9ae28bae70e2213bd5afc1468924ff2e1852e311e0884783c3"
+}

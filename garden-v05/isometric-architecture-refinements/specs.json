@@ -1,0 +1,276 @@
+[
+  {
+    "id": "habitat_diricawl",
+    "originalId": "diricawl",
+    "targetKind": "habitat",
+    "subject": "One low gray shallow stone water bowl on a squat pedestal with blue water and two green leaves by the foot. No birds. Preserve this exact original habitat, no unrelated parts. The water is clean visible LIGHT SKY BLUE (#70A8B6/#B7DEE0), NOT green, dark moss, lily leaves or algae. Preserve the small gray stone drinking-bowl shape and only the exact original attached leaves/flowers.",
+    "guideKind": "roundbase",
+    "footprint": [
+      1,
+      1
+    ],
+    "maxInkWidth": 32,
+    "width": 40,
+    "height": 36,
+    "pivotX": 20,
+    "pivotY": 31,
+    "motion": "static",
+    "fixedCamera": true,
+    "poseLayout": [
+      2
+    ],
+    "master": "isometric-architecture-refinements/masters/habitat_diricawl-refined.png",
+    "selectedMaster": "isometric-architecture-refinements/masters/habitat_diricawl-refined.png",
+    "previousRuntime": {
+      "id": "habitat_diricawl",
+      "file": "native-complete-objects/habitat_diricawl/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 3,
+        "y": 3,
+        "w": 35,
+        "h": 28
+      },
+      "frames": [
+        "native-complete-objects/habitat_diricawl/frame-01.png"
+      ],
+      "authored": true,
+      "hd": true,
+      "auditSource": "decor-assets/hd/40e7cbe50c468038c3caf69d.webp"
+    },
+    "previousViews": [
+      {
+        "id": "habitat_diricawl",
+        "file": "native-complete-objects/habitat_diricawl/frame-01.png",
+        "width": 40,
+        "height": 36,
+        "pivotX": 20,
+        "pivotY": 31,
+        "bounds": {
+          "x": 3,
+          "y": 3,
+          "w": 35,
+          "h": 28
+        },
+        "frames": [
+          "native-complete-objects/habitat_diricawl/frame-01.png"
+        ],
+        "authored": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/40e7cbe50c468038c3caf69d.webp"
+      }
+    ],
+    "noFeet": false,
+    "noPost": true,
+    "winter": true,
+    "guideHeight": 20,
+    "guide": "isometric-architecture-refinements/generation-inputs/habitat_diricawl-23a9df096897.png",
+    "guideSha256": "23a9df0968971675f59d0e49a56dbf3363341eca82a4bd9ba94ee5e93c2079a2",
+    "guideLayout": "poses",
+    "water": true
+  },
+  {
+    "id": "habitat_unicorn",
+    "originalId": "unicorn",
+    "targetKind": "habitat",
+    "subject": "One shallow pale gray oval stone basin with blue water and TWO ivory flowers touching its left rim. No animal. Preserve this exact original habitat, no unrelated parts. The water is clean visible LIGHT SKY BLUE (#70A8B6/#B7DEE0), NOT green, dark moss, lily leaves or algae. Preserve the small gray stone drinking-bowl shape and only the exact original attached leaves/flowers.",
+    "guideKind": "roundbase",
+    "footprint": [
+      1,
+      1
+    ],
+    "maxInkWidth": 32,
+    "width": 40,
+    "height": 36,
+    "pivotX": 20,
+    "pivotY": 31,
+    "motion": "static",
+    "fixedCamera": true,
+    "poseLayout": [
+      2
+    ],
+    "master": "isometric-architecture-refinements/masters/habitat_unicorn-refined.png",
+    "selectedMaster": "isometric-architecture-refinements/masters/habitat_unicorn-refined.png",
+    "previousRuntime": {
+      "id": "habitat_unicorn",
+      "file": "native-complete-objects/habitat_unicorn/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 10,
+        "w": 36,
+        "h": 21
+      },
+      "frames": [
+        "native-complete-objects/habitat_unicorn/frame-01.png"
+      ],
+      "authored": true,
+      "hd": true,
+      "auditSource": "decor-assets/hd/675e12a07924de8a60893a7a.webp"
+    },
+    "previousViews": [
+      {
+        "id": "habitat_unicorn",
+        "file": "native-complete-objects/habitat_unicorn/frame-01.png",
+        "width": 40,
+        "height": 36,
+        "pivotX": 20,
+        "pivotY": 31,
+        "bounds": {
+          "x": 2,
+          "y": 10,
+          "w": 36,
+          "h": 21
+        },
+        "frames": [
+          "native-complete-objects/habitat_unicorn/frame-01.png"
+        ],
+        "authored": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/675e12a07924de8a60893a7a.webp"
+      }
+    ],
+    "noFeet": false,
+    "noPost": true,
+    "winter": true,
+    "guideHeight": 20,
+    "guide": "isometric-architecture-refinements/generation-inputs/habitat_unicorn-23a9df096897.png",
+    "guideSha256": "23a9df0968971675f59d0e49a56dbf3363341eca82a4bd9ba94ee5e93c2079a2",
+    "guideLayout": "poses",
+    "water": true
+  },
+  {
+    "id": "scenery_hut",
+    "originalId": "hut",
+    "targetKind": "scenery",
+    "subject": "The same Hagrid cottage: a squat round rough gray stone hut with wide layered dark slate conical roof and small rear peak, a tall gray stone chimney at rear LEFT, a tiny oak front door with timber peaked porch, TWO warm amber cross-pane windows, a low right stone wing with its own slate roof, a tidy stack of chopped logs at left and tiny pumpkins and pot by the entrance. Door and porch must face along a garden axis; circular main wall may curve. Preserve the original cozy design, NO new building. The front door and peaked oak porch are on the LEFT visible side, their lower horizontal door and porch edges following a garden axis (+0.5 slope). The round body remains round. Do NOT put the porch front square to the screen. Keep the exact original cottage design and materials.",
+    "guideKind": "roundhut",
+    "footprint": [
+      3,
+      3
+    ],
+    "maxInkWidth": 184,
+    "width": 256,
+    "height": 224,
+    "pivotX": 128,
+    "pivotY": 216,
+    "motion": "static",
+    "fixedCamera": true,
+    "poseLayout": [
+      2
+    ],
+    "master": "isometric-architecture-refinements/masters/scenery_hut-refined.png",
+    "selectedMaster": "isometric-architecture-refinements/masters/scenery_hut-refined.png",
+    "previousRuntime": {
+      "id": "hut",
+      "file": "environment/layers/hut.png",
+      "width": 256,
+      "height": 224,
+      "pivotX": 128,
+      "pivotY": 216,
+      "source": "environment/hut.png",
+      "sourceRect": null,
+      "hd": true,
+      "auditSource": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp"
+    },
+    "previousViews": [
+      {
+        "id": "hut",
+        "file": "environment/layers/hut.png",
+        "width": 256,
+        "height": 224,
+        "pivotX": 128,
+        "pivotY": 216,
+        "source": "environment/hut.png",
+        "sourceRect": null,
+        "hd": true,
+        "auditSource": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp"
+      },
+      {
+        "id": "hut",
+        "file": "environment/winter/hut-snow.png",
+        "width": 256,
+        "height": 224,
+        "pivotX": 128,
+        "pivotY": 216,
+        "source": "environment/hut.png",
+        "sourceRect": null,
+        "hd": true,
+        "auditSource": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp"
+      }
+    ],
+    "winter": true,
+    "noPlinth": true,
+    "guide": "isometric-architecture-refinements/generation-inputs/scenery_hut-0d8bc2ee3fb0.png",
+    "guideSha256": "0d8bc2ee3fb0d3e7b0c539771bd3e4a6f7e54da1d219ecd79a50db159789bf8c",
+    "guideHeight": 45,
+    "guideLayout": "poses",
+    "porch": true
+  },
+  {
+    "id": "festival_hero_event_herbology_fair",
+    "originalId": "event_herbology_fair",
+    "targetKind": "festival-hero",
+    "subject": "The same compact rustic HERBOLOGY MARKET STALL: warm wooden counter, FOUR upright timber corner posts, cream-and-muted-green striped gabled fabric canopy, short string of tiny green triangular bunting under the canopy, THREE terracotta flower pots and leafy herbs grouped on the counter, ONE small lower shelf holding two additional pots. Open airy front and visible side. No lettering or new accessories. The space below the counter is OPEN, visible through its four posts. There is just ONE narrow lower shelf. NO closed cabinet or full wooden side wall. Preserve short triangular bunting below the striped canopy.",
+    "guideKind": "marketstall",
+    "footprint": [
+      2,
+      2
+    ],
+    "maxInkWidth": 120,
+    "width": 136,
+    "height": 158,
+    "pivotX": 68,
+    "pivotY": 156,
+    "motion": "static",
+    "fixedCamera": true,
+    "poseLayout": [
+      1
+    ],
+    "master": "isometric-architecture-refinements/masters/festival_hero_event_herbology_fair-refined.png",
+    "selectedMaster": "isometric-architecture-refinements/masters/festival_hero_event_herbology_fair-refined.png",
+    "previousRuntime": {
+      "id": "hero-herbology",
+      "file": "world-v241/hero-herbology.png",
+      "width": 136,
+      "height": 158,
+      "pivotX": 68,
+      "pivotY": 156,
+      "hd": false,
+      "auditSource": "runtime-webp/world-v241/hero-herbology.webp"
+    },
+    "previousViews": [
+      {
+        "id": "hero-herbology",
+        "file": "world-v241/hero-herbology.png",
+        "width": 136,
+        "height": 158,
+        "pivotX": 68,
+        "pivotY": 156,
+        "hd": false,
+        "auditSource": "runtime-webp/world-v241/hero-herbology.webp"
+      }
+    ],
+    "canopy": true,
+    "winter": false,
+    "selectedPoseIndices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "guide": "isometric-architecture-refinements/generation-inputs/festival_hero_event_herbology_fair-8e0ee824abed.png",
+    "guideSha256": "8e0ee824abed576091e6abbe419d198b53885071a23ac8719805044cf61d3e8e",
+    "guideLayout": "poses"
+  }
+]

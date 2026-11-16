@@ -1,0 +1,14 @@
+{
+  "id": "earned_decoration_decoration-83",
+  "prompt": "Texture and complete the FIRST geometry stencil IN PLACE. The camera is ALREADY FINISHED. Keep all its horizontal-world planes and their corner locations. Every axis-aligned diagonal is a precise TWO-across ONE-down staircase, slope +0.500 or -0.500, angle26.565 degrees to horizontal, verticals stay vertical. NO30-degree diagonals, no vanishing points, no frontal substitution. Do not reinterpret this camera. All/tabletops, bases, beams, roof eaves and shelves inherit these axes. Horizontal circles are ellipses exactly TWICE as wide as high. Output TWO objects in one horizontal row: LEFT the default orientation and RIGHT a true90-degree world turn, as the two stencil cells already show, never a mirror. Same scale, generous alpha gutters, full unclipped objects. Generic scaffold shapes must become ONLY the parts named below, never extra posts or platforms. Use detailed readable handmade HD pixel art with small hard flat clusters and crisp selective dark plum outline, fixed upper-left lighting, no smoothing, halos, detached shadows, ground, labels or writing. Match existing muted garden material colors. Dark oak/moss/slate/amber and cream24-color garden palette. Keep the SAME object design, shape, materials, motifs and counts. Garden-ground reference is context only, not a scene to copy. SUBJECT: A miniature open hexagonal wooden gazebo with a silver-gray layered shingle roof, four slim ivory pillars, small bench and flowing pale fabric tied at two posts, cozy full structure. Preserve the SIX-SIDED hexagonal floor and roof, not a square pavilion. Keep all six corners distinct and four slim visible pillars.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-ffb51893-ead8-46c6-b2f1-a9a05df1d3c7.png",
+  "guide": "isometric-refinements/generation-inputs/earned_decoration_decoration-83-f05c5a89bb3a.png",
+  "guideSha256": "f05c5a89bb3a60944a1bbb64ae99f3cc4cf4bc5d4bee7522763a053fc6c7c324",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/generation-inputs/earned_decoration_decoration-83-f05c5a89bb3a.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

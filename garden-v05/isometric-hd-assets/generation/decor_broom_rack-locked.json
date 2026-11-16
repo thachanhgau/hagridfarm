@@ -1,0 +1,10 @@
+{
+  "id": "decor_broom_rack",
+  "prompt": "Paint the named EXISTING garden object onto the FIRST filled geometry stencil. Preserve the stencil's exact base/contact corners and horizontal-world plane directions: orthographic azimuth45°, elevation30°, 2:1 DIMETRIC, slopes exactly +0.500 and -0.500, verticals vertical. NEVER standard true-isometric0.577, frontal horizontal edges, or perspective convergence. All planks, beams, tabletops, cabinet courses, roof eaves/ridge follow the locked axes; circular horizontal rims are 2:1 ellipses. This is a camera correction of the SAME item, not a redesign. Replace generic blocks with the named organic details when needed while retaining the camera, scale and feet. Use detailed sharp HD pixel art, clean small flat clusters, selective dark outline and fixed top-left light. Match ONLY the original subject's materials, motifs and colors. No extra flowers, plants, snow, Christmas/Halloween details or props unless the subject specifies them. No background, floor tile, extra display platform, cast shadow, text, logos, frames or labels. Every pose is fully visible with generous alpha margins. Second reference is actual garden-ground context ONLY. EXACTLY TWO large isolated views side-by-side: LEFT default, RIGHT same object rotated90° right, not mirrored; same ground baseline and size. Original item: decor_broom_rack. Exact subject: Rustic wooden broom rack, two upright dark oak posts with pegs, two straw broomsticks resting horizontally at different heights.. Palette: . Preserve the original details and silhouette; no unmentioned additions.",
+  "path": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-bdd20b89-8408-436c-9afd-add6a9b4be10.png",
+  "guide": "isometric-hd-assets/generation-inputs/decor_broom_rack-b7fb535ea95a.png",
+  "guideSha256": "b7fb535ea95a2e8c09a31a6982336668a220cbd8da94446cbb0ed2aa4e5ded6b",
+  "poseLayout": [
+    2
+  ]
+}

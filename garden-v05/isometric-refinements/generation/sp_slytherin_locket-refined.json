@@ -1,0 +1,14 @@
+{
+  "id": "sp_slytherin_locket",
+  "prompt": "Texture and complete the FIRST geometry stencil IN PLACE. The camera is ALREADY FINISHED. Keep all its horizontal-world planes and their corner locations. Every axis-aligned diagonal is a precise TWO-across ONE-down staircase, slope +0.500 or -0.500, angle26.565 degrees to horizontal, verticals stay vertical. NO30-degree diagonals, no vanishing points, no frontal substitution. Do not reinterpret this camera. All/tabletops, bases, beams, roof eaves and shelves inherit these axes. Horizontal circles are ellipses exactly TWICE as wide as high. Output TWO objects in one horizontal row: LEFT the default orientation and RIGHT a true90-degree world turn, as the two stencil cells already show, never a mirror. Same scale, generous alpha gutters, full unclipped objects. Generic scaffold shapes must become ONLY the parts named below, never extra posts or platforms. Use detailed readable handmade HD pixel art with small hard flat clusters and crisp selective dark plum outline, fixed upper-left lighting, no smoothing, halos, detached shadows, ground, labels or writing. Match existing muted garden material colors: #24483F #3F6A45 #71934B #B0BD67 #8B4A3F #C97952 #E7AE73 #F5D69A #231F2E #4A3042 #735044 #A57554. Keep the SAME object design, shape, materials, motifs and counts. Garden-ground reference is context only, not a scene to copy. SUBJECT: Salazar Slytherin's heavy oval GOLD locket displayed on a small dark-green velvet stand with its fine gold chain draped around the base. Green gemstones form a serpent-like S ornament on the front, stylized as a winding green snake rather than readable typography. Antique gold, one mysterious violet glint, no other jewelry. The small velvet holder and its little foot are DARK forest green and black, no large bright yellow-green platform.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-05e1aba6-67e5-44f7-b710-9d571573e0e7.png",
+  "guide": "isometric-refinements/generation-inputs/sp_slytherin_locket-3544e0a7c360.png",
+  "guideSha256": "3544e0a7c360e2bc44835d16306c15929eeec2cf1d8f73aecd38aaac9407d410",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/generation-inputs/sp_slytherin_locket-3544e0a7c360.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "hw_ghost_well",
+      "reason": "Owner explicitly approved the existing roofed ghost well on 2026-11-15. Preserve original artwork in both directions and winter; do not publish a redraw.",
+      "scope": [
+        "default",
+        "right",
+        "all frames",
+        "winter"
+      ],
+      "originalRuntimeRecord": {
+        "id": "hw_ghost_well",
+        "kind": "decor",
+        "collection": "festival",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Giếng có ma ló đầu",
+        "group": "Tiểu cảnh",
+        "file": "decor-assets/native/hw_ghost_well.png",
+        "rightFile": "decor-assets/native/hw_ghost_well_right.png",
+        "frames": [
+          "decor-assets/native/hw_ghost_well_atlas.png",
+          "decor-assets/native/hw_ghost_well_atlas.png",
+          "decor-assets/native/hw_ghost_well_atlas.png",
+          "decor-assets/native/hw_ghost_well_atlas.png"
+        ],
+        "rightFrames": [
+          "decor-assets/native/hw_ghost_well_atlas.png",
+          "decor-assets/native/hw_ghost_well_atlas.png",
+          "decor-assets/native/hw_ghost_well_atlas.png",
+          "decor-assets/native/hw_ghost_well_atlas.png"
+        ],
+        "atlasRects": [
+          {
+            "x": 0,
+            "y": 0,
+            "w": 176,
+            "h": 192
+          },
+          {
+            "x": 176,
+            "y": 0,
+            "w": 176,
+            "h": 192
+          },
+          {
+            "x": 352,
+            "y": 0,
+            "w": 176,
+            "h": 192
+          },
+          {
+            "x": 528,
+            "y": 0,
+            "w": 176,
+            "h": 192
+          }
+        ],
+        "rightAtlasRects": [
+          {
+            "x": 0,
+            "y": 192,
+            "w": 176,
+            "h": 192
+          },
+          {
+            "x": 176,
+            "y": 192,
+            "w": 176,
+            "h": 192
+          },
+          {
+            "x": 352,
+            "y": 192,
+            "w": 176,
+            "h": 192
+          },
+          {
+            "x": 528,
+            "y": 192,
+            "w": 176,
+            "h": 192
+          }
+        ],
+        "durations": [
+          600,
+          300,
+          600,
+          300
+        ],
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 176,
+        "height": 192,
+        "pivotX": 88,
+        "pivotY": 188,
+        "bounds": {
+          "x": 22,
+          "y": 5,
+          "w": 132,
+          "h": 183
+        },
+        "rightBounds": {
+          "x": 24,
+          "y": 2,
+          "w": 129,
+          "h": 186
+        },
+        "footprintTiles": [
+          2,
+          2
+        ],
+        "motion": "sway",
+        "framesIdentical": true,
+        "nativeSha256": "b60da5bebf0d0f61a53284aeec1a37e40e2c5bdaa56e947fdd1de79aff9900f0"
+      },
+      "runtimeRecordSha256": "fe6bf8913d38e99449a8a9f5ed4d8093379e9e083740cce8a7f8841415f6c02e",
+      "files": [
+        {
+          "file": "decor-assets/native/hw_ghost_well.png",
+          "sha256": "b60da5bebf0d0f61a53284aeec1a37e40e2c5bdaa56e947fdd1de79aff9900f0"
+        },
+        {
+          "file": "decor-assets/native/hw_ghost_well_right.png",
+          "sha256": "60d9d9b313d714d277472ebdb6153540087be0472248d9d185084c14f3ed6d17"
+        },
+        {
+          "file": "decor-assets/native/hw_ghost_well_atlas.png",
+          "sha256": "7e3f0a1a709205e39ae87a870a3e7a2d66a7348f4a06e29b0b6290482e57085b"
+        },
+        {
+          "file": "decor-assets/hd/d79c13068756c0df6ec73394.webp",
+          "sha256": "d79c13068756c0df6ec7339427abbb71912711da3aee5d28d165f3aa18706538"
+        },
+        {
+          "file": "runtime-webp/decor-assets/native/hw_ghost_well.webp",
+          "sha256": "5c8f9fe6d7932169ba0f6e55e018d7a6be1f90628b25c8e4d07a55ad0ff3b308"
+        },
+        {
+          "file": "decor-assets/hd/425dff8a4f467b76036b47dd.webp",
+          "sha256": "425dff8a4f467b76036b47dd752d34de55740382f0d6474361e28d7b467a2e36"
+        },
+        {
+          "file": "runtime-webp/decor-assets/native/hw_ghost_well_right.webp",
+          "sha256": "498cbfd369b5cd3e9db49c5c776b1bc1330ac508d9dca1ecf361fb32bc94df36"
+        },
+        {
+          "file": "decor-assets/hd/df6ba81c91fd5f45ef0a0212-atlas.webp",
+          "sha256": "df6ba81c91fd5f45ef0a0212a0214bd4a2f444596933217469d96164af628e13"
+        },
+        {
+          "file": "runtime-webp/decor-assets/native/hw_ghost_well_atlas.webp",
+          "sha256": "62fe68b58ab58b9d8e6726ed5e4d4f079ecf7b9acbdd62d1da7dfe477850df6c"
+        }
+      ],
+      "hdEntries": {
+        "decor-assets/native/hw_ghost_well.png": {
+          "file": "decor-assets/hd/d79c13068756c0df6ec73394.webp",
+          "density": 2,
+          "width": 176,
+          "height": 192
+        },
+        "decor-assets/native/hw_ghost_well_right.png": {
+          "file": "decor-assets/hd/425dff8a4f467b76036b47dd.webp",
+          "density": 2,
+          "width": 176,
+          "height": 192
+        },
+        "decor-assets/native/hw_ghost_well_atlas.png": {
+          "file": "decor-assets/hd/df6ba81c91fd5f45ef0a0212-atlas.webp",
+          "density": 2,
+          "width": 704,
+          "height": 384
+        }
+      },
+      "winterMappings": {
+        "decor-assets/native/hw_ghost_well.png": null,
+        "decor-assets/native/hw_ghost_well_right.png": null,
+        "decor-assets/native/hw_ghost_well_atlas.png": null
+      }
+    },
+    {
+      "id": "scenery_hut",
+      "kind": "scenery",
+      "reason": "Owner rejected the smaller redraw on 2026-11-16; retain the existing Hagrid cottage, original size, normal/winter and original HD. Baseline bf55d963",
+      "files": [
+        {
+          "file": "environment/layers/hut.png",
+          "sha256": "6d7aca331794eb46530f48abb69d2873635440117dbbb4a4fd2eadde12739ae9"
+        },
+        {
+          "file": "environment/winter/hut-snow.png",
+          "sha256": "76ecb29745d0417aab1f9c858d2a7753d6f166bf3c069f1a2f12c9976bd61484"
+        },
+        {
+          "file": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp",
+          "sha256": "9b86a305188d1e7fd0129aafa89708cb0b341b17e1b4363710530ed02111bd4b"
+        },
+        {
+          "file": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp",
+          "sha256": "f17882a6b8edfe356ef129d48e20b56b29b9ac5a4fa1d4b6fc244cf8804095d6"
+        }
+      ],
+      "hdEntries": {
+        "environment/layers/hut.png": {
+          "file": "decor-assets/hd/9b86a305188d1e7fd0129aaf.webp",
+          "density": 2,
+          "width": 256,
+          "height": 224
+        },
+        "environment/winter/hut-snow.png": {
+          "file": "decor-assets/hd/f17882a6b8edfe356ef129d4.webp",
+          "density": 2,
+          "width": 256,
+          "height": 224
+        }
+      },
+      "winterMappings": {
+        "environment/layers/hut.png": "environment/winter/hut-snow.png"
+      }
+    }
+  ]
+}

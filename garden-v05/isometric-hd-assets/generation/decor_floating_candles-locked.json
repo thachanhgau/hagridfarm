@@ -1,0 +1,10 @@
+{
+  "id": "decor_floating_candles",
+  "prompt": "Paint the named EXISTING garden object onto the FIRST filled geometry stencil. Preserve the stencil's exact base/contact corners and horizontal-world plane directions: orthographic azimuth45°, elevation30°, 2:1 DIMETRIC, slopes exactly +0.500 and -0.500, verticals vertical. NEVER standard true-isometric0.577, frontal horizontal edges, or perspective convergence. All planks, beams, tabletops, cabinet courses, roof eaves/ridge follow the locked axes; circular horizontal rims are 2:1 ellipses. This is a camera correction of the SAME item, not a redesign. Replace generic blocks with the named organic details when needed while retaining the camera, scale and feet. Use detailed sharp HD pixel art, clean small flat clusters, selective dark outline and fixed top-left light. Match ONLY the original subject's materials, motifs and colors. No extra flowers, plants, snow, Christmas/Halloween details or props unless the subject specifies them. No background, floor tile, extra display platform, cast shadow, text, logos, frames or labels. Every pose is fully visible with generous alpha margins. Second reference is actual garden-ground context ONLY. EXACTLY TWO large isolated views side-by-side: LEFT default, RIGHT same object rotated90° right, not mirrored; same ground baseline and size. Original item: decor_floating_candles. Exact subject: Aged brass candle stand with round base, one lower lit ivory candle and three levitating lit ivory candles above at different heights.. Palette: . Preserve the original details and silhouette; no unmentioned additions.",
+  "path": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-20cc20c7-dcb0-4811-b7d3-d709f799b6e1.png",
+  "guide": "isometric-hd-assets/generation-inputs/decor_floating_candles-c25184bdc16a.png",
+  "guideSha256": "c25184bdc16abb3a804e2abcea338c7e720d82687a17692a05335bed36f39809",
+  "poseLayout": [
+    2
+  ]
+}

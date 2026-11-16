@@ -10,6 +10,7 @@ const require=createRequire(import.meta.url),sharp=require(process.env.SHARP_MOD
 const read=file=>fs.readFile(new URL(file,import.meta.url));
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 const manifest=JSON.parse(await read('complete-objects-manifest.json'));
+const replacements=JSON.parse(await read('isometric-hd-manifest.json')).items;
 test('authored scenery, habitat props and species statuettes cover the whole backlog',()=>{
  assert.deepEqual(COMPLETE_SCENERY.map(i=>i.id).sort(),['fang','gardener_friend','herbology_greenhouse','owl_post']);
  // Art may lead the species data (pond grindylow, plan §6): every species needs both, extra art is allowed.
@@ -45,6 +46,6 @@ test('eight refreshed habitats resolve their own snow pose with matching native 
  for(const frame of snow){
   const a=HABITAT_ART[frame.species];assert.equal(WINTER_ART[a.file],frame.file);
   assert.deepEqual([a.width,a.height,a.pivotX,a.pivotY],[frame.width,frame.height,frame.pivotX,frame.pivotY]);
-  const png=await read(frame.file);assert.equal(hash(png),frame.sha256);assert.notEqual(frame.sha256,hash(await read(a.file)));
+  const png=await read(frame.file);const current=replacements.flatMap(i=>i.frameRecords).find(f=>f.file===frame.file)||frame;assert.equal(hash(png),current.sha256);assert.notEqual(current.sha256,hash(await read(a.file)));
  }
 });

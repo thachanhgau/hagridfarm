@@ -1,0 +1,14 @@
+{
+  "id": "sp_xmas_butterbeer",
+  "prompt": "Texture and complete the FIRST geometry stencil IN PLACE. The camera is ALREADY FINISHED. Keep all its horizontal-world planes and their corner locations. Every axis-aligned diagonal is a precise TWO-across ONE-down staircase, slope +0.500 or -0.500, angle26.565 degrees to horizontal, verticals stay vertical. NO30-degree diagonals, no vanishing points, no frontal substitution. Do not reinterpret this camera. All/tabletops, bases, beams, roof eaves and shelves inherit these axes. Horizontal circles are ellipses exactly TWICE as wide as high. Output TWO objects in one horizontal row: LEFT the default orientation and RIGHT a true90-degree world turn, as the two stencil cells already show, never a mirror. Same scale, generous alpha gutters, full unclipped objects. Generic scaffold shapes must become ONLY the parts named below, never extra posts or platforms. Use detailed readable handmade HD pixel art with small hard flat clusters and crisp selective dark plum outline, fixed upper-left lighting, no smoothing, halos, detached shadows, ground, labels or writing. Match existing muted garden material colors: #231F2E #4A3042 #735044 #A57554 #8B4A3F #C97952 #E7AE73 #F5D69A #41465C #687486 #A6B1AE #D6D8BF. Keep the SAME object design, shape, materials, motifs and counts. Garden-ground reference is context only, not a scene to copy. SUBJECT: A snowy outdoor BUTTERBEER COUNTER from a cosy old village inn: a short low wooden bar counter with a snow-dusted top, three big foaming tankards of hot golden butterbeer with creamy froth on it, a small copper barrel keg with a tap at one end, a holly garland along the front and a little warm lantern on a post. Warm, inviting, steaming. The counter runs along the length of a 2x1 tile strip (in the turned view along the other axis). Its base is the ground contact.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-8c452e96-88fb-4d16-84b4-5219a3c62b0c.png",
+  "guide": "isometric-refinements/generation-inputs/sp_xmas_butterbeer-2342345af00e.png",
+  "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/generation-inputs/sp_xmas_butterbeer-2342345af00e.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

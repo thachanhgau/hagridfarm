@@ -1,0 +1,77 @@
+[
+  {
+    "id": "sp_marauders_map",
+    "kind": "table",
+    "guide": "garden-v05/isometric-pilot-assets/coordinate-locks/solid/sp_marauders_map.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            236,
+            335
+          ],
+          [
+            324,
+            379
+          ],
+          [
+            148,
+            467
+          ],
+          [
+            60,
+            423
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            148,
+            335
+          ],
+          [
+            324,
+            423
+          ],
+          [
+            236,
+            467
+          ],
+          [
+            60,
+            379
+          ]
+        ],
+        "axisColumn": [
+          88,
+          44
+        ],
+        "axisRow": [
+          -88,
+          44
+        ]
+      }
+    ]
+  }
+]

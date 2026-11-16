@@ -1,0 +1,14 @@
+{
+  "id": "festival_hero_event_herbology_fair",
+  "prompt": "Complete and texture the FIRST stencil in place. Its camera is already finished: world vectors(32,16),(-32,16),(0,-1). Exact TWO-across ONE-down diagonals, slope\u00b10.500, angle26.565degrees, verticals vertical. Preserve its horizontal-world corners, shelf/door/porch directions. No30-degree replacement, no front-facing reconstruction or perspective convergence. The porch front is rotated with the garden grid, not flat to screen. Preserve the SAME named object's proportions, parts and colors. Output ONE single complete isolated object. Detailed crisp handmade HD pixel art with clean readable clusters, muted garden palette and fixed upper-left light. Generous transparent outer margins, no text, ground, halo or cast shadow. Garden reference is context only. SUBJECT: The same compact rustic HERBOLOGY MARKET STALL: warm wooden counter, FOUR upright timber corner posts, cream-and-muted-green striped gabled fabric canopy, short string of tiny green triangular bunting under the canopy, THREE terracotta flower pots and leafy herbs grouped on the counter, ONE small lower shelf holding two additional pots. Open airy front and visible side. No lettering or new accessories. The space below the counter is OPEN, visible through its four posts. There is just ONE narrow lower shelf. NO closed cabinet or full wooden side wall. Preserve short triangular bunting below the striped canopy.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-c8b52b2d-7c6c-4863-82c3-4c521c4e2a8a.png",
+  "guide": "isometric-architecture-refinements/generation-inputs/festival_hero_event_herbology_fair-8e0ee824abed.png",
+  "guideSha256": "8e0ee824abed576091e6abbe419d198b53885071a23ac8719805044cf61d3e8e",
+  "poseLayout": [
+    1
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-architecture-refinements/generation-inputs/festival_hero_event_herbology_fair-8e0ee824abed.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

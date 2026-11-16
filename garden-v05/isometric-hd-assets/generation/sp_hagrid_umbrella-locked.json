@@ -1,0 +1,11 @@
+{
+  "id": "sp_hagrid_umbrella",
+  "prompt": "Paint the named EXISTING garden object onto the FIRST filled geometry stencil. Preserve the stencil's exact base/contact corners and horizontal-world plane directions: orthographic azimuth45°, elevation30°, 2:1 DIMETRIC, slopes exactly +0.500 and -0.500, verticals vertical. NEVER standard true-isometric0.577, frontal horizontal edges, or perspective convergence. All planks, beams, tabletops, cabinet courses, roof eaves/ridge follow the locked axes; circular horizontal rims are 2:1 ellipses. This is a camera correction of the SAME item, not a redesign. Replace generic blocks with the named organic details when needed while retaining the camera, scale and feet. Use detailed sharp HD pixel art, clean small flat clusters, selective dark outline and fixed top-left light. Match ONLY the original subject's materials, motifs and colors. No extra flowers, plants, snow, Christmas/Halloween details or props unless the subject specifies them. No background, floor tile, extra display platform, cast shadow, text, logos, frames or labels. Every pose is fully visible with generous alpha margins. Second reference is actual garden-ground context ONLY. EXACTLY EIGHT poses in4columns2rows: TOP4 default, BOTTOM4 rotated90°right, same fixed camera/geometry; show subtle existing glow idle only, no shifting feet. Original item: Góc dù hồng của Hagrid. Exact subject: Rubeus Hagrid's iconic battered closed pink umbrella with curved wooden handle, leaning beside his oversized rustic brass lantern and a pair of enormous brown gamekeeper boots on a low rough timber display stand. The umbrella is faded muted rose-purple, NOT open; no character, no wand visible. Recognizable Hagrid memorabilia, book-faithful objects; display arrangement is a game adaptation.. Palette: #231F2E #4A3042 #735044 #A57554 #8B4A3F #C97952 #E7AE73 #F5D69A #874056 #C75B4B #ED8A45 #FFC36B. Preserve the original details and silhouette; no unmentioned additions.",
+  "path": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-464fff34-c4d4-4fd5-889d-d458876a8249.png",
+  "guide": "isometric-hd-assets/generation-inputs/sp_hagrid_umbrella-1e3fd41b194b.png",
+  "guideSha256": "1e3fd41b194ba0bf890751640ad531ed9cad43312fe1f2b792c7ecbf789b449c",
+  "poseLayout": [
+    4,
+    4
+  ]
+}

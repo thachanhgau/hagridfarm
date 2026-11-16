@@ -1,0 +1,14 @@
+{
+  "id": "hw_halloween_sign",
+  "prompt": "Texture and complete the FIRST geometry stencil IN PLACE. The camera is ALREADY FINISHED. Keep all its horizontal-world planes and their corner locations. Every axis-aligned diagonal is a precise TWO-across ONE-down staircase, slope +0.500 or -0.500, angle26.565 degrees to horizontal, verticals stay vertical. NO30-degree diagonals, no vanishing points, no frontal substitution. Do not reinterpret this camera. All/tabletops, bases, beams, roof eaves and shelves inherit these axes. Horizontal circles are ellipses exactly TWICE as wide as high. Output TWO objects in one horizontal row: LEFT the default orientation and RIGHT a true90-degree world turn, as the two stencil cells already show, never a mirror. Same scale, generous alpha gutters, full unclipped objects. Generic scaffold shapes must become ONLY the parts named below, never extra posts or platforms. Use detailed readable handmade HD pixel art with small hard flat clusters and crisp selective dark plum outline, fixed upper-left lighting, no smoothing, halos, detached shadows, ground, labels or writing. Match existing muted garden material colors: #231F2E #4A3042 #735044 #A57554 #874056 #C75B4B #ED8A45 #FFC36B #24483F #3F6A45 #71934B #B0BD67. Keep the SAME object design, shape, materials, motifs and counts. Garden-ground reference is context only, not a scene to copy. SUBJECT: A crooked rustic wooden garden signpost with a pumpkin-shaped sign and a bat-shaped arrow, decorated with autumn leaves and a small cobweb. The sign contains ONLY carved pumpkin and bat pictograms, absolutely NO writing, lettering or numbers.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-b2e4c8e9-4c7c-4eee-84b8-e4c7632a2366.png",
+  "guide": "isometric-refinements/generation-inputs/hw_halloween_sign-f9608b04e30a.png",
+  "guideSha256": "f9608b04e30ac12b4f2e754f87dc2f62204e4756ca396397fd0a5d54a6e53e70",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/generation-inputs/hw_halloween_sign-f9608b04e30a.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

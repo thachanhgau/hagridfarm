@@ -1,0 +1,15 @@
+{
+  "id": "habitat_unicorn",
+  "prompt": "Edit image1 ONLY by brightening the water surface to clean LIGHT SKY BLUE, broad pixel clusters using #70A8B6 and #B7DEE0 with a little #687486 blue-gray shadow. The current water is too dark to survive this game's palette export. All water pixels should be visibly blue after a24color palette snap, not deep teal, green, algae or dark moss. Preserve EVERYTHING ELSE literally: same two basin shapes, short supports if present, two leaves OR two ivory flowers exactly as shown, all stone colors, camera, rim geometry, positions, sizes and matching winter snow. Do not add or remove anything. Genuine transparent alpha outside silhouettes, remove detached ghost shadows/background fragments. Preserve full isolated normal and winter objects. Image2 is the locked camera guide only, image3 is garden context.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-8abd87b9-4b8b-4481-87a2-bc49424068e3.png",
+  "guide": "isometric-architecture-refinements/generation-inputs/habitat_unicorn-23a9df096897.png",
+  "guideSha256": "23a9df0968971675f59d0e49a56dbf3363341eca82a4bd9ba94ee5e93c2079a2",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-extra-assets/masters/habitat_unicorn-locked.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-architecture-refinements/generation-inputs/habitat_unicorn-23a9df096897.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

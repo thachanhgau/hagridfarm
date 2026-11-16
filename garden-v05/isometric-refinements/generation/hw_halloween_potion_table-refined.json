@@ -1,0 +1,14 @@
+{
+  "id": "hw_halloween_potion_table",
+  "prompt": "Texture and complete the FIRST geometry stencil IN PLACE. The camera is ALREADY FINISHED. Keep all its horizontal-world planes and their corner locations. Every axis-aligned diagonal is a precise TWO-across ONE-down staircase, slope +0.500 or -0.500, angle26.565 degrees to horizontal, verticals stay vertical. NO30-degree diagonals, no vanishing points, no frontal substitution. Do not reinterpret this camera. All/tabletops, bases, beams, roof eaves and shelves inherit these axes. Horizontal circles are ellipses exactly TWICE as wide as high. Output TWO objects in one horizontal row: LEFT the default orientation and RIGHT a true90-degree world turn, as the two stencil cells already show, never a mirror. Same scale, generous alpha gutters, full unclipped objects. Generic scaffold shapes must become ONLY the parts named below, never extra posts or platforms. Use detailed readable handmade HD pixel art with small hard flat clusters and crisp selective dark plum outline, fixed upper-left lighting, no smoothing, halos, detached shadows, ground, labels or writing. Match existing muted garden material colors: #231F2E #4A3042 #735044 #A57554 #3E3B70 #6961A6 #70A8B6 #B7DEE0 #874056 #C75B4B #ED8A45 #FFC36B. Keep the SAME object design, shape, materials, motifs and counts. Garden-ground reference is context only, not a scene to copy. SUBJECT: A rustic compact outdoor witch's potion worktable: thick plank tabletop, four sturdy legs, exactly three squat glass bottles of orange violet and teal liquid, a mortar and pestle, a small open grimoire with blank pictograms and a tiny pumpkin. Everything fits on table, no text.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-627bdda3-95ec-49c2-a336-d2bd89e2b59a.png",
+  "guide": "isometric-refinements/generation-inputs/hw_halloween_potion_table-2342345af00e.png",
+  "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/generation-inputs/hw_halloween_potion_table-2342345af00e.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

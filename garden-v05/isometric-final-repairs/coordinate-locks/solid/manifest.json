@@ -1,0 +1,377 @@
+[
+  {
+    "id": "decor_pumpkin_lantern",
+    "kind": "pumpkinpost",
+    "guide": "garden-v05/isometric-final-repairs/coordinate-locks/solid/decor_pumpkin_lantern.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hw_wooden_black_cat",
+    "kind": "logbase",
+    "guide": "garden-v05/isometric-final-repairs/coordinate-locks/solid/hw_wooden_black_cat.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hw_halloween_sign",
+    "kind": "owlpost",
+    "guide": "garden-v05/isometric-final-repairs/coordinate-locks/solid/hw_halloween_sign.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            192,
+            383
+          ],
+          [
+            276,
+            425
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            108,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sp_hagrid_umbrella",
+    "kind": "table",
+    "guide": "garden-v05/isometric-final-repairs/coordinate-locks/solid/sp_hagrid_umbrella.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            234,
+            341
+          ],
+          [
+            318,
+            383
+          ],
+          [
+            150,
+            467
+          ],
+          [
+            66,
+            425
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      },
+      {
+        "facing": "right",
+        "cell": [
+          1,
+          1
+        ],
+        "baseCorners": [
+          [
+            150,
+            341
+          ],
+          [
+            318,
+            425
+          ],
+          [
+            234,
+            467
+          ],
+          [
+            66,
+            383
+          ]
+        ],
+        "axisColumn": [
+          84,
+          42
+        ],
+        "axisRow": [
+          -84,
+          42
+        ]
+      }
+    ]
+  },
+  {
+    "id": "habitat_dragon",
+    "kind": "round",
+    "guide": "garden-v05/isometric-final-repairs/coordinate-locks/solid/habitat_dragon.png",
+    "width": 768,
+    "height": 512,
+    "views": [
+      {
+        "facing": "default",
+        "cell": [
+          0,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      },
+      {
+        "facing": "default",
+        "cell": [
+          1,
+          0
+        ],
+        "baseCorners": [
+          [
+            192,
+            419
+          ],
+          [
+            240,
+            443
+          ],
+          [
+            192,
+            467
+          ],
+          [
+            144,
+            443
+          ]
+        ],
+        "axisColumn": [
+          48,
+          24
+        ],
+        "axisRow": [
+          -48,
+          24
+        ]
+      }
+    ]
+  }
+]

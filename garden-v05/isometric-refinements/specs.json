@@ -1,0 +1,2759 @@
+[
+  {
+    "id": "decor_pumpkin_lantern",
+    "label": "decor_pumpkin_lantern",
+    "subject": "A carved orange jack-o-lantern with curling green stem, warm amber eyes and jagged grin, mounted on a single rough square timber post and tiny wooden cap.",
+    "sourcePack": null,
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "lamp",
+    "maxInkWidth": 56,
+    "width": 64,
+    "height": 96,
+    "pivotX": 32,
+    "pivotY": 80,
+    "motion": "static",
+    "master": "isometric-refinements/masters/decor_pumpkin_lantern-refined.png",
+    "previousRuntime": {
+      "id": "decor_pumpkin_lantern",
+      "kind": "decor",
+      "storeItem": true,
+      "rotatable": true,
+      "file": "decor-assets/native/decor_pumpkin_lantern.png",
+      "frames": [
+        "decor-assets/native/decor_pumpkin_lantern_f0.png",
+        "decor-assets/native/decor_pumpkin_lantern_f1.png",
+        "decor-assets/native/decor_pumpkin_lantern_f2.png",
+        "decor-assets/native/decor_pumpkin_lantern_f3.png"
+      ],
+      "durations": [
+        460,
+        220,
+        420,
+        220
+      ],
+      "rightFile": "decor-assets/native/decor_pumpkin_lantern_right.png",
+      "rightFrames": [
+        "decor-assets/native/decor_pumpkin_lantern_right_f0.png",
+        "decor-assets/native/decor_pumpkin_lantern_right_f1.png",
+        "decor-assets/native/decor_pumpkin_lantern_right_f2.png",
+        "decor-assets/native/decor_pumpkin_lantern_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 13,
+        "y": 4,
+        "w": 39,
+        "h": 76
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "master": "decor-assets/masters/decor_pumpkin_lantern.png",
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "bounds": {
+        "x": 13,
+        "y": 4,
+        "w": 39,
+        "h": 76
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "sourceSha256": "d098e59b19e9e2061974c248a76017964ec53b5f91ee10ba3ae8fc8c1170357b",
+      "nativeSha256": "b0328f8f7e34c5aae1f564f93f06fd57ca022a99885ad66a868e69fa6fe0f9f3",
+      "generationPromptId": "decor_pumpkin_lantern"
+    },
+    "paletteColors": null,
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/decor_pumpkin_lantern-refined.png",
+    "guide": "isometric-refinements/generation-inputs/decor_pumpkin_lantern-f9608b04e30a.png",
+    "guideSha256": "f9608b04e30ac12b4f2e754f87dc2f62204e4756ca396397fd0a5d54a6e53e70",
+    "guideLayout": "poses",
+    "noPlinth": true
+  },
+  {
+    "id": "decor_mandrake_planter",
+    "label": "decor_mandrake_planter",
+    "subject": "Cheerful small brown Mandrake root with cute face and green leafy hair, growing from a terracotta flowerpot.",
+    "sourcePack": null,
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "round",
+    "maxInkWidth": 56,
+    "width": 64,
+    "height": 96,
+    "pivotX": 32,
+    "pivotY": 80,
+    "motion": "static",
+    "master": "isometric-refinements/masters/decor_mandrake_planter-refined.png",
+    "previousRuntime": {
+      "id": "decor_mandrake_planter",
+      "kind": "decor",
+      "storeItem": true,
+      "rotatable": true,
+      "file": "decor-assets/native/decor_mandrake_planter.png",
+      "frames": [
+        "decor-assets/native/decor_mandrake_planter_f0.png",
+        "decor-assets/native/decor_mandrake_planter_f1.png",
+        "decor-assets/native/decor_mandrake_planter_f2.png",
+        "decor-assets/native/decor_mandrake_planter_f3.png"
+      ],
+      "durations": [
+        480,
+        220,
+        440,
+        220
+      ],
+      "rightFile": "decor-assets/native/decor_mandrake_planter_right.png",
+      "rightFrames": [
+        "decor-assets/native/decor_mandrake_planter_right_f0.png",
+        "decor-assets/native/decor_mandrake_planter_right_f1.png",
+        "decor-assets/native/decor_mandrake_planter_right_f2.png",
+        "decor-assets/native/decor_mandrake_planter_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 9,
+        "y": 4,
+        "w": 48,
+        "h": 76
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "master": "decor-assets/masters/decor_mandrake_planter.png",
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "bounds": {
+        "x": 5,
+        "y": 4,
+        "w": 54,
+        "h": 76
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "sourceSha256": "c48fc95f5b8cd2b8373c7455bfe27d7cf6d58fb71361a1bec8176005df72eb0b",
+      "nativeSha256": "752587ed26c007c359640d8ccb8e532d8ddbb20d98a9c1a80879eefb1f101f23",
+      "generationPromptId": "decor_mandrake_planter"
+    },
+    "paletteColors": null,
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/decor_mandrake_planter-refined.png",
+    "guide": "isometric-refinements/generation-inputs/decor_mandrake_planter-8acc3f8d0959.png",
+    "guideSha256": "8acc3f8d0959f350bd5291ebbd7a0cc17e474431f97e93316e18d238178dd9b0",
+    "guideLayout": "poses",
+    "noFeet": true,
+    "footHeight": 0,
+    "guideHeight": 22
+  },
+  {
+    "id": "sp_hagrid_umbrella",
+    "label": "G\u00f3c d\u00f9 h\u1ed3ng c\u1ee7a Hagrid",
+    "subject": "Mandatory focal object: ONE tall CLOSED faded pink umbrella with curved brown handle, leaning at the LEFT side. It must extend visibly above the boots and lantern. Beside it are ONE huge rustic brass lantern and TWO oversized brown gamekeeper boots on ONE low four-legged rough timber bench. Every listed object is complete and visible. The CLOSED pink umbrella must be unmistakable and not omitted.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      2,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 84,
+    "width": 96,
+    "height": 112,
+    "pivotX": 48,
+    "pivotY": 96,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_hagrid_umbrella-refined.png",
+    "previousRuntime": {
+      "id": "sp_hagrid_umbrella",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "G\u00f3c d\u00f9 h\u1ed3ng c\u1ee7a Hagrid",
+      "group": "Hagrid v\u00e0 R\u1eebng C\u1ea5m",
+      "file": "decor-assets/native/flow-sp_hagrid_umbrella.png",
+      "frames": [
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png"
+      ],
+      "durations": [
+        1200,
+        400,
+        500,
+        500
+      ],
+      "rightFile": "decor-assets/native/flow-sp_hagrid_umbrella_right.png",
+      "rightFrames": [
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png",
+        "native-crop-complete/decor-flow-sp_hagrid_umbrella/atlas.png"
+      ],
+      "rightBounds": {
+        "x": 4,
+        "y": 6,
+        "w": 88,
+        "h": 90
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 5,
+        "y": 5,
+        "w": 87,
+        "h": 91
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 1,
+        "chapter": 4
+      },
+      "lore": "C\u00e2y d\u00f9 h\u1ed3ng c\u1ee7a Hagrid; b\u1ed1 c\u1ee5c tr\u01b0ng b\u00e0y l\u00e0 chuy\u1ec3n th\u1ec3 cho game.",
+      "nativeSha256": "72bf8d7ae4f41af738c37dbfee690e5da4be0c360a2510e1a2080b049b5243e8",
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        }
+      ]
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#8B4A3F",
+      "#C97952",
+      "#E7AE73",
+      "#F5D69A",
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B"
+    ],
+    "guideHeight": 12,
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_hagrid_umbrella-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_hagrid_umbrella-b40bff0a9252.png",
+    "guideSha256": "b40bff0a92526c453123f9b15505ba76640a6b34bb68a82d72ac5b03c5cae19c",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "sp_sorting_hat",
+    "label": "N\u00f3n Ph\u00e2n Lo\u1ea1i tr\u00ean gh\u1ebf",
+    "subject": "The battered Hogwarts Sorting Hat seated on a simple four-legged wooden stool, exactly as presented to first years: tall patched brown pointed hat with deep face-like folds forming eyes and a mouth, crooked tip, frayed wide brim. No house logos, no banners, no people, no text. The hat must look ancient and expressive, not a generic new witch hat.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 56,
+    "width": 64,
+    "height": 96,
+    "pivotX": 32,
+    "pivotY": 80,
+    "motion": "blink",
+    "master": "isometric-refinements/masters/sp_sorting_hat-refined.png",
+    "previousRuntime": {
+      "id": "sp_sorting_hat",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "N\u00f3n Ph\u00e2n Lo\u1ea1i tr\u00ean gh\u1ebf",
+      "group": "B\u1ea3o v\u1eadt Hogwarts",
+      "file": "decor-assets/native/sp_sorting_hat.png",
+      "frames": [
+        "decor-assets/native/sp_sorting_hat_f0.png",
+        "decor-assets/native/sp_sorting_hat_f1.png",
+        "decor-assets/native/sp_sorting_hat_f2.png",
+        "decor-assets/native/sp_sorting_hat_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_sorting_hat_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_sorting_hat_right_f0.png",
+        "decor-assets/native/sp_sorting_hat_right_f1.png",
+        "decor-assets/native/sp_sorting_hat_right_f2.png",
+        "decor-assets/native/sp_sorting_hat_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 4,
+        "y": 13,
+        "w": 56,
+        "h": 67
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "bounds": {
+        "x": 7,
+        "y": 12,
+        "w": 51,
+        "h": 68
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 1,
+        "chapter": 7
+      },
+      "lore": "N\u00f3n Ph\u00e2n Lo\u1ea1i \u0111\u01b0\u1ee3c \u0111\u1eb7t tr\u00ean gh\u1ebf trong l\u1ec5 ph\u00e2n lo\u1ea1i.",
+      "nativeSha256": "1d83f5809923a51440ec06fd9cef794f720e51d2c3e125635d33d4f8c5c0fd5c"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#8B4A3F",
+      "#C97952",
+      "#E7AE73",
+      "#F5D69A",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF"
+    ],
+    "guideHeight": 12,
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_sorting_hat-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_sorting_hat-84a81bde6a6f.png",
+    "guideSha256": "84a81bde6a6fd30885766733aed9ba9184fc6cba479002fdd553de622d09bd32",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "sp_goblet_fire",
+    "label": "Chi\u1ebfc C\u1ed1c L\u1eeda",
+    "subject": "The Goblet of Fire as described in the book: a large rough-hewn WOODEN goblet standing on a low carved stone pedestal, jagged tall blue-violet magical flame rising from the open bowl, one small blank singed parchment slip floating just above the flame. It is wooden, NOT a gold trophy. No inscriptions or text, no surrounding Age Line or people.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "goblet",
+    "maxInkWidth": 51,
+    "width": 64,
+    "height": 160,
+    "pivotX": 32,
+    "pivotY": 144,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_goblet_fire-refined.png",
+    "previousRuntime": {
+      "id": "sp_goblet_fire",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Chi\u1ebfc C\u1ed1c L\u1eeda",
+      "group": "B\u1ea3o v\u1eadt Hogwarts",
+      "file": "decor-assets/native/sp_goblet_fire.png",
+      "frames": [
+        "decor-assets/native/sp_goblet_fire_f0.png",
+        "decor-assets/native/sp_goblet_fire_f1.png",
+        "decor-assets/native/sp_goblet_fire_f2.png",
+        "decor-assets/native/sp_goblet_fire_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_goblet_fire_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_goblet_fire_right_f0.png",
+        "decor-assets/native/sp_goblet_fire_right_f1.png",
+        "decor-assets/native/sp_goblet_fire_right_f2.png",
+        "decor-assets/native/sp_goblet_fire_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 7,
+        "y": 16,
+        "w": 50,
+        "h": 128
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 160,
+      "pivotX": 32,
+      "pivotY": 144,
+      "bounds": {
+        "x": 7,
+        "y": 34,
+        "w": 51,
+        "h": 110
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 4,
+        "chapter": 16
+      },
+      "lore": "Chi\u1ebfc c\u1ed1c b\u1eb1ng g\u1ed7 ch\u1ecdn c\u00e1c qu\u00e1n qu\u00e2n Tam Ph\u00e1p Thu\u1eadt.",
+      "nativeSha256": "dd644304c67fd3b551de93aa8658d1f0db0d810ba6e7eef057f2bebe177d569d"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_goblet_fire-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_goblet_fire-a9e65017b180.png",
+    "guideSha256": "a9e65017b1807bec8b91cf1e0ca4999f790b22597caeabbb95e266d906459cff",
+    "guideLayout": "poses",
+    "guideHeight": 35
+  },
+  {
+    "id": "sp_slytherin_locket",
+    "label": "M\u1ec1 \u0111ay Slytherin",
+    "subject": "Salazar Slytherin's heavy oval GOLD locket displayed on a small dark-green velvet stand with its fine gold chain draped around the base. Green gemstones form a serpent-like S ornament on the front, stylized as a winding green snake rather than readable typography. Antique gold, one mysterious violet glint, no other jewelry. The small velvet holder and its little foot are DARK forest green and black, no large bright yellow-green platform.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "plinth",
+    "maxInkWidth": 56,
+    "width": 64,
+    "height": 96,
+    "pivotX": 32,
+    "pivotY": 80,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_slytherin_locket-refined.png",
+    "previousRuntime": {
+      "id": "sp_slytherin_locket",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "M\u1ec1 \u0111ay Slytherin",
+      "group": "D\u1ea5u t\u00edch Tr\u01b0\u1eddng Sinh Linh Gi\u00e1",
+      "file": "decor-assets/native/sp_slytherin_locket.png",
+      "frames": [
+        "decor-assets/native/sp_slytherin_locket_f0.png",
+        "decor-assets/native/sp_slytherin_locket_f1.png",
+        "decor-assets/native/sp_slytherin_locket_f2.png",
+        "decor-assets/native/sp_slytherin_locket_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_slytherin_locket_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_slytherin_locket_right_f0.png",
+        "decor-assets/native/sp_slytherin_locket_right_f1.png",
+        "decor-assets/native/sp_slytherin_locket_right_f2.png",
+        "decor-assets/native/sp_slytherin_locket_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 8,
+        "y": 14,
+        "w": 48,
+        "h": 66
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "bounds": {
+        "x": 4,
+        "y": 14,
+        "w": 56,
+        "h": 66
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 7,
+        "chapter": 19
+      },
+      "lore": "Chi\u1ebfc m\u1ec1 \u0111ay Tr\u01b0\u1eddng Sinh Linh Gi\u00e1 \u0111\u01b0\u1ee3c ph\u00e1 h\u1ee7y b\u1eb1ng thanh g\u01b0\u01a1m.",
+      "nativeSha256": "7f3953f75c0f0d45a4fc130451e70a5ee722201ce0051db8cf6c8c079fa2d11d"
+    },
+    "paletteColors": [
+      "#24483F",
+      "#3F6A45",
+      "#71934B",
+      "#B0BD67",
+      "#8B4A3F",
+      "#C97952",
+      "#E7AE73",
+      "#F5D69A",
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_slytherin_locket-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_slytherin_locket-3544e0a7c360.png",
+    "guideSha256": "3544e0a7c360e2bc44835d16306c15929eeec2cf1d8f73aecd38aaac9407d410",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "sp_ravenclaw_diadem",
+    "label": "V\u01b0\u01a1ng mi\u1ec7n Ravenclaw",
+    "subject": "Rowena Ravenclaw's delicate silver diadem displayed on a low midnight-purple velvet cushion on a small carved stand. A silver EAGLE-shaped central motif and one deep blue gemstone, slender curved wings, no lettering or inscription. Ancient slightly tarnished magical heirloom, NOT a gold royal crown. The cushion is held by FOUR short carved legs. NO single high post or separate floor base.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 56,
+    "width": 64,
+    "height": 64,
+    "pivotX": 32,
+    "pivotY": 48,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_ravenclaw_diadem-refined.png",
+    "previousRuntime": {
+      "id": "sp_ravenclaw_diadem",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "V\u01b0\u01a1ng mi\u1ec7n Ravenclaw",
+      "group": "D\u1ea5u t\u00edch Tr\u01b0\u1eddng Sinh Linh Gi\u00e1",
+      "file": "decor-assets/native/sp_ravenclaw_diadem.png",
+      "frames": [
+        "decor-assets/native/sp_ravenclaw_diadem_f0.png",
+        "decor-assets/native/sp_ravenclaw_diadem_f1.png",
+        "decor-assets/native/sp_ravenclaw_diadem_f2.png",
+        "decor-assets/native/sp_ravenclaw_diadem_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_ravenclaw_diadem_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_ravenclaw_diadem_right_f0.png",
+        "decor-assets/native/sp_ravenclaw_diadem_right_f1.png",
+        "decor-assets/native/sp_ravenclaw_diadem_right_f2.png",
+        "decor-assets/native/sp_ravenclaw_diadem_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 7,
+        "y": 6,
+        "w": 51,
+        "h": 42
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 48,
+      "bounds": {
+        "x": 4,
+        "y": 7,
+        "w": 56,
+        "h": 41
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 7,
+        "chapter": 31
+      },
+      "lore": "V\u01b0\u01a1ng mi\u1ec7n th\u1ea5t l\u1ea1c c\u1ee7a Ravenclaw trong Ph\u00f2ng Theo Y\u00eau C\u1ea7u.",
+      "nativeSha256": "21abe09011e7c191ddfb2871807580e41fa01391604f2bb7fa226b5f7377436b"
+    },
+    "paletteColors": [
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF",
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0",
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_ravenclaw_diadem-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_ravenclaw_diadem-c3c537e9c5ee.png",
+    "guideSha256": "c3c537e9c5ee4b1755cac0bc2d11d6e975d73031978647eaa379a76748c7cbc5",
+    "guideLayout": "poses",
+    "guideHeight": 9
+  },
+  {
+    "id": "sp_department_veil",
+    "label": "V\u00f2m m\u00e0n che \u1edf B\u1ed9 Ph\u00e1p Thu\u1eadt",
+    "subject": "The ancient stone archway and fluttering black veil in the Department of Mysteries: a weathered rough grey stone arch, no door, thin ragged dark-purple translucent curtain hanging inside it with a slight billow, on two low concentric stone steps. No ghosts, no skulls, no people. Solemn magical mystery, freestanding miniature.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      2,
+      2
+    ],
+    "guideKind": "arch",
+    "maxInkWidth": 120,
+    "width": 128,
+    "height": 192,
+    "pivotX": 64,
+    "pivotY": 176,
+    "motion": "sway",
+    "master": "isometric-refinements/masters/sp_department_veil-refined.png",
+    "previousRuntime": {
+      "id": "sp_department_veil",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "V\u00f2m m\u00e0n che \u1edf B\u1ed9 Ph\u00e1p Thu\u1eadt",
+      "group": "H\u1eafc thu\u1eadt v\u00e0 b\u00ed m\u1eadt",
+      "file": "decor-assets/native/sp_department_veil.png",
+      "frames": [
+        "decor-assets/native/sp_department_veil_f0.png",
+        "decor-assets/native/sp_department_veil_f1.png",
+        "decor-assets/native/sp_department_veil_f2.png",
+        "decor-assets/native/sp_department_veil_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_department_veil_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_department_veil_right_f0.png",
+        "decor-assets/native/sp_department_veil_right_f1.png",
+        "decor-assets/native/sp_department_veil_right_f2.png",
+        "decor-assets/native/sp_department_veil_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 19,
+        "y": 12,
+        "w": 91,
+        "h": 164
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 192,
+      "pivotX": 64,
+      "pivotY": 176,
+      "bounds": {
+        "x": 4,
+        "y": 12,
+        "w": 120,
+        "h": 164
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "sway",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 5,
+        "chapter": 34
+      },
+      "lore": "V\u00f2m \u0111\u00e1 c\u00f3 m\u00e0n che trong S\u1edf B\u1ea3o M\u1eadt.",
+      "nativeSha256": "31f03d89b588800855357462129f62ebc9b3c7c4983ecd449b823b9931126bd7"
+    },
+    "paletteColors": [
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF",
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0",
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_department_veil-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_department_veil-984230d1c0e2.png",
+    "guideSha256": "984230d1c0e2fdc6c6728d5700e249f148c60775b17121ea22571feec5eca850",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "sp_monster_book",
+    "label": "S\u00e1ch Qu\u00e1i V\u1eadt v\u1ec1 Qu\u00e1i V\u1eadt",
+    "subject": "The Monster Book of Monsters: one thick shaggy brown furry schoolbook on a low rough wooden reading stand, four small amber eyes on top, ivory fangs along the page edges, short tongue barely visible, a leather belt loosely buckled around the book. No title lettering, no extra books, cute but untamed.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 56,
+    "width": 64,
+    "height": 80,
+    "pivotX": 32,
+    "pivotY": 64,
+    "motion": "blink",
+    "master": "isometric-refinements/masters/sp_monster_book-refined.png",
+    "previousRuntime": {
+      "id": "sp_monster_book",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "S\u00e1ch Qu\u00e1i V\u1eadt v\u1ec1 Qu\u00e1i V\u1eadt",
+      "group": "H\u1eafc thu\u1eadt v\u00e0 b\u00ed m\u1eadt",
+      "file": "decor-assets/native/sp_monster_book.png",
+      "frames": [
+        "decor-assets/native/sp_monster_book_f0.png",
+        "decor-assets/native/sp_monster_book_f1.png",
+        "decor-assets/native/sp_monster_book_f2.png",
+        "decor-assets/native/sp_monster_book_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/sp_monster_book_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_monster_book_right_f0.png",
+        "decor-assets/native/sp_monster_book_right_f1.png",
+        "decor-assets/native/sp_monster_book_right_f2.png",
+        "decor-assets/native/sp_monster_book_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 7,
+        "y": 12,
+        "w": 51,
+        "h": 52
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 80,
+      "pivotX": 32,
+      "pivotY": 64,
+      "bounds": {
+        "x": 6,
+        "y": 12,
+        "w": 53,
+        "h": 52
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "bookReference": {
+        "book": 3,
+        "chapter": 1
+      },
+      "lore": "Cu\u1ed1n s\u00e1ch Hagrid g\u1eedi t\u1eb7ng Harry v\u00e0 d\u00f9ng cho m\u00f4n Ch\u0103m S\u00f3c Sinh V\u1eadt Huy\u1ec1n B\u00ed.",
+      "nativeSha256": "0c3c57f07a0d578bcefb150e81878f053cc679b9080c59de3d28b25e410f3d26"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF",
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B"
+    ],
+    "guideHeight": 12,
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_monster_book-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_monster_book-84a81bde6a6f.png",
+    "guideSha256": "84a81bde6a6fd30885766733aed9ba9184fc6cba479002fdd553de622d09bd32",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "sp_deathday_cake",
+    "label": "B\u00e1nh ng\u00e0y gi\u1ed7 Nick Su\u00fdt M\u1ea5t \u0110\u1ea7u",
+    "subject": "A miniature decoration inspired by Nearly Headless Nick's 500th Deathday party: a large grey tombstone-shaped CAKE on an old silver platter atop a small dark wooden buffet table, exactly five tall black candles with small blue-violet flames, a few crumbs. Cake has NO writing or numbers, no rotting food, no corpse, no ghost figure.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      2,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 128,
+    "pivotX": 48,
+    "pivotY": 112,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_deathday_cake-refined.png",
+    "previousRuntime": {
+      "id": "sp_deathday_cake",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "B\u00e1nh ng\u00e0y gi\u1ed7 Nick Su\u00fdt M\u1ea5t \u0110\u1ea7u",
+      "group": "Halloween Hogwarts",
+      "file": "decor-assets/native/sp_deathday_cake.png",
+      "frames": [
+        "decor-assets/native/sp_deathday_cake_f0.png",
+        "decor-assets/native/sp_deathday_cake_f1.png",
+        "decor-assets/native/sp_deathday_cake_f2.png",
+        "decor-assets/native/sp_deathday_cake_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_deathday_cake_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_deathday_cake_right_f0.png",
+        "decor-assets/native/sp_deathday_cake_right_f1.png",
+        "decor-assets/native/sp_deathday_cake_right_f2.png",
+        "decor-assets/native/sp_deathday_cake_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 11,
+        "y": 7,
+        "w": 74,
+        "h": 105
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 128,
+      "pivotX": 48,
+      "pivotY": 112,
+      "bounds": {
+        "x": 6,
+        "y": 7,
+        "w": 85,
+        "h": 105
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 2,
+        "chapter": 8
+      },
+      "lore": "B\u00e1nh h\u00ecnh bia m\u1ed9 trong b\u1eefa ti\u1ec7c ng\u00e0y gi\u1ed7 l\u1ea7n th\u1ee9 500 c\u1ee7a Nick.",
+      "nativeSha256": "5b6de14ed17e19e31eca9ad816b88df92ecfc609a73b28d8ae88028372e755b0"
+    },
+    "paletteColors": [
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF",
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0",
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_deathday_cake-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_deathday_cake-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideLayout": "poses",
+    "guideHeight": 12
+  },
+  {
+    "id": "sp_marauders_map",
+    "label": "B\u1ea3n \u0111\u1ed3 c\u1ee7a \u0110\u1ea1o t\u1eb7c",
+    "subject": "The Marauder's Map spread open and partly folded on a small dark wooden map display table: aged parchment with tiny dark line floorplans of Hogwarts, staircase-like paths and a few tiny ink FOOTPRINT pairs; no words, no names, no readable labels. Copper corner clips and a quill. Map remains clearly the centerpiece.",
+    "sourcePack": "special-products-assets",
+    "footprint": [
+      2,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 96,
+    "pivotX": 48,
+    "pivotY": 80,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_marauders_map-refined.png",
+    "previousRuntime": {
+      "id": "sp_marauders_map",
+      "kind": "decor",
+      "collection": "special",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "B\u1ea3n \u0111\u1ed3 c\u1ee7a \u0110\u1ea1o t\u1eb7c",
+      "group": "H\u00e0nh tr\u00ecnh ph\u00e9p thu\u1eadt",
+      "file": "decor-assets/native/sp_marauders_map.png",
+      "frames": [
+        "decor-assets/native/sp_marauders_map_f0.png",
+        "decor-assets/native/sp_marauders_map_f1.png",
+        "decor-assets/native/sp_marauders_map_f2.png",
+        "decor-assets/native/sp_marauders_map_f3.png"
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "rightFile": "decor-assets/native/sp_marauders_map_right.png",
+      "rightFrames": [
+        "decor-assets/native/sp_marauders_map_right_f0.png",
+        "decor-assets/native/sp_marauders_map_right_f1.png",
+        "decor-assets/native/sp_marauders_map_right_f2.png",
+        "decor-assets/native/sp_marauders_map_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 9,
+        "y": 11,
+        "w": 79,
+        "h": 69
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 96,
+      "pivotX": 48,
+      "pivotY": 80,
+      "bounds": {
+        "x": 4,
+        "y": 21,
+        "w": 88,
+        "h": 59
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "bookReference": {
+        "book": 3,
+        "chapter": 10
+      },
+      "lore": "Fred v\u00e0 George trao cho Harry b\u1ea3n \u0111\u1ed3 c\u00e1c l\u1ed1i \u0111i b\u00ed m\u1eadt Hogwarts.",
+      "nativeSha256": "f4780570f2cbbe4493127580688cb524ddecf531ec78ce0946e15f441a5aacd4"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#8B4A3F",
+      "#C97952",
+      "#E7AE73",
+      "#F5D69A",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_marauders_map-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_marauders_map-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideLayout": "poses",
+    "guideHeight": 12
+  },
+  {
+    "id": "hw_wooden_black_cat",
+    "label": "T\u01b0\u1ee3ng m\u00e8o \u0111en b\u1eb1ng g\u1ed7",
+    "subject": "A carved dark-purple wooden Halloween cat statue seated with an elegantly curled tail, pointed ears, one tiny orange neck bow, amber eyes. Clearly a rustic wood carving with a stable little wooden foot, not a living cat, cute and cosy. NO post, no slab, no pedestal or ground tile. Retain only the integral little wooden foot where specified.",
+    "sourcePack": "halloween-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "organic",
+    "maxInkWidth": 56,
+    "width": 72,
+    "height": 104,
+    "pivotX": 36,
+    "pivotY": 100,
+    "motion": "blink",
+    "master": "isometric-refinements/masters/hw_wooden_black_cat-refined.png",
+    "previousRuntime": {
+      "id": "hw_wooden_black_cat",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "T\u01b0\u1ee3ng m\u00e8o \u0111en b\u1eb1ng g\u1ed7",
+      "group": "C\u1ed1t l\u00f5i",
+      "file": "decor-assets/native/hw_wooden_black_cat.png",
+      "frames": [
+        "decor-assets/native/hw_wooden_black_cat_f0.png",
+        "decor-assets/native/hw_wooden_black_cat_f1.png",
+        "decor-assets/native/hw_wooden_black_cat_f2.png",
+        "decor-assets/native/hw_wooden_black_cat_f3.png"
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "rightFile": "decor-assets/native/hw_wooden_black_cat_right.png",
+      "rightFrames": [
+        "decor-assets/native/hw_wooden_black_cat_right_f0.png",
+        "decor-assets/native/hw_wooden_black_cat_right_f1.png",
+        "decor-assets/native/hw_wooden_black_cat_right_f2.png",
+        "decor-assets/native/hw_wooden_black_cat_right_f3.png"
+      ],
+      "rightBounds": {
+        "x": 5,
+        "y": 2,
+        "w": 62,
+        "h": 98
+      },
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 72,
+      "height": 104,
+      "pivotX": 36,
+      "pivotY": 100,
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 66,
+        "h": 98
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "blink",
+      "framesIdentical": true,
+      "nativeSha256": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B",
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/hw_wooden_black_cat-refined.png",
+    "guide": "isometric-refinements/generation-inputs/hw_wooden_black_cat-3443dd2af2d7.png",
+    "guideSha256": "3443dd2af2d74b60b4c701f9985fb590c1bca5d214880ae8b98807aeccc55a07",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "hw_halloween_sign",
+    "label": "Bi\u1ec3n g\u1ed7 Halloween",
+    "subject": "A crooked rustic wooden garden signpost with a pumpkin-shaped sign and a bat-shaped arrow, decorated with autumn leaves and a small cobweb. The sign contains ONLY carved pumpkin and bat pictograms, absolutely NO writing, lettering or numbers.",
+    "sourcePack": "halloween-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "lamp",
+    "maxInkWidth": 56,
+    "width": 64,
+    "height": 112,
+    "pivotX": 32,
+    "pivotY": 96,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/hw_halloween_sign-refined.png",
+    "previousRuntime": {
+      "id": "hw_halloween_sign",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Bi\u1ec3n g\u1ed7 Halloween",
+      "group": "C\u1ed1t l\u00f5i",
+      "file": "decor-assets/native/hw_halloween_sign.png",
+      "rightFile": "decor-assets/native/hw_halloween_sign_right.png",
+      "frames": [
+        "decor-assets/native/hw_halloween_sign_atlas.png",
+        "decor-assets/native/hw_halloween_sign_atlas.png",
+        "decor-assets/native/hw_halloween_sign_atlas.png",
+        "decor-assets/native/hw_halloween_sign_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_halloween_sign_atlas.png",
+        "decor-assets/native/hw_halloween_sign_atlas.png",
+        "decor-assets/native/hw_halloween_sign_atlas.png",
+        "decor-assets/native/hw_halloween_sign_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 112,
+      "pivotX": 32,
+      "pivotY": 96,
+      "bounds": {
+        "x": 4,
+        "y": 12,
+        "w": 56,
+        "h": 84
+      },
+      "rightBounds": {
+        "x": 13,
+        "y": 12,
+        "w": 39,
+        "h": 84
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "14089be32869a0c02d17ab443dbedb59cebc73a5aec567719a48f9def6c09d46"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B",
+      "#24483F",
+      "#3F6A45",
+      "#71934B",
+      "#B0BD67"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/hw_halloween_sign-refined.png",
+    "guide": "isometric-refinements/generation-inputs/hw_halloween_sign-f9608b04e30a.png",
+    "guideSha256": "f9608b04e30ac12b4f2e754f87dc2f62204e4756ca396397fd0a5d54a6e53e70",
+    "guideLayout": "poses",
+    "noPlinth": true
+  },
+  {
+    "id": "hw_skull_lantern",
+    "label": "\u0110\u00e8n \u0111\u1ea7u l\u00e2u",
+    "subject": "A cute carved ivory skull lantern on a dark copper three-legged stand, big rounded eye sockets lit with warm violet candlelight, small ornamental teeth, not realistic or gruesome. Handcrafted cosy Halloween prop. Exactly THREE copper legs touch bare ground, NO stone slab beneath them.",
+    "sourcePack": "halloween-assets",
+    "footprint": [
+      1,
+      1
+    ],
+    "guideKind": "tripod",
+    "maxInkWidth": 44,
+    "width": 64,
+    "height": 112,
+    "pivotX": 32,
+    "pivotY": 96,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/hw_skull_lantern-refined.png",
+    "previousRuntime": {
+      "id": "hw_skull_lantern",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "\u0110\u00e8n \u0111\u1ea7u l\u00e2u",
+      "group": "\u00c1nh s\u00e1ng",
+      "file": "decor-assets/native/hw_skull_lantern.png",
+      "rightFile": "decor-assets/native/hw_skull_lantern_right.png",
+      "frames": [
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png",
+        "decor-assets/native/hw_skull_lantern_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 64,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 128,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 64,
+          "h": 112
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 64,
+      "height": 112,
+      "pivotX": 32,
+      "pivotY": 96,
+      "bounds": {
+        "x": 10,
+        "y": 28,
+        "w": 44,
+        "h": 68
+      },
+      "rightBounds": {
+        "x": 10,
+        "y": 27,
+        "w": 44,
+        "h": 69
+      },
+      "footprintTiles": [
+        1,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "a2b8f607166aeb852c11df046b8299f747b74fc0c60d7d61d2e2d3cdf9e0b06c"
+    },
+    "paletteColors": [
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF",
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0",
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/hw_skull_lantern-refined.png",
+    "guide": "isometric-refinements/generation-inputs/hw_skull_lantern-a4278de360cb.png",
+    "guideSha256": "a4278de360cbf8ba6a15f0abd96d6ac402b91cc70fb0efceba77f496a37a564b",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "hw_halloween_potion_table",
+    "label": "B\u00e0n pha \u0111\u1ed9c d\u01b0\u1ee3c Halloween",
+    "subject": "A rustic compact outdoor witch's potion worktable: thick plank tabletop, four sturdy legs, exactly three squat glass bottles of orange violet and teal liquid, a mortar and pestle, a small open grimoire with blank pictograms and a tiny pumpkin. Everything fits on table, no text.",
+    "sourcePack": "halloween-assets",
+    "footprint": [
+      2,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 96,
+    "pivotX": 48,
+    "pivotY": 80,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/hw_halloween_potion_table-refined.png",
+    "previousRuntime": {
+      "id": "hw_halloween_potion_table",
+      "kind": "decor",
+      "collection": "festival",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "B\u00e0n pha \u0111\u1ed9c d\u01b0\u1ee3c Halloween",
+      "group": "G\u00f3c ph\u00f9 th\u1ee7y",
+      "file": "decor-assets/native/hw_halloween_potion_table.png",
+      "rightFile": "decor-assets/native/hw_halloween_potion_table_right.png",
+      "frames": [
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png",
+        "decor-assets/native/hw_halloween_potion_table_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 96
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 96,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 192,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        },
+        {
+          "x": 288,
+          "y": 96,
+          "w": 96,
+          "h": 96
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 96,
+      "pivotX": 48,
+      "pivotY": 80,
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 72,
+        "h": 75
+      },
+      "rightBounds": {
+        "x": 9,
+        "y": 5,
+        "w": 79,
+        "h": 75
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "f9eb8fd6f25ec76abaa69d47e650822520863f57c0ee2d9ad7ac6890ca933d27"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0",
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/hw_halloween_potion_table-refined.png",
+    "guide": "isometric-refinements/generation-inputs/hw_halloween_potion_table-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideLayout": "poses",
+    "guideHeight": 12
+  },
+  {
+    "id": "ev_kitchen_corner",
+    "label": "G\u00f3c b\u1ebfp",
+    "subject": "A house-elf KITCHEN CORNER like the Hogwarts kitchens, set outdoors: a small low brick hearth with a glowing fire under a big copper pot steaming with stew, beside it a low wooden work table with a stack of plates, a golden pie and a brown teapot, a ladle and copper pans hanging from a short wooden rail above. Everything elf-sized, warm and busy. The hearth and table stand side by side along a 2x1 tile footprint (long axis along the strip). Bases are the ground contact.",
+    "sourcePack": "event-assets",
+    "footprint": [
+      2,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 112,
+    "pivotX": 48,
+    "pivotY": 96,
+    "motion": "bubbles",
+    "master": "isometric-refinements/masters/ev_kitchen_corner-refined.png",
+    "previousRuntime": {
+      "id": "ev_kitchen_corner",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "G\u00f3c b\u1ebfp",
+      "group": "Gia tinh",
+      "file": "decor-assets/native/ev_kitchen_corner.png",
+      "rightFile": "decor-assets/native/ev_kitchen_corner_right.png",
+      "frames": [
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png",
+        "decor-assets/native/ev_kitchen_corner_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "durations": [
+        600,
+        300,
+        600,
+        300
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 8,
+        "y": 4,
+        "w": 81,
+        "h": 92
+      },
+      "rightBounds": {
+        "x": 9,
+        "y": 4,
+        "w": 78,
+        "h": 92
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "bubbles",
+      "framesIdentical": true,
+      "nativeSha256": "4d4f3872bb45327d008f21008c055fb8fd2d99c2e0aece870367c8337039d258"
+    },
+    "paletteColors": [
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B",
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/ev_kitchen_corner-refined.png",
+    "guide": "isometric-refinements/generation-inputs/ev_kitchen_corner-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideLayout": "poses",
+    "guideHeight": 12
+  },
+  {
+    "id": "sp_xmas_butterbeer",
+    "label": "Qu\u1ea7y bia b\u01a1 qu\u00e1n Ba C\u00e2y Ch\u1ed5i",
+    "subject": "A snowy outdoor BUTTERBEER COUNTER from a cosy old village inn: a short low wooden bar counter with a snow-dusted top, three big foaming tankards of hot golden butterbeer with creamy froth on it, a small copper barrel keg with a tap at one end, a holly garland along the front and a little warm lantern on a post. Warm, inviting, steaming. The counter runs along the length of a 2x1 tile strip (in the turned view along the other axis). Its base is the ground contact.",
+    "sourcePack": "event-assets",
+    "footprint": [
+      2,
+      1
+    ],
+    "guideKind": "table",
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 112,
+    "pivotX": 48,
+    "pivotY": 96,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_xmas_butterbeer-refined.png",
+    "previousRuntime": {
+      "id": "sp_xmas_butterbeer",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "Qu\u1ea7y bia b\u01a1 qu\u00e1n Ba C\u00e2y Ch\u1ed5i",
+      "group": "Gi\u00e1ng sinh",
+      "file": "decor-assets/native/sp_xmas_butterbeer.png",
+      "rightFile": "decor-assets/native/sp_xmas_butterbeer_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png",
+        "decor-assets/native/sp_xmas_butterbeer_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 96,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 192,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        },
+        {
+          "x": 288,
+          "y": 112,
+          "w": 96,
+          "h": 112
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 4,
+        "y": 26,
+        "w": 88,
+        "h": 70
+      },
+      "rightBounds": {
+        "x": 14,
+        "y": 4,
+        "w": 69,
+        "h": 92
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "1e97ccf7dc4d8347b183e2ffc580d1b90b8e85d25835612172269721bd2446dc"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#8B4A3F",
+      "#C97952",
+      "#E7AE73",
+      "#F5D69A",
+      "#41465C",
+      "#687486",
+      "#A6B1AE",
+      "#D6D8BF"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_xmas_butterbeer-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_xmas_butterbeer-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideLayout": "poses",
+    "guideHeight": 12
+  },
+  {
+    "id": "sp_xmas_honeydukes",
+    "label": "T\u1ee7 k\u1eb9o ti\u1ec7m C\u00f4ng t\u01b0\u1edbc M\u1eadt",
+    "subject": "A wizard SWEETSHOP CABINET set outdoors in winter: a wide old wooden shop shelf-cabinet with a small striped awning on top dusted with snow, its shelves crowded with big glass jars of bright sweets, rows of chocolate frog boxes, a bundle of sugar quills, round bonbons and colourful candy sticks; a little hanging sign with a candy shape (no letters). Cheerful, crowded with colour, a child's dream. The cabinet stands along the length of a 2x1 tile strip (in the turned view along the other axis). Its base is the ground contact.",
+    "sourcePack": "event-assets",
+    "footprint": [
+      2,
+      1
+    ],
+    "guideKind": "cabinet",
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 144,
+    "pivotX": 48,
+    "pivotY": 128,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_xmas_honeydukes-refined.png",
+    "previousRuntime": {
+      "id": "sp_xmas_honeydukes",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "T\u1ee7 k\u1eb9o ti\u1ec7m C\u00f4ng t\u01b0\u1edbc M\u1eadt",
+      "group": "Gi\u00e1ng sinh",
+      "file": "decor-assets/native/sp_xmas_honeydukes.png",
+      "rightFile": "decor-assets/native/sp_xmas_honeydukes_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png",
+        "decor-assets/native/sp_xmas_honeydukes_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 192,
+          "y": 0,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 288,
+          "y": 0,
+          "w": 96,
+          "h": 144
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 144,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 96,
+          "y": 144,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 192,
+          "y": 144,
+          "w": 96,
+          "h": 144
+        },
+        {
+          "x": 288,
+          "y": 144,
+          "w": 96,
+          "h": 144
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 96,
+      "height": 144,
+      "pivotX": 48,
+      "pivotY": 128,
+      "bounds": {
+        "x": 9,
+        "y": 4,
+        "w": 78,
+        "h": 124
+      },
+      "rightBounds": {
+        "x": 16,
+        "y": 4,
+        "w": 64,
+        "h": 124
+      },
+      "footprintTiles": [
+        2,
+        1
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "434f791bd881e9e0a9c96d7ad35703648830539db321dd5dee58693645c6ef5f"
+    },
+    "paletteColors": [
+      "#231F2E",
+      "#4A3042",
+      "#735044",
+      "#A57554",
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B",
+      "#3E3B70",
+      "#6961A6",
+      "#70A8B6",
+      "#B7DEE0"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_xmas_honeydukes-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_xmas_honeydukes-c392c5fdd163.png",
+    "guideSha256": "c392c5fdd163b73dbfdbb03ea2e28dc5d6322862b9d89f4846e244cc375ec533",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "sp_xmas_weasley_tree",
+    "label": "C\u00e2y th\u00f4ng Gi\u00e1ng sinh nh\u00e0 Weasley",
+    "subject": "A big homely family CHRISTMAS TREE in a wizard garden: a full fir tree in a wooden tub, decorated with golden fairy lights, red and gold baubles and paper chains, a few wrapped presents around the tub. On the very top, instead of an angel, sits a grumpy little bald potato-headed GARDEN GNOME with knobbly feet, dressed in a tutu with small wings glued to its back, scowling. Cosy, a bit chaotic, funny. The tub and presents are the ground contact on a 2x2 tile. NO post, no slab, no pedestal or ground tile. Retain only the integral little wooden foot where specified.",
+    "sourcePack": "event-assets",
+    "footprint": [
+      2,
+      2
+    ],
+    "guideKind": "organic",
+    "maxInkWidth": 120,
+    "width": 128,
+    "height": 208,
+    "pivotX": 64,
+    "pivotY": 192,
+    "motion": "glow",
+    "master": "isometric-refinements/masters/sp_xmas_weasley_tree-refined.png",
+    "previousRuntime": {
+      "id": "sp_xmas_weasley_tree",
+      "kind": "decor",
+      "collection": "event",
+      "storeItem": true,
+      "rotatable": true,
+      "label": "C\u00e2y th\u00f4ng Gi\u00e1ng sinh nh\u00e0 Weasley",
+      "group": "Gi\u00e1ng sinh",
+      "file": "decor-assets/native/sp_xmas_weasley_tree.png",
+      "rightFile": "decor-assets/native/sp_xmas_weasley_tree_right.png",
+      "frames": [
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png",
+        "decor-assets/native/sp_xmas_weasley_tree_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "w": 128,
+          "h": 208
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 0,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 128,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 256,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        },
+        {
+          "x": 384,
+          "y": 208,
+          "w": 128,
+          "h": 208
+        }
+      ],
+      "durations": [
+        520,
+        260,
+        480,
+        260
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "width": 128,
+      "height": 208,
+      "pivotX": 64,
+      "pivotY": 192,
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "w": 112,
+        "h": 184
+      },
+      "rightBounds": {
+        "x": 13,
+        "y": 8,
+        "w": 103,
+        "h": 184
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "motion": "glow",
+      "framesIdentical": false,
+      "nativeSha256": "7c042120ecd7621636fec70c0d221f09d5817297c8817e3ff347a9c90b300ec9"
+    },
+    "paletteColors": [
+      "#24483F",
+      "#3F6A45",
+      "#71934B",
+      "#B0BD67",
+      "#874056",
+      "#C75B4B",
+      "#ED8A45",
+      "#FFC36B",
+      "#8B4A3F",
+      "#C97952",
+      "#E7AE73",
+      "#F5D69A"
+    ],
+    "poseLayout": [
+      2
+    ],
+    "selectedMaster": "isometric-refinements/masters/sp_xmas_weasley_tree-refined.png",
+    "guide": "isometric-refinements/generation-inputs/sp_xmas_weasley_tree-2a9deda18ddf.png",
+    "guideSha256": "2a9deda18ddf194369b41e8e2717d5855099285e55d4f74d0c08936c5b05d3ca",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "earned_decoration_decoration-23",
+    "originalId": "decoration-23",
+    "targetKind": "earned-decoration",
+    "subject": "A tiny arched footbridge of five warm oak planks, curved low handrails on both sides, visible beams and pegs; show complete bridge deck and both bankward feet, no water base. Both directions retain the 2:1 elevated garden camera, never a frontal stair view.",
+    "guideKind": "bridge",
+    "footprint": [
+      1,
+      2
+    ],
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 112,
+    "pivotX": 48,
+    "pivotY": 96,
+    "motion": "static",
+    "fixedCamera": false,
+    "poseLayout": [
+      2
+    ],
+    "master": "isometric-refinements/masters/earned_decoration_decoration-23-refined.png",
+    "selectedMaster": "isometric-refinements/masters/earned_decoration_decoration-23-refined.png",
+    "previousRuntime": {
+      "file": "native-items/decoration-23.png",
+      "rightFile": "native-items/decoration-23_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 6,
+        "y": 34,
+        "w": 84,
+        "h": 62
+      },
+      "rightBounds": {
+        "x": 6,
+        "y": 34,
+        "w": 84,
+        "h": 62
+      },
+      "hd": true,
+      "auditSource": "decor-assets/hd/a390bae15d385e71b3fba6f7.webp"
+    },
+    "previousViews": [
+      {
+        "file": "native-items/decoration-23.png",
+        "rightFile": "native-items/decoration-23_right.png",
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 96,
+        "bounds": {
+          "x": 6,
+          "y": 34,
+          "w": 84,
+          "h": 62
+        },
+        "rightBounds": {
+          "x": 6,
+          "y": 34,
+          "w": 84,
+          "h": 62
+        },
+        "hd": true,
+        "auditSource": "decor-assets/hd/a390bae15d385e71b3fba6f7.webp"
+      },
+      {
+        "file": "native-items/decoration-23_right.png",
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 96,
+        "bounds": {
+          "x": 6,
+          "y": 34,
+          "w": 84,
+          "h": 62
+        },
+        "hd": true,
+        "auditSource": "decor-assets/hd/3084e2d21b2e9f23742d3728.webp"
+      }
+    ],
+    "label": "Small wooden bridge",
+    "guide": "isometric-refinements/generation-inputs/earned_decoration_decoration-23-d267e0b59c97.png",
+    "guideSha256": "d267e0b59c97d06cdab7194c3070cd6e891f2ef6d735c7c9a9decea2cd17a9af",
+    "guideLayout": "poses",
+    "guideHeight": 12
+  },
+  {
+    "id": "earned_decoration_decoration-83",
+    "originalId": "decoration-83",
+    "targetKind": "earned-decoration",
+    "subject": "A miniature open hexagonal wooden gazebo with a silver-gray layered shingle roof, four slim ivory pillars, small bench and flowing pale fabric tied at two posts, cozy full structure. Preserve the SIX-SIDED hexagonal floor and roof, not a square pavilion. Keep all six corners distinct and four slim visible pillars.",
+    "guideKind": "hexgazebo",
+    "footprint": [
+      1,
+      2
+    ],
+    "maxInkWidth": 88,
+    "width": 96,
+    "height": 112,
+    "pivotX": 48,
+    "pivotY": 96,
+    "motion": "static",
+    "fixedCamera": false,
+    "poseLayout": [
+      2
+    ],
+    "master": "isometric-refinements/masters/earned_decoration_decoration-83-refined.png",
+    "selectedMaster": "isometric-refinements/masters/earned_decoration_decoration-83-refined.png",
+    "previousRuntime": {
+      "file": "native-items/decoration-83.png",
+      "rightFile": "native-items/decoration-83_right.png",
+      "width": 96,
+      "height": 112,
+      "pivotX": 48,
+      "pivotY": 96,
+      "bounds": {
+        "x": 15,
+        "y": 16,
+        "w": 66,
+        "h": 80
+      },
+      "rightBounds": {
+        "x": 15,
+        "y": 16,
+        "w": 65,
+        "h": 80
+      },
+      "hd": true,
+      "auditSource": "decor-assets/hd/d4ad10c41654f749d33b1bc6.webp"
+    },
+    "previousViews": [
+      {
+        "file": "native-items/decoration-83.png",
+        "rightFile": "native-items/decoration-83_right.png",
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 96,
+        "bounds": {
+          "x": 15,
+          "y": 16,
+          "w": 66,
+          "h": 80
+        },
+        "rightBounds": {
+          "x": 15,
+          "y": 16,
+          "w": 65,
+          "h": 80
+        },
+        "hd": true,
+        "auditSource": "decor-assets/hd/d4ad10c41654f749d33b1bc6.webp"
+      },
+      {
+        "file": "native-items/decoration-83_right.png",
+        "width": 96,
+        "height": 112,
+        "pivotX": 48,
+        "pivotY": 96,
+        "bounds": {
+          "x": 15,
+          "y": 16,
+          "w": 65,
+          "h": 80
+        },
+        "hd": true,
+        "auditSource": "decor-assets/hd/44487070516a207d462f224e.webp"
+      }
+    ],
+    "label": "Silver-mane resting gazebo model",
+    "guide": "isometric-refinements/generation-inputs/earned_decoration_decoration-83-f05c5a89bb3a.png",
+    "guideSha256": "f05c5a89bb3a60944a1bbb64ae99f3cc4cf4bc5d4bee7522763a053fc6c7c324",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "keepsake_hippogriff",
+    "originalId": "hippogriff",
+    "targetKind": "keepsake",
+    "subject": "The SAME existing keepsake statuette: a proud cream eagle-headed hippogriff with gray feathered chest and reddish-brown horse hindquarters. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. Both feathered wings remain FOLDED at its sides, exactly like the original seated statuette, NOT spread or raised.",
+    "guideKind": "plinth",
+    "footprint": [
+      1,
+      1
+    ],
+    "maxInkWidth": 44,
+    "width": 56,
+    "height": 56,
+    "pivotX": 28,
+    "pivotY": 50,
+    "motion": "static",
+    "fixedCamera": true,
+    "poseLayout": [
+      1
+    ],
+    "master": "isometric-refinements/masters/keepsake_hippogriff-refined.png",
+    "selectedMaster": "isometric-refinements/masters/keepsake_hippogriff-refined.png",
+    "previousRuntime": {
+      "id": "keepsake_hippogriff",
+      "file": "native-complete-objects/keepsake_hippogriff/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 11,
+        "y": 6,
+        "w": 34,
+        "h": 44
+      },
+      "frames": [
+        "native-complete-objects/keepsake_hippogriff/frame-01.png"
+      ],
+      "authored": true,
+      "hd": true,
+      "auditSource": "decor-assets/hd/fec8ff140ccd14c268253d71.webp"
+    },
+    "previousViews": [
+      {
+        "id": "keepsake_hippogriff",
+        "file": "native-complete-objects/keepsake_hippogriff/frame-01.png",
+        "width": 56,
+        "height": 56,
+        "pivotX": 28,
+        "pivotY": 50,
+        "bounds": {
+          "x": 11,
+          "y": 6,
+          "w": 34,
+          "h": 44
+        },
+        "frames": [
+          "native-complete-objects/keepsake_hippogriff/frame-01.png"
+        ],
+        "authored": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/fec8ff140ccd14c268253d71.webp"
+      }
+    ],
+    "selectedPoseIndices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "guideHeight": 36.4,
+    "plinthOnly": true,
+    "guide": "isometric-refinements/generation-inputs/keepsake_hippogriff-ac973f3a7080.png",
+    "guideSha256": "ac973f3a70804903c0a15f7811b47d5ba064739fb9520024110edc23c5de195c",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "keepsake_thestral",
+    "originalId": "thestral",
+    "targetKind": "keepsake",
+    "subject": "The SAME existing keepsake statuette: a black skeletal winged horse with thin bat wings folded at its sides. On its small TWO-STEP dark blue-gray square stone plinth with one blank gold plaque inset on its front face. Preserve its pose, colors and species identity. The plinth alone has horizontal world edges. No writing. The plinth is SQUARE with straight edges along the axes, never oval, round or circular.",
+    "guideKind": "plinth",
+    "footprint": [
+      1,
+      1
+    ],
+    "maxInkWidth": 44,
+    "width": 56,
+    "height": 56,
+    "pivotX": 28,
+    "pivotY": 50,
+    "motion": "static",
+    "fixedCamera": true,
+    "poseLayout": [
+      1
+    ],
+    "master": "isometric-refinements/masters/keepsake_thestral-refined.png",
+    "selectedMaster": "isometric-refinements/masters/keepsake_thestral-refined.png",
+    "previousRuntime": {
+      "id": "keepsake_thestral",
+      "file": "native-complete-objects/keepsake_thestral/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 13,
+        "y": 6,
+        "w": 30,
+        "h": 44
+      },
+      "frames": [
+        "native-complete-objects/keepsake_thestral/frame-01.png"
+      ],
+      "authored": true,
+      "hd": true,
+      "auditSource": "decor-assets/hd/30c8a5fb1848d6eb4d6eddea.webp"
+    },
+    "previousViews": [
+      {
+        "id": "keepsake_thestral",
+        "file": "native-complete-objects/keepsake_thestral/frame-01.png",
+        "width": 56,
+        "height": 56,
+        "pivotX": 28,
+        "pivotY": 50,
+        "bounds": {
+          "x": 13,
+          "y": 6,
+          "w": 30,
+          "h": 44
+        },
+        "frames": [
+          "native-complete-objects/keepsake_thestral/frame-01.png"
+        ],
+        "authored": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/30c8a5fb1848d6eb4d6eddea.webp"
+      }
+    ],
+    "selectedPoseIndices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "guideHeight": 36.4,
+    "plinthOnly": true,
+    "guide": "isometric-refinements/generation-inputs/keepsake_thestral-ac973f3a7080.png",
+    "guideSha256": "ac973f3a70804903c0a15f7811b47d5ba064739fb9520024110edc23c5de195c",
+    "guideLayout": "poses"
+  },
+  {
+    "id": "habitat_dragon",
+    "originalId": "dragon",
+    "targetKind": "habitat",
+    "subject": "One squat black iron brazier on three short feet with THREE large glowing orange coal rocks inside; NO flame plume. Preserve this exact original habitat, no unrelated parts. The THREE short BLACK IRON feet are stubby, less than one-tenth of the body height. NO long legs, no wood.",
+    "guideKind": "round",
+    "footprint": [
+      1,
+      1
+    ],
+    "maxInkWidth": 32,
+    "width": 40,
+    "height": 36,
+    "pivotX": 20,
+    "pivotY": 31,
+    "motion": "static",
+    "fixedCamera": true,
+    "poseLayout": [
+      2
+    ],
+    "master": "isometric-refinements/masters/habitat_dragon-refined.png",
+    "selectedMaster": "isometric-refinements/masters/habitat_dragon-refined.png",
+    "previousRuntime": {
+      "id": "habitat_dragon",
+      "file": "native-complete-objects/habitat_dragon/frame-01.png",
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "bounds": {
+        "x": 2,
+        "y": 5,
+        "w": 36,
+        "h": 26
+      },
+      "frames": [
+        "native-complete-objects/habitat_dragon/frame-01.png"
+      ],
+      "authored": true,
+      "hd": true,
+      "auditSource": "decor-assets/hd/a86f26b9d81fac1e0905dceb.webp"
+    },
+    "previousViews": [
+      {
+        "id": "habitat_dragon",
+        "file": "native-complete-objects/habitat_dragon/frame-01.png",
+        "width": 40,
+        "height": 36,
+        "pivotX": 20,
+        "pivotY": 31,
+        "bounds": {
+          "x": 2,
+          "y": 5,
+          "w": 36,
+          "h": 26
+        },
+        "frames": [
+          "native-complete-objects/habitat_dragon/frame-01.png"
+        ],
+        "authored": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/a86f26b9d81fac1e0905dceb.webp"
+      }
+    ],
+    "noFeet": false,
+    "noPost": false,
+    "winter": true,
+    "guideHeight": 18,
+    "guide": "isometric-refinements/generation-inputs/habitat_dragon-d70087a4756b.png",
+    "guideSha256": "d70087a4756b975568f45d39336adf5d4e5bf705429f70f782fc32e66fd9b4d3",
+    "guideLayout": "poses",
+    "footHeight": 3
+  },
+  {
+    "id": "habitat_kneazle",
+    "originalId": "kneazle",
+    "targetKind": "habitat",
+    "subject": "One squat sisal rope scratching post on a low rectangular oak base, a small brown cap at its top and ONE little yarn ball resting on its base. No animal. Preserve this exact original habitat, no unrelated parts. Its single base is OAK WOOD only, no gray stone or extra second platform.",
+    "guideKind": "plinth",
+    "footprint": [
+      1,
+      1
+    ],
+    "maxInkWidth": 48,
+    "width": 56,
+    "height": 56,
+    "pivotX": 28,
+    "pivotY": 50,
+    "motion": "static",
+    "fixedCamera": true,
+    "poseLayout": [
+      2
+    ],
+    "master": "isometric-refinements/masters/habitat_kneazle-refined.png",
+    "selectedMaster": "isometric-refinements/masters/habitat_kneazle-refined.png",
+    "previousRuntime": {
+      "id": "habitat_kneazle",
+      "file": "native-complete-objects/habitat_kneazle/frame-01.png",
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 50,
+      "bounds": {
+        "x": 9,
+        "y": 8,
+        "w": 38,
+        "h": 42
+      },
+      "frames": [
+        "native-complete-objects/habitat_kneazle/frame-01.png"
+      ],
+      "authored": true,
+      "refreshed": true,
+      "hd": true,
+      "auditSource": "decor-assets/hd/ce5de19be5100a313128c2bf.webp"
+    },
+    "previousViews": [
+      {
+        "id": "habitat_kneazle",
+        "file": "native-complete-objects/habitat_kneazle/frame-01.png",
+        "width": 56,
+        "height": 56,
+        "pivotX": 28,
+        "pivotY": 50,
+        "bounds": {
+          "x": 9,
+          "y": 8,
+          "w": 38,
+          "h": 42
+        },
+        "frames": [
+          "native-complete-objects/habitat_kneazle/frame-01.png"
+        ],
+        "authored": true,
+        "refreshed": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/ce5de19be5100a313128c2bf.webp"
+      },
+      {
+        "id": "habitat_kneazle",
+        "file": "environment/winter/habitat-kneazle-snow.png",
+        "width": 56,
+        "height": 56,
+        "pivotX": 28,
+        "pivotY": 50,
+        "bounds": {
+          "x": 9,
+          "y": 8,
+          "w": 38,
+          "h": 42
+        },
+        "frames": [
+          "native-complete-objects/habitat_kneazle/frame-01.png"
+        ],
+        "authored": true,
+        "refreshed": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/7a1143727cef57297078c339.webp"
+      }
+    ],
+    "noFeet": false,
+    "noPost": false,
+    "winter": true,
+    "guideHeight": 20,
+    "guide": "isometric-refinements/generation-inputs/habitat_kneazle-ab73fd7646b5.png",
+    "guideSha256": "ab73fd7646b5c51bc08a51df38b731e5f6b70cc0620ee301df1f7d75d6d145a0",
+    "guideLayout": "poses",
+    "guideMaterial": "wood"
+  }
+]

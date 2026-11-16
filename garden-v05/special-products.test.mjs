@@ -9,6 +9,7 @@ const source = JSON.parse(fs.readFileSync(new URL('./special-products-assets/man
 const special = runtime.items.filter(item => item.collection === 'special');
 const flow = JSON.parse(fs.readFileSync(new URL('./decor-flow-manifest.json', import.meta.url)));
 const flowItem = id => flow.items.find(item => item.id === id);
+const replacements = JSON.parse(fs.readFileSync(new URL('./isometric-hd-manifest.json', import.meta.url))).items;
 
 test('the 30 special products keep their ids, views, pivots, footprints and frame timing from the asset set', () => {
   assert.equal(SPECIAL_PRODUCTS.length, 36); // 30 + the 25.0 S7 Noel set
@@ -29,15 +30,16 @@ test('the 30 special products keep their ids, views, pivots, footprints and fram
 
 test('special runtime art resolves to native images or verified flow atlases, never masters or QA', () => {
   for (const item of special) {
-    const authored=flowItem(item.id);
+    const authored=flowItem(item.id),replacement=replacements.find(x=>x.id===item.id);
+    const reviewedPaths=replacement?new Set([item.file,item.rightFile,`decor-assets/native/${item.id}_atlas.png`]):null;
     const flowPaths=authored?new Set([authored.thumbnails.file,authored.thumbnails.rightFile,authored.atlas.file]):null;
     for (const file of [item.file, item.rightFile, ...item.frames, ...item.rightFrames]) {
-      if(flowPaths)assert.ok(flowPaths.has(file),file);else assert.match(file, /^decor-assets\/native\/sp_[a-z0-9_]+\.png$/);
+      if(reviewedPaths)assert.ok(reviewedPaths.has(file),file);else if(flowPaths)assert.ok(flowPaths.has(file),file);else assert.match(file, /^decor-assets\/native\/sp_[a-z0-9_]+\.png$/);
       assert.ok(fs.existsSync(new URL(`./${file}`, import.meta.url)), file);
     }
   }
   const shipped = fs.readdirSync(new URL('./decor-assets/native/', import.meta.url)).filter(name => name.startsWith('sp_') && !name.startsWith('sp_xmas_')); // the S7 Noel set ships from event-assets
-  assert.equal(shipped.length, 300);
+  assert.equal(shipped.length, 300 + replacements.filter(x=>x.targetKind==='store-decoration'&&x.id.startsWith('sp_')&&!x.id.startsWith('sp_xmas_')).length);
 });
 
 test('special products are decorations only, one each, in their own store group, priced high and approved (04/11/2026)', () => {

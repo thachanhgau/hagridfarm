@@ -1,0 +1,449 @@
+{
+  "version": 1,
+  "accepted": false,
+  "items": [
+    {
+      "id": "sp_marauders_map",
+      "label": "Bản đồ của Đạo tặc",
+      "subject": "The Marauder's Map spread open and partly folded on a small dark wooden map display table: aged parchment with tiny dark line floorplans of Hogwarts, staircase-like paths and a few tiny ink FOOTPRINT pairs; no words, no names, no readable labels. Copper corner clips and a quill. Map remains clearly the centerpiece.",
+      "sourcePack": "special-products-assets",
+      "footprint": [
+        2,
+        1
+      ],
+      "guideKind": "table",
+      "maxInkWidth": 88,
+      "width": 96,
+      "height": 96,
+      "pivotX": 48,
+      "pivotY": 80,
+      "motion": "glow",
+      "master": "isometric-pilot-assets/map-pilot2.png",
+      "previousRuntime": {
+        "id": "sp_marauders_map",
+        "kind": "decor",
+        "collection": "special",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Bản đồ của Đạo tặc",
+        "group": "Hành trình phép thuật",
+        "file": "decor-assets/native/sp_marauders_map.png",
+        "frames": [
+          "decor-assets/native/sp_marauders_map_f0.png",
+          "decor-assets/native/sp_marauders_map_f1.png",
+          "decor-assets/native/sp_marauders_map_f2.png",
+          "decor-assets/native/sp_marauders_map_f3.png"
+        ],
+        "durations": [
+          520,
+          260,
+          480,
+          260
+        ],
+        "rightFile": "decor-assets/native/sp_marauders_map_right.png",
+        "rightFrames": [
+          "decor-assets/native/sp_marauders_map_right_f0.png",
+          "decor-assets/native/sp_marauders_map_right_f1.png",
+          "decor-assets/native/sp_marauders_map_right_f2.png",
+          "decor-assets/native/sp_marauders_map_right_f3.png"
+        ],
+        "rightBounds": {
+          "x": 9,
+          "y": 11,
+          "w": 79,
+          "h": 69
+        },
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 96,
+        "height": 96,
+        "pivotX": 48,
+        "pivotY": 80,
+        "bounds": {
+          "x": 4,
+          "y": 21,
+          "w": 88,
+          "h": 59
+        },
+        "footprintTiles": [
+          2,
+          1
+        ],
+        "motion": "glow",
+        "framesIdentical": false,
+        "bookReference": {
+          "book": 3,
+          "chapter": 10
+        },
+        "lore": "Fred và George trao cho Harry bản đồ các lối đi bí mật Hogwarts.",
+        "nativeSha256": "f4780570f2cbbe4493127580688cb524ddecf531ec78ce0946e15f441a5aacd4"
+      },
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#8B4A3F",
+        "#C97952",
+        "#E7AE73",
+        "#F5D69A",
+        "#41465C",
+        "#687486",
+        "#A6B1AE",
+        "#D6D8BF"
+      ],
+      "poseLayout": [
+        2
+      ],
+      "selectedMaster": "isometric-pilot-assets/map-pilot2.png",
+      "guide": "isometric-hd-assets/generation-inputs/sp_marauders_map-53c6cb28f61f.png",
+      "guideSha256": "53c6cb28f61fe84e0813828ca943ea1a527c0704b5884c55896ab8dfacca192d",
+      "guideLayout": "poses",
+      "masterSha256": "8cb60ae9402051b1991964b54f1dc418b683ead03d42f65b78577b40757f84e3",
+      "scale": 0.1347517730496454,
+      "frames": [
+        {
+          "file": "isometric-pilot-assets/candidates/sp_marauders_map/frame-01.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 73,
+            "h": 76
+          },
+          "sha256": "0761ac482c29648206d8a4ab515ce1b99b9db2079b2ce13ce17038c063101204",
+          "sourceRect": {
+            "x": 114,
+            "y": 273,
+            "w": 541,
+            "h": 564
+          }
+        },
+        {
+          "file": "isometric-pilot-assets/candidates/sp_marauders_map/frame-02.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 73,
+            "h": 76
+          },
+          "sha256": "e15fd18e5ade5dd45bbee9caf7891420c608acd644fb0e9389f28b7e7fcc7a39",
+          "sourceRect": {
+            "x": 114,
+            "y": 273,
+            "w": 541,
+            "h": 564
+          },
+          "effectBaseFile": "isometric-pilot-assets/candidates/sp_marauders_map/frame-01.png"
+        },
+        {
+          "file": "isometric-pilot-assets/candidates/sp_marauders_map/frame-03.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 73,
+            "h": 76
+          },
+          "sha256": "e15fd18e5ade5dd45bbee9caf7891420c608acd644fb0e9389f28b7e7fcc7a39",
+          "sourceRect": {
+            "x": 114,
+            "y": 273,
+            "w": 541,
+            "h": 564
+          },
+          "effectBaseFile": "isometric-pilot-assets/candidates/sp_marauders_map/frame-01.png"
+        },
+        {
+          "file": "isometric-pilot-assets/candidates/sp_marauders_map/frame-04.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 73,
+            "h": 76
+          },
+          "sha256": "0761ac482c29648206d8a4ab515ce1b99b9db2079b2ce13ce17038c063101204",
+          "sourceRect": {
+            "x": 114,
+            "y": 273,
+            "w": 541,
+            "h": 564
+          },
+          "effectBaseFile": "isometric-pilot-assets/candidates/sp_marauders_map/frame-01.png"
+        },
+        {
+          "file": "isometric-pilot-assets/candidates/sp_marauders_map/frame-05.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 73,
+            "h": 76
+          },
+          "sha256": "d74c1b8d25006384815a9f8a593de921c85fad7afc3d2d3bc434499aa993c90d",
+          "sourceRect": {
+            "x": 881,
+            "y": 273,
+            "w": 541,
+            "h": 564
+          }
+        },
+        {
+          "file": "isometric-pilot-assets/candidates/sp_marauders_map/frame-06.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 73,
+            "h": 76
+          },
+          "sha256": "8780c0530d0f53a45df131b6121c933baf93017b35839286e5410af30319e53e",
+          "sourceRect": {
+            "x": 881,
+            "y": 273,
+            "w": 541,
+            "h": 564
+          },
+          "effectBaseFile": "isometric-pilot-assets/candidates/sp_marauders_map/frame-05.png"
+        },
+        {
+          "file": "isometric-pilot-assets/candidates/sp_marauders_map/frame-07.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 73,
+            "h": 76
+          },
+          "sha256": "8780c0530d0f53a45df131b6121c933baf93017b35839286e5410af30319e53e",
+          "sourceRect": {
+            "x": 881,
+            "y": 273,
+            "w": 541,
+            "h": 564
+          },
+          "effectBaseFile": "isometric-pilot-assets/candidates/sp_marauders_map/frame-05.png"
+        },
+        {
+          "file": "isometric-pilot-assets/candidates/sp_marauders_map/frame-08.png",
+          "width": 96,
+          "height": 96,
+          "pivotX": 48,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 73,
+            "h": 76
+          },
+          "sha256": "d74c1b8d25006384815a9f8a593de921c85fad7afc3d2d3bc434499aa993c90d",
+          "sourceRect": {
+            "x": 881,
+            "y": 273,
+            "w": 541,
+            "h": 564
+          },
+          "effectBaseFile": "isometric-pilot-assets/candidates/sp_marauders_map/frame-05.png"
+        }
+      ],
+      "atlas": {
+        "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+        "sha256": "8291af6288dd262e28a1171ecf3de7e417cdc53caf9925610407331b976cd27d",
+        "width": 384,
+        "height": 192,
+        "frames": [
+          {
+            "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 73,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 96,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 73,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 96,
+              "y": 0,
+              "w": 96,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 73,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 0,
+              "w": 96,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 73,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 288,
+              "y": 0,
+              "w": 96,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 73,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 96,
+              "w": 96,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 73,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 96,
+              "y": 96,
+              "w": 96,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 73,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 96,
+              "w": 96,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-pilot-assets/candidates/sp_marauders_map/atlas.png",
+            "width": 96,
+            "height": 96,
+            "pivotX": 48,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 73,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 288,
+              "y": 96,
+              "w": 96,
+              "h": 96
+            }
+          }
+        ]
+      },
+      "motionPlans": [
+        {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null
+        },
+        {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

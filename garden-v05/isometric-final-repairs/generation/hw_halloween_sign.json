@@ -1,0 +1,12 @@
+{
+  "id": "hw_halloween_sign",
+  "prompt": "Edit image1 only by REMOVING the unrequested bright cubic block on TOP of each post. End each timber post in a small natural flat cut end, with no box, lamp, gift, cap ornament or other added item. Preserve absolutely everything else: the crooked post, hanging pumpkin-shaped wood plaque, bat-shaped arrow, tiny autumn leaves/cobweb, both world orientations, lighting and geometry. Keep all existing signboard world diagonals at slope\u00b10.500 exactly as the guide image2. Two isolated poses in the same positions and scale, default and right-quarter-turn. Crisp readable handmade HD pixel art, genuine transparent alpha, no scene or shadow. Image3 garden context only.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-e800a7a7-84c2-4a83-a6e4-40fc07fc3317.png",
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/masters/hw_halloween_sign-refined.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-final-repairs/generation-inputs/hw_halloween_sign-be7ab6338094.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ],
+  "guide": "isometric-final-repairs/generation-inputs/hw_halloween_sign-be7ab6338094.png",
+  "guideSha256": "be7ab6338094ae4b1acf2bf11cce08095aba57cb0426c5de5021a47d2f92482d"
+}

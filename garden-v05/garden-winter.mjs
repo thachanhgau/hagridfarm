@@ -1,7 +1,8 @@
 // 25.0 S3 «Mùa đông thật» (loaded with import() after the first frame: 25.0 speed budget): a real winter from 01/12 to the end of February (VN time). Snow lies on the ground
 // even under a clear sky and deepens with each snowy day; fog, breath and fence lanterns come and go with it.
 // Rare coats (đông, bạc, Noel) only recolour a creature inside the 32-colour palette: looks, never economy (#39).
-import {stableHash} from './scene-animation.mjs?v=26.1';
+export {drawStatueAura} from './statue-aura.mjs?v=26.1';
+import {decorFrameAt,stableHash} from './scene-animation.mjs?v=26.1';
 import {SPRITE_PALETTE} from './palette.mjs?v=26.1';
 import {WINTER_NIGHT_TINT} from './garden-atmosphere.mjs?v=26.1';
 
@@ -30,6 +31,11 @@ export function winterFor(nowMs, override) {
 
 // Codex winter scenery (deferred: only requested while winter is on). Same canvas and pivot as the original.
 export const WINTER_ART = Object.freeze({
+  'native-complete-objects/herbology_greenhouse/frame-04.png': 'environment/winter/iso-herbology_greenhouse-3.png',
+  'native-complete-objects/herbology_greenhouse/frame-03.png': 'environment/winter/iso-herbology_greenhouse-2.png',
+  'native-complete-objects/herbology_greenhouse/frame-02.png': 'environment/winter/iso-herbology_greenhouse-1.png',
+  'native-complete-objects/herbology_greenhouse/frame-01.png': 'environment/winter/iso-herbology_greenhouse-0.png',
+  'native-complete-objects/habitat_niffler/frame-01.png': 'environment/winter/iso-habitat_niffler-0.png',
   'environment/plot-props/hourglass.png': 'environment/winter/plot-hourglass-snow.png',
   'environment/plot-props/seed_cart.png': 'environment/winter/plot-seed_cart-snow.png',
   'environment/plot-props/watering_station.png': 'environment/winter/plot-watering_station-snow.png',
@@ -242,15 +248,13 @@ export function drawWinterLayer(ctx, {width, height, lanterns = [], mode = 'day'
   drawWinterFog(ctx, width, height, {clock, mode});
 }
 
-// 25.0: elf statues glow at dusk and night. Codex drew each statue whole at night (halo behind the head lighting it)
-// on the day sprite's canvas and pivot, covering every day pixel; the renderer draws it over the statue after the
-// night tint and loads it only once it is dark (deferred files).
+// Light the current authored frame after the night tint. Reusing its atlas cell keeps both
+// facings, HD silhouette, pivot and animation exactly aligned when the artwork changes.
 const STATUE_GLOW_IDS = ['ev_dark_dobby_red', 'ev_dobby_spring_rider'];
-const glowFile = (id, right, n) => `environment/statue-night/${id}${right ? '_right' : ''}-n${n}.png`;
-export const STATUE_GLOW_FILES = Object.freeze(STATUE_GLOW_IDS.flatMap((id) => [0, 1, 2].flatMap((n) => [glowFile(id, false, n), glowFile(id, true, n)])));
-// Slow breath n0 n1 n0 n2, each statue on its own beat; reduced motion (clock 0) holds n0.
+export const STATUE_GLOW_FILES = Object.freeze([]);
 export function statueGlow(object, clock = 0) {
   if (object?.kind !== 'store-decor' || object.preview || !STATUE_GLOW_IDS.includes(object.id)) return null;
-  const n = clock > 0 ? [0, 1, 0, 2][Math.floor(clock / 600 + (object.slot ?? 0)) % 4] : 0;
-  return {file: glowFile(object.id, object.facing === 'right', n), pivotX: object.asset.pivotX, pivotY: object.asset.pivotY, noSnowCap: true};
+  const frame=decorFrameAt(object.asset,clock,{facing:object.facing,seed:`${object.id}:${object.slot}`,reducedMotion:clock===0});
+  const beat=clock>0?[0,1,0,2][Math.floor(clock/600+(object.slot??0))%4]:0;
+  return {...object.asset,...frame,opacity:[.78,.92,.7][beat],noSnowCap:true};
 }

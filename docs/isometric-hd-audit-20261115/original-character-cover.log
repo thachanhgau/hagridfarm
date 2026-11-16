@@ -1,0 +1,12 @@
+✔ a character in front of a decoration footprint is drawn after it, one behind before it (0.451333ms)
+✔ no crop, default decoration or fixed piece covers a standing or sleeping character (≤ 20 % of its box) (1.027375ms)
+✔ walking, a character passes behind things but is never more than half hidden for over a tenth of its loop (110.837125ms)
+✔ characters do not share a standing spot, and visitors keep clear of the elves (0.506959ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168.273625

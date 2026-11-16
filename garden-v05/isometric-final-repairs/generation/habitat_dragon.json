@@ -1,0 +1,12 @@
+{
+  "id": "habitat_dragon",
+  "prompt": "Edit image1 by changing the material of BOTH matching braziers from brown terracotta/wood to BLACK CAST IRON. Preserve all geometry, the exact rim, short THREE stub feet, exactly THREE chunky glowing orange coal rocks, placement, scale, normal-left and matching snow-right, and the identical fixed camera between seasons. Body colors charcoal #231F2E and slate #41465C, iron highlights #687486, rim #A6B1AE. NO brown wood or terra-cotta on body or feet. Do not lengthen feet or add anything. Top horizontal rim stays a2:1 ellipse as image2. Same crisp handmade HD pixel style, generous transparent gutters and actual alpha, no scene, ground or shadow. Image3 context only.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-d8615e3f-3d25-4c77-b7cd-fc8b0d89862d.png",
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/masters/habitat_dragon-refined.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-final-repairs/generation-inputs/habitat_dragon-1b7f46294e20.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ],
+  "guide": "isometric-final-repairs/generation-inputs/habitat_dragon-1b7f46294e20.png",
+  "guideSha256": "1b7f46294e201fdfc117fd7a9738cfe948263480d4a20f944baa080092a06f9a"
+}

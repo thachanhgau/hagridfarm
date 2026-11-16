@@ -1,0 +1,1995 @@
+{
+  "version": 1,
+  "accepted": false,
+  "items": [
+    {
+      "id": "decor_pumpkin_lantern",
+      "label": "decor_pumpkin_lantern",
+      "subject": "A carved orange jack-o-lantern with curling green stem, warm amber eyes and jagged grin, mounted on a single rough square timber post and tiny wooden cap.",
+      "sourcePack": null,
+      "footprint": [
+        1,
+        1
+      ],
+      "guideKind": "pumpkinpost",
+      "maxInkWidth": 56,
+      "width": 64,
+      "height": 96,
+      "pivotX": 32,
+      "pivotY": 80,
+      "motion": "static",
+      "master": "isometric-final-repairs/masters/decor_pumpkin_lantern.png",
+      "previousRuntime": {
+        "id": "decor_pumpkin_lantern",
+        "kind": "decor",
+        "storeItem": true,
+        "rotatable": true,
+        "file": "decor-assets/native/decor_pumpkin_lantern.png",
+        "frames": [
+          "decor-assets/native/decor_pumpkin_lantern_f0.png",
+          "decor-assets/native/decor_pumpkin_lantern_f1.png",
+          "decor-assets/native/decor_pumpkin_lantern_f2.png",
+          "decor-assets/native/decor_pumpkin_lantern_f3.png"
+        ],
+        "durations": [
+          460,
+          220,
+          420,
+          220
+        ],
+        "rightFile": "decor-assets/native/decor_pumpkin_lantern_right.png",
+        "rightFrames": [
+          "decor-assets/native/decor_pumpkin_lantern_right_f0.png",
+          "decor-assets/native/decor_pumpkin_lantern_right_f1.png",
+          "decor-assets/native/decor_pumpkin_lantern_right_f2.png",
+          "decor-assets/native/decor_pumpkin_lantern_right_f3.png"
+        ],
+        "rightBounds": {
+          "x": 13,
+          "y": 4,
+          "w": 39,
+          "h": 76
+        },
+        "angles": [
+          "default",
+          "right"
+        ],
+        "master": "decor-assets/masters/decor_pumpkin_lantern.png",
+        "width": 64,
+        "height": 96,
+        "pivotX": 32,
+        "pivotY": 80,
+        "bounds": {
+          "x": 13,
+          "y": 4,
+          "w": 39,
+          "h": 76
+        },
+        "footprintTiles": [
+          1,
+          1
+        ],
+        "sourceSha256": "d098e59b19e9e2061974c248a76017964ec53b5f91ee10ba3ae8fc8c1170357b",
+        "nativeSha256": "b0328f8f7e34c5aae1f564f93f06fd57ca022a99885ad66a868e69fa6fe0f9f3",
+        "generationPromptId": "decor_pumpkin_lantern"
+      },
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#41465C",
+        "#687486",
+        "#A6B1AE",
+        "#D6D8BF",
+        "#24483F",
+        "#3F6A45",
+        "#71934B",
+        "#B0BD67",
+        "#8B4A3F",
+        "#C97952",
+        "#E7AE73",
+        "#F5D69A",
+        "#874056",
+        "#C75B4B",
+        "#ED8A45",
+        "#FFC36B",
+        "#3E3B70",
+        "#6961A6",
+        "#70A8B6",
+        "#B7DEE0"
+      ],
+      "poseLayout": [
+        2
+      ],
+      "selectedMaster": "isometric-final-repairs/masters/decor_pumpkin_lantern.png",
+      "guide": "isometric-final-repairs/generation-inputs/decor_pumpkin_lantern-e93e624ca7e2.png",
+      "guideSha256": "e93e624ca7e268c1f01da30d601730e3edf8314ea9f376934b5370702ef73d49",
+      "guideLayout": "poses",
+      "noPlinth": true,
+      "guideHeight": 48,
+      "masterSha256": "d9ee17fcb97ab97f175cc3e67336d28ef90b981a2b71ae2deca2e44d9736c007",
+      "scale": 0.10174029451137885,
+      "frames": [
+        {
+          "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-01.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 41,
+            "h": 76
+          },
+          "sha256": "a25a606086e30af2ca830f175d4b3f957a3ad0e8ec1e0feee14b8a38ad9b0093",
+          "sourceRect": {
+            "x": 277,
+            "y": 80,
+            "w": 404,
+            "h": 747
+          }
+        },
+        {
+          "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-02.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 41,
+            "h": 76
+          },
+          "sha256": "7fd5a2a01fd963ce27099c394bdac1ef4c09dacd8e14b438917cbc7c97a7f5d1",
+          "sourceRect": {
+            "x": 277,
+            "y": 80,
+            "w": 404,
+            "h": 747
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-03.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 41,
+            "h": 76
+          },
+          "sha256": "172b41d78b023e5203b451c15c615051c78b667780daee97379d5c5a2a59e01e",
+          "sourceRect": {
+            "x": 277,
+            "y": 80,
+            "w": 404,
+            "h": 747
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-04.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 41,
+            "h": 76
+          },
+          "sha256": "cfea3c00ef06cda869547c4fb4ca435f70cb32ceca753b31eb8ba3795074b7a8",
+          "sourceRect": {
+            "x": 277,
+            "y": 80,
+            "w": 404,
+            "h": 747
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-05.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 40,
+            "h": 76
+          },
+          "sha256": "2e9226a42674af0723c87cd204d9be3113a7a3ee12db6dfbaf9eb38b50ad541d",
+          "sourceRect": {
+            "x": 1121,
+            "y": 80,
+            "w": 389,
+            "h": 747
+          }
+        },
+        {
+          "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-06.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 40,
+            "h": 76
+          },
+          "sha256": "4e913458bf8f7ac891b134b2b692562fc8c30c371b4ac6f3e84e914b30c36ef6",
+          "sourceRect": {
+            "x": 1121,
+            "y": 80,
+            "w": 389,
+            "h": 747
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-05.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-07.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 40,
+            "h": 76
+          },
+          "sha256": "6f4801f3666975163f8bbf3aa2763070eeac0227ad6ce5f515978bf3cd3edd8a",
+          "sourceRect": {
+            "x": 1121,
+            "y": 80,
+            "w": 389,
+            "h": 747
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-05.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-08.png",
+          "width": 64,
+          "height": 96,
+          "pivotX": 32,
+          "pivotY": 80,
+          "bounds": {
+            "x": 12,
+            "y": 4,
+            "w": 40,
+            "h": 76
+          },
+          "sha256": "01ecdecc0c951e5571ce76177d2e930332a21b9bb5691433e705e9fd0755ac79",
+          "sourceRect": {
+            "x": 1121,
+            "y": 80,
+            "w": 389,
+            "h": 747
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/decor_pumpkin_lantern/frame-05.png"
+        }
+      ],
+      "atlas": {
+        "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+        "sha256": "6032ebd783b0888fb9b3424220e5c829ed81356652c6df6c2e8e09c50fa89fa4",
+        "width": 256,
+        "height": 192,
+        "frames": [
+          {
+            "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 41,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 41,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 41,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 41,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 0,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 40,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 40,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 40,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/decor_pumpkin_lantern/atlas.png",
+            "width": 64,
+            "height": 96,
+            "pivotX": 32,
+            "pivotY": 80,
+            "bounds": {
+              "x": 12,
+              "y": 4,
+              "w": 40,
+              "h": 76
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 96,
+              "w": 64,
+              "h": 96
+            }
+          }
+        ]
+      },
+      "previewHD": [
+        {
+          "file": "isometric-final-repairs/hd-preview/decor_pumpkin_lantern/frame-01.png",
+          "width": 128,
+          "height": 192,
+          "pivotX": 64,
+          "pivotY": 160,
+          "bounds": {
+            "x": 23,
+            "y": 8,
+            "w": 82,
+            "h": 152
+          },
+          "sha256": "0359e439e0d87cd3209b813074f0cfd1af428dc0635db99e14e3e6cf63952c93",
+          "sourceRect": {
+            "x": 277,
+            "y": 80,
+            "w": 404,
+            "h": 747
+          }
+        },
+        {
+          "file": "isometric-final-repairs/hd-preview/decor_pumpkin_lantern/frame-05.png",
+          "width": 128,
+          "height": 192,
+          "pivotX": 64,
+          "pivotY": 160,
+          "bounds": {
+            "x": 25,
+            "y": 8,
+            "w": 79,
+            "h": 152
+          },
+          "sha256": "190f50c2cea922968eff4b67bae5cfb7319b21281e9adc2b7d4d62d2ddb2d127",
+          "sourceRect": {
+            "x": 1121,
+            "y": 80,
+            "w": 389,
+            "h": 747
+          }
+        }
+      ],
+      "motionPlans": [
+        {
+          "requested": "existing-native-animation",
+          "rendered": "existing-native-animation",
+          "fallback": null
+        },
+        {
+          "requested": "existing-native-animation",
+          "rendered": "existing-native-animation",
+          "fallback": null
+        }
+      ]
+    },
+    {
+      "id": "hw_wooden_black_cat",
+      "label": "Tượng mèo đen bằng gỗ",
+      "subject": "A carved dark-purple wooden Halloween cat statue seated with an elegantly curled tail, pointed ears, one tiny orange neck bow, amber eyes. Clearly a rustic wood carving with a stable little wooden foot, not a living cat, cute and cosy. NO post, no slab, no pedestal or ground tile. Retain only the integral little wooden foot where specified.",
+      "sourcePack": "halloween-assets",
+      "footprint": [
+        1,
+        1
+      ],
+      "guideKind": "logbase",
+      "maxInkWidth": 56,
+      "width": 72,
+      "height": 104,
+      "pivotX": 36,
+      "pivotY": 100,
+      "motion": "blink",
+      "master": "isometric-final-repairs/masters/hw_wooden_black_cat.png",
+      "previousRuntime": {
+        "id": "hw_wooden_black_cat",
+        "kind": "decor",
+        "collection": "festival",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Tượng mèo đen bằng gỗ",
+        "group": "Cốt lõi",
+        "file": "decor-assets/native/hw_wooden_black_cat.png",
+        "frames": [
+          "decor-assets/native/hw_wooden_black_cat_f0.png",
+          "decor-assets/native/hw_wooden_black_cat_f1.png",
+          "decor-assets/native/hw_wooden_black_cat_f2.png",
+          "decor-assets/native/hw_wooden_black_cat_f3.png"
+        ],
+        "durations": [
+          600,
+          300,
+          600,
+          300
+        ],
+        "rightFile": "decor-assets/native/hw_wooden_black_cat_right.png",
+        "rightFrames": [
+          "decor-assets/native/hw_wooden_black_cat_right_f0.png",
+          "decor-assets/native/hw_wooden_black_cat_right_f1.png",
+          "decor-assets/native/hw_wooden_black_cat_right_f2.png",
+          "decor-assets/native/hw_wooden_black_cat_right_f3.png"
+        ],
+        "rightBounds": {
+          "x": 5,
+          "y": 2,
+          "w": 62,
+          "h": 98
+        },
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 72,
+        "height": 104,
+        "pivotX": 36,
+        "pivotY": 100,
+        "bounds": {
+          "x": 3,
+          "y": 2,
+          "w": 66,
+          "h": 98
+        },
+        "footprintTiles": [
+          1,
+          1
+        ],
+        "motion": "blink",
+        "framesIdentical": true,
+        "nativeSha256": "a8a6cdbce558c176032180741146bde3c958f25e7d77e02e5d4465966b7806ba"
+      },
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#874056",
+        "#C75B4B",
+        "#ED8A45",
+        "#FFC36B",
+        "#3E3B70",
+        "#6961A6",
+        "#70A8B6",
+        "#B7DEE0"
+      ],
+      "poseLayout": [
+        2
+      ],
+      "selectedMaster": "isometric-final-repairs/masters/hw_wooden_black_cat.png",
+      "guide": "isometric-final-repairs/generation-inputs/hw_wooden_black_cat-1c8202be9216.png",
+      "guideSha256": "1c8202be9216fe9ae28bae70e2213bd5afc1468924ff2e1852e311e0884783c3",
+      "guideLayout": "poses",
+      "guideHeight": 6,
+      "masterSha256": "692e9b0e07a0ca5ae3f548e5bbcf23fd4912abcfd2a8ef592f3d10280ed644e5",
+      "scale": 0.09348914858096828,
+      "frames": [
+        {
+          "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-01.png",
+          "width": 72,
+          "height": 104,
+          "pivotX": 36,
+          "pivotY": 100,
+          "bounds": {
+            "x": 8,
+            "y": 19,
+            "w": 56,
+            "h": 81
+          },
+          "sha256": "8df6139ee902cb64ba396c78b7b5c2fdb2caeaf2b308a375dec37f2fd96421c0",
+          "sourceRect": {
+            "x": 115,
+            "y": 76,
+            "w": 599,
+            "h": 863
+          }
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-02.png",
+          "width": 72,
+          "height": 104,
+          "pivotX": 36,
+          "pivotY": 100,
+          "bounds": {
+            "x": 8,
+            "y": 19,
+            "w": 56,
+            "h": 81
+          },
+          "sha256": "8df6139ee902cb64ba396c78b7b5c2fdb2caeaf2b308a375dec37f2fd96421c0",
+          "sourceRect": {
+            "x": 115,
+            "y": 76,
+            "w": 599,
+            "h": 863
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-03.png",
+          "width": 72,
+          "height": 104,
+          "pivotX": 36,
+          "pivotY": 100,
+          "bounds": {
+            "x": 8,
+            "y": 19,
+            "w": 56,
+            "h": 81
+          },
+          "sha256": "8df6139ee902cb64ba396c78b7b5c2fdb2caeaf2b308a375dec37f2fd96421c0",
+          "sourceRect": {
+            "x": 115,
+            "y": 76,
+            "w": 599,
+            "h": 863
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-04.png",
+          "width": 72,
+          "height": 104,
+          "pivotX": 36,
+          "pivotY": 100,
+          "bounds": {
+            "x": 8,
+            "y": 19,
+            "w": 56,
+            "h": 81
+          },
+          "sha256": "8df6139ee902cb64ba396c78b7b5c2fdb2caeaf2b308a375dec37f2fd96421c0",
+          "sourceRect": {
+            "x": 115,
+            "y": 76,
+            "w": 599,
+            "h": 863
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-05.png",
+          "width": 72,
+          "height": 104,
+          "pivotX": 36,
+          "pivotY": 100,
+          "bounds": {
+            "x": 10,
+            "y": 21,
+            "w": 53,
+            "h": 79
+          },
+          "sha256": "d431ff32f99c3f1967dbd82f12e089451c0f31e5103a1a5cff9d4c545d925cc9",
+          "sourceRect": {
+            "x": 814,
+            "y": 93,
+            "w": 562,
+            "h": 846
+          }
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-06.png",
+          "width": 72,
+          "height": 104,
+          "pivotX": 36,
+          "pivotY": 100,
+          "bounds": {
+            "x": 10,
+            "y": 21,
+            "w": 53,
+            "h": 79
+          },
+          "sha256": "d431ff32f99c3f1967dbd82f12e089451c0f31e5103a1a5cff9d4c545d925cc9",
+          "sourceRect": {
+            "x": 814,
+            "y": 93,
+            "w": 562,
+            "h": 846
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-05.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-07.png",
+          "width": 72,
+          "height": 104,
+          "pivotX": 36,
+          "pivotY": 100,
+          "bounds": {
+            "x": 10,
+            "y": 21,
+            "w": 53,
+            "h": 79
+          },
+          "sha256": "d431ff32f99c3f1967dbd82f12e089451c0f31e5103a1a5cff9d4c545d925cc9",
+          "sourceRect": {
+            "x": 814,
+            "y": 93,
+            "w": 562,
+            "h": 846
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-05.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-08.png",
+          "width": 72,
+          "height": 104,
+          "pivotX": 36,
+          "pivotY": 100,
+          "bounds": {
+            "x": 10,
+            "y": 21,
+            "w": 53,
+            "h": 79
+          },
+          "sha256": "d431ff32f99c3f1967dbd82f12e089451c0f31e5103a1a5cff9d4c545d925cc9",
+          "sourceRect": {
+            "x": 814,
+            "y": 93,
+            "w": 562,
+            "h": 846
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_wooden_black_cat/frame-05.png"
+        }
+      ],
+      "atlas": {
+        "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+        "sha256": "f1bd6c7accdcd8e2afec03388ddfa01836a51cdb91bbb2e094f6ee63a4f63e9e",
+        "width": 288,
+        "height": 208,
+        "frames": [
+          {
+            "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+            "width": 72,
+            "height": 104,
+            "pivotX": 36,
+            "pivotY": 100,
+            "bounds": {
+              "x": 8,
+              "y": 19,
+              "w": 56,
+              "h": 81
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 72,
+              "h": 104
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+            "width": 72,
+            "height": 104,
+            "pivotX": 36,
+            "pivotY": 100,
+            "bounds": {
+              "x": 8,
+              "y": 19,
+              "w": 56,
+              "h": 81
+            },
+            "atlasRect": {
+              "x": 72,
+              "y": 0,
+              "w": 72,
+              "h": 104
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+            "width": 72,
+            "height": 104,
+            "pivotX": 36,
+            "pivotY": 100,
+            "bounds": {
+              "x": 8,
+              "y": 19,
+              "w": 56,
+              "h": 81
+            },
+            "atlasRect": {
+              "x": 144,
+              "y": 0,
+              "w": 72,
+              "h": 104
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+            "width": 72,
+            "height": 104,
+            "pivotX": 36,
+            "pivotY": 100,
+            "bounds": {
+              "x": 8,
+              "y": 19,
+              "w": 56,
+              "h": 81
+            },
+            "atlasRect": {
+              "x": 216,
+              "y": 0,
+              "w": 72,
+              "h": 104
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+            "width": 72,
+            "height": 104,
+            "pivotX": 36,
+            "pivotY": 100,
+            "bounds": {
+              "x": 10,
+              "y": 21,
+              "w": 53,
+              "h": 79
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 104,
+              "w": 72,
+              "h": 104
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+            "width": 72,
+            "height": 104,
+            "pivotX": 36,
+            "pivotY": 100,
+            "bounds": {
+              "x": 10,
+              "y": 21,
+              "w": 53,
+              "h": 79
+            },
+            "atlasRect": {
+              "x": 72,
+              "y": 104,
+              "w": 72,
+              "h": 104
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+            "width": 72,
+            "height": 104,
+            "pivotX": 36,
+            "pivotY": 100,
+            "bounds": {
+              "x": 10,
+              "y": 21,
+              "w": 53,
+              "h": 79
+            },
+            "atlasRect": {
+              "x": 144,
+              "y": 104,
+              "w": 72,
+              "h": 104
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_wooden_black_cat/atlas.png",
+            "width": 72,
+            "height": 104,
+            "pivotX": 36,
+            "pivotY": 100,
+            "bounds": {
+              "x": 10,
+              "y": 21,
+              "w": 53,
+              "h": 79
+            },
+            "atlasRect": {
+              "x": 216,
+              "y": 104,
+              "w": 72,
+              "h": 104
+            }
+          }
+        ]
+      },
+      "previewHD": [
+        {
+          "file": "isometric-final-repairs/hd-preview/hw_wooden_black_cat/frame-01.png",
+          "width": 144,
+          "height": 208,
+          "pivotX": 72,
+          "pivotY": 200,
+          "bounds": {
+            "x": 16,
+            "y": 39,
+            "w": 112,
+            "h": 161
+          },
+          "sha256": "317c9f02235aa1fc1da6557a26ec5850d4f392245bc2ae9596ed29c5c58fd8e1",
+          "sourceRect": {
+            "x": 115,
+            "y": 76,
+            "w": 599,
+            "h": 863
+          }
+        },
+        {
+          "file": "isometric-final-repairs/hd-preview/hw_wooden_black_cat/frame-05.png",
+          "width": 144,
+          "height": 208,
+          "pivotX": 72,
+          "pivotY": 200,
+          "bounds": {
+            "x": 20,
+            "y": 42,
+            "w": 105,
+            "h": 158
+          },
+          "sha256": "c2b91735a0b72e2031a39c030cf3c25f1261b4740bb03a744d7f582374dd2971",
+          "sourceRect": {
+            "x": 814,
+            "y": 93,
+            "w": 562,
+            "h": 846
+          }
+        }
+      ],
+      "motionPlans": [
+        {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        },
+        {
+          "requested": "blink",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        }
+      ]
+    },
+    {
+      "id": "hw_halloween_sign",
+      "label": "Biển gỗ Halloween",
+      "subject": "A crooked rustic wooden garden signpost with a pumpkin-shaped sign and a bat-shaped arrow, decorated with autumn leaves and a small cobweb. The sign contains ONLY carved pumpkin and bat pictograms, absolutely NO writing, lettering or numbers.",
+      "sourcePack": "halloween-assets",
+      "footprint": [
+        1,
+        1
+      ],
+      "guideKind": "owlpost",
+      "maxInkWidth": 56,
+      "width": 64,
+      "height": 112,
+      "pivotX": 32,
+      "pivotY": 96,
+      "motion": "glow",
+      "master": "isometric-final-repairs/masters/hw_halloween_sign.png",
+      "previousRuntime": {
+        "id": "hw_halloween_sign",
+        "kind": "decor",
+        "collection": "festival",
+        "storeItem": true,
+        "rotatable": true,
+        "label": "Biển gỗ Halloween",
+        "group": "Cốt lõi",
+        "file": "decor-assets/native/hw_halloween_sign.png",
+        "rightFile": "decor-assets/native/hw_halloween_sign_right.png",
+        "frames": [
+          "decor-assets/native/hw_halloween_sign_atlas.png",
+          "decor-assets/native/hw_halloween_sign_atlas.png",
+          "decor-assets/native/hw_halloween_sign_atlas.png",
+          "decor-assets/native/hw_halloween_sign_atlas.png"
+        ],
+        "rightFrames": [
+          "decor-assets/native/hw_halloween_sign_atlas.png",
+          "decor-assets/native/hw_halloween_sign_atlas.png",
+          "decor-assets/native/hw_halloween_sign_atlas.png",
+          "decor-assets/native/hw_halloween_sign_atlas.png"
+        ],
+        "atlasRects": [
+          {
+            "x": 0,
+            "y": 0,
+            "w": 64,
+            "h": 112
+          },
+          {
+            "x": 64,
+            "y": 0,
+            "w": 64,
+            "h": 112
+          },
+          {
+            "x": 128,
+            "y": 0,
+            "w": 64,
+            "h": 112
+          },
+          {
+            "x": 192,
+            "y": 0,
+            "w": 64,
+            "h": 112
+          }
+        ],
+        "rightAtlasRects": [
+          {
+            "x": 0,
+            "y": 112,
+            "w": 64,
+            "h": 112
+          },
+          {
+            "x": 64,
+            "y": 112,
+            "w": 64,
+            "h": 112
+          },
+          {
+            "x": 128,
+            "y": 112,
+            "w": 64,
+            "h": 112
+          },
+          {
+            "x": 192,
+            "y": 112,
+            "w": 64,
+            "h": 112
+          }
+        ],
+        "durations": [
+          520,
+          260,
+          480,
+          260
+        ],
+        "angles": [
+          "default",
+          "right"
+        ],
+        "width": 64,
+        "height": 112,
+        "pivotX": 32,
+        "pivotY": 96,
+        "bounds": {
+          "x": 4,
+          "y": 12,
+          "w": 56,
+          "h": 84
+        },
+        "rightBounds": {
+          "x": 13,
+          "y": 12,
+          "w": 39,
+          "h": 84
+        },
+        "footprintTiles": [
+          1,
+          1
+        ],
+        "motion": "glow",
+        "framesIdentical": false,
+        "nativeSha256": "14089be32869a0c02d17ab443dbedb59cebc73a5aec567719a48f9def6c09d46"
+      },
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#874056",
+        "#C75B4B",
+        "#ED8A45",
+        "#FFC36B",
+        "#24483F",
+        "#3F6A45",
+        "#71934B",
+        "#B0BD67"
+      ],
+      "poseLayout": [
+        2
+      ],
+      "selectedMaster": "isometric-final-repairs/masters/hw_halloween_sign.png",
+      "guide": "isometric-final-repairs/generation-inputs/hw_halloween_sign-be7ab6338094.png",
+      "guideSha256": "be7ab6338094ae4b1acf2bf11cce08095aba57cb0426c5de5021a47d2f92482d",
+      "guideLayout": "poses",
+      "noPlinth": true,
+      "guideHeight": 65,
+      "masterSha256": "e13aa290b67d96257671e40379395848c5bc6bfb8af2ca60f7e542a47cbfa508",
+      "scale": 0.1362530413625304,
+      "frames": [
+        {
+          "file": "isometric-final-repairs/candidates/hw_halloween_sign/frame-01.png",
+          "width": 64,
+          "height": 112,
+          "pivotX": 32,
+          "pivotY": 96,
+          "bounds": {
+            "x": 4,
+            "y": 11,
+            "w": 56,
+            "h": 85
+          },
+          "sha256": "1247a516c5265533131ae63968626372f95df22fd66585417470e9abeb069355",
+          "sourceRect": {
+            "x": 288,
+            "y": 267,
+            "w": 411,
+            "h": 623
+          }
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_halloween_sign/frame-02.png",
+          "width": 64,
+          "height": 112,
+          "pivotX": 32,
+          "pivotY": 96,
+          "bounds": {
+            "x": 4,
+            "y": 11,
+            "w": 56,
+            "h": 85
+          },
+          "sha256": "cc3e46b61bee0050a86c322870688754f80bf09425eb5f98a8715a0a0846b72b",
+          "sourceRect": {
+            "x": 288,
+            "y": 267,
+            "w": 411,
+            "h": 623
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_halloween_sign/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_halloween_sign/frame-03.png",
+          "width": 64,
+          "height": 112,
+          "pivotX": 32,
+          "pivotY": 96,
+          "bounds": {
+            "x": 4,
+            "y": 11,
+            "w": 56,
+            "h": 85
+          },
+          "sha256": "08a160120f92e03c1c4445943426b90f6a6f43ec16940cbbefbc9a759c8911e6",
+          "sourceRect": {
+            "x": 288,
+            "y": 267,
+            "w": 411,
+            "h": 623
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_halloween_sign/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_halloween_sign/frame-04.png",
+          "width": 64,
+          "height": 112,
+          "pivotX": 32,
+          "pivotY": 96,
+          "bounds": {
+            "x": 4,
+            "y": 11,
+            "w": 56,
+            "h": 85
+          },
+          "sha256": "1247a516c5265533131ae63968626372f95df22fd66585417470e9abeb069355",
+          "sourceRect": {
+            "x": 288,
+            "y": 267,
+            "w": 411,
+            "h": 623
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_halloween_sign/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_halloween_sign/frame-05.png",
+          "width": 64,
+          "height": 112,
+          "pivotX": 32,
+          "pivotY": 96,
+          "bounds": {
+            "x": 15,
+            "y": 12,
+            "w": 35,
+            "h": 84
+          },
+          "sha256": "cfc306d56f8b1307f61daa7312e2d026a1f9e41aae020879038bab82b8f3b357",
+          "sourceRect": {
+            "x": 991,
+            "y": 271,
+            "w": 255,
+            "h": 619
+          }
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_halloween_sign/frame-06.png",
+          "width": 64,
+          "height": 112,
+          "pivotX": 32,
+          "pivotY": 96,
+          "bounds": {
+            "x": 15,
+            "y": 12,
+            "w": 35,
+            "h": 84
+          },
+          "sha256": "15a9ec85144caa20f7534accb58c8049be3577233d298d8a04a492a475419aa6",
+          "sourceRect": {
+            "x": 991,
+            "y": 271,
+            "w": 255,
+            "h": 619
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_halloween_sign/frame-05.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_halloween_sign/frame-07.png",
+          "width": 64,
+          "height": 112,
+          "pivotX": 32,
+          "pivotY": 96,
+          "bounds": {
+            "x": 15,
+            "y": 12,
+            "w": 35,
+            "h": 84
+          },
+          "sha256": "c8a8a670be7baddf0635f78302a3436068e1a1dd4a2f311a27d9e3f23c4f3a9d",
+          "sourceRect": {
+            "x": 991,
+            "y": 271,
+            "w": 255,
+            "h": 619
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_halloween_sign/frame-05.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/hw_halloween_sign/frame-08.png",
+          "width": 64,
+          "height": 112,
+          "pivotX": 32,
+          "pivotY": 96,
+          "bounds": {
+            "x": 15,
+            "y": 12,
+            "w": 35,
+            "h": 84
+          },
+          "sha256": "cfc306d56f8b1307f61daa7312e2d026a1f9e41aae020879038bab82b8f3b357",
+          "sourceRect": {
+            "x": 991,
+            "y": 271,
+            "w": 255,
+            "h": 619
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/hw_halloween_sign/frame-05.png"
+        }
+      ],
+      "atlas": {
+        "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+        "sha256": "99e5f9c57a5729ed7fe91c819b07e220dd804cd1f90c17c648716a554872e656",
+        "width": 256,
+        "height": 224,
+        "frames": [
+          {
+            "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+            "width": 64,
+            "height": 112,
+            "pivotX": 32,
+            "pivotY": 96,
+            "bounds": {
+              "x": 4,
+              "y": 11,
+              "w": 56,
+              "h": 85
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 64,
+              "h": 112
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+            "width": 64,
+            "height": 112,
+            "pivotX": 32,
+            "pivotY": 96,
+            "bounds": {
+              "x": 4,
+              "y": 11,
+              "w": 56,
+              "h": 85
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 0,
+              "w": 64,
+              "h": 112
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+            "width": 64,
+            "height": 112,
+            "pivotX": 32,
+            "pivotY": 96,
+            "bounds": {
+              "x": 4,
+              "y": 11,
+              "w": 56,
+              "h": 85
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 0,
+              "w": 64,
+              "h": 112
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+            "width": 64,
+            "height": 112,
+            "pivotX": 32,
+            "pivotY": 96,
+            "bounds": {
+              "x": 4,
+              "y": 11,
+              "w": 56,
+              "h": 85
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 0,
+              "w": 64,
+              "h": 112
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+            "width": 64,
+            "height": 112,
+            "pivotX": 32,
+            "pivotY": 96,
+            "bounds": {
+              "x": 15,
+              "y": 12,
+              "w": 35,
+              "h": 84
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 112,
+              "w": 64,
+              "h": 112
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+            "width": 64,
+            "height": 112,
+            "pivotX": 32,
+            "pivotY": 96,
+            "bounds": {
+              "x": 15,
+              "y": 12,
+              "w": 35,
+              "h": 84
+            },
+            "atlasRect": {
+              "x": 64,
+              "y": 112,
+              "w": 64,
+              "h": 112
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+            "width": 64,
+            "height": 112,
+            "pivotX": 32,
+            "pivotY": 96,
+            "bounds": {
+              "x": 15,
+              "y": 12,
+              "w": 35,
+              "h": 84
+            },
+            "atlasRect": {
+              "x": 128,
+              "y": 112,
+              "w": 64,
+              "h": 112
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/hw_halloween_sign/atlas.png",
+            "width": 64,
+            "height": 112,
+            "pivotX": 32,
+            "pivotY": 96,
+            "bounds": {
+              "x": 15,
+              "y": 12,
+              "w": 35,
+              "h": 84
+            },
+            "atlasRect": {
+              "x": 192,
+              "y": 112,
+              "w": 64,
+              "h": 112
+            }
+          }
+        ]
+      },
+      "previewHD": [
+        {
+          "file": "isometric-final-repairs/hd-preview/hw_halloween_sign/frame-01.png",
+          "width": 128,
+          "height": 224,
+          "pivotX": 64,
+          "pivotY": 192,
+          "bounds": {
+            "x": 8,
+            "y": 22,
+            "w": 112,
+            "h": 170
+          },
+          "sha256": "57309011e3387a3e8de55df84caac88ab646efddc063a72f5752ee4482820ca8",
+          "sourceRect": {
+            "x": 288,
+            "y": 267,
+            "w": 411,
+            "h": 623
+          }
+        },
+        {
+          "file": "isometric-final-repairs/hd-preview/hw_halloween_sign/frame-05.png",
+          "width": 128,
+          "height": 224,
+          "pivotX": 64,
+          "pivotY": 192,
+          "bounds": {
+            "x": 30,
+            "y": 23,
+            "w": 69,
+            "h": 169
+          },
+          "sha256": "88cbaf8827b982f474c416c116142ebb6d87343d7e30aeacd25ada50913c1a7a",
+          "sourceRect": {
+            "x": 991,
+            "y": 271,
+            "w": 255,
+            "h": 619
+          }
+        }
+      ],
+      "motionPlans": [
+        {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null
+        },
+        {
+          "requested": "glow",
+          "rendered": "glow",
+          "fallback": null
+        }
+      ]
+    },
+    {
+      "id": "habitat_dragon",
+      "originalId": "dragon",
+      "targetKind": "habitat",
+      "subject": "One squat black iron brazier on three short feet with THREE large glowing orange coal rocks inside; NO flame plume. Preserve this exact original habitat, no unrelated parts. The THREE short BLACK IRON feet are stubby, less than one-tenth of the body height. NO long legs, no wood.",
+      "guideKind": "round",
+      "footprint": [
+        1,
+        1
+      ],
+      "maxInkWidth": 32,
+      "width": 40,
+      "height": 36,
+      "pivotX": 20,
+      "pivotY": 31,
+      "motion": "static",
+      "fixedCamera": true,
+      "poseLayout": [
+        2
+      ],
+      "master": "isometric-final-repairs/masters/habitat_dragon.png",
+      "selectedMaster": "isometric-final-repairs/masters/habitat_dragon.png",
+      "previousRuntime": {
+        "id": "habitat_dragon",
+        "file": "native-complete-objects/habitat_dragon/frame-01.png",
+        "width": 40,
+        "height": 36,
+        "pivotX": 20,
+        "pivotY": 31,
+        "bounds": {
+          "x": 2,
+          "y": 5,
+          "w": 36,
+          "h": 26
+        },
+        "frames": [
+          "native-complete-objects/habitat_dragon/frame-01.png"
+        ],
+        "authored": true,
+        "hd": true,
+        "auditSource": "decor-assets/hd/a86f26b9d81fac1e0905dceb.webp"
+      },
+      "previousViews": [
+        {
+          "id": "habitat_dragon",
+          "file": "native-complete-objects/habitat_dragon/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 2,
+            "y": 5,
+            "w": 36,
+            "h": 26
+          },
+          "frames": [
+            "native-complete-objects/habitat_dragon/frame-01.png"
+          ],
+          "authored": true,
+          "hd": true,
+          "auditSource": "decor-assets/hd/a86f26b9d81fac1e0905dceb.webp"
+        }
+      ],
+      "noFeet": false,
+      "noPost": false,
+      "winter": true,
+      "guideHeight": 18,
+      "guide": "isometric-final-repairs/generation-inputs/habitat_dragon-1b7f46294e20.png",
+      "guideSha256": "1b7f46294e201fdfc117fd7a9738cfe948263480d4a20f944baa080092a06f9a",
+      "guideLayout": "poses",
+      "footHeight": 3,
+      "guideMaterial": "iron",
+      "masterSha256": "5f1ce483ffd3b8b929e97f3b6e10fa90c5ab53683d02947cdfd80106213ce28f",
+      "scale": 0.14917127071823205,
+      "frames": [
+        {
+          "file": "isometric-final-repairs/candidates/habitat_dragon/frame-01.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 5,
+            "w": 26,
+            "h": 26
+          },
+          "sha256": "8ec908ab0ebe321cf74f63ffc3d2674cfc4aee5beb903c0ff61c3e844ee15550",
+          "sourceRect": {
+            "x": 298,
+            "y": 496,
+            "w": 172,
+            "h": 174
+          }
+        },
+        {
+          "file": "isometric-final-repairs/candidates/habitat_dragon/frame-02.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 5,
+            "w": 26,
+            "h": 26
+          },
+          "sha256": "8ec908ab0ebe321cf74f63ffc3d2674cfc4aee5beb903c0ff61c3e844ee15550",
+          "sourceRect": {
+            "x": 298,
+            "y": 496,
+            "w": 172,
+            "h": 174
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/habitat_dragon/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/habitat_dragon/frame-03.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 5,
+            "w": 26,
+            "h": 26
+          },
+          "sha256": "8ec908ab0ebe321cf74f63ffc3d2674cfc4aee5beb903c0ff61c3e844ee15550",
+          "sourceRect": {
+            "x": 298,
+            "y": 496,
+            "w": 172,
+            "h": 174
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/habitat_dragon/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/habitat_dragon/frame-04.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 5,
+            "w": 26,
+            "h": 26
+          },
+          "sha256": "8ec908ab0ebe321cf74f63ffc3d2674cfc4aee5beb903c0ff61c3e844ee15550",
+          "sourceRect": {
+            "x": 298,
+            "y": 496,
+            "w": 172,
+            "h": 174
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/habitat_dragon/frame-01.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/habitat_dragon/frame-05.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 4,
+            "w": 26,
+            "h": 27
+          },
+          "sha256": "900926812e176f071bd687f0eb96fa42490f48d0928b20cec96a489b81042e90",
+          "sourceRect": {
+            "x": 1066,
+            "y": 489,
+            "w": 172,
+            "h": 181
+          }
+        },
+        {
+          "file": "isometric-final-repairs/candidates/habitat_dragon/frame-06.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 4,
+            "w": 26,
+            "h": 27
+          },
+          "sha256": "900926812e176f071bd687f0eb96fa42490f48d0928b20cec96a489b81042e90",
+          "sourceRect": {
+            "x": 1066,
+            "y": 489,
+            "w": 172,
+            "h": 181
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/habitat_dragon/frame-05.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/habitat_dragon/frame-07.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 4,
+            "w": 26,
+            "h": 27
+          },
+          "sha256": "900926812e176f071bd687f0eb96fa42490f48d0928b20cec96a489b81042e90",
+          "sourceRect": {
+            "x": 1066,
+            "y": 489,
+            "w": 172,
+            "h": 181
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/habitat_dragon/frame-05.png"
+        },
+        {
+          "file": "isometric-final-repairs/candidates/habitat_dragon/frame-08.png",
+          "width": 40,
+          "height": 36,
+          "pivotX": 20,
+          "pivotY": 31,
+          "bounds": {
+            "x": 7,
+            "y": 4,
+            "w": 26,
+            "h": 27
+          },
+          "sha256": "900926812e176f071bd687f0eb96fa42490f48d0928b20cec96a489b81042e90",
+          "sourceRect": {
+            "x": 1066,
+            "y": 489,
+            "w": 172,
+            "h": 181
+          },
+          "effectBaseFile": "isometric-final-repairs/candidates/habitat_dragon/frame-05.png"
+        }
+      ],
+      "atlas": {
+        "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+        "sha256": "798a7ef0074211d9414834cb6a8f68dc9f00f954d330eeca7fa7abcc8fc16e4d",
+        "width": 160,
+        "height": 72,
+        "frames": [
+          {
+            "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 7,
+              "y": 5,
+              "w": 26,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 7,
+              "y": 5,
+              "w": 26,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 40,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 7,
+              "y": 5,
+              "w": 26,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 80,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 7,
+              "y": 5,
+              "w": 26,
+              "h": 26
+            },
+            "atlasRect": {
+              "x": 120,
+              "y": 0,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 7,
+              "y": 4,
+              "w": 26,
+              "h": 27
+            },
+            "atlasRect": {
+              "x": 0,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 7,
+              "y": 4,
+              "w": 26,
+              "h": 27
+            },
+            "atlasRect": {
+              "x": 40,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 7,
+              "y": 4,
+              "w": 26,
+              "h": 27
+            },
+            "atlasRect": {
+              "x": 80,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          },
+          {
+            "file": "isometric-final-repairs/candidates/habitat_dragon/atlas.png",
+            "width": 40,
+            "height": 36,
+            "pivotX": 20,
+            "pivotY": 31,
+            "bounds": {
+              "x": 7,
+              "y": 4,
+              "w": 26,
+              "h": 27
+            },
+            "atlasRect": {
+              "x": 120,
+              "y": 36,
+              "w": 40,
+              "h": 36
+            }
+          }
+        ]
+      },
+      "previewHD": [
+        {
+          "file": "isometric-final-repairs/hd-preview/habitat_dragon/frame-01.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 62,
+          "bounds": {
+            "x": 15,
+            "y": 10,
+            "w": 51,
+            "h": 52
+          },
+          "sha256": "cad5eb1ae2f496445605b57098c623f802375feb7f4d975e241c26bc6abc0fdd",
+          "sourceRect": {
+            "x": 298,
+            "y": 496,
+            "w": 172,
+            "h": 174
+          }
+        },
+        {
+          "file": "isometric-final-repairs/hd-preview/habitat_dragon/frame-05.png",
+          "width": 80,
+          "height": 72,
+          "pivotX": 40,
+          "pivotY": 62,
+          "bounds": {
+            "x": 15,
+            "y": 8,
+            "w": 51,
+            "h": 54
+          },
+          "sha256": "b61d20991d3309b4ad7b9a31a861830d0a9d4e0db3424bfca99bc28909c1da96",
+          "sourceRect": {
+            "x": 1066,
+            "y": 489,
+            "w": 172,
+            "h": 181
+          }
+        }
+      ],
+      "paletteColors": [
+        "#231F2E",
+        "#4A3042",
+        "#735044",
+        "#A57554",
+        "#41465C",
+        "#687486",
+        "#A6B1AE",
+        "#D6D8BF",
+        "#24483F",
+        "#3F6A45",
+        "#71934B",
+        "#B0BD67",
+        "#8B4A3F",
+        "#C97952",
+        "#E7AE73",
+        "#F5D69A",
+        "#874056",
+        "#C75B4B",
+        "#ED8A45",
+        "#FFC36B",
+        "#3E3B70",
+        "#6961A6",
+        "#70A8B6",
+        "#B7DEE0"
+      ],
+      "motionPlans": [
+        {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        },
+        {
+          "requested": "static",
+          "rendered": "static",
+          "fallback": "No explicit motion mask is present; four exported poses remain identical."
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

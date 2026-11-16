@@ -1,0 +1,5 @@
+import fs from 'node:fs/promises';import {createHash}from'node:crypto';
+import {HD_ART}from'../garden-v05/hd-art.mjs';import {WINTER_ART}from'../garden-v05/garden-winter.mjs';
+const root='garden-v05/',read=async f=>JSON.parse(await fs.readFile(root+f,'utf8')),sha=b=>createHash('sha256').update(b).digest('hex'),p=await read('isometric-hd-preserve.json'),m=await read('decor-assets-manifest.json');
+for(const i of p.items){if(i.kind!=='scenery'&&sha(JSON.stringify(m.items.find(r=>r.id===i.id)))!==i.runtimeRecordSha256)throw Error('Protected runtime metadata changed: '+i.id);for(const f of i.files)if(sha(await fs.readFile(root+f.file))!==f.sha256)throw Error('Protected artwork changed: '+f.file);for(const[k,v]of Object.entries(i.hdEntries))if(JSON.stringify(HD_ART[k]||null)!==JSON.stringify(v))throw Error('Protected HD selection changed: '+k);for(const[k,v]of Object.entries(i.winterMappings))if((WINTER_ART[k]||null)!==v)throw Error('Protected snow selection changed: '+k);}
+console.log({preserved:p.items.map(i=>i.id),verifiedFiles:p.items.reduce((n,i)=>n+i.files.length,0)});

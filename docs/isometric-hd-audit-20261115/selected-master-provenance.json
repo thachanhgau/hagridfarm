@@ -1,0 +1,2602 @@
+[
+  {
+    "id": "decor_pumpkin_lantern",
+    "master": "isometric-final-repairs/masters/decor_pumpkin_lantern.png",
+    "masterSha256": "d9ee17fcb97ab97f175cc3e67336d28ef90b981a2b71ae2deca2e44d9736c007",
+    "guide": "isometric-final-repairs/generation-inputs/decor_pumpkin_lantern-e93e624ca7e2.png",
+    "guideSha256": "e93e624ca7e268c1f01da30d601730e3edf8314ea9f376934b5370702ef73d49",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      96
+    ],
+    "pivot": [
+      32,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "decor_broom_rack",
+    "master": "isometric-hd-assets/masters/decor_broom_rack-locked.png",
+    "masterSha256": "28460c1dc57d35b2d748c1de7903f4250578002ddf0e1cf312b40819688ae286",
+    "guide": "isometric-hd-assets/generation-inputs/decor_broom_rack-b7fb535ea95a.png",
+    "guideSha256": "b7fb535ea95a2e8c09a31a6982336668a220cbd8da94446cbb0ed2aa4e5ded6b",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "decor_mandrake_planter",
+    "master": "isometric-refinements/masters/decor_mandrake_planter-refined.png",
+    "masterSha256": "fce17e31d904194f3fc4c08dc291182f4f1baa62fce7ce0f92a1c3de1c5ec11b",
+    "guide": "isometric-refinements/generation-inputs/decor_mandrake_planter-8acc3f8d0959.png",
+    "guideSha256": "8acc3f8d0959f350bd5291ebbd7a0cc17e474431f97e93316e18d238178dd9b0",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      96
+    ],
+    "pivot": [
+      32,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "decor_floating_candles",
+    "master": "isometric-hd-assets/masters/decor_floating_candles-locked.png",
+    "masterSha256": "5abb4f82956c975c1221df518a888e30b92eb15f395f375ed0ddb2c46704ae3f",
+    "guide": "isometric-hd-assets/generation-inputs/decor_floating_candles-c25184bdc16a.png",
+    "guideSha256": "c25184bdc16abb3a804e2abcea338c7e720d82687a17692a05335bed36f39809",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      80,
+      104
+    ],
+    "pivot": [
+      40,
+      88
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "decor_vine_arch",
+    "master": "isometric-hd-assets/masters/decor_vine_arch-locked.png",
+    "masterSha256": "c455c0a233b8ff8cfe2ad642f24e776605669f741b178d553dab316b796185af",
+    "guide": "isometric-hd-assets/generation-inputs/decor_vine_arch-b7fb535ea95a.png",
+    "guideSha256": "b7fb535ea95a2e8c09a31a6982336668a220cbd8da94446cbb0ed2aa4e5ded6b",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      128,
+      128
+    ],
+    "pivot": [
+      64,
+      104
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_hagrid_umbrella",
+    "master": "isometric-refinements/masters/sp_hagrid_umbrella-refined.png",
+    "masterSha256": "a497a154c07db41a818f43cb6e774331a1a8d350244a5ff15c7e813e8669fcb5",
+    "guide": "isometric-refinements/generation-inputs/sp_hagrid_umbrella-b40bff0a9252.png",
+    "guideSha256": "b40bff0a92526c453123f9b15505ba76640a6b34bb68a82d72ac5b03c5cae19c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_norbert_egg",
+    "master": "isometric-hd-assets/masters/sp_norbert_egg-locked.png",
+    "masterSha256": "b663d1559393027a78dd41fc2e33cf564c7861890899ba9720fa13d44bd7600e",
+    "guide": "isometric-hd-assets/generation-inputs/sp_norbert_egg-c07e6bb44fff.png",
+    "guideSha256": "c07e6bb44fff23cefc5d1422fad2ae99b56928bc4e1a22b15e068b59ebe49aee",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_mirror_erised",
+    "master": "isometric-hd-assets/masters/sp_mirror_erised-locked.png",
+    "masterSha256": "6692b4b468cd7deeeae2ebc3a27a6716d6a506d865faec15880509933e0f87cb",
+    "guide": "isometric-hd-assets/generation-inputs/sp_mirror_erised-a1bd61646d12.png",
+    "guideSha256": "a1bd61646d12248534ca2a9fb7a79e217074d693294e1f7748a943b9ad441e5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      192
+    ],
+    "pivot": [
+      48,
+      176
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_sorting_hat",
+    "master": "isometric-refinements/masters/sp_sorting_hat-refined.png",
+    "masterSha256": "6a1cea15a714b0115e697a64f54b29a6adec1f35cd51af30501b6a57905b7b3c",
+    "guide": "isometric-refinements/generation-inputs/sp_sorting_hat-84a81bde6a6f.png",
+    "guideSha256": "84a81bde6a6fd30885766733aed9ba9184fc6cba479002fdd553de622d09bd32",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      96
+    ],
+    "pivot": [
+      32,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_goblet_fire",
+    "master": "isometric-refinements/masters/sp_goblet_fire-refined.png",
+    "masterSha256": "d5f79df20c8a93d4a4016364e7e9a584e6cf744208a4bed2a380a4055ea4f1e6",
+    "guide": "isometric-refinements/generation-inputs/sp_goblet_fire-a9e65017b180.png",
+    "guideSha256": "a9e65017b1807bec8b91cf1e0ca4999f790b22597caeabbb95e266d906459cff",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_pensieve",
+    "master": "isometric-ring-repairs/masters/sp_pensieve.png",
+    "masterSha256": "a82b65f70738e7a85e2df092c2ad3243251a0b0de60d49401e0ce2554d3efde0",
+    "guide": "isometric-ring-repairs/generation-inputs/pensieve-98e9e829736c.png",
+    "guideSha256": "98e9e829736c109617d3ebf46707730bdafeceff729311ef798e2559e434b2c0",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      128
+    ],
+    "pivot": [
+      48,
+      112
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_wizard_chess_knight",
+    "master": "isometric-hd-assets/masters/sp_wizard_chess_knight.png",
+    "masterSha256": "05606863e41be8efdc27199615a7a615c2191ce1cfd234c23eec4e619a97c4cd",
+    "guide": "isometric-hd-assets/generation-inputs/sp_wizard_chess_knight-f75703cddcc6.png",
+    "guideSha256": "f75703cddcc61828b74f7d56d4a946863f500d46fde928898ff681ead4a81503",
+    "guideInputStatus": "guide was supplied at generation; retained hash is a validation-equivalent reconstruction, not proven original input hash",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      176
+    ],
+    "pivot": [
+      48,
+      160
+    ],
+    "poseLayout": [
+      4,
+      4
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_riddle_diary",
+    "master": "isometric-hd-assets/masters/sp_riddle_diary-v3.png",
+    "masterSha256": "ba0765cdbe1f808d060c970c38253c49bb3ccf42321b21e670626a275ebf659a",
+    "guide": "isometric-hd-assets/generation-inputs/sp_riddle_diary-5944a1585494.png",
+    "guideSha256": "5944a1585494a1c228650ec36006f13add51aa0c08fa044474bcc26b4772a82f",
+    "guideInputStatus": "guide was supplied at generation; retained hash is a validation-equivalent reconstruction, not proven original input hash",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      64
+    ],
+    "poseLayout": [
+      4,
+      4
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_slytherin_locket",
+    "master": "isometric-refinements/masters/sp_slytherin_locket-refined.png",
+    "masterSha256": "ab2712363137d401d8a0573f453359c20c13a17a950ea9a9f3f5939b7ab46343",
+    "guide": "isometric-refinements/generation-inputs/sp_slytherin_locket-3544e0a7c360.png",
+    "guideSha256": "3544e0a7c360e2bc44835d16306c15929eeec2cf1d8f73aecd38aaac9407d410",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      96
+    ],
+    "pivot": [
+      32,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_gaunt_ring",
+    "master": "isometric-hd-assets/masters/sp_gaunt_ring-locked.png",
+    "masterSha256": "f2da44edb1b1e11d25ee18de51cbde7fbf80130bf0e87fa2fb2f2c0790d71d80",
+    "guide": "isometric-hd-assets/generation-inputs/sp_gaunt_ring-d6a31fad6186.png",
+    "guideSha256": "d6a31fad6186b6997c1d9d03c45a6898aa81106a598bf5255ea5b12f5fcb5759",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      96
+    ],
+    "pivot": [
+      32,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_hufflepuff_cup",
+    "master": "isometric-hd-assets/masters/sp_hufflepuff_cup-locked.png",
+    "masterSha256": "92e7ec73f35eb4db5ab6e390bc6cf99bba3b2443990abee2f75bfa9a94956962",
+    "guide": "isometric-hd-assets/generation-inputs/sp_hufflepuff_cup-e77fed51fe5f.png",
+    "guideSha256": "e77fed51fe5f9319003e1571c097269e4b93e750430c1d06f74c44c09f36f411",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      96
+    ],
+    "pivot": [
+      32,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_ravenclaw_diadem",
+    "master": "isometric-refinements/masters/sp_ravenclaw_diadem-refined.png",
+    "masterSha256": "0950893c79fcbf20138d1a394d0d1013b72f195b27b4eb003943a15b2cdbfe00",
+    "guide": "isometric-refinements/generation-inputs/sp_ravenclaw_diadem-c3c537e9c5ee.png",
+    "guideSha256": "c3c537e9c5ee4b1755cac0bc2d11d6e975d73031978647eaa379a76748c7cbc5",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      64
+    ],
+    "pivot": [
+      32,
+      48
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_vanishing_cabinet",
+    "master": "isometric-hd-assets/masters/sp_vanishing_cabinet-v3.png",
+    "masterSha256": "86d7ce0803477df5b4bc2e1705ee8a3a981be00f5e3a4cb2c84887f721e6ebc3",
+    "guide": "isometric-hd-assets/generation-inputs/sp_vanishing_cabinet-2c025cf18ec1.png",
+    "guideSha256": "2c025cf18ec1a1cbe2f7fcb2bebf7bb8dd60c08ed370f950fa0bb75a3a2ac506",
+    "guideInputStatus": "guide was supplied at generation; retained hash is a validation-equivalent reconstruction, not proven original input hash",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      192
+    ],
+    "pivot": [
+      48,
+      176
+    ],
+    "poseLayout": [
+      4,
+      4
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_hand_glory",
+    "master": "isometric-hd-assets/masters/sp_hand_glory-locked.png",
+    "masterSha256": "d2974c12739322d7015a5bc1baa5ca2f49081fe27bf57c14de2e2edf03eedb60",
+    "guide": "isometric-hd-assets/generation-inputs/sp_hand_glory-55c6943033b2.png",
+    "guideSha256": "55c6943033b2712277313de8f0d7c1a925a619e9946b3dd8039a03d5faa24f1e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      160
+    ],
+    "pivot": [
+      32,
+      144
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_cursed_opal_necklace",
+    "master": "isometric-hd-assets/masters/sp_cursed_opal_necklace-locked.png",
+    "masterSha256": "bcbff4e3b98a0028988aa6fe610bef8aa574d762dddc6a1db108aad736c0021b",
+    "guide": "isometric-hd-assets/generation-inputs/sp_cursed_opal_necklace-c25184bdc16a.png",
+    "guideSha256": "c25184bdc16abb3a804e2abcea338c7e720d82687a17692a05335bed36f39809",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      112
+    ],
+    "pivot": [
+      32,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_chamber_serpent_door",
+    "master": "isometric-hd-assets/masters/sp_chamber_serpent_door-v3.png",
+    "masterSha256": "db0c838809d4f239202a7e062982f6891552fdd4c49d99d7b1518303b95ba550",
+    "guide": "isometric-hd-assets/generation-inputs/sp_chamber_serpent_door-3a2778a591c8.png",
+    "guideSha256": "3a2778a591c8def696b2d342665cd118a138c6082102d8e33f3920cf12986969",
+    "guideInputStatus": "guide was supplied at generation; retained hash is a validation-equivalent reconstruction, not proven original input hash",
+    "footprint": [
+      3,
+      1
+    ],
+    "canvas": [
+      128,
+      128
+    ],
+    "pivot": [
+      64,
+      112
+    ],
+    "poseLayout": [
+      4,
+      4
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_department_veil",
+    "master": "isometric-refinements/masters/sp_department_veil-refined.png",
+    "masterSha256": "598f5722663ef920d13c9106e0e00efa360d8e417d024eb92c759a495ed7d9fa",
+    "guide": "isometric-refinements/generation-inputs/sp_department_veil-984230d1c0e2.png",
+    "guideSha256": "984230d1c0e2fdc6c6728d5700e249f148c60775b17121ea22571feec5eca850",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      2
+    ],
+    "canvas": [
+      128,
+      192
+    ],
+    "pivot": [
+      64,
+      176
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_monster_book",
+    "master": "isometric-camera-repairs/masters/sp_monster_book.png",
+    "masterSha256": "8c780ba536e0320d3e1f39e56d56d3b9cdfa998ef92482412bbf97c75aeb5f4e",
+    "guide": "isometric-camera-repairs/generation-inputs/sp_monster_book-26405654852b.png",
+    "guideSha256": "26405654852b7568f244a95e316719d37aca961c4e0b8a8278e2da7676261ac5",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      64
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_deathday_cake",
+    "master": "isometric-refinements/masters/sp_deathday_cake-refined.png",
+    "masterSha256": "f54ced6f9dcf3f3b15cccea33b2e6df72bb2f2f0e0df722ae5dfd890e5dba62f",
+    "guide": "isometric-refinements/generation-inputs/sp_deathday_cake-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      128
+    ],
+    "pivot": [
+      48,
+      112
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_marauders_map",
+    "master": "isometric-refinements/masters/sp_marauders_map-refined.png",
+    "masterSha256": "a06aaa962168d1a93b77bd72572b05e925f6f3fc3696e2761ab04fe16ef6725e",
+    "guide": "isometric-refinements/generation-inputs/sp_marauders_map-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_time_turner",
+    "master": "isometric-hd-assets/masters/sp_time_turner-locked.png",
+    "masterSha256": "a65cfb199b26e33d7ad9b820ec9bc26af18527d3ac7df5f156fc498ea048c0d9",
+    "guide": "isometric-hd-assets/generation-inputs/sp_time_turner-ae71d83b80eb.png",
+    "guideSha256": "ae71d83b80ebe47e41f9117416dc77157260e38b4013c9e00d5cfbef340dabcc",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      112
+    ],
+    "pivot": [
+      32,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_deluminator",
+    "master": "isometric-hd-assets/masters/sp_deluminator-locked.png",
+    "masterSha256": "4d5a66d3d409911c98399c4c20ed687d66cd9c56b6733ab5e98597c6d03279d6",
+    "guide": "isometric-hd-assets/generation-inputs/sp_deluminator-d6a31fad6186.png",
+    "guideSha256": "d6a31fad6186b6997c1d9d03c45a6898aa81106a598bf5255ea5b12f5fcb5759",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      112
+    ],
+    "pivot": [
+      32,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_snitch_resurrection_stone",
+    "master": "isometric-hd-assets/masters/sp_snitch_resurrection_stone-locked.png",
+    "masterSha256": "78e7b21c43c38ab0657505c9092fabe0f00cbb2e5ff1aaad467f8bb3b7c21f90",
+    "guide": "isometric-hd-assets/generation-inputs/sp_snitch_resurrection_stone-e466fbbd6255.png",
+    "guideSha256": "e466fbbd625595876451d3b1385c8be9116b3ab7b87b3729d6dc19d6af2c2174",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      80
+    ],
+    "pivot": [
+      48,
+      64
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_sword_gryffindor",
+    "master": "isometric-hd-assets/masters/sp_sword_gryffindor-locked.png",
+    "masterSha256": "4b6b958f30c33c3ee341394efd5bd76672d0f47278779aa60849222639d74d7e",
+    "guide": "isometric-hd-assets/generation-inputs/sp_sword_gryffindor-73ffa21f3ebc.png",
+    "guideSha256": "73ffa21f3ebc1e70a42e0d38a30ccb00f4133b931eedf04b295517fb73b23250",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      144
+    ],
+    "pivot": [
+      32,
+      128
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_knight_bus",
+    "master": "isometric-hd-assets/masters/sp_knight_bus-locked.png",
+    "masterSha256": "9fbeab9d2b8784d87050eccafd365dff951192264a3fa7abc226b3761437e5ec",
+    "guide": "isometric-hd-assets/generation-inputs/sp_knight_bus-eeaff3cadc90.png",
+    "guideSha256": "eeaff3cadc90dbce71d04fec9a59665698856a7edb743531738be853b92421c9",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      3,
+      1
+    ],
+    "canvas": [
+      128,
+      160
+    ],
+    "pivot": [
+      64,
+      144
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_halloween_sign",
+    "master": "isometric-final-repairs/masters/hw_halloween_sign.png",
+    "masterSha256": "e13aa290b67d96257671e40379395848c5bc6bfb8af2ca60f7e542a47cbfa508",
+    "guide": "isometric-final-repairs/generation-inputs/hw_halloween_sign-be7ab6338094.png",
+    "guideSha256": "be7ab6338094ae4b1acf2bf11cce08095aba57cb0426c5de5021a47d2f92482d",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      112
+    ],
+    "pivot": [
+      32,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_cloth_ghost_lantern",
+    "master": "isometric-hd-assets/masters/hw_cloth_ghost_lantern-locked.png",
+    "masterSha256": "4f578efb63c1a3f662e191463937b39156f61c3f1bb96a38ed986615480fab7a",
+    "guide": "isometric-hd-assets/generation-inputs/hw_cloth_ghost_lantern-538df1527b13.png",
+    "guideSha256": "538df1527b139d1a2ce6f6e868b81b015019f2f0967c8b77e83460da8f31d63e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      112
+    ],
+    "pivot": [
+      32,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_bat_lantern",
+    "master": "isometric-hd-assets/masters/hw_bat_lantern-locked.png",
+    "masterSha256": "d1b34c9c5ea1cc811fe91198a1450a306abdf42a7c9633f15c2d65c40358eee9",
+    "guide": "isometric-hd-assets/generation-inputs/hw_bat_lantern-e857056a9720.png",
+    "guideSha256": "e857056a972041dbcd41d8f8e6cad6a124739528703085df69be02e7c8cc6b8d",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      112
+    ],
+    "pivot": [
+      32,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_haunted_house_lantern",
+    "master": "isometric-hd-assets/masters/hw_haunted_house_lantern-locked.png",
+    "masterSha256": "b7a185dc4a4d673ffdd6d8db5c518d2ac6f85de3e89c7205a776d904593abced",
+    "guide": "isometric-hd-assets/generation-inputs/hw_haunted_house_lantern-16a5bb175aa7.png",
+    "guideSha256": "16a5bb175aa7fa684e5c08bfa5e106f7fac5e4fa1c342bea852b7e26acd51cb9",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      112
+    ],
+    "pivot": [
+      32,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_spider_light_garland",
+    "master": "isometric-hd-assets/masters/hw_spider_light_garland-locked.png",
+    "masterSha256": "00cfbf61218ff82f88da50091f0e646bc40c9daaa1574f8d73ba2c0ce4bd9336",
+    "guide": "isometric-hd-assets/generation-inputs/hw_spider_light_garland-b7fb535ea95a.png",
+    "guideSha256": "b7fb535ea95a2e8c09a31a6982336668a220cbd8da94446cbb0ed2aa4e5ded6b",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      80
+    ],
+    "pivot": [
+      48,
+      64
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_soul_bottle",
+    "master": "isometric-camera-repairs/masters/hw_soul_bottle.png",
+    "masterSha256": "ae1627f681f401137df251a9ec4420a705f27d396f6fdeb955f9400aaf43c611",
+    "guide": "isometric-camera-repairs/generation-inputs/hw_soul_bottle-8d5114297675.png",
+    "guideSha256": "8d51142976759c95e8970fb2686416b24140dc61a07ee015d4204f65c086d1c3",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      80,
+      112
+    ],
+    "pivot": [
+      40,
+      108
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_halloween_potion_table",
+    "master": "isometric-refinements/masters/hw_halloween_potion_table-refined.png",
+    "masterSha256": "b3a72a63836e6db99cf8b900510b1d1a96589ddc33895784b37be26ede0f8684",
+    "guide": "isometric-refinements/generation-inputs/hw_halloween_potion_table-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      96
+    ],
+    "pivot": [
+      48,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_monster_bookcase",
+    "master": "isometric-hd-assets/masters/hw_monster_bookcase-locked.png",
+    "masterSha256": "2235ba786b77ae1d56ac58b4da11fc1b776c8ce362a719847c42ca5e44b54dc1",
+    "guide": "isometric-hd-assets/generation-inputs/hw_monster_bookcase-2c025cf18ec1.png",
+    "guideSha256": "2c025cf18ec1a1cbe2f7fcb2bebf7bb8dd60c08ed370f950fa0bb75a3a2ac506",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      144
+    ],
+    "pivot": [
+      48,
+      128
+    ],
+    "poseLayout": [
+      4,
+      4
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_blinking_chest",
+    "master": "isometric-hd-assets/masters/hw_blinking_chest-locked.png",
+    "masterSha256": "b41c3c8e3ef10afed89e1e60dcad82c8917db132f911592a28e24062394237fd",
+    "guide": "isometric-hd-assets/generation-inputs/hw_blinking_chest-e3a10aaa7f4f.png",
+    "guideSha256": "e3a10aaa7f4f260883aac321685839f90614880181ef806e152bfe9ee3852f0a",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      4,
+      4
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_caramel_apple_cart",
+    "master": "isometric-hd-assets/masters/hw_caramel_apple_cart-locked.png",
+    "masterSha256": "9e9bea935632afa81d3f5a91c2f06a22add9ee7c0d064146f755dbb21b647989",
+    "guide": "isometric-hd-assets/generation-inputs/hw_caramel_apple_cart-0022e257b95b.png",
+    "guideSha256": "0022e257b95b208cc8ffb8947ca993b03c780b78d7c7664647341c1ed3196f96",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_dewy_cobweb_frame",
+    "master": "isometric-hd-assets/masters/hw_dewy_cobweb_frame-locked.png",
+    "masterSha256": "2bfedea536b21ebda36ebdfcc26bc9dbf3b6ae1909f5c87b5a8593c4c0a08cf7",
+    "guide": "isometric-hd-assets/generation-inputs/hw_dewy_cobweb_frame-6b0cad865383.png",
+    "guideSha256": "6b0cad865383974793fc7b554547423259cddea504958dbf6f70d5b989ec6c3c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      128
+    ],
+    "pivot": [
+      48,
+      112
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_root_halloween_gate",
+    "master": "isometric-hd-assets/masters/hw_root_halloween_gate-locked.png",
+    "masterSha256": "90cfcabcaf71913fbe9b3d822db01157395337a190540dc2b228710944c22a66",
+    "guide": "isometric-hd-assets/generation-inputs/hw_root_halloween_gate-22ae6b92bbe8.png",
+    "guideSha256": "22ae6b92bbe8bca45de43967ae829e9d309e5b43d1447ade6b1ff53d71ca7957",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      3,
+      1
+    ],
+    "canvas": [
+      128,
+      144
+    ],
+    "pivot": [
+      64,
+      128
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "hw_crooked_witch_hut",
+    "master": "isometric-hd-assets/masters/hw_crooked_witch_hut-locked.png",
+    "masterSha256": "7c959b98f971bf2b5266ebc3fa8f492522bafc285cb84ddad2aa89b87b7babae",
+    "guide": "isometric-hd-assets/generation-inputs/hw_crooked_witch_hut-d7fcfae9fcf1.png",
+    "guideSha256": "d7fcfae9fcf16651f3280c02688eb019fac59c729c0b5757c391110bc3e39c7b",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      2
+    ],
+    "canvas": [
+      128,
+      176
+    ],
+    "pivot": [
+      64,
+      160
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "ev_dobby_spring_rider",
+    "master": "isometric-hd-assets/masters/ev_dobby_spring_rider-locked.png",
+    "masterSha256": "b65042c3a0c2b00e0149636d99838e6342384d7ffe54e16a5067ce42210206bb",
+    "guide": "isometric-hd-assets/generation-inputs/ev_dobby_spring_rider-222a93b25691.png",
+    "guideSha256": "222a93b25691b04a27cc3371c72e9833205ceae260e048b543a60835dabf33a2",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      2
+    ],
+    "canvas": [
+      128,
+      176
+    ],
+    "pivot": [
+      64,
+      160
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "ev_dark_dobby_red",
+    "master": "isometric-hd-assets/masters/ev_dark_dobby_red-locked.png",
+    "masterSha256": "e6cf86b17dbc4a2784866baeba415dd48e9dd21b6e7435a93b91234402b4e4c4",
+    "guide": "isometric-hd-assets/generation-inputs/ev_dark_dobby_red-222a93b25691.png",
+    "guideSha256": "222a93b25691b04a27cc3371c72e9833205ceae260e048b543a60835dabf33a2",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      2
+    ],
+    "canvas": [
+      128,
+      176
+    ],
+    "pivot": [
+      64,
+      160
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "ev_elf_tent",
+    "master": "isometric-hd-assets/masters/ev_elf_tent-locked.png",
+    "masterSha256": "fe7fc8277b6c6a49301ed5b70eb717d65bd54752bfd5ea656887df7c4a4a4a8f",
+    "guide": "isometric-hd-assets/generation-inputs/ev_elf_tent-a1b1615f5e29.png",
+    "guideSha256": "a1b1615f5e2927b854fef7c61cd5e2a7234995090d94860e4030235e1306817e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      2
+    ],
+    "canvas": [
+      128,
+      176
+    ],
+    "pivot": [
+      64,
+      160
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "ev_kitchen_corner",
+    "master": "isometric-refinements/masters/ev_kitchen_corner-refined.png",
+    "masterSha256": "26367ae9779276f6ad99e1044c6299653b77dd7862d3df7aea2efc8f934898d7",
+    "guide": "isometric-refinements/generation-inputs/ev_kitchen_corner-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_xmas_butterbeer",
+    "master": "isometric-refinements/masters/sp_xmas_butterbeer-refined.png",
+    "masterSha256": "b30df0a5c57362024c25e7e0eda932d3892bd7925421fa48d6ab9a5dc40a4459",
+    "guide": "isometric-refinements/generation-inputs/sp_xmas_butterbeer-2342345af00e.png",
+    "guideSha256": "2342345af00e350f02050e4109071a6d6adc5ed5cee0ccc5a66f0530525a18bb",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_xmas_honeydukes",
+    "master": "isometric-refinements/masters/sp_xmas_honeydukes-refined.png",
+    "masterSha256": "b6d8ca73ef4ba88dd6ba384fd3567332afc73a2b03e7305414316e5daa05e402",
+    "guide": "isometric-refinements/generation-inputs/sp_xmas_honeydukes-c392c5fdd163.png",
+    "guideSha256": "c392c5fdd163b73dbfdbb03ea2e28dc5d6322862b9d89f4846e244cc375ec533",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      1
+    ],
+    "canvas": [
+      96,
+      144
+    ],
+    "pivot": [
+      48,
+      128
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_xmas_invisibility_cloak",
+    "master": "isometric-hd-assets/masters/sp_xmas_invisibility_cloak-locked.png",
+    "masterSha256": "75ecf7e6b9b459985cd158357a7e95aa7a3d7a1a60687618856740d2986fd841",
+    "guide": "isometric-hd-assets/generation-inputs/sp_xmas_invisibility_cloak-d6a31fad6186.png",
+    "guideSha256": "d6a31fad6186b6997c1d9d03c45a6898aa81106a598bf5255ea5b12f5fcb5759",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      96
+    ],
+    "pivot": [
+      32,
+      80
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "sp_xmas_yule_roses",
+    "master": "isometric-hd-assets/masters/sp_xmas_yule_roses-locked.png",
+    "masterSha256": "bb1fda9b64e79b369de40867268a40d3869c51d732a9125391e71208a79a680e",
+    "guide": "isometric-hd-assets/generation-inputs/sp_xmas_yule_roses-01467227b93e.png",
+    "guideSha256": "01467227b93e5715bc12b2b5f5d97c8cb71b6230724c38005ff166f83370f057",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      3,
+      2
+    ],
+    "canvas": [
+      160,
+      176
+    ],
+    "pivot": [
+      80,
+      160
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "ev_champion_tree",
+    "master": "isometric-hd-assets/masters/ev_champion_tree-locked.png",
+    "masterSha256": "8cc078433defef18295564e628fc0176d1948ec1827338fb084e96066bed79e9",
+    "guide": "isometric-hd-assets/generation-inputs/ev_champion_tree-a7640d1526c7.png",
+    "guideSha256": "a7640d1526c77a68f8ab105a3468825307898c814f6e44e05c1c847a5a6aecc4",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      2
+    ],
+    "canvas": [
+      128,
+      208
+    ],
+    "pivot": [
+      64,
+      192
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-15",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-15-locked.png",
+    "masterSha256": "f8d6442c12832c92e80692bb02a4b8e1884a2c40b20c5dcd8da23d43b0ecf731",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-15-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-19",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-19-locked.png",
+    "masterSha256": "040615e3562c429d6436c9b09611f1e5bce9c918b09f9b091e9dd5016097739c",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-19-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-23",
+    "master": "isometric-refinements/masters/earned_decoration_decoration-23-refined.png",
+    "masterSha256": "2be562d27bf249a42ca027ff6e44395085fa06b8b0974bd45a2a7b5f6ab2a792",
+    "guide": "isometric-refinements/generation-inputs/earned_decoration_decoration-23-d267e0b59c97.png",
+    "guideSha256": "d267e0b59c97d06cdab7194c3070cd6e891f2ef6d735c7c9a9decea2cd17a9af",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-27",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-27-locked.png",
+    "masterSha256": "a8aa32606268188ee0be67ec11267eff8f6e997714ae0a108c3b9b7b970079dd",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-27-80b02a3cdc53.png",
+    "guideSha256": "80b02a3cdc53c50607a441ac6441c9a623094dbd5355e8cd773176c71006881e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-39",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-39-locked.png",
+    "masterSha256": "b030a955436b15ba9290b655b063589608d4cc2f8866321972a6d99f1fdf0077",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-39-48f4ebf40c7b.png",
+    "guideSha256": "48f4ebf40c7b8e76ace885c3a728d5c3a2804db92a1c429dcf40f48b9b1dde0b",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-43",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-43-locked.png",
+    "masterSha256": "60253a7fda10cba5a71bbf7980322198f1e888c0a61c6a7bc51bf83eae4bd545",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-43-9e08d2f6bf84.png",
+    "guideSha256": "9e08d2f6bf849e6bf7668aa9552f26314c5f3ed0841fa6932e2db6fac7c91372",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-47",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-47-locked.png",
+    "masterSha256": "f2057be7cc2bd792972dc62ab38ee43610d189b07e92a01b5874f82daf5e2504",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-47-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-55",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-55-locked.png",
+    "masterSha256": "c47b4ca141e4acef750bda1104a3d2ded26c37a6d027b129d2f73f44ca4e64b7",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-55-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-59",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-59-locked.png",
+    "masterSha256": "4b2545e1daa3f582acb5c09c7da5e3372ab7e32a977a6ead1ecda02745619fba",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-59-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-67",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-67-locked.png",
+    "masterSha256": "5560f536180b6896bc729c5caa9923f3ab492d8958d4782237f0e9ad7026e66c",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-67-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-75",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-75-locked.png",
+    "masterSha256": "72fb3bad0ee7bef449330936523c86abef9ffc90d7e40418da7ce66a8dcc0956",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-75-1464881171c9.png",
+    "guideSha256": "1464881171c92c8c92f255ec0f854cd8867413689c54f2b60ce7b34de377eb17",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-81",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-81-locked.png",
+    "masterSha256": "0545a645a4a5eeb48f7fa166d5192597976c439d24a78198fe69c70cb00d938b",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-81-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-83",
+    "master": "isometric-refinements/masters/earned_decoration_decoration-83-refined.png",
+    "masterSha256": "95e26496b2986aec02f4c8f797f3fd97832757496b764e8ef3a698d83e4ca527",
+    "guide": "isometric-refinements/generation-inputs/earned_decoration_decoration-83-f05c5a89bb3a.png",
+    "guideSha256": "f05c5a89bb3a60944a1bbb64ae99f3cc4cf4bc5d4bee7522763a053fc6c7c324",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-87",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-87-locked.png",
+    "masterSha256": "82313c48ca247982cbc229258334d4b158d73c7564347d62586c208df9663213",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-87-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-91",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-91-locked.png",
+    "masterSha256": "d750d34660b9268a239951e95f772ad7f293eb0cf30884db49686e753fba7d83",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-91-017a0957eb9d.png",
+    "guideSha256": "017a0957eb9dc941493b9a8d9dde39f9ab94d0157808e526bbdf30788f862d0e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-95",
+    "master": "isometric-camera-repairs/masters/earned_decoration_decoration-95.png",
+    "masterSha256": "944b24312461f954d49ac78d7e32a6d391bffcc46d6fc6d50b9a46894673b3e1",
+    "guide": "isometric-camera-repairs/generation-inputs/earned_decoration_decoration-95-4d71d13c4e17.png",
+    "guideSha256": "4d71d13c4e17f19203003189f139806a562f4040a5eff05413c2edfe39fc3623",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-98",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-98-locked.png",
+    "masterSha256": "1bcf7f5d275c83d40775d72e195d83845ca03c051cbf62656fef0cbf9e16ce0a",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-98-9e08d2f6bf84.png",
+    "guideSha256": "9e08d2f6bf849e6bf7668aa9552f26314c5f3ed0841fa6932e2db6fac7c91372",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "earned_decoration_decoration-99",
+    "master": "isometric-extra-assets/masters/earned_decoration_decoration-99-locked.png",
+    "masterSha256": "f41a4b50ecb37253398739387b0a41435cc9c8a4f813984e2c76224761e5228b",
+    "guide": "isometric-extra-assets/generation-inputs/earned_decoration_decoration-99-1952020df45d.png",
+    "guideSha256": "1952020df45d463fbc2edb8701409cf46ad166b0de2350203875aa2cdbe4e2f4",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      2
+    ],
+    "canvas": [
+      96,
+      112
+    ],
+    "pivot": [
+      48,
+      96
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_bowtruckle",
+    "master": "isometric-extra-assets/masters/keepsake_bowtruckle-locked.png",
+    "masterSha256": "6aec9bd374099fb27671feeaddc972c3aa9c89f474c48cb0aa75d1f43bb9b783",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_bowtruckle-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_crup",
+    "master": "isometric-extra-assets/masters/keepsake_crup-locked.png",
+    "masterSha256": "d9a2f2bd418e1d57d24a3ef152d3315b37687e2ca7b69201be8727f257de9437",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_crup-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_diricawl",
+    "master": "isometric-extra-assets/masters/keepsake_diricawl-locked.png",
+    "masterSha256": "ea2d68e96a491b41a5ff1795a19cc16f700c519e9883ae8c5d6b08b60ff0502a",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_diricawl-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_dragon",
+    "master": "isometric-extra-assets/masters/keepsake_dragon-locked.png",
+    "masterSha256": "c5267f77873761261fc091f2a970fba38a188c967b915b02e6c31206c35e3e91",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_dragon-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_fwooper",
+    "master": "isometric-extra-assets/masters/keepsake_fwooper-locked.png",
+    "masterSha256": "d249df1db8163850321f0a9b4fa3bdf76700e2973a712ba086af263a10b37a09",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_fwooper-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_grindylow",
+    "master": "isometric-extra-assets/masters/keepsake_grindylow-locked.png",
+    "masterSha256": "d2583d311bcfaa173744a1fa2eea1faed5abcdb85428f7885eec1a8424a13327",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_grindylow-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_hippogriff",
+    "master": "isometric-refinements/masters/keepsake_hippogriff-refined.png",
+    "masterSha256": "2c4a576d1fd793839e9c8386aac0206881dfa94179444c320d5e5a8a56e6bd1a",
+    "guide": "isometric-refinements/generation-inputs/keepsake_hippogriff-ac973f3a7080.png",
+    "guideSha256": "ac973f3a70804903c0a15f7811b47d5ba064739fb9520024110edc23c5de195c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_kappa",
+    "master": "isometric-extra-assets/masters/keepsake_kappa-locked.png",
+    "masterSha256": "7b261a8165703857671a26043387055f532fe9ff90cb299a7515620e14b3e9d2",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_kappa-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_knarl",
+    "master": "isometric-extra-assets/masters/keepsake_knarl-locked.png",
+    "masterSha256": "0dd00f1917c2d698f7c7465d5c35a9c202b68e1e3beadaf742b76ed7e6bbec1b",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_knarl-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_kneazle",
+    "master": "isometric-extra-assets/masters/keepsake_kneazle-locked.png",
+    "masterSha256": "57609e32ee4a31d5f33eafd6c607519040e7ac561dd6f823617196a35c45f46c",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_kneazle-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_mooncalf",
+    "master": "isometric-extra-assets/masters/keepsake_mooncalf-locked.png",
+    "masterSha256": "ac6148eed88a11d6bb2d4cd53dc6087b7a64fe233afb0dc14cfadeb5e11128a9",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_mooncalf-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_niffler",
+    "master": "isometric-extra-assets/masters/keepsake_niffler-locked.png",
+    "masterSha256": "888dadf17acc568c8c654cdc36589fb98f128babbf9e8d90c6631b9b6e16de38",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_niffler-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_porlock",
+    "master": "isometric-extra-assets/masters/keepsake_porlock-locked.png",
+    "masterSha256": "cdab81f34e2e56743652c4f976650eababe4e6d55f51d0f40d36079d1b3d81d6",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_porlock-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_puffskein",
+    "master": "isometric-extra-assets/masters/keepsake_puffskein-locked.png",
+    "masterSha256": "e0e385bb492eaa055a9926bf871292cc00eebcdf768f4c5f17c898055af29a40",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_puffskein-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_salamander",
+    "master": "isometric-extra-assets/masters/keepsake_salamander-locked.png",
+    "masterSha256": "1fd230fc3603f5abc4f43d9a751f3ab8e3855baf7c8bf6eea416f4b6ec186a54",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_salamander-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_thestral",
+    "master": "isometric-refinements/masters/keepsake_thestral-refined.png",
+    "masterSha256": "6bee76383853d2fc5c61861f765691a8da566b82b816806c77455bff499e430d",
+    "guide": "isometric-refinements/generation-inputs/keepsake_thestral-ac973f3a7080.png",
+    "guideSha256": "ac973f3a70804903c0a15f7811b47d5ba064739fb9520024110edc23c5de195c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_three-headed-dog",
+    "master": "isometric-extra-assets/masters/keepsake_three-headed-dog-locked.png",
+    "masterSha256": "7ac285a5dc016238c0c0b40c13ab18a2aa8147fa58bb985f5b095a0e2d62f831",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_three-headed-dog-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "keepsake_unicorn",
+    "master": "isometric-extra-assets/masters/keepsake_unicorn-locked.png",
+    "masterSha256": "a7821df19ab6931ac60ec59d309a39d4156e8f939f2d80dbfc2652febaf0acb1",
+    "guide": "isometric-extra-assets/generation-inputs/keepsake_unicorn-201f32868c15.png",
+    "guideSha256": "201f32868c15df7553160e854533b679ec36a7062bcb402ac4c64f5e7fe7ed5c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "habitat_crup",
+    "master": "isometric-extra-assets/masters/habitat_crup-locked.png",
+    "masterSha256": "a07b91f41d184c14d290bafebb10ad5c5a6bcc6aa205a1c0b3f46d38d890ecc9",
+    "guide": "isometric-extra-assets/generation-inputs/habitat_crup-e3f425bad6ff.png",
+    "guideSha256": "e3f425bad6ff5ead2531a3a72103388ecbd4cf40f25ad3a96845a845a715dccf",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "habitat_fwooper",
+    "master": "isometric-extra-assets/masters/habitat_fwooper-locked.png",
+    "masterSha256": "b3189eb3b88ff8ce39b259739bc2b868ff3e985b7c173a3c6b5c27c6295095d9",
+    "guide": "isometric-extra-assets/generation-inputs/habitat_fwooper-dbadfb5a4dae.png",
+    "guideSha256": "dbadfb5a4dae9a10458289b58bd1a8fa5f39d0ba5d74c39aac7f89881ae25892",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "habitat_hippogriff",
+    "master": "isometric-extra-assets/masters/habitat_hippogriff-locked.png",
+    "masterSha256": "485d8561e40bd259a55cd63739ea542c6a2395f53abc7be1e6426c92fdb2bee5",
+    "guide": "isometric-extra-assets/generation-inputs/habitat_hippogriff-3590bdc64d53.png",
+    "guideSha256": "3590bdc64d5380c7b11666ba48d249dcac2db7592f6fcb0c76bbdb7a41ea2157",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "habitat_kneazle",
+    "master": "isometric-refinements/masters/habitat_kneazle-refined.png",
+    "masterSha256": "6888dec4eba2ff78f1bf9b69bbe09ec17d3968da4a7e05f437b0120e324e320a",
+    "guide": "isometric-refinements/generation-inputs/habitat_kneazle-ab73fd7646b5.png",
+    "guideSha256": "ab73fd7646b5c51bc08a51df38b731e5f6b70cc0620ee301df1f7d75d6d145a0",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "habitat_niffler",
+    "master": "isometric-extra-assets/masters/habitat_niffler-locked.png",
+    "masterSha256": "66a499899d588b105b3ddcdadd312e9906112471ad2e72c7602f541096911065",
+    "guide": "isometric-extra-assets/generation-inputs/habitat_niffler-da5b39f2b92b.png",
+    "guideSha256": "da5b39f2b92b9bce518039de7b4020d6c6fbb94ca4c14998160432b9c1a8830b",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      40,
+      36
+    ],
+    "pivot": [
+      20,
+      31
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "habitat_porlock",
+    "master": "isometric-extra-assets/masters/habitat_porlock-locked.png",
+    "masterSha256": "3dbccab5e61ca599bd7bd446b6f437f2d21d5b0356430bc2e16147d876e6b5bb",
+    "guide": "isometric-extra-assets/generation-inputs/habitat_porlock-e3f425bad6ff.png",
+    "guideSha256": "e3f425bad6ff5ead2531a3a72103388ecbd4cf40f25ad3a96845a845a715dccf",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      56,
+      56
+    ],
+    "pivot": [
+      28,
+      50
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_potion_bench",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_potion_bench-locked.png",
+    "masterSha256": "8b400a4cb4dea50c5ad63d5f07d474d03a2f740012a4c9ff194210ac1ee2d234",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_potion_bench-f5f16282f4b6.png",
+    "guideSha256": "f5f16282f4b60a1ae21c30cd495b81552a00ad3e68b1039a9e9e49c23040b703",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_herb_rack",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_herb_rack-locked.png",
+    "masterSha256": "00e9f1da12cbdb87240c6d3d80a9e16a758bb81fba930d8a8bfc89b38dcd0064",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_herb_rack-c7bea6fce589.png",
+    "guideSha256": "c7bea6fce589140a4af88dc4eaa178f8fab082954037958d8e23fdb758cbfb86",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_explorer_chest",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_explorer_chest-locked.png",
+    "masterSha256": "5a8fa477b164a3b75e8236f825bf5f06d8c97410337513c2de720413d104b2ed",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_explorer_chest-9a7c0b8f13dc.png",
+    "guideSha256": "9a7c0b8f13dcfcc14e5623948e115b20cf2e092a5b7a8121bb5caa23d16d628e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_moon_lantern",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_moon_lantern-locked.png",
+    "masterSha256": "c6d05b80e68f0ed49c42b1a88bf52b70e5a8d0ecb7f49b72da12708a263953c6",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_moon_lantern-1d2f1b9ec59f.png",
+    "guideSha256": "1d2f1b9ec59f4a82bd2846a9302f0d7f0abf747696bd5e30470519389007ad8f",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_owl_mailbox",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_owl_mailbox-locked.png",
+    "masterSha256": "9729a50742e77769e75166dd5437bbb14ddea62931d3a6e69f70a176c994b151",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_owl_mailbox-9a7c0b8f13dc.png",
+    "guideSha256": "9a7c0b8f13dcfcc14e5623948e115b20cf2e092a5b7a8121bb5caa23d16d628e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_broom_rack",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_broom_rack-locked.png",
+    "masterSha256": "cf80c23e8d95c978ec92aa8431f491c486efb079d91caecc9ed2c569678744ba",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_broom_rack-c7bea6fce589.png",
+    "guideSha256": "c7bea6fce589140a4af88dc4eaa178f8fab082954037958d8e23fdb758cbfb86",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_book_stand",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_book_stand-locked.png",
+    "masterSha256": "78989fb11424ea573031177682297c99fedc7c36ecf2e12fbea32667ca40fd35",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_book_stand-f5f16282f4b6.png",
+    "guideSha256": "f5f16282f4b60a1ae21c30cd495b81552a00ad3e68b1039a9e9e49c23040b703",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_watering_station",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_watering_station-locked.png",
+    "masterSha256": "43c56a300565308ffab8b305d5184e94dde76b85f77c790203528fbe5714476a",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_watering_station-451a2a8b46d8.png",
+    "guideSha256": "451a2a8b46d8871918ba6a10cd0dd306f506376ebb2b58baa26f5919978041d4",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_seed_cart",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_seed_cart-locked.png",
+    "masterSha256": "737a72c5de0357096ead83698c36a9fd614cea5f9e7639a7c66c830eba22ca99",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_seed_cart-2469763ac4e3.png",
+    "guideSha256": "2469763ac4e3a56ade34bab65264a38984a8657211b94be3378d78c9a7c2ed22",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "plot_prop_scene_hourglass",
+    "master": "isometric-extra-assets/masters/plot_prop_scene_hourglass-locked.png",
+    "masterSha256": "40e4df265644c723f3453014632b50d527f18d049cd781f732a10257f89754a1",
+    "guide": "isometric-extra-assets/generation-inputs/plot_prop_scene_hourglass-1d2f1b9ec59f.png",
+    "guideSha256": "1d2f1b9ec59f4a82bd2846a9302f0d7f0abf747696bd5e30470519389007ad8f",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      74
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "scenery_hut",
+    "master": "isometric-architecture-refinements/masters/scenery_hut-refined.png",
+    "masterSha256": "0ff67d88e2e1e40a56932d94643f7cccc2a872ec93c538d154aac230a4272a09",
+    "guide": "isometric-architecture-refinements/generation-inputs/scenery_hut-0d8bc2ee3fb0.png",
+    "guideSha256": "0d8bc2ee3fb0d3e7b0c539771bd3e4a6f7e54da1d219ecd79a50db159789bf8c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      3,
+      3
+    ],
+    "canvas": [
+      256,
+      224
+    ],
+    "pivot": [
+      128,
+      216
+    ],
+    "poseLayout": [
+      2
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "scenery_herbology_greenhouse",
+    "master": "isometric-extra-assets/masters/scenery_herbology_greenhouse-locked.png",
+    "masterSha256": "fceb9123f1f0ec5aa4a21c013516c70d684b387c55d94aa04f76a87ad5674b72",
+    "guide": "isometric-extra-assets/generation-inputs/scenery_herbology_greenhouse-23cd1662909d.png",
+    "guideSha256": "23cd1662909dae9d1cc3750f461aa7dfaa613b50e58238145e296a7943cfb51b",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      3,
+      2
+    ],
+    "canvas": [
+      156,
+      152
+    ],
+    "pivot": [
+      78,
+      118
+    ],
+    "poseLayout": [
+      4,
+      4
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "scenery_owl_post",
+    "master": "isometric-extra-assets/masters/scenery_owl_post-locked.png",
+    "masterSha256": "b17248db2076ace28ab85aa886a3ac3784066889441cdc848f8af978ab3cad63",
+    "guide": "isometric-extra-assets/generation-inputs/scenery_owl_post-0310e83a780d.png",
+    "guideSha256": "0310e83a780d76b2acb33cba3898d5d0a826ce0ea30555a4388bf4592726f73c",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      1,
+      1
+    ],
+    "canvas": [
+      64,
+      80
+    ],
+    "pivot": [
+      32,
+      72
+    ],
+    "poseLayout": [
+      4,
+      4
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  },
+  {
+    "id": "festival_hero_event_herbology_fair",
+    "master": "isometric-architecture-refinements/masters/festival_hero_event_herbology_fair-refined.png",
+    "masterSha256": "27def91d82bcb1ba34cda07c7c62b8b7d66af2a3b94e4d1268b6e0bcc9660c4d",
+    "guide": "isometric-architecture-refinements/generation-inputs/festival_hero_event_herbology_fair-8e0ee824abed.png",
+    "guideSha256": "8e0ee824abed576091e6abbe419d198b53885071a23ac8719805044cf61d3e8e",
+    "guideInputStatus": "frozen input used at generation",
+    "footprint": [
+      2,
+      2
+    ],
+    "canvas": [
+      136,
+      158
+    ],
+    "pivot": [
+      68,
+      156
+    ],
+    "poseLayout": [
+      1
+    ],
+    "method": "built-in imagegen; uniformly exported, palette snapped; no post-export skew"
+  }
+]

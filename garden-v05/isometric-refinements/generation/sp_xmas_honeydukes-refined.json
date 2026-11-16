@@ -1,0 +1,14 @@
+{
+  "id": "sp_xmas_honeydukes",
+  "prompt": "Texture and complete the FIRST geometry stencil IN PLACE. The camera is ALREADY FINISHED. Keep all its horizontal-world planes and their corner locations. Every axis-aligned diagonal is a precise TWO-across ONE-down staircase, slope +0.500 or -0.500, angle26.565 degrees to horizontal, verticals stay vertical. NO30-degree diagonals, no vanishing points, no frontal substitution. Do not reinterpret this camera. All/tabletops, bases, beams, roof eaves and shelves inherit these axes. Horizontal circles are ellipses exactly TWICE as wide as high. Output TWO objects in one horizontal row: LEFT the default orientation and RIGHT a true90-degree world turn, as the two stencil cells already show, never a mirror. Same scale, generous alpha gutters, full unclipped objects. Generic scaffold shapes must become ONLY the parts named below, never extra posts or platforms. Use detailed readable handmade HD pixel art with small hard flat clusters and crisp selective dark plum outline, fixed upper-left lighting, no smoothing, halos, detached shadows, ground, labels or writing. Match existing muted garden material colors: #231F2E #4A3042 #735044 #A57554 #874056 #C75B4B #ED8A45 #FFC36B #3E3B70 #6961A6 #70A8B6 #B7DEE0. Keep the SAME object design, shape, materials, motifs and counts. Garden-ground reference is context only, not a scene to copy. SUBJECT: A wizard SWEETSHOP CABINET set outdoors in winter: a wide old wooden shop shelf-cabinet with a small striped awning on top dusted with snow, its shelves crowded with big glass jars of bright sweets, rows of chocolate frog boxes, a bundle of sugar quills, round bonbons and colourful candy sticks; a little hanging sign with a candy shape (no letters). Cheerful, crowded with colour, a child's dream. The cabinet stands along the length of a 2x1 tile strip (in the turned view along the other axis). Its base is the ground contact.",
+  "generatedFile": "/Users/thachanh/.codex/generated_images/01a1dd86-14d1-73e1-a3cd-9885bdf647f1/exec-44c3ce8d-b557-4f3a-8726-53656deaf208.png",
+  "guide": "isometric-refinements/generation-inputs/sp_xmas_honeydukes-c392c5fdd163.png",
+  "guideSha256": "c392c5fdd163b73dbfdbb03ea2e28dc5d6322862b9d89f4846e244cc375ec533",
+  "poseLayout": [
+    2
+  ],
+  "refs": [
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-refinements/generation-inputs/sp_xmas_honeydukes-c392c5fdd163.png",
+    "/private/tmp/hagrid-isometric-hd-audit-source/garden-v05/isometric-hd-assets/garden-ground-reference.png"
+  ]
+}

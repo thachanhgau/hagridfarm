@@ -176,7 +176,7 @@ test('25.0 budget: event pieces and Dobby\'s work poses load only when first dra
 
 test('winter scenery stays deferred until winter or explicit snow is selected', async () => {
   const winterKit = await import('./garden-winter.mjs'), {WINTER_FILES, winterSeason} = winterKit;
-  assert.equal(WINTER_FILES.length, 44);
+  assert.equal(new Set(WINTER_FILES).size,WINTER_FILES.length);assert.deepEqual([...WINTER_FILES].sort(),Object.values(winterKit.WINTER_ART).sort());assert.ok(WINTER_FILES.length>=44);
   for (const file of WINTER_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
   const winterUrls = WINTER_FILES.map(runtimeImageUrl);
   const {canvas, requested} = recordingCanvas();
@@ -203,26 +203,27 @@ test('25.0 S4 budget: Norbert loads only once he is drawn (S7 hatches him)', asy
   assert.ok(requested.has(runtimeImageUrl('environment/elves/norbert/idle.png')), 'a hatched Norbert loads');
 });
 
-test('25.0 elf statue glow: loads only at dusk/night for a placed statue; reduced motion holds n0', async () => {
-  const winterKit = await import('./garden-winter.mjs'), {STATUE_GLOW_FILES, statueGlow} = winterKit;
-  assert.equal(STATUE_GLOW_FILES.length, 12);
-  for (const file of STATUE_GLOW_FILES) assert.ok(fs.existsSync(new URL('./' + file, import.meta.url)), file + ' exists');
-  const {canvas, requested} = recordingCanvas();
-  const garden = await createGarden(canvas, {decorAssets: manifest.items});
-  const state = E.testProfile(100, 1_700_000_000_000);
-  const id = 'ev_dark_dobby_red', glowUrls = STATUE_GLOW_FILES.map(runtimeImageUrl);
-  const decorations = {owned: [id], placements: [id], positions: {[id]: [2.5, 26]}, rotations: {}};
-  const base = {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none', winterKit, decorations};
-  garden.render(state, {...base, atmosphereMode: 'day'});
-  for (const url of glowUrls) assert.ok(!requested.has(url), url + ' loaded by day');
-  garden.render(state, {...base, atmosphereMode: 'night'});
-  assert.ok(requested.has(runtimeImageUrl(`environment/statue-night/${id}-n0.png`)), 'the placed statue glows at night');
-  assert.ok(!requested.has(runtimeImageUrl('environment/statue-night/ev_dobby_spring_rider-n0.png')), 'an unplaced statue stays unloaded');
-  const object = {kind: 'store-decor', id, slot: 0, facing: 'right', asset: {pivotX: 64, pivotY: 160}};
-  assert.equal(statueGlow(object, 0).file, `environment/statue-night/${id}_right-n0.png`);
-  assert.deepEqual(new Set([0, 600, 1200, 1800].map(t => statueGlow(object, t + 1).file.slice(-6))), new Set(['n0.png', 'n1.png', 'n2.png']));
-  assert.equal(statueGlow({...object, preview: true}, 0), null);
-  assert.equal(statueGlow({...object, id: 'ev_elf_tent'}, 0), null);
+test('elf night lighting follows both current statue atlases and facings without old silhouettes', async () => {
+  const winterKit = await import('./garden-winter.mjs'), {statueGlow} = winterKit;
+  const {decorFrameAt} = await import('./scene-animation.mjs');
+  for (const id of ['ev_dark_dobby_red','ev_dobby_spring_rider']) for (const facing of ['default','right']) {
+    const asset=manifest.items.find(a=>a.id===id),object={kind:'store-decor',id,slot:0,facing,asset};
+    for(const clock of [0,601,1201,1801]) {
+      const frame=decorFrameAt(asset,clock,{facing,seed:`${id}:0`,reducedMotion:clock===0}),glow=statueGlow(object,clock);
+      assert.equal(glow.file,frame.file,'night must use the current statue');
+      assert.deepEqual(glow.atlasRect,frame.atlasRect,'night camera and animation cell must match day');
+      assert.equal(glow.pivotX,asset.pivotX);assert.equal(glow.pivotY,asset.pivotY);
+      assert.ok(glow.opacity>0&&glow.opacity<1);
+    }
+    assert.equal(statueGlow({...object,preview:true},0),null);
+    const {canvas,requested,drawCalls}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+    const state=E.testProfile(100,1_700_000_000_000),decorations={owned:[id],placements:[id],positions:{[id]:[2.5,26]},rotations:{[id]:facing}};
+    const base={now:1_700_000_000_000,clock:0,propsVisible:true,eventMode:'none',winterKit,decorations};
+    garden.render(state,{...base,atmosphereMode:'day'});await new Promise(r=>setImmediate(r));
+    drawCalls.length=0;garden.render(state,{...base,atmosphereMode:'night'});await new Promise(r=>setImmediate(r));garden.render(state,{...base,atmosphereMode:'night'});
+    assert.ok([...requested].every(url=>!url.includes('/statue-night/')),'obsolete statue bodies must never load');
+    assert.ok(drawCalls.filter(c=>c.file===runtimeImageUrl(asset.frames[0])).length>=2,'current statue is lit after the night overlay');
+  }
 });
 
 test('25.0 S6 budget: visiting friends load only while a visit is drawn, never before the first frame', async () => {

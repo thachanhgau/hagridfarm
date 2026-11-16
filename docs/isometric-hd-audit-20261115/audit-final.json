@@ -1,0 +1,2726 @@
+{
+  "date": "2026-11-16",
+  "scope": "334 catalog/model groups; not a PNG count",
+  "groups": 334,
+  "counts": {
+    "replaced-same-object": 108,
+    "retained-reviewed": 218,
+    "unused-legacy-placeholder": 8
+  },
+  "replacementsByKind": {
+    "store-decoration": 52,
+    "earned-decoration": 18,
+    "keepsake": 18,
+    "habitat": 6,
+    "plot-prop": 10,
+    "scenery": 3,
+    "festival-hero": 1
+  },
+  "hdMappings": 1558,
+  "priorMissingHDPathsFilled": 32,
+  "census": {
+    "contexts": 8,
+    "growthStages": 4,
+    "drawnKeys": 593,
+    "selectedSources": 588,
+    "missingHD": [],
+    "errors": [],
+    "renderErrors": [],
+    "note": "Inventory census before final uniform fit reduction; selected paths unchanged. Final pixel/HTTP proof is separate.",
+    "catalogSupplement": {
+      "ids": [
+        "ev_dobby_spring_rider",
+        "ev_dark_dobby_red",
+        "ev_elf_tent",
+        "ev_champion_tree"
+      ],
+      "contexts": 2,
+      "drawnKeys": 222,
+      "combinedSelectedSources": 592,
+      "missingHD": [],
+      "errors": [],
+      "reason": "Canonical catalog has 167 decoration IDs; legacy storeItem flag marks only 163. Both demo and future census use the canonical catalog."
+    }
+  },
+  "projection": {
+    "axisMeasuredModels": 107,
+    "roundedCarvedModel": "sp_pensieve: explicit curved-form comparison; no fabricated axis/circle fit",
+    "nativeTolerance": 1,
+    "retainedNoelHardBaseFrames": 184
+  },
+  "protectedOriginal": "hw_ghost_well",
+  "ledgers": [
+    {
+      "id": "decor_pumpkin_lantern",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "decor_pumpkin_lantern",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decor_broom_rack",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "decor_broom_rack",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decor_cauldron",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original spherical cauldron and radial feet have no axis-aligned rectangular world plane. Its elevated open rim already matches the garden; preserve original dark iron material, handles and animation, and existing HD."
+    },
+    {
+      "id": "decor_mandrake_planter",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "decor_mandrake_planter",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decor_floating_candles",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "decor_floating_candles",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decor_vine_arch",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "decor_vine_arch",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "gardener_friend",
+      "kind": "store-decoration",
+      "status": "unused-legacy-placeholder",
+      "hd": "not-selected-by-renderer",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "owl_post",
+      "kind": "store-decoration",
+      "status": "unused-legacy-placeholder",
+      "hd": "not-selected-by-renderer",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "herbology_greenhouse",
+      "kind": "store-decoration",
+      "status": "unused-legacy-placeholder",
+      "hd": "not-selected-by-renderer",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_hagrid_umbrella",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_hagrid_umbrella",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_norbert_egg",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_norbert_egg",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_sirius_motorbike",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original parked motorbike is a curved, leaning vehicle with steered handlebars; it has no rectangular floor/stand/table plane to align. Preserve original design and existing HD. Wheel and handlebar tangents are not evidence of an axis-aligned world edge; reject the attempted replacements rather than certifying them from coincidental tangents."
+    },
+    {
+      "id": "sp_whomping_anglia",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "The car is intentionally wedged and tilted within an organic tree; its local edges are not world axes. Existing elevated diorama and HD retained."
+    },
+    {
+      "id": "sp_buckbeak_pumpkins",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_aragog_hollow",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_mirror_erised",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_mirror_erised",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_sorting_hat",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_sorting_hat",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_goblet_fire",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_goblet_fire",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_pensieve",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_pensieve",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_fawkes_perch",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original round brass perch and bird have no contradictory axis-aligned world plane; preserve original elevated view and HD, without an added stone slab."
+    },
+    {
+      "id": "sp_wizard_chess_knight",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_wizard_chess_knight",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_riddle_diary",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_riddle_diary",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_slytherin_locket",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_slytherin_locket",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_gaunt_ring",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_gaunt_ring",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_hufflepuff_cup",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_hufflepuff_cup",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_ravenclaw_diadem",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_ravenclaw_diadem",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_vanishing_cabinet",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_vanishing_cabinet",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_hand_glory",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_hand_glory",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_cursed_opal_necklace",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_cursed_opal_necklace",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_chamber_serpent_door",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_chamber_serpent_door",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_department_veil",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_department_veil",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_monster_book",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_monster_book",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_deathday_cake",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_deathday_cake",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_marauders_map",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_marauders_map",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_time_turner",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_time_turner",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_deluminator",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_deluminator",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_snitch_resurrection_stone",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_snitch_resurrection_stone",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_sword_gryffindor",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_sword_gryffindor",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_knight_bus",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_knight_bus",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_pumpkin_stack",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_monster_candy_barrel",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original circular barrel and hinged round lid have no rectangular world plane; retain its coherent elevated view, original floating candy and legless barrel design with existing HD."
+    },
+    {
+      "id": "hw_wooden_black_cat",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original carved cat and rough circular log slice are organic forms without an axis-aligned rectangular plane. Retain original coherent elevated views and existing HD."
+    },
+    {
+      "id": "hw_halloween_sign",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_halloween_sign",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_cloth_ghost_lantern",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_cloth_ghost_lantern",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_dead_bat_tree",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_bat_lantern",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_bat_lantern",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_skull_lantern",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Rounded skull and radial tripod have no contradictory axis-aligned plane; retain the existing coherent elevated view and HD."
+    },
+    {
+      "id": "hw_haunted_house_lantern",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_haunted_house_lantern",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_ghost_orb",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_spider_light_garland",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_spider_light_garland",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_soul_bottle",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_soul_bottle",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_candy_cauldron",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original spherical cauldron, circular rim and radial feet already read in the elevated garden. Retain original iron body and candy animation with existing HD."
+    },
+    {
+      "id": "hw_halloween_potion_table",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_halloween_potion_table",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_monster_bookcase",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_monster_bookcase",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_blinking_chest",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_blinking_chest",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_witch_hat_rack",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_caramel_apple_cart",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_caramel_apple_cart",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_grinning_stump",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Irregular carved roots and hollow rim already read in the elevated garden camera; retain original HD and design."
+    },
+    {
+      "id": "hw_skull_mushrooms",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_eyeball_flowers",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_owl_tree_hollow",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_dewy_cobweb_frame",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_dewy_cobweb_frame",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_pumpkin_spider_nest",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_root_halloween_gate",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_root_halloween_gate",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_crooked_witch_hut",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "hw_crooked_witch_hut",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hw_mini_pumpkin_house",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Rounded gourd architecture and tiny irregular steps already read coherently in the garden; retain its original round shape and HD."
+    },
+    {
+      "id": "hw_ghost_well",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Owner explicitly preserved original in both directions/all frames/winter"
+    },
+    {
+      "id": "hw_violet_mist_pond",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Organic oval shore has no rectangular world plane; retain the existing elevated view and authored mist animation with genuine HD."
+    },
+    {
+      "id": "hw_lantern_ancient_tree",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "ev_dobby_spring_rider",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "ev_dobby_spring_rider",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "ev_dark_dobby_red",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "ev_dark_dobby_red",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "ev_elf_tent",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "ev_elf_tent",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "ev_kitchen_corner",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "ev_kitchen_corner",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_xmas_firebolt",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_xmas_butterbeer",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_xmas_butterbeer",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_xmas_honeydukes",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_xmas_honeydukes",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_xmas_invisibility_cloak",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_xmas_invisibility_cloak",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sp_xmas_weasley_tree",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Conical foliage and existing small parcel planes already read coherently in the garden; retain the original tree shape and both views."
+    },
+    {
+      "id": "sp_xmas_yule_roses",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "sp_xmas_yule_roses",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "ev_champion_tree",
+      "kind": "store-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "ev_champion_tree",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_snitch_wreath",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_elf_yule_tent",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_owl_parcel_roost",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_hagrid_boot_planter",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_fang_biscuit_kennel",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_niffler_coin_snowglobe",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_bowtruckle_fir_perch",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_mooncalf_moon_lantern",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_puffskein_sock_basket",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_hippogriff_gift_sleigh",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_unicorn_ice_fountain",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_thestral_silver_bell",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_fwooper_music_box",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_phoenix_candle_bough",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_norbert_egg_lantern",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_snowwizard_hat",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_snow_owl_sculpture",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_snow_dragon_sculpture",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_snow_hogwarts_castle",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_ice_wand_star",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_mistletoe_gate",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_holly_broom_fence",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_snitch_lamp_post",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_floo_chimney_mailbox",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_hogwarts_express_parcels",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_platform_clock",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_enchanted_cracker_table",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_wizard_chess_christmas",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_weasley_knit_rack",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_dobby_sock_tree",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_mince_pie_cart",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_plum_pudding_stand",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_chocolate_frog_tree",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_peppermint_cauldron",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_butterbeer_barrel_seat",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_gingerbread_hagrids_hut",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_gingerbread_greenhouse",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_mandrake_earmuff_planter",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_frosted_dittany_bed",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_glowing_mistletoe_pot",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_fairy_pine_log",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_icicle_harp",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_yule_dance_gazebo",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_enchanted_violin_stand",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_great_hall_candle_cluster",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_raven_ice_bench",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_lion_firewood_rack",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_badger_cookie_table",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_serpent_holly_urn",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nx_hagrid_gift_crate",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_lion_snow_guard",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_sword_holly_gate",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_commonroom_hearth",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_quidditch_crate",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_courage_watchtower",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_rocking_lion",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_scarlet_feast_table",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_flame_bell_stand",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_cracker_sled",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_gryffindor_lion_paw_brazier",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_serpent_ice_arch",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_emerald_orangery",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_winter_potion_bar",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_frozen_serpent_fountain",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_lake_lantern_buoy",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_silver_chess_dais",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_serpent_sleigh",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_holly_obelisk",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_strategy_desk",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_slytherin_emerald_mirror",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_badger_cookie_bakery",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_honeycomb_gift_cart",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_badger_log_cottage",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_beehive_cocoa_urn",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_knitting_bench",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_herb_wheelbarrow",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_badger_mail_hollow",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_sunflower_chimes",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_chestnut_stall",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_hufflepuff_badger_picnic",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_bronze_astrolabe",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_winter_observatory",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_eagle_snow_perch",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_star_book_lectern",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_constellation_arch",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_riddle_cabinet",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_eagle_courier_post",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_telescope_sled",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_eagle_music_harp",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "nh_ravenclaw_celestial_globe",
+      "kind": "store-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "oak",
+      "kind": "scenery",
+      "status": "unused-legacy-placeholder",
+      "hd": "not-selected-by-renderer",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pine",
+      "kind": "scenery",
+      "status": "unused-legacy-placeholder",
+      "hd": "not-selected-by-renderer",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pond",
+      "kind": "scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "fenceNE",
+      "kind": "scenery",
+      "status": "unused-legacy-placeholder",
+      "hd": "not-selected-by-renderer",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "fenceNW",
+      "kind": "scenery",
+      "status": "unused-legacy-placeholder",
+      "hd": "not-selected-by-renderer",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "gate",
+      "kind": "scenery",
+      "status": "unused-legacy-placeholder",
+      "hd": "not-selected-by-renderer",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hut",
+      "kind": "scenery",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "scenery_hut",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "fang",
+      "kind": "scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "gardener_friend",
+      "kind": "scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "herbology_greenhouse",
+      "kind": "scenery",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "scenery_herbology_greenhouse",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "owl_post",
+      "kind": "scenery",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "scenery_owl_post",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-3",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-7",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-11",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-15",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-15",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-19",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-19",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-23",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-23",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-27",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-27",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-30",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-31",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-35",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-39",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-39",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-43",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-43",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-46",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Soft cushions may have curved and independently oriented seams; existing elevated artwork and HD retained."
+    },
+    {
+      "id": "decoration-47",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-47",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-51",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original scalloped stone birdbath and round carved foot have no rectangular world plane. Existing elevated water view is coherent; retain original shape and existing HD."
+    },
+    {
+      "id": "decoration-55",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-55",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-59",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-59",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-63",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-67",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-67",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-71",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-75",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-75",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-80",
+      "kind": "earned-decoration",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-81",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-81",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-83",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-83",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-87",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-87",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-91",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-91",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-95",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-95",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-98",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-98",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "decoration-99",
+      "kind": "earned-decoration",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "earned_decoration_decoration-99",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_potion_bench",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_potion_bench",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_herb_rack",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_herb_rack",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_explorer_chest",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_explorer_chest",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_mandrake_pot",
+      "kind": "plot-prop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Rounded pot and organic root have no contradictory rigid world plane; recover genuine HD from the same original master."
+    },
+    {
+      "id": "scene_moon_lantern",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_moon_lantern",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_owl_mailbox",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_owl_mailbox",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_rune_stones",
+      "kind": "plot-prop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Irregular upright rocks have no orthogonal world plane; recover HD from the same original master."
+    },
+    {
+      "id": "scene_broom_rack",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_broom_rack",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_crystal_planter",
+      "kind": "plot-prop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Oval stone planter and organic arrangement retained; recover original-master HD."
+    },
+    {
+      "id": "scene_mushroom_stump",
+      "kind": "plot-prop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Organic stump and mushrooms retained; recover original-master HD."
+    },
+    {
+      "id": "scene_book_stand",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_book_stand",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_watering_station",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_watering_station",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_seed_cart",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_seed_cart",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "scene_hourglass",
+      "kind": "plot-prop",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "plot_prop_scene_hourglass",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "bowtruckle",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "crup",
+      "kind": "habitat",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "habitat_crup",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "diricawl",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original oval stone water basin already reads in the elevated garden camera and has HD. Preserve same basin without added lily pads."
+    },
+    {
+      "id": "dragon",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original shallow round iron brazier and radial feet already read coherently in the garden and have HD. Preserve shallow brazier design, not a tall cauldron."
+    },
+    {
+      "id": "fwooper",
+      "kind": "habitat",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "habitat_fwooper",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "grindylow",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hippogriff",
+      "kind": "habitat",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "habitat_hippogriff",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "kappa",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "knarl",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "kneazle",
+      "kind": "habitat",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "habitat_kneazle",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "mooncalf",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Sculpted crescent basin is organic; existing elevated view and HD retained."
+    },
+    {
+      "id": "niffler",
+      "kind": "habitat",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "habitat_niffler",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "porlock",
+      "kind": "habitat",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "habitat_porlock",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "puffskein",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Soft oval wicker nest has no rigid axis-aligned rectangle; preserve existing HD."
+    },
+    {
+      "id": "salamander",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "thestral",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original round dark iron wing-decorated cauldron has no axis-aligned rectangular world plane, has existing HD and a coherent elevated view. Preserve original iron material and wing motif."
+    },
+    {
+      "id": "three-headed-dog",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Small round feeding bowls already read coherently within native raster tolerance; retain existing HD."
+    },
+    {
+      "id": "unicorn",
+      "kind": "habitat",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Original oval stone basin and two flowers are coherent in the elevated camera; preserve its shape, color and existing HD."
+    },
+    {
+      "id": "bowtruckle",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_bowtruckle",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "crup",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_crup",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "diricawl",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_diricawl",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "dragon",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_dragon",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "fwooper",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_fwooper",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "grindylow",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_grindylow",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hippogriff",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_hippogriff",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "kappa",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_kappa",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "knarl",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_knarl",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "kneazle",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_kneazle",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "mooncalf",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_mooncalf",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "niffler",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_niffler",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "porlock",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_porlock",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "puffskein",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_puffskein",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "salamander",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_salamander",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "thestral",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_thestral",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "three-headed-dog",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_three-headed-dog",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "unicorn",
+      "kind": "keepsake",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "keepsake_unicorn",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "event_yule",
+      "kind": "festival-hero",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "event_halloween",
+      "kind": "festival-hero",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "event_herbology_fair",
+      "kind": "festival-hero",
+      "status": "replaced-same-object",
+      "hd": "genuine-master-HD",
+      "replacement": "festival_hero_event_herbology_fair",
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pasture",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "orchard",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "trail",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-apple-0",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-apple-1",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-apple-2",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-pear-0",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-pear-1",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-pear-2",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-plum-0",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-plum-1",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "tree-plum-2",
+      "kind": "edge-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pond-1",
+      "kind": "pond-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pond-2",
+      "kind": "pond-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pond-3",
+      "kind": "pond-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pond-bed",
+      "kind": "pond-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pond-nook",
+      "kind": "pond-scenery",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "oak",
+      "kind": "forest",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pine",
+      "kind": "forest",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "grove",
+      "kind": "forest",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "log",
+      "kind": "forest",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "pumpkin",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "strawberry",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "daisy",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "dittany",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "puffapod",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "mandrake",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "puffskein",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "bowtruckle",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "niffler",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "hippogriff",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "dragon",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "three-headed-dog",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "oats",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "carrot",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "lettuce",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "clover",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "beet",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "maize",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "flax",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sunflower",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "mint",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "blueberry",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "firepepper",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "silverkelp",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "moonherb",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "valerian",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "starbean",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "ambermelon",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "mistmushroom",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "sunpetal",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "fluxweed",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "bubotuber",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "knotgrass",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "shrivelfig",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "gillyweed",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "mimbulus",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "flitterbloom",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "devilssnare",
+      "kind": "crop",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "mooncalf",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "kneazle",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "diricawl",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "fwooper",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "thestral",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "unicorn",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "grindylow",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "crup",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "knarl",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "salamander",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "kappa",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    },
+    {
+      "id": "porlock",
+      "kind": "creature",
+      "status": "retained-reviewed",
+      "hd": "genuine-master-HD",
+      "replacement": null,
+      "reason": "Full collection reviewed against garden projection; existing coherent shape and HD retained"
+    }
+  ]
+}
