@@ -1,4 +1,6 @@
-import {pondMeadowOutline,pondMeadowMap,pondMeadowTrees} from './pond-meadow.mjs?v=26.1';
+import {creatureRest,drawSleepSigns,CREATURE_SLEEP_FILES} from './creature-sleep.mjs?v=26.1';
+import {drawDecorIllumination,drawCreatureEmber} from './decor-lights.mjs?v=26.1';
+import {clipToScenicStage as clipToStage,pondMeadowOutline,pondMeadowMap,pondMeadowTrees} from './pond-meadow.mjs?v=26.1';
 import {HD_ART} from './hd-art.mjs?v=26.1';
 import {createResolution,tagArt,ART_SOURCE,clientToWorld} from './render-resolution.mjs?v=26.1';
 export {clientToWorld} from './render-resolution.mjs?v=26.1';
@@ -63,21 +65,6 @@ const layoutSnapshots = new WeakMap();
 
 
 
-
-function clipToStage(context, stage, scene, draw) {
-  context.save?.();
-  const points = pondMeadowOutline(stage).map(([col, row]) => iso(col, row, scene));
-  context.beginPath();
-  context.moveTo(points[0][0], points[0][1]);
-  for (const [x, y] of points.slice(1)) context.lineTo(x, y);
-  context.closePath();
-  context.clip?.();
-  try {
-    draw();
-  } finally {
-    context.restore?.();
-  }
-}
 
 /** Plot cells are centered on integer coordinates, including their soil tiles. */
 export function plotCorners(plot, scene = map) {
@@ -722,7 +709,7 @@ export async function createGarden(canvas, options = {}) {
   // Festival art (heroes, 'festival' store pieces) is not awaited before the first frame: it loads the first
   // time it is drawn, i.e. while its season is open or once a member has placed the piece (25.0 budget).
   // Same for event pieces (statues, Lều gia tinh, Góc bếp: drawn only once placed) and Dobby's work poses.
-  const deferredFiles = new Set(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...WOODLAND_FILES, ...SUBMERGED_CREATURE_FILES, ...Object.values(EDGE_SCENERY).map((spec) => spec.file), ...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)]));
+  const deferredFiles = new Set(CREATURE_SLEEP_FILES.concat(Object.keys(POND_SCENERY).map(pondScenery).filter(Boolean).map((spec) => spec.file).concat([...WOODLAND_FILES, ...SUBMERGED_CREATURE_FILES, ...Object.values(EDGE_SCENERY).map((spec) => spec.file), ...Object.values(BUBBLE_FILES), ...FESTIVAL_FILES, ...elfWorkFiles(), ...norbertFiles(), ...[...decorAssets.values()].filter((a) => a.collection === 'festival' || a.collection === 'event').flatMap(decorFiles)])));
   const assetFiles = [...new Set([
     ...collectFiles(),
     ...completeObjectFiles(),
@@ -770,6 +757,7 @@ export async function createGarden(canvas, options = {}) {
   const plotBorderLayers = new Map();
   const penHabitatLayers = new Map();
   // 25.0 S3: kit = garden-winter.mjs from options.winterKit (import() after the first frame).
+  let nightRest=false;
   let activeWeather='clear',activeEvent='none',activeSnowDepth=1,winterArt=false,activeWinter=null,kit=null;
   const seasonalImages=new Map(),coatImages=new Map();
   // 25.0 S5: a wilted or dried-out crop is its own sprite snapped to a palette ramp (garden-duty-art).
@@ -1252,8 +1240,10 @@ export async function createGarden(canvas, options = {}) {
     // Dedicated submerged poses sit on the waterline; the collection keeps the full-body art.
     creatures.slice(0, 2).forEach((entry, i) => {
       const sx = cx + (i ? 0.35 : -0.35) * rx, sy = cy + (i ? -2 : 3) * c;
-      const sprite = submergedCreatureFrame(entry.species, growthFor(entry, logicalNow).stage, clock, facings[entry.species]);
-      if (sprite) drawAsset({...sprite, noSnowCap: true}, sx, sy);
+      const age=growthFor(entry,logicalNow).stage,rest=creatureRest({species:entry.species,stage:age,night:nightRest,event:activeAnimations.find(e=>e.species===entry.species)}),sleep=rest&&imageFor(rest.asset.file)?rest.asset:null;
+      const sprite = sleep||submergedCreatureFrame(entry.species,age,nightRest?0:clock,facings[entry.species]);
+      if(sprite)drawAsset({...sprite,noSnowCap:true},sx,sy,null,null,Boolean(sleep)&&facings[entry.species]==='right');
+      if(sleep)drawSleepSigns(ctx,{sleeping:true,asset:sleep,xy:[sx,sy]},clock);
     });
   }
 
@@ -1323,7 +1313,8 @@ export async function createGarden(canvas, options = {}) {
     if (action && eventClip === 'care') authoredEffectEventIds.add(event.id);
     const seedKey = target.creatureIndex != null ? `c:${target.creatureIndex}` : `p:${target.plot ?? 0}:${target.cell ?? 0}`;
     const index = action ? action.frame : progress.mature ? idleFrameAt(item, clock, seedKey) : stage;
-    const asset = frameAt(item, index, allowMissingAssets);
+    const asset = frameAt(item, index, allowMissingAssets),rest=item.kind==='creature'?creatureRest({species:entry.species,stage,night:nightRest,event,guest:target.guest}):null;
+    if(rest){const loaded=imageFor(rest.asset.file);rest.asset=loaded?{...rest.asset,noSnowCap:['dragon','salamander'].includes(entry.species)}:asset;}
     if (!asset) return {kind: 'missing-actor', type: entry?.type ?? item.kind ?? 'actor', id: entry?.species, xy: iso(col, row), entry};
     return {
       kind: 'asset',
@@ -1344,7 +1335,7 @@ export async function createGarden(canvas, options = {}) {
       drift: (item.kind === 'creature' && rideFlight(event)?.dx) || 0,
       breeze: item.kind === 'crop' && (!progress.mature || new Set(item.clips?.idle?.frames).size <= 1) ? cropBreeze(entry?.species, clock, {reducedMotion: clock === 0, seed: seedKey}) : null,
       motion: item.kind === 'creature' && !action && (!progress.mature || new Set(item.clips?.idle?.frames).size <= 1) ? creatureMotion(entry?.species, clock, {reducedMotion: clock === 0, index: target.creatureIndex ?? 0, mature: progress.mature, facing}) : null,
-      ...target,
+      ...target,...rest,
     };
   }
 
@@ -1687,7 +1678,7 @@ export async function createGarden(canvas, options = {}) {
       if (object.item?.kind === 'creature' && object.motion?.sparkle) {
         drawPixelSparkle(context, object.xy[0] + (object.motion.swayX || 0) * 8, object.xy[1] - 42 + (object.motion.bobY || 0), '#f5d69a', 1);
       }
-      drawActorOverlay(object, logicalNow);
+      drawActorOverlay(object, logicalNow);drawSleepSigns(context,object,clock);
       if (object.item?.kind === 'creature' && duty?.sick.has(object.species)) drawCreatureBubble(context, object.xy[0], object.xy[1] + (object.hop || 0) - finite(object.asset?.pivotY, 0) + finite((object.asset?.bounds ?? {}).y, 0), 'Ốm…', {scale: speechScale});
       if (object.guest && object.hungry) drawCreatureBubble(context, object.xy[0], object.xy[1] + (object.hop || 0) - finite(object.asset?.pivotY, 0) + finite((object.asset?.bounds ?? {}).y, 0), 'Đói…', {scale: speechScale, avoid: sceneryVisible ? {xy: wizardTargets(iso).find((t) => t.id === 'owl')?.xy, asset: decorAssets.get('owl_post')} : null});
       return;
@@ -1784,7 +1775,7 @@ export async function createGarden(canvas, options = {}) {
     labelScale = Math.max(.8, finite(options.labelScale, 1));
     if (canvas.dataset) canvas.dataset.speechScale = String(speechScale);
     guestActor = options.guestActor || null;
-    const atmosphereMode = options.atmosphereMode || 'day';
+    const atmosphereMode = options.atmosphereMode || 'day';nightRest=atmosphereMode==='night';
     const weatherMode = options.weatherMode || 'clear';
     const eventMode = options.eventMode || 'none';
     // Winter: snow lies even under a clear sky; its scenery is requested only while winter is on.
@@ -2092,6 +2083,10 @@ export async function createGarden(canvas, options = {}) {
     }
     if (activeWinter) kit.drawWinterLayer(context, {width: map.width, height: map.height, lanterns, mode: atmosphereMode, clock});
     if (kit && atmosphereMode !== 'day') for (const object of objects) { const glow = kit.statueGlow(object, clock); if (glow) { kit.drawStatueAura?.(context,object,clock); context.save(); context.globalAlpha=glow.opacity; drawAsset(glow, object.xy[0], object.xy[1]); context.restore(); } }
+    if(atmosphereMode!=='day')for(const object of objects){
+      const lit=object.kind==='decoration'?{...object,asset:earnedDecorArt(object.id,object.facing)}:object,options={clock,mode:atmosphereMode,hd:resolution.stats().density>1,drawAsset};
+      drawDecorIllumination(context,lit,options);drawCreatureEmber(context,object,options);
+    }
     if (eventMode && eventMode !== 'none') {
       drawEventOverlay(context, map.width, map.height, {
         eventMode,

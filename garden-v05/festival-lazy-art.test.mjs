@@ -283,3 +283,16 @@ test('pasture creatures draw cached snow variants at the same feet and restore c
  drawCalls.length=0;garden.render(state,{...options,weatherMode:'clear'});
  for(const call of clear)assert.ok(drawCalls.some(c=>c.file===call.file&&JSON.stringify(c.args)===JSON.stringify(call.args)),'clear restores original');
 });
+
+test('creatures sleep visibly at night, wake for interaction, then resume rest; day loads no sleep art',async()=>{
+ const {canvas,requested,drawCalls}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+ const now=1_700_000_000_000,state=E.testProfile(500,now);state.creatures=[{id:'sleep-dragon',type:'creature',species:'dragon',mealsCompleted:E.CREATURE.dragon.mealsToAdult,adoptedAt:now-999999,meal:null}];
+ const before=JSON.stringify(state),base={now,clock:100,animationClock:100,propsVisible:true};
+ garden.render(state,{...base,atmosphereMode:'day'});assert.ok([...requested].every(f=>!f.includes('creature-sleep')));
+ garden.render(state,{...base,atmosphereMode:'night'});await new Promise(r=>setImmediate(r));drawCalls.length=0;garden.render(state,{...base,atmosphereMode:'night'});
+ assert.ok(drawCalls.some(c=>c.file?.includes('creature-sleep/dragon-3')),'lying sleep sprite must draw');
+ garden.animate('eat',{species:'dragon',creatureIndex:0});drawCalls.length=0;garden.render(state,{...base,clock:350,animationClock:350,atmosphereMode:'night'});
+ assert.ok(!drawCalls.some(c=>c.file?.includes('creature-sleep/dragon')),'interaction wakes creature');
+ drawCalls.length=0;garden.render(state,{...base,clock:5000,animationClock:5000,atmosphereMode:'night'});assert.ok(drawCalls.some(c=>c.file?.includes('creature-sleep/dragon-3')),'returns to sleep');
+ assert.equal(JSON.stringify(state),before,'sleep is visual only');
+});
