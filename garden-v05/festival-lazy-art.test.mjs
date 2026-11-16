@@ -115,7 +115,7 @@ test('land creatures without walk clips keep their ground anchors across animati
   const {canvas} = recordingCanvas();
   const garden = await createGarden(canvas, {decorAssets: manifest.items, allowMissingAssets: true});
   const now = 1_700_000_000_000, state = E.testProfile(500, now);
-  const species = ['hippogriff', 'thestral', 'unicorn', 'porlock', 'crup'];
+  const species = ['hippogriff', 'thestral', 'unicorn', 'three-headed-dog', 'dragon', 'porlock', 'crup'];
   state.built = [...new Set([...state.built, 'edge_1', 'edge_2'])];
   state.creatures = species.map(id => ({id: 'creature-' + id, type: 'creature', species: id,
     level: E.CREATURE[id].level, adoptedAt: now, mealsCompleted: E.CREATURE[id].mealsToAdult,

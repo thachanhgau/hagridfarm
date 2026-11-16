@@ -94,8 +94,10 @@ export const EDGE_LAYOUT=Object.freeze({
  trail:Object.freeze({file:'trail',centre:Object.freeze([33.5,15])}),
  pits:Object.freeze([[36,19],[39,19],[42,19],[36,22],[39,22],[42,22]].map(p=>Object.freeze([p[0]+.5,p[1]+.5]))),
 });
-export const PASTURE_ROAMERS=Object.freeze(['hippogriff','thestral','unicorn','porlock']);
-const PASTURE_SPOTS=Object.freeze([[37,8],[41,8],[37,11],[41,11]]);
+// Owner 16/11/2026: the big beasts live in the big pasture, the small ones in the pens. By adult sprite area the five
+// below are the big ones (9,100–20,400 px²; the next, Kỳ nhông lửa, 6,700), so Ngựa lùn went back to its pen.
+export const PASTURE_ROAMERS=Object.freeze(['hippogriff','thestral','unicorn','three-headed-dog','dragon']);
+const PASTURE_SPOTS=Object.freeze([[36,8.5],[43.5,7],[35.5,11.5],[42.5,12.5],[40.5,8.5]]); // no two sprites overlap on screen
 // No authored walk clips: each species rests at its own anchor instead of sliding across the pasture.
 export function pastureSpot(seed){
  const [col,row]=PASTURE_SPOTS[seed%PASTURE_SPOTS.length];
