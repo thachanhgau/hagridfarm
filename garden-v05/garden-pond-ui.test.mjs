@@ -50,6 +50,18 @@ test('view helpers: lots, beds, water crops by level, head actions', () => {
  assert.deepEqual([1, 2, 3].map(P.tierScale), [3.8, 3.8, 3.8]);
 });
 
+test('quick fill: store packs for the free slots, the server price tier, plant commands bed by bed', () => {
+ const seed = {id: 'seed_fluxweed', price: 31, quantity: 3, dailyLimit: 1000, dailyRemaining: 4, overflowMultiplier: 5};
+ assert.deepEqual(P.quickFill(seed, 30, 2000), {packs: 10, cost: 4 * 31 + 6 * 31 * 5, short: 0}, 'past the daily price tier ×5');
+ assert.deepEqual(P.quickFill({price: 34, quantity: 2, dailyLimit: 1000}, 5, 100), {packs: 3, cost: 102, short: 2});
+ assert.equal(P.quickFill({...seed, forSale: false}, 3), null);
+ assert.equal(P.quickFill(null, 3), null);
+ assert.equal(P.quickFill(seed, 0), null);
+ const beds = P.bedTiles(pond(), NOW);
+ assert.deepEqual(P.plantCommands(beds, 'fluxweed').map(c => [c.bed, c.cells]), [[0, [1, 2]], [1, [0, 1, 2]]]);
+ assert.deepEqual(P.plantCommands(beds, 'fluxweed', 3).map(c => [c.bed, c.cells]), [[0, [1, 2]], [1, [0]]]);
+});
+
 test('fishing bar: the server triangle wave, bands and result labels', () => {
  const token = {at: NOW, periodMs: 1600, zone: [0.3, 0.7], sweet: [0.45, 0.55], expiresAt: NOW + 60000};
  assert.deepEqual([0, 400, 800, 1200, 1600, 2000].map(t => P.castPos(token, t)), [0, 0.5, 1, 0.5, 0, 0.5]);
@@ -89,7 +101,7 @@ test('the pond dock is the sow dock: one tray, one primary button that works the
  go().click(); await new Promise(r => setTimeout(r));
  assert.deepEqual(sent.splice(0).map(([cmd]) => cmd.lot), [0, 1, 2]);
  assert.ok(byId(dock, 'pondClean'));
- assert.deepEqual([byId(dock, 'pondCast').disabled, byId(dock, 'pondCast').textContent.trim()], [true, 'Câu']);
+ assert.deepEqual([byId(dock, 'pondCast').disabled, byId(dock, 'pondCast').textContent.trim()], [true, 'Đã câu']);
  ui.render({...ctx, pond: pond({lots: [{fry: 'carp', readyAt: NOW + H}]})});
  assert.equal(go().disabled, true);
  assert.equal(go().children.at(-1).attributes['data-until'], String(NOW + H), 'its timer ticks with tickTimers');

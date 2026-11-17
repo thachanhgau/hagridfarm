@@ -4,7 +4,7 @@ export {POND_SCENERY};
 // pond art paths. Everything comes from the server's snapshot.pond (HPVNN garden pond core); the server keeps every
 // number and rule, this module only shows them and sends {action:'pond', kind, …}.
 import {DB} from './balance-data.mjs?v=26.5';
-import {el, button, num, duration, itemDisplayName, itemArtKey, itemArtVisual, visualItemIcon, icon} from './ui-utils.mjs?v=26.5';
+import {el, button, num, duration, itemDisplayName, itemArtKey, itemArtVisual, visualItemIcon, icon, packTotal} from './ui-utils.mjs?v=26.5';
 import {pixelIcon, ICONS, costChips} from './pixel-icons.mjs?v=26.5';
 import {flowArtSpec} from './flow-item-ui.mjs?v=26.5';
 
@@ -64,6 +64,29 @@ export function bedCropChoices(pond, level, seeds = {}) {
  return (pond?.bedCrops || []).filter(id => CROP[id] && CROP[id].level <= level).map(id => ({id, label: CROP[id].label, seeds: Number(seeds[id]) || 0}));
 }
 
+/**
+ * «Mua & thả»/«Mua & gieo» (level 130+, the pond): the store packs that fill `slots` empty lots or cells from nothing,
+ * priced by the server's catalog row (sale, daily price tier). null when the store does not sell it now.
+ */
+export function quickFill(item, slots, galleons = Infinity) {
+ if (!item || !(slots > 0) || item.forSale === false || item.locked) return null;
+ const packs = Math.ceil(slots / item.quantity), cost = packTotal(item, packs);
+ return {packs, cost, short: Math.max(0, cost - galleons)};
+}
+
+/** Plant commands for up to `n` empty bed cells, bed by bed. */
+export function plantCommands(beds, species, n = Infinity) {
+ const commands = [];
+ let left = n;
+ for (const b of beds) {
+  if (!left || !b.empty.length) continue;
+  const cells = b.empty.slice(0, left);
+  left -= cells.length;
+  commands.push({action: 'pond', kind: 'plant', bed: b.index, cells, species});
+ }
+ return commands;
+}
+
 /** What the head buttons show. */
 export function pondActions(pond, now) {
  const lots = lotTiles(pond, now), beds = bedTiles(pond, now);
@@ -101,22 +124,37 @@ export function pondReceiptText(receipt) {
  * lưới»/«Gặt» take every ripe one (one server call), «Thả»/«Gieo» fill every empty lot or cell the stock covers (one call a
  * lot or bed). `render(ctx)` redraws it from ctx = {pond, state, level, now, seeds, creatures, buildChoice};
  * `act(command, text)` runs a server command (may return a promise); `openCast()` opens the fishing game; `care()` opens a
- * pond creature in Nuôi; `show(section)` picks fish, beds or creatures.
+ * pond creature in Nuôi; `show(section)` picks fish, beds or creatures. Out of fry or seeds with lots or cells free, the
+ * primary buys the packs (`buy(storeId, packs)` resolves true once paid; ctx.catalog, ctx.galleons) and fills them; the
+ * portrait shows the store price and `openStore(storeId)` opens the store on that item (creatures: their ration).
  */
-export function createPondDock({dock, items, act, openCast, care}) {
+export function createPondDock({dock, items, act, openCast, care, buy = null, openStore = null}) {
  let section = 'fish', fry = 'carp', crop = null, pet = null, working = false;
  const actionButton = (name, fallback, label, short, fn, {disabled = false, id} = {}) => {
   const b = button('', fn, {class: 'pond-tool', disabled, id, 'aria-label': label, title: label});
   b.append(px(name, fallback, 2), el('span', {text: short}));
   return b;
  };
- // Runs commands one after another; only the last toast stays.
- const runAll = async (commands, text) => {
+ // Runs commands one after another (after paying for `purchase` = [storeId, packs], if any); only the last toast stays.
+ const runAll = async (commands, text, purchase = null) => {
   if (working) return;
   working = true;
-  try {for (const [i, c] of commands.entries()) await act(c, i === commands.length - 1 ? text : '');}
+  try {
+   if (purchase && !(await buy(...purchase))) return;
+   for (const [i, c] of commands.entries()) await act(c, i === commands.length - 1 ? text : '');
+  }
   finally {working = false;}
  };
+
+ const storeItem = (ctx, id) => (ctx.catalog || []).find(i => i.id === id) || null;
+ // Nothing in stock, `slots` free: buy and fill in one tap, the total on the button; else say why on its face.
+ function quick(ctx, meta, label, fallback, storeId, slots, commands, what) {
+  const q = buy && quickFill(storeItem(ctx, storeId), slots, ctx.galleons);
+  if (!q) return {meta, label: fallback};
+  if (q.short) return {meta, label: `Thiếu ${num(q.short)} G`};
+  return {meta, label, price: q.cost, aria: `Mua ${num(q.packs)} gói rồi ${label.toLowerCase()} · ${num(q.cost)} G`,
+   go: () => runAll(commands, `${label} ${what} · −${num(q.cost)} G.`, [storeId, q.packs])};
+ }
 
  function digRow(ctx) {
   const {buildChoice: choice, now} = ctx, entry = POND_TIERS[0], job = (ctx.state.construction || []).find(j => j.id === entry.id);
@@ -136,9 +174,9 @@ export function createPondDock({dock, items, act, openCast, care}) {
  /** Tray chips: every fry, water crop and pond creature, with the stock count. */
  function choices(ctx) {
   const {pond} = ctx, counts = pond.fry || {}, list = [];
-  for (const [id, f] of Object.entries(FRY)) list.push({section: 'fish', id, label: f.label + ' giống', count: counts[id] || 0, art: size => fryIcon(items, id, size)});
-  if (pond.beds?.length) for (const c of bedCropChoices(pond, ctx.level, ctx.seeds)) list.push({section: 'beds', id: c.id, label: c.label, count: c.seeds, art: size => visualItemIcon(items, c.id, {size, kind: 'harvest'})});
-  if (pond.creatureSpots) for (const c of ctx.creatures || (ctx.creature ? [ctx.creature] : [])) list.push({section: 'creatures', id: c.species, label: c.label, count: c.have, creature: c,
+  for (const [id, f] of Object.entries(FRY)) list.push({section: 'fish', id, store: f.store, label: f.label + ' giống', count: counts[id] || 0, art: size => fryIcon(items, id, size)});
+  if (pond.beds?.length) for (const c of bedCropChoices(pond, ctx.level, ctx.seeds)) list.push({section: 'beds', id: c.id, store: 'seed_' + c.id, label: c.label, count: c.seeds, art: size => visualItemIcon(items, c.id, {size, kind: 'harvest'})});
+  if (pond.creatureSpots) for (const c of ctx.creatures || (ctx.creature ? [ctx.creature] : [])) list.push({section: 'creatures', id: c.species, store: c.feed, label: c.label, count: c.have, creature: c,
    art: size => (items?.has?.(c.species) ? icon(items, c.species, 3, size) : px('pond', 'water', 2))});
   return list;
  }
@@ -152,29 +190,22 @@ export function createPondDock({dock, items, act, openCast, care}) {
    const meta = `Ô ${lots.length - empty.length}/${lots.length}` + (ripe ? ` · chín ${ripe}` : '');
    if (ripe) return {meta, label: `Lưới ×${ripe}`, glyph: ['net', 'harvest'], go: () => act({action: 'pond', kind: 'net'}, 'Kéo lưới.')};
    if (n) return {meta, label: `Thả ×${n}`, glyph: ['pond', 'water'], go: () => runAll(empty.slice(0, n).map(l => ({action: 'pond', kind: 'stock', lot: l.index, fry: pick.id})), `Thả ${n} ${FRY[pick.id].label} giống.`)};
-   if (empty.length) return {meta, label: 'Hết giống'};
+   if (empty.length) return quick(ctx, meta, `Thả ×${empty.length}`, 'Hết giống', pick.store, empty.length,
+    empty.map(l => ({action: 'pond', kind: 'stock', lot: l.index, fry: pick.id})), pick.label);
    return {meta, wait: Math.min(...growing.map(l => l.readyAt)), timer};
   }
   if (pick.section === 'beds') {
    const beds = bedTiles(pond, now), ripe = beds.reduce((s, b) => s + b.ripe, 0), emptyCells = beds.reduce((s, b) => s + b.empty.length, 0);
    const cells = beds.length * 3, meta = `Luống ${beds.length} · ô ${cells - emptyCells}/${cells}` + (ripe ? ` · chín ${ripe}` : '');
    if (ripe) return {meta, label: `Gặt ×${ripe}`, glyph: ['harvest', 'harvest'], go: () => act({action: 'pond', kind: 'harvest'}, 'Gặt luống.')};
-   let left = pick.count;
-   const commands = [];
-   for (const b of beds) {
-    if (!left || !b.empty.length) continue;
-    const take = b.empty.slice(0, left);
-    left -= take.length;
-    commands.push({action: 'pond', kind: 'plant', bed: b.index, cells: take, species: pick.id});
-   }
-   const n = pick.count - left;
+   const commands = plantCommands(beds, pick.id, pick.count), n = commands.reduce((s, c) => s + c.cells.length, 0);
    if (n) return {meta, label: `Gieo ×${n}`, glyph: ['sow', 'seed'], go: () => runAll(commands, `Gieo ${n} ${CROP[pick.id].label}.`)};
-   if (emptyCells) return {meta, label: 'Hết hạt'};
+   if (emptyCells) return quick(ctx, meta, `Gieo ×${emptyCells}`, 'Hết hạt', pick.store, emptyCells, plantCommands(beds, pick.id), CROP[pick.id].label);
    const growing = beds.filter(b => b.readyAt);
    return growing.length ? {meta, wait: Math.min(...growing.map(b => b.readyAt)), timer} : {meta, label: 'Đầy'};
   }
-  const c = pick.creature;
-  return {meta: c.readyAt ? null : c.badge, metaNode: c.readyAt ? el('span', {'data-until': c.readyAt, 'data-prefix': c.badge + ' · ', text: c.badge}) : null,
+  const c = pick.creature, badge = `Phần ăn ${num(c.have)} · ${c.badge}`; // the tray count is the ration on hand
+  return {meta: c.readyAt ? null : badge, metaNode: c.readyAt ? el('span', {'data-until': c.readyAt, 'data-prefix': badge + ' · ', text: badge}) : null,
    label: 'Chăm', glyph: ['feed', 'feed'], go: c.locked ? null : () => care(c.species)};
  }
 
@@ -191,9 +222,15 @@ export function createPondDock({dock, items, act, openCast, care}) {
   let pick = mine.find(c => c.id === chosen[section]) || mine.find(c => c.count > 0) || mine[0];
   choose(pick);
   const p = plan(ctx, pick), a = pondActions(pond, now);
-  const go = button('', p.go || (() => {}), {class: 'primary pond-go', id: 'pondGo', disabled: !p.go});
+  const go = button('', p.go || (() => {}), {class: 'primary pond-go' + (p.price ? ' has-price' : ''), id: 'pondGo', disabled: !p.go, ...(p.aria ? {'aria-label': p.aria} : {})});
   if (p.glyph) go.append(px(p.glyph[0], p.glyph[1], 1));
   go.append(p.wait ? p.timer(p.wait) : el('span', {text: p.label}));
+  if (p.price) go.append(el('small', {class: 'pond-go-price'}, [px('coin', 'coin', 1), el('span', {text: `${num(p.price)} G`})]));
+  // Where it comes from: the portrait is the store's price tag (one pack) and opens the store on it.
+  const sold = openStore && storeItem(ctx, pick.store), unit = sold ? num(packTotal(sold, 1)) + ' G' : '';
+  const portrait = sold ? button('', () => openStore(pick.store), {class: 'dock-portrait pond-source', 'aria-label': `Cửa hàng · ${sold.label} · ${unit} một gói ${sold.quantity}`})
+   : el('div', {class: 'dock-portrait', 'aria-hidden': 'true'});
+  portrait.append(pick.art(48), ...(sold ? [el('b', {class: 'pond-price', 'aria-hidden': 'true', text: unit})] : []));
   const tray = el('div', {class: 'item-tray pond-tray', role: 'group', 'aria-label': 'Chọn cá giống, cây nước hoặc sinh vật · cuộn ngang'}, list.map(c => {
    const b = button('', () => {section = c.section; choose(c); render(ctx);},
     {'data-section': c.section, 'aria-pressed': String(c === pick), 'aria-label': `${c.label} · ${num(c.count)}`, title: c.label});
@@ -201,11 +238,11 @@ export function createPondDock({dock, items, act, openCast, care}) {
    return b;
   }));
   dock.replaceChildren(
-   el('div', {class: 'dock-portrait', 'aria-hidden': 'true'}, [pick.art(48)]),
+   portrait,
    el('div', {class: 'seed-caption'}, [el('strong', {text: pick.label}), p.metaNode || el('span', {text: p.meta})]),
    el('div', {class: 'pond-tools'}, [
     ...(a.murky ? [actionButton('algae', 'tired', 'Vớt rêu', 'Rêu', () => act({action: 'pond', kind: 'clean'}, 'Đã vớt rêu.'), {id: 'pondClean'})] : []),
-    actionButton('rod', 'quill', a.castOpen ? 'Câu cá' : 'Mai câu tiếp', 'Câu', () => openCast(), {disabled: !a.castOpen, id: 'pondCast'}),
+    actionButton('rod', 'quill', a.castOpen ? 'Câu cá' : 'Hôm nay đã câu · mai câu tiếp', a.castOpen ? 'Câu' : 'Đã câu', () => openCast(), {disabled: !a.castOpen, id: 'pondCast'}),
    ]),
    go,
    el('div', {class: 'seed-side'}, [tray]),

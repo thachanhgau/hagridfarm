@@ -550,7 +550,7 @@ const openSeedStore=ids=>openStore('seed',document.activeElement,[].concat(ids).
 makeTray($('seedTray'),DB.crops,id=>{selectCrop(id);if(connected&&wallet?.snapshot&&!(wallet.snapshot.garden?.supplies?.seeds?.[id]>0))openSeedStore(id);});
 // Item names (owner 13/11/2026): tray items and cost chips are icon-only — a mouse hover or a touch shows the name above the icon.
 const nameTip=el('div',{class:'name-tip',role:'tooltip',style:'display:none'});const hideNameTip=()=>{nameTip.style.display='none';};$('gameShell').append(nameTip);let nameTipTimer=0; // style, not `hidden`/class: the body observers (☰ placement) must not fire on every hover
-const tipTarget=e=>e.target.closest?.('#playDock :is(.dock-cost,.item-tray button)');
+const tipTarget=e=>e.target.closest?.('#playDock :is(.dock-cost,.item-tray:not(.pond-tray) button)'); // the Hồ caption names the tapped item; a tip there covered «Câu»
 const showNameTip=t=>{if(t.title){t.dataset.tip=t.title;t.removeAttribute('title');}const text=t.dataset.tip;if(!text)return; // the native title would show a second tooltip
  nameTip.textContent=text;nameTip.style.display='';const r=t.getBoundingClientRect(),w=nameTip.offsetWidth;
  nameTip.style.left=Math.round(Math.min(Math.max(6,r.left+r.width/2-w/2),innerWidth-w-6))+'px';nameTip.style.top=Math.round(Math.max(6,r.top-nameTip.offsetHeight-6))+'px';
@@ -823,7 +823,8 @@ $('craftTool').onclick=()=>setMode('craft');$('buildTool').onclick=()=>setMode('
 // snapshot.pond (server pond core); fishing is one tap a day. A tap on the built pond opens the dock.
 function currentPond(){return !activeTourSnapshot&&connected&&walletReady&&state.level>=POND_LEVEL?wallet.snapshot?.pond||null:null;}
 var serverOffset=0,pondDock,castGame; // var: refresh() may run before these lines
-pondDock=createPondDock({dock:$('pondDock'),items,act:(command,text)=>['net','harvest'].includes(command.kind)?pondCall(command).then(r=>{if(r.ok){audio.play('harvest');message(pondReceiptText(r.receipt?.pond)||text);}}):run(null,text,command),openCast:()=>castGame.open(),care:sp=>selectCreature(sp)});
+pondDock=createPondDock({dock:$('pondDock'),items,act:(command,text)=>['net','harvest'].includes(command.kind)?pondCall(command).then(r=>{if(r.ok){audio.play('harvest');message(pondReceiptText(r.receipt?.pond)||text);}}):run(null,text,command),openCast:()=>castGame.open(),care:sp=>selectCreature(sp),openStore:id=>openStore('all',document.activeElement,[id]),
+ buy:async(id,packs)=>{if(!walletReady||busy)return false;busy=true;try{const before=state;await wallet.buy(id,packs);audio.play('buy');acceptWallet(before,'');return true;}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'',false);}catch{}}showRefusal(e);return false;}finally{busy=false;}}}); // «Mua & gieo»: the store's own purchase, then the pond commands
 async function pondCall(command){const r=await serverClaim(command,null);if(r.ok)serverOffset=(wallet.snapshot?.serverNow??Date.now())-Date.now();return r;}
 castGame=createCastGame({host:$('gameShell')||document.body,items,serverNow:()=>Date.now()+serverOffset,
  start:async()=>{const running=currentPond()?.cast?.token;if(running&&running.expiresAt>Date.now()+serverOffset)return running;
@@ -837,7 +838,7 @@ function syncPond(){if(!pondDock)return;const pond=currentPond();$('pondTool').h
  const now=Date.now()+serverOffset,ripe=(pond.lots||[]).filter(l=>l&&(l.ripe||l.readyAt<=now)).length;$('pondReady').hidden=!ripe;$('pondReady').textContent=ripe;
  if(mode!=='pond')return;
  const owned=[...new Set(state.creatures.filter(e=>E.POND_SPECIES.has(e.species)).map(e=>e.species))],creatures=(owned.length?owned:['grindylow']).filter(sp=>CREATURE[sp]).map(sp=>{const g=petControlState({E,state,species:sp,now:logical()}),cfg=CREATURE[sp];return{species:sp,label:cfg.label,feed:cfg.feed,have:g.have,badge:g.badge,locked:g.phase==='locked',readyAt:g.phase==='eating'?g.animal.meal.readyAt:null};});
- pondDock.render({pond,state,level:state.level,now,seeds:wallet.snapshot.garden.supplies.seeds||{},
+ pondDock.render({pond,state,level:state.level,now,seeds:wallet.snapshot.garden.supplies.seeds||{},catalog:wallet.snapshot.catalog,galleons:getGalleons(),
   buildChoice:buildChoice(POND_TIERS[0],state,logical(),DB.expansions,getGalleons()),creatures});}
 // Garden expansion phase 3: the orchard dock (snapshot.orchard, null before edge_3); a tap on a tree opens it too.
 function currentOrchard(){return !activeTourSnapshot&&connected&&walletReady?wallet.snapshot?.orchard||null:null;}
