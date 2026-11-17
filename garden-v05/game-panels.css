@@ -805,3 +805,5 @@
 #gameShell #creatureMood .mood-nav.is-prev img{transform:rotate(90deg)}
 #gameShell #creatureMood .mood-nav.is-next img{transform:rotate(-90deg)}
 #gameShell #creatureMood .mood-nav[hidden]{display:none}
+/* Same frame for every pet; only the info changes (owner 17/11/2026: «khung nên cố định, đổi info thôi»). */
+#gameShell #creatureMood{height:min(760px,calc(100dvh - 24px))}

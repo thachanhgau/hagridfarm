@@ -1,4 +1,4 @@
-import {CREATURE_SLEEP_ART} from './creature-sleep-art.mjs?v=26.10';
+import {CREATURE_SLEEP_ART} from './creature-sleep-art.mjs?v=26.11';
 export const CREATURE_SLEEP_FILES=Object.freeze(Object.values(CREATURE_SLEEP_ART).flat().map(a=>a.file));
 // Presentation state only. Meals, cooldowns, saves and rewards continue on their normal clock.
 export function creatureRest({species,stage=3,night=false,event=null,guest=false}={}){

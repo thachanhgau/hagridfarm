@@ -1,4 +1,4 @@
-import {densityOf,deviceLine,snapRects} from './device-pixels.mjs?v=26.10';
+import {densityOf,deviceLine,snapRects} from './device-pixels.mjs?v=26.11';
 // Presentation boundary is separate from scenic grass and fixed gameplay slots.
 // Owner 27/10/2026: fences run on cell lines and paths along cell centres, one cell wide.
 export const FARM_BOUNDARY = Object.freeze([[-5.5,-.5],[-.5,-.5],[-.5,-3.5],[5.5,-3.5],[5.5,-.5],[33.5,-.5],[33.5,33.5],[-.5,33.5],[-2.5,31.5],[-2.5,9.5],[-5.5,9.5]]);

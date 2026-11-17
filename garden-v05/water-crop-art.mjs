@@ -1,4 +1,4 @@
-import {densityOf, deviceLine, fillAt} from './device-pixels.mjs?v=26.10';
+import {densityOf, deviceLine, fillAt} from './device-pixels.mjs?v=26.11';
 // «Cây nước» (owner 15/11/2026 «biến cái vườn thành nước»): the three water crops (server BED_CROPS, garden-pond-core.js)
 // grow straight out of water: a plot holding one draws a water bed, and Tảo bạc's authored tray is cut from its art.
 export const WATER_CROPS = Object.freeze(['silverkelp', 'gillyweed', 'fluxweed']);
