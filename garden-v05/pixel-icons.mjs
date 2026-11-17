@@ -1292,9 +1292,9 @@ export function setAction(buttonEl, {icon, label = '', count = '', text = label,
  * Cost chips for crafting, building and decorations: each item as icon + have/need,
  * then Galleons as a coin + price (`galleonShort` marks a wallet that cannot pay).
  */
-export function costChips(items, costs, galleons = 0, galleonShort = false) {
+export function costChips(items, costs, galleons = 0, galleonShort = false, size = 22) {
  const chips = costs.map(({id, have, need}) => el('span', {class: 'dock-cost' + (have < need ? ' is-short' : ''), 'aria-hidden': 'true'},
-  [visualItemIcon(items, id, {size: 22, kind: cropVisualKind(id)}), el('span', {text: `${num(have)}/${num(need)}`})]));
+  [visualItemIcon(items, id, {size, kind: cropVisualKind(id)}), el('span', {text: `${num(have)}/${num(need)}`})]));
  if (galleons) chips.push(el('span', {class: 'dock-cost is-galleons' + (galleonShort ? ' is-short' : ''), 'aria-hidden': 'true'}, [pixelIcon('coin', 1), el('span', {text: num(galleons)})]));
  return chips;
 }

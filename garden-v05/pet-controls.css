@@ -51,17 +51,20 @@
 .pet-tools-row{grid-column:1/-1;display:flex;align-items:center;gap:8px;min-width:0}
 #playDock #creatureDock #creatureStatus{flex:1 1 auto;min-width:0;margin:0;color:#d6d8bf;font-size:12px;line-height:16px;white-space:normal}
 #playDock #creatureDock #petHelp{flex:none;height:44px;min-height:44px;margin-left:auto;padding:0 12px;border:1px solid #b78535;border-radius:8px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:13px;font-weight:700;white-space:nowrap}
-/* Care icons: flat 44px cells, name in aria-label/title; the row scrolls sideways when the pet has many. */
+/* Care buttons (owner 17/11/2026 «chả hiểu là gì»): flat 44px cells, icon + stock on top, what it does underneath in one
+   line; the row scrolls sideways when the pet has many. */
 #playDock #creatureDock .pet-care-tools:not([hidden]){display:flex;flex:1 1 auto;align-items:center;gap:4px;min-width:0;overflow-x:auto;overflow-y:hidden;padding:0;border:0;scrollbar-width:thin;scrollbar-color:#b7853599 transparent}
-#playDock #creatureDock .pet-care-tools button{position:relative;display:grid;place-items:center;flex:0 0 44px;width:44px;min-width:44px;max-width:44px;height:44px;min-height:44px;margin:0;padding:0;border:0;border-radius:8px;background:#213c2e;box-shadow:none;color:#ffe5ab;transition:background-color .12s,transform .12s}
-.pet-care-glyph{position:relative;display:grid;place-items:center;width:32px;height:32px}
-#playDock .pet-care-glyph>.px-icon{width:32px;height:32px;margin:0;image-rendering:pixelated}
-#playDock .pet-care-glyph>.pet-care-mini{position:absolute;top:-2px;right:-4px;width:16px;height:16px}
-#playDock #creatureDock .pet-care-label{display:none}
-#playDock #creatureDock .pet-care-tools .pet-care-count{position:absolute;top:2px;right:2px;min-width:16px;padding:0 2px;border-radius:4px;background:#f0d89c;color:#243a2a;font-family:inherit;font-size:11px;font-weight:700;line-height:14px}
+#playDock #creatureDock .pet-care-tools button{display:flex;flex:0 0 auto;flex-direction:column;align-items:center;justify-content:center;gap:0;width:auto;min-width:52px;max-width:none;height:44px;min-height:44px;margin:0;padding:0 4px;border:0;border-radius:8px;background:#213c2e;box-shadow:none;color:#ffe5ab;transition:background-color .12s,transform .12s}
+.pet-care-top{display:flex;align-items:center;justify-content:center;gap:2px;height:24px}
+.pet-care-glyph{position:relative;display:grid;place-items:center;width:24px;height:24px}
+#playDock .pet-care-glyph>.px-icon{width:24px;height:24px;margin:0;image-rendering:pixelated}
+#playDock .pet-care-glyph>.visual-slot{width:24px;height:24px;border:0;box-shadow:none;background:none}
+#playDock .pet-care-glyph>.pet-care-mini{position:absolute;top:-2px;right:-4px;width:12px;height:12px}
+#playDock #creatureDock .pet-care-label{display:block;font-size:11px;line-height:16px;font-weight:700;color:#F5D69A;white-space:nowrap}
+#playDock #creatureDock .pet-care-count{font-size:11px;line-height:16px;font-weight:700;color:#A6B1AE;font-variant-numeric:tabular-nums;white-space:nowrap}
 #playDock #creatureDock .pet-care-tools button:disabled{background:#1a3025;opacity:1}
-#playDock #creatureDock .pet-care-tools button:disabled .pet-care-glyph{filter:saturate(.45) brightness(.8);opacity:.75}
-#playDock #creatureDock .pet-care-tools button:disabled .pet-care-count{background:#9ea98d;color:#182d21}
+#playDock #creatureDock .pet-care-tools button:disabled .pet-care-glyph{filter:saturate(.3) brightness(.75);opacity:.6}
+#playDock #creatureDock .pet-care-tools button:disabled :is(.pet-care-label,.pet-care-count){color:#7f8c87}
 #playDock #creatureDock .pet-care-tools button:not(:disabled):active{transform:scale(.97)}
 @media(hover:hover) and (pointer:fine){#playDock #creatureDock .pet-care-tools button:not(:disabled):hover{background:#2b4d3a}}
 @media(prefers-reduced-motion:reduce){#playDock #creatureDock .pet-care-tools button{transition:none}#playDock #creatureDock .pet-care-tools button:not(:disabled):active{transform:none}}

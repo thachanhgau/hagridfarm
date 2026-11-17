@@ -54,39 +54,41 @@ export function petFavourite(E,items,entry){
   [visualItemIcon(items,entry.favourite,{size:24,kind:'harvest'}),heart]);
 }
 
-// Keep the button nodes and their icons stable when stock/timers refresh.
+// Owner 17/11/2026 «chả hiểu là gì»: every care button names what it does under its icon; a supply shows its stock
+// beside the icon as plain text. Keep the button nodes and their icons stable when stock/timers refresh.
 export function renderPetCareButtons(items,supplies={}) {
  const actions=[
   ['petButton','Vuốt ve','Vuốt ve sinh vật','heart',null,'rose'],
   ['rotateCreatureButton','Xoay','Đổi hướng nhìn của sinh vật','replay',null,'sky'],
-  ['moodButton','Chăm bé','Chơi, chải lông, dạy trò','care',null,'rose'],
-  ['coatButton','Bộ lông','Đổi bộ lông hiếm (chỉ để ngắm)','festival',null,'violet'],
+  ['moodButton','Chăm bé','Chơi, chăm sóc, dạy trò','paw',null,'rose'],
+  ['coatButton','Màu hiếm','Đổi màu hiếm (chỉ để ngắm)','festival',null,'violet'],
   ['homeButton','Dời chuồng','Dời sang chuồng khác','pen',null,'leaf'],
   ['affinityButton','Gắn kết','Quà gắn kết','chest',null,'gold'],
-  ['mealBoostButton','Nước phép','Nước phép','boost','boost','sky'],
-  ['premium-prime_meal','Thượng hạng','Bữa thượng hạng','prime_meal','primeMeal','amber'],
-  ['premium-skele_gro','Mọc Xương','Mọc Xương','skele_gro','skeleGro','violet'],
-  ['premium-pen_feast','Tiệc chuồng','Tiệc chuồng','pen_feast','feast','leaf'],
+  ['mealBoostButton','Ăn nhanh','Nước phép: bữa ăn xong sớm hơn 1/4','boost','boost','sky'],
+  ['premium-prime_meal','Xong bữa','Bữa thượng hạng: bé xong bữa ngay','prime_meal','primeMeal','amber'],
+  ['premium-skele_gro','Lớn nhanh','Mọc Xương: thêm 3 bữa vào đường trưởng thành','skele_gro','skeleGro','violet'],
+  ['premium-pen_feast','Xong cả chuồng','Tiệc chuồng: mọi sinh vật đang ăn xong bữa ngay','pen_feast','feast','leaf'],
  ];
  for(const [id,label,name,art,supply,tone] of actions) {
   const control=$(id);if(!control)continue;
   if(!control.dataset.careIcon){
    const glyph=el('span',{class:'pet-care-glyph','aria-hidden':'true'},
-    supply?visualItemIcon(items,art,{size:28}):pixelIcon(art,2));
+    supply?visualItemIcon(items,art,{size:24}):pixelIcon(art,2));
    if(id==='affinityButton'){
     const heart=pixelIcon('heart',1);heart.classList.add('pet-care-mini');glyph.append(heart);
    }
-   control.replaceChildren(glyph,el('span',{class:'pet-care-label',text:label}));
+   const top=el('span',{class:'pet-care-top','aria-hidden':'true'},[glyph]);
+   if(supply)top.append(el('small',{class:'pet-care-count'}));
+   control.replaceChildren(top,el('span',{class:'pet-care-label','aria-hidden':'true',text:label}));
    control.dataset.careIcon=art;control.dataset.careTone=tone;
-   if(supply)control.append(el('b',{class:'pet-care-count','aria-hidden':'true'}));
-   else control.title=name;
+   if(!supply)control.title=name;
   }
   const count=supply?Number(supplies[supply]||0):null;
   if(supply){
-   const badge=control.querySelector('.pet-care-count');
-   if(badge.textContent!=='×'+count)badge.textContent='×'+count;
+   const stock=control.querySelector('.pet-care-count');
+   if(stock.textContent!=='×'+count)stock.textContent='×'+count;
   }
-  control.setAttribute('aria-label',name+(supply?' · còn '+count:''));
+  control.setAttribute('aria-label',label+' · '+name+(supply?' · còn '+count:''));
  }
 }
 
