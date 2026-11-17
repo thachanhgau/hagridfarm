@@ -4,7 +4,8 @@ import {setAction,pixelIcon,ICONS} from './pixel-icons.mjs?v=26.5';
 // A species whose sprite has not shipped yet (phase 2 before the creatures-art-2 merge) shows the paw icon.
 export const petIcon=(items,id,size)=>{const w=icon(items,id,3,size);if(w.classList?.contains('is-art-missing'))w.append(pixelIcon(ICONS.paw?'paw':'pen',Math.max(1,Math.floor(size/16))));return w;};
 
-export const petFoodText=view=>`Thức ăn: có ${num(view.have)} phần${view.need>0&&!['eating','ready'].includes(view.phase)?` · cần ${num(view.need)} phần`:''}`;
+// Data, not a sentence: «Thức ăn 0/2» (have/need, in portions) while a meal or adoption is pending, else the stock.
+export const petFoodText=view=>`Thức ăn ${num(view.have)}${view.need>0&&!['eating','ready'].includes(view.phase)?'/'+num(view.need):''}`;
 
 // Read the same costs and timestamps as the engine; deriving a control never edits a save.
 export function petControlState({E,state,species,now,ready=true}) {
@@ -120,7 +121,7 @@ export function setupPetControls({E,items,canMoveHome=()=>false,getMood=()=>null
   const {animal,config}=view;
   if(animal&&!previousOwned)group='owned';
   previousOwned=!!animal;
-  $('petOwnedTab').textContent=`Đang nuôi (${state.creatures.length})`;
+  $('petOwnedTab').textContent=`Đang nuôi ${state.creatures.length}`;
   $('petOwnedTab').setAttribute('aria-pressed',group==='owned');
   $('petAdoptTab').setAttribute('aria-pressed',group==='adopt');
   $('petHousing').textContent=`${view.housed}/${view.capacity} chỗ`;
@@ -158,7 +159,8 @@ export function setupPetControls({E,items,canMoveHome=()=>false,getMood=()=>null
   $('petFood').textContent=petFoodText(view);
   $('petFood').classList.toggle('is-short',!!view.shortage&&!animal?.meal);
   $('creatureStatus').textContent=view.hint;
-  $('creatureStatus').hidden=!!animal&&['hungry','eating','ready'].includes(view.phase);
+  // Owned pets and a food shortage already read from the food line and the action; the hint stays for what blocks an adoption.
+  $('creatureStatus').hidden=!!animal||view.phase==='no-food';
   $('petButton').hidden=!animal;
   $('petButton').disabled=!getReady();
   if($('rotateCreatureButton'))$('rotateCreatureButton').hidden=!animal;

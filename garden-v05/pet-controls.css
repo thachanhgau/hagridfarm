@@ -1,96 +1,89 @@
-/* A compact pet menu, sharing one native horizontal tray for care actions. */
+/* Nuôi (owner 17/11/2026 «menu to quá che hết 50% màn hình»): four flat rows in one frame, ≤ 1/3 of a phone screen.
+   1 segmented tabs · chỗ · Tất cả   2 pet tiles   3 portrait · name · state · food | main action   4 care icons (or the
+   adoption hint) | «Tạo»/«Mua thức ăn». No dividers, no boxes, no explaining line; 4px grid, ≥12px text, 44px actions. */
 #playDock.pet-mode{width:min(660px,calc(100% - 20px));max-width:660px}
-#playDock #creatureDock.pet-dock{display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:8px;min-width:0;background:#10261ef7}
-.pet-top,.pet-top-end,.pet-tabs,.pet-condition{display:flex;align-items:center;gap:6px}
-.pet-top{justify-content:space-between}
-.pet-tabs{gap:2px;padding:0;background:#081b15;border:1px solid #667d62;border-radius:5px}
-#playDock .pet-tabs button{min-height:44px;padding:6px 10px;border:0;border-radius:3px;background:transparent;color:#d6d8bf;font:inherit;font-size:12px;font-weight:700}
-#playDock .pet-tabs button[aria-pressed=true]{background:#e6cd92;color:#192e24;box-shadow:inset 0 -2px #b2995e}
-#petHousing{font-size:11px;color:#d6d8bf;white-space:nowrap}
-#playDock #careAllButton{min-width:44px;min-height:44px;padding:6px 8px;border:1px solid #667d62;border-radius:4px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:11px}
-#playDock .pet-list{display:flex;gap:5px;overflow-x:auto;min-width:0;padding:2px 2px 3px;scroll-padding:2px}
-#playDock .pet-list .pet-card{display:flex;flex:0 0 auto;align-items:center;gap:6px;width:auto;min-width:112px;height:44px;min-height:44px;padding:3px 8px;background:#182f26;border:1px solid #66816c;border-radius:4px;text-align:left;color:#f8efd8;box-shadow:none}
-#playDock .pet-list .pet-card[aria-pressed=true]{background:#345440;border-color:#f3d593;box-shadow:0 0 0 1px #f3d593}
-#playDock .pet-list .sprite-icon{flex-shrink:0;margin:0;transform:none}
-.pet-card-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
-.pet-card-name{font-size:12px;font-weight:700;white-space:nowrap}
-.pet-card-state{font-size:11px;color:#d6d8bf;white-space:nowrap}
-#playDock .pet-list .pet-card[data-phase=ready] .pet-card-state{color:#ffe39f}
-.pet-detail{display:grid;grid-template-columns:minmax(145px,1fr) minmax(170px,1.3fr) 104px;align-items:center;gap:10px;border-top:1px solid #536c57;padding-top:7px}
-.pet-identity{display:flex;align-items:center;gap:8px;min-width:0}
-#petPortrait{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;box-sizing:border-box;border:1px solid #61775e;background:#213c2e;border-radius:5px}
+#playDock #creatureDock.pet-dock:not([hidden]){display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:8px;min-width:0;background:#10261ef7}
+#playDock #creatureDock>*{min-width:0}
+/* Row 1 */
+#playDock #creatureDock .pet-top{display:flex;align-items:center;gap:8px}
+#playDock #creatureDock .pet-tabs{display:flex;flex:0 1 320px;min-width:0;gap:0;padding:2px;border:1px solid #536c57;border-radius:8px;background:#081b15}
+#playDock #creatureDock .pet-tabs button{flex:1 1 0;min-width:0;height:36px;min-height:36px;padding:0 4px;border:0;border-radius:6px;background:transparent;box-shadow:none;color:#d6d8bf;font:inherit;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+#playDock #creatureDock .pet-tabs button[aria-pressed=true]{background:#e6cd92;color:#192e24}
+#playDock #creatureDock .pet-top-end{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
+#playDock #creatureDock #petHousing{font-size:12px;font-weight:700;color:#d6d8bf;white-space:nowrap;font-variant-numeric:tabular-nums}
+#playDock #creatureDock #careAllButton{height:40px;min-height:40px;min-width:0;padding:0 8px;border:1px solid #667d62;border-radius:8px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:13px;font-weight:700;white-space:nowrap}
+/* Row 2: separate flat cells, the picked one gets the only gold ring. */
+#playDock #creatureDock .pet-list{display:flex;gap:4px;overflow-x:auto;overflow-y:hidden;min-width:0;padding:0;scrollbar-width:thin;scrollbar-color:#b7853599 transparent}
+#playDock #creatureDock .pet-card{position:relative;display:flex;flex:0 0 56px;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:56px;min-width:56px;height:56px;min-height:56px;padding:2px;border:0;border-radius:8px;background:#213c2e;box-shadow:none;color:#f8efd8}
+#playDock #creatureDock .pet-card[aria-pressed=true]{background:#345440;box-shadow:inset 0 0 0 2px #f3d593}
+#playDock #creatureDock .pet-card .sprite-icon{flex-shrink:0;margin:0;transform:none}
+#playDock #creatureDock .pet-card-name{display:none}
+#playDock #creatureDock .pet-card-state{font-size:12px;line-height:14px;font-weight:700;color:#d6d8bf;white-space:nowrap}
+#playDock #creatureDock .pet-card-state:empty{display:none}
+/* «Đón thêm» tab: «Chưa đón» on every tile repeats the tab name (still in aria-label); a locked tile keeps «Cấp N». */
+#playDock #creatureDock .pet-card:is([data-phase=adopt],[data-phase=no-food],[data-phase=no-space]) .pet-card-state{display:none}
+#playDock #creatureDock .pet-card[data-phase=ready] .pet-card-state{color:#ffe39f}
+/* Rows 3–4 */
+#playDock #creatureDock .pet-detail:not([hidden]){display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding:0;border:0}
+.pet-identity{position:relative;display:flex;align-items:center;gap:8px;min-width:0}
+#playDock #creatureDock #petPortrait{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;box-sizing:border-box;border:0;border-radius:8px;background:#213c2e}
 #petPortrait .sprite-icon{margin:0;transform:none;flex-shrink:0}
-.pet-heading{display:flex;flex-direction:column;gap:4px;min-width:0}
-#creatureName{font-size:15px;line-height:1.2;color:#ffe2a7;overflow-wrap:anywhere}
+/* Growth bar sits on the portrait's lower edge instead of taking its own line. */
+#playDock #creatureDock #petProgress{position:absolute;left:4px;bottom:4px;width:40px;height:4px;margin:0;accent-color:#e6cd92}
+.pet-heading{display:flex;flex-direction:column;gap:0;min-width:0}
+#playDock #creatureDock #creatureName{display:block;font-size:16px;line-height:20px;color:#ffe2a7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#playDock #creatureDock :is(#creatureTime,.pet-condition){display:flex;gap:8px;font-size:12px;line-height:16px;color:#d6d8bf;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+#playDock #creatureDock #petBadge{display:none}
+#playDock #creatureDock #petTimer{color:#ffe39f}
+#playDock #creatureDock #petFood.is-short{color:#ffc3a5}
 .pet-favourite-slot{flex:0 0 auto}
-.pet-favourite{position:relative;display:grid;place-items:center;width:32px;height:32px;box-sizing:border-box;border:1px solid #61775e;border-radius:4px;background:#213c2e}
+.pet-favourite{position:relative;display:grid;place-items:center;width:32px;height:32px;box-sizing:border-box;border:0;border-radius:8px;background:#213c2e}
 .pet-favourite .sprite-icon{margin:0;transform:none}
 .pet-favourite-heart{position:absolute;right:-4px;bottom:-4px;filter:grayscale(1) brightness(.7)}
 .pet-favourite.is-fed .pet-favourite-heart{filter:none}
-#creatureTime{font-size:11px;color:#d6d8bf;line-height:1.3}
-#petProgress{width:100%;height:5px;accent-color:#e6cd92}
-.pet-care{display:flex;flex-direction:column;gap:4px;min-width:0}
-.pet-condition{flex-wrap:wrap;gap:4px 8px}
-#petBadge{font-size:12px;color:#f8efd8}
-#petBadge[data-phase=ready]{color:#ffe39f}
-#petTimer{font-size:11px;color:#ffe39f;font-variant-numeric:tabular-nums}
-#petFood{font-size:11px;color:#d6d8bf;line-height:1.4}
-#petFood.is-short{color:#ffc3a5}
-#creatureDock #creatureStatus{margin:0;color:#d6d8bf;font-size:11px;line-height:1.4;white-space:normal}
-.pet-actions{display:flex;flex-direction:column;gap:5px}
-#playDock #creatureDock .pet-actions .primary{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;min-width:0;min-height:48px;height:auto;padding:8px 6px;background:#e6cd92;color:#162c20;border:1px solid #ffe2a7;box-shadow:inset 0 -2px #b2995e;border-radius:4px;font-size:13px;white-space:nowrap}
-#playDock .pet-actions .action-count{position:static;min-width:0;height:auto;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-size:11px;box-shadow:none}
-#playDock #creatureDock .pet-actions .primary:disabled{background:#294535;color:#ced6c1;border-color:#68816c;box-shadow:none;opacity:1}
-#playDock #petHelp{min-height:44px;padding:6px;border:1px solid #829371;border-radius:4px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:11px}
-.pet-care-tools{display:flex;align-items:center;gap:5px;overflow-x:auto;min-width:0;border-top:1px solid #536c57;padding:4px 1px 1px;scroll-padding:1px}
-#playDock .pet-care-tools button{position:relative;display:grid;grid-template-rows:32px auto;justify-items:center;align-content:center;gap:3px;flex:1 0 76px;max-width:88px;min-width:76px;min-height:66px;margin:0;padding:5px 4px 6px;border:1px solid #bca36d;border-radius:6px;background:linear-gradient(#365548,#213b30);color:#ffe5ab;font:inherit;font-size:10px;line-height:1.25;white-space:nowrap;box-shadow:inset 0 1px #d8e5b64a,inset 0 -3px #10261e,0 2px 0 #081b15;transition:transform .12s ease,border-color .12s ease,background .12s ease}
-.pet-care-glyph{position:relative;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:radial-gradient(ellipse,var(--care-glow,#d6ad5c55),transparent 72%);filter:drop-shadow(0 2px 0 #071b16);transition:transform .12s ease}
+#playDock #creatureDock .pet-actions{display:flex;gap:8px}
+#playDock #creatureDock .pet-actions .primary{display:flex;align-items:center;justify-content:center;gap:4px;width:auto;min-width:104px;height:44px;min-height:44px;padding:0 12px;background:#e6cd92;color:#162c20;border:0;border-radius:8px;box-shadow:inset 0 -2px #b2995e;font:inherit;font-size:13px;font-weight:700;white-space:nowrap;text-shadow:none}
+#playDock #creatureDock .pet-actions .primary:after{content:none}
+#playDock #creatureDock .pet-actions .primary:disabled{background:#294535;color:#ced6c1;box-shadow:inset 0 0 0 1px #68816c;opacity:1;filter:none}
+#playDock #creatureDock .pet-actions .action-label{white-space:nowrap}
+#playDock #creatureDock .pet-actions .action-count{position:static;min-width:0;height:auto;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-size:12px;box-shadow:none}
+#playDock #creatureDock .pet-actions .is-hand-feed .action-label{font-size:12px} /* «Cho ăn tận tay» (phase 2), one line */
+.pet-tools-row{grid-column:1/-1;display:flex;align-items:center;gap:8px;min-width:0}
+#playDock #creatureDock #creatureStatus{flex:1 1 auto;min-width:0;margin:0;color:#d6d8bf;font-size:12px;line-height:16px;white-space:normal}
+#playDock #creatureDock #petHelp{flex:none;height:44px;min-height:44px;margin-left:auto;padding:0 12px;border:1px solid #b78535;border-radius:8px;background:#213c2e;color:#ffe2a7;font:inherit;font-size:13px;font-weight:700;white-space:nowrap}
+/* Care icons: flat 44px cells, name in aria-label/title; the row scrolls sideways when the pet has many. */
+#playDock #creatureDock .pet-care-tools:not([hidden]){display:flex;flex:1 1 auto;align-items:center;gap:4px;min-width:0;overflow-x:auto;overflow-y:hidden;padding:0;border:0;scrollbar-width:thin;scrollbar-color:#b7853599 transparent}
+#playDock #creatureDock .pet-care-tools button{position:relative;display:grid;place-items:center;flex:0 0 44px;width:44px;min-width:44px;max-width:44px;height:44px;min-height:44px;margin:0;padding:0;border:0;border-radius:8px;background:#213c2e;box-shadow:none;color:#ffe5ab;transition:background-color .12s,transform .12s}
+.pet-care-glyph{position:relative;display:grid;place-items:center;width:32px;height:32px}
 #playDock .pet-care-glyph>.px-icon{width:32px;height:32px;margin:0;image-rendering:pixelated}
-#playDock .pet-care-glyph>.pet-care-mini{position:absolute;top:-1px;right:-5px;width:16px;height:16px}
-.pet-care-label{font-weight:700;text-shadow:0 1px #10261e}
-#playDock .pet-care-tools .pet-care-count{position:absolute;top:3px;right:3px;min-width:18px;padding:1px 3px;border:1px solid #b89d64;border-radius:4px;background:#f0d89c;color:#243a2a;font-family:inherit;font-size:11px;font-weight:700;line-height:13px;text-shadow:none;box-shadow:0 1px #10261e}
-[data-care-tone=rose]{--care-glow:#f593c07a}
-[data-care-tone=sky]{--care-glow:#8adbf07a}
-[data-care-tone=gold]{--care-glow:#ffd26f88}
-[data-care-tone=amber]{--care-glow:#ffa76e88}
-[data-care-tone=violet]{--care-glow:#c9a1ff88}
-[data-care-tone=leaf]{--care-glow:#bbdf7a88}
-#playDock .pet-care-tools button:disabled{color:#c5cfbb;background:linear-gradient(#294035,#1a3025);border-color:#6b7d64;box-shadow:inset 0 1px #bdcba72b,inset 0 -2px #10261e,0 1px #081b15;opacity:1}
-#playDock .pet-care-tools button:disabled .pet-care-glyph{filter:saturate(.45) brightness(.8);opacity:.75}
-#playDock .pet-care-tools button:disabled .pet-care-count{background:#9ea98d;border-color:#78886c;color:#182d21}
-#playDock .pet-care-tools button:not(:disabled):active{transform:translateY(2px);box-shadow:inset 0 2px 3px #071b1688}
-@media(hover:hover) and (pointer:fine){
- #playDock .pet-care-tools button:not(:disabled):hover{border-color:#ffe8b1;background:linear-gradient(#476a50,#2b4d3a);transform:translateY(-2px)}
- #playDock .pet-care-tools button:not(:disabled):hover .pet-care-glyph{transform:rotate(-6deg) scale(1.08)}
-}
-@media(prefers-reduced-motion:reduce){
- #playDock .pet-care-tools button,#playDock .pet-care-glyph{transition:none}
- #playDock .pet-care-tools button:not(:disabled):hover,#playDock .pet-care-tools button:not(:disabled):active,#playDock .pet-care-tools button:not(:disabled):hover .pet-care-glyph{transform:none}
-}
+#playDock .pet-care-glyph>.pet-care-mini{position:absolute;top:-2px;right:-4px;width:16px;height:16px}
+#playDock #creatureDock .pet-care-label{display:none}
+#playDock #creatureDock .pet-care-tools .pet-care-count{position:absolute;top:2px;right:2px;min-width:16px;padding:0 2px;border-radius:4px;background:#f0d89c;color:#243a2a;font-family:inherit;font-size:11px;font-weight:700;line-height:14px}
+#playDock #creatureDock .pet-care-tools button:disabled{background:#1a3025;opacity:1}
+#playDock #creatureDock .pet-care-tools button:disabled .pet-care-glyph{filter:saturate(.45) brightness(.8);opacity:.75}
+#playDock #creatureDock .pet-care-tools button:disabled .pet-care-count{background:#9ea98d;color:#182d21}
+#playDock #creatureDock .pet-care-tools button:not(:disabled):active{transform:scale(.97)}
+@media(hover:hover) and (pointer:fine){#playDock #creatureDock .pet-care-tools button:not(:disabled):hover{background:#2b4d3a}}
+@media(prefers-reduced-motion:reduce){#playDock #creatureDock .pet-care-tools button{transition:none}#playDock #creatureDock .pet-care-tools button:not(:disabled):active{transform:none}}
 #playDock .pet-dock button:focus-visible{outline:2px solid #fff0c2;outline-offset:2px}
-.pet-empty{margin:4px 0;color:#d6d8bf;font-size:12px;line-height:1.5}
-@media(max-width:600px){
- #playDock .pet-care-tools button{flex-grow:0}
- #playDock .pet-tabs button{padding:5px 8px;font-size:11px}
- .pet-top-end{gap:4px}
- #petHousing{font-size:11px}
- .pet-detail{grid-template-columns:minmax(0,1fr) 100px;gap:6px 10px}
- .pet-identity{grid-column:1;grid-row:1}
- .pet-care{grid-column:1;grid-row:2}
- .pet-actions{grid-column:2;grid-row:1/3}
- #creatureName{font-size:14px}
- #petFood{font-size:11px}
- #petBadge{display:none}
- .pet-condition:not([data-phase=eating]){display:none}
- #playDock #creatureDock .pet-actions .primary{font-size:12px}
+.pet-empty{margin:0;color:#d6d8bf;font-size:12px;line-height:16px}
+/* Phones: no scrollbar strip under the sideways rows. */
+@media(max-width:600px),(pointer:coarse){#playDock #creatureDock :is(.pet-list,.pet-care-tools){scrollbar-width:none}#playDock #creatureDock :is(.pet-list,.pet-care-tools)::-webkit-scrollbar{display:none}}
+/* Narrowest phones (360px): tabs and the main action give back a few pixels instead of an ellipsis. */
+@media(max-width:374px){#playDock #creatureDock .pet-tabs button{font-size:12px}#playDock #creatureDock .pet-actions .primary{padding:0 8px}}
+/* Wide (desktop, phone landscape): portrait · care icons · action share one row. */
+@media(min-width:720px){
+ #playDock #creatureDock .pet-detail:not([hidden]){grid-template-columns:auto minmax(0,1fr) auto}
+ #playDock #creatureDock .pet-identity{grid-column:1;grid-row:1;min-width:160px;max-width:240px}
+ #playDock #creatureDock .pet-tools-row{grid-column:2;grid-row:1}
+ #playDock #creatureDock .pet-actions{grid-column:3;grid-row:1}
 }
+/* Short landscape: smaller tiles so the dock stays clear of the HUD. */
 @media(max-height:480px) and (min-width:600px){
  #playDock.pet-mode{width:min(660px,calc(100% - 124px))}
- #playDock #creatureDock.pet-dock{gap:4px;padding:6px 8px}
- #playDock .pet-list{padding-bottom:2px}
- #playDock .pet-list .pet-card{height:44px;min-height:44px;padding:3px 7px}
- .pet-detail{padding-top:4px;gap:8px}
- .pet-care-tools{padding-top:4px}
+ #playDock #creatureDock.pet-dock:not([hidden]){gap:4px;padding:4px 8px}
+ #playDock #creatureDock .pet-card{flex-basis:48px;width:48px;min-width:48px;height:48px;min-height:48px}
+ #playDock #creatureDock .pet-card .pet-card-state{display:none}
 }
 /* «Dời chuồng» (creature-homes.mjs, owner 16/11/2026 «gọn»): pens in a grid, each spot a tile with the occupant's portrait. */
 #gameShell #creatureHomes{width:min(760px,calc(100% - 28px))}

@@ -16,8 +16,8 @@ test('adoption explains level, capacity, starter grant and exact preparation cos
   state = E.testProfile(22, T0);
   const puff = view(state);
   assert.equal(puff.need, 0);
-  assert.equal(petFoodText(puff), `Thức ăn: có ${new Intl.NumberFormat('vi-VN').format(puff.have)} phần`);
-  assert.equal(petFoodText({have:1002,need:3,phase:'hungry'}), 'Thức ăn: có 1.002 phần · cần 3 phần');
+  assert.equal(petFoodText(puff), `Thức ăn ${new Intl.NumberFormat('vi-VN').format(puff.have)}`);
+  assert.equal(petFoodText({have:1002,need:3,phase:'hungry'}), 'Thức ăn 1.002/3');
   assert.equal(puff.canAct, true);
   const config = E.CREATURE.bowtruckle;
   state.inventory[config.feed] = config.mealPortions * 3 - 1;
