@@ -80,7 +80,7 @@ test('capacity fixture covers the authored full garden and actual three-hero sav
   assert.equal(scene.pens.length, 6);
   assert.equal(earnedIds.length, 29);
   assert.equal(Object.keys(keepsakes).length, 16); // + one phase 3 keepsake; + Chó đuôi nĩa, Nhím quậy, Kỳ nhông lửa (garden expansion phase 2)
-  assert.equal(storeItems.length, 167); // 25.0 S2: Lều gia tinh, Góc bếp; S7: the six Noel pieces, Cây thông nhà vô địch
+  assert.equal(storeItems.length, 267); // 25.0 S2: Lều gia tinh, Góc bếp; S7: the six Noel pieces, Cây thông nhà vô địch
   assert.equal(capacitySpots.length, 5132);
   assert.deepEqual(Object.keys(heroDecorations).sort(), ['owned', 'placements', 'positions', 'rotations']);
   assert.deepEqual(heroDecorations.owned, heroIds);
@@ -96,8 +96,8 @@ test('every store decoration and facing has capacity against the full garden wit
   for (const item of storeItems) {
     for (const facing of ['default', 'right']) records.push(evaluateCapacity(item, facing, state, emptyStoreDecorations));
   }
-  assert.equal(records.length, 334); // S7 part 2: Cây thông nhà vô địch, two facings
-  assert.equal(new Set(records.map(record => record.id)).size, 167);
+  assert.equal(records.length, 534); // S7 part 2: Cây thông nhà vô địch, two facings
+  assert.equal(new Set(records.map(record => record.id)).size, 267);
   assert.deepEqual(new Set(records.map(record => record.facing)), new Set(['default', 'right']));
   for (const record of records) {
     const blocked = Object.values(record.blocked).reduce((sum, count) => sum + count, 0);

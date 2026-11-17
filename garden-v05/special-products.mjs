@@ -1,3 +1,4 @@
+import {SOFT_WINTER_ROWS} from './soft-winter-products.mjs?v=26.5';
 // «Sản phẩm đặc biệt»: 30 decorations from the books (art and lore: special-products-assets/manifest.json,
 // runtime sprites in decor-assets-manifest.json). Decoration only: no XP, yield, power or reward.
 // Owner 04/11/2026 (big update 25.0 S1): on sale at the §3 prices (garden-store-catalog storePrice); the HPVN server
@@ -196,6 +197,7 @@ const FESTIVAL_ROWS = [
   ["nh_ravenclaw_eagle_music_harp", "Đàn hạc cánh đại bàng", 4800, [2, 1], "Đàn hạc cánh đại bàng trong bộ Noel nhà Ravenclaw.", "xmas", "ravenclaw"],
   ["nh_ravenclaw_celestial_globe", "Quả cầu thiên văn lam đồng", 3400, [1, 1], "Quả cầu thiên văn lam đồng trong bộ Noel nhà Ravenclaw.", "xmas", "ravenclaw"],
 
+  ...SOFT_WINTER_ROWS,
 ];
 export const FESTIVAL_PRODUCTS = Object.freeze(FESTIVAL_ROWS.map(([id, label, price, footprint, lore, season, house], index) => Object.freeze({
   id, kind: 'decoration', collection: FESTIVAL_COLLECTION, decorationId: id, icon: id, label, level: 1, price, quantity: 1, dailyLimit: 1,
