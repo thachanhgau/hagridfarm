@@ -61,7 +61,7 @@ export function renderPetCareButtons(items,supplies={}) {
   ['petButton','Vuốt ve','Vuốt ve sinh vật','heart',null,'rose'],
   ['rotateCreatureButton','Xoay','Đổi hướng nhìn của sinh vật','replay',null,'sky'],
   ['moodButton','Chăm bé','Chơi, chăm sóc, dạy trò','paw',null,'rose'],
-  ['coatButton','Màu hiếm','Đổi màu hiếm (chỉ để ngắm)','festival',null,'violet'],
+  ['coatButton','Màu hiếm','Đổi màu hiếm (chỉ để ngắm)','star',null,'violet'],
   ['homeButton','Dời chuồng','Dời sang chuồng khác','pen',null,'leaf'],
   ['affinityButton','Gắn kết','Quà gắn kết','chest',null,'gold'],
   ['mealBoostButton','Ăn nhanh','Nước phép: bữa ăn xong sớm hơn 1/4','boost','boost','sky'],
