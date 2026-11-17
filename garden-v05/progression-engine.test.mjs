@@ -303,6 +303,10 @@ test('crafting uses one timed job per station and claims only after ready', () =
   const malformedJob = structuredClone(state);
   malformedJob.jobs[0].batches = 2;
   codeOf(() => restoreChecked(malformedJob, NOW), 'INVALID_STATE');
+  // A station renamed after the job started (17/11/2026 «Ao cá» → «Bể ươm cá») keeps the save readable.
+  const renamedStation = structuredClone(state);
+  renamedStation.jobs[0].station = 'Tên trạm cũ';
+  assert.equal(restoreChecked(renamedStation, NOW).jobs[0].station, state.jobs[0].station);
   codeOf(() => craft(state, 'insects_alt', 1, NOW), 'STATION_BUSY');
   codeOf(() => claimCraft(state, NOW), 'NOT_READY');
   state = advanceTime(state, 3 * HOUR);

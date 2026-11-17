@@ -525,7 +525,8 @@ function normalizeJobs(raw, level) {
     if (recipe.level > level) reject('LOCKED_RECIPE', `job recipe ${recipeId} is above current level`);
     if (recipe.hours <= 0) reject('INVALID_STATE', 'instant recipes cannot be queued');
     if (stations.has(recipe.station)) reject('STATION_BUSY', `only one timed job may run at ${recipe.station}`);
-    if (job.station !== recipe.station || job.output !== recipe.output || job.count !== recipe.count) reject('INVALID_STATE', 'craft job does not match recipe data');
+    // `station` is only the recipe's label, rewritten below: a renamed station (17/11/2026 «Ao cá» → «Bể ươm cá») must not reject running jobs.
+    if (job.output !== recipe.output || job.count !== recipe.count) reject('INVALID_STATE', 'craft job does not match recipe data');
     const batches = assertSafeInteger(job.batches, 'job.batches');
     if (batches !== 1) reject('INVALID_STATE', 'timed craft jobs must contain exactly one batch');
     const startedAt = assertFiniteTime(job.startedAt, 'job.startedAt');
