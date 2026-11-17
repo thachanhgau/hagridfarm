@@ -26,7 +26,7 @@ export function skillTargets(species,snap,now=Date.now()){
  const duty=snap.duty||{};
  if(species==='puffskein')return plots.filter(([,c])=>ripe(c)).map(([i])=>i);
  if(species==='bowtruckle'||species==='mooncalf')return plots.filter(([,c])=>growing(c)).map(([i])=>i);
- if(species==='niffler')return plots.filter(([i])=>!(p.plots[i].slots||[]).some(Boolean)).map(([i])=>i);
+ if(species==='niffler')return plots.map(([i])=>i);
  if(species==='dragon')return [...new Set([...(duty.dead||[]).map(d=>d.plot),...(duty.gnomes||[]).map(g=>g.plot)])].sort((a,b)=>a-b);
  // Nhím quậy: tired now, or tired at the next harvest (soilView lists seeds only then) — garden-skill-core knarl takes both.
  if(species==='knarl')return (snap.soil||[]).flatMap((s,i)=>s&&(s.tired<1||Object.keys(s.seeds||{}).length)?[i]:[]);

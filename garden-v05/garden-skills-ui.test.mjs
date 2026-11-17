@@ -27,7 +27,7 @@ test('targets follow the server checks: ripe, growing, empty, dead or ma lùm, t
   const s = snap();
   assert.deepEqual(skillTargets('puffskein', s, now), [0]);
   assert.deepEqual(skillTargets('bowtruckle', s, now), [1]);
-  assert.deepEqual(skillTargets('niffler', s, now), [2]);
+  assert.equal(skillTargets('niffler', s, now).length, s.garden.progression.plots.filter(Boolean).length);
   assert.deepEqual(skillTargets('dragon', s, now), [1, 2]);
   assert.deepEqual(skillTargets('knarl', s, now), [1]);
   assert.deepEqual(skillTargets('knarl', snap({soil: [null, {tired: 0.75}, {tired: 1, seeds: {beet: 0.75}}]}), now), [1, 2]); // tired at the next harvest
@@ -59,7 +59,9 @@ test('marks: a star on a ready skill with a target, Kneazle meal-done and sick-s
 
 test('receipt and passive lines', () => {
   assert.match(skillText({species: 'hippogriff', water: 10, left: 1}), /\+10 Nước · còn 1 lượt hôm nay\.$/);
-  assert.match(skillText({species: 'mooncalf', plotIndex: 2, crops: 3, cutMs: 1_800_000, left: 0}), /thửa 3: 3 cây chín sớm 30 phút/);
+  assert.match(skillText({species: 'mooncalf', plotIndex: 2, crops: 3, cutMs: 1_800_000, left: 0}), /thửa 3: 3 cây chín sớm tới 30 phút/);
+  assert.match(skillText({species: 'bowtruckle', plotIndex: 0, crops: 1, cutMs: 9_000_000, left: 0}), /chín sớm tới 2 giờ 30 phút/);
+  assert.match(skillText({species: 'fwooper', cheered: ['a', 'b'], gain: 12, lifted: ['a'], capped: [], left: 0}), /2 bé thêm 12 tâm trạng \(1 bé buồn thêm 24\)/);
   assert.match(skillText({species: 'dragon', plotIndex: 0, gnome: true, left: 1}), /ma lùm chạy mất/);
   const day = creatures => ({skills: {dayKey: 'd', creatures}});
   const before = day([skill('crup', {passive: true, left: 3}), skill('kappa', {passive: true})]);

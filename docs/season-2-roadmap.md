@@ -25,13 +25,13 @@ Chủ động = bấm, có lượt/ngày (bậc 1 / bậc 2). Thụ động = t�
 | Loài (cấp) | Kỹ năng | Loại | Bậc 1 / Bậc 2 | Gắn vào |
 |---|---|---|---|---|
 | Quái lùng nhùng (10) | **Ăn vụn nhả hạt:** gặt một thửa, hoàn 1 hạt của cây vừa gặt (hạt giá ≤ 25 G) | chủ động | 1 / 2 | harvest |
-| Que Xạo (18) | **Tỉa cành:** 1 thửa đang lớn bớt 15 phút (bằng một lần «Chăm giúp») | chủ động | 1 / 2 | plots |
-| Đào mỏ (26) | **Đào kho báu:** đào thửa trống: 3–8 Nước, 10 % một hạt đã mở; 2 % một Nước phép (tối đa 1 lọ/tuần). Không Galleons, không sản vật bán chợ | chủ động | 1 / 2 | supplies |
-| Mooncalf (34) | **Phân trăng:** 18:00–06:00, 1 thửa bớt 30 phút | chủ động | 1 / 2 | plots |
+| Que Xạo (18) | **Tỉa cành:** 1 thửa đang lớn bớt max(15 phút, 10 % thời gian còn lại) (17/11/2026) | chủ động | 1 / 2 | plots |
+| Đào mỏ (26) | **Đào kho báu:** đào 1 thửa bất kỳ (17/11/2026; trước: chỉ thửa trống): 3–8 Nước, 10 % một hạt đã mở; 2 % một Nước phép (tối đa 1 lọ/tuần). Không Galleons, không sản vật bán chợ | chủ động | 1 / 2 | supplies |
+| Mooncalf (34) | **Phân trăng:** 18:00–06:00, 1 thửa bớt max(30 phút, 20 % thời gian còn lại) (17/11/2026) | chủ động | 1 / 2 | plots |
 | Kneazle (42) | **Mắt tinh:** bản đồ đánh dấu thửa chín, bữa xong, cây sắp héo, thú sắp ốm | thụ động | luôn bật / thêm danh sách «việc cần làm» | chỉ client |
 | Diricawl (50) | **Biến – hiện:** tự gặt 1 thửa đã chín ≥ 2 giờ khi chủ vắng (chặn héo; không gieo lại) | thụ động | 1 / 2 thửa | duty shift |
-| Fwooper (58) | **Hát ru:** mọi thú trong chuồng +8 tâm trạng | chủ động | 1 lần +8 / 1 lần +12 | mood |
-| Bằng-Mã (66) | **Chở nước:** +10 Nước | chủ động | 1 / 2 | supplies |
+| Fwooper (58) | **Hát ru:** mọi thú trong chuồng +8 tâm trạng, bé dưới 50 gấp đôi (17/11/2026) | chủ động | 1 lần +8 / 1 lần +12 | mood |
+| Bằng-Mã (66) | **Chở nước:** +1 Nước mỗi ô đất của vườn, ít nhất 10 (17/11/2026) | chủ động | 1 / 2 | supplies |
 | Vong mã (74) | **Dẫn đường:** thú ở Rừng Cấm chỉ cần 1 bữa dụ và về ngay | thụ động | 1 con / mọi con | duty `fled` |
 | Kỳ lân (82) | **Chữa lành:** chữa miễn phí 1 con ốm; dưới cấp 130 thành +15 tâm trạng 1 con | chủ động | 1 / 1 + 15 tâm trạng | duty cure |
 | Chó ba đầu (90) | **Canh đêm:** 22:00–06:00 ma lùm không ăn cây | thụ động | luôn bật / thêm đuổi 1 con/ngày | duty gnome |

@@ -11,13 +11,13 @@ export const SKILL_ORDER=Object.freeze(['puffskein','bowtruckle','niffler','moon
 // the uses left sit in the block's header, so the sentences never repeat counts (owner 17/11/2026: «dò lại chữ nghĩa»).
 const WHAT=Object.freeze({
  puffskein:['Gặt 1 thửa đã chín và trả lại 1 hạt của cây vừa gặt (hạt giá đến 25 G).'],
- bowtruckle:['Cây trong 1 thửa đang lớn chín sớm 15 phút.'],
- niffler:['Đào 1 thửa trống được 3–8 Nước. Đôi khi thêm 1 hạt, hiếm hơn 1 lọ Nước phép (tối đa 1 lọ mỗi tuần).'],
- mooncalf:['Từ 18:00 đến 06:00: cây trong 1 thửa đang lớn chín sớm 30 phút.'],
+ bowtruckle:['Cây trong 1 thửa đang lớn chín sớm 10% thời gian còn lại (ít nhất 15 phút).'],
+ niffler:['Đào 1 thửa được 3–8 Nước. Đôi khi thêm 1 hạt, hiếm hơn 1 lọ Nước phép (tối đa 1 lọ mỗi tuần).'],
+ mooncalf:['Từ 18:00 đến 06:00: cây trong 1 thửa đang lớn chín sớm 20% thời gian còn lại (ít nhất 30 phút).'],
  kneazle:['Bản đồ đánh dấu thửa chín, bé ăn xong, cây sắp héo, bé sắp ốm.','Bản đồ đánh dấu thửa chín, bé ăn xong, cây sắp héo, bé sắp ốm, kèm danh sách việc cần làm.'],
  diricawl:['Lúc con vắng nhà, bé tự gặt thửa đã chín quá 2 giờ để cây không héo (không gieo lại).'],
- fwooper:['Hát cho mọi bé trong chuồng thêm 8 tâm trạng.','Hát cho mọi bé trong chuồng thêm 12 tâm trạng.'],
- hippogriff:['Chở về 10 Nước.'],
+ fwooper:['Hát cho mọi bé trong chuồng thêm 8 tâm trạng, bé dưới 50 thêm 16.','Hát cho mọi bé trong chuồng thêm 12 tâm trạng, bé dưới 50 thêm 24.'],
+ hippogriff:['Chở về 1 Nước cho mỗi ô đất của vườn (ít nhất 10).'],
  thestral:['Bé lạc vào Rừng Cấm chỉ cần 1 bữa dụ là về ngay.'],
  unicorn:['Chữa khỏi 1 bé đang ốm, không tốn thuốc. Vườn dưới cấp 130: cho 1 bé thêm 15 tâm trạng.','Chữa khỏi 1 bé đang ốm, không tốn thuốc, bé đó thêm 15 tâm trạng. Vườn dưới cấp 130: cho 1 bé thêm 15 tâm trạng.'],
  'three-headed-dog':['Từ 22:00 đến 06:00, ma lùm không ăn được cây.','Từ 22:00 đến 06:00, ma lùm không ăn được cây. Mỗi ngày đuổi thêm 1 ma lùm.'],
@@ -34,7 +34,7 @@ const UNIT=Object.freeze({diricawl:'thửa',thestral:'bé','three-headed-dog':'m
 export const WHY=Object.freeze({'skills-off':'Kỹ năng đang tạm tắt','fled':'Bé đang lạc trong Rừng Cấm, dụ về mới giúp được','locked':'Mở khi bé trưởng thành và gắn bó cấp 3','sick':'Bé đang ốm, khỏi bệnh mới giúp được','roaming':'Bé đang đi rông, về mới giúp được','sad':'Bé đang buồn, tâm trạng từ 50 mới giúp được'});
 const RANK=['Chưa mở','Bậc 1','Bậc 2','Bậc 3 · Tinh thông'];
 const NEXT=['Mở khi bé trưởng thành và gắn bó cấp 3','Lên bậc 2 khi gắn bó cấp 5 và thuộc đủ 3 trò','Lên bậc 3 khi vườn đạt cấp 1.000',''];
-const NONE=Object.freeze({puffskein:'Chưa có thửa chín',bowtruckle:'Chưa có thửa đang lớn',mooncalf:'Chưa có thửa đang lớn',niffler:'Chưa có thửa trống',dragon:'Không có thửa cần dọn',knarl:'Không có thửa bạc màu',unicorn:'Không có bé ốm'});
+const NONE=Object.freeze({puffskein:'Chưa có thửa chín',bowtruckle:'Chưa có thửa đang lớn',mooncalf:'Chưa có thửa đang lớn',dragon:'Không có thửa cần dọn',knarl:'Không có thửa bạc màu',unicorn:'Không có bé ốm'});
 const DUTY_ONLY=Object.freeze(['diricawl','thestral','three-headed-dog','dragon']);
 const vnHour=t=>new Date(t+7*3600000).getUTCHours();
 const label=sp=>E.CREATURE[sp]?.label||sp;
@@ -95,15 +95,16 @@ export function skillIcon(species){
  return el('span',{class:'skill-icon',style:`background-position:${-(i%6)*32}px ${-Math.floor(i/6)*32}px`,'aria-hidden':'true'});
 }
 
+const span=ms=>{const m=Math.round(ms/60000);return m<60?`${m} phút`:`${Math.floor(m/60)} giờ${m%60?` ${m%60} phút`:''}`;};
 /** The line after a `skill` receipt (receipt.skill, fields per garden-skill-core EFFECTS). */
 export function skillText(r){
  if(!r)return '';
  const who=label(r.species),plot=Number.isInteger(r.plotIndex)?`thửa ${r.plotIndex+1}`:'',crop=id=>E.CROP[id]?.label||id;
  const text={
   puffskein:()=>`${who} gặt ${plot} (${r.crops} cây)${r.seed?`, nhả lại 1 hạt ${crop(r.seed)}`:''}`,
-  bowtruckle:()=>`${who} giúp ${plot}: ${r.crops} cây chín sớm ${Math.round(r.cutMs/60000)} phút`,
+  bowtruckle:()=>`${who} giúp ${plot}: ${r.crops} cây chín sớm tới ${span(r.cutMs)}`,
   niffler:()=>`${who} đào ${plot}: +${r.water} Nước${r.seed?`, 1 hạt ${crop(r.seed)}`:''}${r.boost?', 1 lọ Nước phép':''}`,
-  fwooper:()=>{const up=r.cheered.length-(r.capped?.length||0);return `${who} hát: ${up} bé thêm ${r.gain} tâm trạng${r.capped?.length?`, ${r.capped.length} bé không lên (chưa ăn món thích hoặc đã đầy)`:''}`;},
+  fwooper:()=>{const up=r.cheered.length-(r.capped?.length||0);return `${who} hát: ${up} bé thêm ${r.gain} tâm trạng${r.lifted?.length?` (${r.lifted.length} bé buồn thêm ${r.gain*2})`:''}${r.capped?.length?`, ${r.capped.length} bé không lên (chưa ăn món thích hoặc đã đầy)`:''}`;},
   hippogriff:()=>`${who} chở về +${r.water} Nước`,
   unicorn:()=>r.cured?`${who} chữa khỏi ${label(r.target)}${r.gain?`, thêm ${r.gain} tâm trạng`:''}`:`${label(r.target)} thêm ${r.gain} tâm trạng`,
   dragon:()=>`${who} dọn ${plot}${r.gnome?': ma lùm chạy mất':`: thiêu ${r.cleared} ô cây khô`}`,
