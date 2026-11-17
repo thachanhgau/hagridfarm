@@ -33,7 +33,7 @@ export function visitShow(tricks={},labelOf=sp=>sp){
 const clockText=ms=>{const d=new Date(ms+7*3600000);return `${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;};
 
 // The interaction tiles for one creature: [kind, icon, label, state text, enabled].
-export function moodTiles({species,entry,view,bondLevel=1,now=Date.now()}){
+export function moodTiles({species,entry,view,bondLevel=1,goldfish=0,now=Date.now()}){
  const done=new Set(entry.done||[]),norbert=species===NORBERT,tiles=[];
  const tile=(kind,art,label,blocked)=>tiles.push({kind,art,label,state:blocked||'',enabled:!blocked});
  tile('play','star',TOYS[species]||'Chơi',done.has('play')&&'Đã xong');
@@ -46,6 +46,8 @@ export function moodTiles({species,entry,view,bondLevel=1,now=Date.now()}){
   tile('roam','map',entry.roamUntil&&!roaming?'Đón về':'Thả rông 1 giờ',roaming?'Còn '+duration(entry.roamUntil-now):!entry.roamUntil&&(done.has('roam')?'Đã xong':view.roamsLeft<1&&'Hết lượt hôm nay'));
   if(RIDERS.includes(species))tile('ride','floo','Cưỡi bay',bondLevel<5?'Cần gắn bó cấp 5':done.has('ride')&&'Đã xong');
   if(species==='niffler'&&view.winter)tile('reclaim','chest','Đòi lại đồ trang trí',done.has('reclaim')&&'Đã xong');
+  // Cá vàng from the pond (server garden-mood-core kind goldfish): +15, one fish, once a cycle.
+  tile('goldfish','pond',goldfish>0?`Cá vàng ×${goldfish}`:'Cá vàng',done.has('goldfish')?'Đã xong':goldfish<1&&'Hết cá vàng');
  }
  return tiles;
 }
@@ -54,7 +56,7 @@ export function tendText(tend,labelOf){
  const name=labelOf(tend.species);
  if(tend.kind==='roam')return tend.back?`${name} đi rông về${Object.values(tend.found||{})[0]?`, mang theo ${Object.values(tend.found)[0]} phần ăn`:''} · tâm trạng ${tend.mood}.`:`${name} đi rông tới ${clockText(tend.roamUntil)}.`;
  if(tend.cheered?.length)return `${name} chơi vui · tâm trạng ${tend.mood} · ${tend.cheered.length} bạn trong chuồng vui thêm +${tend.cheer}.`;
- const verb={play:'chơi vui',groom:'sạch sẽ, mượt mà',train:'học thêm một bài',ride:'chở con bay một vòng vườn',reclaim:'trả lại món đồ trang trí'}[tend.kind]||'vui';
+ const verb={play:'chơi vui',groom:'sạch sẽ, mượt mà',train:'học thêm một bài',ride:'chở con bay một vòng vườn',reclaim:'trả lại món đồ trang trí',goldfish:'ăn cá vàng'}[tend.kind]||'vui';
  return `${name} ${verb} · tâm trạng ${tend.mood}.`;
 }
 
@@ -106,7 +108,7 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
     entry.favourite&&!entry.favMeal&&entry.mood>=view.happy-1?el('p',{class:'mood-note is-warn',text:`Dừng ở ${entry.mood}: ăn món có ${CROP[entry.favourite]?.label||entry.favourite} để lên tiếp`}):null),
    // Season 2: this creature's skill block (garden-skills-card); its gold action sends action `skill`.
    norbert?null:skillCard({species,snap,now,use:async(sp,target)=>{const res=await useSkill(sp,target);const r=res?.ok&&res.receipt?.skill;if(r){notify(skillText(r));onSkill?.(r);render();}}}),
-   section('Chăm sóc','',el('div',{class:'mood-acts'},moodTiles({species,entry,view,bondLevel:bondOf(species),now}).map(t=>{
+   section('Chăm sóc','',el('div',{class:'mood-acts'},moodTiles({species,entry,view,bondLevel:bondOf(species),goldfish:snap?.garden?.progression?.inventory?.goldfish??0,now}).map(t=>{
     const b=el('button',{type:'button',class:'mood-act','data-kind':t.kind,disabled:!t.enabled,'aria-label':t.label+(t.state?' · '+t.state:'')},
      [pixelIcon(t.art,2),el('span',{},[el('b',{text:t.label}),t.state?el('small',{text:t.state}):null])]);
     b.onclick=async()=>{const res=await tend(species,t.kind);if(res?.ok){const r=res.receipt?.tend;if(r)notify(tendText(r,labelOf));onTended?.(r);render();}};

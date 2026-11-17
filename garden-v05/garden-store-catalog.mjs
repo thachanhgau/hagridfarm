@@ -450,7 +450,7 @@ export const STORE_CATALOG=Object.freeze([
     "price": 6,
     "quantity": 2,
     "dailyLimit": 1000,
-    "description": "Gói 2 con · mỗi con thả một ô ao, kéo lưới được 3 Cá nhỏ."
+    "description": "Gói 2 con · mỗi con thả một ô ao, kéo lưới được 12 Cá nhỏ."
   },
   {
     "id": "fry_goldfish",

@@ -16,13 +16,15 @@ test('every species has three tricks; the roadmap examples come first', () => {
 });
 
 test('tiles: riding only Bằng-Mã and Vong mã at gắn kết 5; Norbert never roams; done kinds wait for the next cycle', () => {
-  assert.deepEqual(kinds(moodTiles({species: 'puffskein', entry: entry(), view})), ['play', 'groom', 'train', 'roam']);
+  assert.deepEqual(kinds(moodTiles({species: 'puffskein', entry: entry(), view})), ['play', 'groom', 'train', 'roam', 'goldfish']);
+  const gold = (n, e = entry()) => moodTiles({species: 'puffskein', entry: e, view, goldfish: n}).find(t => t.kind === 'goldfish');
+  assert.deepEqual([gold(0).enabled, gold(0).state, gold(3).enabled, gold(3).label, gold(3, entry({done: ['goldfish']})).state], [false, 'Hết cá vàng', true, 'Cá vàng ×3', 'Đã xong']);
   const ride = moodTiles({species: 'hippogriff', entry: entry(), view, bondLevel: 4}).find(t => t.kind === 'ride');
   assert.deepEqual([ride.enabled, ride.state], [false, 'Cần gắn bó cấp 5']);
   assert.equal(moodTiles({species: 'thestral', entry: entry(), view, bondLevel: 5}).find(t => t.kind === 'ride').enabled, true);
   assert.deepEqual(kinds(moodTiles({species: NORBERT, entry: entry(), view})), ['play', 'groom', 'train']);
   assert.ok(kinds(moodTiles({species: 'niffler', entry: entry(), view: {...view, winter: true}})).includes('reclaim'));
-  const played = moodTiles({species: 'kneazle', entry: entry({done: ['play'], lessonToday: true}), view});
+  const played = moodTiles({species: 'kneazle', entry: entry({done: ['play'], lessonToday: true}), view, goldfish: 1});
   assert.deepEqual(played.filter(t => !t.enabled).map(t => [t.kind, t.state]), [['play', 'Đã xong'], ['train', 'Mai học tiếp']]);
   const now = 1_000_000;
   const roam = t => t.find(x => x.kind === 'roam');
