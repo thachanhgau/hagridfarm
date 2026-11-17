@@ -4,7 +4,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {DB} from './balance-data.mjs';
-import {edgeProgress, edgeStepText, treeTiles, ripeCount, saplingChoices, harvestText, SAPLINGS} from './garden-orchard-ui.mjs';
+import {edgeProgress, edgeStepText, treeTiles, ripeCount, saplingChoices, harvestText, SAPLINGS, pitInfo, defaultPit} from './garden-orchard-ui.mjs';
 import {itemDisplayName, levelName} from './ui-utils.mjs';
 
 test('the Vườn cây button leads to Hagrid\'s next request from the unlock level until the orchard stands', () => {
@@ -36,6 +36,18 @@ test('pits are empty, growing or ripe by readyAt or the server ripe flag', () =>
  assert.equal(ripeCount(orchard, NOW), 2);
  assert.deepEqual(treeTiles(null, NOW), []);
  assert.equal(ripeCount(null, NOW), 0);
+});
+
+test('the orchard header reads a pit: state, clock, one harvest, same kind, and «Hái» ripe count / next ripe time', () => {
+ const o = {...orchard, fruitPerTree: 4, treeMs: 72 * 3600000, trees: [...orchard.trees.slice(0, 4), {kind: 'apple', readyAt: NOW + 900, ripe: false}, null]};
+ assert.deepEqual(pitInfo(o, 1, NOW), {index: 1, state: 'growing', kind: 'apple', readyAt: NOW + 5000, perHarvest: 4, treeMs: 72 * 3600000, sameKind: 2, ripeTotal: 2, nextRipeAt: NOW + 900});
+ assert.equal(pitInfo(o, 0, NOW).state, 'empty');
+ assert.equal(pitInfo(o, 0, NOW).sameKind, 0);
+ assert.equal(pitInfo(o, 9, NOW), null);
+ assert.equal(pitInfo({trees: [{kind: 'pear', readyAt: NOW - 1}]}, 0, NOW).nextRipeAt, null);
+ assert.equal(defaultPit(treeTiles(o, NOW)), 2, 'first ripe tree');
+ assert.equal(defaultPit(treeTiles({trees: [null, {kind: 'pear', readyAt: NOW + 1}]}, NOW)), 1, 'else first tree');
+ assert.equal(defaultPit(treeTiles({trees: [null, null]}, NOW)), 0, 'else pit 0');
 });
 
 test('the sapling picker falls to a kind in stock and labels read Táo / Lê / Mận', () => {
