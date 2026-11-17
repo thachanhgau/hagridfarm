@@ -1,0 +1,72 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-11-17",
+  "reference": "goldfish (64×64, pivot 32,56, ink <=40×30); tank-guide.png: 128×160, pivot 64,144, footprint 2×2, axes ±1/2",
+  "records": [
+    {
+      "id": "rarefish_koi",
+      "label": "Cá chép koi",
+      "master": "masters-items/rare-fish/rarefish_koi.png",
+      "prompt": "Use case: stylized-concept. Single inventory fish icon for a hand painted cozy fantasy garden game. Subject: white koi with large vermilion red patches, flowing split tail. One fish only, full body, head pointing to upper right, tail at lower left, slightly elevated three quarter side view matching a goldfish inventory icon. Broad readable shapes, warm hand painted gouache shading, selectively dark plum outline, upper left light. No water, scenery, bubbles, shadow, text or border. Transparent background. Center isolated fish with generous clear padding, occupies 65 percent of square width, approximately 45 percent of square height. Must remain legible at 40 pixels wide. Rich natural painted colors, not palette quantized.",
+      "generatedSource": "/Users/thachanh/.codex/generated_images/01a1e9af-e3e6-7e80-89de-7e9d0e3c7b0d/exec-07e78a6f-8a75-4e73-8a87-e6331e3b0391.png",
+      "sha256": "bad46b8e6a68092354fa9b8020f50d28365f5f60637feb10426b671858bd67c0"
+    },
+    {
+      "id": "rarefish_salmon",
+      "label": "Cá hồi bạc",
+      "master": "masters-items/rare-fish/rarefish_salmon.png",
+      "prompt": "Use case: stylized-concept. Single inventory fish icon for a hand painted cozy fantasy garden game. Subject: streamlined silver salmon, blue teal back, silver belly, forked tail. One fish only, full body, head pointing to upper right, tail at lower left, slightly elevated three quarter side view matching a goldfish inventory icon. Broad readable shapes, warm hand painted gouache shading, selectively dark plum outline, upper left light. No water, scenery, bubbles, shadow, text or border. Transparent background. Center isolated fish with generous clear padding, occupies 65 percent of square width, approximately 45 percent of square height. Must remain legible at 40 pixels wide. Rich natural painted colors, not palette quantized.",
+      "generatedSource": "/Users/thachanh/.codex/generated_images/01a1e9af-e3e6-7e80-89de-7e9d0e3c7b0d/exec-95499161-a441-47e8-8106-09697305d893.png",
+      "sha256": "0bed6ddb7894d88a9c22c4149e799f910c75931215d350faa7cfdc5ef06c0b9a"
+    },
+    {
+      "id": "rarefish_spiny",
+      "label": "Cá gai",
+      "master": "masters-items/rare-fish/rarefish_spiny.png",
+      "prompt": "Use case: stylized-concept. Single inventory fish icon for a hand painted cozy fantasy garden game. Subject: moss green stickleback with distinct erect spiny dorsal fin. One fish only, full body, head pointing to upper right, tail at lower left, slightly elevated three quarter side view matching a goldfish inventory icon. Broad readable shapes, warm hand painted gouache shading, selectively dark plum outline, upper left light. No water, scenery, bubbles, shadow, text or border. Transparent background. Center isolated fish with generous clear padding, occupies 65 percent of square width, approximately 45 percent of square height. Must remain legible at 40 pixels wide. Rich natural painted colors, not palette quantized.",
+      "generatedSource": "/Users/thachanh/.codex/generated_images/01a1e9af-e3e6-7e80-89de-7e9d0e3c7b0d/exec-0f0fc2f5-a46b-4e62-aa27-49bc607d5d90.png",
+      "sha256": "11a2cc85ec785467bac1ab747f0c44900d06334a5f0cf18f52163a76d8fa1442"
+    },
+    {
+      "id": "rarefish_lantern",
+      "label": "Cá đèn",
+      "master": "masters-items/rare-fish/rarefish_lantern.png",
+      "prompt": "Use case: stylized-concept. Single inventory fish icon for a hand painted cozy fantasy garden game. Subject: small rounded teal anglerfish with one curved stalk above its head ending in a glowing warm yellow bulb. One fish only, full body, head pointing to upper right, tail at lower left, slightly elevated three quarter side view matching a goldfish inventory icon. Broad readable shapes, warm hand painted gouache shading, selectively dark plum outline, upper left light. No water, scenery, bubbles, shadow, text or border. Transparent background. Center isolated fish with generous clear padding, occupies 65 percent of square width, approximately 45 percent of square height. Must remain legible at 40 pixels wide. Rich natural painted colors, not palette quantized.",
+      "generatedSource": "/Users/thachanh/.codex/generated_images/01a1e9af-e3e6-7e80-89de-7e9d0e3c7b0d/exec-2ebb3a15-d76e-4be3-a54f-3ed068aea5b0.png",
+      "sha256": "e495749884f24cd70bacd053613fb80c9f174d3573f5c613525315fa12d0847c"
+    },
+    {
+      "id": "rarefish_moon",
+      "label": "Cá trăng",
+      "master": "masters-items/rare-fish/rarefish_moon.png",
+      "prompt": "Use case: stylized-concept. Single inventory fish icon for a hand painted cozy fantasy garden game. Subject: round ivory moonfish, delicate pale lilac iridescent scales and violet fins. One fish only, full body, head pointing to upper right, tail at lower left, slightly elevated three quarter side view matching a goldfish inventory icon. Broad readable shapes, warm hand painted gouache shading, selectively dark plum outline, upper left light. No water, scenery, bubbles, shadow, text or border. Transparent background. Center isolated fish with generous clear padding, occupies 65 percent of square width, approximately 45 percent of square height. Must remain legible at 40 pixels wide. Rich natural painted colors, not palette quantized.",
+      "generatedSource": "/Users/thachanh/.codex/generated_images/01a1e9af-e3e6-7e80-89de-7e9d0e3c7b0d/exec-75c4e9cd-886f-4de3-8cf0-d89b79234219.png",
+      "sha256": "8bb4c7716aaff6eb0f30ebfa49833b9b893ad76b9604e6b2db49ac071947cba6"
+    },
+    {
+      "id": "rarefish_dragon",
+      "label": "Cá vảy rồng",
+      "master": "masters-items/rare-fish/rarefish_dragon.png",
+      "prompt": "Use case: stylized-concept. Single inventory fish icon for a hand painted cozy fantasy garden game. Subject: regal red and gold fish with distinct large dragon armor scales, red flowing fins and golden whiskers. One fish only, full body, head pointing to upper right, tail at lower left, slightly elevated three quarter side view matching a goldfish inventory icon. Broad readable shapes, warm hand painted gouache shading, selectively dark plum outline, upper left light. No water, scenery, bubbles, shadow, text or border. Transparent background. Center isolated fish with generous clear padding, occupies 65 percent of square width, approximately 45 percent of square height. Must remain legible at 40 pixels wide. Rich natural painted colors, not palette quantized.",
+      "generatedSource": "/Users/thachanh/.codex/generated_images/01a1e9af-e3e6-7e80-89de-7e9d0e3c7b0d/exec-2ac113ec-a175-4736-9336-81ca927b7eac.png",
+      "sha256": "06c40fcc1520f3a0caf915a27417cd88a5eae52c61eb2b7afe633a4969da682f"
+    },
+    {
+      "id": "ev_fish_tank",
+      "label": "Bể cá sáu loài",
+      "master": "masters-items/rare-fish/ev_fish_tank.png",
+      "prompt": "Use case: stylized-concept. Edit the supplied block-in guide into a finished hand painted cozy fantasy garden aquarium sprite. Keep guide camera, exact silhouette geometry and placement: canvas 128x160 logical pixels; top diamond corners (8,50),(64,22),(120,50),(64,78); base diamond (8,110),(64,82),(120,110),(64,138). Every receding horizontal edge slope exactly plus or minus 1/2, verticals vertical. Paint materials on the existing faces, do not change camera. Chunky warm dark wood frame, transparent pale aqua glass and clear water, visible small gravel floor and sparse water plants. Exactly SIX clearly separated fish visible through glass: white red spotted koi, silver blue salmon, moss green fish with spiny dorsal fin, small teal anglerfish with yellow head lamp, ivory lilac round moonfish, red gold dragon scaled fish. Keep all six visible, distribute three behind each glass face, heads angled right. Larger readable shapes for viewing at 128 pixels wide. Selective dark plum edging, light from upper left, subtle brush texture, rich painted colors. Transparent background outside aquarium, no shadow, lettering, ornaments outside or ground. Do not depict a solid opaque lid: open water visible from above. Default orientation: small plant at rear left and golden latch on left wooden edge. Match exact guide proportions and margins.",
+      "generatedSource": "/Users/thachanh/.codex/generated_images/01a1e9af-e3e6-7e80-89de-7e9d0e3c7b0d/exec-2257663f-388a-47c4-8fbe-027b38d6da3c.png",
+      "sha256": "e9ffc67297a586ca569c99187f714d1fe93583f1d1e1fb1f26f62695570b6af4"
+    },
+    {
+      "id": "ev_fish_tank_right",
+      "label": "Bể cá sáu loài · phải",
+      "master": "masters-items/rare-fish/ev_fish_tank_right.png",
+      "prompt": "Create the RIGHT orientation of this same six species wooden aquarium game sprite. Turn the aquarium one quarter turn within the SAME fixed isometric camera (axes +1/2 and -1/2); do not move the camera. Keep the EXACT original outer wood frame silhouette, canvas margins, base height, object size and 2:1 slopes. Keep hand painted texture, wooden frame and blue transparent water. Place brass latch on RIGHT outer upright and tall rear plant to rear RIGHT. Swap the groups of fish between left and right glass panels: left panel silver blue salmon, ivory lilac moonfish, red gold dragon fish; right panel white red koi, moss green spiny fish, teal anglerfish with glowing yellow headlamp. All six fish must still swim facing right; do not simply mirror the image. Exactly six fish, each recognizable and fully visible, no extra fish. Transparent background outside the tank. No text or ground. This is a matching static second view for a garden game.",
+      "generatedSource": "/Users/thachanh/.codex/generated_images/01a1e9af-e3e6-7e80-89de-7e9d0e3c7b0d/exec-ae8d74da-cc62-4291-a2d7-771c77a1ea0d.png",
+      "sha256": "f82614aea596c39c71f1f9ed3fa076664c938a1119ab3949968a325e5a706d76",
+      "correction": "Regenerated from tank-guide.png plus default master; lock guide diamond (8,50),(64,22),(120,50),(64,78) and base (8,110),(64,82),(120,110),(64,138), canvas 128x160, straight beams slope ±1/2; retain right-facing species grouping and all six rightward fish."
+    }
+  ]
+}

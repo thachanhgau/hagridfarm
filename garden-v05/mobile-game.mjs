@@ -830,7 +830,7 @@ var serverOffset=0,pondDock,castGame; // var: refresh() may run before these lin
 pondDock=createPondDock({dock:$('pondDock'),items,act:(command,text)=>['net','harvest'].includes(command.kind)?pondCall(command).then(r=>{if(r.ok){audio.play('harvest');message(pondReceiptText(r.receipt?.pond)||text);}}):run(null,text,command),openCast:()=>castGame.open(),care:sp=>selectCreature(sp),openStore:id=>openStore('all',document.activeElement,[id]),
  buy:async(id,packs)=>{if(!walletReady||busy)return false;busy=true;try{const before=state;await wallet.buy(id,packs);audio.play('buy');acceptWallet(before,'');return true;}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'',false);}catch{}}showRefusal(e);return false;}finally{busy=false;}}}); // «Mua & gieo»: the store's own purchase, then the pond commands
 async function pondCall(command){const r=await serverClaim(command,null);if(r.ok)serverOffset=(wallet.snapshot?.serverNow??Date.now())-Date.now();return r;}
-castGame=createCastGame({host:$('gameShell')||document.body,items,serverNow:()=>Date.now()+serverOffset,
+castGame=createCastGame({host:$('gameShell')||document.body,items,serverNow:()=>Date.now()+serverOffset,book:()=>currentPond()?.book,
  start:async()=>{const running=currentPond()?.cast?.token;if(running&&running.expiresAt>Date.now()+serverOffset)return running;
   if(!walletReady||busy)return null;busy=true;
   try{const before=state;const snap=await wallet.act({action:'pond',kind:'castStart'});serverOffset=(snap.serverNow??Date.now())-Date.now();acceptWallet(before,'');return snap.receipt?.pond?.token||snap.pond?.cast?.token||null;}

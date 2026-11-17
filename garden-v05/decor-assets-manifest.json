@@ -28715,6 +28715,114 @@
         "h": 95
       },
       "framesIdentical": true
+    },
+    {
+      "id": "ev_fish_tank",
+      "file": "decor-assets/native/ev_fish_tank.png",
+      "width": 128,
+      "height": 160,
+      "pivotX": 64,
+      "pivotY": 144,
+      "bounds": {
+        "x": 3,
+        "y": 19,
+        "w": 122,
+        "h": 124
+      },
+      "kind": "decor",
+      "collection": "event",
+      "label": "Bể cá sáu loài",
+      "group": "Sổ cá",
+      "storeItem": false,
+      "rotatable": true,
+      "rightFile": "decor-assets/native/ev_fish_tank_right.png",
+      "rightBounds": {
+        "x": 5,
+        "y": 19,
+        "w": 117,
+        "h": 124
+      },
+      "footprintTiles": [
+        2,
+        2
+      ],
+      "angles": [
+        "default",
+        "right"
+      ],
+      "frames": [
+        "decor-assets/native/ev_fish_tank_atlas.png",
+        "decor-assets/native/ev_fish_tank_atlas.png",
+        "decor-assets/native/ev_fish_tank_atlas.png",
+        "decor-assets/native/ev_fish_tank_atlas.png"
+      ],
+      "rightFrames": [
+        "decor-assets/native/ev_fish_tank_atlas.png",
+        "decor-assets/native/ev_fish_tank_atlas.png",
+        "decor-assets/native/ev_fish_tank_atlas.png",
+        "decor-assets/native/ev_fish_tank_atlas.png"
+      ],
+      "atlasRects": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        }
+      ],
+      "rightAtlasRects": [
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        },
+        {
+          "x": 128,
+          "y": 0,
+          "w": 128,
+          "h": 160
+        }
+      ],
+      "durations": [
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "framesIdentical": true,
+      "artRevision": "authored-rare-fish-20261117",
+      "master": "masters-items/rare-fish/ev_fish_tank.png"
     }
   ]
 }

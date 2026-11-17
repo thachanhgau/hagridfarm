@@ -198,3 +198,11 @@ test('willow nook overhangs no paddy and keeps off the col-7.5 path (owner 16/11
  const scene=JSON.parse((await import('node:fs')).readFileSync(new URL('./scene-data.json',import.meta.url)));
  assert.ok(scene.origin.y+(c+r)*16-art.pivotY+art.bounds.y>=0,'crown inside the scene top (owner «cây bị cắt»)');
 });
+
+test('«Sổ cá» cells: six in order, caught from the snapshot plus the fresh catch', async () => {
+ const P = await import('./garden-pond-ui.mjs');
+ const cells = P.bookCells({caught: ['rarefish_moon'], all: P.RARE_FISH}, 'rarefish_koi');
+ assert.deepEqual(cells.map(c => [c.id, c.caught, c.fresh]).filter(([, caught]) => caught), [['rarefish_koi', true, true], ['rarefish_moon', true, false]]);
+ assert.equal(cells[0].label, 'Cá chép koi');
+ assert.equal(P.bookCells(null).length, 6);
+});

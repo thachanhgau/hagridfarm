@@ -157,9 +157,9 @@ test('25.0 budget: event pieces and Dobby\'s work poses load only when first dra
   const event = manifest.items.filter(a => a.collection === 'event');
   // S7: the six Noel pieces of bậc Tận Sức ship in the event pack too, so a shop that never placed one never loads them.
   const noel = ['sp_xmas_butterbeer', 'sp_xmas_firebolt', 'sp_xmas_honeydukes', 'sp_xmas_invisibility_cloak', 'sp_xmas_weasley_tree', 'sp_xmas_yule_roses'];
-  assert.deepEqual(event.map(a => a.id).sort(), ['ev_champion_tree', 'ev_dark_dobby_red', 'ev_dobby_spring_rider', 'ev_elf_tent', 'ev_kitchen_corner', ...noel]);
+  assert.deepEqual(event.map(a => a.id).sort(), ['ev_champion_tree', 'ev_dark_dobby_red', 'ev_dobby_spring_rider', 'ev_elf_tent', 'ev_fish_tank', 'ev_kitchen_corner', ...noel]);
   const urlsOf = a => [a.file, ...(a.frames ?? []), a.rightFile, ...(a.rightFrames ?? [])].filter(Boolean).map(runtimeImageUrl);
-  const {canvas, requested} = recordingCanvas();
+  const {canvas, requested, drawCalls} = recordingCanvas();
   const garden = await createGarden(canvas, {decorAssets: manifest.items});
   const work = elfWorkFiles().map(runtimeImageUrl);
   assert.deepEqual(work, ['environment/elves/dobby/harvest.png', 'environment/elves/dobby/feed.png'].map(runtimeImageUrl));
@@ -171,6 +171,19 @@ test('25.0 budget: event pieces and Dobby\'s work poses load only when first dra
     decorations: {owned: [tent.id], placements: [tent.id], positions: {[tent.id]: [2.5, 26]}, rotations: {}},
   });
   assert.ok(urlsOf(tent).some(url => requested.has(url)), 'a placed Lều gia tinh loads');
+  const tank = event.find(a => a.id === 'ev_fish_tank');
+  for (const facing of ['default', 'right']) {
+    const options = {now: 1_700_000_000_000, clock: 0, propsVisible: true, eventMode: 'none',
+      decorations: {owned: [tank.id], placements: [tank.id], positions: {[tank.id]: [2.5, 26]}, rotations: {[tank.id]: facing}}};
+    garden.render(state, options);
+    assert.ok(urlsOf(tank).some(url => requested.has(url)), 'a placed aquarium loads outside a festival');
+    await new Promise(resolve => setImmediate(resolve));
+    drawCalls.length = 0; garden.render(state, options);
+    const call = drawCalls.find(c => c.file === runtimeImageUrl(tank.frames[0]));
+    const rect = (facing === 'right' ? tank.rightAtlasRects : tank.atlasRects)[0];
+    assert.ok(call, 'aquarium atlas is drawn');
+    assert.deepEqual(call.args.slice(0,4), [rect.x, rect.y, rect.w, rect.h], 'renderer selects the requested aquarium facing');
+  }
   for (const url of event.filter(a => noel.includes(a.id)).flatMap(urlsOf)) assert.ok(!requested.has(url), url + ' loaded with only the tent placed');
 });
 

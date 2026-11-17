@@ -1,0 +1,141 @@
+{
+  "pipeline": "ImageGen -> head-left inventory orientation -> Lanczos HD (own colours) -> native Lanczos, alpha >= 128",
+  "frames": [
+    {
+      "id": "rarefish_koi",
+      "file": "native-items/rarefish_koi.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 36,
+        "w": 39,
+        "h": 20
+      },
+      "sha256": "50b8413bf3c92dd3d69d701a17cc6939757665ba0c8d6076b33e46ab01da2f3c",
+      "hd": "decor-assets/hd/b529d2efe851e8cf7fab4c33.webp",
+      "hdSha256": "b529d2efe851e8cf7fab4c3335794c312860f82b22be0e9a066b17b11b5203c0"
+    },
+    {
+      "id": "rarefish_salmon",
+      "file": "native-items/rarefish_salmon.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 34,
+        "w": 40,
+        "h": 22
+      },
+      "sha256": "035efd652032155a1dd324c5ff423a9c501517fb30e0c2572b181aa3f08a5519",
+      "hd": "decor-assets/hd/01c7bc8063995c1d3bffe53d.webp",
+      "hdSha256": "01c7bc8063995c1d3bffe53de6bca17dd8f455de8a2c3034a1e6ffd7ef58c3a7"
+    },
+    {
+      "id": "rarefish_spiny",
+      "file": "native-items/rarefish_spiny.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 32,
+        "w": 40,
+        "h": 24
+      },
+      "sha256": "37d3396e733109f4d70d2a3c30b2d587db5018f004b33757bf6d924dd6813f7c",
+      "hd": "decor-assets/hd/c3c6f3a87f24a59f5476d948.webp",
+      "hdSha256": "c3c6f3a87f24a59f5476d948ec40a5a92f81791e5c950a8a574c217335b80287"
+    },
+    {
+      "id": "rarefish_lantern",
+      "file": "native-items/rarefish_lantern.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 27,
+        "w": 40,
+        "h": 29
+      },
+      "sha256": "6ca9edb1733802d6d03f41d8c89dc53aea84974d45fe5e20ba2f11f3c3075f2f",
+      "hd": "decor-assets/hd/7a8c68b564fbe594cb023b3b.webp",
+      "hdSha256": "7a8c68b564fbe594cb023b3bd95eb60d30072567c834acd37e9bb1dba61cc2ef"
+    },
+    {
+      "id": "rarefish_moon",
+      "file": "native-items/rarefish_moon.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 14,
+        "y": 26,
+        "w": 36,
+        "h": 29
+      },
+      "sha256": "3b0b5fb517c70e19b59fec3f05e5157d453f649a66876052c7ffe2e40c3bdc72",
+      "hd": "decor-assets/hd/3f4bd420b242d70f087a8d1a.webp",
+      "hdSha256": "3f4bd420b242d70f087a8d1a4ef84724deb6e8968bc4b36d5f302feb051cc4dd"
+    },
+    {
+      "id": "rarefish_dragon",
+      "file": "native-items/rarefish_dragon.png",
+      "width": 64,
+      "height": 64,
+      "pivotX": 32,
+      "pivotY": 56,
+      "bounds": {
+        "x": 12,
+        "y": 30,
+        "w": 40,
+        "h": 25
+      },
+      "sha256": "234647c6697c07c5281da01f86c62a2272789150153084d2459ebace8c96992c",
+      "hd": "decor-assets/hd/1583f7cd14317d8c674c28a7.webp",
+      "hdSha256": "1583f7cd14317d8c674c28a7959f92e0092b4c7cc8872ccd309dcc034e8342f1"
+    },
+    {
+      "id": "ev_fish_tank",
+      "file": "decor-assets/native/ev_fish_tank.png",
+      "width": 128,
+      "height": 160,
+      "pivotX": 64,
+      "pivotY": 144,
+      "bounds": {
+        "x": 3,
+        "y": 19,
+        "w": 122,
+        "h": 124
+      },
+      "sha256": "c32504ca0fdb5b520af047d06522a3265e98dce4079500564818a8fca05e7f5e",
+      "hd": "decor-assets/hd/c1fee5178a597c995a8ce7d6.webp",
+      "hdSha256": "c1fee5178a597c995a8ce7d656106695b9276805df1039599b0a7b62cbccd61e"
+    },
+    {
+      "id": "ev_fish_tank_right",
+      "file": "decor-assets/native/ev_fish_tank_right.png",
+      "width": 128,
+      "height": 160,
+      "pivotX": 64,
+      "pivotY": 144,
+      "bounds": {
+        "x": 5,
+        "y": 19,
+        "w": 117,
+        "h": 124
+      },
+      "sha256": "606aaa10426df72c4e89d9e8ef781a4a47915b903643757369c39938cb83ad71",
+      "hd": "decor-assets/hd/b8789bd3d2d565b09208a7e6.webp",
+      "hdSha256": "b8789bd3d2d565b09208a7e672f8e121d20eadb4e2c811eb5f34d0d248635169"
+    }
+  ]
+}

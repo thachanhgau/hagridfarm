@@ -214,6 +214,7 @@ const EVENT_ROWS = [
   ['ev_dark_dobby_red', 'Tượng Dobby Hắc Ám', [2,2], 'Dobby tạc đá đỏ, giơ chiếc vớ, quà Hội Vận động cho Quyền lợi Gia tinh mừng HPVN 3 tháng.'],
   // Big update 25.0: the gift of Giáng sinh chapter 1 «Gia tinh đón đông» (S7, ten stockings).
   ['ev_elf_tent', 'Lều gia tinh', [2,2], 'Cái lều gia tinh khâu từ áo gối cũ, treo dây vớ len, quà chương «Gia tinh đón đông».'],
+  ['ev_fish_tank', 'Bể cá sáu loài', [2,2], 'Bể kính khung gỗ nuôi đủ sáu loài cá hiếm, quà hoàn thành Sổ cá.'],
   // S7 chapter 3 «Dạ Vũ Noel»: the winning house's tree (server garden-xmas-chapters settleTree).
   ['ev_champion_tree', 'Cây thông nhà vô địch', [2,2], 'Cây thông Noel của nhà thắng Dạ Vũ Noel, lấp lánh những ngôi sao vàng.'],
 ];

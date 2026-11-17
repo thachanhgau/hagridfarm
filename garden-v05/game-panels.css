@@ -682,6 +682,11 @@
 .pond-cast .cast-sweet{background:#E2B866}
 .pond-cast .cast-marker{position:absolute;top:-2px;bottom:-2px;width:4px;margin-left:-2px;background:#F5EADB;box-shadow:0 0 0 1px #231F2E}
 .pond-cast .cast-bar[data-band=sweet] .cast-marker{background:#FFF0C2}
+.pond-cast .cast-book{display:grid;justify-items:center;gap:6px;margin:0 0 12px}
+.pond-cast .cast-fishes{display:flex;gap:4px}
+.pond-cast .cast-fish{display:grid;place-items:center;width:40px;height:40px;background:#231F2E;border:1px solid #735044}
+.pond-cast .cast-fish.is-locked :is(img,canvas,svg,.visual-slot){filter:brightness(0);opacity:.45}
+.pond-cast .cast-fish.is-new{border-color:#E2B866;box-shadow:0 0 0 1px #E2B866}
 .pond-cast .cast-result{display:flex;align-items:center;justify-content:center;gap:8px;min-height:28px;margin:0 0 12px;font-variant-numeric:tabular-nums}
 .pond-cast .cast-tap{width:100%;min-height:48px}
 /* 09/11/2026: scenery picker check is a small badge (it inherited the 100%-wide card image rule), Kho counts readable. */

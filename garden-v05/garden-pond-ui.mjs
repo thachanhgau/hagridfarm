@@ -108,6 +108,12 @@ const within = (pos, [a, b]) => pos >= a && pos <= b;
 export const castBand = (token, pos) => (within(pos, token.sweet) ? 'sweet' : within(pos, token.zone) ? 'zone' : 'miss');
 
 export const CAST_RESULT = Object.freeze({goldfish: 'Trúng tâm', fish: 'Trúng', decor: 'Trúng · quà', miss: 'Hụt'});
+export const RARE_FISH = Object.freeze(['rarefish_koi', 'rarefish_salmon', 'rarefish_spiny', 'rarefish_lantern', 'rarefish_moon', 'rarefish_dragon']);
+/** «Sổ cá» cells from snapshot.pond.book (server rareCatch): every rare fish in order, caught or not. */
+export function bookCells(book, fresh = null) {
+ const caught = new Set([...(book?.caught || []), ...(fresh ? [fresh] : [])]);
+ return (book?.all || RARE_FISH).map(id => ({id, label: itemDisplayName(id, id), caught: caught.has(id), fresh: id === fresh}));
+}
 
 /** Item rows of a receipt ({fish: 3}) as [id, count, label]. */
 export const receiptItems = items => Object.entries(items || {}).filter(([, n]) => n > 0).map(([id, n]) => [id, n, itemDisplayName(id, id)]);
@@ -256,7 +262,7 @@ export function createPondDock({dock, items, act, openCast, care, buy = null, op
  * «Câu cá»: a bobber over the pond and a bar with the zone and sweet bands; one tap. `start()` resolves the token
  * (castStart, or the running one); `cast(tapMs)` resolves receipt.pond. `serverNow()` is the server clock.
  */
-export function createCastGame({host, items, start, cast, serverNow}) {
+export function createCastGame({host, items, start, cast, serverNow, book = () => null}) {
  const title = el('h2', {id: 'pondCastTitle', text: 'Câu cá'});
  const close = button('', () => dialog.close(), {class: 'gp-close', 'aria-label': 'Đóng'});
  close.append(pixelIcon('close', 2));
@@ -267,9 +273,16 @@ export function createCastGame({host, items, start, cast, serverNow}) {
  const art = pondScenery('pond-1') || {file: POND_FALLBACK, width: 160, height: 100};
  const stage = el('div', {class: 'cast-stage'}, [el('img', {src: art.file, alt: '', width: art.width, height: art.height}), bobber]);
  const result = el('div', {class: 'cast-result', role: 'status'});
+ // «Sổ cá»: one row of six cells, an uncaught fish as a dark silhouette.
+ const shelf = el('div', {class: 'cast-book'});
+ const drawBook = (fresh = null) => {
+  const cells = bookCells(book(), fresh);
+  shelf.replaceChildren(el('small', {class: 'pond-label', text: `Sổ cá ${cells.filter(c => c.caught).length}/${cells.length}`}),
+   el('div', {class: 'cast-fishes'}, cells.map(c => el('span', {class: 'cast-fish' + (c.caught ? '' : ' is-locked') + (c.fresh ? ' is-new' : ''), title: c.caught ? c.label : 'Chưa câu được', 'aria-label': c.caught ? c.label : 'Chưa câu được'}, [itemIcon(items, c.id, 28, 'pond')]))));
+ };
  const tap = button('Giật cần', undefined, {class: 'primary cast-tap', id: 'castTap'}); // one handler (onclick), swapped to «Đóng» after the cast
  const dialog = el('dialog', {id: 'pondCastGame', class: 'owl-letter pond-cast', 'aria-labelledby': 'pondCastTitle'},
-  [el('div', {class: 'popover-heading'}, [title, close]), stage, bar, result, tap]);
+  [el('div', {class: 'popover-heading'}, [title, close]), stage, bar, result, shelf, tap]);
  host.append(dialog);
  closeOnBackdrop(dialog);
  dialog.addEventListener('close', () => {cancelAnimationFrame(frame); token = null;});
@@ -283,7 +296,7 @@ export function createCastGame({host, items, start, cast, serverNow}) {
   frame = requestAnimationFrame(loop);
  }
  async function open() {
-  done = false; result.replaceChildren(); tap.textContent = 'Giật cần'; tap.disabled = true; bar.dataset.band = '';
+  done = false; result.replaceChildren(); drawBook(); tap.textContent = 'Giật cần'; tap.disabled = true; bar.dataset.band = '';
   if (!dialog.open) dialog.showModal();
   token = await start();
   if (!token || !dialog.open) {token = null; dialog.close(); return;} // closed while the token was on its way
@@ -301,7 +314,10 @@ export function createCastGame({host, items, start, cast, serverNow}) {
   if (Number.isFinite(r.pos)) marker.style.left = pct(r.pos);
   bar.dataset.band = r.result === 'goldfish' ? 'sweet' : r.result === 'miss' ? 'miss' : 'zone';
   result.replaceChildren(el('small', {class: 'pond-label', text: CAST_RESULT[r.result] || ''}),
-   ...receiptItems(r.items).map(([id, n, label]) => el('span', {class: 'reward-chip', title: label}, [itemIcon(items, id, 20, 'water'), el('b', {text: '+' + num(n)})])));
+   ...receiptItems(r.items).map(([id, n, label]) => el('span', {class: 'reward-chip', title: label}, [itemIcon(items, id, 20, 'water'), el('b', {text: '+' + num(n)})])),
+   ...(r.rare ? [el('span', {class: 'reward-chip', title: itemDisplayName(r.rare, r.rare)}, [itemIcon(items, r.rare, 20, 'pond'), el('b', {text: 'Mới'})])] : []),
+   ...(r.gift ? [el('span', {class: 'reward-chip', title: 'Bể cá sáu loài'}, [itemIcon(items, r.gift, 20, 'chest'), el('b', {text: 'Quà'})])] : []));
+  drawBook(r.rare || null);
   tap.textContent = 'Đóng'; tap.disabled = false; tap.onclick = () => dialog.close();
  }
  return {open, dialog};

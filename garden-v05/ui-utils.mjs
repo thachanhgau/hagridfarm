@@ -35,6 +35,9 @@ const DISPLAY_LABELS = Object.freeze(Object.fromEntries([
  ['insects', 'Côn trùng'],
  ['fish', 'Cá nhỏ'],
  ['goldfish', 'Cá vàng'],
+ // «Sổ cá» rare fish (server garden-pond-core RARE_FISH): records only, never in the barn.
+ ['rarefish_koi', 'Cá chép koi'], ['rarefish_salmon', 'Cá hồi bạc'], ['rarefish_spiny', 'Cá gai'],
+ ['rarefish_lantern', 'Cá đèn'], ['rarefish_moon', 'Cá trăng'], ['rarefish_dragon', 'Cá vảy rồng'],
  ['apple', 'Táo'], ['pear', 'Lê'], ['plum', 'Mận'], // orchard fruit (phase 3)
  ['sapling_apple', 'Cây táo non'], ['sapling_pear', 'Cây lê non'], ['sapling_plum', 'Cây mận non'],
  ['elf_hat', 'Nón len gia tinh'],

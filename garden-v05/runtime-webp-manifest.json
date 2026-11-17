@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "b01495e93de0",
+  "revision": "8e698f6df6da",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -5292,6 +5292,66 @@
       "sha256": "403272576026a647ca56244778d0a62a1702e10bfb162e3e5baccc0cc5101426"
     },
     {
+      "source": "native-items/rarefish_dragon.png",
+      "file": "runtime-webp/native-items/rarefish_dragon.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 2076,
+      "bytes": 1568,
+      "sourceSha256": "234647c6697c07c5281da01f86c62a2272789150153084d2459ebace8c96992c",
+      "sha256": "68ea4fba7ee03a3763ccc300943e889f302043a738379cd5c032493122b7f935"
+    },
+    {
+      "source": "native-items/rarefish_koi.png",
+      "file": "runtime-webp/native-items/rarefish_koi.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1521,
+      "bytes": 1108,
+      "sourceSha256": "50b8413bf3c92dd3d69d701a17cc6939757665ba0c8d6076b33e46ab01da2f3c",
+      "sha256": "fe517d9407f350cbb84f47bbbe9c5713c0e5268e886d33f1c05465ca500cf301"
+    },
+    {
+      "source": "native-items/rarefish_lantern.png",
+      "file": "runtime-webp/native-items/rarefish_lantern.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 2112,
+      "bytes": 1682,
+      "sourceSha256": "6ca9edb1733802d6d03f41d8c89dc53aea84974d45fe5e20ba2f11f3c3075f2f",
+      "sha256": "7f3aa45a69e038dca1c1f187d11b1ce1f8aa14834f1c6fd925771bcba1f80083"
+    },
+    {
+      "source": "native-items/rarefish_moon.png",
+      "file": "runtime-webp/native-items/rarefish_moon.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 2174,
+      "bytes": 1722,
+      "sourceSha256": "3b0b5fb517c70e19b59fec3f05e5157d453f649a66876052c7ffe2e40c3bdc72",
+      "sha256": "415f54355b94e24e1ce89d80dfaf2c69ca223ba7a26069de6d7fdb605881aacc"
+    },
+    {
+      "source": "native-items/rarefish_salmon.png",
+      "file": "runtime-webp/native-items/rarefish_salmon.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1363,
+      "bytes": 1004,
+      "sourceSha256": "035efd652032155a1dd324c5ff423a9c501517fb30e0c2572b181aa3f08a5519",
+      "sha256": "57fb22bd904000bb1d3500e2fe62c7fd3ec572026c37e39556ab4618dbb3c09b"
+    },
+    {
+      "source": "native-items/rarefish_spiny.png",
+      "file": "runtime-webp/native-items/rarefish_spiny.webp",
+      "width": 64,
+      "height": 64,
+      "sourceBytes": 1542,
+      "bytes": 1100,
+      "sourceSha256": "37d3396e733109f4d70d2a3c30b2d587db5018f004b33757bf6d924dd6813f7c",
+      "sha256": "5c3910a406ef6c9847794229bde3669913ec4319e937009bce73c5c5e5208230"
+    },
+    {
       "source": "native-items/recipe_bow_feed.png",
       "file": "runtime-webp/native-items/recipe_bow_feed.webp",
       "width": 64,
@@ -7800,6 +7860,36 @@
       "bytes": 2470,
       "sourceSha256": "6191fad85be2eda08b38325c30115739caa1fde4d43d22b3874bbcfb482dbab4",
       "sha256": "e71146630de812d307337b03cb043635e9ca8da598dda1915dae18cc4b3cd9e7"
+    },
+    {
+      "source": "decor-assets/native/ev_fish_tank_atlas.png",
+      "file": "runtime-webp/decor-assets/native/ev_fish_tank_atlas.webp",
+      "width": 256,
+      "height": 160,
+      "sourceBytes": 70161,
+      "bytes": 51082,
+      "sourceSha256": "803c05d61760271377a4418321ceb59497a0012a7bb353b76b3e99889b9eee1b",
+      "sha256": "074624c5cce14b0693339fc2996b99977c10b1d8fb1aa2ef8e9a440c05300a52"
+    },
+    {
+      "source": "decor-assets/native/ev_fish_tank_right.png",
+      "file": "runtime-webp/decor-assets/native/ev_fish_tank_right.webp",
+      "width": 128,
+      "height": 160,
+      "sourceBytes": 34771,
+      "bytes": 25160,
+      "sourceSha256": "606aaa10426df72c4e89d9e8ef781a4a47915b903643757369c39938cb83ad71",
+      "sha256": "953bedd49d6c8aa7d96d4340f1ab25a935b69b1162d7bdcd494ea80bc5f9a211"
+    },
+    {
+      "source": "decor-assets/native/ev_fish_tank.png",
+      "file": "runtime-webp/decor-assets/native/ev_fish_tank.webp",
+      "width": 128,
+      "height": 160,
+      "sourceBytes": 35791,
+      "bytes": 25424,
+      "sourceSha256": "c32504ca0fdb5b520af047d06522a3265e98dce4079500564818a8fca05e7f5e",
+      "sha256": "bb17018208cb9e5ed2b56870158a05314eb3b8b2a6b5ef2aeeaae0f8d81c7c9c"
     },
     {
       "source": "decor-assets/native/ev_kitchen_corner_atlas.png",
@@ -21209,6 +21299,11 @@
       "sha256": "01c40f49161efd2e22d3422e353560382f2d1201ed35379ee53a5c7327d02ddd"
     },
     {
+      "file": "decor-assets/hd/01c7bc8063995c1d3bffe53d.webp",
+      "bytes": 2930,
+      "sha256": "01c7bc8063995c1d3bffe53de6bca17dd8f455de8a2c3034a1e6ffd7ef58c3a7"
+    },
+    {
       "file": "decor-assets/hd/01ebafbbba77aa6b7b63ee5f.webp",
       "bytes": 1774,
       "sha256": "01ebafbbba77aa6b7b63ee5f85803f89a291ff9c50bb18988c2bbc64f400d0f9"
@@ -21917,6 +22012,11 @@
       "file": "decor-assets/hd/1578399c5382e991c75bb907.webp",
       "bytes": 776,
       "sha256": "1578399c5382e991c75bb907eceb6acafc3478beead89c6b5c2c277c7b47b9de"
+    },
+    {
+      "file": "decor-assets/hd/1583f7cd14317d8c674c28a7.webp",
+      "bytes": 4266,
+      "sha256": "1583f7cd14317d8c674c28a7959f92e0092b4c7cc8872ccd309dcc034e8342f1"
     },
     {
       "file": "decor-assets/hd/15ab6c16aad2a24dc36940a6.webp",
@@ -23372,6 +23472,11 @@
       "file": "decor-assets/hd/3f30f732630467bb839390cf-atlas.webp",
       "bytes": 10044,
       "sha256": "3f30f732630467bb839390cf45e94caee8acb20aa999857c961a6f15df613e07"
+    },
+    {
+      "file": "decor-assets/hd/3f4bd420b242d70f087a8d1a.webp",
+      "bytes": 4026,
+      "sha256": "3f4bd420b242d70f087a8d1a4ef84724deb6e8968bc4b36d5f302feb051cc4dd"
     },
     {
       "file": "decor-assets/hd/3f543d9ee6129ae2f5761fc1.webp",
@@ -25272,6 +25377,11 @@
       "file": "decor-assets/hd/7a810fd5287866030c34bc5a.webp",
       "bytes": 3106,
       "sha256": "7a810fd5287866030c34bc5ac0c11d6afc9cf8e54f723117a9113cebbf246dbd"
+    },
+    {
+      "file": "decor-assets/hd/7a8c68b564fbe594cb023b3b.webp",
+      "bytes": 4222,
+      "sha256": "7a8c68b564fbe594cb023b3bd95eb60d30072567c834acd37e9bb1dba61cc2ef"
     },
     {
       "file": "decor-assets/hd/7a8e9a66f0fec15747e22b04.webp",
@@ -27309,6 +27419,11 @@
       "sha256": "b50c36b732e7802fe38b1efe1c9ae51c5e27ea07572161287959cbb025149288"
     },
     {
+      "file": "decor-assets/hd/b529d2efe851e8cf7fab4c33.webp",
+      "bytes": 3354,
+      "sha256": "b529d2efe851e8cf7fab4c3335794c312860f82b22be0e9a066b17b11b5203c0"
+    },
+    {
       "file": "decor-assets/hd/b548615cc752ecf138fdc09d.webp",
       "bytes": 23610,
       "sha256": "b548615cc752ecf138fdc09d44fc204eb57ae5097aab925296e973235a5bdec1"
@@ -27472,6 +27587,11 @@
       "file": "decor-assets/hd/b7fbf2d71cddb7e3c4c6d7e3.webp",
       "bytes": 3504,
       "sha256": "b7fbf2d71cddb7e3c4c6d7e36388e4626d23db1136d5bae49172656da29da8bf"
+    },
+    {
+      "file": "decor-assets/hd/b8789bd3d2d565b09208a7e6.webp",
+      "bytes": 27130,
+      "sha256": "b8789bd3d2d565b09208a7e672f8e121d20eadb4e2c811eb5f34d0d248635169"
     },
     {
       "file": "decor-assets/hd/b8ac371cf4ca1816ee479473.webp",
@@ -27834,6 +27954,11 @@
       "sha256": "c1c74688e5c86c921e1beb707705af95d1b355d393e5307980357da1859e51f1"
     },
     {
+      "file": "decor-assets/hd/c1fee5178a597c995a8ce7d6.webp",
+      "bytes": 28994,
+      "sha256": "c1fee5178a597c995a8ce7d656106695b9276805df1039599b0a7b62cbccd61e"
+    },
+    {
       "file": "decor-assets/hd/c237a7f57e7488d6327d26d7.webp",
       "bytes": 8582,
       "sha256": "c237a7f57e7488d6327d26d7e301a73ded4b294e537f53830696c9995bda97f5"
@@ -27902,6 +28027,11 @@
       "file": "decor-assets/hd/c3aea96160aa582a28583334.webp",
       "bytes": 1360,
       "sha256": "c3aea96160aa582a28583334cf59076cb59193a84c13230d161ec475710a7028"
+    },
+    {
+      "file": "decor-assets/hd/c3c6f3a87f24a59f5476d948.webp",
+      "bytes": 3240,
+      "sha256": "c3c6f3a87f24a59f5476d948ec40a5a92f81791e5c950a8a574c217335b80287"
     },
     {
       "file": "decor-assets/hd/c4170cf5c24973bd4e270092.webp",
@@ -29037,6 +29167,11 @@
       "file": "decor-assets/hd/e073e129b70581e244fa4583.webp",
       "bytes": 230,
       "sha256": "e073e129b70581e244fa4583690d0902db3f32b8cf9e59ac4f5e4b7fd53e7ca1"
+    },
+    {
+      "file": "decor-assets/hd/e092f48ee99207f5c96717b5-atlas.webp",
+      "bytes": 54286,
+      "sha256": "e092f48ee99207f5c96717b54329473a0760a01ae461370afd4e066b498d327a"
     },
     {
       "file": "decor-assets/hd/e0b69f3aa3b2b8aa718e6648.webp",
@@ -30455,11 +30590,11 @@
     }
   ],
   "totals": {
-    "converted": 2113,
-    "existingWebp": 1860,
-    "originalBytes": 29312887,
-    "webpBytes": 24968004,
-    "savedBytes": 4344883,
+    "converted": 2122,
+    "existingWebp": 1869,
+    "originalBytes": 29596846,
+    "webpBytes": 25210302,
+    "savedBytes": 4386544,
     "savedPercent": 14.82
   }
 }
