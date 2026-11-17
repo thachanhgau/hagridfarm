@@ -66,15 +66,15 @@ test('per-frame atlas records (atlasRects / rightAtlasRects, e.g. the Halloween 
 });
 test('shop, dock and bag <img> get a 2× srcset from HD_ART through el(); no HD, no srcset; placement thumb clears a stale one',async()=>{
  const {hdSrcset,artKey}=await import('./render-resolution.mjs');
- const {HD_ART}=await import('./hd-art.mjs?v=26.7');
- const {runtimeImageUrl}=await import('./runtime-image-url.mjs?v=26.7');
+ const {HD_ART}=await import('./hd-art.mjs?v=26.8');
+ const {runtimeImageUrl}=await import('./runtime-image-url.mjs?v=26.8');
  const file=Object.keys(HD_ART).find(k=>k.startsWith('decor-assets/native/')),record=HD_ART[file];
  for(const src of [file,'./'+file+'?v=24.0',runtimeImageUrl(file)])assert.equal(artKey(src),file);
  assert.equal(hdSrcset('./'+file,HD_ART,runtimeImageUrl),`${runtimeImageUrl('./'+file)} 1x, ${record.file} 2x`);
  assert.equal(hdSrcset('decor-assets/native/__none__.png',HD_ART,runtimeImageUrl),'');
  const made=[];globalThis.document={createElement:tag=>{const e={tag,attrs:{},style:{},setAttribute(k,v){this.attrs[k]=v;},append(){}};made.push(e);return e;},createTextNode:t=>t};
  try{
-  const {el}=await import('./ui-utils.mjs?v=26.7');
+  const {el}=await import('./ui-utils.mjs?v=26.8');
   const hd=el('img',{src:file,alt:'',width:40,height:40}),plain=el('img',{src:'decor-assets/native/__none__.png'});
   assert.equal(hd.attrs.src,runtimeImageUrl(file));assert.equal(hd.attrs.srcset,hdSrcset(file,HD_ART,runtimeImageUrl));
   assert.equal(hd.attrs.width,'40');assert.equal(plain.attrs.srcset,undefined);

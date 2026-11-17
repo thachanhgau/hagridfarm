@@ -1,16 +1,16 @@
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.7';
-import {edgeStepText} from './garden-orchard-ui.mjs?v=26.7';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.7';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.7';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.7";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.7";
-import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.7";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.7";
-import {renderTourSection} from "./garden-tour.mjs?v=26.7";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.7";
-import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.7";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.7";
-import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.7";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.8';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=26.8';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.8';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.8';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.8";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.8";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.8";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.8";
+import {renderTourSection} from "./garden-tour.mjs?v=26.8";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.8";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.8";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.8";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.8";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -581,7 +581,9 @@ export function createPanels(ctx){
     const t=petBurst?.species===entry.species?performance.now()-petBurst.at:Infinity;
     if(t<700){pet.classList.add("is-burst");pet.style.setProperty("--burst-at",-Math.round(t)+"ms");pet.append(el("span",{class:"affinity-burst","aria-hidden":"true"},[0,1,2].map(()=>pixelIcon("heart",1))));}
     return el("div",{class:"affinity-actions"},[pet,
-     ...(gift?[button("Nhận",()=>{ctx.onClaimAffinityGift?.(gift.giftId);refresh();},{class:"primary","aria-label":`Nhận quà cấp ${gift.level} cho ${name}`,"data-claim-affinity-gift":gift.giftId})]:[])]);
+     // Says what it gives (owner 17/11/2026: «nhận cái gì?»): the gift's level, its reward in the title.
+     ...(gift?[(()=>{const b=button("",()=>{ctx.onClaimAffinityGift?.(gift.giftId);refresh();},{class:"primary affinity-claim","aria-label":`Nhận quà cấp ${gift.level} cho ${name}${gift.reward?.label?": "+gift.reward.label:""}`,title:gift.reward?.label||"","data-claim-affinity-gift":gift.giftId});
+      b.append(pixelIcon("chest",1),el("span",{text:`Nhận quà cấp ${gift.level}`}));return b;})()]:[])]);
    };
    if(speciesId){
     const entry=entries[0],name=E.CREATURE[entry.species]?.label||entry.species,gift=entry.claimableGifts[0]||null;

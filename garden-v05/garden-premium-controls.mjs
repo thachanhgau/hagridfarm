@@ -1,6 +1,6 @@
-import {$} from './ui-utils.mjs?v=26.7';
-import {CREATURE} from './progression-engine.mjs?v=26.7';
-import {renderPetCareButtons} from './pet-controls.mjs?v=26.7';
+import {$} from './ui-utils.mjs?v=26.8';
+import {CREATURE} from './progression-engine.mjs?v=26.8';
+import {renderPetCareButtons} from './pet-controls.mjs?v=26.8';
 
 // Presentation only: the existing engine/server still owns targets, stock and use limits.
 export function refreshPremiumControls({snapshot,state,species,now,ready,items}) {
