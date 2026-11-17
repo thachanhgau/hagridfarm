@@ -763,23 +763,31 @@ export async function createGarden(canvas, options = {}) {
   let activeWeather='clear',activeEvent='none',activeSnowDepth=1,winterArt=false,activeWinter=null,kit=null;
   const seasonalImages=new Map(),coatImages=new Map();
   // 25.0 S5: a wilted or dried-out crop is its own sprite snapped to a palette ramp (garden-duty-art).
+  // Pixel effects read back, so they run on a CPU canvas; the result is copied once onto a GPU canvas, because Safari
+  // re-uploads a CPU canvas on every draw (owner's level-9900 garden in snow: ~470 of ~1000 draws a frame, 7–8 fps,
+  // iPhone 17 Simulator, 17/11/2026).
+  function effectCanvas(source,apply){
+    const work=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height),brush=work.getContext('2d',{willReadFrequently:true});
+    brush.imageSmoothingEnabled=false;brush.drawImage(source,0,0);const out=apply(work)||work;
+    const shown=makeCanvas(canvas,out.width,out.height),c=shown.getContext?.('2d');if(!c)return out;
+    c.drawImage(out,0,0);out.width=out.height=0;return shown;
+  }
   const witherImages=new Map();
   function witherImage(file,mode){
     const key=mode+':'+file,source=imageFor(file);
-    if(!witherImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);witherImages.set(key,tagArt(duty.kit.witherCanvas(copy,mode),file,{wither:mode}));}
+    if(!witherImages.has(key)&&source)witherImages.set(key,tagArt(effectCanvas(source,copy=>duty.kit.witherCanvas(copy,mode)),file,{wither:mode}));
     return witherImages.get(key)??null;
   }
   function coatImage(file,coat){
     const key=coat+':'+file,source=imageFor(file);
-    if(!coatImages.has(key)&&source){const copy=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height);copy.getContext('2d').drawImage(source,0,0);coatImages.set(key,tagArt(kit.recolorCanvas(copy,coat),file,{coat}));}
+    if(!coatImages.has(key)&&source)coatImages.set(key,tagArt(effectCanvas(source,copy=>kit.recolorCanvas(copy,coat)),file,{coat}));
     return coatImages.get(key)??null;
   }
   const winterFile=file=>winterArt&&images.has(kit.WINTER_ART[file])?kit.WINTER_ART[file]:null;
   function seasonalImage(file,kind,coat=null){
     const source=coat?coatImage(file,coat):imageFor(file);if(activeWeather==='clear'||!source)return source;
     const key=kind+':'+(coat||'')+':'+file;if(seasonalImages.has(key))return seasonalImages.get(key);
-    const result=makeCanvas(canvas,source.naturalWidth||source.width,source.naturalHeight||source.height),brush=result.getContext('2d',{willReadFrequently:true});
-    brush.imageSmoothingEnabled=false;brush.drawImage(source,0,0);weatherizeCanvas(result,kind,activeWeather,1,kit);seasonalImages.set(key,tagArt(result,file,{...source[ART_SOURCE],season:{kind,weather:activeWeather}}));return result;
+    const result=effectCanvas(source,copy=>weatherizeCanvas(copy,kind,activeWeather,1,kit));seasonalImages.set(key,tagArt(result,file,{...source[ART_SOURCE],season:{kind,weather:activeWeather}}));return result;
   }
   let terrainStageId = null;
   let terrainLayoutKey = '';
