@@ -1168,7 +1168,8 @@ export async function createGarden(canvas, options = {}) {
       if (!b) return;
       const box = {l: Math.floor(object.xy[0] - glow.pivotX + b.x), t: Math.floor(object.xy[1] - glow.pivotY + b.y), w: Math.ceil(b.w) + 1, h: Math.ceil(b.h) + 1};
       const fronts = objects.slice(index + 1).filter((front) => {
-        const a = front.asset, fb = a && ((front.facing === 'right' && a.rightBounds) || a.bounds);
+        // Creatures carry no `bounds`: their whole frame counts (else the lit copy covered a Vong mã in front, 17/11/2026).
+        const a = front.asset, fb = a && ((front.facing === 'right' && a.rightBounds) || a.bounds || (a.width && a.height && {x: 0, y: 0, w: a.width, h: a.height}));
         if (!fb || !Array.isArray(front.xy)) return false;
         const l = front.xy[0] - a.pivotX + fb.x, t = front.xy[1] - a.pivotY + fb.y;
         return !(l >= box.l + box.w || l + fb.w <= box.l || t >= box.t + box.h || t + fb.h <= box.t);
