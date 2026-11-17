@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {decorObjects, decorSpot, DECOR_SLOTS, DECOR_ANGLES, normalizeDecorFacing, decorFacingFor} from './decor-runtime.mjs';
+import {decorObjects, decorSpot, DECOR_SLOTS, DECOR_ANGLES, normalizeDecorFacing, decorFacingFor, railNeighbours} from './decor-runtime.mjs';
 
 const assets = new Map([['lantern', {id: 'lantern'}], ['arch', {id: 'arch'}]]);
 const iso = (c, r) => [c - r, (c + r) / 2];
@@ -53,4 +53,25 @@ test('decorations support two placement angles: default and right-facing', () =>
 
   const previewRight = decorObjects(d, assets, iso, {itemId: 'arch', at: [22.5, 7.15], facing: 'right'});
   assert.equal(previewRight.find((o) => o.id === 'arch')?.facing, 'right');
+});
+
+test('a rail never covers a piece, and lifting the piece never lifts it over a creature in front (17/11/2026)', () => {
+  // Owner's garden: Dobby statue at the south-west corner of Chuồng mở rộng 2, the Vong mã in Chuồng mở rộng 3 below it.
+  const ext2 = {c0: 21.5, c1: 26.5, r0: 20.5, r1: 23.5}, ext3 = {c0: 21.5, c1: 26.5, r0: 24.5, r1: 27.5};
+  const statue = {kind: 'store-decor', id: 'statue', ground: {c0: 18.5, c1: 20.5, r0: 24.5, r1: 26.5}};
+  const thestral = {kind: 'asset', id: 'thestral', ground: {c0: 22.4, c1: 22.4, r0: 26.4, r1: 26.4}};
+  const front2 = {kind: 'pen-fence', id: 'ext2-front', front: true, penRect: ext2};
+  const front3 = {kind: 'pen-fence', id: 'ext3-front', front: true, penRect: ext3};
+  const ids = list => list.map(o => o.id);
+  let scene = [statue, thestral, front2, front3];
+  railNeighbours(scene);
+  assert.deepEqual(ids(scene), ['ext2-front', 'statue', 'thestral', 'ext3-front']);
+  // A lone piece by the rail still moves after it.
+  scene = [statue, front2];
+  railNeighbours(scene);
+  assert.deepEqual(ids(scene), ['ext2-front', 'statue']);
+  // The follower's own front rail comes first: the piece stays put rather than draw over it.
+  scene = [statue, thestral, front3, front2];
+  railNeighbours(scene);
+  assert.deepEqual(ids(scene), ['statue', 'thestral', 'ext3-front', 'ext2-front']);
 });

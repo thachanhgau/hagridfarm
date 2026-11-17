@@ -113,6 +113,41 @@ export function depthSort(objects) {
   return out;
 }
 
+/**
+ * A pen's rails sort by one corner, so a piece standing outside the pen near a rail could be drawn under it (owner
+ * 09/11/2026: a pot beside the east rail, then a pumpkin cottage at the pen's south-west corner). Owner rule: a rail
+ * never covers an item. After the depth sort, every piece within RAIL_NEAR tiles outside the pen on the rails' side
+ * (south or east for the front rails, north or west for the back ones, corners included) moves to just after them.
+ * Whatever must stand in front of a moved piece (ground order) moves with it, else the piece jumped over a creature in
+ * the next pen (owner 17/11/2026: tượng Dobby at Chuồng mở rộng 2's corner covered the Vong mã in Chuồng mở rộng 3).
+ * A piece whose follower lives behind a front rail still to come stays where the sort put it.
+ */
+const RAIL_NEAR = 2;
+const inRect = (q, g) => g.c1 > q.c0 && g.c0 < q.c1 && g.r1 > q.r0 && g.r0 < q.r1;
+export function railNeighbours(objects) {
+  const fences = objects.filter(o => o.kind === 'pen-fence' && o.penRect), inPen = g => fences.some(({penRect: q}) => inRect(q, g));
+  for (const fence of fences) {
+    const p = fence.penRect, gap = g => Math.max(p.c0 - g.c1, g.c0 - p.c1, p.r0 - g.r1, g.r0 - p.r1, 0);
+    const side = g => fence.front ? (g.c0 >= p.c1 || g.r0 >= p.r1) : (g.c1 <= p.c0 || g.r1 <= p.r0);
+    const at = objects.indexOf(fence), carry = new Set();
+    // Residents keep their own pen's rails.
+    for (const piece of objects.slice(0, at)) {
+      if (piece.kind === 'pen-fence' || !piece.ground || !side(piece.ground) || gap(piece.ground) >= RAIL_NEAR || inPen(piece.ground)) continue;
+      const follow = [piece];
+      for (let i = objects.indexOf(piece) + 1; i < at; i++) {
+        const o = objects[i];
+        if (o.kind !== 'pen-fence' && o.ground && follow.some(f => groundOrder(f.ground, o.ground) < 0)) follow.push(o);
+      }
+      const stuck = follow.some(o => fences.some(f => f.front && inRect(f.penRect, o.ground) && objects.indexOf(f) > objects.indexOf(o) && objects.indexOf(f) <= at));
+      if (!stuck) for (const o of follow) carry.add(o);
+    }
+    if (!carry.size) continue;
+    const moving = objects.filter(o => carry.has(o));
+    for (const o of moving) objects.splice(objects.indexOf(o), 1);
+    objects.splice(objects.indexOf(fence) + 1, 0, ...moving);
+  }
+}
+
 const placedId = raw => (typeof raw === 'object' && raw !== null ? (raw.itemId ?? raw.id) : raw);
 
 /** Where a placed item stands: its own `positions` spot (free placement), else its legacy socket. */

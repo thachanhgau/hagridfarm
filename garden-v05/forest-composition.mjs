@@ -1,7 +1,7 @@
-import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=26.13';
-import {nativePixelScale} from './garden-grid.mjs?v=26.13';
-import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=26.13';
-import {densityOf,fillAt} from './device-pixels.mjs?v=26.13';
+import {forestRectOutsideBoundary} from './forest-clearance.mjs?v=26.14';
+import {nativePixelScale} from './garden-grid.mjs?v=26.14';
+import {FARM_SIGN_ART} from './farm-sign-art.mjs?v=26.14';
+import {densityOf,fillAt} from './device-pixels.mjs?v=26.14';
 export {FARM_SIGN_ART};
 // Scenic-only composition: deterministic groves and a walkable-looking exit.
 // Never changes authored slots, collision data, or game state.
