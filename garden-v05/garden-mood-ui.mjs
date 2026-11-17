@@ -35,10 +35,10 @@ const clockText=ms=>{const d=new Date(ms+7*3600000);return `${String(d.getUTCHou
 export function moodTiles({species,entry,view,bondLevel=1,now=Date.now()}){
  const done=new Set(entry.done||[]),norbert=species===NORBERT,tiles=[];
  const tile=(kind,art,label,blocked)=>tiles.push({kind,art,label,state:blocked||'',enabled:!blocked});
- tile('play','festival',TOYS[species]||'Chơi',done.has('play')&&'Xong lượt');
+ tile('play','star',TOYS[species]||'Chơi',done.has('play')&&'Xong lượt');
  // Phase 2: the day's first play with Chó đuôi nĩa also cheers the other pen creatures (server garden-mood-core crupCheer).
  if(species==='crup'&&!done.has('play')&&view.crupCheered===false)tiles.at(-1).state='Cả chuồng +5';
- tile('groom','care',groomLabel(species),done.has('groom')&&'Xong lượt');
+ tile('groom','paw',groomLabel(species),done.has('groom')&&'Xong lượt');
  tile('train','book','Dạy trò',entry.lessons>=LESSONS*3?'Thuộc cả 3':entry.lessonToday?'Mai học tiếp':done.has('train')&&'Xong lượt');
  if(!norbert){
   const roaming=entry.roamUntil&&entry.roamUntil>now;
