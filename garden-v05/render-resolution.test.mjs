@@ -91,3 +91,15 @@ test('a working set over budget settles to native fallbacks instead of re-fetchi
  await frames();assert.equal(loaded.length,3,'each visible HD variant admitted at most once per view');assert.equal(surface.stats().pending,0);assert.ok(surface.stats().peakBytes<=surface.stats().budget);
  left=-100;await frames();assert.ok(loaded.length>3,'panning permits a fresh HD selection');assert.ok(loaded.length<=6,'new view also settles');
 });
+test('a side canvas (night statue copy) swaps for HD off screen, says when it waits, and never rebuilds the ground',async()=>{
+ const calls=[];class FakeImage{width=200;height=200;set src(value){queueMicrotask(()=>this.onload());}}
+ const ctx={drawImage(){},setTransform(){},getTransform:()=>({a:1,b:0,c:0,d:1,e:0,f:0})};
+ const surface=createResolution({width:0,height:0,style:{},dataset:{},getContext:()=>ctx,getBoundingClientRect:()=>({left:0,top:0,width:2560,height:1440}),ownerDocument:{defaultView:{innerWidth:1280,innerHeight:800,devicePixelRatio:2,Image:FakeImage}}},{width:2560,height:1440},
+  {art:{'statue.png':{file:'hd/statue.webp',density:2,width:100,height:100}},imageUrl:file=>file});
+ let rebuilt=0;surface.adopt({drawImage(){}},()=>rebuilt++);
+ const side={drawImage:(...args)=>calls.push(args)},waiting=surface.side(side),statue=tagArt({width:100,height:100},'statue.png');
+ side.drawImage(statue,99999,99999);assert.equal(calls.at(-1)[0],statue);assert.equal(waiting(),true);
+ for(let i=0;i<5&&waiting();i++)await new Promise(resolve=>setTimeout(resolve,0));
+ assert.equal(waiting(),false);side.drawImage(statue,0,0);assert.ok(calls.at(-1)[0] instanceof FakeImage);
+ assert.equal(rebuilt,0);
+});
