@@ -674,7 +674,7 @@
 @media(max-width:440px){:is(#pondDock,#orchardDock) .pond-lot{width:48px;min-width:48px}:is(#pondDock,#orchardDock) .pond-bed{min-width:72px}:is(#pondDock,#orchardDock) .pond-pick button{min-width:52px;padding:2px 4px}}
 /* «Câu cá»: the pond, a bobber, the bar with zone and sweet bands, one tap. */
 .pond-cast .cast-stage{position:relative;width:max-content;margin:0 auto 12px}
-.pond-cast .cast-stage img{display:block;image-rendering:pixelated}
+.pond-cast .cast-stage img{display:block;image-rendering:pixelated;width:auto;max-width:100%;max-height:min(34dvh,300px)} /* «Sổ cá» row: the stage gives up height so «Giật cần» stays on screen */
 .pond-cast .cast-bobber{position:absolute;left:calc(50% - 4px);top:42%;width:8px;height:10px;background:linear-gradient(#C75B4B 0 50%,#D6D8BF 50%);border:1px solid #231F2E;border-radius:4px 4px 2px 2px}
 .pond-cast .cast-bar{position:relative;height:24px;margin:0 0 12px;border:2px solid #231F2E;border-radius:4px;background:#24483F;overflow:hidden}
 .pond-cast .cast-zone,.pond-cast .cast-sweet{position:absolute;top:0;bottom:0}
