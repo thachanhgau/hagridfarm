@@ -5,7 +5,7 @@
     "exactTransparentRgb": true,
     "decodedRgbaIdentical": true
   },
-  "revision": "8d193aab5c00",
+  "revision": "b01495e93de0",
   "sourceFolders": [
     "native",
     "native-levels",
@@ -10296,3000 +10296,3000 @@
       "file": "runtime-webp/decor-assets/native/nw_acorn_lantern_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3942,
-      "bytes": 2430,
-      "sourceSha256": "31ca0b6082c2f8067905edd99bf10690bfc2abbc1a2fc61d50e1bc8b99458b9f",
-      "sha256": "54a7df56487342dc47017113f8328998d87b9f9cd501587b6b1aff7b16c7e879"
+      "sourceBytes": 15760,
+      "bytes": 11902,
+      "sourceSha256": "f80c40e6c0db5d39a8d3c163e0057cb1bb2932051bff9b78772545ae61b85f18",
+      "sha256": "c60349b900d5381a28062b28932be94c769c987a6e19010f37c8ea4be502ad6e"
     },
     {
       "source": "decor-assets/native/nw_acorn_lantern_right.png",
       "file": "runtime-webp/decor-assets/native/nw_acorn_lantern_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2093,
-      "bytes": 1268,
-      "sourceSha256": "716719a392ea37aaded8ed48e78570c164df3de294e31100372beddc31637dd3",
-      "sha256": "0fcea570880022d2b5dbf756fc5d416f8094ac882d653aa34f68e7ad96e226ae"
+      "sourceBytes": 7889,
+      "bytes": 5938,
+      "sourceSha256": "739b6070257e25ba38b03639c46fe26aeff3fd2760c0bc2b2f0e3fdc5cba4016",
+      "sha256": "cac4c0a19356cbcdc4306d30ee62b6c886d9daf86a9b75125433dea70e7ff44a"
     },
     {
       "source": "decor-assets/native/nw_acorn_lantern.png",
       "file": "runtime-webp/decor-assets/native/nw_acorn_lantern.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2201,
-      "bytes": 1314,
-      "sourceSha256": "8b09a7a74f853bc37b66da42ba09cff1ed52785e0ea35579418e3aa77dcf269c",
-      "sha256": "ad1fb28e7fbe3c657cd55d2550d79bde1d594a1339b12519fe3b379de8225605"
+      "sourceBytes": 8114,
+      "bytes": 6180,
+      "sourceSha256": "b7bcc848f67bdf40c7462733c0e6119ac50b060bf8b62f32baed9a339decdd86",
+      "sha256": "190b8383ad7e3fdff5943eb8c506dc02ff9dff9784dda904658144d7ca966f0a"
     },
     {
       "source": "decor-assets/native/nw_bell_bough_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_bell_bough_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 1814,
-      "bytes": 984,
-      "sourceSha256": "c9cf471eb1f7818175472f9c8a7fca0951c25d5079da0bea8c6d04638946787c",
-      "sha256": "af1ce5d33020285930c1680c186ba18158e9bf3879e66861c81ae9c88a2e18ee"
+      "sourceBytes": 5161,
+      "bytes": 3610,
+      "sourceSha256": "78b88d0e179139cc2b5750502d328867731b51e7983b775cffe44901cd0fca39",
+      "sha256": "74a1211d764ce9a546e8c61a65fa0e8888e5ef56b3c3c3bb8edf567b9afaac89"
     },
     {
       "source": "decor-assets/native/nw_bell_bough_right.png",
       "file": "runtime-webp/decor-assets/native/nw_bell_bough_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1020,
-      "bytes": 560,
-      "sourceSha256": "ddca41695cbe94770d62b789635a64776f8eff3eec58aba7d52a460165981c86",
-      "sha256": "3ca804529b0a13945ab900731c14d7a162addc65f7799b60893ecdb6d689e72d"
+      "sourceBytes": 2645,
+      "bytes": 1834,
+      "sourceSha256": "740447294f607467f88b83d45ad2e081f89fe8244531e478d58fd31883779424",
+      "sha256": "4f4c02006b7194f674b62ba9c396d6fa295317c3153be4931c8470ba2bf7e2e3"
     },
     {
       "source": "decor-assets/native/nw_bell_bough.png",
       "file": "runtime-webp/decor-assets/native/nw_bell_bough.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1066,
-      "bytes": 568,
-      "sourceSha256": "fceaaf33b0a8b251e95f3261b0af74ba53f3b60b9acee7c481e5d1b0842af369",
-      "sha256": "3ddeedc35601bc8394ad7556b50d08c387f75b7085ce09f472bf4517af648680"
+      "sourceBytes": 2682,
+      "bytes": 1880,
+      "sourceSha256": "8e2752cf18c854ba08e8e385693e2594ee39a7fb9b3e87f1fe72b301a232a473",
+      "sha256": "0e2ea770fd97e7b76cc13edf4b9ba66e70492ecede38e564e881aae0f804c922"
     },
     {
       "source": "decor-assets/native/nw_bell_sled_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_bell_sled_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 12005,
-      "bytes": 7840,
-      "sourceSha256": "5563c37c92d6123ef65bc158b3a6837d2b0e3ed0519ed2accff80b6459e114e2",
-      "sha256": "2fa8dd07f4ccef063a77e0e30f619971647e585cb8681ce52fb90c022fd62c49"
+      "sourceBytes": 54955,
+      "bytes": 40192,
+      "sourceSha256": "a011ace9d7588d1ad6c50b2a4b3657e91ec1720553284ede97364d65e68b40a0",
+      "sha256": "3b2918a954163b21818282c6c247fd2eb43ee8fc9e8e7ab4ebb226b315688b7d"
     },
     {
       "source": "decor-assets/native/nw_bell_sled_right.png",
       "file": "runtime-webp/decor-assets/native/nw_bell_sled_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6286,
-      "bytes": 4012,
-      "sourceSha256": "f179b61ee8e8ca51a8d2039b0c6c2ab53850a4be5604363cc5f79cd394f67788",
-      "sha256": "f2c67631c1ad0dd6284d83738a9e29a83b276b3f772f910fbed3a32d44ece815"
+      "sourceBytes": 27803,
+      "bytes": 20426,
+      "sourceSha256": "915d1cbe3adf0aaf88938a70fb6a9839613f38d5b807cdf12338ab9033d05762",
+      "sha256": "90b81f357e6a1f088f306b74b686d2d29db5c1e093319e54d15ee56509129834"
     },
     {
       "source": "decor-assets/native/nw_bell_sled.png",
       "file": "runtime-webp/decor-assets/native/nw_bell_sled.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6147,
-      "bytes": 4000,
-      "sourceSha256": "e8149494dca025236cc6eb4413b497fe0f6f4ad9ca315ea616e777f89c69609a",
-      "sha256": "7a6fb19da8065bbe747647d8b49f1b993a28b8743386726efa3bc0e160803a44"
+      "sourceBytes": 27883,
+      "bytes": 20622,
+      "sourceSha256": "773eaeb54ca490dcc7c9cd33d06cf75066521e035d1e7824e5f363df50bd495e",
+      "sha256": "3b3fab2666245608c4f281d3a30283b49bddc75d7f82dc40014c2d48a151ea65"
     },
     {
       "source": "decor-assets/native/nw_candle_wreath_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_candle_wreath_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 2922,
-      "bytes": 1752,
-      "sourceSha256": "9d8e15e0e25ad9623d5a7514f56fc377feaa7dcd6caaa6ed8c1b4ed58f3f6c00",
-      "sha256": "f308d4ff794d068617e25ced3cb0427a5f2b5b36d8a72144572a61f58d67e5c2"
+      "sourceBytes": 10532,
+      "bytes": 8028,
+      "sourceSha256": "79b235e310d37f45b57321910fa78a2159a0b66d898747fd06c227ea7179aea0",
+      "sha256": "39286dfbbe470d542c5114399cb3796ccf047bfa7d6544fd94adb66f9958e5bd"
     },
     {
       "source": "decor-assets/native/nw_candle_wreath_right.png",
       "file": "runtime-webp/decor-assets/native/nw_candle_wreath_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1635,
-      "bytes": 968,
-      "sourceSha256": "762428f34d73b9cbffc508ebb8471a1ff3c663d0455232e86de38ba1eb779f15",
-      "sha256": "0713570d7d16219a44129c65fe1e7c2f96ce64002a08cff02dfd395188d4e791"
+      "sourceBytes": 5425,
+      "bytes": 3988,
+      "sourceSha256": "38fca8a5da47d26762d6a0671ff5823afe075f9905a25517b4a25f45f495cc88",
+      "sha256": "ea67725e095ddb72224a9ee4faa1f5f4dad515852739b808d6678fd632208572"
     },
     {
       "source": "decor-assets/native/nw_candle_wreath.png",
       "file": "runtime-webp/decor-assets/native/nw_candle_wreath.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1610,
-      "bytes": 974,
-      "sourceSha256": "148adfd58001eb6e83caa8588648c85b9adc393f696ac16bc425ad7f0093be92",
-      "sha256": "dea9c9257fec4e96d22ca0b2ee7385edfa5c34e948553e81003c59012773cf93"
+      "sourceBytes": 5268,
+      "bytes": 3884,
+      "sourceSha256": "dd74a1fe8f6c5474054d874d8ec4bcdfe5a26ec50f085ef9effb79646f76fd17",
+      "sha256": "e2ec8b5e2af977efcd11897fdb7953ccc2647ac332ca4f0a5af9c8f8196ca312"
     },
     {
       "source": "decor-assets/native/nw_candy_arch_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_arch_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 7785,
-      "bytes": 4696,
-      "sourceSha256": "32489cc7ce2ec80cb3ac4838066b7208a675b424780e5bfe40e3048e2d6a21df",
-      "sha256": "dba8738ee70426b2f427a741d30a327f7562ad53a12abb22d0638e1eefbe8a00"
+      "sourceBytes": 30649,
+      "bytes": 21898,
+      "sourceSha256": "b2a485ef71e30a3d9354b1961725d442316889b5885215f8e0756989fe4c3cba",
+      "sha256": "ab8ff62ff7a9957d5843a33cf51b6a70d103684fae99d1d4a25585799507d776"
     },
     {
       "source": "decor-assets/native/nw_candy_arch_right.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_arch_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4094,
-      "bytes": 2360,
-      "sourceSha256": "8f4a69c218330461dc1a643591a92348886438dbbbf1a3e84b236711303129a2",
-      "sha256": "e38bb25bf144cfd23c38b7eb1159f86909f48830a247e471183d50fe8b04eae3"
+      "sourceBytes": 15424,
+      "bytes": 11348,
+      "sourceSha256": "a89b23e769462e1741daecb6c6f3fecb9b0f367ea4f174ffcb0e81a81dcd2358",
+      "sha256": "4e188fcf28089da657b0607d19152337146764f69026d98943303979be8f58c5"
     },
     {
       "source": "decor-assets/native/nw_candy_arch.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_arch.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4082,
-      "bytes": 2402,
-      "sourceSha256": "c50c880f75a523ec1c22aec453555f6cb61edac2287914a07b8b522a20b511c2",
-      "sha256": "b01290dbc2c5113f3f2ce4c7d9610ee691457c5421af45475827fbd0d1096b2d"
+      "sourceBytes": 15562,
+      "bytes": 11454,
+      "sourceSha256": "87df285eab77489a72886fc734d7658a6da678dd426bdba5fee7efd23822dce1",
+      "sha256": "2664fd7f025dea42f85b58c4647f94c3f4b18e54241ad76d6568564d6a71cce5"
     },
     {
       "source": "decor-assets/native/nw_candy_cane_bow_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_cane_bow_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3777,
-      "bytes": 2362,
-      "sourceSha256": "2a5cc69a9a5f1b4425460f99c8d0a6979d13109a1b25bf5d3e00540176558986",
-      "sha256": "69b8de15404674899ca84dfaeee362be187523a2be8890a317524eb7ff5abcef"
+      "sourceBytes": 15070,
+      "bytes": 11134,
+      "sourceSha256": "5080c36e5255ee5e5a843161f8a409988aec908e66f72a776e2b5749b1d95918",
+      "sha256": "0963609416af8d48e39cd6af12685aa5643b81bed50dc6a51333a9ddc453d39e"
     },
     {
       "source": "decor-assets/native/nw_candy_cane_bow_right.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_cane_bow_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1965,
-      "bytes": 1182,
-      "sourceSha256": "87b75db3a7d4bfd5e82c62455233eb0d772df5b483c9d95813db0eba5349e3ad",
-      "sha256": "c13cc3071bef2e6aab2d3ea2466eaf525aa5d45c71d1a900d3fca46a35845aff"
+      "sourceBytes": 7207,
+      "bytes": 5304,
+      "sourceSha256": "61ca1facb0cad371786d12ec5f0d14f012fd4a2e03caf35bb36feb4eb203a993",
+      "sha256": "e09cf6d1e876599f49f2b5fee0e5b52d0d964268014b51f39557b70bd0f9f239"
     },
     {
       "source": "decor-assets/native/nw_candy_cane_bow.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_cane_bow.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2170,
-      "bytes": 1324,
-      "sourceSha256": "3a7d152e1bc5d7789d1bd3d1f74fe3514f51fa3b40fd006e6b83dd40f70d3105",
-      "sha256": "d494907c9b4f9559dd26610e14beb581ce26779700e9f7ce5e88f28b944e6138"
+      "sourceBytes": 8081,
+      "bytes": 5980,
+      "sourceSha256": "baf00d649e64d91ddb7dcf5b2661cb39a0fd7508358419a00cf12d9d912ba1cb",
+      "sha256": "3f7cbc4ec74bcf6cced0dc99f7be4198251b93727f7976359e4a184bf243bc5c"
     },
     {
       "source": "decor-assets/native/nw_candy_sleigh_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_sleigh_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 11098,
-      "bytes": 6986,
-      "sourceSha256": "9f1ab065c81f47e50e7a7d9c34d54f59b8fb313fb854511b9d2b1650d4dca218",
-      "sha256": "0b75984250cffec14333731508e057c5e0b1e90187639ed6cb2bdd25cf8cdb2f"
+      "sourceBytes": 49629,
+      "bytes": 36178,
+      "sourceSha256": "52071f8b198af1e451a055ee43039eab2e96fb5244d46b8bcce7f21f6a48759b",
+      "sha256": "a428a09f50077492aa9bdf7c8b5dcb937aaf14c9970eaa0d4d1e158cb88e6353"
     },
     {
       "source": "decor-assets/native/nw_candy_sleigh_right.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_sleigh_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5790,
-      "bytes": 3592,
-      "sourceSha256": "d3f12634fe182d2ee7add5a1405d7c67a6901041650bea2d6b6ee249496c114e",
-      "sha256": "7df91aaf60630a204fea23464c4f97846f0e7f27c0720d5500ff08740896525d"
+      "sourceBytes": 25035,
+      "bytes": 18832,
+      "sourceSha256": "c62083b177e8141f70c7a0e8c988962baa7b5375a57a8ec37a0c62882f21c64b",
+      "sha256": "c3c8ce589ddb72cd39c3d3c43e0d35a69e1e84b687f629515887a0f96ff84900"
     },
     {
       "source": "decor-assets/native/nw_candy_sleigh.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_sleigh.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5752,
-      "bytes": 3576,
-      "sourceSha256": "2e3174e5378209a954ffdb498510ec5f65bbd20e8e58f290615918dfb6ec659a",
-      "sha256": "1b46a13122f073ec5854290f9a6c0c3e16673ea3021d7a6c4d8f5a8b9f1faef0"
+      "sourceBytes": 25180,
+      "bytes": 18926,
+      "sourceSha256": "d925ef86c64568205eee0784ab305e1265d2f0ebdf1e90bb8809b19d3a76ad11",
+      "sha256": "6375f15addec57c4ad3eea2e4493def36670a5c271317ae26c875bd91e76c70e"
     },
     {
       "source": "decor-assets/native/nw_candy_tree_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_tree_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 12707,
-      "bytes": 8274,
-      "sourceSha256": "245907460de4756237a4d2cdd663d92aa2ae3c08a2b09df27e1707d459a3a907",
-      "sha256": "0fc1b0d14f604036cce1c551178ffddaa3b6c30261a845a21dca069ea1bceb29"
+      "sourceBytes": 61646,
+      "bytes": 43582,
+      "sourceSha256": "6b5a5afedc48172151dde1e571b9d7f5408b7bb753bf6dfcd940d2d443ee4784",
+      "sha256": "68c4a1d22a4ec93c81490273a1c6f3cf59508281d4944042893a74745e0685a2"
     },
     {
       "source": "decor-assets/native/nw_candy_tree_right.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_tree_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6581,
-      "bytes": 4186,
-      "sourceSha256": "4478f665ccd4da6ad43ce651fd84aa034c0c7d4d993292ebe39571ba099a0c36",
-      "sha256": "cd419d3a72905132f938748c2875df4b11465a398ff7940ca9256150acf69f89"
+      "sourceBytes": 31115,
+      "bytes": 21570,
+      "sourceSha256": "9d86f909efd2c934e2c88c5503d57aed445e4ddf7a36995f7c142b9db0086d83",
+      "sha256": "78a8f537d9bdf49728870e81f396def4325fc97c10f7bede9ae78157600ea876"
     },
     {
       "source": "decor-assets/native/nw_candy_tree.png",
       "file": "runtime-webp/decor-assets/native/nw_candy_tree.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6548,
-      "bytes": 4198,
-      "sourceSha256": "d7cf746d3e72960a075dcc560ed0d54a0c530133256f4f9888a0f7d1bc5b6bbf",
-      "sha256": "2b865afc6ee765ff05a7f339649dbb9124fa90fce0227d68f3ccefb7cb33bf99"
+      "sourceBytes": 31057,
+      "bytes": 22206,
+      "sourceSha256": "9f331a4fe02602f1966f5533f9969ac8949ce8a67893c80a26f5fa33876ed5c6",
+      "sha256": "91487a53496b689dcd8e5e652890aa6e13660f7c92235be68ee61f202ccc6b06"
     },
     {
       "source": "decor-assets/native/nw_cocoa_marshmallow_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_cocoa_marshmallow_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3336,
-      "bytes": 2038,
-      "sourceSha256": "f15baa1e28ed5bb6ff691947ac49adbc6e138759fd3600d31ad53f3adbabbc9b",
-      "sha256": "ce1e44c8bdeaa9030ff62486cb817eff4c6483b9c4383e8cddc76b168a84b4b3"
+      "sourceBytes": 14483,
+      "bytes": 10830,
+      "sourceSha256": "87378295bfed79b1645a753b640f5bf43fb7e3ca1985595d2f65c4bba61e66ac",
+      "sha256": "a159e7d55480d0d5cba43f13b25e8518c710a7af48840a1786a88cc42d61aea9"
     },
     {
       "source": "decor-assets/native/nw_cocoa_marshmallow_right.png",
       "file": "runtime-webp/decor-assets/native/nw_cocoa_marshmallow_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1830,
-      "bytes": 1078,
-      "sourceSha256": "f44cad836ebcd777fe1a1f8ebdfea2a89812d4fb439071cebf53082ab3caa4d4",
-      "sha256": "d0f2d63a3ada2b6b031620a30347fbb0d958dabcf0db8727cb4c72fa0b26b3cf"
+      "sourceBytes": 7352,
+      "bytes": 5502,
+      "sourceSha256": "4e015d42a79c6abb66f3a10b212097590ec4a251ca300ed674944d55b476844c",
+      "sha256": "4033604d72e8c4b0f57cb243983eb6b726c724daf69a801af03ca5cea4cad3f6"
     },
     {
       "source": "decor-assets/native/nw_cocoa_marshmallow.png",
       "file": "runtime-webp/decor-assets/native/nw_cocoa_marshmallow.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1848,
-      "bytes": 1144,
-      "sourceSha256": "f402aab8e25f1e819d9735d993114b2a42cf86745c1e549325398c58b81ba279",
-      "sha256": "872ea4de4c171c9517880aa532afaa6cf7999ee3f2749c7d5f7a77607484a0e8"
+      "sourceBytes": 7420,
+      "bytes": 5492,
+      "sourceSha256": "b69b768ce4745a25ec9b7530ca3fc8ae7caf630297ce7aa4ebf66b6321c4484b",
+      "sha256": "1c6790c699c6b24ea8c5a27db179297aafa6d4ae1f98bfbf9bb8d871f2d97545"
     },
     {
       "source": "decor-assets/native/nw_croissant_wreath_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_croissant_wreath_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3325,
-      "bytes": 2006,
-      "sourceSha256": "195e8dedc2afa9a3e96e2ec65f42fa5a2495f17d7846f3f659a9edef725798df",
-      "sha256": "87067d70c94ffbbd47003a4cee6e040e75ce1f609cf2a7f2224dd0216226cf5b"
+      "sourceBytes": 12795,
+      "bytes": 9504,
+      "sourceSha256": "5e0733eb099a443b95b47ad514005b891ecd80e4f3a1d950ba948cf488f94ef9",
+      "sha256": "44ac2e6a3ecf0d791a1fb00cd350e8562adc3bd9e3b7755bae8bbd919ec7146a"
     },
     {
       "source": "decor-assets/native/nw_croissant_wreath_right.png",
       "file": "runtime-webp/decor-assets/native/nw_croissant_wreath_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1771,
-      "bytes": 1054,
-      "sourceSha256": "712c8bf0fe66106c397d9a9b442fea4c08f506cef5e8d5240b8ec2dcd703efcf",
-      "sha256": "2454f0b5e350c091f59333169efe813ba9fb230572fe6d3ac3b516c8226cde51"
+      "sourceBytes": 6232,
+      "bytes": 4706,
+      "sourceSha256": "1b1c892ab901bec245b9ffe0c646fb4da51c2ad0b6d26b9c943762ff320edcde",
+      "sha256": "2b627d8980b8cf0d26f667cdf759b09fa6b755355436d8e109aea81be63790d9"
     },
     {
       "source": "decor-assets/native/nw_croissant_wreath.png",
       "file": "runtime-webp/decor-assets/native/nw_croissant_wreath.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1864,
-      "bytes": 1128,
-      "sourceSha256": "f5bff2e1224e21c6a3890d8173073989c8621d3e0ae0a1f25dc50ba7e437bb20",
-      "sha256": "bfb36f4a56257c4d5a6b3ae6f1c59aa39d980733a7a052bdb33739109c118539"
+      "sourceBytes": 6717,
+      "bytes": 4974,
+      "sourceSha256": "c04f2dc0b93029763a4b5ac73f10cbe2fdcdf7427dc01ac1eeae648dd2c394ae",
+      "sha256": "e8ee8d4e04111b988ec78371b4d841534e2c56d76b9f892036f34637c4784c09"
     },
     {
       "source": "decor-assets/native/nw_elf_bell_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_bell_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 5845,
-      "bytes": 3662,
-      "sourceSha256": "67ba30fad123c256210cab6a8dfc3e0d56b96301f0b7ded4e257e2b9871a9e3b",
-      "sha256": "b5ffc212c56205e7dab7713cf68eccd0dda1e44c3799235960bef84bcc73fbd7"
+      "sourceBytes": 23631,
+      "bytes": 17870,
+      "sourceSha256": "9fd31f4661d7edbcf6631e099255e0856f3b071940dff5976f66b59eb69750a0",
+      "sha256": "45e093514d0f4c60d3a5fed2ebb25af405555b503e9b7a0424c90e43e342c1f9"
     },
     {
       "source": "decor-assets/native/nw_elf_bell_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_bell_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 3010,
-      "bytes": 1826,
-      "sourceSha256": "a2015b43ad02eb4df8272debf260794627d7566476508a40cb2b2bdc4a26f889",
-      "sha256": "c24b29e7643f24f5a797ce8fbb35b987b7574f514492765361346084045ffeab"
+      "sourceBytes": 11274,
+      "bytes": 8510,
+      "sourceSha256": "b25736e1d4cb257045cd8ca7c915d15b7c629a794efaeb2bb2734ce513a4027f",
+      "sha256": "3c830a0786d01e28f9273af4d5ad5d5da530d66768671ad1c0a120f8a1d5c8fe"
     },
     {
       "source": "decor-assets/native/nw_elf_bell.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_bell.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 3250,
-      "bytes": 1982,
-      "sourceSha256": "737cb1dc348b15164ad9e292853fa9225de2b61b80190c574cb496a62f869819",
-      "sha256": "d34213d08f692e3cad249399601c16f54f12845de283cc2552703f1f07c370f6"
+      "sourceBytes": 12570,
+      "bytes": 9606,
+      "sourceSha256": "137d74cbf7615bfde65545275daae231a78d45dd3c8a028ff1f079ace69b8eb7",
+      "sha256": "0881243c0fef5b7eb9fc98f7a7ebc3e233c97257da0daf4ed4afec40e5caf20a"
     },
     {
       "source": "decor-assets/native/nw_elf_boot_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_boot_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4952,
-      "bytes": 3098,
-      "sourceSha256": "bd3391ebcf2fb09577b0d3a3355a57374384e725ad7f12999300837a58c74ec6",
-      "sha256": "f1c182a5a5812802b192fc068219518c7f5725c4a53ff5f58f5f6e5d18ad3521"
+      "sourceBytes": 21150,
+      "bytes": 14964,
+      "sourceSha256": "14104b54179da2008ca2ff216a1f434ad4cbdd4745eaa4dc1586ec7466ac0aab",
+      "sha256": "9406a7e2486f5dc8ce6446871c9af1843bc5f1798191994ebc17769f4ddcefb1"
     },
     {
       "source": "decor-assets/native/nw_elf_boot_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_boot_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2715,
-      "bytes": 1666,
-      "sourceSha256": "a3bed46108e44ce5693839c5a9fef1f86edbed3bea5e0fab80883e6c1b541cea",
-      "sha256": "c9ffc9f48e88b690f387c8719abb8532fc31371da128183fe4b63aab22ac95c4"
+      "sourceBytes": 10939,
+      "bytes": 8068,
+      "sourceSha256": "62807f9a0cd3926f0e814ac556f2d9d8cd86e9099ea0f28cd0a0a5527783a26a",
+      "sha256": "b9da702352c2a818f76587d4eda6281a83c8ab61d12fef6b5cfde074b88ac7e3"
     },
     {
       "source": "decor-assets/native/nw_elf_boot.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_boot.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2625,
-      "bytes": 1586,
-      "sourceSha256": "fc8b94f0d768ee77dd70063dafa93b9042ef73a2f626958cee34d3f42d8f2274",
-      "sha256": "d75635a2909641bb2ee7cfc669a49c89058d45493d9593ac8e7a4fa285523c57"
+      "sourceBytes": 10461,
+      "bytes": 7714,
+      "sourceSha256": "5d3bdf1a5bfd4b15199397c893db5ad0177a10416e839c828abf27ec2bade588",
+      "sha256": "af138519e5e8ca08333ec9cd93242a656f805ee8f482252ba8f51080108599b8"
     },
     {
       "source": "decor-assets/native/nw_elf_cocoa_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_cocoa_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4295,
-      "bytes": 2616,
-      "sourceSha256": "24dedfc621c0e80a1b0bce9f879905d70a2db327ad0824bf8dcea25dbe2e8bd7",
-      "sha256": "0aaf62dc134d17699155d43635eed7da2ea303f0381d3f1c9924ee180d7edcf2"
+      "sourceBytes": 17600,
+      "bytes": 13662,
+      "sourceSha256": "c8149cb40546f30ffa678f87c33b8603b8fe673cf269398a7b851b20f0f735a7",
+      "sha256": "22b6323d6d875e8d707e8a572ae0638cfd3591d4796ea37239e04790ff803756"
     },
     {
       "source": "decor-assets/native/nw_elf_cocoa_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_cocoa_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2391,
-      "bytes": 1436,
-      "sourceSha256": "ce38ca51bbe4c925b0ba3dba3d64de8093121f6754e9306a0b9fec572a55b76f",
-      "sha256": "d82842ec0fb5e4c7294c372cd2b0055040cebd6d8db80cead53bcb173f5587ec"
+      "sourceBytes": 9148,
+      "bytes": 7122,
+      "sourceSha256": "9de5219ef876d5a248ac496b585af7a1246b360ec57af6558f7897067d842550",
+      "sha256": "ea12d220a75d3ee9a0d6bb55b22e84fb430dcd7a3b13cf8fa43874b7b9def67d"
     },
     {
       "source": "decor-assets/native/nw_elf_cocoa.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_cocoa.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2259,
-      "bytes": 1372,
-      "sourceSha256": "89e0c27fc22b9686d29e08ad6b901e1ff291c034779908070f92fff10d766cd0",
-      "sha256": "03ed78561f85c6184ec081c8cb3bbecb391aec3ebf60072f3749daf257ff0188"
+      "sourceBytes": 8579,
+      "bytes": 6426,
+      "sourceSha256": "74752cecde00fb1ffa9bc8c734aa61e3c35a2aae027f42d8c7d6df8546d5878f",
+      "sha256": "f42230ed65f9f6d529aa91fea55bdbc626921f618bd8ab7acbbfdf7ce4961f33"
     },
     {
       "source": "decor-assets/native/nw_elf_fir_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_fir_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3782,
-      "bytes": 2326,
-      "sourceSha256": "e6aee5fea5647dbfc0a36ea85b2eac1f28c404c011907663f2a6482af224717f",
-      "sha256": "a7f37f3090c2960da076834e9bbfa6261ea014d554f442df23b80146b97221dd"
+      "sourceBytes": 14466,
+      "bytes": 10896,
+      "sourceSha256": "45851e2cdffdcd53538a723a49e04fd68e24d23b3e9f4ab3fdbf885815f313b9",
+      "sha256": "d1143d30664e5ff65d114fb63231143ae6bee552575e6e16ca3e91630fd6de11"
     },
     {
       "source": "decor-assets/native/nw_elf_fir_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_fir_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2123,
-      "bytes": 1270,
-      "sourceSha256": "2097b3cbd11188b465e6338662f2b3e46e441a9c29267ee5636d5aaf7ce851e6",
-      "sha256": "d81efb9b62c8cd985a61f8c6c3ab7d3841934c0d34d3be62451da6915da62e0f"
+      "sourceBytes": 7487,
+      "bytes": 5714,
+      "sourceSha256": "b1cdd49fa950153389a326f0651e958fc161a14337bda7b68ef6e8c5389b3498",
+      "sha256": "3670365db3f59682ff14bca68b9873a324e41ef8045cb4c36da2aa839afa5214"
     },
     {
       "source": "decor-assets/native/nw_elf_fir.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_fir.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2046,
-      "bytes": 1200,
-      "sourceSha256": "ea02bd4bfceecb59af812bf3ec1ba35929f2ec56056dc73fb504145def8195d8",
-      "sha256": "f353312d933213e4744ae7de10fc6496140c60fd7ec4f8e07be53788e55805e7"
+      "sourceBytes": 7139,
+      "bytes": 5312,
+      "sourceSha256": "69d875cad43ce4e6de3e694ba0986f02c8a490562175093f2eee8a6ec0964540",
+      "sha256": "dae81ad671f0d085e204634350dc1e57d1299bccca6ff860bb4e5b76581c36a4"
     },
     {
       "source": "decor-assets/native/nw_elf_hammock_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_hammock_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 10311,
-      "bytes": 6430,
-      "sourceSha256": "f9497076f459393238316eeee752f3f102d499bd3623ed6e277e6ed6fe04bafd",
-      "sha256": "c0406bbc9d6e33468b85829a820b28d4e319fae3ab1a7ca555eadd71947f8de8"
+      "sourceBytes": 42454,
+      "bytes": 31232,
+      "sourceSha256": "ad8fcedecfddf6ab5741f0338f52ead378c0fe37a79852e976c6f4c82ab46781",
+      "sha256": "ce352d8b7f90ffccc73eabe4cf5afacf05dad2875d002cd3c2d589d7cc9abc6b"
     },
     {
       "source": "decor-assets/native/nw_elf_hammock_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_hammock_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5334,
-      "bytes": 3296,
-      "sourceSha256": "b0b58d696b74cd52d2085b2a25d0411bbc9c62d74b7cb2bb4108c05e4b35eba9",
-      "sha256": "159c24930c94f8276bab8bd757bde2d07a78e05f4e9b8cf2f822f6691e6db155"
+      "sourceBytes": 21771,
+      "bytes": 16140,
+      "sourceSha256": "db0f0d9f912b6549cee1b8125f18ade95ff3150c32afc02d35919ed535a48437",
+      "sha256": "5225817d67cefbc5cc193487fabbea242a455d8742a36dcfc61e898691a421a2"
     },
     {
       "source": "decor-assets/native/nw_elf_hammock.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_hammock.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5386,
-      "bytes": 3290,
-      "sourceSha256": "e713fbe3462f31f144b32b652833891ab369987dea239e3b54c92ed34e7ea102",
-      "sha256": "77ed0a2328adc2382e3b4ba3d781b1a5d7d9441061a37f93422029892e76409e"
+      "sourceBytes": 21389,
+      "bytes": 15948,
+      "sourceSha256": "43844c6aefe1644f940c7968985ddcc87e825920c362dcab7e72e6a9e737ba82",
+      "sha256": "1e929a8d0b4f28552332eb3906dc395d6ab69c832c1f24dd6d904cbee2860f99"
     },
     {
       "source": "decor-assets/native/nw_elf_knit_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_knit_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 15020,
-      "bytes": 9588,
-      "sourceSha256": "08f36a55ddb3c43f235bec330c9c45cd37dcc5c1d5d4843a26ff8276f8e78b07",
-      "sha256": "b6e2ca4242bb24bcb7f1cb08b794bee8e8e23702928fd4afc104842318062800"
+      "sourceBytes": 72330,
+      "bytes": 51070,
+      "sourceSha256": "eb242a0bff99c19bfdc4e56650c3daa2c6baeda1ba4557c4e4252fba477aebee",
+      "sha256": "97e0a0decf6433bb6fafcb1989ba369a3737ac8391de8bd916750cdc9aec030e"
     },
     {
       "source": "decor-assets/native/nw_elf_knit_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_knit_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7490,
-      "bytes": 4784,
-      "sourceSha256": "3ee50814a5d3247fbbbaa473ff86da26298b283e5118f48049a88e6d1b0b1ad1",
-      "sha256": "636bf1289d092a8e9fca3b6b4a7b90ed8ad497ee1a332976f9507586e9076a44"
+      "sourceBytes": 35216,
+      "bytes": 24766,
+      "sourceSha256": "2eb1d59a5a0ea9d9eb1bf5f52525b46bdae245c7711beaa9d35314adf081a7b4",
+      "sha256": "fadfe53c2e3668818a6baa9109316b8ed99042cc95a1d8ee67c41e625fb859f1"
     },
     {
       "source": "decor-assets/native/nw_elf_knit.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_knit.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7909,
-      "bytes": 5038,
-      "sourceSha256": "16da492c5328a5603e650b9abb0bc8a9ffa21545f23e5a29c281737d2b45c7af",
-      "sha256": "91acca94a140e834c6674309135dd4beb2464dbb23b4f0f24d129eb028a264a4"
+      "sourceBytes": 37923,
+      "bytes": 26284,
+      "sourceSha256": "d3d075c026d247f57accbce01989b424a94b3e537f710c49855b23c9dd68f50b",
+      "sha256": "9d084141cf6b2f458ea24cb4ac6020e137157f27c75215c8a0e308ec7382c55d"
     },
     {
       "source": "decor-assets/native/nw_elf_lantern_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_lantern_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3739,
-      "bytes": 2264,
-      "sourceSha256": "f3ad4ce5e735bd8af3c76e7af4831157ebadd19bc2cdcccac53bc7757b4ce07e",
-      "sha256": "2b19e45b8e2a1ba55b71de60f1980e19bf313428adabfe3569211387954d5f58"
+      "sourceBytes": 14038,
+      "bytes": 10592,
+      "sourceSha256": "7385a36eebe88190aae78dc95a91f9f5c05eacc6e53111a275cf6de2388593de",
+      "sha256": "6e25fd9744637435a463a8925d3a6b7e6cd2a6e8e965cdd5dc11619dd8ab3cda"
     },
     {
       "source": "decor-assets/native/nw_elf_lantern_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_lantern_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2002,
-      "bytes": 1198,
-      "sourceSha256": "bb5263ac7ff8d03bcafd192b2c7aa79b068874139d8f06d34843532c21804340",
-      "sha256": "f0d1cb2d1024ec8e1e7d9aeb511303bf71a0e3f4a3be0532aaa16f6675e104fe"
+      "sourceBytes": 6882,
+      "bytes": 5220,
+      "sourceSha256": "256e74044b2e54c7ffe121490cdbaa9383145dcf6340cb4b853fc728a6af994a",
+      "sha256": "a70bd62f6f8e7384ae870dee06a13e54ee2488cd580321c89cc37cf4971a4041"
     },
     {
       "source": "decor-assets/native/nw_elf_lantern.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_lantern.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2112,
-      "bytes": 1254,
-      "sourceSha256": "bd6a5d1b1e16386c8603c497c46ee613376982528b4b6920a1558543cf850653",
-      "sha256": "99fb6cd5ecd72bda6d8b5175258269b671055a4171bde9498963c488e3b3ad03"
+      "sourceBytes": 7309,
+      "bytes": 5756,
+      "sourceSha256": "4b4e4a11d760e7682fd511e2ce96a2fc4fe397ccfaa916ad4bb5e036baef9e4e",
+      "sha256": "78063481bc92bcc1061b38779816ca8b25f54097bbf0ca7ad64b46d5af6fc7fd"
     },
     {
       "source": "decor-assets/native/nw_elf_mail_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_mail_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4332,
-      "bytes": 2626,
-      "sourceSha256": "dd9e3678bcf2a5d24e9b5e26c71229bbaace7fe5ddbc115262880789cdb5f791",
-      "sha256": "f168ec9764dcad23c25f571d6e2db21e0c0faf7028391259e134a63e5adb4d1c"
+      "sourceBytes": 16807,
+      "bytes": 12318,
+      "sourceSha256": "9d1ffe0fa79a9a001958dd7d66c1429cd190e3542bd434cb6cc2e46d7f6c185f",
+      "sha256": "63791c55da12cab24f5ffae28b6fc6cf1f9d0772de55f44b76bf1e361faa5a5e"
     },
     {
       "source": "decor-assets/native/nw_elf_mail_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_mail_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2237,
-      "bytes": 1326,
-      "sourceSha256": "81aa300ff7fe7536ac25058f5225b64dca5b435c750ce874190938f4f2c9c6ce",
-      "sha256": "7bd3ae77b2f909e4e34ec36e54bbfbaa96a055e18b9810242c33756d45a1ce8d"
+      "sourceBytes": 7982,
+      "bytes": 5830,
+      "sourceSha256": "04dc0cf01f44e380c5db85504901fd8c53327ae705397cba2b169fb95473059c",
+      "sha256": "32e882d1df5a8844531c9a920d9504a434c6eecc7188ce5c6207627492928991"
     },
     {
       "source": "decor-assets/native/nw_elf_mail.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_mail.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2470,
-      "bytes": 1472,
-      "sourceSha256": "add51ecf3678b7a4bb84bcfdbc70363e27b4773729860be7292b0a52131fdb20",
-      "sha256": "8e75ce50c96bd0c6c1f3cb7d426a268f9b4be9d51b82b4e88a38557f16915e54"
+      "sourceBytes": 9021,
+      "bytes": 6628,
+      "sourceSha256": "05b9c5823521a869ed1ddd539f446b88cc35eb37c1fffa48e31db227dc89feab",
+      "sha256": "4a405349f6860c8afd4f1d1d2bd6540fb03f91dacf97862aa939dc9fbca1d762"
     },
     {
       "source": "decor-assets/native/nw_elf_pie_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_pie_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3667,
-      "bytes": 2144,
-      "sourceSha256": "35455881eab3cd6ad6ce903c6b02e5c8f2d520e525784f29c2c78b6c3bede3b7",
-      "sha256": "2109a0b4caadf5b92a7f9313a0530019928cb398b62cb76610d62b9612400a71"
+      "sourceBytes": 13126,
+      "bytes": 9730,
+      "sourceSha256": "d6b5e0e7f45b83e7f5ad01eb7f0655284c404bdeb3ea6d628a98d88465bef215",
+      "sha256": "7b6c4e7b57803df4f7a5c8d9a2c3876938525bec56e9e86c74affea0839682b8"
     },
     {
       "source": "decor-assets/native/nw_elf_pie_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_pie_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2021,
-      "bytes": 1176,
-      "sourceSha256": "efc54b9fcffed6c38d9806a20841cb8b6cf7fe9fe9b564e52856459ecf0aa60a",
-      "sha256": "a6c4259b114decd40de3f85ec8d817aa3d8ada878fa8c09dbe59a7851173ef58"
+      "sourceBytes": 6735,
+      "bytes": 5064,
+      "sourceSha256": "7adb98aaf8245db7830cc44c92212d36d6b5d9db7a745982d5210201044be7f7",
+      "sha256": "4bc69557f736c3448163e3cedd2a5adddcf4e76c73344293daea2464c1e1346e"
     },
     {
       "source": "decor-assets/native/nw_elf_pie.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_pie.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1963,
-      "bytes": 1110,
-      "sourceSha256": "af15acaf7c3400d3414b58469a5de3d0d4b9a9a7a4a1cdebe9b53bf604f279c5",
-      "sha256": "926abbf77d6d64dd37b7e5acc5e7d1ec77307e7c44bed48e835faa854d804cef"
+      "sourceBytes": 6539,
+      "bytes": 4802,
+      "sourceSha256": "5ed56f645bb6c49aa2dcf685b1dfddf5390e56749140239f7a3c6c4026838daa",
+      "sha256": "3bd9c5a7b6a39ab95fd89bb77d160a2d7bbdc04a2d2bb8d88d797dbe4677457a"
     },
     {
       "source": "decor-assets/native/nw_elf_sled_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_sled_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 9892,
-      "bytes": 6298,
-      "sourceSha256": "128ed8118aacb6c00da7b9528111bf8d54a31f0394d5d51dbe5987211e6567c2",
-      "sha256": "55eb39e64a99da5227c76d0849ff8fe17c705b20c9a1fb5771c5183409107218"
+      "sourceBytes": 40889,
+      "bytes": 30760,
+      "sourceSha256": "9d7d8825f2a7257a8b536327d014228092f1c24718a10ca20b4d0546fb255123",
+      "sha256": "76da0d1c2de75059ecfceefa9169aeb8877e283e4db6f71aa4d0808f36290608"
     },
     {
       "source": "decor-assets/native/nw_elf_sled_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_sled_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5183,
-      "bytes": 3190,
-      "sourceSha256": "456d4a88db1e3e46a832ab4c32796084ad87325475ba34f63cdcfe125c3b7984",
-      "sha256": "b8279ac372a6b62796877d85c3abbf59ca69bb35018e939f0c5e4c9224fbb5e0"
+      "sourceBytes": 20534,
+      "bytes": 15690,
+      "sourceSha256": "8420a6fb04d4b84fad6424369c632b496951351625d9f8d790de0f15e2e56965",
+      "sha256": "9f53a134639d5c2fc5866833237617fead945dbf0fbd7a632b35083fc3f57638"
     },
     {
       "source": "decor-assets/native/nw_elf_sled.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_sled.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5197,
-      "bytes": 3252,
-      "sourceSha256": "bfe60de11ced8e03c7ef14fed05267f12f62a46e8532790aa08e95c2e9265e6e",
-      "sha256": "1e2caac674cf7698f0e13d4cacd1e3d3572d57e44703b1f2d278eb269921a025"
+      "sourceBytes": 20955,
+      "bytes": 15836,
+      "sourceSha256": "a75aeb8b66d6dba9cf1df8728b1e156c2b5b8a4ffad29aadea8b9c2dd7f0f8d8",
+      "sha256": "5df90ce39a19ac374cf91f9155551bc0e441bfcbeb51400c7e3c0f310475dc4c"
     },
     {
       "source": "decor-assets/native/nw_elf_sock_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_sock_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4996,
-      "bytes": 3112,
-      "sourceSha256": "d11f896ceb62fd058a7c1770ce83f95bc3f64061692018bdf1b299fb86e60f24",
-      "sha256": "a4eb5c29bde7444f5d82cc9f784a460743f6f4a47d0c91e2f5515ab99d9e6fe2"
+      "sourceBytes": 19423,
+      "bytes": 14504,
+      "sourceSha256": "bcf00158655550e77702f170678f6c1b4b666166c622df5415e7b5dca4a98a6b",
+      "sha256": "74b1af318692c165f152b81ca90ace5a83d0ea057a93f3bc043bf456821f63df"
     },
     {
       "source": "decor-assets/native/nw_elf_sock_right.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_sock_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2640,
-      "bytes": 1570,
-      "sourceSha256": "f137df4cd1b5b6402aab5d407e84b04532d835ca8bf43e05533947db75fa6147",
-      "sha256": "1847f31f2a2a63984797bd801b63d5148fee604d464ac02a0a50dc71b7e62fbb"
+      "sourceBytes": 9442,
+      "bytes": 6932,
+      "sourceSha256": "d60a21ef104604749afe9bdc4988930186a44e64c8cd16502c622429aaf4d347",
+      "sha256": "32f02386917291e05227bbaf1af8f205d242e4a8812653a5f884cfab77229e87"
     },
     {
       "source": "decor-assets/native/nw_elf_sock.png",
       "file": "runtime-webp/decor-assets/native/nw_elf_sock.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2759,
-      "bytes": 1688,
-      "sourceSha256": "44c2ecb6169a90a66f1c69a312e2e2341f05824064ad73d45dc1fa6e966d85cb",
-      "sha256": "54662607f915c527605241e23784563220af2456daa346c764059aa1f4e3f618"
+      "sourceBytes": 10159,
+      "bytes": 7650,
+      "sourceSha256": "eadf2f3e86cc69c33c78b4336bb9580d998359b9e2a490b9dc8b94e0c07cf231",
+      "sha256": "e0baa883d5db29d3a3f14b1afe5bd3199a88919a4636098963ada4a2a963afcc"
     },
     {
       "source": "decor-assets/native/nw_fir_bells_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_bells_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 11350,
-      "bytes": 6934,
-      "sourceSha256": "b3ab25c445593e7bb4689b33d1f1f49c84cdd90e6ad0c4e04731c625ec4c1f47",
-      "sha256": "ef21c1a5591f0a8a8349f5b87cb757763ad2d44039d7240cb1f7d9b5a32a8f1e"
+      "sourceBytes": 45959,
+      "bytes": 34858,
+      "sourceSha256": "c82e30797bc6e21329ff50db4d1ea88fd8eacc2fb6b36fb3ab775e6ae15cdeda",
+      "sha256": "f603cac08fb909402a6292999345d01f2a17bdcfd0cc941a3d943e3b2ddcbcfb"
     },
     {
       "source": "decor-assets/native/nw_fir_bells_right.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_bells_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5803,
-      "bytes": 3508,
-      "sourceSha256": "2245c939d3b84769f180e4dfef10dda297ce44f208cb720423c2f0412a92ee98",
-      "sha256": "f1ed7708a4dfb96aa0dbf1a10306a11693ac8fcd84e88c62ab66d0057e8d3b87"
+      "sourceBytes": 22335,
+      "bytes": 17018,
+      "sourceSha256": "f810d2c4c34fa2ca3dd99aac50d65b29cb644fbe7a2607f315853010c78b04e3",
+      "sha256": "37ba84454f90268f15c644358329076bd3a9eacadc6c4dad73bd919d3954082d"
     },
     {
       "source": "decor-assets/native/nw_fir_bells.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_bells.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6091,
-      "bytes": 3710,
-      "sourceSha256": "e6b555caab1a3cfdd558d421f1b176fe6b8210985ad1183219c1fa011c7678cb",
-      "sha256": "bf09644103113286d67f6d7a117c7e59e19d4f0b7e17bb2b444da7ebe19bf658"
+      "sourceBytes": 24174,
+      "bytes": 18192,
+      "sourceSha256": "fcf97e8f0a28f022424e0082142293e9e763fce7edc95e8e913fed6874d9757c",
+      "sha256": "671a77417fc394aa474d6dcf0ce4eab5377a58e2f54006d9c0265fbd301abed1"
     },
     {
       "source": "decor-assets/native/nw_fir_boot_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_boot_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4058,
-      "bytes": 2460,
-      "sourceSha256": "52a9e57a3788de38a0848da819f7aa9e739d75dbfad4355fb71fb6edb4649527",
-      "sha256": "d269bf6d9a9f1eb9225293e3bbdf5b84e55c2f42535e2f9fcf1bc2c25c454b11"
+      "sourceBytes": 15808,
+      "bytes": 11852,
+      "sourceSha256": "c59a76eb082a8d1d9462268a52f15c5a4fddc2a4b8722c774a3f6fbcf4f5bd1d",
+      "sha256": "53f3e3a721074bed7945744ee70d5b3dd853355d48a562444233da5fcc75e002"
     },
     {
       "source": "decor-assets/native/nw_fir_boot_right.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_boot_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2150,
-      "bytes": 1240,
-      "sourceSha256": "643cacb8bd4fbb1c495cbc14f6095757d8c92a4bd81f59c865587fa496bc9653",
-      "sha256": "d689f01f2b5de50c1987700e27f3d445cceeeb69521f68f3cd32a474a57f54c0"
+      "sourceBytes": 7642,
+      "bytes": 5752,
+      "sourceSha256": "62cc2adb816ca710b5349c2ef395ca80a8197d920169d243ef2d1b8b3cfb1651",
+      "sha256": "ba4dc9ffefa4d7c1273ba63eb47f0fbd825710e88010a16aaa49368e382fefeb"
     },
     {
       "source": "decor-assets/native/nw_fir_boot.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_boot.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2300,
-      "bytes": 1368,
-      "sourceSha256": "0ab13f8889b42744d0c2e5c554170f33debb56532af15fc352c2dba095595af9",
-      "sha256": "78bc41d5e03bcb1e0895169029f2bc3b334c96f11a3418e8369d1d3202aacc6d"
+      "sourceBytes": 8357,
+      "bytes": 6240,
+      "sourceSha256": "1858c7e627ffee2134367d9c8bafdf427cd61c3a98b21440e579d31605b13833",
+      "sha256": "04672809237f9836466a9b175afcbc82616f81409a65143268f1e2160d102d45"
     },
     {
       "source": "decor-assets/native/nw_fir_nest_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_nest_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 10459,
-      "bytes": 6502,
-      "sourceSha256": "a2da25c5c4c67b0e8eced2a8df6a2a9dfcaca873815d488f0083b9c24fd57f2a",
-      "sha256": "8f5f1efc85dbea28ad579e3f30beeda5c9218a9ff22ec163d57bd797ead7a3bf"
+      "sourceBytes": 50076,
+      "bytes": 35750,
+      "sourceSha256": "d673929f714a9a7c5d27458aa41a55a0f67fc6d2845c11548506f78dc1097bec",
+      "sha256": "8b48a7f12fbae27d0747a9454f85bdf43bbf68a672333a587049ab190052dc51"
     },
     {
       "source": "decor-assets/native/nw_fir_nest_right.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_nest_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5253,
-      "bytes": 3220,
-      "sourceSha256": "8a1f646b18a4710c5dd76d5015223dbc70dc2ef2345cf8c1aca89f88c34d5880",
-      "sha256": "0e0cd1ded9cec53f0830e88b9753b5febb275fddd12bd2ff3fb4b00f3f0cd126"
+      "sourceBytes": 24494,
+      "bytes": 18104,
+      "sourceSha256": "4d1a95f3ec9734f81d0c6eaeb46ec1c779c5d0c3c0013053283c8f548bd9fe69",
+      "sha256": "e9dc5f999600a0d4b6479e8a2aef779dd28efeebec6e898363794a906e86142f"
     },
     {
       "source": "decor-assets/native/nw_fir_nest.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_nest.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5635,
-      "bytes": 3478,
-      "sourceSha256": "a164422494dcf5cfa99ec941809d2dc770439a56e73a8303026040711344d17b",
-      "sha256": "6198f675290e0bc45a0bada89a6f6c07b0b63712ed1dcb56d1dfde29cf9b6828"
+      "sourceBytes": 26274,
+      "bytes": 19440,
+      "sourceSha256": "1fa4df3c25cfe3a418783d995fe1151d75d4f68d6e9b23a500b8d64b07893da4",
+      "sha256": "e5bdd58f722d55ff0a380e2caa50536b699e6666092092b473252187bb37e547"
     },
     {
       "source": "decor-assets/native/nw_fir_spiral_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_spiral_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 13012,
-      "bytes": 8098,
-      "sourceSha256": "fd91f25a4ddbddec990b68ae893840d41d2f457b11af0e556b311d55421f4622",
-      "sha256": "badf97419a81727618f77ddd832fb79be548977b2f9be89541f414d7d6c76235"
+      "sourceBytes": 58993,
+      "bytes": 44016,
+      "sourceSha256": "5d0af6abc27666b9a47fd58c32f0e412210d56ae338bd62e32943a353a2278b2",
+      "sha256": "1b356fc26e750d0755336aab4086d138bf1cea4dcd83a5363cf2b896e29f6508"
     },
     {
       "source": "decor-assets/native/nw_fir_spiral_right.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_spiral_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6353,
-      "bytes": 3816,
-      "sourceSha256": "5cf0c05bf7ffbb860d7f45ed225adb4229085e734379d2d3b0fa0673c7f83ca1",
-      "sha256": "9b5092cfd86ef72cd6a3a2f1df45b7d9f86dac6f921801095eada9f1d900a196"
+      "sourceBytes": 27290,
+      "bytes": 20224,
+      "sourceSha256": "1460e158a869f9478d9fa19ae181ce608088d12d61bb46b87682505064ecab81",
+      "sha256": "6ee74fb3259111508915f3289f7b1111f2b5d8314183b4325cf93821eef7b5bb"
     },
     {
       "source": "decor-assets/native/nw_fir_spiral.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_spiral.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7228,
-      "bytes": 4488,
-      "sourceSha256": "7ce3b2d1a2efd0f425c6a520cc2565088fac92ad35fda1a6bd76b67b1e6fcf10",
-      "sha256": "ad00dc75436466e30ff1dcaf06c8395d18af0018620b393525990d6105114a7a"
+      "sourceBytes": 32305,
+      "bytes": 24304,
+      "sourceSha256": "77cd25f47081957140e23768e1608212489072751dc39df0c7808f81f17f2586",
+      "sha256": "62a3f9b05b7f74f2e81694d41a5c9d8c5d81fed545a44a2f2a130fcb08cb2458"
     },
     {
       "source": "decor-assets/native/nw_fir_stars_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_stars_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 13897,
-      "bytes": 8750,
-      "sourceSha256": "edad7ea7c40031629676e9e96019c38a42e55d43c27c4c11692babac9e252893",
-      "sha256": "432a6b95bbd47ef5bbfab9d77e1dad3418a1430441711c6bc7ce6ce57f018ad3"
+      "sourceBytes": 57569,
+      "bytes": 43344,
+      "sourceSha256": "51f3cfb387a10757ce25822311622c50de8bd6d9939feb8c16f1798a6687ab63",
+      "sha256": "c0820595baafeb8fef4240a37e7191b67efbb816d84cdb26e80b3f440de239b9"
     },
     {
       "source": "decor-assets/native/nw_fir_stars_right.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_stars_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6946,
-      "bytes": 4292,
-      "sourceSha256": "3cfa96cff8daaea903c566859a590e42b69d2026ee7799ddeb89ed582702af73",
-      "sha256": "51c281aefa6ee473adcf0795b11cfe9aadf5f9d962208e90f02840b9297c7bdd"
+      "sourceBytes": 27804,
+      "bytes": 21156,
+      "sourceSha256": "9f1c1440890dbd0ca519fd5d50e43264f58dc9d842fe413f41b9c68e56941039",
+      "sha256": "1b9797273847f250a6481faa76f5eaf6dba2254bf2c47ff74469a82c2e19d6af"
     },
     {
       "source": "decor-assets/native/nw_fir_stars.png",
       "file": "runtime-webp/decor-assets/native/nw_fir_stars.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7484,
-      "bytes": 4676,
-      "sourceSha256": "1192bea5a02fbd6a7afc962835220f300901b1ffded3ad430d2f3d6b450a0519",
-      "sha256": "e6ccc57aceac3da0dc3f4bbac08a6ffa8e74c4be0668b0a147666f2b5db25f33"
+      "sourceBytes": 30208,
+      "bytes": 22944,
+      "sourceSha256": "08ed0709daeb53aff62e45c68c56d84de10247e692280f1f5990f57c055c7a71",
+      "sha256": "1d3cdfb0a9ea67c72a86c1c1fe8f83979809252c010579349b575ab8c0c647c0"
     },
     {
       "source": "decor-assets/native/nw_frozen_fountain_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_frozen_fountain_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 12295,
-      "bytes": 7774,
-      "sourceSha256": "2c3096f4ff4cf5c5c9c60cd8bcb1ef4d73022b60732b7df2e30373cdcf6a82ce",
-      "sha256": "a12c73c437873b1f49c648e375680ced2c05dbb8b7198be7be037fa12b9806cd"
+      "sourceBytes": 57223,
+      "bytes": 39466,
+      "sourceSha256": "acb846b02014d1a79ba837d24914b17072037a0ed3aabdda21b7dc48885d5375",
+      "sha256": "c942fb46fdea5981a8e1dfe63063fe0da0b4aa0e1ee66ebbabd1d1def74f48ce"
     },
     {
       "source": "decor-assets/native/nw_frozen_fountain_right.png",
       "file": "runtime-webp/decor-assets/native/nw_frozen_fountain_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6366,
-      "bytes": 3922,
-      "sourceSha256": "9a53e37e5a508ca4f990f414984270921346edb78ec7e7ec0a4893299e6d8fbf",
-      "sha256": "b8807751f2c24ab523a43031415338e9abcd8389e57660af38e7950868e20cae"
+      "sourceBytes": 28885,
+      "bytes": 19974,
+      "sourceSha256": "ebd7527d71d6221625cf018537dd5b1abee21ed5a03bc8823869596c59cdf4dd",
+      "sha256": "91b089dd78a06091f8d87f42f38ece35ef40fd69fd7c1b18f7a6255605ef31d7"
     },
     {
       "source": "decor-assets/native/nw_frozen_fountain.png",
       "file": "runtime-webp/decor-assets/native/nw_frozen_fountain.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6504,
-      "bytes": 4042,
-      "sourceSha256": "12459fb7dde94b38d954e9e5095d78715fed9bbc33ab87bf32d3d7cd7c654513",
-      "sha256": "397b118e76237781d21185e2cbe5fdfe9e1f4ff0391ed1f40aef2738d60ea539"
+      "sourceBytes": 29068,
+      "bytes": 20198,
+      "sourceSha256": "8cb73d08d1c2712e2f87882b6739c0c0dfb712dc5656e800b1cc56b87f12e85c",
+      "sha256": "c2d0b43cf11b901fbe21ef492350692beafa9c3b1234dae9309b7bc2f059cd8c"
     },
     {
       "source": "decor-assets/native/nw_gift_sack_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gift_sack_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3921,
-      "bytes": 2404,
-      "sourceSha256": "ea505b7f5a0dac72395031b22d87326bdcd711a2af876fe1bb97dbd5926c9ecd",
-      "sha256": "106891500e65a83d99df306f676c2806d9ca137bf3cebbf7caf0952c7d4945f2"
+      "sourceBytes": 17009,
+      "bytes": 12498,
+      "sourceSha256": "f73d10912fc7f88f614a5dc5883b7be32d33a7e46b8a2feefd36df17f61eb100",
+      "sha256": "d208f00d9a4fb92bd41d4e9044044a938fcad8d3b2c52a598b26a65c1b345605"
     },
     {
       "source": "decor-assets/native/nw_gift_sack_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gift_sack_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2161,
-      "bytes": 1312,
-      "sourceSha256": "4ba2103067f98bc00c93108a40236f604632c3690366c2fd39cc5a79be51e07d",
-      "sha256": "7d6e87945d331f8e12a1986aa4179bfaf29603a8dc76511abbdee0113fcb7d94"
+      "sourceBytes": 8648,
+      "bytes": 6352,
+      "sourceSha256": "9440c4e513ead6acf30ee4ae8a848e930e8e614f696e5455bd50412b058db6da",
+      "sha256": "ad7e7edace4be980b0c1c0cf8614a97dc094cf7bbf0ddb301623a78769ce9ac6"
     },
     {
       "source": "decor-assets/native/nw_gift_sack.png",
       "file": "runtime-webp/decor-assets/native/nw_gift_sack.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2121,
-      "bytes": 1294,
-      "sourceSha256": "b8e4a50420c3238122a4e3341d78f39851d85c31118e570bfed8c03057d38127",
-      "sha256": "7cf80a285313886411ae6a15a8d6c94f3dfc283ec33df30a3671f58013cfe5fc"
+      "sourceBytes": 8656,
+      "bytes": 6436,
+      "sourceSha256": "02553c1015f8d78ea44ff7fbcc0a69ca3b6e81f60c499cdb78828bd3220133c5",
+      "sha256": "0b18f5bfdda6ba56fbcce89107274ee3d633b9c8fbb70823712b360dfcad73a0"
     },
     {
       "source": "decor-assets/native/nw_gingerbread_man_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gingerbread_man_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4128,
-      "bytes": 2518,
-      "sourceSha256": "c47ff81ed557244ed67e1d113dfca1aafea70396f30453b12036545fe0878b19",
-      "sha256": "16edfe59ec50e4adf72574023e292aa9c237f756ed0cf5db28df447cafcd3f82"
+      "sourceBytes": 16718,
+      "bytes": 12452,
+      "sourceSha256": "455048af31b215f70d52dfdab14830a81ce1f717583165f416d505d6096f7326",
+      "sha256": "8e48f9779c174c8c60e9e7ae6e437b82dcd9fd99a15c41da25f9cadfc6cdf39e"
     },
     {
       "source": "decor-assets/native/nw_gingerbread_man_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gingerbread_man_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2234,
-      "bytes": 1312,
-      "sourceSha256": "6f161502d831ee6b3fbd3aeb2e1ad001eb024b84454204e03f5e350941c43287",
-      "sha256": "c13c24915806d18b0544c3b0f192bc65659af17a425d00e52643d1a80ddffbe3"
+      "sourceBytes": 8328,
+      "bytes": 6202,
+      "sourceSha256": "053f9c23649cd5664b26c59a69b827c0d6faa80c7923d9251953b90b73baa811",
+      "sha256": "a8b1aaf232cc2ac5fc4aa284a2f6e252724955024da739b2f63c2aafee7b6ab8"
     },
     {
       "source": "decor-assets/native/nw_gingerbread_man.png",
       "file": "runtime-webp/decor-assets/native/nw_gingerbread_man.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2280,
-      "bytes": 1354,
-      "sourceSha256": "d8cb84a140ad4f03e34d025e77162352c5a74ffe7621043b9e7ea4f451196715",
-      "sha256": "16a415cca578f10adda5db5ea7a8dd2c20f378a9499ecdbc68e151320cacdb2d"
+      "sourceBytes": 8560,
+      "bytes": 6398,
+      "sourceSha256": "ab6dcba5945822bcab2b92dc7358adf2d68b440bf7ea236cfe79d317ae9c6e27",
+      "sha256": "8d79b24baa3fb0e4d7820cf1d70c41ba1a5bfa12d4b1b2298ab91ae6a00f493b"
     },
     {
       "source": "decor-assets/native/nw_gingerbread_reindeer_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gingerbread_reindeer_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 13846,
-      "bytes": 9162,
-      "sourceSha256": "c81b4cd18e1e0a2316465082aa17e9e1e931d58ba1fb056833d092f7f07fa3f7",
-      "sha256": "245f9a503e3c456e52618ec88bda5f5a4893b9a0a1955e7620c4ce6dec95cae7"
+      "sourceBytes": 68518,
+      "bytes": 49644,
+      "sourceSha256": "e9f5c73db21e43ff4ed8a311e2a170adbacb43899daa7c57fd48394ea12085c0",
+      "sha256": "1ef456f32bd6ecdb3b672e8f76780dcf41ffe03f9cbeae0d9bc7fa2b78c15ba3"
     },
     {
       "source": "decor-assets/native/nw_gingerbread_reindeer_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gingerbread_reindeer_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7199,
-      "bytes": 4738,
-      "sourceSha256": "68b9c10a45573714ff1cf8f764e5583bf789a72d9e78b27925ed0021e861d5c2",
-      "sha256": "5e300fac8c6ab27218a2a59e55583a6efcddb5f2127d8a854d9bbe98d5ef214b"
+      "sourceBytes": 34709,
+      "bytes": 24288,
+      "sourceSha256": "734400829c03c0ce861c6e72491032e9b322fa6e16212d804f0aa30c9673acd0",
+      "sha256": "afbfd82039a337a92986420971e9259a27208d08246cf33dcbe4e6cdd29c82ff"
     },
     {
       "source": "decor-assets/native/nw_gingerbread_reindeer.png",
       "file": "runtime-webp/decor-assets/native/nw_gingerbread_reindeer.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7231,
-      "bytes": 4774,
-      "sourceSha256": "71b04efde85295a0a5838341b7f379b5e400182ec1ac35e53418b925a0c51010",
-      "sha256": "f505ed74e0bb6a8134527486fdbbe5c31009c58ec424fdc95147a7261c49e597"
+      "sourceBytes": 34872,
+      "bytes": 25446,
+      "sourceSha256": "6083c16b8e1b949f67fa1a085a498f80fa29f05083576b54e7c924a7a313e64c",
+      "sha256": "2df17b817e36db3d04466a7580c67fa3242eb3dbf2214dabfec2ebd25d2d7524"
     },
     {
       "source": "decor-assets/native/nw_gnome_bell_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_bell_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3974,
-      "bytes": 2336,
-      "sourceSha256": "f16d09114928df9febb6085f4a654d6c75be53a385054572357ab0e2a1a1c61d",
-      "sha256": "ec35dcc0743f708b72829e369382d2f83b77e5b9c6349996bda5607aa07b52ef"
+      "sourceBytes": 14380,
+      "bytes": 10880,
+      "sourceSha256": "b4636c5cb4748b13678954e10fccd9e8f2a2f63793fe4d74399054046f173263",
+      "sha256": "0a294e549fd88ee3561d911a5006d48b5f0d0ea37c70b946372a641d79882f0c"
     },
     {
       "source": "decor-assets/native/nw_gnome_bell_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_bell_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2116,
-      "bytes": 1208,
-      "sourceSha256": "26121457871636e8777db53edab107ab25c6ad1bb57419706a3c77e98ca7f5a5",
-      "sha256": "c2d7495def68e4fb0719a887327477b38f548e58c790be365d2e698acdace9e0"
+      "sourceBytes": 7017,
+      "bytes": 5310,
+      "sourceSha256": "c8670fafd3bb1c7cfa06206198686f6647c8bb2e573155ed9a00b3d424631e37",
+      "sha256": "30fdc70131c8d487e6e26744366614b0df387691163fd5203dcb9ccdcbc4f1a4"
     },
     {
       "source": "decor-assets/native/nw_gnome_bell.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_bell.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2232,
-      "bytes": 1278,
-      "sourceSha256": "d9660677e2c265a85af76217b66ce90c0018793ffc96f23af9e719f06bb63606",
-      "sha256": "98b9961014e6b726afc03cefdaf560a6659502ef83384c7c6f5ad86780b91ec4"
+      "sourceBytes": 7546,
+      "bytes": 5756,
+      "sourceSha256": "f60a14b69f10370b21583c0f54a53a61b9769dacef215c609af6b54b6219bb91",
+      "sha256": "4833b53362233ab0dd28491493cb7a038709583886d9a7b57b7026f9aacea830"
     },
     {
       "source": "decor-assets/native/nw_gnome_cocoa_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_cocoa_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4603,
-      "bytes": 2812,
-      "sourceSha256": "1c31ab8c138a26214aeaaff24753dd4dd75bc61746c7d414280d3e47b0a0ead0",
-      "sha256": "9b42e5d7d90cfde86b41f71f4264ccdd0ad069343b4ac7bf25517f3b22c41568"
+      "sourceBytes": 19633,
+      "bytes": 14576,
+      "sourceSha256": "bb7cf91ed9fbcd279ba64cdfc96b7ad782b9b627543f103044c400d0a5835adf",
+      "sha256": "8f00d706e56d9fdbab0c892ce88d3304f51b93ed6c74c68837c4248c3f4904b6"
     },
     {
       "source": "decor-assets/native/nw_gnome_cocoa_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_cocoa_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2470,
-      "bytes": 1496,
-      "sourceSha256": "30e5882cfa517ade7727130365aa5d26efcc6a85f2692142b78a8da88ab46ae0",
-      "sha256": "fb3c3b9dc6d589b0c1838ccc14c0f55196f6ea13539f504025e31402f07041dd"
+      "sourceBytes": 9819,
+      "bytes": 7366,
+      "sourceSha256": "c196f094aae8f0aff33938095bcca190e5d09a60e03713afe7b5bf030067688b",
+      "sha256": "2690e190cf6c4ccecb4be8fdc811b2f458f637886634819eed6ef734c47fda16"
     },
     {
       "source": "decor-assets/native/nw_gnome_cocoa.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_cocoa.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2513,
-      "bytes": 1530,
-      "sourceSha256": "dfaec5ba7ccfa9e9c5fcfd63e912a0c27b154dd66b1ccecfa9a1afa7a65653e9",
-      "sha256": "8efc85abee0cbf14c4d1e19565505d638842b798b10f8681aeda019c7a8d2f22"
+      "sourceBytes": 10032,
+      "bytes": 7486,
+      "sourceSha256": "0d809a79030997ad6acc6311e9b2e4dd42a87fe25afbcbbb1b04dc0333db1845",
+      "sha256": "f1b87c46971fa640f2eb6ab689ff26e77a737bcb669198af72e915c1e4ace25b"
     },
     {
       "source": "decor-assets/native/nw_gnome_fir_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_fir_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4457,
-      "bytes": 2782,
-      "sourceSha256": "0b0b2c0d37c3ec14fe40874248e4ecd04f49d57cb5bdc87e1c3bae385e48b369",
-      "sha256": "817a111c687215bda9459dbe1361ddbe660253ada32e7bab1fd8cc7cc6d713b7"
+      "sourceBytes": 17864,
+      "bytes": 13694,
+      "sourceSha256": "581314a30f9fadffb409acd393fe6903c5177cc28aa110a8f8dcbb8d5f165477",
+      "sha256": "99b1167e757b5daa575893a386fc8c76cbc7e1d6dc6a22b61a8059c1793ab64c"
     },
     {
       "source": "decor-assets/native/nw_gnome_fir_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_fir_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2330,
-      "bytes": 1474,
-      "sourceSha256": "bb7d547544e605022cef61042c571dd3899d5a0ee9c8c2071cf67c192c30dd5e",
-      "sha256": "7aa87e3e1ec67305206b9435d7fcb430934a21ff8746839b4a0210555e69551f"
+      "sourceBytes": 8842,
+      "bytes": 6830,
+      "sourceSha256": "f27e147bde050d7444c9a03c42a8880de3879988616ad1156e00d7137d545184",
+      "sha256": "0a4869ae32d7f78163f58f71b55ea03733f133bd5c5120b98591d5f50d4e07e4"
     },
     {
       "source": "decor-assets/native/nw_gnome_fir.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_fir.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2462,
-      "bytes": 1524,
-      "sourceSha256": "54807ffe614e8c501cdf7f70556ec2d863183f2a3e6a1fc06316f8334b503ed3",
-      "sha256": "c6793afc8ce2031f0be4d40dd0da57eaf508b184de84e0f0f6d14c9a71eba776"
+      "sourceBytes": 9217,
+      "bytes": 7188,
+      "sourceSha256": "f11d2b3af924ab7268a269f9bf943190913286fd12fc6dde13a4d58c2d88cb27",
+      "sha256": "26fd7e4c1442a4a5fd68bfa4507473bc1aa09f14a6d11fc396711d0a06561937"
     },
     {
       "source": "decor-assets/native/nw_gnome_gateway_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_gateway_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 8017,
-      "bytes": 4882,
-      "sourceSha256": "78268c4391c2da31ee543c8faec6647170b028b3712eca2c7a74893acdfcf6fa",
-      "sha256": "1507dab5c237eb597fc3d2cf0390234062e0c5f8009ec506a002fdffa28919bb"
+      "sourceBytes": 33708,
+      "bytes": 24916,
+      "sourceSha256": "6bbf648aa43545014121e4da3b455cd044e29b408f07565ae80df6cc019a1493",
+      "sha256": "6a3fd44b306b308c7955a037c562eb85e69d5b5b7d9c8e062fff23b610dcf1f9"
     },
     {
       "source": "decor-assets/native/nw_gnome_gateway_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_gateway_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4127,
-      "bytes": 2436,
-      "sourceSha256": "20c8f2d24a79c28f23080102102a4e836cdcbf78729f81652100a30fa4a4e286",
-      "sha256": "78b2391fdee9751a840e61569c3f67899a10d6b0b439c615ee6c9db52307a752"
+      "sourceBytes": 16654,
+      "bytes": 12356,
+      "sourceSha256": "a9c4da549e786851e14ca91e0a242555b4c71d0d21774035717862294d4b3d6d",
+      "sha256": "ff17550220985a58e178ca3cb07a1894876f14570f82cdae91822ff811bad393"
     },
     {
       "source": "decor-assets/native/nw_gnome_gateway.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_gateway.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4291,
-      "bytes": 2564,
-      "sourceSha256": "1e2644950def6115cd51728178ea1f10b0fc27ba8ae3edf6b4221ffb7e63501d",
-      "sha256": "12e44c73c906c2dffed7233055269a5d13858bda64c1220a3e93483847d58417"
+      "sourceBytes": 17565,
+      "bytes": 13196,
+      "sourceSha256": "229def60144d49905000082b2e4a7cefbc0611149fd7600d61b333c7813f06c2",
+      "sha256": "d9e6873556148322c55939fb608ef87456ba6e4fca71b9a8e020f25a4d5c956a"
     },
     {
       "source": "decor-assets/native/nw_gnome_horn_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_horn_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4099,
-      "bytes": 2486,
-      "sourceSha256": "1e1f889c00a4a3bc8ba6d3c76b559354a731e126c9c74671cc6f28555c9a509a",
-      "sha256": "1810e91211cc012f1730b814d289c553ce9c3a28b0ecbe21bdd89dbc5b28fde0"
+      "sourceBytes": 15865,
+      "bytes": 12076,
+      "sourceSha256": "39989dee1da67d3dc878d8eb75c12934475dce8f10172ef27358bedfed6d7c9e",
+      "sha256": "862a35e7cc25fa0287eff878fc97542d3a27468013d4cb2a83e6d0c5562c36c0"
     },
     {
       "source": "decor-assets/native/nw_gnome_horn_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_horn_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2244,
-      "bytes": 1346,
-      "sourceSha256": "d18d6907c56b06fd1c8e3bc2c7e077422bcb337dc55b6ae5593eebec54a13a65",
-      "sha256": "17f90b59f4e2964cafd31b36ae72a525ce1dbcb0b67c68cc3cc3c21b20971c80"
+      "sourceBytes": 8017,
+      "bytes": 6130,
+      "sourceSha256": "0c6aca032ee63d12409df79ba5836fe361609811bad6860ca5c8d9b3b66d1963",
+      "sha256": "72e5351137c779d405c9842117729353d9a35311c1f65cb1c78b293e0a084c0b"
     },
     {
       "source": "decor-assets/native/nw_gnome_horn.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_horn.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2231,
-      "bytes": 1338,
-      "sourceSha256": "9f0d35b2980f33fdf5063a12f13f76b4193d05f0fbb235a94c5638fbfcae58cf",
-      "sha256": "f3fbcc5896da4b08c48177ff9c04f1138da6d0eb774a9b8d988dc848da6ab513"
+      "sourceBytes": 7998,
+      "bytes": 6068,
+      "sourceSha256": "88cb062cb2177bcbcba8bea810f3c136dbb738ea83ab8605ab99ec0eed81e9c2",
+      "sha256": "82670693cca5b7a61327c4db208348f5591715ff14ffe6ff4d95f92b52a3295d"
     },
     {
       "source": "decor-assets/native/nw_gnome_lantern_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_lantern_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3710,
-      "bytes": 2278,
-      "sourceSha256": "425139637c6bbecdf5d0dd205394c629e7bb015bfa67516b9af34b5c44ceb283",
-      "sha256": "07222fb7cc27af07b5bfacea1c4918a03c92b32461280f5a8231ffbf1c161c30"
+      "sourceBytes": 14626,
+      "bytes": 11060,
+      "sourceSha256": "3b5be7d6b2740cfe5d6b97740aff407b82ffa94c2f481f992957d7ea3587eee2",
+      "sha256": "e435fee2137b765738d81f86c089084b7b86e86e969692b8a7ad6c5ab52d5296"
     },
     {
       "source": "decor-assets/native/nw_gnome_lantern_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_lantern_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2002,
-      "bytes": 1212,
-      "sourceSha256": "76393c227bf3d738c97cc6dea9b5649fb78952b7b986ed8ad1ffd0db5938ecb9",
-      "sha256": "7e2aee990e2de263bc6c683a7560e2c0ccd35c0c6f02c5d0e9fc63444b321eac"
+      "sourceBytes": 7283,
+      "bytes": 5532,
+      "sourceSha256": "015220cb5a0b9f239efa6f50c73af8497f219e3c249230e45f682f7182e068bd",
+      "sha256": "ddb6d5ccce1e731fcc6ab776066f5ecd97a69f68a94148e2205018a80dc07936"
     },
     {
       "source": "decor-assets/native/nw_gnome_lantern.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_lantern.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2055,
-      "bytes": 1244,
-      "sourceSha256": "fdf42468d950dd826d8ef43ed3a7a74027c20310d9c567f57b9cb941f559a7cf",
-      "sha256": "cadda147e738e9c2de658ae2ac215d93f0d2bece3eac814af3d82e931c87ed51"
+      "sourceBytes": 7562,
+      "bytes": 5694,
+      "sourceSha256": "664a9b8a006e8e8adf0f99eef3dad3eedc6ba6797fefb519ebc1b128be69eea2",
+      "sha256": "7abb62c492c0833d4b4ae8753145ce86d6abc9b488e8b20b3710a8f1ecb25382"
     },
     {
       "source": "decor-assets/native/nw_gnome_mushroom_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_mushroom_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 2993,
-      "bytes": 1784,
-      "sourceSha256": "a7756ec46c9f7512bcf4600c4291afc02abc9c5f772235b9f85389fe395c69ee",
-      "sha256": "5355cafab5eabeb2b64623e175efb98869c11c6d0e95478e6104a00bf7085d27"
+      "sourceBytes": 11281,
+      "bytes": 8446,
+      "sourceSha256": "4a696c4e59e65f4df630a25c5ee875e824a0ca689d9c9d22360b644f142e52bd",
+      "sha256": "403bd02a421d3b15848f41eefd0821cff36100e0e65719d9cdd827145d134b21"
     },
     {
       "source": "decor-assets/native/nw_gnome_mushroom_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_mushroom_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1660,
-      "bytes": 972,
-      "sourceSha256": "a5d9c78f50491e2a740d7bc21e3b167780cac1635138cdf145100a53298e8da7",
-      "sha256": "d53c5242ce6e9ec5c3852803993a981da600194feaa1a1279a7ff032f331e2cc"
+      "sourceBytes": 5714,
+      "bytes": 4298,
+      "sourceSha256": "9fc1793b240888ff60c8d8b5d9646bd8755f2f9a2785e817220380bf68564629",
+      "sha256": "0cc74b5710667e4a0bb78f4257f26101c3187cc2551856ea81ef0d82b7aba8d9"
     },
     {
       "source": "decor-assets/native/nw_gnome_mushroom.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_mushroom.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1666,
-      "bytes": 972,
-      "sourceSha256": "065ec4324797d20f56b8503fda9d96ce3cf116b19064c17f21c727ae0a269dd7",
-      "sha256": "afdbe634eb76e1f3053f72203b62458d12dcdc3f455e6af77e8943bb00346f59"
+      "sourceBytes": 5745,
+      "bytes": 4286,
+      "sourceSha256": "17a23d26c44c2e62332c4d6b0f2eac24a5eb9c5fbf25fd147b6c440ca33d4e8d",
+      "sha256": "f4ee6146711300cb0470b05e410ccc811103b75f5909e394e612709e01f04e14"
     },
     {
       "source": "decor-assets/native/nw_gnome_owl_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_owl_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4784,
-      "bytes": 2994,
-      "sourceSha256": "f8386eae1728c376339eb0a222eb62f212aac97ca3bfabf607dc5f3a15c8cf9b",
-      "sha256": "8243f4897add84001bf4a2f89f05d5110074098feb650e7b079ccf44d5fbcb84"
+      "sourceBytes": 20703,
+      "bytes": 15492,
+      "sourceSha256": "ae9394c1f793587e47b1272c51b6feb006c6ce7291b8f3d44226fa1037fc4bc2",
+      "sha256": "94a3b245a6be0b0a0dea8fa426b02157ca3a004662ed11ac18259b7096dbc84b"
     },
     {
       "source": "decor-assets/native/nw_gnome_owl_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_owl_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2593,
-      "bytes": 1572,
-      "sourceSha256": "65686a897359041be0e15ac31817f12ed1689fde639dc22586b7ac1a97abad1b",
-      "sha256": "7ec8eba3e5f2af517e4dbe82bf808d6cce2e1bd849bd26a4ec57b11d802f6a38"
+      "sourceBytes": 10411,
+      "bytes": 7856,
+      "sourceSha256": "07edea2553172ca239b810b8a91038955f59b3d726b8c65e247df622f600586d",
+      "sha256": "8261f9faf56a9c001e7c394cb2f62ef92f1c0c4ab35b8031f5f39e9582c856d9"
     },
     {
       "source": "decor-assets/native/nw_gnome_owl.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_owl.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2541,
-      "bytes": 1568,
-      "sourceSha256": "9e0ce8a1d9a53b4d0e91127c318fcb57ae7d4e0480a874c32d53388a7b084cc0",
-      "sha256": "4941b7b135686f9400d7d1dfdd27a66a7953cc44eef825e78ae00a36097a6444"
+      "sourceBytes": 10575,
+      "bytes": 7854,
+      "sourceSha256": "9c39237171a22519c0845c4da7429888b03e0fd3eb85a8ec66597d34e44cb692",
+      "sha256": "658f00a66ed19f4bb4c13d15f47bb68d2681dfda5dc82b04edc3a62db532f04d"
     },
     {
       "source": "decor-assets/native/nw_gnome_sack_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sack_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 2601,
-      "bytes": 1478,
-      "sourceSha256": "980f9e68c650e85e43e32aec6afb8d3d347b65ab198a822716869181828a70c9",
-      "sha256": "465c5293da4844a920b5fe50ed1994c716e51f49274873c0fa34de3610426065"
+      "sourceBytes": 8816,
+      "bytes": 6522,
+      "sourceSha256": "cf1827cd19ec5d3aec5558e0f707d1b504d366779946a7e28067e613fb96f240",
+      "sha256": "7c96d9053dca11bbbdb30181bf3b7c2b7d4c439b16e30ffd392232a0df8d8e82"
     },
     {
       "source": "decor-assets/native/nw_gnome_sack_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sack_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1446,
-      "bytes": 828,
-      "sourceSha256": "6243f3107822efd7646bf228c91bbc7cb5d7096e85d9e2946391ed95faf7c832",
-      "sha256": "3dfc70b6c8b6a8545f0f1dc7fd038066397f23ab191f854aaf44382510ca19b7"
+      "sourceBytes": 4575,
+      "bytes": 3376,
+      "sourceSha256": "91507e7f3c62a8eb5bfe340746aae00480d0597821d61834a3de4aea2fb8609a",
+      "sha256": "73273e22151151b0574407471e5678cd288b2a674f4cfb8d49fc5d5518af9f8a"
     },
     {
       "source": "decor-assets/native/nw_gnome_sack.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sack.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1444,
-      "bytes": 810,
-      "sourceSha256": "d079161dbdf93fce3dcc45733a4773e791d088ae9fe15f4814343dbcc8c7c020",
-      "sha256": "b9b76d7fcd560b21435eeac49d4eae6f58444353bbd83a3160b5724f357a0e54"
+      "sourceBytes": 4390,
+      "bytes": 3256,
+      "sourceSha256": "8b3c1221f4e02b41ba9eb3faa20a358d43f7f0f4fd9bac31365f33a1ae3530af",
+      "sha256": "27de8d971f511df7bb4ae834c5f93f339d35e9cd00b3ab7526eefa19edfc0b59"
     },
     {
       "source": "decor-assets/native/nw_gnome_sled_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sled_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3370,
-      "bytes": 2032,
-      "sourceSha256": "6d4f03c7d04851d14457f8f12cb4f4ce0db91ca8d65eeb7891e5dd7a1bc12338",
-      "sha256": "d92779c5ca26d95a09b0d55f9e39ee3a7a441b9e199a42c509915feffd4e3b38"
+      "sourceBytes": 12565,
+      "bytes": 9472,
+      "sourceSha256": "cebf2bf3dcedd0f37d49e8ad471f43e704510f9f93909732bf8d96c55a2d84bc",
+      "sha256": "8cf3d97a4074684661f23725615687bb138ca377e161af13516d1233988e68f9"
     },
     {
       "source": "decor-assets/native/nw_gnome_sled_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sled_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1859,
-      "bytes": 1092,
-      "sourceSha256": "7dd5a65cfb259d703f18ecea8b8660f498b68db31cc9e45ea7a4677dae58b652",
-      "sha256": "073a9ba09227a772e29d5bae2f9b49729df55dcce34731cbeca8f1224deab2c9"
+      "sourceBytes": 6324,
+      "bytes": 4828,
+      "sourceSha256": "e6faa8d7bcfbeb62c54a4a229f1551ce2a27f5d3ceacc7a7308572f6c1f80061",
+      "sha256": "2a94ebb6b6886821501a7b406356554c041b50e9f58efe055ff1fa90ea567f0c"
     },
     {
       "source": "decor-assets/native/nw_gnome_sled.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sled.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1825,
-      "bytes": 1092,
-      "sourceSha256": "2398f325687867e2ba3dba91bfe59104ea8808f59e3c75363878866a0b92766f",
-      "sha256": "f7e703df363a4110adb052dd5626157b38ec21b82adb722fc1e5b49bb357a17e"
+      "sourceBytes": 6421,
+      "bytes": 4782,
+      "sourceSha256": "1ed6da812ee28b6598c7a5fb93381ef6f8c76f86fd6a19356bae76fbddd2dbb2",
+      "sha256": "ee045b4063264116fbfada2322e934e1b63d332b927e211533b713c08da958bd"
     },
     {
       "source": "decor-assets/native/nw_gnome_sock_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sock_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4242,
-      "bytes": 2646,
-      "sourceSha256": "5025e3033744761aa8638dd655d76b108b0205784787f0f891dc1ae9bf20dbc9",
-      "sha256": "6544cff0abcdc71bc8ccd423a04c644d290ef3505ed08bb7f795f2963df24f5d"
+      "sourceBytes": 16860,
+      "bytes": 12756,
+      "sourceSha256": "25e85c595f16640805108f571d36d54e921a8cafc4774279e02a06c4477914da",
+      "sha256": "dd65235c2dc3e7e3257b3d187a42e7c41708d5ee7d1d686d3fcf40d1eceef487"
     },
     {
       "source": "decor-assets/native/nw_gnome_sock_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sock_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2296,
-      "bytes": 1390,
-      "sourceSha256": "18bfea56a5de3bc2ff50d0f5d6340d665c3575b785335fd280cc46d22b3f74f5",
-      "sha256": "5d974d8cebb59f3bf9866d332abad6b527852ec35aacf8e4552ab218b37d734d"
+      "sourceBytes": 8401,
+      "bytes": 6404,
+      "sourceSha256": "0e3ac07244afb1858b1a0454edf0c75151027da66b837768121ee1231a917a9e",
+      "sha256": "a9e6a15323f2b5c257b9b5bafb13653bc61d60014b4e68f0713776aef36cfe95"
     },
     {
       "source": "decor-assets/native/nw_gnome_sock.png",
       "file": "runtime-webp/decor-assets/native/nw_gnome_sock.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2339,
-      "bytes": 1404,
-      "sourceSha256": "777b7b983e57bb8c79a95d8c0d61b2b3300810a7740f8970e94fc86b348dea5e",
-      "sha256": "b61319e11ad6d7fcd2428210dc8a0a64ea41f7d0dc0358b46e07ad07ab3a85cb"
+      "sourceBytes": 8669,
+      "bytes": 6452,
+      "sourceSha256": "635ada160a38a8e4b083e8e7ebce9a5bc4b2596843a6a2420c5111720ed86af8",
+      "sha256": "f5d42cdbd62bc2fc99dfc1bfd098aab8a53ecded9aaeefa64277a5e8378edbc5"
     },
     {
       "source": "decor-assets/native/nw_gramophone_flower_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_gramophone_flower_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4259,
-      "bytes": 2676,
-      "sourceSha256": "e366d54e729bc5105ed0da58c564297f58caa4fac4189fbee7a516f4fe738ccf",
-      "sha256": "bb29c26d76af0f315e493814d0d76638e3bb0bc88ec428ebe0f343717739134f"
+      "sourceBytes": 18144,
+      "bytes": 13524,
+      "sourceSha256": "a628758c728ca84f6409ca2942db55404b3463dfe0e29b3970c390efb4518c33",
+      "sha256": "706fb40f5eb9d8d2edf17793ed9fef73a257c39f0a5947d82a5cb0093f1701af"
     },
     {
       "source": "decor-assets/native/nw_gramophone_flower_right.png",
       "file": "runtime-webp/decor-assets/native/nw_gramophone_flower_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2303,
-      "bytes": 1414,
-      "sourceSha256": "e00396d8168c5cc06ae0ffb93cc6609f3fd22c4b25e675d91033a990938d5eef",
-      "sha256": "cc4db2b0a187092ff8e1a27ed5f93a3eac7c5b125d18afb6bd9f96c9b8b8d291"
+      "sourceBytes": 9156,
+      "bytes": 6880,
+      "sourceSha256": "877b0b5852a586e53dcd9649ba654b77aa55954af88e5f97a35dfb9dd37bcd0b",
+      "sha256": "c58fc6fd1d9f6f7245f7b424489cec9b83572c02921816fe589894adefa6580c"
     },
     {
       "source": "decor-assets/native/nw_gramophone_flower.png",
       "file": "runtime-webp/decor-assets/native/nw_gramophone_flower.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2342,
-      "bytes": 1424,
-      "sourceSha256": "b09fa0a895f59a8a3fd587b3397470f85d35353f4143bd6013694c80f7118614",
-      "sha256": "e053b187ff46119d6dc001a001a04cc7f7e0740646dbf51d420a884e4293d8a4"
+      "sourceBytes": 9241,
+      "bytes": 6924,
+      "sourceSha256": "6f61d7e8517e74ae3af7bf994a1556618c34dbf6e588cce9b2aa514400b1f687",
+      "sha256": "ec6f6ee91dc9c6aac9ddbaed36227b3be8327f7d0efc818e2a6f80d1161bd9be"
     },
     {
       "source": "decor-assets/native/nw_harp_frost_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_harp_frost_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 12616,
-      "bytes": 7736,
-      "sourceSha256": "878524a7a0064684f851ffdb3858a5839319cb0cfd16657549a0f029881e3c33",
-      "sha256": "c03ce35244b107fceb803234cef7d9c7a790f7e8c02c2f170b42dd1384223abb"
+      "sourceBytes": 55201,
+      "bytes": 39074,
+      "sourceSha256": "4382fcab1cd690ccd076de039e85fffc79a38735451e0fe74ada6a50fde2125b",
+      "sha256": "ac69090702c84fdcb829c2aa6a807082756916b359bd3c0bcce03818d661e330"
     },
     {
       "source": "decor-assets/native/nw_harp_frost_right.png",
       "file": "runtime-webp/decor-assets/native/nw_harp_frost_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6395,
-      "bytes": 3902,
-      "sourceSha256": "370e16f4e1f1df06995909200c758aa32ca5b80f5cfcd64d2ff31c20bbc5bdf6",
-      "sha256": "9b52bc1b888bbcc08a19838517d04c8607c939a6225b73c94de420e420547074"
+      "sourceBytes": 27491,
+      "bytes": 19560,
+      "sourceSha256": "76d42beae03983588c5fff5463d2f5f65f80a7b3d38943cf3e4fe719873e4bbf",
+      "sha256": "4b8b1469b6c18c4a55dcd8ed7a789ac554cddadc4bb973882a4bacc99c88cbca"
     },
     {
       "source": "decor-assets/native/nw_harp_frost.png",
       "file": "runtime-webp/decor-assets/native/nw_harp_frost.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6591,
-      "bytes": 4078,
-      "sourceSha256": "8b4273ae6cd5f8764d6a6856de337ce765e180cd60d9f53f3a656ed02a0795cb",
-      "sha256": "734eae03b00731300ff2806931c5281cd79bb243f28dd3cf4c0260e083acbc9e"
+      "sourceBytes": 28478,
+      "bytes": 20450,
+      "sourceSha256": "06a55a917187f340f67aaf93cabfaecb423b2f38f42a5aac91753dddc844266f",
+      "sha256": "12ee3e1af1e0b40963ecf6560f8ab0a3e87d7857d5f5042ebfdb2aecc6be0a76"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_book_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_book_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3354,
-      "bytes": 2008,
-      "sourceSha256": "b11ef35861357a2cac8979521b3464b7f8a71c1103f7dc7eed7a2df39cda9d4b",
-      "sha256": "008baa1956fdd6e1de75ec49c5b2d4080ea77f1ee32c8666f73617622c66063c"
+      "sourceBytes": 13086,
+      "bytes": 9626,
+      "sourceSha256": "9e4b378a7d8b1ca8351f1de4a664228da12da0c6693299a2586cf9b93fcc6966",
+      "sha256": "7e9db4f266e93e8d54c00946b3c243103081208a5234f8c150d3cbf56ade7b09"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_book_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_book_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1902,
-      "bytes": 1108,
-      "sourceSha256": "7b8e494c922202b8604733deeea17f836201362189fff2db2a29793bda30de9c",
-      "sha256": "f34ff50f6305faab798e49b3d056d6a3863834c5f0a4e4a12a79b4cfbad7a958"
+      "sourceBytes": 6705,
+      "bytes": 4934,
+      "sourceSha256": "fa12574bc2fa1a006b400d4584584163e511c3cab5e9caf92426231c5b97733c",
+      "sha256": "afc119576a3b429c0216fb2472b147a4e28291908e371fa8435f0e3fd82490df"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_book.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_book.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1826,
-      "bytes": 1096,
-      "sourceSha256": "c9fa7dc59d57145b248248a68372399e00234cd47426a874ec9d26901a494fb2",
-      "sha256": "d837328c7f12b9b5ed90f453733c3dbd7eefa9448d0c1a0a0e5ad39edf92f0a4"
+      "sourceBytes": 6574,
+      "bytes": 4808,
+      "sourceSha256": "94e86962610367b4d3a51491b96290a4a87ad3d18898dd64a4ec04d023d7f075",
+      "sha256": "c6251a9d75f6fdf3f8752ba2537e01b683cdcc9e1c696eaec836502c6369af1d"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_broom_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_broom_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 2743,
-      "bytes": 1558,
-      "sourceSha256": "81b39313912ccef209bce6818a0c786612e4e67a51cc80524779f57ec8077e27",
-      "sha256": "a0fc67d7543a940c06978548cf3b0c4579ec22c4b8bb180c61413f56ca637199"
+      "sourceBytes": 8503,
+      "bytes": 6312,
+      "sourceSha256": "4e7e2dd608f00a9c6b0c14279d16b8fffc40bc9ad6359ecf2a0fddc67a472422",
+      "sha256": "5a505bc46df6448b8811e55a54d0071e9ab9e29ace4f7583dea28be373c410b1"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_broom_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_broom_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1526,
-      "bytes": 856,
-      "sourceSha256": "5280d2d11fea1ce14ef1af0cc8f336314d7ca960015b6528046b38ac835a09a3",
-      "sha256": "d33c52e1f1f28b5f9ee95a0d03dfa9d25e713ceda21f138d77beb673745f1a38"
+      "sourceBytes": 4315,
+      "bytes": 3196,
+      "sourceSha256": "81d5724b4625e5164ef1945846f35755bdc5e80b35d363f6a9a961a248a97485",
+      "sha256": "ff8bdb2f16e400da31a8ba9eb0b8865bdf54154859788719135b768f69e28eea"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_broom.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_broom.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1548,
-      "bytes": 852,
-      "sourceSha256": "0a496bbdd4dd6fab6fdf8eebfe7f2c56d54331b7bf2fa23433929b41f93c93eb",
-      "sha256": "fd4739a79d70461b2209507a965f03ae38a92255e4b3e328c10f763d228a7032"
+      "sourceBytes": 4363,
+      "bytes": 3222,
+      "sourceSha256": "e8e7302eafd4ba9ed1d5419ecc4a6672dfb99d0b09390a0f2bbdb1fdc4c68a1c",
+      "sha256": "8d8b63f5307a8983cc434ec839fb52ced616415c47bf09d6000745dd04893b77"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_candles_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_candles_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3727,
-      "bytes": 2216,
-      "sourceSha256": "4997f1b7d660d5b7d04f14ad6a238fdfa2fce3cdacbcf42d2863cdeaeaeca3e8",
-      "sha256": "89dbc88ab24d308552603fc1702338f4ba64ad9b7bddb72c353644eae6f16076"
+      "sourceBytes": 12982,
+      "bytes": 9518,
+      "sourceSha256": "fa742259b0a5b21a02edfb9adf14fb5c71680319166bfae87af387ce79e45b83",
+      "sha256": "1737e766cbf15db5f7c213bcdd925803d6d6df4711507f2037e5cfeb6e1034ec"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_candles_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_candles_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1993,
-      "bytes": 1190,
-      "sourceSha256": "dd529651ed5e8d63149fe97dbfb01a816ae2568005980736150640cfb72ced90",
-      "sha256": "16f61a38cde50903c619c377dc6c60af9f247d2ce3da11f54d2739ba2f237e3e"
+      "sourceBytes": 6424,
+      "bytes": 4680,
+      "sourceSha256": "0d3aa4cb0c2cc14f2c662f390d54052cdd73ecf3c47344a7f8638edb40af431f",
+      "sha256": "23fa7769eb15bba44b681c85ee16882b984496faec50f2567776309d3a2a6af0"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_candles.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_candles.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2116,
-      "bytes": 1258,
-      "sourceSha256": "a373ac4a409a3433cfdab4a3546701e43743256b9ca824aa78a60273c9165cc7",
-      "sha256": "150fe528bbc616c1a4ccbe0561c9cf7b21f16b48db5875991f34f1c5cdc18d21"
+      "sourceBytes": 6745,
+      "bytes": 4952,
+      "sourceSha256": "360053fbfae0280e4a74328ec2a1f17d7e288a8c105354e52c118503d81d8499",
+      "sha256": "2c5886056f1ac8f2b41bb385cd7da8dcb82633994975c153d73aae4e643fd4df"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_cauldron_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_cauldron_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3603,
-      "bytes": 2214,
-      "sourceSha256": "2d169f41a1cf17acea2bf4b2b206ae520b4cca67a86b73f751ad65cbbe3f272e",
-      "sha256": "1652d04cb97f4e920e81c93f8d8ac62bad9423e8fdcd237ec449f386abff948f"
+      "sourceBytes": 14453,
+      "bytes": 10988,
+      "sourceSha256": "5ef8c09b1b38600f5632d21370b7e8eea0b2c837aa56a407d8fa6f424b626ec8",
+      "sha256": "6289dce03a378078f2d4821f92016b98d1043bf14c4ed47f761f79de3ae3e52d"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_cauldron_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_cauldron_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1940,
-      "bytes": 1164,
-      "sourceSha256": "981608bb38e5749fb89ce15def3a6e8d696ddacb331f67c60730dfc5bababe53",
-      "sha256": "ce8018fc1655e1e06da2ab84515ae490b8fcbe65c11bbcd578c68e10128abbdb"
+      "sourceBytes": 7210,
+      "bytes": 5446,
+      "sourceSha256": "cd6c0348d0924e5802baccf10c1af94dd7d66504d5d5d5908d5a8a109bc688d6",
+      "sha256": "3e033aaf947974d19f38e777da5e0b653c090c44b434e72b53cc350b7adc006d"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_cauldron.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_cauldron.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2029,
-      "bytes": 1236,
-      "sourceSha256": "92370c99f7aaedd8e1f393b9a03c44497e6965af8d5206efa64f6bec23f5137d",
-      "sha256": "66095171925a0e5b6656d4306d5609c0274beea58e2f16af6a62a0a086e5f509"
+      "sourceBytes": 7455,
+      "bytes": 5666,
+      "sourceSha256": "0a254defe0c0991f8dc5bcc7906c35320cda073fff34d4fb47b463d37ff9ac1f",
+      "sha256": "f6ec269db148b6d3ece005a3a7e5ff1d88d61a86ecdb1006dc3f42379a9234ea"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_gate_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_gate_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 6124,
-      "bytes": 3344,
-      "sourceSha256": "027c5760896c863165f1b8dcc1b1bf4a8d0ac1d98409ed4cf086b6bdf40246a1",
-      "sha256": "c827f366c37527e6e3dd93ec59df554b8c3f3f0cc37d7d592725c8ff7225c5f5"
+      "sourceBytes": 21613,
+      "bytes": 15756,
+      "sourceSha256": "e4bd43ad80ed011c1fdfd124792e9b41a742a6dd637931ba89ff6eab485f7ce5",
+      "sha256": "92350943b4f7dd18a02a3de251c22796ec052bc4427d07fde5c9a34c00ce85ee"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_gate_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_gate_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 3280,
-      "bytes": 1744,
-      "sourceSha256": "478b963306da60efdd95fe1f169c8554349999bb4bfc72cbf803b2092c3f4478",
-      "sha256": "b39ee74c7f403d54fc48c3167d320532d5cb817dfb6e43a264b2e3ec7fbd8e30"
+      "sourceBytes": 10826,
+      "bytes": 7892,
+      "sourceSha256": "bb4ad6aa6d8e2b7454ecea3b74115e858677acd003c7c58464055d919bdc3e1d",
+      "sha256": "36e1ac2005c3c67c2a3aefd389253ed64648df1253f5e3f673fa4972cdfaf47b"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_gate.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_gate.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 3219,
-      "bytes": 1752,
-      "sourceSha256": "7f3de799731304293c53e22774a0f35767ec9eae3de5e67ed64d26d1346e6c4c",
-      "sha256": "283be3f39e2d81d7036a75986ee04c9da151a8fe4a3daca3b25b6c211b6fa39c"
+      "sourceBytes": 10941,
+      "bytes": 7994,
+      "sourceSha256": "62b6cd29892b372451a32e081bbdeb8cf6d52a6989bd37abe1efd1f6518d7870",
+      "sha256": "6caa4bcdd8bd80393ccb61fa41714636754ef4b0e83cf33f0ccc8b864dc84999"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_hat_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_hat_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 2936,
-      "bytes": 1740,
-      "sourceSha256": "068140ee754ab9e49bb0331c97ed1ec29e59f2a87f217d8b58d76b2bf06522f4",
-      "sha256": "b53f23e3be929ed63a02b45327d22b7d01082480173fca071c39d23fbcfd38c1"
+      "sourceBytes": 10891,
+      "bytes": 8140,
+      "sourceSha256": "68d3027f1f3f2b21c5643a7892ac7eeefcaabbb9a4f77723ccff702a25371d01",
+      "sha256": "bd39cc66aa1d0e3a63a5282fe91e7007e991bdc3e8f6cd8c875ef06364561c89"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_hat_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_hat_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1582,
-      "bytes": 910,
-      "sourceSha256": "da551111b4ceec5ffbf006f4f2c9090b1a869e55b15fadf8f98130fdf1256c1c",
-      "sha256": "b86c4af3ea87a7c6c60fcae61492da888489dddae6acf652cec530f794ad23f6"
+      "sourceBytes": 5407,
+      "bytes": 3990,
+      "sourceSha256": "db11d047d97dcd759b97bd4cb23faaa7ead6609a5124b9a800f36a8dcb267bbd",
+      "sha256": "579c3330a63605d33b01c477ed9b98b0c9fcb97d23da9470d0fb0fff7822cd32"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_hat.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_hat.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1707,
-      "bytes": 980,
-      "sourceSha256": "5b008252350544d7c3410d39ed1935c79aeb71b6a2d37227d0be7ad67326005d",
-      "sha256": "0054d5a1ce40cbb61f7d59b65683297b8a2d0dc90a1f96a24fce5a6537b544dc"
+      "sourceBytes": 5709,
+      "bytes": 4322,
+      "sourceSha256": "efa855eff65a9bd3bc07c2a0fe47bd870fee48513afd71b5fa31cd9afabe182d",
+      "sha256": "9784b7d1caaa3086b5cdf34836c11b4abc7cc58340101204b6296bdfc0868dec"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_owl_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_owl_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3894,
-      "bytes": 2362,
-      "sourceSha256": "b73a5b3d414e515838bd3441a02e74a0faba4c0f2fa781c8ffcaf3fe007ab2df",
-      "sha256": "dff2b6c428d11d5d6f932e684eb3d0eadd5bb28111be5b93576d1a8ba83bc4fa"
+      "sourceBytes": 15717,
+      "bytes": 11412,
+      "sourceSha256": "7c2432f60b968f1c9466f0049c5ca10e9c81efcd5863bfc4034996297f65359f",
+      "sha256": "579800fd0c8beef403cee4b974880d7b6ed48a3160354048546c2186dcb01cc1"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_owl_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_owl_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2023,
-      "bytes": 1198,
-      "sourceSha256": "c441d00b47ed99dece1d8b335c1447f59fb0450a31dedc2c00848f0bf4781981",
-      "sha256": "05cf286563edc70fafb866a6dfbccecc3d17bec64b8af63a3740e942ae873275"
+      "sourceBytes": 7603,
+      "bytes": 5434,
+      "sourceSha256": "0326874a2ee6bfe8d9c6cc9786ac820ec7f99d5ab5543b758d72d33587f31b19",
+      "sha256": "804fd43fc60d658dce4031765fe62222f15bb78cf62d1f691fbe2a10873df895"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_owl.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_owl.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2240,
-      "bytes": 1342,
-      "sourceSha256": "7f7e3a19ce8700d302b64ac84a43fa60d07751404d83b30b341f076ea8db9585",
-      "sha256": "2b7f11cfddd78a8eb0e5f6dee5dfbbc6d6b3a4ce4069fc5f789f27b79929d87e"
+      "sourceBytes": 8341,
+      "bytes": 6114,
+      "sourceSha256": "2c0da05046f5b92bad8e4b3a308ab0e11f4986760744cef6820ff822e469ff7f",
+      "sha256": "bcb6c8f2cf1ccde55bc941e882849f8899464efcb9878a707a9f18ad34f65694"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_snitch_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_snitch_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4615,
-      "bytes": 2788,
-      "sourceSha256": "02c20680daa196519ce9e9e2a311584d1fdc954b676ad381ff255204373ac4ce",
-      "sha256": "885921bb3ee6fba29664f96d9a2d32e8fa6c4595d34830b4fcdbe043627e8da7"
+      "sourceBytes": 16257,
+      "bytes": 12196,
+      "sourceSha256": "46dbc75ae08eba48de68b76ee0c0895f3d3efb3698524d6b62746f30e4384db0",
+      "sha256": "08ed68d953cd75d7cae3df351438ed81c5154bb3081f761af55708309e40c2c9"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_snitch_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_snitch_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2393,
-      "bytes": 1390,
-      "sourceSha256": "31764b9e47f6679ce5a12cd955bd77046481ec665e22b3a74ff859136047093f",
-      "sha256": "a2d1d2ee24c35a8e678b5ceb0b5e3ce0f13933bf939e5113cb1bcd7ce4594b53"
+      "sourceBytes": 7770,
+      "bytes": 5794,
+      "sourceSha256": "31729f35312238751a9a27b1599cc8c60616ee7b86df5e7c3c8613e3a579a75e",
+      "sha256": "053b6eb3e0c85497aa4fffe9c7e7a11b74f6be504a484f7987cd3920aba8d6d6"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_snitch.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_snitch.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2613,
-      "bytes": 1554,
-      "sourceSha256": "6788e19fe1dd4f34576b13579a14615f7bf228c0e6a8945f442111a53850f697",
-      "sha256": "ebaec5aa7f5d650bdecfcd0393dd8304f5e7193f8e5a513405aeeed478d718cc"
+      "sourceBytes": 8644,
+      "bytes": 6512,
+      "sourceSha256": "3a7e2a8d064e02dcc811fb7de324b0551d7345168198dd95d8609cad6e16f512",
+      "sha256": "48dc7b61808cc0c6d1eae777609e3f7f32b8817ebd744cc3a7562000d7832a56"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_stag_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_stag_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 13176,
-      "bytes": 7868,
-      "sourceSha256": "8cd07c8cb9047019b30dad10ed40f1320fa0adca9cea02ed6f4c2337e1affd29",
-      "sha256": "2eaf0384d7a3442a7922342d9c59314e7bc8d99bd9c45a169ffadd307ec97ff4"
+      "sourceBytes": 55260,
+      "bytes": 41916,
+      "sourceSha256": "ecfbbf162fc92d0d1d2107b8666030a89dc98ab9f6da2becf0bfa5c07f91c518",
+      "sha256": "be9d1e340834d7f1032ceaf410f09df6c29f30941b4ee29e3a03e1d70d2e5f8b"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_stag_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_stag_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6771,
-      "bytes": 3980,
-      "sourceSha256": "d2d8ded3d5850df6af60b1f40771b5219808898b9231a99a3910e00b54abecb1",
-      "sha256": "b13afe17ec17d5de28b942c34564cedd0ab09212c8707e620dadb253a694ef4b"
+      "sourceBytes": 27625,
+      "bytes": 20836,
+      "sourceSha256": "fc108e8faa47519cb2069c78c3bb715c165b7212796f2eb6f1ae204519392214",
+      "sha256": "0bbc7ea58304983643421838027b076b293fe1ead8d2e8d9d3165a39ae995788"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_stag.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_stag.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6939,
-      "bytes": 4114,
-      "sourceSha256": "03c48c83f24d2ffb69bb348dd165c377a80141cc39c2e51653b8916934e6b0c8",
-      "sha256": "28c121f2c9a1e4794b624884def7dde7982cb77efce4838e80e41b02b4711d3f"
+      "sourceBytes": 28219,
+      "bytes": 21242,
+      "sourceSha256": "34c7aafd8306a6a311a35a1f9d51d22017c6ab9c320ca4a13845baad2d607821",
+      "sha256": "eb9a677101738ce2e380bbd7f97638375629e301bc246a362a9f4185dabfc490"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_turret_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_turret_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 5872,
-      "bytes": 3836,
-      "sourceSha256": "b4cafb4fb2c340197c31f699b676213ef5632a9b5abecff1f8471edc1d063bcc",
-      "sha256": "fdd66d919d2c5cc66d360cf6e1868d73f8b27adf3879b7d9fee13f3cc62e1018"
+      "sourceBytes": 25250,
+      "bytes": 18614,
+      "sourceSha256": "50a2ce8b05ecf0da86b16efb9cebc2f4277e00222bf22dcf54c656a46241a12b",
+      "sha256": "0cdfae96918e3dabd877e0819e587312628f977e65a4134fafd6e07f5f1fbf81"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_turret_right.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_turret_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 3118,
-      "bytes": 1876,
-      "sourceSha256": "f48f1ef7db96d0f1a889e3a269b0f7a5ce33de866d43c2b134ade5c08e4d35d8",
-      "sha256": "0c4935ea19048f6feec5a5c3e8358e17a9dc351f40ce5c0821c9f0636aba2b8d"
+      "sourceBytes": 12647,
+      "bytes": 9236,
+      "sourceSha256": "6fd4da25c700449892c6b692b85618a62201df3ff714c06d47ce7050d3028eee",
+      "sha256": "40ffba5666b41111341ee14534abb782a1bb269a43d7d1ed4331bb75cf698608"
     },
     {
       "source": "decor-assets/native/nw_hogwarts_turret.png",
       "file": "runtime-webp/decor-assets/native/nw_hogwarts_turret.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 3237,
-      "bytes": 1990,
-      "sourceSha256": "e655b1fa8a7e38a2bfe6ea9e92cb240b704ac55aa38cb24934a521f432d93d25",
-      "sha256": "121bc27fc8c8402a85c7b8f8c4c29c207858c4d128b8f3206da6d0fa23eb9a54"
+      "sourceBytes": 12959,
+      "bytes": 9642,
+      "sourceSha256": "93ac77afe850c4a061fdb0f3905ea1b97e64f897e94c0212de90a0fcb2c7d4ed",
+      "sha256": "70fd753fb634daf135c57e52fd88fd680915504b03d746854c3fc110db399acf"
     },
     {
       "source": "decor-assets/native/nw_holly_arch_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_holly_arch_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 5216,
-      "bytes": 2882,
-      "sourceSha256": "e8950a0fdc6342df7b11ab6cde08034e3712c3c1c894c72540fa81cc66c82618",
-      "sha256": "44baa2e8bf9ba311bc73a7670952ed5ff1a4ea06416081643d39f10ecafad686"
+      "sourceBytes": 20072,
+      "bytes": 14582,
+      "sourceSha256": "92b61de6f5cda632f6d497f60efe12b0341073835fb7026df31a59ea9df295c4",
+      "sha256": "bee90bd150684433ffded7998f6e248dd40f22c783fc4cc794a6b9ef1297c373"
     },
     {
       "source": "decor-assets/native/nw_holly_arch_right.png",
       "file": "runtime-webp/decor-assets/native/nw_holly_arch_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 2749,
-      "bytes": 1478,
-      "sourceSha256": "5a875ddbf7495a7cd6ca432f814ab5c9d43f92343a590d9d5e1620e8282cdd66",
-      "sha256": "c91e875a722511d90da862a9fc5a2965ccad4100404bab40a6b7b64c031d40f1"
+      "sourceBytes": 9934,
+      "bytes": 7158,
+      "sourceSha256": "025032f01656c0f4751a29a5ddbbbcda94349547a325477b0bef11fe49c873ef",
+      "sha256": "5c33b6b962281a4925dc8d416cd39f777da5be171d7975db07a506fcfa71ec5b"
     },
     {
       "source": "decor-assets/native/nw_holly_arch.png",
       "file": "runtime-webp/decor-assets/native/nw_holly_arch.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 2867,
-      "bytes": 1560,
-      "sourceSha256": "7028c340c15546c9e1214ffca9dc38870537b5e4a880d0d390b4e124e803974d",
-      "sha256": "248f1de49cfefea0c0321374f1bb8b96e9020103fb8244645e3e15057ce79718"
+      "sourceBytes": 10377,
+      "bytes": 7590,
+      "sourceSha256": "94bd8a6d4c7b32fa967d521acbd166691098f2d89d180c3d0bcea4d2ef2dd682",
+      "sha256": "bbfa99d7a2f688fa9b4640f0e4ffc068bfe3006c4b227091f94b0dd268161884"
     },
     {
       "source": "decor-assets/native/nw_holly_heart_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_holly_heart_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3023,
-      "bytes": 1722,
-      "sourceSha256": "cea51245f5288cbac4d93758a3d597072ef0234ec68fbd8282263bcd6d76a71d",
-      "sha256": "0eaf9dbd9efa3fd1bcea31fdf634629059a6293a63a83bcdc21b50dbb964ce96"
+      "sourceBytes": 10147,
+      "bytes": 7268,
+      "sourceSha256": "ee5adc6675096a6d7edfb94807bff1f16286cbbe2f83dc68003d5df9765fc83b",
+      "sha256": "dd77ec5af4fb36f48ca949270074d4b3183c1ab8fade5eae215232c8a6a3990c"
     },
     {
       "source": "decor-assets/native/nw_holly_heart_right.png",
       "file": "runtime-webp/decor-assets/native/nw_holly_heart_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1591,
-      "bytes": 894,
-      "sourceSha256": "cce40d7c82cb94bee8b7c3ad641fcac338e9534e37a4ed12d83b46b9415f0c9f",
-      "sha256": "e9368783ad5f8e65a9b9a1d8c81166726287196f317993cb997e0da94bd25872"
+      "sourceBytes": 4830,
+      "bytes": 3404,
+      "sourceSha256": "d2788907c518b93bbe2139c2163bd35cdf0347b477ee3aa36d0280ba11859fcf",
+      "sha256": "2ee739393bae457550a77c7d10032c451bbd065d865b1796a221df88434a0b1d"
     },
     {
       "source": "decor-assets/native/nw_holly_heart.png",
       "file": "runtime-webp/decor-assets/native/nw_holly_heart.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1744,
-      "bytes": 976,
-      "sourceSha256": "102fdf48d12c80e5a2c10e6c1d5c99833999488b96185ce477ee791583b038d9",
-      "sha256": "0148d79c0aa947720b6658d9e8fcb901ab99f5acaa71bb288f3fe0a2c7754902"
+      "sourceBytes": 5499,
+      "bytes": 3944,
+      "sourceSha256": "494096e6abf52ec88ecb227231ca54c433c958a5539e2aca4782c08d02382cc7",
+      "sha256": "0fca046b616f7e90120263a55c3c280959005860c9b198bd9577631bcbe8e260"
     },
     {
       "source": "decor-assets/native/nw_igloo_polar_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_igloo_polar_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3131,
-      "bytes": 1858,
-      "sourceSha256": "e21b49c06df16566ca66a8920d5bdac601bf5c4b42cfcc5e928537cbf230e55a",
-      "sha256": "108ee877c4deab1c12ccd73c074ba881aa117325b5afa97e594711a44ac52413"
+      "sourceBytes": 12929,
+      "bytes": 9200,
+      "sourceSha256": "8c51e8d46766609dc356ec8b7d48bf242ddc810c13285725e622ecc641af527f",
+      "sha256": "3fac8fa2f56d602c639350cb0a4cba4b524e7669df1cfecf7e67db7046465d61"
     },
     {
       "source": "decor-assets/native/nw_igloo_polar_right.png",
       "file": "runtime-webp/decor-assets/native/nw_igloo_polar_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1719,
-      "bytes": 1052,
-      "sourceSha256": "83c00bd016cc6adc8c7856749212588b5b0ea3367944ba401f55c72266409d1a",
-      "sha256": "5994b1ae987f1a97c735ee4b01d99725acd1e4a5883bd5ef2114a1bb48fea025"
+      "sourceBytes": 6569,
+      "bytes": 4728,
+      "sourceSha256": "5e231940e7be623958dabfed47e33c6fee28f8e1adb99d31dfb052582efdd390",
+      "sha256": "fac49f9b1532b651c40b7a1c575c383272caf0ccb3641d07010e7366b6b3af80"
     },
     {
       "source": "decor-assets/native/nw_igloo_polar.png",
       "file": "runtime-webp/decor-assets/native/nw_igloo_polar.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1717,
-      "bytes": 1050,
-      "sourceSha256": "fe25ee4675abb0090f46c84feb1e85e618fbced3e960e537a6a4c9d566f8f46c",
-      "sha256": "8e0f56fdb6da9c689849f583c5d543fcbcacd5d1121be32009575bcdb6b4ccbf"
+      "sourceBytes": 6582,
+      "bytes": 4738,
+      "sourceSha256": "8487d827ab14c7ae4955567baae95d8d99d699643abe05ada592f907a67e1b98",
+      "sha256": "88f69a6b23813e4792b9643671316e48e361af10b7606137933ba8540045b752"
     },
     {
       "source": "decor-assets/native/nw_mistletoe_bow_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_mistletoe_bow_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3460,
-      "bytes": 2026,
-      "sourceSha256": "8420d2e91bc13b67432ca33362abc2f649e46a04eadb0e1087c2422696654e53",
-      "sha256": "b61bacc52f556bcffc3844eb30ac4ebe034f1b86ec61b50f2d1fbe3cf94ba926"
+      "sourceBytes": 12510,
+      "bytes": 9216,
+      "sourceSha256": "894bab22db711b82a0efc620198b104f9c73f25e7a5ec0922a87d850932aa71e",
+      "sha256": "53b79c745d96bd6445ecf52b7545c7abddf6de4c03d2e50d9e024f93fbe7bb76"
     },
     {
       "source": "decor-assets/native/nw_mistletoe_bow_right.png",
       "file": "runtime-webp/decor-assets/native/nw_mistletoe_bow_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1816,
-      "bytes": 1028,
-      "sourceSha256": "aa2ee8a404442ab221bbb9b56ccc723876ef410f7cd6cae7ee4def3ce35d932e",
-      "sha256": "c04b1d8702b32a942b664183a59b825f0b249dac9794629fca284d4eae5b5804"
+      "sourceBytes": 6007,
+      "bytes": 4392,
+      "sourceSha256": "34b414d898d0a22d73f7db85bec6e23765485b8d711c3d0fc2e7d2721dfff094",
+      "sha256": "3392e9be65950708bdb7e45a25c540ab7645a06a3324b05950ab32b4381941cf"
     },
     {
       "source": "decor-assets/native/nw_mistletoe_bow.png",
       "file": "runtime-webp/decor-assets/native/nw_mistletoe_bow.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1992,
-      "bytes": 1140,
-      "sourceSha256": "5971f50ad111361ece6c176a712fd7cdfb5132e7ed3e94b352163c28a79d0569",
-      "sha256": "6d0e07d73b12ec2619e19ecdfb86b46a17c2c553a2389b7b60819ba234bb2cea"
+      "sourceBytes": 6703,
+      "bytes": 4936,
+      "sourceSha256": "d3aeb151324623ae4efcb0d85d08eb2565b1c5c0cdb48f40e3011291ae3cee4a",
+      "sha256": "dec22bc09e7a133b2c8eccae5be0b95274a21d780f304d6fdf3d65f000eb3953"
     },
     {
       "source": "decor-assets/native/nw_mitten_mail_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_mitten_mail_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3554,
-      "bytes": 2140,
-      "sourceSha256": "1ff1574b9726bf353c0fb7efca9898eaab86b819847a1794cd7eb54ea62c4481",
-      "sha256": "79031b7d5c6f03ebc8c26b2dc5887e9e6eb1e13978bcbfc67cef56b397b9d300"
+      "sourceBytes": 14968,
+      "bytes": 10940,
+      "sourceSha256": "02c1a26205825ce2d793181c9e71348efa9d803d2ea856abb04ca9196399f994",
+      "sha256": "9fa7494c3b7988eb6e9b6dc5e527b7c0c635483aa951317d730d7f3ef8ce7f4c"
     },
     {
       "source": "decor-assets/native/nw_mitten_mail_right.png",
       "file": "runtime-webp/decor-assets/native/nw_mitten_mail_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1940,
-      "bytes": 1162,
-      "sourceSha256": "b1db02c62ef0195be312124a1472951d665c1ef12ed76aa4d9c0ac721f960993",
-      "sha256": "8b14794d93a098085d1a21d64caef7338e0e30c20f32027d86def217f2139ccc"
+      "sourceBytes": 7644,
+      "bytes": 5842,
+      "sourceSha256": "e537e2daa91c6dacb652d782aa9de56edbe36d95c4978ba253ad28a0543f6616",
+      "sha256": "67a50463e5dbf1d0c9a6273b3229ba24af53fa85aaa88f1ad0d922ce96bc9393"
     },
     {
       "source": "decor-assets/native/nw_mitten_mail.png",
       "file": "runtime-webp/decor-assets/native/nw_mitten_mail.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1972,
-      "bytes": 1158,
-      "sourceSha256": "911923b2118d598323e988ca15c0566325db4c113a4db9cd7052db5f66481890",
-      "sha256": "2d6fc1f712a742a15ecdf27d082ce27d8ae7b27267fdc1adf661dca11e70423c"
+      "sourceBytes": 7606,
+      "bytes": 5752,
+      "sourceSha256": "c0c6bc5657f094f47308b4886660d29642ce488c3b880a12164b46b862f6af93",
+      "sha256": "bf3f8edfa8a22e0467dcb77598c2f71ed001bac0b1e47e2c199e3cb8a887bd2b"
     },
     {
       "source": "decor-assets/native/nw_moon_lantern_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_moon_lantern_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 5273,
-      "bytes": 3362,
-      "sourceSha256": "aeb60f8cf0a986864af8af2423d73f7284a0c931c942fe4f52e441f9efd9266e",
-      "sha256": "9d331b92af001db573a2091eac755383c556630bdd47776c26b27ea02919769a"
+      "sourceBytes": 21269,
+      "bytes": 16392,
+      "sourceSha256": "3127d5969340d2b003f08b18c55ee411a3acd82e2ae6be70e02cba92f53ca883",
+      "sha256": "c356ff4f37b3532b60ce0cc0b5a5f0c43ca0f0253c5853d8b201085ea25b7689"
     },
     {
       "source": "decor-assets/native/nw_moon_lantern_right.png",
       "file": "runtime-webp/decor-assets/native/nw_moon_lantern_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2820,
-      "bytes": 1722,
-      "sourceSha256": "1f3ff59ca92b604885040458b49a3fbbe5d6cf614cfaf1c4320684fa3159f402",
-      "sha256": "ec65df4e2034bff5f9f5656a683a73afde342a4aa6851d30f8f999190637593b"
+      "sourceBytes": 10522,
+      "bytes": 8028,
+      "sourceSha256": "9cb65a54c147bd5f4b157f2ad5c4504977c5e10269744f6ab82a06455c743d76",
+      "sha256": "d67496e4158cdb8eecdfa336c2b4fc9a7e268f0eaa810b097be458c9dd27a97b"
     },
     {
       "source": "decor-assets/native/nw_moon_lantern.png",
       "file": "runtime-webp/decor-assets/native/nw_moon_lantern.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2885,
-      "bytes": 1800,
-      "sourceSha256": "26a3bf255f881bdf91a4a23e362ec1c12c56d32ed6ebe0bde4df7633c04510b2",
-      "sha256": "a17423bfe8abe47ffc93d38b38120d7bdfe34b5f3e1e892871d2064de1187cae"
+      "sourceBytes": 11034,
+      "bytes": 8522,
+      "sourceSha256": "68b195fb219aad06267c2308eb6eea2df3eb24c405a55f4ffd5bd2773dc39d45",
+      "sha256": "2cee0aa0c1bad9b9c9d1ae94423297dc97601998d2916ab1e670837ac7ff9819"
     },
     {
       "source": "decor-assets/native/nw_mushroom_house_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_mushroom_house_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3827,
-      "bytes": 2414,
-      "sourceSha256": "46506a0f9216bc6175e5f8e53cf67ee762e9982222c097a745ca146b32a84d41",
-      "sha256": "c8197c005e7180427554b2a56902a022a8f17f960e7239db7ee3cb1ceb0074d7"
+      "sourceBytes": 16976,
+      "bytes": 12654,
+      "sourceSha256": "80db73a0aaea76d263309f289e0fd1949770b8d59febc76fcdba6a5a2530ea8f",
+      "sha256": "7cf13e0942421f007aa8d618aa01028f1314b69e02359242f0bc172832a3a0c6"
     },
     {
       "source": "decor-assets/native/nw_mushroom_house_right.png",
       "file": "runtime-webp/decor-assets/native/nw_mushroom_house_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2060,
-      "bytes": 1264,
-      "sourceSha256": "46493b86e05d99e2a850932e788c9cf9a52df5e98a5f6ecf1c1d3b962629abe2",
-      "sha256": "a4f5b157c415f5eef36d056f636ad766fd9863712fd2502cf9893aab2b4f9128"
+      "sourceBytes": 8520,
+      "bytes": 6394,
+      "sourceSha256": "7ca5f6997d665b1cb6c04df5c3f8a87a5ff3ed742f168e3335ee2d129b8562df",
+      "sha256": "4437b7f8540885e04b1f76bcbe17a2ece633fe7009022a25efb5f95a27417575"
     },
     {
       "source": "decor-assets/native/nw_mushroom_house.png",
       "file": "runtime-webp/decor-assets/native/nw_mushroom_house.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2124,
-      "bytes": 1312,
-      "sourceSha256": "8a090048c151bb57fcb92e401c94f10e8455671e2e1969ea8f09f7c01d71657f",
-      "sha256": "990489d085f3f06d621692a4bed1c6ee3fb64f7bedd45d32432195763fd803c0"
+      "sourceBytes": 8736,
+      "bytes": 6548,
+      "sourceSha256": "577f6729fd851e1f788639724c3797907de9fdd0655fb3fc6851a72b9fe132e6",
+      "sha256": "b57c8b85685b66fd844b55c83cb6700e609db1d81268a473cc5e19424a3d71dc"
     },
     {
       "source": "decor-assets/native/nw_mushroom_snow_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_mushroom_snow_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3716,
-      "bytes": 2322,
-      "sourceSha256": "f8b1a82f6caaa23e38b9f4ebca1b8041322ec57822bf3fb12733a1934dc46e76",
-      "sha256": "5c57ff7a4d9b559db243bf9ac6f15e1dfd79d29ac47ecd5547db54bb10e945ed"
+      "sourceBytes": 15506,
+      "bytes": 11604,
+      "sourceSha256": "9c9183dd5bfc8b98f823dfb6e3c0b63623f11257b5a48a473ea9cfd915a07d87",
+      "sha256": "44590bc3722e2365dc7b9d776467783cffd19ed47f875e7fe9ee4d7817039549"
     },
     {
       "source": "decor-assets/native/nw_mushroom_snow_right.png",
       "file": "runtime-webp/decor-assets/native/nw_mushroom_snow_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1972,
-      "bytes": 1200,
-      "sourceSha256": "61c5d38aade28a6dc433b1491efb6e6200cfb0e32fc69b04ae983d7807ea4ae1",
-      "sha256": "f3507cdd611f7e47f3a66918e678e617fe05d81e22f1cf16b9b8f51b436b2448"
+      "sourceBytes": 7505,
+      "bytes": 5674,
+      "sourceSha256": "8752db514b5d5b5d8731eee81e55cc39a8eee992fc0e677cffe888aedb28181c",
+      "sha256": "340a1ad312272923630d63de8f9cc4caf17e9742c574de422cad3167022b483b"
     },
     {
       "source": "decor-assets/native/nw_mushroom_snow.png",
       "file": "runtime-webp/decor-assets/native/nw_mushroom_snow.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2087,
-      "bytes": 1300,
-      "sourceSha256": "bb228e55ed3c98b60487c6ddec12d96f247760d7f4951b0c50b76ae5ffee52f4",
-      "sha256": "837fc9f58c09dab722a469e8d589bdb735f12aa1f4589371f506f1192d23c0c3"
+      "sourceBytes": 8225,
+      "bytes": 6180,
+      "sourceSha256": "fdacf8af58c43d71ceb5ca86fb8790cef873c2da5854a6c1298faae8d58bb3f6",
+      "sha256": "8eba6e4c4794c1a383f710761108ce0e0cb53c97ccd0544a47766781229d9f4d"
     },
     {
       "source": "decor-assets/native/nw_music_mushroom_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_music_mushroom_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3008,
-      "bytes": 1718,
-      "sourceSha256": "cf6c96a5fe007695d69e4bc8f514e97afe0694d578c7b0677c4a3923abf769a2",
-      "sha256": "6cb0feace3219778938ae746dc83f85ae37197279dd543845c2466f3e9368013"
+      "sourceBytes": 10137,
+      "bytes": 7366,
+      "sourceSha256": "49aa0590a9a0a553d56e867ce29c200560dffa631bffc46db6c2e29c5debd28a",
+      "sha256": "4271d598d761db2c7ca873271163f2e8edb0842e9087d903f6c1fc29664f982b"
     },
     {
       "source": "decor-assets/native/nw_music_mushroom_right.png",
       "file": "runtime-webp/decor-assets/native/nw_music_mushroom_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1683,
-      "bytes": 938,
-      "sourceSha256": "8e825d5b04a4f41a018e467566bf3a907244ce16496160b98512d5a8e2140665",
-      "sha256": "b47247c18b6a80944abe70a0d54e188d0edeae1ae345f1a6da31916fd36c1597"
+      "sourceBytes": 5150,
+      "bytes": 3736,
+      "sourceSha256": "6a176256552c450db26d1985a73072fd3858cc06d7da55f35310b2952743c604",
+      "sha256": "e154ae6157ab6808c6c3b60f54f481937c917a1dc33cfc43269d8936c573a4d3"
     },
     {
       "source": "decor-assets/native/nw_music_mushroom.png",
       "file": "runtime-webp/decor-assets/native/nw_music_mushroom.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1645,
-      "bytes": 932,
-      "sourceSha256": "15f0050021318b896194a10337df7c2ae73866853bcc05a566bb2d4f37092477",
-      "sha256": "ad5538af9205913f3451dee3a182f5cc3516798147271ef4dc712e799882bd4c"
+      "sourceBytes": 5192,
+      "bytes": 3774,
+      "sourceSha256": "a18d96d899f860304b83d0300cfb02c220c0d8fce342f6abe482ef88d9ddda51",
+      "sha256": "017c3eadbb7a468920434491647d4027fd4153d5463e9beb44b7eeb584cfd46b"
     },
     {
       "source": "decor-assets/native/nw_owl_lantern_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_owl_lantern_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4105,
-      "bytes": 2492,
-      "sourceSha256": "6ed1d15a417bc5b820a710a792d1394a6437e249880517dc4cac50c840250e41",
-      "sha256": "2217d439511c873b67b3754afa16c9d043bb8dc06fa2ff43f8d48054a345d5b7"
+      "sourceBytes": 16026,
+      "bytes": 12200,
+      "sourceSha256": "63e3f9012ca17bbf9684d8e8d52d8b69d64da39f1cff7e43778c6ad26fbb5264",
+      "sha256": "ff0dd6fdc8cf252d55623f6d3b16018369767fece9b7d834eccf4ff807b38e4c"
     },
     {
       "source": "decor-assets/native/nw_owl_lantern_right.png",
       "file": "runtime-webp/decor-assets/native/nw_owl_lantern_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2221,
-      "bytes": 1332,
-      "sourceSha256": "2f5f5b018322803ca19da7371d820476e291431609d2f417ddd943a3ad726967",
-      "sha256": "0f37ad8f7f90a5b5219b5a572fc20e6a43ba78f8ab8ff7b10ebc2d67f50a6840"
+      "sourceBytes": 8049,
+      "bytes": 6130,
+      "sourceSha256": "dfbe569240c7fdd5fc14fcbb66a1e0005c26fcb210bcc28446859a04987d0c6d",
+      "sha256": "7cccece31950102d82a5eee7c69569eb63a3dfa3f624167ccc5831407a8b3c4e"
     },
     {
       "source": "decor-assets/native/nw_owl_lantern.png",
       "file": "runtime-webp/decor-assets/native/nw_owl_lantern.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2254,
-      "bytes": 1350,
-      "sourceSha256": "d2381b0fa9684db9e7b621595527eb660584655c01d980020e6f66b79905a793",
-      "sha256": "966d5cdf29c5d50be3b8562f55bdc59950edbfdcb7642c4b473fbb0744218557"
+      "sourceBytes": 8106,
+      "bytes": 6180,
+      "sourceSha256": "6b2d5f75554a62352131860a6551450d720ec04ae649180757b127c0df18f40f",
+      "sha256": "26655bdb2705d902fb1774bc5e703240ba44fd322e5bbf4e0c9979499d8b277e"
     },
     {
       "source": "decor-assets/native/nw_pinecone_lantern_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_pinecone_lantern_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3957,
-      "bytes": 2338,
-      "sourceSha256": "f78897b229c0df0f4bc07f14a1cf40192672547cd0edc60838275ccb10f5b858",
-      "sha256": "97cd126e6bed4f3345c47cf15281598cbea173b2a4ecb8c847d89bdeaa3f959c"
+      "sourceBytes": 13808,
+      "bytes": 10152,
+      "sourceSha256": "beaf88044d96a486b8eb87b7388c597739ec94ae68e9c02a5bbad3dcf68261d9",
+      "sha256": "792bf4f678bb14efb812d4633c50f6efc470291cfe476d0c604cbe5a7865141b"
     },
     {
       "source": "decor-assets/native/nw_pinecone_lantern_right.png",
       "file": "runtime-webp/decor-assets/native/nw_pinecone_lantern_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2081,
-      "bytes": 1176,
-      "sourceSha256": "b7fd69704a8bde6b7215dbcd92f3526c71349f6faad03598a54b391cb5aaa31b",
-      "sha256": "bba5c5f7cbd05fda522fbd9de22d06414b755e777560c0511e0a277cc3c012fc"
+      "sourceBytes": 6697,
+      "bytes": 4880,
+      "sourceSha256": "369402d8a6155482bc40c1a148ddd30084954395bd277c0dad6e597ae1348431",
+      "sha256": "08d8d5e65ab8c465eff87c13300f712492e11cd4e38e0ce0e430e14750aa2d28"
     },
     {
       "source": "decor-assets/native/nw_pinecone_lantern.png",
       "file": "runtime-webp/decor-assets/native/nw_pinecone_lantern.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2241,
-      "bytes": 1316,
-      "sourceSha256": "a3c47469962883baa01d5e1121242fba56c931d9499de88e17f6ec66cbe2ab52",
-      "sha256": "2909841d67b097dde59eec04f4c9f43bede37a174dbd871674aa099f50664def"
+      "sourceBytes": 7339,
+      "bytes": 5408,
+      "sourceSha256": "b0c2c8b31e8eea7c7df516e2f2dee141d5aaba0a4d772eb11b8b3a052ace89f0",
+      "sha256": "318a88dcef7f4527e98bad67a320259c420f2eeb28be67e17827f2d716689b74"
     },
     {
       "source": "decor-assets/native/nw_pudding_holly_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_pudding_holly_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3155,
-      "bytes": 1874,
-      "sourceSha256": "3a336d14932c6c6b8a0eb3b1a166ae9af43cb700287fd04f164ae0c5564b7262",
-      "sha256": "58f7af6a01f260d8ba83b64099581a44ea121ef0ea5dac4a582ebe0d69464864"
+      "sourceBytes": 12646,
+      "bytes": 9448,
+      "sourceSha256": "a9595c62bd9499e6315c22cb65d829da0124b674960a4504068938ae4db4f48b",
+      "sha256": "18670e47eb137f4e1dbc7765f2f52c1f4bbaea21ba75b8f164cdf848838be8b2"
     },
     {
       "source": "decor-assets/native/nw_pudding_holly_right.png",
       "file": "runtime-webp/decor-assets/native/nw_pudding_holly_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1712,
-      "bytes": 1008,
-      "sourceSha256": "ea45d7d65df6ecbe25e8fa90fd36e08a2165e52e218b8e1e07638245a70bcc25",
-      "sha256": "ae1c35abc8efb5d398aa24c036c42d53c44f9b74b488ae27a42cfadf35d8dcdc"
+      "sourceBytes": 6380,
+      "bytes": 4792,
+      "sourceSha256": "59f9a20455374fc3f822b7e2cc6dd44957758d84a9fb338e3ad62cee50cde8ef",
+      "sha256": "787d7374b006d67b4a6672190d2d372e3703c69d604c24e4b0c7602ed96535fe"
     },
     {
       "source": "decor-assets/native/nw_pudding_holly.png",
       "file": "runtime-webp/decor-assets/native/nw_pudding_holly.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1744,
-      "bytes": 1010,
-      "sourceSha256": "0d920ad541f436fac49972646eecdf65ac594972ac21a87a7c9a3158e78e6423",
-      "sha256": "b67acf09ebe28ed3bbdb8e7dbeea2ffe2d1f3631702472d6d28e47c097baff5f"
+      "sourceBytes": 6470,
+      "bytes": 4844,
+      "sourceSha256": "32b1cfd1d1269f7fa1f504be5674155ba1ec2f8f85688dbfc14fa997fe405e83",
+      "sha256": "1e2ce822621c5edcae3d0b1b631ffd59c14d6803319f26d83c4f85d2b0d83358"
     },
     {
       "source": "decor-assets/native/nw_santa_bell_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_bell_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3465,
-      "bytes": 2036,
-      "sourceSha256": "7d1d7c9b6f9d2f74a0d0da9f19a8e33162c0bd7f50dec1d4717fd0172317dab0",
-      "sha256": "22d764464c25b55c61a1c41796f36f5db754326fd7fae22dfc6e0a3d5db09c23"
+      "sourceBytes": 12707,
+      "bytes": 9414,
+      "sourceSha256": "aa2dd9ff9aae6a8a8146cf4fed42529eadd4ca4174fb59192899eacb19b12cd6",
+      "sha256": "01d97b5d531aef41f3c405d35b180adbbb2b09c12a61b1b13a177ade9a49cac9"
     },
     {
       "source": "decor-assets/native/nw_santa_bell_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_bell_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1824,
-      "bytes": 1052,
-      "sourceSha256": "64f533bb1b31a8a12fda3a78fba9f2862bb11a2c1c6e7723539f39ea00cf2c2a",
-      "sha256": "552bf54854fb18504fd56c10cb808551890a304188794d43318875e1f0f293bb"
+      "sourceBytes": 6156,
+      "bytes": 4546,
+      "sourceSha256": "238b3b02a3ca2809e9851d122ee2e88a423d17af5b64a708d06a6c086e9dbe51",
+      "sha256": "2e8b318bfca4de8c11b2444ab8a74dfb10b5ce9209c59062a5bd81a9d7535fc7"
     },
     {
       "source": "decor-assets/native/nw_santa_bell.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_bell.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1958,
-      "bytes": 1138,
-      "sourceSha256": "c7b6cee6753380089b45b39873916576c4769cf0ea158b6213bcbb6ddbd7306f",
-      "sha256": "4ffb9d80c811dbe0475859f8a6174d48d9191c205c9fbe4e9dcb30327ced6a2d"
+      "sourceBytes": 6734,
+      "bytes": 5010,
+      "sourceSha256": "bbb5ef4cee5b4a280889c2a91adad49ef40f94be088d75e6effc422fb235b369",
+      "sha256": "7d57eaf8d765c0afe9a5993177f18bd28f60f345d666828e0b3e88ffc6d1a70c"
     },
     {
       "source": "decor-assets/native/nw_santa_bench_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_bench_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 10604,
-      "bytes": 6826,
-      "sourceSha256": "ec75e5ae0cec25df8cad857b2e65461b7e207ea28d6923aef1e22eefcc649910",
-      "sha256": "ee4bb7f7e108b1e878ffbeafa8d87dd810bcbe3005934ab28783c49d02ba3256"
+      "sourceBytes": 46045,
+      "bytes": 33786,
+      "sourceSha256": "77012909e4ba4f89330995814beff014621e0e5e87c5518d9e138cf202d76376",
+      "sha256": "a842ba1327441bdce850d27523e154bf4502f20d3e36dc92f5dcfef08ac030af"
     },
     {
       "source": "decor-assets/native/nw_santa_bench_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_bench_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5447,
-      "bytes": 3460,
-      "sourceSha256": "9c36f1f6de7403906abeb5998c8dbb3cd8d4c4253d8829419f7a3654b2f06a42",
-      "sha256": "1915cdb7ae6261da58367a24b241f297d434ed899087fbc4fd93837b7d215380"
+      "sourceBytes": 23308,
+      "bytes": 17228,
+      "sourceSha256": "0332abb7455107700fa3ea1026282967f752939e18f32d34614c989a93a63150",
+      "sha256": "45247af2f7d94a66857272849e7b331d2c1d94a49e5147654439f5512eb317e1"
     },
     {
       "source": "decor-assets/native/nw_santa_bench.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_bench.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5558,
-      "bytes": 3526,
-      "sourceSha256": "ed3aaa1a47cf9ceb1ec15b646c16fcd52a442e4ff63c5b81e8d4ab9e174937e9",
-      "sha256": "18c919a438453f062d944d5609a15893d33c8c8aaf5c7467d6bfca97091ef89c"
+      "sourceBytes": 23586,
+      "bytes": 17356,
+      "sourceSha256": "219730bfe431c3dd40034f70d4ea0f22ccc2a7c9e188a39144909ffa076c6bee",
+      "sha256": "919e271c744a5fa0e10f5a596a7adb6486046e525abf82b752473a85df5b27ef"
     },
     {
       "source": "decor-assets/native/nw_santa_boot_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_boot_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3823,
-      "bytes": 2260,
-      "sourceSha256": "d7c26757d56d09c22cf6040c4279131505e1f17105eb260af731eaacf27ddcdb",
-      "sha256": "da5171757e457682b33ae1caaa3ae30cf193c364452b973cf04ff7af2f89612a"
+      "sourceBytes": 14521,
+      "bytes": 11106,
+      "sourceSha256": "3b4fed5b94a02ba9e199149f85f9538b4f7b5eb435e682ed063ccf23589108d7",
+      "sha256": "925789abfefd551e1cfe494f44c343dc4d59a918f3331f389031cbc6b051abf5"
     },
     {
       "source": "decor-assets/native/nw_santa_boot_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_boot_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2091,
-      "bytes": 1226,
-      "sourceSha256": "f94190921f9c914d701c290eb71171fa16794c34f4414d4379d6448e20725d89",
-      "sha256": "2f67a74a611cf4e28a60d6a0c3b7732135fe1a62591dab1b725aba58e3d18618"
+      "sourceBytes": 7341,
+      "bytes": 5634,
+      "sourceSha256": "3608f339d0286a08b24845be7b4cffd30910afe24d8b6818d44ece9b6c0804a4",
+      "sha256": "64bf91e886a03f7c69150816e02019f4a8dfb37c21fff7b02e98f11b9b1d1511"
     },
     {
       "source": "decor-assets/native/nw_santa_boot.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_boot.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2078,
-      "bytes": 1230,
-      "sourceSha256": "ef910855f65ee09ebb9a7f507788bdfc845417c17e66837754bdcc705d6350ce",
-      "sha256": "9342c7e045dbaf8f2cb000e053447d35aef97afd978489065d4820cad20ddace"
+      "sourceBytes": 7364,
+      "bytes": 5638,
+      "sourceSha256": "b27a9ffda6fd3bfd6932aa5ebf7e97f4536a722bc71c15e214764743d477ec35",
+      "sha256": "74cec36ea4e15fe9cf88c439161535b2a2326a9f8500af7db0e22106eb8123c9"
     },
     {
       "source": "decor-assets/native/nw_santa_cocoa_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_cocoa_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3847,
-      "bytes": 2282,
-      "sourceSha256": "ac62dc27f1e968e4d90dbde368b65d8d94eeb27445eef1c581a5dbaf713bfd84",
-      "sha256": "93558689aa06cb034010702fca5df59a06ea425b15c758ad3f5897b0b810ba0a"
+      "sourceBytes": 14675,
+      "bytes": 10968,
+      "sourceSha256": "e895d1f7f0a1fccb548410fbebb1ed48d0e1b40914a4210c1bafed5aa4cd6b99",
+      "sha256": "1ca81faaa77fcee8865edd9fc8a1db06807826ca8d8b9fc90ad6cc03be254e06"
     },
     {
       "source": "decor-assets/native/nw_santa_cocoa_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_cocoa_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2068,
-      "bytes": 1222,
-      "sourceSha256": "5afebc202fed203d02918e154bd3f5fd9532fcfe5f32b3ca4e84d2020a05a604",
-      "sha256": "3990f01eb4d5a160ab54a79cb47fe09d167a6d19ea7832ccf4d8be945000651d"
+      "sourceBytes": 7411,
+      "bytes": 5530,
+      "sourceSha256": "8ef600bdb09a82cf1943b9fce1dc5daa5763a3ab51f8261f8182b72c52160540",
+      "sha256": "c6d1e0faf36397297b35f567ac19b3443d123ae6ee159850482597e15006023e"
     },
     {
       "source": "decor-assets/native/nw_santa_cocoa.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_cocoa.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2086,
-      "bytes": 1200,
-      "sourceSha256": "b5379797d74305da1ab3a6c821b3ff437441c1fefba9fbdbf6c61f2223534669",
-      "sha256": "8ba305d1ab3e392973ac6b1b7e91b5bf5c094756fb8174bdfd97f857a47626a4"
+      "sourceBytes": 7450,
+      "bytes": 5574,
+      "sourceSha256": "4301037f189c46f1f964432472cac31a764876b9d17e6a5ec1758963231bab0e",
+      "sha256": "78382e405e63b1116ef60193d181f1c9d53bba2d071d97fff39a85519940c17e"
     },
     {
       "source": "decor-assets/native/nw_santa_hat_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_hat_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3116,
-      "bytes": 1866,
-      "sourceSha256": "6cce3008db802914d3c65e78941494e75d88ab1eb01fbe0babe69696539961ef",
-      "sha256": "2eb05c1d5685ec05e07549850a756b7bcd397cac78dce0bf9fab9f527a61ebb7"
+      "sourceBytes": 11658,
+      "bytes": 8738,
+      "sourceSha256": "f50c4aa136284dc55e1e765fde0c9d7c41717094f0d815eae1da492e58573919",
+      "sha256": "4d3dbcbf376842e19a444fef6c78c43330c51b90b6cfa88a02bf9265d567f110"
     },
     {
       "source": "decor-assets/native/nw_santa_hat_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_hat_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1706,
-      "bytes": 990,
-      "sourceSha256": "c81de8e762aae31bcf95aee4703c6cf10455a8933006ad0e40c839ed6f65c85d",
-      "sha256": "8bbca8a7b24921a39da21be447ed196f4d826178047d39a379b1c3adca751ecb"
+      "sourceBytes": 5792,
+      "bytes": 4308,
+      "sourceSha256": "e042d5683d0a50d2678028e73f34e0550a3f9a355d7498749dbc53d277b01422",
+      "sha256": "d0e883234e7fc68f5bb40f0a5c63be390eb2f08d73ca9257f668905da39c2a12"
     },
     {
       "source": "decor-assets/native/nw_santa_hat.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_hat.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1770,
-      "bytes": 1036,
-      "sourceSha256": "b1d4d589706b3303859906af4e35efb9f24aa5edaf6b28d97dd9aaac489b1e9a",
-      "sha256": "0ae566bccb1e9b605fdb5c5ca1bfd48d0558c3b7122a225bfeac1c9549b79810"
+      "sourceBytes": 6050,
+      "bytes": 4524,
+      "sourceSha256": "71495439f59527ce98a79cb1019f162c242d17da8c47ef82991a611f23ae195b",
+      "sha256": "c43c580ee3bd58a0491b2a8102ecfc713285c1b59dcd27b5c3777879782d43a5"
     },
     {
       "source": "decor-assets/native/nw_santa_list_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_list_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3388,
-      "bytes": 2000,
-      "sourceSha256": "bac12f431516261ab70b150cfeb23ce1564feab2361b0457565aa2a0dc900982",
-      "sha256": "7b04de11e71eab5548602a29b453fc24c99a00aeaa47728bb7ab2c21d3b654a6"
+      "sourceBytes": 13034,
+      "bytes": 9542,
+      "sourceSha256": "23ca47e67f7086cd8b0a557d546f540b8c6830699780b30ea9cc596dfcb4ef8d",
+      "sha256": "d6b2802f8ac735a8eada96f2410bca94f6e710770a76a65550daaac0fdb8e9b6"
     },
     {
       "source": "decor-assets/native/nw_santa_list_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_list_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1844,
-      "bytes": 1064,
-      "sourceSha256": "33300532fff5e92116fb2ce503b246470103f02fa0a3d9a8d0c059ad98114333",
-      "sha256": "36061fa159c222af5dac410a61b416e13f2acefdd7febd7d4a3ba572128c8d00"
+      "sourceBytes": 6480,
+      "bytes": 4724,
+      "sourceSha256": "77a9c17956f36c63dad3c3d7b8e29c22013cfbb96e6355f00f313d850d75ce4b",
+      "sha256": "5b8edf5cea17d56d0b09e92fd48d1114678bf75ae8150abc4e6c94852981cb5a"
     },
     {
       "source": "decor-assets/native/nw_santa_list.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_list.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1896,
-      "bytes": 1086,
-      "sourceSha256": "475ba68f597fe44e51c5343eb4c0c2abd4726041705e2c1f808b357e0290115f",
-      "sha256": "6f7510f44ba5935e1512c713317c42ed421ee0c66ebbe2579e38a75211c02623"
+      "sourceBytes": 6733,
+      "bytes": 4934,
+      "sourceSha256": "08f78742e5fe7a47c4d0ec68c56fb9a3d3ce440fa2fd44f97935ae9303f8ca3e",
+      "sha256": "8aff71574a580f1de62572a51b00cd221a6889bc5acdf835eac446cd71e47df0"
     },
     {
       "source": "decor-assets/native/nw_santa_moon_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_moon_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4472,
-      "bytes": 2712,
-      "sourceSha256": "849e47f6364f404d7e6245bc2b6ec659a62d127dd5404f7d8fca7a18da4c532d",
-      "sha256": "94c84394349aab077e6162a6ddc4c175406a883673a655255791b187dd2cd78a"
+      "sourceBytes": 16555,
+      "bytes": 12412,
+      "sourceSha256": "4bbe0bd8eda0eb3cfde49a43bc34d55e27947a3faaf8ad36338cd8475d73e676",
+      "sha256": "307fe796b9967f608eb816f3fb368508de9c7046c2034fe711ba74c8360b8608"
     },
     {
       "source": "decor-assets/native/nw_santa_moon_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_moon_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2246,
-      "bytes": 1312,
-      "sourceSha256": "c7ba651ccb8bc061c6b4ef8b87829c72d0eb145e02871209542f982a8d4f237e",
-      "sha256": "f2df1d44d315a05004b87bf4e82d5569d013ec7209703dd1113a21e9917b29fe"
+      "sourceBytes": 7519,
+      "bytes": 5622,
+      "sourceSha256": "524c3093583cfc444a1ffa32bcc3e241045ed1f0f55d937175c2ef73de8c927c",
+      "sha256": "979f2d144980a51c4c0cbb144801d7c734470999f80eec4e9dc1aa064efe9153"
     },
     {
       "source": "decor-assets/native/nw_santa_moon.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_moon.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2639,
-      "bytes": 1568,
-      "sourceSha256": "ec54738e06f47e80d5ff8ccfdf69d0e74bceaf74e2e2b6ab8a42ae17d5b3abf4",
-      "sha256": "755b88fa3bc3360424472176218e5122e43f2d038a0ce2b4fff17055c65ecbf1"
+      "sourceBytes": 9173,
+      "bytes": 6938,
+      "sourceSha256": "e4a14f7a03d6a88ad0da6faeccd7d7d4140edfd22d22fe30b3aea7fb44f3bbb7",
+      "sha256": "b4d7f5bf769f3d1323d0e3da7c03aef28421ba5932e9ef2434c409b36055cdca"
     },
     {
       "source": "decor-assets/native/nw_santa_reindeer_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_reindeer_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 11974,
-      "bytes": 7626,
-      "sourceSha256": "58c61e83a1d53a4a5f33cf7020b72144a37bc451fff7a4625723c3b97ee2bd43",
-      "sha256": "f81f590d8f888bdd8b39246bd2bce001205d934f6c4f0fcc949ec8f532b46eb2"
+      "sourceBytes": 50542,
+      "bytes": 36996,
+      "sourceSha256": "21153c45b7f0a394fc1b83aad5eb31d244ec7fce9279ae7663da53a4756b5de8",
+      "sha256": "277ca22f3a0214eda935704dc70d1c162ecfa7cf607dbad598d6c5e219f27a66"
     },
     {
       "source": "decor-assets/native/nw_santa_reindeer_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_reindeer_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6244,
-      "bytes": 3886,
-      "sourceSha256": "8b464449d5e78c9ab807d4c67753d88db661c9fa2db6e7d02f6b10ae4e17ca54",
-      "sha256": "b4713e49be3f3c82c8917c8ebae8f40234fd172bc454f6421422f842aaf7a95d"
+      "sourceBytes": 25463,
+      "bytes": 18790,
+      "sourceSha256": "6e4b29cea7b57ac656519984dc212140c0d70cdb375e09c36d7579f9caf5cf0c",
+      "sha256": "9d98bf8487511f88237bd45365949d875d6181482c62fb97673733d7f6586899"
     },
     {
       "source": "decor-assets/native/nw_santa_reindeer.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_reindeer.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6303,
-      "bytes": 3938,
-      "sourceSha256": "380c2f051135bccfcf3ba34f642eae5cb5768dae85b01ec9f6f5da21cdcdaaed",
-      "sha256": "64e6c37a432f0488b584ea9c1ad2297317f0b33d9cd50a95d673cd6e6664c434"
+      "sourceBytes": 25784,
+      "bytes": 19008,
+      "sourceSha256": "7ee87e90ebb95c10aee339b41162e4642a10fbe76e9c346593d35e3a2479bab6",
+      "sha256": "42066143847d3680da5f3531b2d38e5c0dcd3300e674058eb8007ca1bfa18d0c"
     },
     {
       "source": "decor-assets/native/nw_santa_sack_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_sack_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4737,
-      "bytes": 2990,
-      "sourceSha256": "c853f6f4d5836049a5a6b53940bcc90141bee3540d98b12c943cb95ae32c4b03",
-      "sha256": "07e84da8bbff300b32fdaf11795edb4eb2d502f0f5071f623955725dbe8b898c"
+      "sourceBytes": 19382,
+      "bytes": 14504,
+      "sourceSha256": "3c40a877a97f665824ebfee2bd88634e52120bf2cfedd7b104ed68d635186239",
+      "sha256": "13abbf496d7d4329c02e5b45b7b11304e02954ec23701b36dbb778c2706868ca"
     },
     {
       "source": "decor-assets/native/nw_santa_sack_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_sack_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2546,
-      "bytes": 1562,
-      "sourceSha256": "785c536ccfec81cdd4b9d61ed9cc1edd987ef69427f7efe565f5ce3192854302",
-      "sha256": "84ca77b01ada7073487eda5a878b9ea1d7271d6a77d61b688c4efa157d4f84d9"
+      "sourceBytes": 9612,
+      "bytes": 7208,
+      "sourceSha256": "9edd7209fbe10ccf8eafb9c44f13e99f63e63cc8ace70334125a23ec09da5c43",
+      "sha256": "dfc520b1e5bf8312c67df0e74d79c4afa2dd691deaa24ee35808ed0020db5edd"
     },
     {
       "source": "decor-assets/native/nw_santa_sack.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_sack.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2583,
-      "bytes": 1596,
-      "sourceSha256": "5c499614f2da274ed0bbab1f875ddd53e8278f8ee775c8faceb0d05fdaff62a4",
-      "sha256": "fa2d1d7daf43665669d42744f63f162465c997bb3b6c0fea4ff222510db57ec3"
+      "sourceBytes": 10019,
+      "bytes": 7594,
+      "sourceSha256": "6341ca1af886978099c76b1e26b8a7d55501d3ec0ab51d9bf5ddd9e451facc5c",
+      "sha256": "a12e34c38da5526553ead613b90bbe0fcf8998ed76f41624f1fdb8188a9cff9f"
     },
     {
       "source": "decor-assets/native/nw_santa_sled_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_sled_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 14100,
-      "bytes": 9322,
-      "sourceSha256": "a5b99b77bec232a2c74f0de98e7374bcb469bc9e9a22fb5df4adf74e3cf18d93",
-      "sha256": "41827e4f6349da835c9e08fcbeac561b6bb3c2a2e48be69ce1ccbc973e43e26b"
+      "sourceBytes": 62172,
+      "bytes": 47348,
+      "sourceSha256": "fdeac76c5232571b6d4a7843504409591ccc3639ba0a4cb98c81b56220c54390",
+      "sha256": "0ea3aa5ed49163e882dd6840f5c7b0cd5a639705ac5709356e30c81a148f3bae"
     },
     {
       "source": "decor-assets/native/nw_santa_sled_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_sled_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7252,
-      "bytes": 4782,
-      "sourceSha256": "b2cf52ca7a883b05be74e274ae8989e8a0b045083db4808c678d4cbd307db365",
-      "sha256": "4545dca89ee9bb4ca14165c20c3f4ba4f68a4838a238bf18a82b23c0c602b29b"
+      "sourceBytes": 31226,
+      "bytes": 23976,
+      "sourceSha256": "633ff97ad0348e7d0101a477f3df8de165f09e002a5345b599168d3cef13fa3c",
+      "sha256": "83df4d340db25738317a0ccf5fc7ad7144dee75145573d2afec7f3775b5f8aa5"
     },
     {
       "source": "decor-assets/native/nw_santa_sled.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_sled.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7306,
-      "bytes": 4746,
-      "sourceSha256": "f6a14f360a467cb0e88d65fe2c8878e98ba493dd19fd58185f6b54fe60727639",
-      "sha256": "56546983e5123d1b828e2dba114a7f019f6aaaab8e0934118a57f081d75de21d"
+      "sourceBytes": 31524,
+      "bytes": 24468,
+      "sourceSha256": "f6e12d29d58f12ad2f7f63d289b29a4a6b1b05113b8140e2eefc2f8728b2e9b8",
+      "sha256": "4a8b87a64ec9c58701d54ecd6beadf341de205955a07325aadf60b5cd4116886"
     },
     {
       "source": "decor-assets/native/nw_santa_wave_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_wave_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4609,
-      "bytes": 2818,
-      "sourceSha256": "e4e5a2048fcc93796135da12eb733a9e5283fd14313b59807df5879c88a43a56",
-      "sha256": "f7f65053370f1f9a93682e018eeb92e4f0e85fa2a2c6afdf1a36b571c8d5efa8"
+      "sourceBytes": 18606,
+      "bytes": 13920,
+      "sourceSha256": "2784613f0efafdfc747ab70dc3314933e43378ab974930284f2064172de532c9",
+      "sha256": "296086a5c06d3629eb5ec8643172ded0a92742b5122b34da9b9b465a6980fc4e"
     },
     {
       "source": "decor-assets/native/nw_santa_wave_right.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_wave_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2407,
-      "bytes": 1454,
-      "sourceSha256": "463f9bf06a834ce70caf1f9c59031b26bba68bbc2a32072ca5f774cf25299ffd",
-      "sha256": "b9c6c12ee56bdad2b4319429636d1dc6549d422e3c70ade5e21e3d703b9a8ffc"
+      "sourceBytes": 8951,
+      "bytes": 6702,
+      "sourceSha256": "d6c7624c43ac75ec4271284f65b9b0bef8448663e24c09ff8764b8f44a25e87e",
+      "sha256": "bc7449a2843b1e131860f8b2904f07d79786d14a2a8797d1493e6f8e49b4ffba"
     },
     {
       "source": "decor-assets/native/nw_santa_wave.png",
       "file": "runtime-webp/decor-assets/native/nw_santa_wave.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2563,
-      "bytes": 1566,
-      "sourceSha256": "15cc74c8db891a723429ef9d6e55827b7c7a93edcc92797db069869b652619aa",
-      "sha256": "cb5b8dd664d192df14f4eb227d5a8c6a453fa153b1a875a5c80adb5abbb2c16f"
+      "sourceBytes": 9845,
+      "bytes": 7358,
+      "sourceSha256": "caa6064078d63a20379e1eb585381996796781f49fd4de2af2ce9b58ea6defc0",
+      "sha256": "edb0f5ae7b2951284d22bb1480344a334b17462d4b99959e76dca791c15a2c9e"
     },
     {
       "source": "decor-assets/native/nw_snow_bear_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_bear_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 11730,
-      "bytes": 7462,
-      "sourceSha256": "c4dab970303081686dc1d8b58dd77889e322879d747dc3ffa081e563dadd98ef",
-      "sha256": "ef5dd87113501099731dce9854df5b4a957653789d8b288867cf91619175b57d"
+      "sourceBytes": 62088,
+      "bytes": 42448,
+      "sourceSha256": "b83e58e336a3006d853969c54a42df23165e20eb29c7d171a6ca70080896ef9f",
+      "sha256": "32798c2729d83c12afa7148e5175f67df44e1b5bc5ad556879681d9b48ae6a19"
     },
     {
       "source": "decor-assets/native/nw_snow_bear_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_bear_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6267,
-      "bytes": 3930,
-      "sourceSha256": "3261b5d4ae4ca4b0513f204fc7408ca8807afe26dfe023b9ffc0740e1ab38e35",
-      "sha256": "c7c16ba36e33e8d5423c145468d288bd2559b96f5a17c09ea7c92a5692db6b68"
+      "sourceBytes": 32685,
+      "bytes": 21588,
+      "sourceSha256": "ab415c81c86b4f7a8054dd2dafa91d0d7e719e9dcba67f719f1ca19aaf54301f",
+      "sha256": "0e8b8b621529a9ba60fbf921e5eaccabffc1be459060878a7149a8e750c9d495"
     },
     {
       "source": "decor-assets/native/nw_snow_bear.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_bear.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5896,
-      "bytes": 3758,
-      "sourceSha256": "5e7a3518ece7d21be90bd5bab4b8f1537eed80a2623b954b47c8d5f2b81f5e12",
-      "sha256": "82b3b9cea2636549c8a6362602c437e1b3a688e3d29213dddb2765bbe7ff83eb"
+      "sourceBytes": 30616,
+      "bytes": 20428,
+      "sourceSha256": "c79d4bdcc2ef5888a62092eb9d2dbfb5bfb0d82e3195a2a142f470303a465cbf",
+      "sha256": "51df9ac7f95b360d19a2a935c4b7d2ff845b22169a283e13b0907aeb0e31f9fe"
     },
     {
       "source": "decor-assets/native/nw_snow_dragon_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_dragon_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 14011,
-      "bytes": 9116,
-      "sourceSha256": "0e56f2769d22e7c789496cdf530dcb3dcc2ca33306363ff8714b079cdc8a2ed0",
-      "sha256": "2ea86b7b3c8f08619a9e7ba043352275a2ca20556ffcec59a128264647cbd1dd"
+      "sourceBytes": 65113,
+      "bytes": 47540,
+      "sourceSha256": "87f9a2202cc6f6294ac6eac5314e3d39bb6ab52d7caaede764d6703840a425c3",
+      "sha256": "83a759c83221f8ec981fc5fdfbbe258cb884b9c9aed2de2ec0da2e8d9e6ecf84"
     },
     {
       "source": "decor-assets/native/nw_snow_dragon_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_dragon_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7074,
-      "bytes": 4522,
-      "sourceSha256": "2b84634b5bfdffdcc63755a407ba888e76a1e64d308de940b53612bcde332550",
-      "sha256": "0e526ca89ae82291a2ec5d7dbd66ce1c9255c78a17feee223a9156cbd81163d3"
+      "sourceBytes": 32040,
+      "bytes": 23698,
+      "sourceSha256": "1de69c8c661598b8474f9f9ec8071a962af956c98966a8c658912d8baa656950",
+      "sha256": "05e51258e07a9caee7f4c937f8a0a831eae76ee2417831c5eef9f1ebf423c02d"
     },
     {
       "source": "decor-assets/native/nw_snow_dragon.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_dragon.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7375,
-      "bytes": 4774,
-      "sourceSha256": "b475c46c2781975ff7c8e9f4c935127600a6c727ea780f309ae76b840c891e64",
-      "sha256": "4ffbfb378ee5493d00c7d34beb108786d20fd5d7859eb0efc5196bbee256190a"
+      "sourceBytes": 33813,
+      "bytes": 23936,
+      "sourceSha256": "e6c228ab969ca2f075e9eeac024d8379d19087f55d008da2114803f08e52c442",
+      "sha256": "6b4a0789ec0792d3c9f64917354b5e2073d591c5c2ca35cc46de40f4dfa39fa3"
     },
     {
       "source": "decor-assets/native/nw_snow_fox_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_fox_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 11140,
-      "bytes": 7080,
-      "sourceSha256": "8bbfd2176cfd0fdece35a7948c5ea0c231fcdb4ce46f57d1c59d6ff04630bba8",
-      "sha256": "5040976184e178adf2cdc33247a7cd94cc4069e29829010562dc6cecda6c4abd"
+      "sourceBytes": 66754,
+      "bytes": 45592,
+      "sourceSha256": "eb1ad5e0424a47af90d5974ed212696909b29f6dd718e063497e48c7e57d2347",
+      "sha256": "23a4a253c87ab7be058aa42f3a11387e2886c72fed3f7ee70654e93e4a854fdc"
     },
     {
       "source": "decor-assets/native/nw_snow_fox_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_fox_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5754,
-      "bytes": 3674,
-      "sourceSha256": "6517c7b8495392c9535539768e0613ba3ad32c6f7bcb23ace37d2083eee0e2b3",
-      "sha256": "aeb73628e28945d96cef9eb3d571230d74f77cdf49315c06be5803a0c16aac27"
+      "sourceBytes": 34233,
+      "bytes": 22474,
+      "sourceSha256": "12c4ff1cd8ff24a7c40c6902814981187286b4dac946703c644bcb3f3550cb12",
+      "sha256": "834efc7482ab9c0813b9e12dd8d1ea2508db5cfecff39f228b50c1d8fef2c724"
     },
     {
       "source": "decor-assets/native/nw_snow_fox.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_fox.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5855,
-      "bytes": 3588,
-      "sourceSha256": "e37465c7ac47133cce855d685e39e8fe4fda9b7dfab220f9f1a0b5ef82d1a67e",
-      "sha256": "c05eebd03828d23f4149b67fba1e1e420ac63dd1a4d9cfaca88b880ad8b7e545"
+      "sourceBytes": 34394,
+      "bytes": 23270,
+      "sourceSha256": "9c37529c8fef9aa912904da60874f3395fa4980d3a220c4486a76ba9d7138e70",
+      "sha256": "107bb47b24fe48f4bebe821b57f781854bed62c5138f918af0b01cbdc0a0c9e0"
     },
     {
       "source": "decor-assets/native/nw_snow_globe_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_globe_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 2846,
-      "bytes": 1752,
-      "sourceSha256": "aa664052d16b89115a6bc207c28be7cdbbede002b2fb672d0451da9faa8b5622",
-      "sha256": "2badb682de3f1882e0f40b7a9d912a679dee5fdabcb47785b8a925dc6bcbba95"
+      "sourceBytes": 12941,
+      "bytes": 9164,
+      "sourceSha256": "ce2b073b8e6b55aff2d03f1960a962182fb6fd08e2e9caec078cc1bfd3d0ce41",
+      "sha256": "9c4333564cb6b26a0c6ad135306d4a12dfb61a1fb8862c71467070c959dbc5a1"
     },
     {
       "source": "decor-assets/native/nw_snow_globe_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_globe_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1588,
-      "bytes": 952,
-      "sourceSha256": "4425b4652be5e095f65108bc363a7921517f0e8324681052d669270320e5f1cf",
-      "sha256": "d3df0eab3cd972d6582731db9c9a476961d5af298e19a7d7bace083e3c1838cc"
+      "sourceBytes": 6560,
+      "bytes": 4666,
+      "sourceSha256": "564bcaeef752c7fc9278f552e035f630a96e8ab3d5cd61488d8d79bf5e12a296",
+      "sha256": "2f2a1b9d21c4621a8b1748bb783d2bb4b112c184ba36d08adf7f3553864e11d6"
     },
     {
       "source": "decor-assets/native/nw_snow_globe.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_globe.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1566,
-      "bytes": 960,
-      "sourceSha256": "1bebfc9e99fa6cdfbe4a34883f78c9ec0c0171513469fc860b2fd812f275b5c5",
-      "sha256": "70346ff1ea54d68caab0a5af3cc39ecaed256f7200f506fca9c6ce76faab93c9"
+      "sourceBytes": 6644,
+      "bytes": 4732,
+      "sourceSha256": "e9f33865d6a5c1234772113d7c9ac194537001d798923b889c1fc6c1a8733079",
+      "sha256": "cc1e7ef4830b5ab1acada7762adc996e187cfd812f3c772e228ac86038d93359"
     },
     {
       "source": "decor-assets/native/nw_snow_hare_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_hare_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 16639,
-      "bytes": 11218,
-      "sourceSha256": "d8a72d823cf51e3e5806dc27ad0cb09b4fa1b97c2b22ee59062e0c343dc0645c",
-      "sha256": "981713dfcd9d0f2b12b9823d6cb2ed8345874338ca9f01eaad6d0025d8438e9e"
+      "sourceBytes": 91238,
+      "bytes": 61276,
+      "sourceSha256": "cbac0227ef89ddc1bddd1143e88be8d2da2d176b1b725845376b0e80254b6b90",
+      "sha256": "1659b43c57ae721c776315147afd8d250fa272b7b200bc9e1b9ae12a4611f38d"
     },
     {
       "source": "decor-assets/native/nw_snow_hare_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_hare_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 8476,
-      "bytes": 5608,
-      "sourceSha256": "557e88c1bdd3d6e39c3a3a570a6074fbb304cbb70d472951609a159f479088bc",
-      "sha256": "54b946f63f0754de337300ff6857b26c9304494bedf28032aaffdd9201183741"
+      "sourceBytes": 45081,
+      "bytes": 30256,
+      "sourceSha256": "1cb007e7b90fb3e915cbdf30fa374f3fe2664aa28a7ceae10c164d9bee60f946",
+      "sha256": "67f8bf6cc93d448d7a94d6e70d1ccff3bceaad2a571ee3a51fddd83edceb6e5c"
     },
     {
       "source": "decor-assets/native/nw_snow_hare.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_hare.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 8723,
-      "bytes": 5830,
-      "sourceSha256": "6ee7fd6b8ee145115b74b06e7afa849c322331a4ccd931672a69bf20281c18e2",
-      "sha256": "144ec49bdb8f46e6e246c6bb6a59d1c6906fc073aa1228bd65d3788e2c9fa382"
+      "sourceBytes": 47414,
+      "bytes": 31230,
+      "sourceSha256": "7ce7cac9b8793c25f971b42b91e5237d63c1cd5b2d6487797182fef867608893",
+      "sha256": "dfd9142c56feee5ab35280385d8399db3af050f78515a331141e99323d79ddbe"
     },
     {
       "source": "decor-assets/native/nw_snow_hedgehog_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_hedgehog_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 12652,
-      "bytes": 8388,
-      "sourceSha256": "d0bf297fdbb575f8cd2a2cd480275774c8c8e1fd790a5d9f8a596b591df40670",
-      "sha256": "2005751ceafda9061f87568663196280db032aa9f16ed3a59f1b9368e2161055"
+      "sourceBytes": 62266,
+      "bytes": 43016,
+      "sourceSha256": "c1962edc91835730c2eae9fd3862abe2316a8ffa629a056931c1be0624530337",
+      "sha256": "4f3a8e0582c2c78d6a4a466e4dc62a589bc81d940f229eeeefb295e1a2c2086e"
     },
     {
       "source": "decor-assets/native/nw_snow_hedgehog_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_hedgehog_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6567,
-      "bytes": 4288,
-      "sourceSha256": "36133572b9eb94333406792bcb0144e633942527cd3011b2d22232b2f52e66b0",
-      "sha256": "563f76c0638c128e8ea139a9d7a23ca1b2d3ef3c12f6af8e34954e5ad1c654c8"
+      "sourceBytes": 31806,
+      "bytes": 22812,
+      "sourceSha256": "5a37f02cf86cbcf8c608a88f6d0d7f45265d7bc2392667e48ac35ae622326cb1",
+      "sha256": "5f5e2121e9bbf8cbf7a42cbcd9e775c272d8b3cbd62e94dfc72947004fabaf66"
     },
     {
       "source": "decor-assets/native/nw_snow_hedgehog.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_hedgehog.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 6538,
-      "bytes": 4190,
-      "sourceSha256": "1f2baa95237810c54740d28d0cd3f9fb51dd4163f87d7daacf5ef648380f1202",
-      "sha256": "4bbac7673357b116c94ecae8d4b2a6c6726d6d7c59a9bf6f09333575870f3fae"
+      "sourceBytes": 31727,
+      "bytes": 22660,
+      "sourceSha256": "ff99d3d9dfd777584bf488a97b55cc3d96ff07326e4176f574397005d0f962bd",
+      "sha256": "f88227a0d2b7e13c00e824a6e13054c34ca3afcfd864bf731ffae0dd766c8ae5"
     },
     {
       "source": "decor-assets/native/nw_snow_otter_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_otter_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 14341,
-      "bytes": 9458,
-      "sourceSha256": "f04b820b079fea6e53bd5582525a8f00107f8ae2950c9e6f1ab58754f08b8917",
-      "sha256": "9eb74fb4e271e722df14a7fcd408427d643b581b854d8684601d099bf9a80be4"
+      "sourceBytes": 75931,
+      "bytes": 50324,
+      "sourceSha256": "cf23fc3e6ecefdfb7a62fb550af8a0a481548d5282f6b9f0d75dd9d8a3ae2704",
+      "sha256": "4a0b03259d6632c9e8f4454c0466eac88db86f399bad86842c95408eff142069"
     },
     {
       "source": "decor-assets/native/nw_snow_otter_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_otter_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7344,
-      "bytes": 4808,
-      "sourceSha256": "d5d756f16c44e14100e0f94b6bd521f399cceb5397858d9f8da4c9558dd18e07",
-      "sha256": "e2474c6403dfee0acb5b2bc6a0dfc982315475a4edfb8a743e036d9a392712f2"
+      "sourceBytes": 38878,
+      "bytes": 25214,
+      "sourceSha256": "a693b0146db2be5a51828c6d125578c705a373a456fb8fc0791cb37b87d2a90d",
+      "sha256": "c63bc4a046c8682809810049643c05f63b59ccf1720f7f31b5b8a084a0d24945"
     },
     {
       "source": "decor-assets/native/nw_snow_otter.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_otter.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 7363,
-      "bytes": 4878,
-      "sourceSha256": "c08079a97992b05bac002ffaa058591fe81ff84fe9c76c147ee952714e872303",
-      "sha256": "5ca9fc8d33370dec4784b57deef47f3371d02f1175a5537fd63eff53c71075ac"
+      "sourceBytes": 38542,
+      "bytes": 26252,
+      "sourceSha256": "036c36cde2050f7ab97f32d2a91a80ddfbde72388e8b4fa139f9546e8c03f3d2",
+      "sha256": "62e9af932e8354ccb8ece4bf2b4bd255e9f7330557eec91daa18ae409252a1ae"
     },
     {
       "source": "decor-assets/native/nw_snow_owl_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_owl_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3037,
-      "bytes": 1770,
-      "sourceSha256": "9781fca9ca63b72112357ae984aaeeac83bbead1b4e1aeb87890e58ba44111a1",
-      "sha256": "c0899792f148e471625c86541708466e71eacd14b65aa9a73ffec593e0ff8b60"
+      "sourceBytes": 11490,
+      "bytes": 8168,
+      "sourceSha256": "56d834fd6d2bdeefa0b4afbd95978129baaf47e25574ad6bd1ba8a1113339097",
+      "sha256": "5c4a9146d3a626cfe34e2deb4a2dad339f8fdb3532818bd31926f961d7b920b8"
     },
     {
       "source": "decor-assets/native/nw_snow_owl_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_owl_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1617,
-      "bytes": 940,
-      "sourceSha256": "b66f9e3da89703135409f57d1261ce49758f81d3176583e63b5ac8d3553c2bc8",
-      "sha256": "a279cfc28d79bd64c8ccfe4d32dc4d92ddd1bd9d4b5ad6ff5ebf66e6d2792898"
+      "sourceBytes": 5585,
+      "bytes": 3956,
+      "sourceSha256": "e7f1a3c22cb9a1329ce3be2fb9863bcd36130322fd52316e2376baaf28462fe0",
+      "sha256": "0034e43d247d13333896ce2750932db88ef75d6488411361e3cb754a19dc98b9"
     },
     {
       "source": "decor-assets/native/nw_snow_owl.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_owl.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1756,
-      "bytes": 1024,
-      "sourceSha256": "a56e837567aabea9b3a54c558ad5739d193598cfb88b6263eb99ea07d91cc26e",
-      "sha256": "f95252275f98ffed652dce483a1251f0f7bf3258580ee8aec300c76002e603a3"
+      "sourceBytes": 6096,
+      "bytes": 4330,
+      "sourceSha256": "3c046b5e2730550d791b761d439f3206f94812e6ef4920779463c6cb56ee66da",
+      "sha256": "38856490d859fbcec70037fa4b08ad3c8fb54867bf9009121ac7c977a6fdd909"
     },
     {
       "source": "decor-assets/native/nw_snow_penguin_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_penguin_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 16184,
-      "bytes": 11094,
-      "sourceSha256": "c81a44fd83ef106458560bf70c862345bb444c35feb0fe9467799df9eba2f82b",
-      "sha256": "6a85049a8b4104e2b3b54b591bdbc0c8b6318f4972cbc2ce2348b6f37690b6d6"
+      "sourceBytes": 83744,
+      "bytes": 55994,
+      "sourceSha256": "ccff1b761dab59d14b67be8de850623082f8e536193dfac3412567e87ce18e8f",
+      "sha256": "115feb8e347686b4cf095197a09ac2cf64d5d3d8ef265663d267fbd7eaf73117"
     },
     {
       "source": "decor-assets/native/nw_snow_penguin_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_penguin_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 8184,
-      "bytes": 5472,
-      "sourceSha256": "6a34fa143dc778f05cbc2e4aecea30ac6a8dcd965c70f0be44dbe326e86fe020",
-      "sha256": "14ac0618b21224be8225d9fa6b4a5fabf2c3611e755032ace5ba84bffae749f8"
+      "sourceBytes": 41167,
+      "bytes": 28524,
+      "sourceSha256": "85cad5475360c24df96d89cc8b2e9e9bf4ee4b160a3712ff12fb8b2dd1c4593c",
+      "sha256": "dcd046cc893aff94d0d0f6eb77fbfdd624b7024e1d758de6aba34bac6e5f7892"
     },
     {
       "source": "decor-assets/native/nw_snow_penguin.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_penguin.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 8463,
-      "bytes": 5790,
-      "sourceSha256": "f6fc157fddbc28fafdeb0ca8f7dc3b8afedb4ffdc04f870357ff29d3774c9446",
-      "sha256": "c9ffebd5ff07df2f02926de64c359c8ea5f84568ded45f525cad9be1a5d4dc1e"
+      "sourceBytes": 43912,
+      "bytes": 30670,
+      "sourceSha256": "8e57f68115ea50186e36453fb80efcd2db3e0cf35626a45422836c347eb40604",
+      "sha256": "eabe26a8a1359a21cd0f05a909fff3a4e179834030a921b4f1f0ed6cb6bddb7e"
     },
     {
       "source": "decor-assets/native/nw_snow_robin_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_robin_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3954,
-      "bytes": 2382,
-      "sourceSha256": "03fabdb86d2cd9c2d5cc273ad835aec97b31e9504ad74889e82c30810092a602",
-      "sha256": "66e7a903e9ff3347d6394dceb10ba17b4e519e505f794bef0ba0af3804f4b56c"
+      "sourceBytes": 14387,
+      "bytes": 10830,
+      "sourceSha256": "91ee6dfbd64b175dc1b4bd3549c71431ad99995af0f6c2e2873749172ac4e426",
+      "sha256": "087045dc2ccc2515bd1751878b4e22bb72c352ed6665ece91575956e7105b6df"
     },
     {
       "source": "decor-assets/native/nw_snow_robin_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_robin_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2058,
-      "bytes": 1178,
-      "sourceSha256": "bdf96de9a1b4a4137c9536e759a3db8eaebd5095d7b83260e4dc35b003a0c6f0",
-      "sha256": "5111a915eee0c0fe4f877c4c321a3e6e0a5012491ceed90d12903e1531a3288c"
+      "sourceBytes": 6897,
+      "bytes": 5162,
+      "sourceSha256": "454d80585da473aebfa01bee2556d3072a1ad165ad41e8332b4e3bb58e9010d3",
+      "sha256": "88dd6347a4af9db9024b472fbf10b8d14c3cef6ec97dd79f2d41dbfda3d6f29a"
     },
     {
       "source": "decor-assets/native/nw_snow_robin.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_robin.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2271,
-      "bytes": 1358,
-      "sourceSha256": "ce448555063bd885fdf8a2b92f41b2e1130bb091ab845bb638e1954d11266a52",
-      "sha256": "ba4ca4313bd86103037587ac01ff9e6a3c9985b4498c03eb500bd0b4d9e9c6f8"
+      "sourceBytes": 7720,
+      "bytes": 5798,
+      "sourceSha256": "3bb3715d7513fc95e3dab3d5c922c575eccea41de17977eddd81bd2beba569a2",
+      "sha256": "6b52ffc8abde467b8ca98d0c95a18ee13f739d5f6cc2ba464526f6038c80323e"
     },
     {
       "source": "decor-assets/native/nw_snow_swan_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_swan_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 10926,
-      "bytes": 6754,
-      "sourceSha256": "ab7a86987dad5a3c606a66206b6009b682a71c2db8633a9836be15298548d5c6",
-      "sha256": "f51cef796e9267e683cb59c04ae1f0318006ac8b5ff1e15666bc997d3583e89e"
+      "sourceBytes": 56425,
+      "bytes": 38586,
+      "sourceSha256": "a6c6b1fe2a81caa1213abcfce1f717cf4fd2e7870518d5043d3888c454d143cf",
+      "sha256": "9edc501f9f24118192fb86a176fd447b13709fdc0dc6a8d43bbac8d778957757"
     },
     {
       "source": "decor-assets/native/nw_snow_swan_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_swan_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5644,
-      "bytes": 3452,
-      "sourceSha256": "512e88c182b15c46debb5996984acd74797b0a115ff488a9d55598ab8bf50fe0",
-      "sha256": "e592795e57bb665698c04b43351420ea21609c2e7d19fd0924a2ab3e53340903"
+      "sourceBytes": 28481,
+      "bytes": 19144,
+      "sourceSha256": "4f91f77765a8e2af05c7dd0da86a55dbc1fb6226729682ff20ea8d62f2d0c3db",
+      "sha256": "2fc7fddb52909c82a62cabe0aaf79c4287cfd78a251a34779dcd1363ab507ce1"
     },
     {
       "source": "decor-assets/native/nw_snow_swan.png",
       "file": "runtime-webp/decor-assets/native/nw_snow_swan.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5863,
-      "bytes": 3658,
-      "sourceSha256": "9660c031f1fdd4073fef17475fee7c3a146a1ba1ba5ecff2b76d9ff47bc67980",
-      "sha256": "a6b8b056738fe39f576d814d7dea5c828bbe598724d8ce69c35a50e1c73f531d"
+      "sourceBytes": 28915,
+      "bytes": 19904,
+      "sourceSha256": "743a04d7c4e2cd2a05dcc6308eb9698ba5fbebee17ca4463bedce72eceac296f",
+      "sha256": "a58a84fed4c6bc7d59915ab6df6733961e3985dcb3b407c702280355589178a5"
     },
     {
       "source": "decor-assets/native/nw_snowman_bird_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_bird_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4233,
-      "bytes": 2628,
-      "sourceSha256": "91d1b921063a3ff587966498eb411b461a40f150941da95751ea38fe65b80629",
-      "sha256": "174967ce72a9782427dfe41a7723bf30b6de45c56bdd1074c0325e412f200520"
+      "sourceBytes": 16919,
+      "bytes": 12438,
+      "sourceSha256": "12960f9e2dab6292fe5041495005a2a8554dadf3e6695d811d6d1648667ad130",
+      "sha256": "d879bbaae313137f48321cce37eb7271729df3bbc060ccc5ce179350ada39d8a"
     },
     {
       "source": "decor-assets/native/nw_snowman_bird_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_bird_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2314,
-      "bytes": 1426,
-      "sourceSha256": "71fccb920685d52f124f389dba0f5f6cc1591fb4403686b1667e3951d3b96e17",
-      "sha256": "9d664d1f5ba4daceec4208d245b7d46e116afc4435510cf433c36a1455484002"
+      "sourceBytes": 8557,
+      "bytes": 6340,
+      "sourceSha256": "42c7e7ff347daeb2e3c9e9716f2feaa8f07700317ffe3e35b35e959e8639e141",
+      "sha256": "061cb1659f0eff79f8bc25c40f8c77cbada6a9ed5c427a4f954fb10bc0a37379"
     },
     {
       "source": "decor-assets/native/nw_snowman_bird.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_bird.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2282,
-      "bytes": 1400,
-      "sourceSha256": "76c42a2ffb3edad4a60b327f2b31c89fb943195b08ee96c01da8953491cd2053",
-      "sha256": "24c976a49b7496fc982b7b7012cafa5c35a03266e76934cbaddce9bdb94612eb"
+      "sourceBytes": 8555,
+      "bytes": 6346,
+      "sourceSha256": "86e4be6146a1b2763f8af4d08febde74e2bf470ca25bae2195fb5ee57ba01b8b",
+      "sha256": "e3c1566e01b11e9a7e176d09c425b0c075a3c4b89e7de09aa83956b5b03dcdd2"
     },
     {
       "source": "decor-assets/native/nw_snowman_cocoa_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_cocoa_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4763,
-      "bytes": 2988,
-      "sourceSha256": "7e6c596948ec2c2b62faffa2bba29bd18941a30061728dd90def83cb5a952145",
-      "sha256": "19779297f4484e7508ee489415951421071b67db38f584c85f4eb6a19960260a"
+      "sourceBytes": 21769,
+      "bytes": 15644,
+      "sourceSha256": "32d6b7a07095ffed4a8c32c1f302ebaf19986c092d763858ac3f13d236c2ad59",
+      "sha256": "a8826cde5e9253042bf6a94d3fb95287d6116f6177d89680fd5f508212cb1388"
     },
     {
       "source": "decor-assets/native/nw_snowman_cocoa_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_cocoa_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2492,
-      "bytes": 1510,
-      "sourceSha256": "98562676b133e224eb6c2992dfc497519825995fa00eb0e463014a0be58695c6",
-      "sha256": "77caf6d0f917fb33666acf343762dfd5b251b55a6cf5de55e8251c1601afa609"
+      "sourceBytes": 10808,
+      "bytes": 7712,
+      "sourceSha256": "e361e7c36264aaf1b3d928934866fab44a4e118c7e112fdd4b06a22c8491aa26",
+      "sha256": "6276745fc9e6533e243047ee06e07354c7db129df4fadfa5c3e84c20f4fa03b3"
     },
     {
       "source": "decor-assets/native/nw_snowman_cocoa.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_cocoa.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2632,
-      "bytes": 1616,
-      "sourceSha256": "01fc473bc068260b2ce3269466e95ab9cdecb330464cc40b9a87aa27138995bb",
-      "sha256": "aabe70eafc5c768257728a136477d5ff10beff00459f5fa50a76f9f3f2d28f8d"
+      "sourceBytes": 11427,
+      "bytes": 8240,
+      "sourceSha256": "b9b160e4c73aa12f22db9faa9290f9964ed34ffe7ff6b5e66c5034a88084b74c",
+      "sha256": "35b8b629e5b5ce67280073d931509002265f867533379f4662f75793407d0f1f"
     },
     {
       "source": "decor-assets/native/nw_snowman_scarf_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_scarf_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3107,
-      "bytes": 1886,
-      "sourceSha256": "5ca08df3392422e9858a8fbed926d26701e5babac0ca6a417c355146a3cb6a30",
-      "sha256": "877397b88e56f305ce1854ca609dc0848ed3d7cf0e321062c32274ee8d4c85a5"
+      "sourceBytes": 11967,
+      "bytes": 8482,
+      "sourceSha256": "5e637a6a7e5184d06e6b0b7a776a085067f98aa19c7c0bafa6a73f0df2b38c0b",
+      "sha256": "68a1690a17e7fc8d7159e26796c155f83c162f1e25823fa415f934ac69258c73"
     },
     {
       "source": "decor-assets/native/nw_snowman_scarf_right.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_scarf_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1718,
-      "bytes": 1026,
-      "sourceSha256": "72ebb86bfbb1334416ce0d67a1e339d9f0366f3def6e8f06a7aafa62d869da76",
-      "sha256": "5cfce0b67e4dccd9255bdbdeaabc3b0e6073eea169d82c98bcdce75959613a35"
+      "sourceBytes": 6150,
+      "bytes": 4436,
+      "sourceSha256": "2564126f24181ea7e1faee0346fff3ec7528f310dfdd0168d39d6df85c132f8a",
+      "sha256": "b849713b76c8b9d24e068c1a195d946078cfd4397c02eb2f592c5a3d90c97f53"
     },
     {
       "source": "decor-assets/native/nw_snowman_scarf.png",
       "file": "runtime-webp/decor-assets/native/nw_snowman_scarf.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1710,
-      "bytes": 1020,
-      "sourceSha256": "8500b032ddc2e231ab2ebbc77df13edede61bdf8387717cddbac367562de43d9",
-      "sha256": "5fd840abb138996be470247b6f55b9bdf5d0a5c2bb3127f37256886f6b2cea15"
+      "sourceBytes": 6047,
+      "bytes": 4348,
+      "sourceSha256": "db24ed6849371f96abf3b299699b9797a697c5c3bb252a4f8c867fbe6e2608f0",
+      "sha256": "b509765e7a4ccc9e72e64c0c0bea89e3965220f46f3ae4ad7ccb04873988efe4"
     },
     {
       "source": "decor-assets/native/nw_star_lantern_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_star_lantern_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3921,
-      "bytes": 2386,
-      "sourceSha256": "f8c75ce2a89e0c9b7f402c2c744aac2941ec5790bb4e142e686dcdc27da91b80",
-      "sha256": "842f014aec4741e4c4fb41c387ade5de0580d1dbc8c7fcfafddcd15c67af4e2e"
+      "sourceBytes": 14401,
+      "bytes": 10874,
+      "sourceSha256": "a5b32ac57d56b9fe9705f71598d656cb6f59154faa6998431665e617be92ba2f",
+      "sha256": "d1fcf06f2cb0c287102790a22dde9065135392977a32e0c0f00392f519d179ae"
     },
     {
       "source": "decor-assets/native/nw_star_lantern_right.png",
       "file": "runtime-webp/decor-assets/native/nw_star_lantern_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2112,
-      "bytes": 1270,
-      "sourceSha256": "acd2bc689a6b29f28432913457e0f2b16776bdf5b77836c38c12da849e036426",
-      "sha256": "2bc55a9aecd705445cfcc766ac9dc6161b9c7c932712f17c5cb0352c147802d1"
+      "sourceBytes": 7217,
+      "bytes": 5442,
+      "sourceSha256": "f60effd05f063175ee0d6de9eb0f30d66c68d3a0f0440f9bb93c3d4b8165f65d",
+      "sha256": "42523b574dd06aee56a2ca4dc2711ffb3110b38c128a8e2b0d34da4f00de3403"
     },
     {
       "source": "decor-assets/native/nw_star_lantern.png",
       "file": "runtime-webp/decor-assets/native/nw_star_lantern.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2151,
-      "bytes": 1280,
-      "sourceSha256": "91838d09a95a9e2b818bd2b4dceca28c8a19a0269b7ec81ee2de2ee6835e27f7",
-      "sha256": "bd3d4997e8f6e41bcd495522008cce29469ddadc4df6139387e603632a7051d9"
+      "sourceBytes": 7390,
+      "bytes": 5594,
+      "sourceSha256": "133f5defce739fa88a10aef8b47854543c2f4f27732d045fa2c7ce75a8fba6a0",
+      "sha256": "7d908131743bf76809004b8277e2157e0d469854c4b508721e7e03ca1fb1ec9a"
     },
     {
       "source": "decor-assets/native/nw_teapot_cookie_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_teapot_cookie_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 2963,
-      "bytes": 1728,
-      "sourceSha256": "3623b18c1e0533ff915d23ff776c4c3943767c29873feb2a5a3abb00e6f907fc",
-      "sha256": "f30eefdd67b9261b80171a4e3b7741c47dc704ea7490623edf1382dcca3c5546"
+      "sourceBytes": 10673,
+      "bytes": 7914,
+      "sourceSha256": "d0eebd7d7d34344f86ba42cea598f69ede734cd879f67f652d4daa3b912f38d1",
+      "sha256": "e05497b57cd864d3216122b60c64fe8b966d71ed168543da7559d460b91f142a"
     },
     {
       "source": "decor-assets/native/nw_teapot_cookie_right.png",
       "file": "runtime-webp/decor-assets/native/nw_teapot_cookie_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1638,
-      "bytes": 926,
-      "sourceSha256": "c17bad23f37151871bb70dc1eecb1230d4af2e3f4753409046419e9b78828ab1",
-      "sha256": "64be4f4e3e8e56b66a4193e7f9c29d189b4a22ed82eacfb1b375a9526d46cc09"
+      "sourceBytes": 5374,
+      "bytes": 3974,
+      "sourceSha256": "a9dcea11aa48c651e4cb7118fd5c4a610c979ef9015bff70e8a806bf79888bac",
+      "sha256": "f48f7cfee87337cc8e2a2109ac462f19f4a773a1dec6bc0ea9a062861dd94036"
     },
     {
       "source": "decor-assets/native/nw_teapot_cookie.png",
       "file": "runtime-webp/decor-assets/native/nw_teapot_cookie.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1653,
-      "bytes": 946,
-      "sourceSha256": "31b3af5464d332a0fc7ff5ab4738ed667f0b8e8f77409fc1d888836f26a95e77",
-      "sha256": "e3b0a0f3d6e27e9634c9fecf00ac05f7fee6fadd8fb5ac850caf4ad0afc8260a"
+      "sourceBytes": 5509,
+      "bytes": 4078,
+      "sourceSha256": "de971823490b186595990540dee2a1ad8672b3f310f707a7c78b50002167c50b",
+      "sha256": "98f06ea04fc1c2d38b29830a470879fea7c322fd9ad56eff1e7ba1fda2539297"
     },
     {
       "source": "decor-assets/native/nw_winter_crystal_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_crystal_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 4366,
-      "bytes": 2596,
-      "sourceSha256": "32ce133b9df08a14841d12926061da2c360379de55e6c7104f7a38f047f97f9a",
-      "sha256": "90f5e4e73de5b12ada4b34290d86481fb987ea3c21eb58edd2a7fd2d27fd35f0"
+      "sourceBytes": 18699,
+      "bytes": 13848,
+      "sourceSha256": "95eb2e58a4ea40d4f2cf3a87a015ea29a7f9ee496402296fe72fdf6d14df5e7d",
+      "sha256": "51738e98c3f96107c8802a52c2dfaecf6a8a8652361507bb160450dd7f0ea196"
     },
     {
       "source": "decor-assets/native/nw_winter_crystal_right.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_crystal_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2319,
-      "bytes": 1380,
-      "sourceSha256": "7f145049ec50e41fcb75dd6411bb7afcd1e84c6253c8c6fdb77b70664ef5a69e",
-      "sha256": "dda2deb1ce85bd4ea19385edff7ff04eebc465e52a40eb183f464c277a0f6337"
+      "sourceBytes": 9511,
+      "bytes": 7046,
+      "sourceSha256": "ab0e1f2c2cf1a4bec41b779d92cc9d4200b1e2df096d015afc2dd40c55be8c96",
+      "sha256": "55d2283daded2a33bbb4fe7d66f5b1b3c9620eb2d4916a694317bcceb13d2569"
     },
     {
       "source": "decor-assets/native/nw_winter_crystal.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_crystal.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2351,
-      "bytes": 1390,
-      "sourceSha256": "63d93c2e3071967d36b8f8d4b03b47469fb1e51c9d0ca1e993eeff81ac3c333d",
-      "sha256": "b00389d3faac216fc7b596d4f56a48e8f9cce32728c48f2e851dd195ed9c1c6f"
+      "sourceBytes": 9360,
+      "bytes": 6956,
+      "sourceSha256": "1e98682a9f4fa8a8f2f6ab5a842c731e5354c7befd16d963169bb90082898447",
+      "sha256": "e45d97d85e6b9eca5a1c1b3d9cd65e697fe0536c872c436a3bd9af863a8025f8"
     },
     {
       "source": "decor-assets/native/nw_winter_lily_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_lily_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3822,
-      "bytes": 2322,
-      "sourceSha256": "ae8e65607135e56d9d6658fb834e94e988b2796304b8d7b1981d88e0141ab6e0",
-      "sha256": "1f106f08109cfb3ffb2fa14bcdb29b5a3f06178a7a9d840a5fa1bf2b88527cd5"
+      "sourceBytes": 14160,
+      "bytes": 10252,
+      "sourceSha256": "81a34041eab6f463c83ab51a78d10166a4d5e62a4505b8ba3ccacf0379d52ec0",
+      "sha256": "bec3777743309a7ff20acb16ad89dd8f91c15281e2ba19ac829feb1f667ea730"
     },
     {
       "source": "decor-assets/native/nw_winter_lily_right.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_lily_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2037,
-      "bytes": 1214,
-      "sourceSha256": "52db456e1c7ad2040a790ade27a7aa4c2787abfe066130444304d30ec4bb1c53",
-      "sha256": "ff6e54e9355f5c5028e1f928b3c8edacfcf200d65c6b1ea13bf34d383b0f0d9d"
+      "sourceBytes": 7108,
+      "bytes": 5188,
+      "sourceSha256": "0db829e98f8efa2beb7984ed8c65be6348b026d7eace21a40482b3510916146e",
+      "sha256": "9bcaa07cb69f17659668f1970808c6b3a9e6a9df10e37d29f441a931c989fdf2"
     },
     {
       "source": "decor-assets/native/nw_winter_lily.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_lily.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2148,
-      "bytes": 1298,
-      "sourceSha256": "d861f604752155b6c74008586bfcbe7a77713ea5bb8af9795d63ea5d01a46e17",
-      "sha256": "e9ccbbd2605ac8f82b844cf04f750fa5cf38ac3334f7a0908467ee5860fd71f5"
+      "sourceBytes": 7254,
+      "bytes": 5380,
+      "sourceSha256": "501cc36a6af78458711197a5c62003c251094a9ca61464a4f1c432489aa212d6",
+      "sha256": "21b12439c26f83c0534b196130bde60ff37199ffd7d1de248eebc608c1cdc6a9"
     },
     {
       "source": "decor-assets/native/nw_winter_log_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_log_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 9115,
-      "bytes": 5680,
-      "sourceSha256": "a96e1694cb2bdcfdc6e120bd954bdd323355c0fd51d0ad74263b96166fca13d3",
-      "sha256": "19ab48d05e951cf6c59e473f5c7a8da44067124e0ca9b4bfe6ee0e4ff8733ad8"
+      "sourceBytes": 45788,
+      "bytes": 31368,
+      "sourceSha256": "1ca4334484385fe68b4ac559fc5de5a178293b226573a7b727ea7ce23ee71b53",
+      "sha256": "aa178baec083e3ad31e98221ebb540c097ff198a54500a30d5756e7c052d3edd"
     },
     {
       "source": "decor-assets/native/nw_winter_log_right.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_log_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4727,
-      "bytes": 2906,
-      "sourceSha256": "c1012afece455633c657bc815de174fabfd910be830bf69679359e1d55993cc8",
-      "sha256": "ac9a698d871588700199583d3bf152f76c52ddb76ca321b74247f0146939887b"
+      "sourceBytes": 23529,
+      "bytes": 16516,
+      "sourceSha256": "abdeea372377e479909c6ccdca2cace327a270f41e5e82e5f26d07d8fc6c0899",
+      "sha256": "a41a67f88e51786b3c4f8942c4f1adb064be67e37f15d40fb4ff2c0e4950018d"
     },
     {
       "source": "decor-assets/native/nw_winter_log.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_log.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4752,
-      "bytes": 2990,
-      "sourceSha256": "ae8742e3f9b34f207d4435254e8bd82bea97649e172e43f0f350138db87f9d49",
-      "sha256": "b7017f2d4a8607f2f895d7baf8071c81da62b0d77a13cefe81b5d396aea5667c"
+      "sourceBytes": 23565,
+      "bytes": 16462,
+      "sourceSha256": "f611dc4a682a5c1bb4c06a48a8af655a0826c95f29f82cff4bf5459eba173587",
+      "sha256": "a2e3050335c2d74332064ae8e136f5e51d33560bbd2d4684b709f0b19e0205bb"
     },
     {
       "source": "decor-assets/native/nw_winter_rose_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_rose_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3208,
-      "bytes": 1904,
-      "sourceSha256": "7fa04e725c9984b49d238851c774cece3265913564604e45f4b7fdbc88562be2",
-      "sha256": "3b3c7dfcb466eb4b1a7d22d5bf9c48781a724b67d420df58e055fc3b20af6c5a"
+      "sourceBytes": 11705,
+      "bytes": 8652,
+      "sourceSha256": "b327a0ac7f7b75a96eec3b918dd2c7df9d69b0fec79acd5e6e4a3aab9baf41a4",
+      "sha256": "4816a24006a2b7f3e4bfa19ca4b6b3af5a15d0da0e07ce07503295e59d2653d7"
     },
     {
       "source": "decor-assets/native/nw_winter_rose_right.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_rose_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1711,
-      "bytes": 974,
-      "sourceSha256": "31c5594e3bfcc04a5e9e205fa74248345e2a7113c7dca7080d239f24ca42ef6c",
-      "sha256": "53f19b9e06d705ef9579d95731646767de94cdf55955b85ad23a7a6e10ff9b58"
+      "sourceBytes": 5533,
+      "bytes": 4214,
+      "sourceSha256": "3857322b1d2381169809e092e726deadd5c46e6a1d5eb87bdd61fec43da3f236",
+      "sha256": "2c1ff1a10c9fffb4a46162991891e90f86a26c58b68c079df84142b5642f8446"
     },
     {
       "source": "decor-assets/native/nw_winter_rose.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_rose.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1849,
-      "bytes": 1074,
-      "sourceSha256": "39bf67ca34c291846b837b399729fe75ee867ae353cec7032feb57403c330c13",
-      "sha256": "ac425f3bcf379f0337ddc8efbb967fd22ad04907f1e4ad491a52c0cdca5d8026"
+      "sourceBytes": 6360,
+      "bytes": 4766,
+      "sourceSha256": "0a09d7d711844ad5f988c840c7dd5ce7f6a0f6f4339236fe3597e857b1a8419c",
+      "sha256": "2901173073f6e08b879e4d1b0828c75b61654703648fc4aaa8a6e24b8dc7c70c"
     },
     {
       "source": "decor-assets/native/nw_winter_teacup_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_teacup_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3091,
-      "bytes": 1886,
-      "sourceSha256": "e070a51d8db213f01407aedebc37d3202112a4204d955a01973e687eb25b1a1f",
-      "sha256": "a9f8b59889aa55bd424145e82f6297a7514f0ded0350bc96fd6978bb8421b2e9"
+      "sourceBytes": 11123,
+      "bytes": 8246,
+      "sourceSha256": "20e894085205253e3c7333c6923020d2363fffe2e9eb43fe0f1442bbbf28ba5a",
+      "sha256": "2286012cc8b50c079300d60e3650293d2d4fd904f752e01913204bbbb1428cba"
     },
     {
       "source": "decor-assets/native/nw_winter_teacup_right.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_teacup_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1723,
-      "bytes": 1014,
-      "sourceSha256": "1235d4b691f8d4c0e41aa779ea5317db03072f00e33214791b71273197331c68",
-      "sha256": "dc99d4a4ec988e4f33038bbef4afb43dbaf9a5d3500a5cb17b7f80b91bccb9d1"
+      "sourceBytes": 5641,
+      "bytes": 4182,
+      "sourceSha256": "33afac459e7c26be88ee186782e2cd95e025acc53807b2ff79673320645f542f",
+      "sha256": "687756b976160adc365c01bf59ef615d7a9a99d00a111421cab282c0df016a39"
     },
     {
       "source": "decor-assets/native/nw_winter_teacup.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_teacup.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 1714,
-      "bytes": 1032,
-      "sourceSha256": "ba61ef13725adf74c109e2fca45577bb92615bb366c67f618a7bcfa9e6c31562",
-      "sha256": "4b92d98a8e3dd99ecb33634a08689e80105ed26f03205050cea1501846920eb8"
+      "sourceBytes": 5684,
+      "bytes": 4258,
+      "sourceSha256": "4cbfbf327430232903888bb5400b51f8eddaf61c16b676a738fe7462ebf6a871",
+      "sha256": "7e7ea765299fdffd6d8ee9f0e211aff9b50429f67992d43405e92ee2b0d6f62a"
     },
     {
       "source": "decor-assets/native/nw_winter_willow_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_willow_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 9765,
-      "bytes": 5630,
-      "sourceSha256": "7185d03474abbd5c0b516ddde0e2c8c35d7950cecae5e20ab4b1ccb45b7b314b",
-      "sha256": "94e595d9ef6423c0b12757b96ac2083b81c86d3c6c7e9500b276341ff6b35eb3"
+      "sourceBytes": 41979,
+      "bytes": 30124,
+      "sourceSha256": "9ba8735b49e5f51d7121a74a0bceff392feaa1ca472ea025ce29799af35e6bd8",
+      "sha256": "bd14f2391ff26c1c35eab8de234be0bf56c298bbefa4641ea513ff3c3cf07e24"
     },
     {
       "source": "decor-assets/native/nw_winter_willow_right.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_willow_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5041,
-      "bytes": 2926,
-      "sourceSha256": "0ad0cb23d530484eec1695573ace234aecd3fccac6a271f52d9e2c0c4b1bcde0",
-      "sha256": "aefaa45eed1dfa9d813e34da404a36af3cd7e07ed6b99ff1164c0cee9a1cbb2d"
+      "sourceBytes": 20796,
+      "bytes": 14902,
+      "sourceSha256": "4f29068512c446dd9ab4b2772e197f8c5188a48a8e490ffe81460850804fbd7b",
+      "sha256": "fa3b874cd3e785eead5f77753609195a497a603ea668c6a73ee90b2d3c975e03"
     },
     {
       "source": "decor-assets/native/nw_winter_willow.png",
       "file": "runtime-webp/decor-assets/native/nw_winter_willow.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 5091,
-      "bytes": 2994,
-      "sourceSha256": "1aa226e658cb1c28f65bcda78377b2c60aaca3d5c58215bb172b11fb721822ab",
-      "sha256": "69fff5887278fbec28e5d59586fef59ebb8369ece9285846c4c1cb2b0177497e"
+      "sourceBytes": 21998,
+      "bytes": 15738,
+      "sourceSha256": "da857da29155346b7eb07a3c6a2c6399e8c69f4f5941c5c26986333c03b86f64",
+      "sha256": "f0def5288c9f6f364fbaab1e4ac7f3c1bfac6a2206fdb59ff2bc0843b992d2ac"
     },
     {
       "source": "decor-assets/native/nw_wool_basket_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_wool_basket_atlas.webp",
       "width": 128,
       "height": 160,
-      "sourceBytes": 3832,
-      "bytes": 2356,
-      "sourceSha256": "ea8c6dea5d64508808e78f130d63d3a7d7028e7af5042a5253d06bd32fb7dc56",
-      "sha256": "9f0fd90380da6b61caf2ec95f961d4b721c4cd08307054c8ce8bb363726d53cc"
+      "sourceBytes": 14934,
+      "bytes": 11270,
+      "sourceSha256": "b30b576925f8ad7821b4d0c1e94d8393c51c9a54369a1db73d9109010f6ba2a6",
+      "sha256": "7e24d33bff7283a02b65474366046793c8746945c7c239184e61db55fc535434"
     },
     {
       "source": "decor-assets/native/nw_wool_basket_right.png",
       "file": "runtime-webp/decor-assets/native/nw_wool_basket_right.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2061,
-      "bytes": 1240,
-      "sourceSha256": "3e0f04a03bcc5ebdf28a2a6eae9cb7660270e1e14377e2187d19bbe67637a863",
-      "sha256": "348f490e16e0bd31516cb0da634b5ab12e7c77cc81b49839255ad720981ed7c7"
+      "sourceBytes": 7481,
+      "bytes": 5522,
+      "sourceSha256": "fe6029cef65a3cb93240369a88d1f55bde5eb4dc9f75e45365d006dd89505e35",
+      "sha256": "ce88982ce57166642c5a3b15e8d69fdb032e222c934d0d2385680beab5ea3c8e"
     },
     {
       "source": "decor-assets/native/nw_wool_basket.png",
       "file": "runtime-webp/decor-assets/native/nw_wool_basket.webp",
       "width": 64,
       "height": 160,
-      "sourceBytes": 2116,
-      "bytes": 1272,
-      "sourceSha256": "41d7862c476b411108506653fa1e8f42db980c9a9d089b3263f0781b7c8029b6",
-      "sha256": "45c9f5018cb92bdbc4441432e9497abbbc74569e9ee22fbef8613683ada6fae2"
+      "sourceBytes": 7711,
+      "bytes": 5786,
+      "sourceSha256": "d7f4db8bd499947c575f01ce0026ad3f69b1d1a929557baecbd2504b36030b1e",
+      "sha256": "d69112a1c3d8447570b3f14af174bb3bc698c918080effa26e5e637a4f4f27d1"
     },
     {
       "source": "decor-assets/native/nw_yule_log_atlas.png",
       "file": "runtime-webp/decor-assets/native/nw_yule_log_atlas.webp",
       "width": 256,
       "height": 256,
-      "sourceBytes": 9435,
-      "bytes": 5928,
-      "sourceSha256": "b6e1745f1e7970b3645a73f2dc4091ebef791d647bd7708e304cabbd639b752b",
-      "sha256": "b5fe0a42fef2e73e6a33a1171ddb61c942f0fc025137b4adbbe8e44b7403573f"
+      "sourceBytes": 46764,
+      "bytes": 33188,
+      "sourceSha256": "a4c2ff8df18b7dc33a26f55addc28da590b32666f7eb0f9fefd71ee46e9c4ef3",
+      "sha256": "6286bc781584406cc00c2f0f421d3664b115f0188f499161497485e0e21b8f00"
     },
     {
       "source": "decor-assets/native/nw_yule_log_right.png",
       "file": "runtime-webp/decor-assets/native/nw_yule_log_right.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4965,
-      "bytes": 3054,
-      "sourceSha256": "f58b332712565869e73021cdf9241b97845d95f6a5882e7e65b6d0f92f74972a",
-      "sha256": "2d197f34c980d4486e538b1a4c0d122168148fa7f693e4278fbe0c796119003e"
+      "sourceBytes": 23879,
+      "bytes": 16956,
+      "sourceSha256": "9db8d80d91c97993382b8f471945c5cbf09b89516a972bb43ad189ea58aed531",
+      "sha256": "cd14751d22f7a94f91858b56a3a10031410338655b34f56a8109b1ab28f7e031"
     },
     {
       "source": "decor-assets/native/nw_yule_log.png",
       "file": "runtime-webp/decor-assets/native/nw_yule_log.webp",
       "width": 128,
       "height": 256,
-      "sourceBytes": 4886,
-      "bytes": 3040,
-      "sourceSha256": "816e91d0405b03be39333295b83a391b2c2a434f868b545c3c9c6a064e3750cc",
-      "sha256": "d79e984ab26bb4efd9f36ad79347337ad91b7085c069c6bd0185431ad55375cf"
+      "sourceBytes": 23865,
+      "bytes": 16886,
+      "sourceSha256": "71d676aaf58ff6a68787845f5360b2831b9dda024f3d51005538c406bdc67341",
+      "sha256": "22e1028036e2d6beedf2867a181308217188c02d2fa9097365ec5f1aaab26bef"
     },
     {
       "source": "decor-assets/native/nx_badger_cookie_table_atlas.png",
@@ -30457,9 +30457,9 @@
   "totals": {
     "converted": 2113,
     "existingWebp": 1860,
-    "originalBytes": 25076715,
-    "webpBytes": 21754818,
-    "savedBytes": 3321897,
-    "savedPercent": 13.25
+    "originalBytes": 29312887,
+    "webpBytes": 24968004,
+    "savedBytes": 4344883,
+    "savedPercent": 14.82
   }
 }

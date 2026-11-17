@@ -18038,7 +18038,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_lantern_atlas.png",
         "decor-assets/native/nw_gnome_lantern_atlas.png",
@@ -18112,14 +18112,14 @@
       "bounds": {
         "x": 5,
         "y": 74,
-        "w": 55,
+        "w": 54,
         "h": 70
       },
       "rightBounds": {
         "x": 4,
-        "y": 73,
+        "y": 74,
         "w": 56,
-        "h": 71
+        "h": 70
       },
       "framesIdentical": true
     },
@@ -18145,7 +18145,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_mushroom_atlas.png",
         "decor-assets/native/nw_gnome_mushroom_atlas.png",
@@ -18219,7 +18219,7 @@
       "bounds": {
         "x": 7,
         "y": 95,
-        "w": 51,
+        "w": 50,
         "h": 49
       },
       "rightBounds": {
@@ -18252,7 +18252,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_bell_atlas.png",
         "decor-assets/native/nw_gnome_bell_atlas.png",
@@ -18326,7 +18326,7 @@
       "bounds": {
         "x": 4,
         "y": 72,
-        "w": 56,
+        "w": 55,
         "h": 72
       },
       "rightBounds": {
@@ -18359,7 +18359,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_cocoa_atlas.png",
         "decor-assets/native/nw_gnome_cocoa_atlas.png",
@@ -18439,7 +18439,7 @@
       "rightBounds": {
         "x": 6,
         "y": 66,
-        "w": 53,
+        "w": 52,
         "h": 78
       },
       "framesIdentical": true
@@ -18466,7 +18466,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_sock_atlas.png",
         "decor-assets/native/nw_gnome_sock_atlas.png",
@@ -18539,15 +18539,15 @@
       ],
       "bounds": {
         "x": 6,
-        "y": 74,
-        "w": 53,
-        "h": 70
+        "y": 75,
+        "w": 52,
+        "h": 69
       },
       "rightBounds": {
         "x": 4,
-        "y": 75,
+        "y": 76,
         "w": 56,
-        "h": 69
+        "h": 68
       },
       "framesIdentical": true
     },
@@ -18573,7 +18573,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_fir_atlas.png",
         "decor-assets/native/nw_gnome_fir_atlas.png",
@@ -18680,7 +18680,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_sack_atlas.png",
         "decor-assets/native/nw_gnome_sack_atlas.png",
@@ -18787,7 +18787,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_horn_atlas.png",
         "decor-assets/native/nw_gnome_horn_atlas.png",
@@ -18894,7 +18894,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_sled_atlas.png",
         "decor-assets/native/nw_gnome_sled_atlas.png",
@@ -19001,7 +19001,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_owl_atlas.png",
         "decor-assets/native/nw_gnome_owl_atlas.png",
@@ -19074,14 +19074,14 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 67,
+        "y": 68,
         "w": 56,
-        "h": 77
+        "h": 76
       },
       "rightBounds": {
         "x": 5,
         "y": 67,
-        "w": 55,
+        "w": 54,
         "h": 77
       },
       "framesIdentical": true
@@ -19108,7 +19108,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_wave_atlas.png",
         "decor-assets/native/nw_santa_wave_atlas.png",
@@ -19181,9 +19181,9 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 71,
+        "y": 72,
         "w": 56,
-        "h": 73
+        "h": 72
       },
       "rightBounds": {
         "x": 7,
@@ -19215,7 +19215,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_list_atlas.png",
         "decor-assets/native/nw_santa_list_atlas.png",
@@ -19294,9 +19294,9 @@
       },
       "rightBounds": {
         "x": 4,
-        "y": 89,
+        "y": 90,
         "w": 56,
-        "h": 55
+        "h": 54
       },
       "framesIdentical": true
     },
@@ -19322,7 +19322,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_sack_atlas.png",
         "decor-assets/native/nw_santa_sack_atlas.png",
@@ -19396,14 +19396,14 @@
       "bounds": {
         "x": 5,
         "y": 70,
-        "w": 55,
+        "w": 54,
         "h": 74
       },
       "rightBounds": {
         "x": 4,
-        "y": 70,
+        "y": 71,
         "w": 56,
-        "h": 74
+        "h": 73
       },
       "framesIdentical": true
     },
@@ -19429,7 +19429,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_bell_atlas.png",
         "decor-assets/native/nw_santa_bell_atlas.png",
@@ -19536,7 +19536,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_cocoa_atlas.png",
         "decor-assets/native/nw_santa_cocoa_atlas.png",
@@ -19608,16 +19608,16 @@
         1000
       ],
       "bounds": {
-        "x": 4,
+        "x": 5,
         "y": 79,
-        "w": 56,
+        "w": 55,
         "h": 65
       },
       "rightBounds": {
         "x": 4,
-        "y": 79,
+        "y": 80,
         "w": 56,
-        "h": 65
+        "h": 64
       },
       "framesIdentical": true
     },
@@ -19643,7 +19643,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_sled_atlas.png",
         "decor-assets/native/nw_santa_sled_atlas.png",
@@ -19715,16 +19715,16 @@
         1000
       ],
       "bounds": {
-        "x": 6,
+        "x": 5,
         "y": 102,
         "w": 118,
         "h": 138
       },
       "rightBounds": {
         "x": 4,
-        "y": 102,
+        "y": 103,
         "w": 120,
-        "h": 138
+        "h": 137
       },
       "framesIdentical": true
     },
@@ -19750,7 +19750,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_reindeer_atlas.png",
         "decor-assets/native/nw_santa_reindeer_atlas.png",
@@ -19830,7 +19830,7 @@
       "rightBounds": {
         "x": 5,
         "y": 112,
-        "w": 119,
+        "w": 118,
         "h": 128
       },
       "framesIdentical": true
@@ -19857,7 +19857,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_boot_atlas.png",
         "decor-assets/native/nw_santa_boot_atlas.png",
@@ -19964,7 +19964,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_hat_atlas.png",
         "decor-assets/native/nw_santa_hat_atlas.png",
@@ -20038,7 +20038,7 @@
       "bounds": {
         "x": 4,
         "y": 95,
-        "w": 56,
+        "w": 55,
         "h": 49
       },
       "rightBounds": {
@@ -20071,7 +20071,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_moon_atlas.png",
         "decor-assets/native/nw_santa_moon_atlas.png",
@@ -20178,7 +20178,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_sock_atlas.png",
         "decor-assets/native/nw_elf_sock_atlas.png",
@@ -20285,7 +20285,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_knit_atlas.png",
         "decor-assets/native/nw_elf_knit_atlas.png",
@@ -20392,7 +20392,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_cocoa_atlas.png",
         "decor-assets/native/nw_elf_cocoa_atlas.png",
@@ -20466,7 +20466,7 @@
       "bounds": {
         "x": 5,
         "y": 76,
-        "w": 55,
+        "w": 54,
         "h": 68
       },
       "rightBounds": {
@@ -20499,7 +20499,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_pie_atlas.png",
         "decor-assets/native/nw_elf_pie_atlas.png",
@@ -20606,7 +20606,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_lantern_atlas.png",
         "decor-assets/native/nw_elf_lantern_atlas.png",
@@ -20680,13 +20680,13 @@
       "bounds": {
         "x": 5,
         "y": 84,
-        "w": 55,
+        "w": 54,
         "h": 60
       },
       "rightBounds": {
         "x": 4,
         "y": 81,
-        "w": 56,
+        "w": 55,
         "h": 63
       },
       "framesIdentical": true
@@ -20713,7 +20713,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_bell_atlas.png",
         "decor-assets/native/nw_elf_bell_atlas.png",
@@ -20792,9 +20792,9 @@
       },
       "rightBounds": {
         "x": 8,
-        "y": 35,
-        "w": 49,
-        "h": 109
+        "y": 36,
+        "w": 48,
+        "h": 108
       },
       "framesIdentical": true
     },
@@ -20820,7 +20820,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_fir_atlas.png",
         "decor-assets/native/nw_elf_fir_atlas.png",
@@ -20898,10 +20898,10 @@
         "h": 59
       },
       "rightBounds": {
-        "x": 4,
-        "y": 85,
-        "w": 56,
-        "h": 59
+        "x": 5,
+        "y": 86,
+        "w": 55,
+        "h": 58
       },
       "framesIdentical": true
     },
@@ -20927,7 +20927,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_mail_atlas.png",
         "decor-assets/native/nw_elf_mail_atlas.png",
@@ -21034,7 +21034,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_sled_atlas.png",
         "decor-assets/native/nw_elf_sled_atlas.png",
@@ -21141,7 +21141,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_boot_atlas.png",
         "decor-assets/native/nw_elf_boot_atlas.png",
@@ -21220,9 +21220,9 @@
       },
       "rightBounds": {
         "x": 5,
-        "y": 59,
-        "w": 55,
-        "h": 85
+        "y": 60,
+        "w": 54,
+        "h": 84
       },
       "framesIdentical": true
     },
@@ -21248,7 +21248,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_turret_atlas.png",
         "decor-assets/native/nw_hogwarts_turret_atlas.png",
@@ -21327,9 +21327,9 @@
       },
       "rightBounds": {
         "x": 6,
-        "y": 28,
+        "y": 29,
         "w": 53,
-        "h": 116
+        "h": 115
       },
       "framesIdentical": true
     },
@@ -21355,7 +21355,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_owl_atlas.png",
         "decor-assets/native/nw_hogwarts_owl_atlas.png",
@@ -21428,15 +21428,15 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 70,
+        "y": 71,
         "w": 56,
-        "h": 74
+        "h": 73
       },
       "rightBounds": {
         "x": 10,
         "y": 70,
         "w": 45,
-        "h": 73
+        "h": 74
       },
       "framesIdentical": true
     },
@@ -21462,7 +21462,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_hat_atlas.png",
         "decor-assets/native/nw_hogwarts_hat_atlas.png",
@@ -21535,14 +21535,14 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 85,
+        "y": 86,
         "w": 56,
-        "h": 59
+        "h": 58
       },
       "rightBounds": {
         "x": 7,
         "y": 89,
-        "w": 51,
+        "w": 50,
         "h": 55
       },
       "framesIdentical": true
@@ -21569,7 +21569,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_cauldron_atlas.png",
         "decor-assets/native/nw_hogwarts_cauldron_atlas.png",
@@ -21642,14 +21642,14 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 83,
+        "y": 84,
         "w": 56,
-        "h": 61
+        "h": 60
       },
       "rightBounds": {
         "x": 7,
         "y": 83,
-        "w": 51,
+        "w": 50,
         "h": 61
       },
       "framesIdentical": true
@@ -21676,7 +21676,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_candles_atlas.png",
         "decor-assets/native/nw_hogwarts_candles_atlas.png",
@@ -21783,7 +21783,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_broom_atlas.png",
         "decor-assets/native/nw_hogwarts_broom_atlas.png",
@@ -21856,15 +21856,15 @@
       ],
       "bounds": {
         "x": 5,
-        "y": 89,
+        "y": 90,
         "w": 55,
-        "h": 55
+        "h": 54
       },
       "rightBounds": {
         "x": 5,
-        "y": 88,
+        "y": 89,
         "w": 54,
-        "h": 56
+        "h": 55
       },
       "framesIdentical": true
     },
@@ -21890,7 +21890,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_stag_atlas.png",
         "decor-assets/native/nw_hogwarts_stag_atlas.png",
@@ -21969,9 +21969,9 @@
       },
       "rightBounds": {
         "x": 5,
-        "y": 102,
+        "y": 103,
         "w": 118,
-        "h": 138
+        "h": 137
       },
       "framesIdentical": true
     },
@@ -21997,7 +21997,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_book_atlas.png",
         "decor-assets/native/nw_hogwarts_book_atlas.png",
@@ -22075,9 +22075,9 @@
         "h": 60
       },
       "rightBounds": {
-        "x": 5,
+        "x": 6,
         "y": 86,
-        "w": 54,
+        "w": 53,
         "h": 58
       },
       "framesIdentical": true
@@ -22104,7 +22104,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_snitch_atlas.png",
         "decor-assets/native/nw_hogwarts_snitch_atlas.png",
@@ -22177,14 +22177,14 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 48,
+        "y": 49,
         "w": 56,
-        "h": 96
+        "h": 95
       },
       "rightBounds": {
-        "x": 8,
+        "x": 9,
         "y": 47,
-        "w": 48,
+        "w": 47,
         "h": 97
       },
       "framesIdentical": true
@@ -22211,7 +22211,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_hogwarts_gate_atlas.png",
         "decor-assets/native/nw_hogwarts_gate_atlas.png",
@@ -22318,7 +22318,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_fir_spiral_atlas.png",
         "decor-assets/native/nw_fir_spiral_atlas.png",
@@ -22398,7 +22398,7 @@
       "rightBounds": {
         "x": 13,
         "y": 73,
-        "w": 103,
+        "w": 102,
         "h": 167
       },
       "framesIdentical": true
@@ -22425,7 +22425,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_fir_bells_atlas.png",
         "decor-assets/native/nw_fir_bells_atlas.png",
@@ -22504,9 +22504,9 @@
       },
       "rightBounds": {
         "x": 13,
-        "y": 96,
+        "y": 97,
         "w": 102,
-        "h": 144
+        "h": 143
       },
       "framesIdentical": true
     },
@@ -22532,7 +22532,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_fir_nest_atlas.png",
         "decor-assets/native/nw_fir_nest_atlas.png",
@@ -22639,7 +22639,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_fir_stars_atlas.png",
         "decor-assets/native/nw_fir_stars_atlas.png",
@@ -22746,7 +22746,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_holly_heart_atlas.png",
         "decor-assets/native/nw_holly_heart_atlas.png",
@@ -22825,9 +22825,9 @@
       },
       "rightBounds": {
         "x": 9,
-        "y": 87,
+        "y": 88,
         "w": 46,
-        "h": 57
+        "h": 56
       },
       "framesIdentical": true
     },
@@ -22853,7 +22853,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_mistletoe_bow_atlas.png",
         "decor-assets/native/nw_mistletoe_bow_atlas.png",
@@ -22933,7 +22933,7 @@
       "rightBounds": {
         "x": 9,
         "y": 78,
-        "w": 47,
+        "w": 46,
         "h": 66
       },
       "framesIdentical": true
@@ -22960,7 +22960,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_pinecone_lantern_atlas.png",
         "decor-assets/native/nw_pinecone_lantern_atlas.png",
@@ -23033,14 +23033,14 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 67,
+        "y": 68,
         "w": 56,
-        "h": 77
+        "h": 76
       },
       "rightBounds": {
-        "x": 8,
+        "x": 9,
         "y": 68,
-        "w": 48,
+        "w": 47,
         "h": 76
       },
       "framesIdentical": true
@@ -23067,7 +23067,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_winter_rose_atlas.png",
         "decor-assets/native/nw_winter_rose_atlas.png",
@@ -23146,9 +23146,9 @@
       },
       "rightBounds": {
         "x": 8,
-        "y": 91,
+        "y": 92,
         "w": 48,
-        "h": 53
+        "h": 52
       },
       "framesIdentical": true
     },
@@ -23174,7 +23174,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_winter_lily_atlas.png",
         "decor-assets/native/nw_winter_lily_atlas.png",
@@ -23281,7 +23281,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_fir_boot_atlas.png",
         "decor-assets/native/nw_fir_boot_atlas.png",
@@ -23361,7 +23361,7 @@
       "rightBounds": {
         "x": 8,
         "y": 59,
-        "w": 47,
+        "w": 48,
         "h": 85
       },
       "framesIdentical": true
@@ -23388,7 +23388,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_fox_atlas.png",
         "decor-assets/native/nw_snow_fox_atlas.png",
@@ -23495,7 +23495,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_hare_atlas.png",
         "decor-assets/native/nw_snow_hare_atlas.png",
@@ -23573,10 +23573,10 @@
         "h": 215
       },
       "rightBounds": {
-        "x": 5,
-        "y": 28,
-        "w": 118,
-        "h": 212
+        "x": 6,
+        "y": 29,
+        "w": 117,
+        "h": 211
       },
       "framesIdentical": true
     },
@@ -23602,7 +23602,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_hedgehog_atlas.png",
         "decor-assets/native/nw_snow_hedgehog_atlas.png",
@@ -23674,16 +23674,16 @@
         1000
       ],
       "bounds": {
-        "x": 4,
+        "x": 5,
         "y": 110,
-        "w": 120,
+        "w": 119,
         "h": 130
       },
       "rightBounds": {
         "x": 4,
-        "y": 110,
+        "y": 111,
         "w": 120,
-        "h": 130
+        "h": 129
       },
       "framesIdentical": true
     },
@@ -23709,7 +23709,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_otter_atlas.png",
         "decor-assets/native/nw_snow_otter_atlas.png",
@@ -23783,14 +23783,14 @@
       "bounds": {
         "x": 5,
         "y": 84,
-        "w": 119,
+        "w": 118,
         "h": 156
       },
       "rightBounds": {
         "x": 4,
-        "y": 85,
+        "y": 86,
         "w": 120,
-        "h": 155
+        "h": 154
       },
       "framesIdentical": true
     },
@@ -23816,7 +23816,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_penguin_atlas.png",
         "decor-assets/native/nw_snow_penguin_atlas.png",
@@ -23889,15 +23889,15 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 79,
+        "y": 78,
         "w": 120,
-        "h": 161
+        "h": 162
       },
       "rightBounds": {
         "x": 9,
-        "y": 75,
+        "y": 76,
         "w": 110,
-        "h": 165
+        "h": 164
       },
       "framesIdentical": true
     },
@@ -23923,7 +23923,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_bear_atlas.png",
         "decor-assets/native/nw_snow_bear_atlas.png",
@@ -23997,14 +23997,14 @@
       "bounds": {
         "x": 9,
         "y": 106,
-        "w": 111,
+        "w": 110,
         "h": 134
       },
       "rightBounds": {
         "x": 4,
-        "y": 103,
+        "y": 104,
         "w": 120,
-        "h": 137
+        "h": 136
       },
       "framesIdentical": true
     },
@@ -24030,7 +24030,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_owl_atlas.png",
         "decor-assets/native/nw_snow_owl_atlas.png",
@@ -24103,15 +24103,15 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 87,
+        "y": 88,
         "w": 56,
-        "h": 57
+        "h": 56
       },
       "rightBounds": {
         "x": 7,
         "y": 85,
         "w": 50,
-        "h": 58
+        "h": 59
       },
       "framesIdentical": true
     },
@@ -24137,7 +24137,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_swan_atlas.png",
         "decor-assets/native/nw_snow_swan_atlas.png",
@@ -24209,10 +24209,10 @@
         1000
       ],
       "bounds": {
-        "x": 4,
-        "y": 114,
-        "w": 120,
-        "h": 126
+        "x": 5,
+        "y": 113,
+        "w": 119,
+        "h": 127
       },
       "rightBounds": {
         "x": 4,
@@ -24244,7 +24244,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_robin_atlas.png",
         "decor-assets/native/nw_snow_robin_atlas.png",
@@ -24317,9 +24317,9 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 78,
+        "y": 79,
         "w": 56,
-        "h": 66
+        "h": 65
       },
       "rightBounds": {
         "x": 7,
@@ -24351,7 +24351,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_dragon_atlas.png",
         "decor-assets/native/nw_snow_dragon_atlas.png",
@@ -24431,7 +24431,7 @@
       "rightBounds": {
         "x": 5,
         "y": 108,
-        "w": 119,
+        "w": 118,
         "h": 132
       },
       "framesIdentical": true
@@ -24458,7 +24458,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snowman_cocoa_atlas.png",
         "decor-assets/native/nw_snowman_cocoa_atlas.png",
@@ -24565,7 +24565,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snowman_scarf_atlas.png",
         "decor-assets/native/nw_snowman_scarf_atlas.png",
@@ -24672,7 +24672,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snowman_bird_atlas.png",
         "decor-assets/native/nw_snowman_bird_atlas.png",
@@ -24751,9 +24751,9 @@
       },
       "rightBounds": {
         "x": 7,
-        "y": 73,
+        "y": 74,
         "w": 50,
-        "h": 71
+        "h": 70
       },
       "framesIdentical": true
     },
@@ -24779,7 +24779,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_mushroom_snow_atlas.png",
         "decor-assets/native/nw_mushroom_snow_atlas.png",
@@ -24886,7 +24886,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_mushroom_house_atlas.png",
         "decor-assets/native/nw_mushroom_house_atlas.png",
@@ -24960,7 +24960,7 @@
       "bounds": {
         "x": 5,
         "y": 76,
-        "w": 55,
+        "w": 54,
         "h": 68
       },
       "rightBounds": {
@@ -24993,7 +24993,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_igloo_polar_atlas.png",
         "decor-assets/native/nw_igloo_polar_atlas.png",
@@ -25072,9 +25072,9 @@
       },
       "rightBounds": {
         "x": 5,
-        "y": 97,
-        "w": 55,
-        "h": 47
+        "y": 98,
+        "w": 54,
+        "h": 46
       },
       "framesIdentical": true
     },
@@ -25100,7 +25100,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_frozen_fountain_atlas.png",
         "decor-assets/native/nw_frozen_fountain_atlas.png",
@@ -25180,7 +25180,7 @@
       "rightBounds": {
         "x": 5,
         "y": 74,
-        "w": 119,
+        "w": 118,
         "h": 166
       },
       "framesIdentical": true
@@ -25207,7 +25207,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_winter_willow_atlas.png",
         "decor-assets/native/nw_winter_willow_atlas.png",
@@ -25314,7 +25314,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_winter_log_atlas.png",
         "decor-assets/native/nw_winter_log_atlas.png",
@@ -25386,10 +25386,10 @@
         1000
       ],
       "bounds": {
-        "x": 4,
-        "y": 151,
-        "w": 120,
-        "h": 89
+        "x": 5,
+        "y": 152,
+        "w": 119,
+        "h": 88
       },
       "rightBounds": {
         "x": 4,
@@ -25421,7 +25421,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_winter_crystal_atlas.png",
         "decor-assets/native/nw_winter_crystal_atlas.png",
@@ -25494,9 +25494,9 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 65,
+        "y": 66,
         "w": 56,
-        "h": 79
+        "h": 78
       },
       "rightBounds": {
         "x": 4,
@@ -25528,7 +25528,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_pudding_holly_atlas.png",
         "decor-assets/native/nw_pudding_holly_atlas.png",
@@ -25635,7 +25635,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gingerbread_man_atlas.png",
         "decor-assets/native/nw_gingerbread_man_atlas.png",
@@ -25715,7 +25715,7 @@
       "rightBounds": {
         "x": 5,
         "y": 70,
-        "w": 55,
+        "w": 54,
         "h": 74
       },
       "framesIdentical": true
@@ -25742,7 +25742,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gingerbread_reindeer_atlas.png",
         "decor-assets/native/nw_gingerbread_reindeer_atlas.png",
@@ -25849,7 +25849,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_candy_cane_bow_atlas.png",
         "decor-assets/native/nw_candy_cane_bow_atlas.png",
@@ -25956,7 +25956,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_cocoa_marshmallow_atlas.png",
         "decor-assets/native/nw_cocoa_marshmallow_atlas.png",
@@ -26029,15 +26029,15 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 90,
+        "y": 91,
         "w": 56,
-        "h": 54
+        "h": 53
       },
       "rightBounds": {
         "x": 5,
-        "y": 90,
+        "y": 91,
         "w": 55,
-        "h": 54
+        "h": 53
       },
       "framesIdentical": true
     },
@@ -26063,7 +26063,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_teapot_cookie_atlas.png",
         "decor-assets/native/nw_teapot_cookie_atlas.png",
@@ -26137,7 +26137,7 @@
       "bounds": {
         "x": 5,
         "y": 97,
-        "w": 55,
+        "w": 54,
         "h": 47
       },
       "rightBounds": {
@@ -26170,7 +26170,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_croissant_wreath_atlas.png",
         "decor-assets/native/nw_croissant_wreath_atlas.png",
@@ -26277,7 +26277,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_yule_log_atlas.png",
         "decor-assets/native/nw_yule_log_atlas.png",
@@ -26384,7 +26384,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_candy_sleigh_atlas.png",
         "decor-assets/native/nw_candy_sleigh_atlas.png",
@@ -26458,14 +26458,14 @@
       "bounds": {
         "x": 5,
         "y": 127,
-        "w": 119,
+        "w": 118,
         "h": 113
       },
       "rightBounds": {
         "x": 4,
-        "y": 126,
+        "y": 127,
         "w": 120,
-        "h": 114
+        "h": 113
       },
       "framesIdentical": true
     },
@@ -26491,7 +26491,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_candy_tree_atlas.png",
         "decor-assets/native/nw_candy_tree_atlas.png",
@@ -26598,7 +26598,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_moon_lantern_atlas.png",
         "decor-assets/native/nw_moon_lantern_atlas.png",
@@ -26678,7 +26678,7 @@
       "rightBounds": {
         "x": 5,
         "y": 40,
-        "w": 55,
+        "w": 54,
         "h": 104
       },
       "framesIdentical": true
@@ -26705,7 +26705,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_star_lantern_atlas.png",
         "decor-assets/native/nw_star_lantern_atlas.png",
@@ -26784,9 +26784,9 @@
       },
       "rightBounds": {
         "x": 4,
-        "y": 67,
+        "y": 68,
         "w": 56,
-        "h": 77
+        "h": 76
       },
       "framesIdentical": true
     },
@@ -26812,7 +26812,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_bell_bough_atlas.png",
         "decor-assets/native/nw_bell_bough_atlas.png",
@@ -26884,15 +26884,15 @@
         1000
       ],
       "bounds": {
-        "x": 10,
-        "y": 110,
-        "w": 45,
-        "h": 34
+        "x": 11,
+        "y": 111,
+        "w": 43,
+        "h": 33
       },
       "rightBounds": {
         "x": 10,
         "y": 111,
-        "w": 45,
+        "w": 44,
         "h": 33
       },
       "framesIdentical": true
@@ -26919,7 +26919,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_harp_frost_atlas.png",
         "decor-assets/native/nw_harp_frost_atlas.png",
@@ -26993,7 +26993,7 @@
       "bounds": {
         "x": 5,
         "y": 88,
-        "w": 119,
+        "w": 118,
         "h": 152
       },
       "rightBounds": {
@@ -27026,7 +27026,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_candle_wreath_atlas.png",
         "decor-assets/native/nw_candle_wreath_atlas.png",
@@ -27098,16 +27098,16 @@
         1000
       ],
       "bounds": {
-        "x": 4,
+        "x": 5,
         "y": 98,
-        "w": 56,
+        "w": 55,
         "h": 46
       },
       "rightBounds": {
         "x": 5,
         "y": 95,
         "w": 55,
-        "h": 49
+        "h": 48
       },
       "framesIdentical": true
     },
@@ -27133,7 +27133,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_owl_lantern_atlas.png",
         "decor-assets/native/nw_owl_lantern_atlas.png",
@@ -27240,7 +27240,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_acorn_lantern_atlas.png",
         "decor-assets/native/nw_acorn_lantern_atlas.png",
@@ -27320,7 +27320,7 @@
       "rightBounds": {
         "x": 6,
         "y": 63,
-        "w": 53,
+        "w": 52,
         "h": 81
       },
       "framesIdentical": true
@@ -27347,7 +27347,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_snow_globe_atlas.png",
         "decor-assets/native/nw_snow_globe_atlas.png",
@@ -27421,13 +27421,13 @@
       "bounds": {
         "x": 10,
         "y": 84,
-        "w": 45,
+        "w": 44,
         "h": 60
       },
       "rightBounds": {
         "x": 10,
         "y": 84,
-        "w": 45,
+        "w": 44,
         "h": 60
       },
       "framesIdentical": true
@@ -27454,7 +27454,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_music_mushroom_atlas.png",
         "decor-assets/native/nw_music_mushroom_atlas.png",
@@ -27526,9 +27526,9 @@
         1000
       ],
       "bounds": {
-        "x": 4,
+        "x": 5,
         "y": 85,
-        "w": 56,
+        "w": 55,
         "h": 59
       },
       "rightBounds": {
@@ -27561,7 +27561,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gramophone_flower_atlas.png",
         "decor-assets/native/nw_gramophone_flower_atlas.png",
@@ -27634,14 +27634,14 @@
       ],
       "bounds": {
         "x": 4,
-        "y": 65,
+        "y": 66,
         "w": 56,
-        "h": 79
+        "h": 78
       },
       "rightBounds": {
         "x": 6,
         "y": 65,
-        "w": 53,
+        "w": 52,
         "h": 79
       },
       "framesIdentical": true
@@ -27668,7 +27668,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_holly_arch_atlas.png",
         "decor-assets/native/nw_holly_arch_atlas.png",
@@ -27742,7 +27742,7 @@
       "bounds": {
         "x": 25,
         "y": 167,
-        "w": 79,
+        "w": 78,
         "h": 73
       },
       "rightBounds": {
@@ -27775,7 +27775,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_candy_arch_atlas.png",
         "decor-assets/native/nw_candy_arch_atlas.png",
@@ -27882,7 +27882,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_elf_hammock_atlas.png",
         "decor-assets/native/nw_elf_hammock_atlas.png",
@@ -27955,9 +27955,9 @@
       ],
       "bounds": {
         "x": 6,
-        "y": 126,
+        "y": 127,
         "w": 117,
-        "h": 114
+        "h": 113
       },
       "rightBounds": {
         "x": 4,
@@ -27989,7 +27989,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_santa_bench_atlas.png",
         "decor-assets/native/nw_santa_bench_atlas.png",
@@ -28061,9 +28061,9 @@
         1000
       ],
       "bounds": {
-        "x": 4,
+        "x": 5,
         "y": 130,
-        "w": 120,
+        "w": 119,
         "h": 110
       },
       "rightBounds": {
@@ -28096,7 +28096,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_wool_basket_atlas.png",
         "decor-assets/native/nw_wool_basket_atlas.png",
@@ -28168,15 +28168,15 @@
         1000
       ],
       "bounds": {
-        "x": 4,
+        "x": 5,
         "y": 84,
-        "w": 56,
+        "w": 55,
         "h": 60
       },
       "rightBounds": {
         "x": 5,
         "y": 83,
-        "w": 55,
+        "w": 54,
         "h": 61
       },
       "framesIdentical": true
@@ -28203,7 +28203,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gift_sack_atlas.png",
         "decor-assets/native/nw_gift_sack_atlas.png",
@@ -28310,7 +28310,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_mitten_mail_atlas.png",
         "decor-assets/native/nw_mitten_mail_atlas.png",
@@ -28417,7 +28417,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_bell_sled_atlas.png",
         "decor-assets/native/nw_bell_sled_atlas.png",
@@ -28495,9 +28495,9 @@
         "h": 121
       },
       "rightBounds": {
-        "x": 5,
+        "x": 4,
         "y": 118,
-        "w": 119,
+        "w": 120,
         "h": 122
       },
       "framesIdentical": true
@@ -28524,7 +28524,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_winter_teacup_atlas.png",
         "decor-assets/native/nw_winter_teacup_atlas.png",
@@ -28596,16 +28596,16 @@
         1000
       ],
       "bounds": {
-        "x": 5,
+        "x": 4,
         "y": 95,
-        "w": 55,
+        "w": 56,
         "h": 49
       },
       "rightBounds": {
         "x": 5,
-        "y": 94,
-        "w": 52,
-        "h": 50
+        "y": 95,
+        "w": 53,
+        "h": 49
       },
       "framesIdentical": true
     },
@@ -28631,7 +28631,7 @@
         "default",
         "right"
       ],
-      "artRevision": "authored-winter-20261117",
+      "artRevision": "authored-winter-20261117-native2",
       "frames": [
         "decor-assets/native/nw_gnome_gateway_atlas.png",
         "decor-assets/native/nw_gnome_gateway_atlas.png",
@@ -28711,7 +28711,7 @@
       "rightBounds": {
         "x": 19,
         "y": 145,
-        "w": 91,
+        "w": 90,
         "h": 95
       },
       "framesIdentical": true
