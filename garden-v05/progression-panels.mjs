@@ -8,13 +8,13 @@ import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItem
 import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.6";
 import {renderTourSection} from "./garden-tour.mjs?v=26.6";
 import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.6";
-import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection} from "./garden-events.mjs?v=26.6";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.6";
 import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.6";
 import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.6";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
- let active=null,previousFocus=null,profileTab="achievements",postcardNode=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false;
+ let active=null,petBurst=null,previousFocus=null,profileTab="achievements",postcardNode=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false;
  const names={roadmap:"Lộ trình",profile:"Hồ sơ người giữ vườn",tour:"Thăm vườn",events:"Lễ hội",affinity:"Gắn kết",scenery:"Khung cảnh",settings:"Cài đặt",plots:"Thửa đất",crops:"Hạt giống",creatures:"Sinh vật",craft:"Chế biến",build:"Xây dựng",inventory:"Kho",layout:"Bố trí",collection:"Trang trí",menu:"Khu vườn",guide:"Sổ tay bác Hagrid"};
  const label=id=>labels[id]||id,now=()=>E.nowFor(getState(),Date.now()),paragraph=(text,cls="")=>el("p",{text,class:cls}),actions=(...children)=>el("div",{class:"actions"},children),toolbar=(...children)=>el("div",{class:"panel-toolbar"},children),keepsake=(px,text,label,fn)=>{const b=button("",fn,{"aria-label":label,title:label});b.append(pixelIcon(px,2),el("span",{text}));return b;},grid=()=>el("div",{class:"cards"});
  const detail=text=>el("details",{class:"v24-detail"},[el("summary",{text:"Chi tiết"}),paragraph(text)]);
@@ -564,21 +564,55 @@ export function createPanels(ctx){
    const entries=speciesId?summary.entries.filter(e=>e.species===speciesId):summary.entries;
    if(!speciesId&&entries.length)body.append(el("p",{class:"affinity-total",text:"Tổng cấp gắn kết · "+num(summary.totalAffinityLevels)}));
    if(!entries.length){body.append(paragraph("Đón sinh vật về vườn để bắt đầu gắn kết."));return;}
+   // Owner 17/11/2026 «xinh yêu tí»: one creature gets a hero (portrait in a cream nest, rank, 5 hearts, XP to the next
+   // level, what that level gives, today's pets) and a normal-size pink «Vuốt ve»; the list keeps one bare row each.
+   const MAX=CREATURE_AFFINITY_LEVELS.length;
+   const hearts=level=>el("span",{class:"affinity-hearts",role:"img","aria-label":`Gắn kết cấp ${level}/${MAX}`},Array.from({length:MAX},(_,i)=>{const h=pixelIcon("heart",1);if(i>=level)h.classList.add("is-empty");return h;}));
+   const progress=entry=>entry.isMax
+    ?el("div",{class:"affinity-progress is-max"},[el("span",{class:"affinity-max",text:"Tối đa"}),el("b",{text:num(entry.xp)+" XP"})])
+    :el("div",{class:"affinity-progress"},[
+      el("div",{class:"affinity-progress-row"},[el("span",{text:"Lên cấp "+(entry.level+1)}),el("b",{text:num(entry.xp)+" / "+num(entry.nextMinXp)+" XP"})]),
+      el("div",{class:"affinity-bar"},[el("span",{style:`width:${Math.min(100,Math.round(entry.xp/Math.max(1,entry.nextMinXp)*100))}%`})]),
+     ]);
+   const actions=(entry,name,gift)=>{
+    const pet=button("",()=>{petBurst={species:entry.species,at:performance.now()};ctx.onPetCreature?.(entry.species);refresh();},{class:"affinity-pet","aria-label":"Vuốt ve "+name,"data-affinity-pet":entry.species});
+    pet.append(pixelIcon("heart",1),el("span",{text:"Vuốt ve"}));
+    // refresh() rebuilds the panel (twice when the server answers), so the burst resumes on the new button where it left off.
+    const t=petBurst?.species===entry.species?performance.now()-petBurst.at:Infinity;
+    if(t<700){pet.classList.add("is-burst");pet.style.setProperty("--burst-at",-Math.round(t)+"ms");pet.append(el("span",{class:"affinity-burst","aria-hidden":"true"},[0,1,2].map(()=>pixelIcon("heart",1))));}
+    return el("div",{class:"affinity-actions"},[pet,
+     ...(gift?[button("Nhận",()=>{ctx.onClaimAffinityGift?.(gift.giftId);refresh();},{class:"primary","aria-label":`Nhận quà cấp ${gift.level} cho ${name}`,"data-claim-affinity-gift":gift.giftId})]:[])]);
+   };
+   if(speciesId){
+    const entry=entries[0],name=E.CREATURE[entry.species]?.label||entry.species,gift=entry.claimableGifts[0]||null;
+    const fact=(label,value,cls="")=>[el("span",{text:label}),el("b",{class:cls,text:value})];
+    body.append(el("article",{class:"affinity-hero"+(gift?" is-ready":""),"data-affinity-species":entry.species},[
+     el("div",{class:"affinity-nest"},[
+      visualItemIcon(items,entry.species,{size:96,facing:facings[entry.species]==="right"?"right":"default"}),
+      ...[0,1,2].map(i=>{const h=pixelIcon("heart",1);h.classList.add("affinity-float");h.style.setProperty("--i",i);return h;}),
+     ]),
+     el("strong",{class:"affinity-hero-name",text:name}),
+     el("span",{class:"affinity-rank",text:entry.title||"Cấp "+entry.level}),
+     hearts(entry.level),
+     progress(entry),
+     el("div",{class:"affinity-facts"},[
+      ...(gift?.reward?.label?fact("Quà cấp "+gift.level,gift.reward.label,"is-gift"):entry.next?.reward?.label?fact("Quà cấp "+entry.next.level,entry.next.reward.label):[]),
+      ...(Number.isFinite(entry.petsLeftToday)?fact("Vuốt ve hôm nay",`${AFFINITY_PETS_PER_DAY-entry.petsLeftToday}/${AFFINITY_PETS_PER_DAY}`):[]),
+     ]),
+     actions(entry,name,gift),
+    ]));
+    return;
+   }
    body.append(el("div",{class:"affinity-list"},entries.map(entry=>{
     const name=E.CREATURE[entry.species]?.label||entry.species,gift=entry.claimableGifts[0]||null;
-    const pct=entry.isMax?100:Math.min(100,Math.round(entry.xp/Math.max(1,entry.nextMinXp)*100));
     return el("article",{class:"affinity-row"+(gift?" is-ready":""),"data-affinity-species":entry.species},[
      visualItemIcon(items,entry.species,{size:48,facing:facings[entry.species]==="right"?"right":"default"}),
      el("div",{class:"affinity-info"},[
-      el("div",{class:"affinity-name"},[el("strong",{text:name}),el("span",{class:"affinity-hearts",role:"img","aria-label":"Gắn kết cấp "+entry.level},Array.from({length:entry.hearts.length},()=>pixelIcon("heart",1)))]),
-      el("small",{class:"affinity-meta",text:`Cấp ${entry.level} · ${entry.isMax?num(entry.xp)+" XP · Tối đa":num(entry.xp)+"/"+num(entry.nextMinXp)+" XP"}`}),
-      el("div",{class:"progress"},[el("span",{style:`width:${pct}%`})]),
+      el("div",{class:"affinity-name"},[el("strong",{text:name}),hearts(entry.level)]),
+      progress(entry),
       gift?.reward?.label?el("small",{class:"affinity-gift",text:gift.reward.label}):null,
      ]),
-     el("div",{class:"affinity-actions"},[
-      button("Vuốt ve",()=>{ctx.onPetCreature?.(entry.species);refresh();},{class:gift?"":"primary","aria-label":"Vuốt ve "+name,"data-affinity-pet":entry.species}),
-      ...(gift?[button("Nhận",()=>{ctx.onClaimAffinityGift?.(gift.giftId);refresh();},{class:"primary","aria-label":`Nhận quà cấp ${gift.level} cho ${name}`,"data-claim-affinity-gift":gift.giftId})]:[]),
-     ]),
+     actions(entry,name,gift),
     ]);
    })));
   },
