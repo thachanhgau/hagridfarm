@@ -1172,7 +1172,10 @@ export async function createGarden(canvas, options = {}) {
         ...fronts.map((f) => `${cell(f.asset)}:${f.xy}:${f.drift || 0}:${f.hop || 0}:${f.motion?.swayX || 0}:${f.motion?.bobY || 0}:${f.facing}`)].join('|');
       const id = object.id + ':' + object.slot;
       let copy = statueCopies.get(id);
-      if (!copy) statueCopies.set(id, copy = {lit: makeCanvas(canvas, 1, 1), key: ''});
+      if (!copy) {
+        const made = makeCanvas(canvas, 1, 1), sc = made.getContext('2d');
+        statueCopies.set(id, copy = {lit: made, key: '', hdWaiting: sc && resolution.side ? resolution.side(sc) : () => false});
+      }
       const lit = copy.lit;
       if (copy.key !== key) {
         const w = Math.round(box.w * d), h = Math.round(box.h * d);
@@ -1185,7 +1188,8 @@ export async function createGarden(canvas, options = {}) {
         drawAssetTo(c, {...glow, noSnowCap: object.asset?.noSnowCap}, object.xy[0], object.xy[1]);
         c.globalCompositeOperation = 'destination-out';
         for (const front of fronts) drawAssetTo(c, front.asset, front.xy[0] + (front.drift || 0), front.xy[1] + (front.hop || 0), null, front.motion, front.facing === 'right' && !front.authoredFacing);
-        copy.key = key;
+        // Drawn again next frame until its HD art is in, then kept.
+        copy.key = copy.hdWaiting() ? '' : key;
       }
       out.push({object, glow, lit, box});
     });

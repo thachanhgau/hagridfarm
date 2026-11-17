@@ -83,10 +83,18 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
   const own=layerContext.drawImage.bind(layerContext);
   layerContext.drawImage=function(image,...args){return draw(own,image,args,null);};
  }
+ // A side canvas drawn onto the main one (night statue copies): the same HD swap, always drawn and never tied to the
+ // ground layer's rebuild. The returned check is true while an HD image it drew is still on its way (owner 17/11/2026:
+ // the V26.5 statue copy drew native art, so lit statues lost their HD at dusk and night).
+ function side(sideContext){
+  const own=sideContext.drawImage.bind(sideContext),waiting=new Set(),always=()=>true;
+  sideContext.drawImage=function(image,...args){const source=image?.[ART_SOURCE];if(enabled&&density>1&&source&&art[source.file])waiting.add(JSON.stringify(source));return draw(own,image,args,always);};
+  return ()=>{for(const key of waiting)if(cache.has(key)||!pending.has(key))waiting.delete(key);return waiting.size>0;};
+ }
  function begin(scope=''){const rect=canvas.getBoundingClientRect?.(),key=[Math.round((rect?.left||0)/64),Math.round((rect?.top||0)/64),rect?.width,density,scope].join(':');if(key!==viewKey){budgetFallbacks.clear();viewKey=key;}context.setTransform?.(density,0,0,density,0,0);context.imageSmoothingEnabled=false;}
  begin();
  function setEnabled(value){enabled=value;density=enabled&&context.setTransform?surfaceDensity(world.width,world.height,pixelRatio??view.devicePixelRatio??1,mobile):1;canvas.width=Math.round(world.width*density);canvas.height=Math.round(world.height*density);if(canvas.dataset)canvas.dataset.pixelDensity=density;begin();}
- return {context,begin,setEnabled,layer,adopt,layerPending:()=>layerWaiting.size,stats:()=>({density,logical:[world.width,world.height],backing:[canvas.width,canvas.height],budget,bytes,peakBytes,requests,hits,pending:pending.size,active,queued:queue.length,failed:failed.size,budgetFallbacks:budgetFallbacks.size})};
+ return {context,begin,setEnabled,layer,adopt,side,layerPending:()=>layerWaiting.size,stats:()=>({density,logical:[world.width,world.height],backing:[canvas.width,canvas.height],budget,bytes,peakBytes,requests,hits,pending:pending.size,active,queued:queue.length,failed:failed.size,budgetFallbacks:budgetFallbacks.size})};
 }
 
 /** Pointer coordinates always resolve into the logical world, independently of backing density. */
