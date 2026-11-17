@@ -35,16 +35,16 @@ const clockText=ms=>{const d=new Date(ms+7*3600000);return `${String(d.getUTCHou
 export function moodTiles({species,entry,view,bondLevel=1,now=Date.now()}){
  const done=new Set(entry.done||[]),norbert=species===NORBERT,tiles=[];
  const tile=(kind,art,label,blocked)=>tiles.push({kind,art,label,state:blocked||'',enabled:!blocked});
- tile('play','star',TOYS[species]||'Chơi',done.has('play')&&'Xong lượt');
+ tile('play','star',TOYS[species]||'Chơi',done.has('play')&&'Đã xong');
  // Phase 2: the day's first play with Chó đuôi nĩa also cheers the other pen creatures (server garden-mood-core crupCheer).
- if(species==='crup'&&!done.has('play')&&view.crupCheered===false)tiles.at(-1).state='Cả chuồng +5';
- tile('groom','paw',groomLabel(species),done.has('groom')&&'Xong lượt');
- tile('train','book','Dạy trò',entry.lessons>=LESSONS*3?'Thuộc cả 3':entry.lessonToday?'Mai học tiếp':done.has('train')&&'Xong lượt');
+ if(species==='crup'&&!done.has('play')&&view.crupCheered===false)tiles.at(-1).state='Cả chuồng vui thêm 5';
+ tile('groom','paw',groomLabel(species),done.has('groom')&&'Đã xong');
+ tile('train','book','Dạy trò',entry.lessons>=LESSONS*3?'Đã thuộc 3 trò':entry.lessonToday?'Mai học tiếp':done.has('train')&&'Đã xong');
  if(!norbert){
   const roaming=entry.roamUntil&&entry.roamUntil>now;
-  tile('roam','map',entry.roamUntil&&!roaming?'Đón về':'Thả rông 1 giờ',roaming?'Còn '+duration(entry.roamUntil-now):!entry.roamUntil&&(done.has('roam')?'Xong lượt':view.roamsLeft<1&&'Hết lượt hôm nay'));
-  if(RIDERS.includes(species))tile('ride','floo','Cưỡi bay',bondLevel<5?'Gắn kết cấp 5':done.has('ride')&&'Xong lượt');
-  if(species==='niffler'&&view.winter)tile('reclaim','chest','Đòi đồ trang trí',done.has('reclaim')&&'Xong lượt');
+  tile('roam','map',entry.roamUntil&&!roaming?'Đón về':'Thả rông 1 giờ',roaming?'Còn '+duration(entry.roamUntil-now):!entry.roamUntil&&(done.has('roam')?'Đã xong':view.roamsLeft<1&&'Hết lượt hôm nay'));
+  if(RIDERS.includes(species))tile('ride','floo','Cưỡi bay',bondLevel<5?'Cần gắn bó cấp 5':done.has('ride')&&'Đã xong');
+  if(species==='niffler'&&view.winter)tile('reclaim','chest','Đòi lại đồ trang trí',done.has('reclaim')&&'Đã xong');
  }
  return tiles;
 }
@@ -84,8 +84,8 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
   const tricks=(TRICKS[species]||[]).map((n,i)=>row(n,Math.min(LESSONS,Math.max(0,(entry.lessons||0)-i*LESSONS)),LESSONS));
   const coats=norbert?[]:COAT_STEPS.map(([label,points])=>row(label,Math.min(entry.coat||0,points),points));
   body.replaceChildren(...[
-   section('Tâm trạng',`Lượt mới ${clockText(view.nextCycleAt)}`,el('div',{class:'mood-bar'},[mood,el('b',{text:String(entry.mood)})]),
-    happy&&!norbert?el('p',{class:'mood-note is-good',text:'Đang vui · +1 sản phẩm'}):null),
+   section('Tâm trạng',`Chăm lại lúc ${clockText(view.nextCycleAt)}`,el('div',{class:'mood-bar'},[mood,el('b',{text:String(entry.mood)})]),
+    happy&&!norbert?el('p',{class:'mood-note is-good',text:'Đang vui: thêm 1 sản vật mỗi lần nhận'}):null),
    // Season 2: this creature's skill block (garden-skills-card); its gold action sends action `skill`.
    norbert?null:skillCard({species,snap,now,use:async(sp,target)=>{const res=await useSkill(sp,target);const r=res?.ok&&res.receipt?.skill;if(r){notify(skillText(r));onSkill?.(r);render();}}}),
    section('Chăm sóc','',el('div',{class:'mood-acts'},moodTiles({species,entry,view,bondLevel:bondOf(species),now}).map(t=>{

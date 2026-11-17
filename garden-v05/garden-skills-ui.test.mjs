@@ -57,8 +57,8 @@ test('marks: a star on a ready skill with a target, Kneazle meal-done and sick-s
 });
 
 test('receipt and passive lines', () => {
-  assert.match(skillText({species: 'hippogriff', water: 10, left: 1}), /\+10 Nước · còn 1 lượt\.$/);
-  assert.match(skillText({species: 'mooncalf', plotIndex: 2, crops: 3, cutMs: 1_800_000, left: 0}), /tỉa thửa 3: 3 cây bớt 30 phút/);
+  assert.match(skillText({species: 'hippogriff', water: 10, left: 1}), /\+10 Nước · còn 1 lượt hôm nay\.$/);
+  assert.match(skillText({species: 'mooncalf', plotIndex: 2, crops: 3, cutMs: 1_800_000, left: 0}), /thửa 3: 3 cây chín sớm 30 phút/);
   assert.match(skillText({species: 'dragon', plotIndex: 0, gnome: true, left: 1}), /ma lùm chạy mất/);
   const day = creatures => ({skills: {dayKey: 'd', creatures}});
   const before = day([skill('crup', {passive: true, left: 3}), skill('kappa', {passive: true})]);

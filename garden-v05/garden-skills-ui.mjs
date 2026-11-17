@@ -54,7 +54,7 @@ export function sceneMarks(snap,now=Date.now()){
  return {pens,plots:new Map([...k.plots].map(i=>[i,'clock']))};
 }
 /** Passive skills that ran between two snapshots of the same day: [species, line]. */
-const PASSIVE_LINE=Object.freeze({diricawl:'tự gặt giúp một thửa chín',thestral:'dẫn một bé từ Rừng Cấm về',salamander:'giữ thửa khỏi lửa và sương giá','three-headed-dog':'đuổi một ma lùm',crup:'ăn một ma lùm',grindylow:'thả thêm một cá con'});
+const PASSIVE_LINE=Object.freeze({diricawl:'tự gặt giúp một thửa chín',thestral:'dẫn một bé từ Rừng Cấm về',salamander:'giữ thửa khỏi lửa và sương giá','three-headed-dog':'đuổi một ma lùm',crup:'ăn một ma lùm',grindylow:'thả thêm 1 cá chép con'});
 export function passiveRuns(before,after){
  if(!before?.skills||!after?.skills||before.skills.dayKey!==after.skills.dayKey)return [];
  return after.skills.creatures.filter(c=>c.passive&&PASSIVE_LINE[c.species]).flatMap(c=>{

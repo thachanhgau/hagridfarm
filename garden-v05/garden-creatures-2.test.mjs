@@ -75,7 +75,7 @@ test('Bờ hồ: the built pond and its beds stand inside the pond land, clear o
 test('Chó đuôi nĩa: «Chơi» says it cheers the pens until today\'s cheer is used', () => {
   const view = {roamsLeft: 2, crupCheered: false};
   const entry = {done: [], lessons: 0, roamUntil: null};
-  assert.equal(moodTiles({species: 'crup', entry, view}).find(t => t.kind === 'play').state, 'Cả chuồng +5');
+  assert.equal(moodTiles({species: 'crup', entry, view}).find(t => t.kind === 'play').state, 'Cả chuồng vui thêm 5');
   assert.equal(moodTiles({species: 'crup', entry, view: {...view, crupCheered: true}}).find(t => t.kind === 'play').state, '');
   assert.equal(moodTiles({species: 'puffskein', entry, view}).find(t => t.kind === 'play').state, '');
   assert.match(tendText({species: 'crup', kind: 'play', mood: 72, cheered: ['puffskein', 'niffler'], cheer: 5}, () => 'Chó đuôi nĩa'), /2 bạn trong chuồng vui thêm \+5/);
