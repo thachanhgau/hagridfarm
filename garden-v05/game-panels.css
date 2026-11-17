@@ -807,3 +807,5 @@
 #gameShell #creatureMood .mood-nav[hidden]{display:none}
 /* Same frame for every pet; only the info changes (owner 17/11/2026: «khung nên cố định, đổi info thôi»). */
 #gameShell #creatureMood{height:min(760px,calc(100dvh - 24px))}
+/* Building card: «Nhận» shows once the build is done, then the Suối thần shortcut goes (owner 17/11/2026). */
+#gameShell [data-ready-button].wait-hide:disabled,#gameShell .card:has(.wait-hide:not(:disabled)) [data-speed-button="spring"]{display:none}

@@ -29,6 +29,8 @@ export function createPanels(ctx){
   const n=ctx.getSupplies?.()?.[kind]||0;
   if(!getSession().connected||readyAt<=now()||(kind==="spring"&&getState().level<30&&n<1))return [];
   const [label,done]=kind==="boost"?["Nước phép","Đã tưới nước phép: nhanh hơn 1/4."]:["Suối thần","Nước suối thần: công trình xây xong ngay."];
+  // A building: one bottle finishes it now; «×130» read as its price (owner 17/11/2026: «khó hiểu ko biết nên làm gì»).
+  if(kind==="spring")return [button(n<1?"Hết Suối thần":"Xong ngay · 1 Suối thần",()=>run(null,done,command),{disabled:n<1,"data-speed-button":kind,class:"primary",title:`Dùng 1 Suối thần (còn ${num(n)}) để xây xong ngay`,"aria-label":`Xây xong ngay, dùng 1 Suối thần, còn ${num(n)}`})];
   return [button(label+" ×"+n,()=>run(null,done,command),{disabled:n<1,"data-speed-button":kind})];
  }
  // Thành tựu, Sổ tay, Lưu bút and Bưu thiếp are tabs of one Hồ sơ panel; their old names still open their tab.
@@ -229,12 +231,12 @@ export function createPanels(ctx){
    body.append(paragraph(s.plots.length+"/"+E.plotLimit(s)+" thửa · "+E.housingCapacity(s)+"/18 chỗ nuôi."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
    // the next locked build of each kind shows as "Chờ cấp N" so an empty panel never reads as broken
    for(const e of DB.expansions.filter(e=>e.level<=s.level||e===DB.expansions.find(x=>x.kind===e.kind&&x.level>s.level))){
-    const same=DB.expansions.filter(x=>x.kind===e.kind),at=same.indexOf(e),number=Number(e.id.split("_")[1]),title=e.label||(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=at<1||s.built.includes(same[at-1].id),locked=s.level<e.level,k=card(title,levelName(e.level)+" · "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
+    const same=DB.expansions.filter(x=>x.kind===e.kind),at=same.indexOf(e),number=Number(e.id.split("_")[1]),title=e.label||(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=at<1||s.built.includes(same[at-1].id),locked=s.level<e.level,k=card(title,levelName(e.level)+" · xây "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
     k.classList.toggle("locked",locked);
     if(!done&&!job)k.append(priceRow(s,e,wallet));
     k.append(paragraph(e.kind==="edge"?edgeStepText(at+1,same.length,e.galleons):(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi")));
     if(done)k.append(paragraph("Đã xây","ready-text"));
-    else if(job)k.append(timer(job.readyAt),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})),...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));
+    else if(job){const claim=readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"}));claim.classList.add("wait-hide");k.append(timer(job.readyAt,"Đang xây · còn "),claim,...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));}
     else k.append(paragraph(locked?"Chờ "+levelName(e.level):!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));
     g.append(k);
    }
