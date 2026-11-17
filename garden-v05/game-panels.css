@@ -760,3 +760,10 @@
 #gameShell :is(#panel,.store-popover).is-list .store-card .store-meta-row .meta{white-space:nowrap}
 #gameShell :is(#panel,.store-popover).is-list .store-card .store-action-row{grid-area:act;flex-wrap:nowrap;justify-content:space-between;margin-top:4px;padding-top:0}
 @media(max-width:480px){#gameShell #panel .creature-bar{flex-wrap:wrap;gap:4px}#gameShell #panel .creature-seg{flex-basis:100%}}
+/* «Chăm bé» ‹ › in the header: switch creature without closing (17/11/2026). */
+#gameShell #creatureMood .mood-head{gap:6px}
+#gameShell #creatureMood .mood-head h2{font-size:18px}
+#gameShell #creatureMood .mood-head .mood-nav,#gameShell #creatureMood .mood-head .mood-nav:active:not(:disabled){flex:none;width:32px;min-width:32px;height:44px;min-height:44px;padding:0;border:0;background:#24483F;box-shadow:none;transform:none}
+#gameShell #creatureMood .mood-nav.is-prev img{transform:rotate(90deg)}
+#gameShell #creatureMood .mood-nav.is-next img{transform:rotate(-90deg)}
+#gameShell #creatureMood .mood-nav[hidden]{display:none}

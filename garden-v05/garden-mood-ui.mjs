@@ -60,9 +60,14 @@ export function tendText(tend,labelOf){
 export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,bondOf,onTended,onSkill}){
  // One frame: header (portrait · name over skill · rank · close), then blocks Tâm trạng · Kỹ năng · Chăm sóc · Trò · Màu hiếm.
  const body=el('div',{class:'mood-care-body'});
+ // ‹ › walk through every creature in the tray's order without closing (owner 17/11/2026).
+ const order=()=>{const snap=getSnapshot(),have=snap?.mood?.creatures||{},list=(snap?.garden?.progression?.creatures||[]).map(c=>c.species).filter(sp=>have[sp]);
+  for(const sp of Object.keys(have))if(!list.includes(sp))list.push(sp);return list;};
+ const step=d=>{const l=order(),i=l.indexOf(species);if(l.length<2)return;species=l[(i+d+l.length)%l.length];render();};
+ const prev=iconButton('chevron','Bé trước',()=>step(-1),{class:'mood-nav is-prev'}),next=iconButton('chevron','Bé sau',()=>step(1),{class:'mood-nav is-next'});
  const title=el('h2',{id:'creatureMoodTitle',text:'Chăm bé'}),sub=el('small',{class:'mood-sub'}),face=el('span',{class:'mood-portrait'});
  const dialog=el('dialog',{id:'creatureMood',class:'owl-letter mood-care','aria-labelledby':'creatureMoodTitle'},[
-  el('div',{class:'popover-heading mood-head'},[face,el('div',{class:'mood-head-copy'},[title,sub]),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
+  el('div',{class:'popover-heading mood-head'},[prev,face,el('div',{class:'mood-head-copy'},[title,sub]),next,iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
   body,
  ]);
  ($('gameShell')||document.body).append(dialog);
@@ -74,6 +79,7 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
   const snap=getSnapshot(),view=snap?.mood,entry=view?.creatures?.[species];
   if(!entry){face.replaceChildren();sub.textContent='';body.replaceChildren(el('p',{class:'meta mood-wide',text:view?'Chưa có bé này trong vườn.':'Cần kết nối tài khoản.'}));return;}
   const now=Date.now(),norbert=species===NORBERT,happy=entry.mood>=view.happy;
+  prev.hidden=next.hidden=order().length<2;
   title.textContent=labelOf(species);
   sub.textContent=norbert?'':skillTitle(skillOf(snap,species));
   face.replaceChildren(norbert?el('img',{src:'environment/elves/norbert/idle.png',width:40,height:40,alt:'',style:'image-rendering:pixelated'}):icon(items,species,3,40));
