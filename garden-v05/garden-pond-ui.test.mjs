@@ -137,18 +137,26 @@ test('art contract: scenery sizes, guarded scene files and pixel icon fallbacks'
 });
 
 const O=await import('./garden-orchard-ui.mjs');
-test('orchard hotbar hides irrelevant seed picking and keeps explicit cancel and two-step cutting',()=>{
- const dock=new FakeElement('section'),sent=[],ui=O.createOrchardDock({dock,act:cmd=>sent.push(cmd)});
- const orchard={trees:Array.from({length:6},(_,i)=>({kind:['apple','pear','plum'][i%3],readyAt:NOW+H})),saplings:{apple:2}};
- ui.render({orchard,now:NOW});assert.equal(byClass(dock,'pond-pick').length,0);
- assert.equal(byId(dock,'orchardHarvest').disabled,true);
- byClass(dock,'pond-lot')[0].click();assert.equal(sent.length,0);
- const cancel=byClass(dock,'pond-action').find(b=>b.getAttribute('aria-label')==='Hủy chặt cây');assert.ok(cancel);cancel.click();
- assert.equal(byClass(dock,'is-confirm').length,0);assert.equal(sent.length,0);
- byClass(dock,'pond-lot')[0].click();byClass(dock,'is-confirm')[0].click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'fell',spot:0});
+test('orchard dock: a tree header with Chặt (two taps) and «Hái» waiting, an empty pit plants the chosen sapling',()=>{
+ const dock=new FakeElement('section'),sent=[],bought=[],ui=O.createOrchardDock({dock,act:cmd=>sent.push(cmd),onBuy:()=>bought.push(1)});
+ const tray=()=>byClass(dock,'orchard-tray')[0].children,tool=()=>byClass(dock,'orchard-tool')[0];
+ const orchard={fruitPerTree:4,treeMs:72*H,trees:Array.from({length:6},(_,i)=>({kind:['apple','pear','plum'][i%3],readyAt:NOW+(i+1)*H})),saplings:{apple:2,pear:0,plum:0}};
+ ui.render({orchard,now:NOW,inventory:{apple:7}});
+ assert.equal(byId(dock,'orchardHarvest').disabled,true);assert.equal(byClass(dock,'orchard-pick').length,0);
+ assert.equal(tray().length,6);assert.equal(tray()[0].getAttribute('aria-pressed'),'true');
+ assert.match(byId(dock,'orchardHarvest').getAttribute('aria-label'),/chín sau 1g/);
+ assert.equal(byClass(dock,'seed-caption')[0].children[0].textContent,'Cây táo');
+ tray()[1].click();assert.equal(byClass(dock,'seed-caption')[0].children[0].textContent,'Cây lê');
+ tool().click();assert.equal(sent.length,0);assert.ok(tool()._classes.has('is-confirm'));
+ tray()[0].click();assert.ok(!tool()._classes.has('is-confirm'),'another pick cancels Chặt');
+ tool().click();tool().click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'fell',spot:0});
  ui.render({orchard:{...orchard,trees:[null,...orchard.trees.slice(1)]},now:NOW});
- assert.equal(byClass(dock,'pond-pick').length,1);byClass(dock,'pond-lot')[0].click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'plant',spot:0,sapling:'apple'});
- ui.render({orchard:{...orchard,trees:orchard.trees.map(t=>({...t,ripe:true}))},now:NOW});byId(dock,'orchardHarvest').click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'harvest'});
+ assert.equal(byClass(dock,'orchard-pick')[0].children.length,3);
+ byId(dock,'orchardHarvest').click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'plant',spot:0,sapling:'apple'});
+ byClass(dock,'orchard-pick')[0].children[1].click();byId(dock,'orchardHarvest').click();assert.equal(bought.length,1,'no pear sapling: the primary opens the store');
+ ui.render({orchard:{...orchard,trees:orchard.trees.map(t=>({...t,ripe:true}))},now:NOW});
+ assert.equal(byId(dock,'orchardHarvest').getAttribute('aria-label'),'Hái ×6');
+ byId(dock,'orchardHarvest').click();assert.deepEqual(sent.pop(),{action:'orchard',kind:'harvest'});
 });
 
 test('Forbidden Lake is larger, stays on shore land, and clears beds, nook and its approach', async()=>{

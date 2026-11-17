@@ -848,7 +848,7 @@ function edgeTodo(){return !activeTourSnapshot&&connected&&walletReady?edgeProgr
 $('orchardTool').onclick=()=>{const todo=edgeTodo();if(!todo)return setMode('orchard');workTrays?.selectBuild(todo.next);setMode('build');};
 function syncOrchard(){if(!orchardDock)return;const orchard=currentOrchard(),todo=edgeTodo();$('orchardTool').hidden=!orchard&&!todo;if(!orchard){$('orchardReady').hidden=!todo;$('orchardReady').textContent=todo?.text||'';if(mode==='orchard')setMode('plant');return;}
  const now=Date.now()+serverOffset,ripe=orchardRipeCount(orchard,now);$('orchardReady').hidden=!ripe;$('orchardReady').textContent=ripe;
- if(mode==='orchard')orchardDock.render({orchard,now});}
+ if(mode==='orchard')orchardDock.render({orchard,now,inventory:state.inventory});}
 // Native touch/trackpad scrolling; a mouse wheel moves only this overflowing tray.
 for(const tray of document.querySelectorAll('.item-tray'))tray.addEventListener('wheel',event=>{
  const tray=event.currentTarget;if(event.ctrlKey||event.shiftKey||Math.abs(event.deltaX)>=Math.abs(event.deltaY)||tray.scrollWidth<=tray.clientWidth)return;
