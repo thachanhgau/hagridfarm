@@ -34,7 +34,7 @@ test('tired plots and seed tags come from snapshot.soil; data-only labels', () =
  assert.equal(seedTiredTag(soil,0,'lettuce'),'');
  assert.equal(seedTiredTag(soil,1,'knotgrass'),'');
  assert.equal(seedTiredTag(null,0,'knotgrass'),'');
- assert.equal(seedTiredTag([{tired:0.5,seeds:{mint:0.5}}],0,'mint'),'−50%');
+ assert.equal(seedTiredTag([{tired:0.5,seeds:{mint:0.5}}],0,'mint'),'Thu −50%');
  assert.equal(tiredLabel(0.75),'Đất mệt · 75%');
 });
 
