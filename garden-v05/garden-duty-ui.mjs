@@ -3,7 +3,7 @@
 // out of each (action duty: clear, gnome, treat, lure, leave). mobile-game imports it on the first chip tap.
 import {CREATURE} from './balance-data.mjs?v=26.6';
 import {witherCanvas} from './garden-duty-art.mjs?v=26.6';
-import {$,el,visualItemIcon} from './ui-utils.mjs?v=26.6';
+import {$,el,visualItemIcon,closeOnBackdrop} from './ui-utils.mjs?v=26.6';
 import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.6';
 
 const HOUR=3600000;
@@ -53,7 +53,7 @@ export function createDutyPanel({getSnapshot,act,notify,labelOf}){
   body,
  ]);
  ($('gameShell')||document.body).append(dialog);
- dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+ closeOnBackdrop(dialog);
  const run=async(command,text)=>{const res=await act({action:'duty',...command});if(res?.ok){notify(text(res.receipt?.duty||{},res));render();}};
  const tile=(art,label,state,onClick)=>{const b=el('button',{type:'button',class:'mood-tile duty-tile',disabled:!onClick,'aria-label':label+(state?' · '+state:'')},[typeof art==='string'?pixelIcon(art,2):art,el('b',{text:label}),state?el('small',{text:state}):null]);if(onClick)b.onclick=onClick;return b;};
 

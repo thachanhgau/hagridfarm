@@ -1,7 +1,7 @@
 // Level-500 roadmap P5 (§11): «Việc của bác Hagrid» — Đơn hàng (snapshot.orders, action deliverOrder),
 // Thông thạo cây (snapshot.mastery) and Cúp Nhà (snapshot.houseCup). Only with a wallet: the server
 // draws the orders, counts the mastery and the cup; this panel shows them.
-import {$,el,num,cropVisualKind,visualItemIcon,FEED_CREATURE_MAP} from './ui-utils.mjs?v=26.6';
+import {$,el,num,cropVisualKind,visualItemIcon,FEED_CREATURE_MAP,closeOnBackdrop} from './ui-utils.mjs?v=26.6';
 import {pixelIcon,iconButton} from './pixel-icons.mjs?v=26.6';
 import {CROP,CREATURE} from './balance-data.mjs?v=26.6';
 
@@ -24,7 +24,7 @@ export function createHagridWork({getSnapshot,deliver,challenge,setFrame,items,n
   tabs,body,
  ]);
  ($('gameShell')||document.body).append(dialog);
- dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+ closeOnBackdrop(dialog);
 
  function orders(snap){
   const view=snap.orders,inv=snap.garden?.progression?.inventory||{},level=snap.garden?.progression?.level||1;

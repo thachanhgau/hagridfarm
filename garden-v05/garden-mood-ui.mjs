@@ -1,10 +1,10 @@
 // «Đàn thú: tâm trạng và tương tác» (25.0 S4, server garden-mood-core): one creature's mood and this cycle's
 // interactions (action tendCreature), its tricks and its rare-coat grooming. The server keeps every number; this
 // panel only shows snapshot.mood. mobile-game imports it on the first «Chăm bé» tap or a tap on Norbert.
-import {$,el,icon,duration} from './ui-utils.mjs?v=26.6';
+import {$,el,icon,duration,closeOnBackdrop} from './ui-utils.mjs?v=26.6';
 import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.6';
 import {COAT_STEPS} from './garden-winter.mjs?v=26.6';
-import {skillCard,skillText,line} from './garden-skills-card.mjs?v=26.6';
+import {skillCard,skillText,skillTitle,section} from './garden-skills-card.mjs?v=26.6';
 import {skillOf} from './garden-skills-ui.mjs?v=26.6';
 
 export const NORBERT='norbert';
@@ -59,15 +59,15 @@ export function tendText(tend,labelOf){
 }
 
 export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,bondOf,onTended,onSkill}){
- // One frame: header (portrait · name over its skill · close), then a single 3-column grid of rows.
- const body=el('div',{class:'mood-care-body mood-grid'});
+ // One frame: header (portrait · name over skill · rank · close), then blocks Tâm trạng · Kỹ năng · Chăm sóc · Trò · Bộ lông.
+ const body=el('div',{class:'mood-care-body'});
  const title=el('h2',{id:'creatureMoodTitle',text:'Chăm bé'}),sub=el('small',{class:'mood-sub'}),face=el('span',{class:'mood-portrait'});
  const dialog=el('dialog',{id:'creatureMood',class:'owl-letter mood-care','aria-labelledby':'creatureMoodTitle'},[
   el('div',{class:'popover-heading mood-head'},[face,el('div',{class:'mood-head-copy'},[title,sub]),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
   body,
  ]);
  ($('gameShell')||document.body).append(dialog);
- dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+ closeOnBackdrop(dialog);
  let species=null,timer=0;
  const meter=(value,max,cls='')=>el('div',{class:'gp-meter mood-meter'+cls},[el('span',{style:`width:${Math.round(value/max*100)}%`})]);
 
@@ -76,26 +76,27 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
   if(!entry){face.replaceChildren();sub.textContent='';body.replaceChildren(el('p',{class:'meta mood-wide',text:view?'Chưa có bé này trong vườn.':'Cần kết nối tài khoản.'}));return;}
   const now=Date.now(),norbert=species===NORBERT,happy=entry.mood>=view.happy;
   title.textContent=labelOf(species);
-  sub.textContent=norbert?'':skillOf(snap,species)?.name||'';
+  sub.textContent=norbert?'':skillTitle(skillOf(snap,species));
   face.replaceChildren(norbert?el('img',{src:'environment/elves/norbert/idle.png',width:40,height:40,alt:'',style:'image-rendering:pixelated'}):icon(items,species,3,40));
   const mood=meter(entry.mood,100,happy?' is-happy':entry.mood<40?' is-low':'');
   Object.entries({role:'progressbar','aria-valuemin':'0','aria-valuemax':'100','aria-valuenow':String(entry.mood),'aria-label':'Tâm trạng'}).forEach(([k,v])=>mood.setAttribute(k,v));
-  // A trick is learned after LESSONS lessons, in order; a coat step fills from the same coat points.
-  const tricks=(TRICKS[species]||[]).map((n,i)=>{const got=Math.min(LESSONS,Math.max(0,(entry.lessons||0)-i*LESSONS));return line(n,meter(got,LESSONS,' is-happy'),`${got}/${LESSONS}`,got>=LESSONS?'is-done':'');});
-  const coats=norbert?[]:COAT_STEPS.map(([label,points])=>{const got=Math.min(entry.coat||0,points);return line(label,meter(got,points,' is-happy'),`${got}/${points}`,got>=points?'is-done':'');});
+  // name · thin bar · n/m, the same row for tricks (LESSONS lessons each, in order) and coat steps (coat points).
+  const row=(name,got,max)=>el('div',{class:'mood-row'+(got>=max?' is-done':'')},[el('span',{text:name}),meter(got,max,' is-happy'),el('b',{text:`${got}/${max}`})]);
+  const tricks=(TRICKS[species]||[]).map((n,i)=>row(n,Math.min(LESSONS,Math.max(0,(entry.lessons||0)-i*LESSONS)),LESSONS));
+  const coats=norbert?[]:COAT_STEPS.map(([label,points])=>row(label,Math.min(entry.coat||0,points),points));
   body.replaceChildren(...[
-   line('Tâm trạng',mood,String(entry.mood)),
-   line('Lượt mới','',clockText(view.nextCycleAt)),
-   happy&&!norbert?line('Đang vui','+1 sản phẩm','','is-good'):null,
-   // Season 2: this creature's skill rows (garden-skills-card); its gold action sends action `skill`.
-   ...(norbert?[]:skillCard({species,snap,now,use:async(sp,target)=>{const res=await useSkill(sp,target);const r=res?.ok&&res.receipt?.skill;if(r){notify(skillText(r));onSkill?.(r);render();}}})||[]),
-   el('div',{class:'mood-acts'},moodTiles({species,entry,view,bondLevel:bondOf(species),now}).map(t=>{
-    const b=el('button',{type:'button',class:'mood-act','data-kind':t.kind,disabled:!t.enabled,'aria-label':t.label+(t.state?' · '+t.state:'')},[pixelIcon(t.art,2),el('b',{text:t.label}),t.state?el('small',{text:t.state}):null]);
+   section('Tâm trạng',`Lượt mới ${clockText(view.nextCycleAt)}`,el('div',{class:'mood-bar'},[mood,el('b',{text:String(entry.mood)})]),
+    happy&&!norbert?el('p',{class:'mood-note is-good',text:'Đang vui · +1 sản phẩm'}):null),
+   // Season 2: this creature's skill block (garden-skills-card); its gold action sends action `skill`.
+   norbert?null:skillCard({species,snap,now,use:async(sp,target)=>{const res=await useSkill(sp,target);const r=res?.ok&&res.receipt?.skill;if(r){notify(skillText(r));onSkill?.(r);render();}}}),
+   section('Chăm sóc','',el('div',{class:'mood-acts'},moodTiles({species,entry,view,bondLevel:bondOf(species),now}).map(t=>{
+    const b=el('button',{type:'button',class:'mood-act','data-kind':t.kind,disabled:!t.enabled,'aria-label':t.label+(t.state?' · '+t.state:'')},
+     [pixelIcon(t.art,2),el('span',{},[el('b',{text:t.label}),t.state?el('small',{text:t.state}):null])]);
     b.onclick=async()=>{const res=await tend(species,t.kind);if(res?.ok){const r=res.receipt?.tend;if(r)notify(tendText(r,labelOf));onTended?.(r);render();}};
     return b;
-   })),
-   line('Trò','',`${entry.lessons||0}/${LESSONS*3} bài`,'mood-sec mood-gap'),...tricks,
-   ...(coats.length?[line('Bộ lông','','','mood-sec mood-gap'),...coats]:[]),
+   }))),
+   section('Trò',`${entry.lessons||0}/${LESSONS*3} bài`,el('div',{class:'mood-rows'},tricks)),
+   coats.length?section('Bộ lông','',el('div',{class:'mood-rows'},coats)):null,
   ].filter(Boolean));
   clearTimeout(timer);
   if(dialog.open&&entry.roamUntil&&entry.roamUntil>now)timer=setTimeout(render,Math.min(60000,entry.roamUntil-now+500));

@@ -480,39 +480,63 @@
 #gameShell :is(#creatureMood,#dutyPanel) .mood-row>small{min-width:92px;color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
 #gameShell :is(#creatureMood,#dutyPanel) .mood-chip{padding:2px 6px;border:2px solid #231F2E;background:#142620;color:#A6B1AE;font:700 11px/1.2 var(--gp-body)}
 #gameShell :is(#creatureMood,#dutyPanel) .mood-chip.is-on{background:#71934B;color:#F5D69A}
-/* «Chăm bé» rebuilt 17/11/2026: header portrait · name over skill · close; one 3-column grid (label · text or meter ·
-   number) for mood, skill, tricks and coats; full-width action rows (icon · label · state); the skill's target picker
-   sits right above its gold action. Selectors stay inside #creatureMood (#dutyPanel keeps the tile rules above). */
-#gameShell #creatureMood .mood-head{justify-content:flex-start;gap:12px;margin-bottom:8px}
+/* «Chăm bé» redone 17/11/2026 (owner: «gọn gàng, phân cấp rõ ràng»): header portrait · name over skill · rank · close;
+   then blocks split by a rule, each a small-caps name with its figure on the right. Kỹ năng: effect text, a note, then
+   one row ‹ target › + gold «Nhờ bé». Chăm sóc: 2-column flat cells. Trò / Bộ lông: name · thin bar · n/m.
+   Selectors stay inside #creatureMood (#dutyPanel keeps the tile rules above). */
+#gameShell #creatureMood .mood-head{justify-content:flex-start;gap:12px;margin-bottom:12px}
 #gameShell #creatureMood .mood-portrait{display:grid;place-items:center;flex:none;width:40px;height:40px}
 #gameShell #creatureMood .mood-head-copy{display:grid;flex:1;min-width:0}
 #gameShell #creatureMood .mood-head h2{display:block;max-width:none;padding:0;border:0;background:none;box-shadow:none;clip-path:none;font:900 20px/24px var(--gp-display)}
-#gameShell #creatureMood .mood-sub{color:#A6B1AE;font:700 12px/16px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gameShell #creatureMood .mood-sub{color:#B0BD67;font:700 12px/16px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #gameShell #creatureMood .mood-sub:empty{display:none}
-#gameShell #creatureMood .mood-grid{display:grid;grid-template-columns:max-content minmax(0,1fr) max-content;align-items:center;gap:4px 12px}
-#gameShell #creatureMood .mood-line{display:contents}
-#gameShell #creatureMood .mood-k{color:#A6B1AE;font:700 13px/16px var(--gp-body);white-space:nowrap}
-#gameShell #creatureMood .mood-v{min-width:0;color:#E8F0ED;font:600 13px/16px var(--gp-body)}
-#gameShell #creatureMood .mood-v.is-wide{grid-column:2/-1}
-#gameShell #creatureMood .mood-n{justify-self:end;color:#F5D69A;font:900 14px/16px var(--gp-display);white-space:nowrap}
-#gameShell #creatureMood .mood-gap>*{margin-top:8px}
-#gameShell #creatureMood .mood-sec>.mood-k{color:#D6D8BF;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
-#gameShell #creatureMood :is(.is-done,.is-good)>:is(.mood-k,.mood-v){color:#F5D69A}
-#gameShell #creatureMood .is-good>.mood-v{color:#B0BD67}
-#gameShell #creatureMood .is-warn>.mood-v{color:#E7AE73}
-#gameShell #creatureMood .is-muted>.mood-v{color:#A6B1AE}
+#gameShell #creatureMood .mood-care-body{display:grid;gap:12px}
+#gameShell #creatureMood .mood-sec{display:grid;gap:8px;min-width:0}
+#gameShell #creatureMood .mood-sec+.mood-sec{padding-top:12px;border-top:2px solid #1B3530}
+#gameShell #creatureMood .mood-sec>header{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+#gameShell #creatureMood .mood-sec h3{margin:0;padding:0;border:0;background:none;color:#A6B1AE;font:800 12px/16px var(--gp-body);text-transform:uppercase;letter-spacing:.08em}
+#gameShell #creatureMood .mood-sec>header>b{color:#F5D69A;font:800 12px/16px var(--gp-body);font-variant-numeric:tabular-nums;white-space:nowrap}
+#gameShell #creatureMood .mood-text{margin:0;color:#E8F0ED;font:600 14px/20px var(--gp-body)}
+#gameShell #creatureMood .mood-note{margin:0;color:#A6B1AE;font:600 12px/16px var(--gp-body)}
+#gameShell #creatureMood .mood-note.is-warn{color:#E7AE73}
+#gameShell #creatureMood .mood-note.is-good{color:#B0BD67}
+#gameShell #creatureMood .mood-bar{display:grid;grid-template-columns:minmax(0,1fr) 32px;align-items:center;gap:12px}
+#gameShell #creatureMood .mood-bar>b{justify-self:end;color:#F5D69A;font:900 16px/20px var(--gp-display);font-variant-numeric:tabular-nums}
 #gameShell #creatureMood .mood-meter{height:12px}
-#gameShell #creatureMood .mood-wide{grid-column:1/-1;display:grid;gap:8px;margin-top:4px}
-#gameShell #creatureMood .mood-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:4px}
-#gameShell #creatureMood .mood-pick button{min-width:0;min-height:36px;padding:0 4px;background:#142620;box-shadow:inset 0 0 0 2px #24483F;color:#D6D8BF;font:700 12px/16px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#gameShell #creatureMood .mood-pick button[aria-pressed=true]:not(.gp-tab):not(.v24-event-choice){background:#142620;box-shadow:inset 0 0 0 2px #FFC36B;color:#F5D69A;transform:none}
-#gameShell #creatureMood .mood-acts{grid-column:1/-1;display:grid;gap:4px;margin-top:8px}
-#gameShell #creatureMood .mood-act{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:8px;width:100%;padding:4px 12px 4px 8px;text-align:left}
-#gameShell #creatureMood .mood-act b{min-width:0;font:800 13px/20px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#gameShell #creatureMood .mood-act small{color:inherit;font:700 12px/16px var(--gp-body);white-space:nowrap;opacity:.85}
-#gameShell #creatureMood .mood-act:disabled{background:#142620;box-shadow:inset 0 0 0 2px #24483F;color:#A6B1AE}
-#gameShell #creatureMood .skill-icon{width:32px;height:32px;background:url(runtime-webp/native-items/skills-s2.webp) 0 0/192px 96px;image-rendering:pixelated}
-#gameShell #creatureMood .mood-act:disabled .skill-icon{filter:grayscale(1);opacity:.6}
+#gameShell #creatureMood .mood-meter>span{background:#C97952;box-shadow:inset 0 2px #E7AE73}
+#gameShell #creatureMood .mood-meter.is-happy>span{background:#71934B;box-shadow:inset 0 2px #B0BD67}
+#gameShell #creatureMood .mood-meter.is-low>span{background:#874056;box-shadow:inset 0 2px #C75B4B}
+#gameShell #creatureMood .mood-rows .mood-meter{height:8px;border-width:1px}
+#gameShell #creatureMood .mood-rows .mood-meter>span{box-shadow:none}
+/* Skill action row: stepper and gold button share the width; one target = the button alone, full width. */
+#gameShell #creatureMood .mood-skill-go{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:4px}
+#gameShell #creatureMood .mood-step{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:center;min-height:44px;background:#142620}
+#gameShell #creatureMood .mood-step button,#gameShell #creatureMood .mood-step button:active:not(:disabled){display:grid;place-items:center;width:40px;min-width:0;min-height:44px;padding:0;border:0;background:transparent;box-shadow:none;transform:none}
+#gameShell #creatureMood .mood-step .is-prev img{transform:rotate(90deg)}
+#gameShell #creatureMood .mood-step .is-next img{transform:rotate(-90deg)}
+#gameShell #creatureMood .mood-step-v{display:grid;justify-items:center;min-width:0;text-align:center}
+#gameShell #creatureMood .mood-step-v b{max-width:100%;color:#F5D69A;font:800 14px/18px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gameShell #creatureMood .mood-step-v small{color:#A6B1AE;font:700 11px/14px var(--gp-body);font-variant-numeric:tabular-nums}
+#gameShell #creatureMood .mood-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-width:0;padding:4px 12px}
+#gameShell #creatureMood .mood-cta>span:last-child{min-width:0;font:800 14px/20px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gameShell #creatureMood .skill-icon{flex:none;width:32px;height:32px;background:url(runtime-webp/native-items/skills-s2.webp) 0 0/192px 96px;image-rendering:pixelated}
+#gameShell #creatureMood .mood-cta:disabled .skill-icon{filter:grayscale(1);opacity:.6}
+/* Care: flat cells, separated by fill and gap (no border on each). */
+#gameShell #creatureMood .mood-acts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#gameShell #creatureMood .mood-act{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;gap:8px;width:100%;min-width:0;min-height:52px;padding:6px 8px;border:0;background:#3F6A45;box-shadow:0 3px #142620;color:#F5D69A;text-align:left}
+#gameShell #creatureMood .mood-act:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px #142620}
+#gameShell #creatureMood .mood-act:disabled{background:#1B3530;box-shadow:none;color:#A6B1AE}
+#gameShell #creatureMood .mood-act>span{display:grid;min-width:0}
+#gameShell #creatureMood .mood-act b{font:800 13px/16px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gameShell #creatureMood .mood-act small{color:#B0BD67;font:700 12px/16px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gameShell #creatureMood .mood-act:disabled small{color:#A6B1AE}
+/* Tricks and coats: name · bar · n/m, one aligned grid per block. */
+#gameShell #creatureMood .mood-rows{display:grid;grid-template-columns:minmax(0,1fr) 88px 40px;align-items:center;gap:8px 12px}
+#gameShell #creatureMood .mood-row{display:contents}
+#gameShell #creatureMood .mood-row>span{min-width:0;color:#E8F0ED;font:600 13px/20px var(--gp-body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gameShell #creatureMood .mood-row>b{justify-self:end;color:#A6B1AE;font:800 12px/16px var(--gp-body);font-variant-numeric:tabular-nums}
+#gameShell #creatureMood .mood-row.is-done>span{color:#F5D69A}
+#gameShell #creatureMood .mood-row.is-done>b{color:#B0BD67}
 /* «Bậc trách nhiệm» (25.0 S5): the chip with the nearest clock and the panel (garden-duty-ui.mjs). */
 /* Left, under the level ring: on the right it covered the second icon row (phone), the top row (1280) and Thửa đất (820). */
 /* The duty chip and (level 200+) the weather chip share one row (level-160 challenges F), under the next-goal card

@@ -1,6 +1,7 @@
 // Season 2 «Tài năng sinh vật» (26.0): the skill rows inside «Chăm bé» and the receipt line. garden-mood-ui imports it,
 // so it loads on the first «Chăm bé» tap; the startup part (marks, passive lines) is garden-skills-ui.
 import {el,button} from './ui-utils.mjs?v=26.6';
+import {pixelIcon} from './pixel-icons.mjs?v=26.6';
 import * as E from './progression-engine.mjs?v=26.6';
 import {skillOf,isReady,skillTargets,kneazleMarks} from './garden-skills-ui.mjs?v=26.6';
 
@@ -30,44 +31,48 @@ export function todoLines(snap,now=Date.now()){
  return [...[...k.plots].map(i=>`Thửa ${i+1} sắp héo`),...[...k.meals].map(sp=>`${label(sp)} xong bữa`),...[...k.sick].map(sp=>`${label(sp)} sắp ốm`)];
 }
 
-/** One row of the «Chăm bé» grid (label · text or meter · number); without a number the text spans to the right edge. */
-export const line=(label,mid,value='',cls='')=>el('div',{class:('mood-line '+cls).trim()},[
- el('span',{class:'mood-k',text:label}),
- mid&&typeof mid==='object'?mid:el('span',{class:'mood-v'+(value?'':' is-wide'),text:mid||''}),
- value?el('b',{class:'mood-n',text:value}):null,
-]);
+/** A block of «Chăm bé»: small-caps name with an optional figure on the right, then its content. */
+export const section=(name,meta,...kids)=>el('section',{class:'mood-sec'},[
+ el('header',{},[el('h3',{text:name}),meta?el('b',{text:meta}):null]),...kids.flat().filter(Boolean)]);
+const note=(text,cls='')=>el('p',{class:('mood-note '+cls).trim(),text});
+/** Header line under the creature's name: skill name · rank. */
+export const skillTitle=s=>s?[s.name,s.rank?'Bậc '+RANK[Math.min(s.rank,3)]:''].filter(Boolean).join(' · '):'';
 const picked={}; // species → the target last chosen, kept across re-renders
 
-/** The skill rows inside «Chăm bé»: rank and uses, what it gives, what blocks or comes next, then its target
- *  picker and one gold action. `use(species,target)` sends action `skill`. */
+/** The «Kỹ năng» block inside «Chăm bé»: uses left, what it gives, what blocks or comes next, then one row with the
+ *  target stepper (‹ Thửa 18 ›, any number of targets) and the gold action. `use(species,target)` sends action `skill`. */
 export function skillCard({species,snap,use,now=Date.now()}){
  const s=skillOf(snap,species);if(!s)return null;
  const what=WHAT[species]||['',''],r=Math.min(s.rank,3);
- const count=s.passive?(s.cap?`${s.left}/${s.cap} hôm nay`:'Luôn bật'):`Còn ${s.left}/${s.cap} lượt`;
- const rows=[line('Bậc',RANK[r],r?count:'','mood-gap'),line('Tác dụng',what[0]+(r>=2?' · '+what[1]:''))];
- if(s.blocked&&s.blocked!=='locked')rows.push(line('Lúc này',WHY[s.blocked]||s.blocked,'','is-warn'));
- else{const next=(s.blocked?NEXT[0]:NEXT[r]).split(': ');if(next[1])rows.push(line(next[0],next[1],'',s.blocked?'is-warn':'is-muted'));}
+ const count=!r?'':s.passive?(s.cap?`${s.left}/${s.cap} hôm nay`:'Luôn bật'):`Còn ${s.left}/${s.cap} lượt`;
+ const kids=[el('p',{class:'mood-text',text:what[0]+(r>=2?' · '+what[1]:'')})];
+ if(s.blocked&&s.blocked!=='locked')kids.push(note(WHY[s.blocked]||s.blocked,'is-warn'));
+ else{const next=s.blocked?NEXT[0]:NEXT[r];if(next)kids.push(note(next.replace(': ',' cần '),s.blocked?'is-warn':''));}
  const todo=species==='kneazle'?todoLines(snap,now):[];
- if(todo.length)rows.push(line('Việc cần',todo.join(' · ')));
+ if(todo.length)kids.push(note(todo.join(' · ')));
  if(isReady(s)){
   const targets=skillTargets(species,snap,now),night=vnHour(now)>=18||vnHour(now)<6;
-  const go=(text,fn)=>{const b=button('',fn,{class:'mood-act mood-cta'+(fn?' primary':''),disabled:!fn});b.append(skillIcon(species),el('b',{text}));return b;};
-  let act;
-  if(species==='mooncalf'&&!night)act=[go('Chỉ ra vườn 18:00–06:00')];
-  else if(targets===null)act=[go('Nhờ bé',()=>use(species))];
-  else if(!targets.length)act=[go(species==='unicorn'?'Không có bé ốm':'Chưa có thửa hợp')];
+  const go=(text,fn)=>{const b=button('',fn,{class:'mood-cta'+(fn?' primary':''),disabled:!fn});b.append(skillIcon(species),el('span',{text}));return b;};
+  if(species==='mooncalf'&&!night)kids.push(go('Chỉ ra vườn 18:00–06:00'));
+  else if(targets===null)kids.push(go('Nhờ bé',()=>use(species)));
+  else if(!targets.length)kids.push(go(species==='unicorn'?'Không có bé ốm':'Chưa có thửa hợp'));
   else{
-   const list=targets.slice(0,12),name=x=>typeof x==='number'?`Thửa ${x+1}`:label(x);
-   let pick=list.includes(picked[species])?picked[species]:list[0];
-   const cta=go('',()=>use(species,pick)),say=()=>{cta.querySelector('b').textContent=`Nhờ bé · ${name(pick)}`;};
-   const chips=list.length<2?null:el('div',{class:'mood-pick',role:'group','aria-label':'Chọn chỗ cho bé giúp'},list.map(x=>button(name(x),e=>{
-    pick=picked[species]=x;for(const c of chips.children)c.setAttribute('aria-pressed',String(c===e.currentTarget));say();
-   },{'aria-pressed':String(x===pick)})));
-   say();act=[chips,cta];
+   const name=x=>typeof x==='number'?`Thửa ${x+1}`:label(x);
+   let i=Math.max(0,targets.indexOf(picked[species]));
+   if(targets.length<2)kids.push(go(`Nhờ bé · ${name(targets[0])}`,()=>use(species,targets[0])));
+   else{
+    const shown=el('span',{class:'mood-step-v','aria-live':'polite'});
+    const show=()=>{picked[species]=targets[i];shown.replaceChildren(el('b',{text:name(targets[i])}),el('small',{text:`${i+1}/${targets.length}`}));};
+    const arrow=(d,cls,text)=>{const b=button('',()=>{i=(i+d+targets.length)%targets.length;show();},{class:cls,'aria-label':text});b.append(pixelIcon('chevron',2));return b;};
+    show();
+    kids.push(el('div',{class:'mood-skill-go'},[
+     el('div',{class:'mood-step',role:'group','aria-label':'Chọn chỗ cho bé giúp'},[arrow(-1,'is-prev','Chỗ trước'),shown,arrow(1,'is-next','Chỗ sau')]),
+     go('Nhờ bé',()=>use(species,targets[i])),
+    ]));
+   }
   }
-  rows.push(el('div',{class:'mood-wide'},act));
  }
- return rows;
+ return section('Kỹ năng',count,kids);
 }
 export function skillIcon(species){
  const i=SKILL_ORDER.indexOf(species);

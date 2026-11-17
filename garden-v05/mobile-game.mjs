@@ -19,7 +19,7 @@ import {createGarden,iso,plotCorners,plotCellPosition,clientToWorld} from './sce
 import {elfLine,elfShiftText} from './garden-elves.mjs?v=26.6';
 import {setupCamera} from './camera.mjs?v=26.6';
 import {createPanels} from './progression-panels.mjs?v=26.6';
-import {$,el,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=26.6';
+import {$,el,closeOnBackdrop,icon,button,num,duration,hours,realHours,setServerGrowth,plantingAction,serverRefusal,levelUnlockVisual} from './ui-utils.mjs?v=26.6';
 import {WATER_CROPS} from './water-crop-art.mjs?v=26.6';
 import {atmosphereConfig,nextAtmosphereMode,weatherConfig,nextWeatherMode} from './garden-atmosphere.mjs?v=26.6';
 import {createGardenAudio,comboStep} from './garden-audio.mjs?v=26.6';
@@ -530,7 +530,7 @@ const canMoveHome=sp=>connected&&walletReady&&!activeTourSnapshot&&state.level>=
 function openCreatureHome(sp=species){
  if(!canMoveHome(sp))return;
  const v=creatureHomesView(),i=v.land.findIndex(e=>e.species===sp),labelOf=s=>CREATURE[s]?.label||s;
- openCreatureHomes({el,iconButton,portrait:s=>petIcon(items,s,40),label:labelOf(sp),labelOf,groups:homeChoices(v.land,v.spots,{built:v.built}),current:v.spots[i],move:async(target,name)=>{
+ openCreatureHomes({el,closeOnBackdrop,iconButton,portrait:s=>petIcon(items,s,40),label:labelOf(sp),labelOf,groups:homeChoices(v.land,v.spots,{built:v.built}),current:v.spots[i],move:async(target,name)=>{
   await run(null,`Đã dời ${labelOf(sp)} sang ${name}.`,{action:'setCreatureHomes',homes:swapHome(v.land,v.spots,sp,target)});
   if(currentDecorations()?.creatureHomes?.[sp]!==target)return false;
   camera.focusCreature(spotPoint(map,target));return true;}});
@@ -910,7 +910,7 @@ $('careAllButton').onclick=()=>{panels.show('creatures');};
 renderPetCareButtons(items);
 $('seedOptionsButton').onclick=()=>$('seedOptions').showModal();
 $('closeSeedOptions').onclick=()=>$('seedOptions').close();
-$('seedOptions').addEventListener('click',event=>{if(event.target===$('seedOptions')){const r=$('seedOptions').getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)$('seedOptions').close();}});
+closeOnBackdrop($('seedOptions'));
 $('dockToggle').onclick=()=>{const collapsed=document.body.classList.toggle('dock-collapsed');$('dockToggle').setAttribute('aria-expanded',String(!collapsed));$('dockToggle').setAttribute('aria-label',collapsed?'Mở khay thao tác':'Thu gọn khay thao tác');};
 
 const profileUI=setupProfile(message,()=>{$('levelButton').focus();panels.show('profile');});$('avatarButton').onclick=()=>panels.show('profile');

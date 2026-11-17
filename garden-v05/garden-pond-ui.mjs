@@ -4,7 +4,7 @@ export {POND_SCENERY};
 // pond art paths. Everything comes from the server's snapshot.pond (HPVNN garden pond core); the server keeps every
 // number and rule, this module only shows them and sends {action:'pond', kind, …}.
 import {DB} from './balance-data.mjs?v=26.6';
-import {el, button, num, duration, itemDisplayName, itemArtKey, itemArtVisual, visualItemIcon, icon, packTotal} from './ui-utils.mjs?v=26.6';
+import {el, button, closeOnBackdrop, num, duration, itemDisplayName, itemArtKey, itemArtVisual, visualItemIcon, icon, packTotal} from './ui-utils.mjs?v=26.6';
 import {pixelIcon, ICONS, costChips} from './pixel-icons.mjs?v=26.6';
 import {flowArtSpec} from './flow-item-ui.mjs?v=26.6';
 
@@ -271,7 +271,7 @@ export function createCastGame({host, items, start, cast, serverNow}) {
  const dialog = el('dialog', {id: 'pondCastGame', class: 'owl-letter pond-cast', 'aria-labelledby': 'pondCastTitle'},
   [el('div', {class: 'popover-heading'}, [title, close]), stage, bar, result, tap]);
  host.append(dialog);
- dialog.addEventListener('click', e => {if (e.target === dialog) dialog.close();});
+ closeOnBackdrop(dialog);
  dialog.addEventListener('close', () => {cancelAnimationFrame(frame); token = null;});
  let token = null, frame = 0, done = false;
  const pct = v => `${(v * 100).toFixed(2)}%`;

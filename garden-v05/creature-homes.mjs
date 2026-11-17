@@ -54,7 +54,7 @@ export function homeChoices(land,spots,{built=new Set(),pastureOpen=built.has('e
 
 /** «Dời chuồng» dialog: pens as a grid of groups, each spot a tile with the occupant's portrait; picking one calls
  * move(target). DOM only, opened from mobile-game (`portrait(species)` is the pet dock's icon). */
-export function openCreatureHomes({el,iconButton,portrait,label,labelOf,groups,current,move}){
+export function openCreatureHomes({el,closeOnBackdrop,iconButton,portrait,label,labelOf,groups,current,move}){
  const close=()=>dialog.close();
  const tile=(g,c)=>{
   const here=c.spot===current,name=c.species?labelOf(c.species):'Trống';
@@ -69,7 +69,7 @@ export function openCreatureHomes({el,iconButton,portrait,label,labelOf,groups,c
    [el('h3',{text:g.name}),el('div',{class:'home-cells'},g.cells.map(c=>tile(g,c)))]))),
  ]);
  dialog.addEventListener('close',()=>dialog.remove());
- dialog.addEventListener('click',e=>{if(e.target===dialog)close();});
+ closeOnBackdrop(dialog,close);
  (document.getElementById('gameShell')||document.body).append(dialog);
  dialog.showModal();
  return dialog;

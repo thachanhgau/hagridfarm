@@ -1,7 +1,7 @@
 // «Nhiệm vụ bác Hagrid» (owner decision 19/10/2026): the server's mission chain
 // (snapshot.missions, action claimMission). One mission at a time; from level 20
 // a chapter of three steps. Only with a wallet: the server checks every step.
-import {$,el} from './ui-utils.mjs?v=26.6';
+import {$,el,closeOnBackdrop} from './ui-utils.mjs?v=26.6';
 import {pixelIcon,iconButton} from './pixel-icons.mjs?v=26.6';
 import {showHagridLetter} from './hagrid-letter-ui.mjs?v=26.6';
 
@@ -48,7 +48,7 @@ export function createMissions({getSnapshot,claim,claimBacklog,claimEvent,notify
   body,
  ]);
  ($('gameShell')||document.body).append(dialog);
- dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+ closeOnBackdrop(dialog);
 
  function render(){
   const ev=getSnapshot()?.dayEvent;

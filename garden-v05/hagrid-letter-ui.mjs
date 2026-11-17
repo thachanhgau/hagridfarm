@@ -1,4 +1,4 @@
-import {el,button} from './ui-utils.mjs?v=26.6';
+import {el,button,closeOnBackdrop} from './ui-utils.mjs?v=26.6';
 import {pixelIcon,iconUrl} from './pixel-icons.mjs?v=26.6';
 import {HAGRID_LETTER} from './garden-tutorial.mjs?v=26.6';
 
@@ -26,7 +26,7 @@ export function showHagridLetter({greeting,mode='welcome',onDone,letter=HAGRID_L
  function open(){dialog.dataset.stage='open';envelope.hidden=true;parchment.hidden=false;done.focus();}
  function close(){if(closed)return;closed=true;dialog.close();dialog.remove();onDone?.();}
  dialog.addEventListener('cancel',e=>{e.preventDefault();close();});
- dialog.addEventListener('click',e=>{if(e.target===dialog&&dialog.dataset.stage==='open')close();});
+ closeOnBackdrop(dialog,()=>{if(dialog.dataset.stage==='open')close();});
  document.body.append(dialog);dialog.showModal();
  (keepsake?done:envelope).focus();
  return {dialog,open,close};

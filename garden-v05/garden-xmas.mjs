@@ -9,7 +9,7 @@
 // points, nine earn the «Áo len bà Weasley» Floo frame), «Dạ vũ Noel» 18–31/12 (twelve ornaments for the house tree,
 // whose size follows the house's share of the points), «Đêm Noel» 24–25/12 (feast at the hearth, bác Hagrid carries a
 // tree, a present with a letter), «Pháo hoa Giao thừa» 31/12 (fireworks at night, the 2027 Floo frame).
-import {el,num} from './ui-utils.mjs?v=26.6';
+import {el,num,closeOnBackdrop} from './ui-utils.mjs?v=26.6';
 import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.6';
 import {fireworks} from './garden-friends.mjs?v=26.6';
 import {FEAST_GROUND, decorOnGround} from './decor-placement-ui.mjs?v=26.6';
@@ -154,7 +154,7 @@ export function createXmasCare({getSnapshot, act, notify}) {
     body,
   ]);
   (document.getElementById('gameShell') || document.body).append(dialog);
-  dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+  closeOnBackdrop(dialog);
   const send = async (fields, after) => { const res = await act({action: 'xmas', ...fields}); if (res?.ok && res.receipt?.xmas) after(res.receipt.xmas); render(); };
 
   function render() {
