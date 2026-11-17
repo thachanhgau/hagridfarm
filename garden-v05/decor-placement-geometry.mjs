@@ -1,6 +1,6 @@
-import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=26.12';
-import {KEEPSAKE_ART} from './complete-object-art.mjs?v=26.12';
-import {inEdgeStrip,inPondLand,stageContains} from './garden-growth.mjs?v=26.12';
+import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=26.13';
+import {KEEPSAKE_ART} from './complete-object-art.mjs?v=26.13';
+import {inEdgeStrip,inPondLand,stageContains} from './garden-growth.mjs?v=26.13';
 
 // The scene opens one half-tile beyond the old server adapter. Keep this small
 // contract in one client module so placement, rendering and tests do not each
