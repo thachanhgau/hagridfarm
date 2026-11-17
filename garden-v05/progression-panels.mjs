@@ -1,16 +1,16 @@
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.14';
-import {edgeStepText} from './garden-orchard-ui.mjs?v=26.14';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.14';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.14';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.14";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.14";
-import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.14";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.14";
-import {renderTourSection} from "./garden-tour.mjs?v=26.14";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.14";
-import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.14";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.14";
-import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.14";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.15';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=26.15';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.15';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.15';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.15";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.15";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.15";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.15";
+import {renderTourSection} from "./garden-tour.mjs?v=26.15";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.15";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.15";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.15";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.15";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -23,15 +23,16 @@ export function createPanels(ctx){
  function priceRow(s,entry,wallet){const costs=Object.entries(entry.cropCost).map(([id,need])=>({id,need,have:s.inventory[id]||0}));const text=[...costs.map(c=>label(c.id)+" "+num(c.have)+"/"+num(c.need)),...(entry.galleons?[num(entry.galleons)+" Galleons"]:[])].join(", ")||"Miễn phí";return el("div",{class:"cost-row",role:"group","aria-label":"Giá: "+text,title:text},costChips(items,costs,entry.galleons,wallet<entry.galleons));}
  const canPay=(s,entry,wallet)=>wallet>=entry.galleons&&Object.entries(entry.cropCost).every(([id,n])=>(s.inventory[id]||0)>=n);
  function card(title,subtitle,id,opts={}){const c=el("article",{class:"card"}),h=el("div",{class:"card-head"});if(id)h.append(visualItemIcon(items,id,{size:52,...opts}));h.append(el("div",{class:"card-head-copy"},[el("strong",{text:title}),el("small",{text:subtitle})]));c.append(h);return c;}
- function readyButton(text,at,fn){return button(text,fn,{"data-ready-button":at,disabled:at>now(),class:"primary"});}
+ // «Nhận» hides until it can be pressed (game-panels.css .wait-hide); a grey «Nhận» beside a countdown read as broken.
+ function readyButton(text,at,fn){return button(text,fn,{"data-ready-button":at,disabled:at>now(),class:"primary wait-hide"});}
  // Level-500 roadmap §9, with a wallet: a running craft takes a nước phép (a quarter off), a building a Nước suối thần (done now).
  function speedButton(kind,command,readyAt){
   const n=ctx.getSupplies?.()?.[kind]||0;
   if(!getSession().connected||readyAt<=now()||(kind==="spring"&&getState().level<30&&n<1))return [];
   const [label,done]=kind==="boost"?["Nước phép","Đã tưới nước phép: nhanh hơn 1/4."]:["Suối thần","Nước suối thần: công trình xây xong ngay."];
-  // A building: one bottle finishes it now; «×130» read as its price (owner 17/11/2026: «khó hiểu ko biết nên làm gì»).
-  if(kind==="spring")return [button(n<1?"Hết Suối thần":"Xong ngay · 1 Suối thần",()=>run(null,done,command),{disabled:n<1,"data-speed-button":kind,class:"primary",title:`Dùng 1 Suối thần (còn ${num(n)}) để xây xong ngay`,"aria-label":`Xây xong ngay, dùng 1 Suối thần, còn ${num(n)}`})];
-  return [button(label+" ×"+n,()=>run(null,done,command),{disabled:n<1,"data-speed-button":kind})];
+  // One bottle per press; «Suối thần ×130» read as its price (owner 17/11/2026: «khó hiểu ko biết nên làm gì»).
+  const [go,effect]=kind==="spring"?["Xong ngay","xây xong ngay"]:["Nhanh","nhanh hơn 1/4"];
+  return [button(n<1?"Hết "+label:`${go} · 1 ${label}`,()=>run(null,done,command),{disabled:n<1,"data-speed-button":kind,class:kind==="spring"?"primary":"",title:`Dùng 1 ${label} (còn ${num(n)}): ${effect}`,"aria-label":`${go}, dùng 1 ${label}, còn ${num(n)}`})];
  }
  // Thành tựu, Sổ tay, Lưu bút and Bưu thiếp are tabs of one Hồ sơ panel; their old names still open their tab.
  const PROFILE_TABS=[["achievements","Thành tựu"],["almanac","Sổ tay"],["guestbook","Lưu bút"],["postcard","Bưu thiếp"]],TAB_ICONS={achievements:"trophy",almanac:"book",guestbook:"quill",postcard:"scenery"};
@@ -236,7 +237,7 @@ export function createPanels(ctx){
     if(!done&&!job)k.append(priceRow(s,e,wallet));
     k.append(paragraph(e.kind==="edge"?edgeStepText(at+1,same.length,e.galleons):(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi")));
     if(done)k.append(paragraph("Đã xây","ready-text"));
-    else if(job){const claim=readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"}));claim.classList.add("wait-hide");k.append(timer(job.readyAt,"Đang xây · còn "),claim,...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));}
+    else if(job)k.append(timer(job.readyAt,"Đang xây · còn "),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})),...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));
     else k.append(paragraph(locked?"Chờ "+levelName(e.level):!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));
     g.append(k);
    }

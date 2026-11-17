@@ -639,7 +639,7 @@
 
 #gameShell #panel .journey-unlock-meta,#gameShell :is(#panel,.store-popover,.owl-letter) .recipe-output-copy small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal;overflow:hidden;text-overflow:clip;line-height:1.3}
 /* Level-160 luân canh: a seed that would harvest tired on the selected plot («−25%»). */
-#playDock .item-tray .seed-tired{position:absolute;top:1px;right:1px;padding:0 2px;border-radius:2px;background:#874056;color:#FFC36B;font-size:11px;line-height:13px;font-weight:700;font-variant-numeric:tabular-nums;pointer-events:none}
+#playDock .item-tray .seed-tired{position:absolute;top:1px;right:1px;padding:0 2px;border-radius:2px;background:#4A3C2C;color:#E7AE73;white-space:nowrap;font-size:11px;line-height:13px;font-weight:700;font-variant-numeric:tabular-nums;pointer-events:none}
 /* Garden expansion phase 1 «Hồ nuôi» (garden-pond-ui.mjs): one frame (the dock), bare rows on one grid, 44 px targets. */
 #playDock #pondDock{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;align-content:start}
 #playDock #pondDock[hidden]{display:none}
@@ -807,5 +807,5 @@
 #gameShell #creatureMood .mood-nav[hidden]{display:none}
 /* Same frame for every pet; only the info changes (owner 17/11/2026: «khung nên cố định, đổi info thôi»). */
 #gameShell #creatureMood{height:min(760px,calc(100dvh - 24px))}
-/* Building card: «Nhận» shows once the build is done, then the Suối thần shortcut goes (owner 17/11/2026). */
-#gameShell [data-ready-button].wait-hide:disabled,#gameShell .card:has(.wait-hide:not(:disabled)) [data-speed-button="spring"]{display:none}
+/* Building, meal and craft cells: «Nhận» shows once it is done, then the speed-up goes (owner 17/11/2026). */
+#gameShell [data-ready-button].wait-hide:disabled,#gameShell .wait-hide:not(:disabled)~[data-speed-button]{display:none}

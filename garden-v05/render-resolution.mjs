@@ -85,7 +85,7 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
  }
  // A side canvas drawn onto the main one (night statue copies): the same HD swap, always drawn and never tied to the
  // ground layer's rebuild. The returned check is true while an HD image it drew is still on its way (owner 17/11/2026:
- // the V26.14 statue copy drew native art, so lit statues lost their HD at dusk and night).
+ // the V26.15 statue copy drew native art, so lit statues lost their HD at dusk and night).
  function side(sideContext){
   const own=sideContext.drawImage.bind(sideContext),waiting=new Set(),always=()=>true;
   sideContext.drawImage=function(image,...args){const source=image?.[ART_SOURCE];if(enabled&&density>1&&source&&art[source.file])waiting.add(JSON.stringify(source));return draw(own,image,args,always);};

@@ -1,7 +1,7 @@
 // Level-160 challenges (docs/level-160-challenges.md §2E, §2F), from the server's snapshot only (HPVNN
 // garden-soil-core): snapshot.soil = [{tired, seeds: {species: mult}}] by plot from level 160, snapshot.weather =
 // {type, start, end, announced} from level 200 while the week is announced or running.
-import {duration} from './ui-utils.mjs?v=26.14';
+import {duration} from './ui-utils.mjs?v=26.15';
 
 export const WEATHER = Object.freeze({
  frost: {label: 'Sương giá Rừng Cấm', icon: 'frost', effects: 'Cây 8 giờ chậm ×1,5 · Củ u, Cỏ chút chít, Rong nước xiết ×2'},
@@ -31,10 +31,11 @@ export function tiredPlots(soil) {
  return new Set((soil || []).flatMap((plot, index) => (plot && plot.tired < 1 ? [index] : [])));
 }
 
-/** «−25%» on a seed that would harvest tired on this plot, '' otherwise. */
+/** «Thu −25%» on a seed that would harvest tired on this plot, '' otherwise. A bare «−50%» read as a price sale
+ * (members 17/11/2026: «giá bí ngô xưa giờ $2»), so the tag names the harvest. */
 export function seedTiredTag(soil, plot, species) {
  const mult = soil?.[plot]?.seeds?.[species];
- return mult < 1 ? `−${Math.round((1 - mult) * 100)}%` : '';
+ return mult < 1 ? `Thu −${Math.round((1 - mult) * 100)}%` : '';
 }
 
 /** Data-only label for a tired plot or seed: «Đất mệt · 75%». */

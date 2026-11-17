@@ -2,9 +2,9 @@
 // from the server's snapshot.weather / snapshot.soil (HPVNN garden-soil-core).
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {WEATHER,weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=26.14';
-import {ICONS} from './pixel-icons.mjs?v=26.14';
-import {plotSign} from './scene-renderer.mjs?v=26.14';
+import {WEATHER,weatherChip,weatherOwlText,tiredPlots,seedTiredTag,tiredLabel} from './garden-weather-ui.mjs?v=26.15';
+import {ICONS} from './pixel-icons.mjs?v=26.15';
+import {plotSign} from './scene-renderer.mjs?v=26.15';
 
 const H=3600000,D=24*H;
 const start=Date.parse('2026-11-22T00:00:00+07:00'),week={type:'rain',start,end:start+7*D,announced:start-2*D};
@@ -30,7 +30,7 @@ test('tired plots and seed tags come from snapshot.soil; data-only labels', () =
  const soil=[{tired:0.75,seeds:{knotgrass:0.75,mint:0.75}},{tired:1,seeds:{}},{tired:0.5,seeds:{}}];
  assert.deepEqual([...tiredPlots(soil)],[0,2]);
  assert.deepEqual([...tiredPlots(null)],[]);
- assert.equal(seedTiredTag(soil,0,'knotgrass'),'−25%');
+ assert.equal(seedTiredTag(soil,0,'knotgrass'),'Thu −25%');
  assert.equal(seedTiredTag(soil,0,'lettuce'),'');
  assert.equal(seedTiredTag(soil,1,'knotgrass'),'');
  assert.equal(seedTiredTag(null,0,'knotgrass'),'');
