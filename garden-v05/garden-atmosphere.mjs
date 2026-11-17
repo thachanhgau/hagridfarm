@@ -1,4 +1,4 @@
-import { stableHash } from './scene-animation.mjs?v=26.15';
+import { stableHash } from './scene-animation.mjs?v=26.16';
 
 export const ATMOSPHERE_MODES = Object.freeze([
   Object.freeze({

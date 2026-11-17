@@ -1,11 +1,12 @@
 // «Đàn thú: tâm trạng và tương tác» (25.0 S4, server garden-mood-core): one creature's mood and this cycle's
 // interactions (action tendCreature), its tricks and its rare-coat grooming. The server keeps every number; this
 // panel only shows snapshot.mood. mobile-game imports it on the first «Chăm bé» tap or a tap on Norbert.
-import {$,el,icon,duration,closeOnBackdrop} from './ui-utils.mjs?v=26.15';
-import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.15';
-import {COAT_STEPS,groomLabel} from './garden-winter.mjs?v=26.15';
-import {skillCard,skillText,skillTitle,section} from './garden-skills-card.mjs?v=26.15';
-import {skillOf} from './garden-skills-ui.mjs?v=26.15';
+import {$,el,icon,duration,closeOnBackdrop} from './ui-utils.mjs?v=26.16';
+import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.16';
+import {COAT_STEPS,groomLabel} from './garden-winter.mjs?v=26.16';
+import {skillCard,skillText,skillTitle,section} from './garden-skills-card.mjs?v=26.16';
+import {skillOf} from './garden-skills-ui.mjs?v=26.16';
+import {CROP} from './progression-engine.mjs?v=26.16';
 
 export const NORBERT='norbert';
 // Play toys (roadmap §4: Đào mỏ – đồ lấp lánh, Kneazle – cuộn len, Chó ba đầu – thổi sáo cho ngủ, HP1).
@@ -100,7 +101,9 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
   const coats=norbert?[]:COAT_STEPS.map(([label,points])=>row(label,Math.min(entry.coat||0,points),points));
   body.replaceChildren(...[
    section('Tâm trạng',`Chăm lại lúc ${clockText(view.nextCycleAt)}`,el('div',{class:'mood-bar'},[mood,el('b',{text:String(entry.mood)})]),
-    happy&&!norbert?el('p',{class:'mood-note is-good',text:'Đang vui: thêm 1 sản vật mỗi lần nhận'}):null),
+    happy&&!norbert?el('p',{class:'mood-note is-good',text:'Đang vui: thêm 1 sản vật mỗi lần nhận'}):
+    // Level 160+: without today's món thích the server stops mood at happy − 1 (garden-mood-core capped), skills included.
+    entry.favourite&&!entry.favMeal&&entry.mood>=view.happy-1?el('p',{class:'mood-note is-warn',text:`Dừng ở ${entry.mood}: ăn món có ${CROP[entry.favourite]?.label||entry.favourite} để lên tiếp`}):null),
    // Season 2: this creature's skill block (garden-skills-card); its gold action sends action `skill`.
    norbert?null:skillCard({species,snap,now,use:async(sp,target)=>{const res=await useSkill(sp,target);const r=res?.ok&&res.receipt?.skill;if(r){notify(skillText(r));onSkill?.(r);render();}}}),
    section('Chăm sóc','',el('div',{class:'mood-acts'},moodTiles({species,entry,view,bondLevel:bondOf(species),now}).map(t=>{

@@ -1,9 +1,9 @@
 // Season 2 «Tài năng sinh vật» (26.0): the skill rows inside «Chăm bé» and the receipt line. garden-mood-ui imports it,
 // so it loads on the first «Chăm bé» tap; the startup part (marks, passive lines) is garden-skills-ui.
-import {el,button} from './ui-utils.mjs?v=26.15';
-import {pixelIcon} from './pixel-icons.mjs?v=26.15';
-import * as E from './progression-engine.mjs?v=26.15';
-import {skillOf,isReady,skillTargets,kneazleMarks} from './garden-skills-ui.mjs?v=26.15';
+import {el,button} from './ui-utils.mjs?v=26.16';
+import {pixelIcon} from './pixel-icons.mjs?v=26.16';
+import * as E from './progression-engine.mjs?v=26.16';
+import {skillOf,isReady,skillTargets,kneazleMarks} from './garden-skills-ui.mjs?v=26.16';
 
 // Atlas order = Codex brief docs/codex-briefs/skills-s2.md (balance order): 6 × 3 cells of 64 px.
 export const SKILL_ORDER=Object.freeze(['puffskein','bowtruckle','niffler','mooncalf','kneazle','diricawl','fwooper','hippogriff','thestral','unicorn','three-headed-dog','dragon','grindylow','crup','knarl','salamander','kappa','porlock']);
@@ -100,7 +100,7 @@ export function skillText(r){
   puffskein:()=>`${who} gặt ${plot} (${r.crops} cây)${r.seed?`, nhả lại 1 hạt ${crop(r.seed)}`:''}`,
   bowtruckle:()=>`${who} giúp ${plot}: ${r.crops} cây chín sớm ${Math.round(r.cutMs/60000)} phút`,
   niffler:()=>`${who} đào ${plot}: +${r.water} Nước${r.seed?`, 1 hạt ${crop(r.seed)}`:''}${r.boost?', 1 lọ Nước phép':''}`,
-  fwooper:()=>`${who} hát: ${r.cheered.length} bé thêm ${r.gain} tâm trạng`,
+  fwooper:()=>{const up=r.cheered.length-(r.capped?.length||0);return `${who} hát: ${up} bé thêm ${r.gain} tâm trạng${r.capped?.length?`, ${r.capped.length} bé không lên (chưa ăn món thích hoặc đã đầy)`:''}`;},
   hippogriff:()=>`${who} chở về +${r.water} Nước`,
   unicorn:()=>r.cured?`${who} chữa khỏi ${label(r.target)}${r.gain?`, thêm ${r.gain} tâm trạng`:''}`:`${label(r.target)} thêm ${r.gain} tâm trạng`,
   dragon:()=>`${who} dọn ${plot}${r.gnome?': ma lùm chạy mất':`: thiêu ${r.cleared} ô cây khô`}`,
