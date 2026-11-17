@@ -35,6 +35,7 @@ export const WHY=Object.freeze({'skills-off':'Kỹ năng đang tạm tắt','fle
 const RANK=['Chưa mở','Bậc 1','Bậc 2','Bậc 3 · Tinh thông'];
 const NEXT=['Mở khi bé trưởng thành và gắn bó cấp 3','Lên bậc 2 khi gắn bó cấp 5 và thuộc đủ 3 trò','Lên bậc 3 khi vườn đạt cấp 1.000',''];
 const NONE=Object.freeze({puffskein:'Chưa có thửa chín',bowtruckle:'Chưa có thửa đang lớn',mooncalf:'Chưa có thửa đang lớn',niffler:'Chưa có thửa trống',dragon:'Không có thửa cần dọn',knarl:'Không có thửa bạc màu',unicorn:'Không có bé ốm'});
+const DUTY_ONLY=Object.freeze(['diricawl','thestral','three-headed-dog','dragon']);
 const vnHour=t=>new Date(t+7*3600000).getUTCHours();
 const label=sp=>E.CREATURE[sp]?.label||sp;
 
@@ -59,6 +60,8 @@ export function skillCard({species,snap,use,now=Date.now()}){
  const what=WHAT[species]||[''],r=Math.min(s.rank,3),unit=UNIT[species];
  const count=!r?'':s.passive?(!s.cap?'Luôn bật':species==='salamander'?`Giữ ${s.cap} thửa`:`Còn ${s.left}/${s.cap} ${unit||''} hôm nay`.replace('  ',' ')):`Còn ${s.left}/${s.cap} lượt hôm nay`;
  const kids=[el('p',{class:'mood-text',text:(r>=2&&what[1])||what[0]})];
+ // Wilting, ma lùm, Rừng Cấm and fire start at garden level 130 (garden-duty-core DUTY_LEVEL): before it these do nothing.
+ if(r&&DUTY_ONLY.includes(species)&&(snap?.garden?.progression?.level??0)<130)kids.push(note('Có tác dụng từ vườn cấp 130','is-warn'));
  if(s.blocked&&s.blocked!=='locked')kids.push(note(WHY[s.blocked]||s.blocked,'is-warn'));
  else{const next=s.blocked?NEXT[0]:NEXT[r];if(next)kids.push(note(next,s.blocked?'is-warn':''));}
  const todo=species==='kneazle'?todoLines(snap,now):[];

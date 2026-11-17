@@ -30,6 +30,7 @@ test('targets follow the server checks: ripe, growing, empty, dead or ma lùm, t
   assert.deepEqual(skillTargets('niffler', s, now), [2]);
   assert.deepEqual(skillTargets('dragon', s, now), [1, 2]);
   assert.deepEqual(skillTargets('knarl', s, now), [1]);
+  assert.deepEqual(skillTargets('knarl', snap({soil: [null, {tired: 0.75}, {tired: 1, seeds: {beet: 0.75}}]}), now), [1, 2]); // tired at the next harvest
   assert.deepEqual(skillTargets('unicorn', s, now), ['puffskein']);
   assert.deepEqual(skillTargets('unicorn', snap({duty: {on: false}}), now), ['puffskein', 'kneazle']); // pond ones live apart
   assert.equal(skillTargets('hippogriff', s, now), null);
