@@ -1,10 +1,10 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=26.11";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=26.11";
-import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=26.11";
-import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=26.11";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=26.11";
-import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=26.11";
-import {marketCards} from "./garden-market-ui.mjs?v=26.11";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=26.12";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=26.12";
+import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=26.12";
+import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=26.12";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=26.12";
+import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=26.12";
+import {marketCards} from "./garden-market-ui.mjs?v=26.12";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -217,10 +217,14 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
 
    const qtyValue=el("output",{class:"gp-qty-value","aria-live":"polite"});
    const paintQty=()=>{qtyValue.replaceChildren(el("b",{text:String(count)}),el("small",{text:`×${item.quantity}`}));qtyValue.title=`${count} ${unit} · ${count*item.quantity} phần`;minus.disabled=!snap||purchasing||count<=1;plus.disabled=!snap||purchasing||count>=max;};
-   const step=d=>{count=Math.min(max,Math.max(1,count+d));quantities.set(item.id,count);paintQty();paintBuy();paintBundles();};
+   const step=d=>pick(Math.min(max,Math.max(1,count+d)));
    // Gói ×5/×10/×30 (−10/20/30%), only those the stock cap still allows.
-   const bundleRow=item.bundles&&snap&&!item.locked?el("div",{class:"store-bundles gp-chips",role:"group","aria-label":"Gói mua nhiều "+item.label}):null;
-   const paintBundles=()=>bundleRow?.replaceChildren(...BUNDLE_SIZES.filter(n=>n>1&&n<=max).map(n=>button(`×${n} −${bundlePercent(n)}%`,()=>{count=n;quantities.set(item.id,n);paintQty();paintBuy();paintBundles();},{class:"store-bundle-chip gp-chip","aria-pressed":String(count===n),"aria-label":`Gói ${n} ${unit}, giảm ${bundlePercent(n)}%`})));
+   // «Tối đa» (owner 17/11/2026): the most packs one purchase allows (server cap 24, bundles 30) that the Galleons cover.
+   const bundleRow=(item.bundles||!isDecor&&item.kind!=="nest")&&snap&&!item.locked&&!pendingPrice&&room!==0&&max>1?el("div",{class:"store-bundles gp-chips",role:"group","aria-label":"Gói mua nhiều "+item.label}):null;
+   const most=()=>{let n=max;while(n>1&&packTotal(item,n)>spendable)n--;return n;};
+   const pick=n=>{count=n;quantities.set(item.id,n);paintQty();paintBuy();paintBundles();};
+   const paintBundles=()=>{if(!bundleRow)return;const top=most();bundleRow.replaceChildren(...(item.bundles?BUNDLE_SIZES.filter(n=>n>1&&n<=max):[]).map(n=>button(`×${n} −${bundlePercent(n)}%`,()=>pick(n),{class:"store-bundle-chip gp-chip","aria-pressed":String(count===n),"aria-label":`Gói ${n} ${unit}, giảm ${bundlePercent(n)}%`})),
+    button(`Tối đa ×${top}`,()=>pick(top),{class:"store-bundle-chip gp-chip","aria-pressed":String(count===top),"aria-label":`Mua tối đa ${top} ${unit} ${item.label}`,disabled:top<2}));};
    const minus=iconButton("minus","Bớt 1 "+unit+" "+item.label,()=>step(-1),{class:"gp-step"});
    const plus=iconButton("plus","Thêm 1 "+unit+" "+item.label,()=>step(1),{class:"gp-step"});
    paintQty();paintBuy();paintBundles();
