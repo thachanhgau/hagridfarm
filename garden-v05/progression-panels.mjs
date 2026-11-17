@@ -4,7 +4,7 @@ import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.6';
 import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.6';
 import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.6";
 import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.6";
-import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,recipeOutput} from "./ui-utils.mjs?v=26.6";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.6";
 import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.6";
 import {renderTourSection} from "./garden-tour.mjs?v=26.6";
 import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.6";
@@ -192,32 +192,35 @@ export function createPanels(ctx){
    body.append(g);
   },
 
+  // Owner 17/11/2026 «làm lại»: one compact filter row; each recipe or running batch is one flat cell on one grid —
+  // art | name / → output | action, ingredient chips under the name.
   craft(){
    const s=getState(),select=el("select",{"aria-label":"Lọc công thức",onchange:e=>{recipeFilter=e.target.value;refresh();}});
-   for(const[id,name]of [["all","Tất cả công thức"],["open","Đã mở"],["feed","Khẩu phần"],["insects","Côn trùng"],["fish","Cá nhỏ"],...DB.animals.filter(a=>a.level<=s.level).map(a=>[a.feed,a.label])])select.append(el("option",{value:id,text:name}));
+   for(const[id,name]of [["all","Tất cả"],["open","Đã mở"],["feed","Khẩu phần"],["insects","Côn trùng"],["fish","Cá nhỏ"],...DB.animals.filter(a=>a.level<=s.level).map(a=>[a.feed,a.label])])select.append(el("option",{value:id,text:name}));
    select.value=recipeFilter;
    const qty=el("select",{"aria-label":"Số mẻ tức thì",onchange:e=>{batches=Number(e.target.value);refresh();}});
-   for(const n of[1,3,10])qty.append(el("option",{value:n,text:n+" mẻ tức thì"}));
+   for(const n of[1,3,10])qty.append(el("option",{value:n,text:n+" mẻ"}));
    qty.value=batches;
-   body.append(toolbar(select,qty,button("Nhận tất cả",()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"}))));
-   if(s.jobs.length){
-    const jobs=grid();
-    for(const j of s.jobs){
-     const r=DB.recipes.find(r=>r.id===j.recipeId),k=card(r.label,j.count+" "+label(j.output),`recipe_${r.id}`);
-     k.append(recipeOutput(items,label,r.output,j.count,34),timer(j.readyAt),readyButton("Nhận",j.readyAt,()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"})),...speedButton("boost",{action:"boost",jobId:j.id},j.readyAt));
-     jobs.append(k);
-    }
-    body.append(jobs);
+   const t=now(),claim=()=>run(x=>E.claimCraft(x,Date.now()),"Đã nhận thành phẩm.",{action:"claimCraft"});
+   body.append(el("div",{class:"craft-bar"},[select,qty,button("Nhận tất cả",claim,{"data-ready-button":Math.min(...s.jobs.map(j=>j.readyAt)),disabled:!s.jobs.some(j=>j.readyAt<=t)})]));
+   const list=el("div",{class:"craft-list"});
+   const row=(r,count,action,need=[])=>el("article",{class:"craft-row"+(need.length?"":" is-job")},[
+    visualItemIcon(items,`recipe_${r.id}`,{size:48}),
+    el("div",{class:"craft-copy"},[el("strong",{text:r.label}),el("span",{class:"craft-out"},["→ ",el("b",{text:"×"+num(count)})," "+itemDisplayName(r.output,label(r.output))])]),
+    el("div",{class:"craft-act"},action),
+    need.length?el("div",{class:"craft-need"},need):null,
+   ]);
+   for(const j of s.jobs){
+    const r=DB.recipes.find(r=>r.id===j.recipeId);
+    // tickTimers flips the countdown to ready and enables Nhận; CSS shows one or the other.
+    list.append(row(r,j.count,[timer(j.readyAt),readyButton("Nhận",j.readyAt,claim),...speedButton("boost",{action:"boost",jobId:j.id},j.readyAt)]));
    }
-   const g=grid();g.classList.add("craft-recipes");
-   for(const r of DB.recipes.filter(r=>r.level<=s.level).filter(r=>recipeFilter==="all"||recipeFilter==="open"&&r.level<=s.level||recipeFilter==="feed"&&DB.animals.some(a=>a.feed===r.output)||r.output===recipeFilter)){
-    const n=r.hours?1:batches,locked=r.level>s.level,missing=Object.entries(r.inputs).some(([id,q])=>s.inventory[id]<q*n),busy=r.hours&&s.jobs.some(j=>j.station===r.station),k=card(r.label,"Cấp "+r.level+" · "+hours(realHours(r,s.level))+" · "+r.station,`recipe_${r.id}`);
-    k.classList.toggle("locked",locked);
-    k.append(priceRow(s,{cropCost:Object.fromEntries(Object.entries(r.inputs).map(([id,q])=>[id,q*n])),galleons:0},Infinity));
-    k.append(recipeOutput(items,label,r.output,r.count*n),button(locked?"Cấp "+r.level:busy?"Đang làm":"Làm",()=>run(x=>E.craft(x,r.id,n,Date.now()),r.hours?"Đã bắt đầu mẻ.":"Đã chế biến thành phẩm.",{action:"craft",recipeId:r.id,batches:n}),{disabled:locked||missing||busy,class:"primary"}));
-    g.append(k);
+   for(const r of DB.recipes.filter(r=>r.level<=s.level).filter(r=>recipeFilter==="all"||recipeFilter==="open"||recipeFilter==="feed"&&DB.animals.some(a=>a.feed===r.output)||r.output===recipeFilter)){
+    const n=r.hours?1:batches,costs=Object.entries(r.inputs).map(([id,q])=>({id,need:q*n,have:s.inventory[id]||0})),missing=costs.some(c=>c.have<c.need),busy=r.hours&&s.jobs.some(j=>j.station===r.station);
+    const need=[...costChips(items,costs,0,false,24),...(r.hours?[el("span",{class:"craft-dur"},[pixelIcon("clock",1),el("span",{text:duration(realHours(r,s.level)*3600000)})])]:[])];
+    list.append(row(r,r.count*n,[button(busy?"Đang làm":"Làm",()=>run(x=>E.craft(x,r.id,n,Date.now()),r.hours?"Đã bắt đầu mẻ.":"Đã chế biến thành phẩm.",{action:"craft",recipeId:r.id,batches:n}),{disabled:missing||busy,class:"primary","aria-label":`Làm ${r.label}: ${costs.map(c=>label(c.id)+" "+num(c.have)+"/"+num(c.need)).join(", ")}`})],need));
    }
-   body.append(g);
+   body.append(list);
   },
 
   build(){

@@ -600,8 +600,30 @@
 #gameShell #panel .achievements-grid .gp-tile-name{align-self:start}
 #gameShell #panel .guestbook-card{grid-row:span 2;grid-template-rows:subgrid}
 #gameShell #panel .gp-letter-head{align-self:start}
-#gameShell #panel[data-view=craft] .craft-recipes>.card{display:grid;grid-row:span 4;grid-template-rows:subgrid;gap:8px;align-content:start}
-#gameShell #panel[data-view=craft] .card>.actions{margin-top:0;align-self:start}
+/* «Chế biến» (owner 17/11/2026 «làm lại»): one filter row; each recipe/batch one flat cell — art | name / → output | action,
+   ingredient chips under the name. No box inside a cell, one-line labels, 4px grid. */
+#gameShell #panel .craft-bar{display:grid;grid-template-columns:minmax(0,240px) 76px auto;justify-content:start;gap:8px;margin:0 0 12px}
+#gameShell #panel .craft-bar select{min-width:0;height:44px;margin:0;padding:0 8px;border:2px solid #231F2E;border-radius:0;background:#142620;color:#F5D69A;font:700 13px/1 var(--gp-body);text-overflow:ellipsis}
+#gameShell #panel .craft-bar button{margin:0;padding:0 12px;white-space:nowrap}
+#gameShell #panel .craft-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+#gameShell #panel .craft-row{display:grid;grid-template-columns:48px minmax(0,1fr) 96px;grid-template-areas:"art copy act" "art need need";align-items:center;gap:4px 8px;min-width:0;padding:8px;border-radius:8px;background:#1B3530}
+#gameShell #panel .craft-row>.visual-slot{grid-area:art;align-self:center;border:0;border-radius:0;box-shadow:none;background:none}
+#gameShell #panel .craft-copy{grid-area:copy;display:grid;gap:0;min-width:0}
+#gameShell #panel .craft-copy>*{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#gameShell #panel .craft-copy strong{font:700 14px/20px var(--gp-body);color:#F5D69A}
+#gameShell #panel .craft-out{font:400 12px/16px var(--gp-body);color:#A6B1AE}
+#gameShell #panel .craft-out b{color:#F5D69A;font-weight:700;font-variant-numeric:tabular-nums}
+#gameShell #panel .craft-need{grid-area:need;display:flex;align-items:center;gap:4px 8px;min-width:0;overflow:hidden}
+#gameShell #panel .craft-need :is(.dock-cost,.craft-dur){display:inline-flex;flex:none;align-items:center;gap:4px;margin:0;padding:0;border:0;background:none;color:#D6D8BF;font:700 12px/16px var(--gp-body);font-variant-numeric:tabular-nums;white-space:nowrap}
+#gameShell #panel .craft-need .dock-cost .visual-slot{width:24px;height:24px;border:0;box-shadow:none;background:none}
+#gameShell #panel .craft-need .dock-cost.is-short{color:#E7AE73}
+#gameShell #panel .craft-need .craft-dur{color:#A6B1AE}
+#gameShell #panel .craft-row.is-job{grid-template-columns:48px minmax(0,1fr) minmax(96px,auto);grid-template-areas:"art copy act"}
+#gameShell #panel .craft-act{grid-area:act;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:4px;min-width:0}
+#gameShell #panel .craft-act button{min-width:0;margin:0;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gameShell #panel .craft-act [data-until]{font:700 13px/16px var(--gp-body);color:#FFC36B;text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap}
+#gameShell #panel .craft-act [data-ready-button]:disabled,#gameShell #panel .craft-act .ready-text,#gameShell #panel .craft-act .ready-text~[data-speed-button]{display:none}
+#gameShell #panel .craft-act [data-speed-button]{padding:0 8px;font-size:12px}
 #gameShell #panel[data-view=profile],#gameShell #hagridWork{height:min(760px,calc(100dvh - 24px));max-height:calc(100dvh - 24px);overflow-y:auto}
 #gameShell #hagridWork .work-order{padding:4px 0;margin:0;box-sizing:border-box}
 
