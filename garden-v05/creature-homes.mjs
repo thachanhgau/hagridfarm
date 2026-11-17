@@ -52,26 +52,62 @@ export function homeChoices(land,spots,{built=new Set(),pastureOpen=built.has('e
  return groups;
 }
 
-/** «Dời chuồng» dialog: pens as a grid of groups, each spot a tile with the occupant's portrait. A tap calls
- * move(target) and, when it lands, redraws from view() = {groups,current}: the dialog stays open so several creatures can
- * be arranged in a row (owner 17/11/2026: «cứ ấn vô là tắt»). DOM only, opened from mobile-game. */
-export function openCreatureHomes({el,closeOnBackdrop,iconButton,portrait,label,labelOf,view,move}){
+/** «Dời chuồng» dialog: pens as a grid of groups, each spot a tile with the occupant's portrait. A tap moves `species`
+ * there; press-and-hold (touch) or drag (mouse) any creature onto another spot moves it, swapping with whoever stands
+ * there (owner 17/11/2026: «cho phép drag and drop»). move(species,target,name) runs the server command; the dialog
+ * stays open and redraws from view() = {groups,current} (owner: «cứ ấn vô là tắt»). DOM only, opened from mobile-game. */
+export function openCreatureHomes({el,closeOnBackdrop,iconButton,portrait,label,labelOf,species,view,move}){
  const close=()=>dialog.close(),body=el('div',{class:'home-groups'});
- let pending=false;
+ let pending=false,drag=null,justDragged=false;
+ const go=async(who,spot,name)=>{if(pending)return;pending=true;body.setAttribute('aria-busy','true');
+  try{await move(who,spot,name);}finally{pending=false;body.removeAttribute('aria-busy');render();}};
  const tile=(g,c,current)=>{
   const here=c.spot===current,name=c.species?labelOf(c.species):'Trống';
-  const b=el('button',{type:'button',class:'home-cell'+(here?' is-here':'')+(c.species?'':' is-empty'),disabled:here,'aria-label':`${g.name} · ${name}`,title:name},
+  const b=el('button',{type:'button',class:'home-cell'+(here?' is-here':'')+(c.species?'':' is-empty'),'aria-disabled':String(here),'aria-label':`${g.name} · ${name}`,title:name,
+   'data-spot':c.spot,'data-group':g.name,...(c.species?{'data-species':c.species}:{})},
    [c.species?portrait(c.species):el('span',{class:'home-cell-art'}),el('small',{text:name})]);
-  b.onclick=async()=>{if(pending)return;pending=true;body.setAttribute('aria-busy','true');b.disabled=true;
-   try{await move(c.spot,g.name);}finally{pending=false;body.removeAttribute('aria-busy');render();}};
+  b.onclick=()=>{if(justDragged||here)return;go(species,c.spot,g.name);};
   return b;
  };
  function render(){const {groups,current}=view();body.replaceChildren(...groups.map(g=>el('section',{class:'home-group'+(g.name==='Bãi chăn'?' is-pasture':''),'aria-label':g.name},
   [el('h3',{text:g.name}),el('div',{class:'home-cells'},g.cells.map(c=>tile(g,c,current)))])));}
  const dialog=el('dialog',{id:'creatureHomes',class:'owl-letter creature-homes','aria-labelledby':'creatureHomesTitle'},[
   el('div',{class:'popover-heading'},[el('h2',{id:'creatureHomesTitle',text:`Dời chuồng · ${label}`}),iconButton('close','Đóng',close,{class:'gp-close'})]),body]);
+ // Drag: touch lifts after a 250 ms hold (a quick swipe still scrolls the list), a mouse after 6 px.
+ const cellAt=(x,y)=>document.elementFromPoint(x,y)?.closest?.('#creatureHomes .home-cell');
+ const place=(x,y)=>{drag.ghost.style.left=`${x-drag.ox}px`;drag.ghost.style.top=`${y-drag.oy}px`;};
+ function lift(){
+  drag.on=true;drag.cell.classList.add('is-lifted');
+  drag.ghost=el('div',{class:'home-ghost','aria-hidden':'true'},[portrait(drag.species)]);dialog.append(drag.ghost);
+  const r=drag.ghost.getBoundingClientRect();drag.ox=r.left;drag.oy=r.top;place(drag.x,drag.y);
+ }
+ function end(drop){
+  if(!drag)return;const d=drag;drag=null;clearTimeout(d.timer);
+  d.ghost?.remove();d.cell.classList.remove('is-lifted');dialog.querySelector('.home-cell.is-drop')?.classList.remove('is-drop');
+  if(!d.on)return;justDragged=true;setTimeout(()=>{justDragged=false;},80);
+  const to=drop&&cellAt(d.x,d.y);
+  if(to&&to!==d.cell)go(d.species,Number(to.dataset.spot),to.dataset.group);
+ }
+ body.addEventListener('pointerdown',e=>{
+  const cell=e.target.closest('.home-cell[data-species]');if(!cell||pending||drag||e.button>0)return;
+  drag={cell,species:cell.dataset.species,x:e.clientX,y:e.clientY,x0:e.clientX,y0:e.clientY,on:false,mouse:e.pointerType==='mouse'};
+  if(!drag.mouse)drag.timer=setTimeout(()=>drag&&!drag.on&&lift(),250);
+ });
+ dialog.addEventListener('pointermove',e=>{
+  if(!drag)return;drag.x=e.clientX;drag.y=e.clientY;
+  if(!drag.on){if(Math.hypot(drag.x-drag.x0,drag.y-drag.y0)>(drag.mouse?6:8)){if(drag.mouse)lift();else end(false);}return;}
+  place(drag.x,drag.y);
+  const to=cellAt(drag.x,drag.y),old=dialog.querySelector('.home-cell.is-drop');
+  if(old!==to){old?.classList.remove('is-drop');if(to&&to!==drag.cell)to.classList.add('is-drop');}
+  // Near the dialog's top or bottom edge the list scrolls under the finger.
+  const r=dialog.getBoundingClientRect();if(drag.y<r.top+64)dialog.scrollTop-=12;else if(drag.y>r.bottom-64)dialog.scrollTop+=12;
+ });
+ dialog.addEventListener('touchmove',e=>{if(drag?.on)e.preventDefault();},{passive:false});
+ dialog.addEventListener('pointerup',()=>end(true));
+ dialog.addEventListener('pointercancel',()=>end(false));
+ dialog.addEventListener('contextmenu',e=>{if(e.target.closest('.home-cell'))e.preventDefault();});
  render();
- dialog.addEventListener('close',()=>dialog.remove());
+ dialog.addEventListener('close',()=>{end(false);dialog.remove();});
  closeOnBackdrop(dialog,close);
  (document.getElementById('gameShell')||document.body).append(dialog);
  dialog.showModal();

@@ -531,12 +531,12 @@ function openCreatureHome(sp=species){
  if(!canMoveHome(sp))return;
  const labelOf=s=>CREATURE[s]?.label||s;
  const view=()=>{const v=creatureHomesView();return {v,groups:homeChoices(v.land,v.spots,{built:v.built}),current:v.spots[v.land.findIndex(e=>e.species===sp)]};};
- openCreatureHomes({el,closeOnBackdrop,iconButton,portrait:s=>petIcon(items,s,40),label:labelOf(sp),labelOf,view,move:async(target,name)=>{
+ openCreatureHomes({el,closeOnBackdrop,iconButton,portrait:s=>petIcon(items,s,40),label:labelOf(sp),labelOf,species:sp,view,move:async(who,target,name)=>{
   // A tap while another command runs used to vanish (run() drops it): wait for it instead.
   for(let i=0;i<40&&(busy||!walletReady);i++)await new Promise(r=>setTimeout(r,150));
   const {v}=view();
-  await run(null,`Đã dời ${labelOf(sp)} sang ${name}.`,{action:'setCreatureHomes',homes:swapHome(v.land,v.spots,sp,target)});
-  if(currentDecorations()?.creatureHomes?.[sp]!==target)return false;
+  await run(null,`Đã dời ${labelOf(who)} sang ${name}.`,{action:'setCreatureHomes',homes:swapHome(v.land,v.spots,who,target)});
+  if(currentDecorations()?.creatureHomes?.[who]!==target)return false;
   if(autoZoom)camera.focusCreature(spotPoint(map,target));return true;}});
 }
 function selectCreature(id){species=id;petControls?.select(id);setMode('creature');const v=creatureHomesView(),i=v.land.findIndex(e=>e.species===id);if(autoZoom&&i>=0)camera.focusCreature(spotPoint(map,v.spots[i]));$('creatureTray').querySelector('[aria-pressed=true]')?.scrollIntoView({block:'nearest',inline:'nearest'});}
