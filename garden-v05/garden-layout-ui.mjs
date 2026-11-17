@@ -1,4 +1,4 @@
-import {showVisualLayoutModal} from './decor-placement-ui.mjs?v=26.5';
+import {showVisualLayoutModal} from './decor-placement-ui.mjs?v=26.6';
 
 export function openGardenLayout(ctx){
  const {panels,E,layoutSlots,camera,iso,run,draw,getState,getStage,preview}=ctx;
