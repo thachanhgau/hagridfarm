@@ -1,4 +1,4 @@
-// Season 2 «Tài năng sinh vật» (26.0): the skill row inside «Chăm bé» and the receipt line. garden-mood-ui imports it,
+// Season 2 «Tài năng sinh vật» (26.0): the skill rows inside «Chăm bé» and the receipt line. garden-mood-ui imports it,
 // so it loads on the first «Chăm bé» tap; the startup part (marks, passive lines) is garden-skills-ui.
 import {el,button} from './ui-utils.mjs?v=26.5';
 import * as E from './progression-engine.mjs?v=26.5';
@@ -19,7 +19,7 @@ const WHAT=Object.freeze({
  kappa:['Hạn hán: cây 3 giờ tốn 1 Nước mỗi ô','Hạn hán: cây 3 giờ gieo không tốn Nước'],porlock:['Bằng-Mã, Vong mã, Kỳ lân không dưới 50 tâm trạng','Không dưới 60'],
 });
 export const WHY=Object.freeze({'skills-off':'Kỹ năng đang tạm tắt','fled':'Bé đang ở Rừng Cấm','locked':'Bậc 1: trưởng thành và gắn bó cấp 3','sick':'Bé đang ốm','roaming':'Bé đang đi rông','sad':'Bé buồn: cần tâm trạng từ 50'});
-const RANK=['Chưa có','Bậc 1','Bậc 2','Bậc 3 · Tinh thông'];
+const RANK=['Chưa có','1','2','3 · Tinh thông'];
 const NEXT=['Bậc 1: trưởng thành và gắn bó cấp 3','Bậc 2: gắn bó cấp 5 và thuộc cả 3 trò','Bậc 3: vườn cấp 1.000',''];
 const vnHour=t=>new Date(t+7*3600000).getUTCHours();
 const label=sp=>E.CREATURE[sp]?.label||sp;
@@ -30,31 +30,48 @@ export function todoLines(snap,now=Date.now()){
  return [...[...k.plots].map(i=>`Thửa ${i+1} sắp héo`),...[...k.meals].map(sp=>`${label(sp)} xong bữa`),...[...k.sick].map(sp=>`${label(sp)} sắp ốm`)];
 }
 
-/** The card inside «Chăm bé». `use(species,target)` sends action `skill`. */
+/** One row of the «Chăm bé» grid (label · text or meter · number); without a number the text spans to the right edge. */
+export const line=(label,mid,value='',cls='')=>el('div',{class:('mood-line '+cls).trim()},[
+ el('span',{class:'mood-k',text:label}),
+ mid&&typeof mid==='object'?mid:el('span',{class:'mood-v'+(value?'':' is-wide'),text:mid||''}),
+ value?el('b',{class:'mood-n',text:value}):null,
+]);
+const picked={}; // species → the target last chosen, kept across re-renders
+
+/** The skill rows inside «Chăm bé»: rank and uses, what it gives, what blocks or comes next, then its target
+ *  picker and one gold action. `use(species,target)` sends action `skill`. */
 export function skillCard({species,snap,use,now=Date.now()}){
  const s=skillOf(snap,species);if(!s)return null;
  const what=WHAT[species]||['',''],r=Math.min(s.rank,3);
  const count=s.passive?(s.cap?`${s.left}/${s.cap} hôm nay`:'Luôn bật'):`Còn ${s.left}/${s.cap} lượt`;
- const lines=[el('small',{text:`${RANK[r]}${r?' · '+count:''}`}),el('span',{text:what[0]+(r>=2?' · '+what[1]:'')})];
- if(s.blocked)lines.push(el('small',{class:'skill-why',text:s.blocked==='locked'?NEXT[0]:WHY[s.blocked]||s.blocked}));
- else if(NEXT[r])lines.push(el('small',{class:'meta',text:NEXT[r]}));
- let act=null;
+ const rows=[line('Bậc',RANK[r],r?count:'','mood-gap'),line('Tác dụng',what[0]+(r>=2?' · '+what[1]:''))];
+ if(s.blocked&&s.blocked!=='locked')rows.push(line('Lúc này',WHY[s.blocked]||s.blocked,'','is-warn'));
+ else{const next=(s.blocked?NEXT[0]:NEXT[r]).split(': ');if(next[1])rows.push(line(next[0],next[1],'',s.blocked?'is-warn':'is-muted'));}
+ const todo=species==='kneazle'?todoLines(snap,now):[];
+ if(todo.length)rows.push(line('Việc cần',todo.join(' · ')));
  if(isReady(s)){
   const targets=skillTargets(species,snap,now),night=vnHour(now)>=18||vnHour(now)<6;
-  if(species==='mooncalf'&&!night)act=el('small',{class:'skill-why',text:'Chỉ ra vườn 18:00–06:00'});
-  else if(targets===null)act=button('Nhờ bé',()=>use(species),{class:'primary skill-go'});
-  else if(!targets.length)act=el('small',{class:'skill-why',text:species==='unicorn'?'Không có bé ốm':'Chưa có thửa hợp'});
-  else act=el('div',{class:'gp-chips skill-targets',role:'group','aria-label':'Chọn chỗ cho bé giúp'},targets.slice(0,12).map(x=>button(typeof x==='number'?`Thửa ${x+1}`:label(x),()=>use(species,x),{class:'gp-chip'})));
+  const go=(text,fn)=>{const b=button('',fn,{class:'mood-act mood-cta'+(fn?' primary':''),disabled:!fn});b.append(skillIcon(species),el('b',{text}));return b;};
+  let act;
+  if(species==='mooncalf'&&!night)act=[go('Chỉ ra vườn 18:00–06:00')];
+  else if(targets===null)act=[go('Nhờ bé',()=>use(species))];
+  else if(!targets.length)act=[go(species==='unicorn'?'Không có bé ốm':'Chưa có thửa hợp')];
+  else{
+   const list=targets.slice(0,12),name=x=>typeof x==='number'?`Thửa ${x+1}`:label(x);
+   let pick=list.includes(picked[species])?picked[species]:list[0];
+   const cta=go('',()=>use(species,pick)),say=()=>{cta.querySelector('b').textContent=`Nhờ bé · ${name(pick)}`;};
+   const chips=list.length<2?null:el('div',{class:'mood-pick',role:'group','aria-label':'Chọn chỗ cho bé giúp'},list.map(x=>button(name(x),e=>{
+    pick=picked[species]=x;for(const c of chips.children)c.setAttribute('aria-pressed',String(c===e.currentTarget));say();
+   },{'aria-pressed':String(x===pick)})));
+   say();act=[chips,cta];
+  }
+  rows.push(el('div',{class:'mood-wide'},act));
  }
- const todo=species==='kneazle'?todoLines(snap,now):[];
- return el('section',{class:'skill-card'+(isReady(s)?' is-ready':''),'aria-label':'Kỹ năng '+s.name},[
-  skillIcon(species),
-  el('div',{class:'skill-copy'},[el('b',{text:s.name||'Kỹ năng'}),...lines,todo.length?el('small',{text:todo.join(' · ')}):null,act]),
- ]);
+ return rows;
 }
 export function skillIcon(species){
  const i=SKILL_ORDER.indexOf(species);
- return el('span',{class:'skill-icon',style:`background-position:${-(i%6)*40}px ${-Math.floor(i/6)*40}px`,'aria-hidden':'true'});
+ return el('span',{class:'skill-icon',style:`background-position:${-(i%6)*32}px ${-Math.floor(i/6)*32}px`,'aria-hidden':'true'});
 }
 
 /** The line after a `skill` receipt (receipt.skill, fields per garden-skill-core EFFECTS). */
