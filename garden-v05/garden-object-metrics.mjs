@@ -1,9 +1,10 @@
-import {FOREST_ASSETS} from './forest-surround.mjs?v=26.16';
-import {FESTIVAL_HEROES} from './garden-seasonal-world.mjs?v=26.16';
-import {spriteGridMetrics, footprintPixels} from './garden-grid.mjs?v=26.16';
-import {STORE_CATALOG} from './garden-store-catalog.mjs?v=26.16';
-import {COMPLETE_SCENERY, HABITAT_ART, KEEPSAKE_ART} from './complete-object-art.mjs?v=26.16';
-import {ITEM_ART} from './item-art.mjs?v=26.16';
+import {FOREST_ASSETS} from './forest-surround.mjs?v=26.17';
+import {FESTIVAL_HEROES} from './garden-seasonal-world.mjs?v=26.17';
+import {spriteGridMetrics, footprintPixels} from './garden-grid.mjs?v=26.17';
+import {STORE_CATALOG} from './garden-store-catalog.mjs?v=26.17';
+import {COMPLETE_SCENERY, HABITAT_ART, KEEPSAKE_ART} from './complete-object-art.mjs?v=26.17';
+import {ITEM_ART} from './item-art.mjs?v=26.17';
+import {baseDecorId} from './decor-runtime.mjs?v=26.17';
 
 // Ground dimensions; the canopy, roof or head can overhang this base. Native
 // raster bounds remain a separate screen-occlusion check during placement.
@@ -17,7 +18,7 @@ export function sceneryGroundRect(id, col, row) {
   return {c0: col - cols / 2, c1: col + cols / 2, r0: row - rows / 2, r1: row + rows / 2};
 }
 const storeFootprints = new Map(STORE_CATALOG.filter(item => item.kind === 'decoration').map(item => [item.id, item.footprint ?? [1, 1]]));
-export const decorFootprint = id => storeFootprints.get(id) ?? [1, 1];
+export const decorFootprint = id => storeFootprints.get(baseDecorId(id)) ?? [1, 1];
 
 function metric(id, kind, asset, footprint, facing = 'default') {
   return {id, kind, facing, ...spriteGridMetrics(asset, footprint, facing)};

@@ -1,8 +1,8 @@
-import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=26.16';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=26.16';
-import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=26.16';
-import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=26.16';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.16';
+import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=26.17';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=26.17';
+import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=26.17';
+import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=26.17';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.17';
 
 export function ownedDecorChoices(decorations,assets) {
  return [...new Set(decorations?.owned||[])].filter(id=>assets.has(id)).map(id=>({
@@ -23,7 +23,9 @@ function rowIcon(items,row,assets) {
 }
 
 // Construction keeps its existing grid and handlers inside buildPane; decor shares only the shell.
-export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,openDecorate,openDefault,openStore,run,showPanel,getState,getRotations=()=>({}),setDefaultVisible,focusDecor}) {
+// Contest garden (garden-contest.mjs): `addCopy(row)` adds «Thêm bản» for a bought piece, `submit` puts «Nộp bài dự thi»
+// where «Mua thêm» was (everything is owned there).
+export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,openDecorate,openDefault,openStore,run,showPanel,getState,getRotations=()=>({}),setDefaultVisible,focusDecor,addCopy=null,submit=null}) {
  const root=$('buildDock'),buildPane=el('div',{id:'buildWorkPane',class:'work-dock'});
  const pane=el('div',{id:'decorWorkPane',class:'decor-work-pane',hidden:true});
  const tabs=el('div',{class:'build-decor-tabs',role:'group','aria-label':'Xây dựng và trang trí'});
@@ -41,7 +43,7 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
  const title=el('strong',{id:'decorDockName'}),status=el('span',{id:'decorDockStatus'});
  const current=()=>currentRows().find(r=>r.id===selected);
  async function act(fn){
-  place.disabled=stash.disabled=true;
+  place.disabled=stash.disabled=copy.disabled=true;
   try{await fn();}finally{refresh();(place.hidden?stash:place).focus({preventScroll:true});}
  }
  const place=button('',()=>{
@@ -57,12 +59,21 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
   act(()=>row.isDefault?setDefaultVisible(row.id,false):run(null,'Đã cất '+row.label+'.',{action:'placeDecoration',...decorPlaceFields(getDecorations(),row.id,null,row.facing)}));
  },{id:'decorDockStash','aria-label':'Cất món đang chọn'});
  stash.append(pixelIcon('chest',1),el('span',{text:'Cất'}));
- const detail=el('div',{class:'decor-dock-detail'},[el('div',{class:'decor-dock-copy'},[title,status]),place,stash]);
+ // The new copy is selected, ready to place (server addCopy answers its id).
+ const copy=button('',()=>{
+  const row=current();
+  if(!row||row.isDefault||!getReady())return;
+  act(async()=>{const id=await addCopy(row);if(id){selected=id;section='decor';}});
+ },{id:'decorDockCopy','aria-label':'Thêm một bản của món đang chọn',title:'Thêm bản'});
+ copy.append(pixelIcon('plus',1),el('span',{text:'Thêm bản'}));copy.hidden=true;
+ const detail=el('div',{class:'decor-dock-detail'},[el('div',{class:'decor-dock-copy'},[title,status]),place,stash,copy]);
  const collection=button('',()=>{collection.focus();showPanel('collection');},{id:'decorDockCollection','aria-label':'Mở trang trí của vườn và kỷ vật'});
  collection.append(pixelIcon('scenery',1),el('span',{text:'Vườn & kỷ vật'}));
  const shop=button('',()=>openStore('decoration',shop),{id:'decorDockShop','aria-label':'Mua thêm trang trí'});
  shop.append(pixelIcon('shop',1),el('span',{text:'Mua thêm'}));
- const footer=el('div',{class:'decor-dock-footer'},[collection,shop]);
+ const send=submit&&button('',()=>submit(send),{id:'decorDockSubmit',class:'primary','aria-label':'Nộp bài dự thi'});
+ send?.append(pixelIcon('trophy',1),el('span',{text:'Nộp bài'}));
+ const footer=el('div',{class:'decor-dock-footer'},[collection,send||shop]);
  pane.append(tray,empty,detail,footer);
  root.classList.remove('work-dock');root.classList.add('build-decor-dock');
  root.setAttribute('aria-label','Xây dựng và trang trí');root.replaceChildren(tabs,buildPane,pane);
@@ -100,6 +111,7 @@ export function setupBuildDecorDock({items,getDecorations,getAssets,getReady,ope
   title.textContent=row.label;
   status.textContent=row.isDefault?(row.placed?'Đồ của vườn · dời sang ô khác hoặc cất':'Đang cất · chọn chỗ đặt'):(row.placed?'Đang bày trong vườn':'Đang cất · sẵn sàng đặt');
   stash.hidden=!row.placed;stash.disabled=!ready;
+  copy.hidden=!addCopy||row.isDefault;copy.disabled=!ready;
   const label=row.placed?'Dời chỗ':'Đặt';
   place.disabled=!ready;
   setAction(place,{icon:'scenery',label,text:label+' '+row.label});

@@ -37,3 +37,33 @@
 }
 /* one line on a phone: «Dời chỗ» / «Đặt» beside a smaller icon */
 #playDock #decorDockPlace .action-label{white-space:nowrap}#playDock #decorDockPlace>.px-icon,#playDock #decorDockPlace>img{width:24px;height:24px;flex:none}
+/* Cuộc thi Trang Trí Vườn Giáng Sinh (?contest=xmas2026, garden-contest.mjs): decorating only, no wallet, prices,
+   market, duty or missions; the dock keeps «Công trình / Trang trí». */
+.contest-garden #galleonCounter,.contest-garden #suppliesButton,.contest-garden #magicCounter,.contest-garden #nextGoal,
+.contest-garden #shopButton,.contest-garden #inventoryButton,.contest-garden #missionButton,.contest-garden #owlMailButton,
+.contest-garden #harvestCount,.contest-garden .duty-chip,.contest-garden .hud-chips,.contest-garden #keeperTitleButton,
+.contest-garden #sowTool,.contest-garden #harvestTool,.contest-garden #creatureTool,.contest-garden #craftTool,
+.contest-garden #pondTool,.contest-garden #orchardTool,.contest-garden .emulator-badge{display:none!important}
+#playDock #decorDockSubmit{background:#e6cd92;color:#192e24;border-color:#b2995e}
+.contest-submit{max-width:min(420px,calc(100vw - 32px));width:100%;box-sizing:border-box;padding:16px;border:2px solid #b2995e;border-radius:8px;background:#142d24;color:#f8efd8;font:inherit}
+.contest-submit::backdrop{background:#04110cb3}
+.contest-submit form{display:flex;flex-direction:column;gap:6px}
+.contest-submit h2{margin:0 0 6px;font-size:18px;color:#f3d593}
+.contest-submit label{font-size:13px;font-weight:700}
+.contest-submit input:not([type=checkbox]),.contest-submit textarea{width:100%;box-sizing:border-box;padding:8px;border:1px solid #718569;border-radius:5px;background:#081b15;color:#f8efd8;font:inherit;font-size:16px}
+.contest-submit .contest-count{align-self:flex-end;color:#c8dbab;font-size:11px}
+.contest-submit .contest-sure{display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:4px}
+.contest-submit .contest-sure input{width:20px;height:20px;flex:0 0 auto;margin:0}
+.contest-submit .contest-status{min-height:1.2em;margin:4px 0 0;color:#f3d593;font-size:13px}
+.contest-submit .contest-actions{display:flex;justify-content:flex-end;gap:8px}
+.contest-submit .contest-actions button{min-height:44px;padding:0 16px;border-radius:5px;border:1px solid #718569;background:#29483a;color:#f8efd8;font:inherit;font-weight:700}
+.contest-submit .contest-actions button.primary{background:#e6cd92;color:#192e24;border-color:#b2995e}
+.tour-banner.is-member.is-contest .tour-banner-copy{grid-column:1/-1}
+/* Contest dock on one row (compact-dock.css grid): «Thêm bản» icon only, «Nộp bài» short; «Vườn & kỷ vật» steps aside
+   (the garden's own pieces are in the tray already). */
+.contest-garden #playDock #decorDockCollection{display:none!important}
+#playDock #decorWorkPane #decorDockCopy{display:flex;align-items:center;justify-content:center;width:44px;min-width:44px;height:44px;min-height:44px;padding:0;border:1px solid #829371;border-radius:4px;background:#213c2e;color:#ffe2a7}
+#playDock #decorWorkPane #decorDockCopy[hidden]{display:none}
+#playDock #decorWorkPane #decorDockCopy>span{display:none}
+#playDock #decorWorkPane #decorDockSubmit{height:44px;min-height:44px;padding:0 10px;white-space:nowrap;font-weight:700}
+#playDock #decorWorkPane #decorDockSubmit>.px-icon{display:none}

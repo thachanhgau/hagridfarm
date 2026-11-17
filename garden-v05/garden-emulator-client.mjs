@@ -1,4 +1,4 @@
-import {packTotal} from './ui-utils.mjs?v=26.16';
+import {packTotal} from './ui-utils.mjs?v=26.17';
 const PROJECT='demo-hpvnn-garden', UID='garden-demo-member';
 // ?functionsPort=5002: a second Functions emulator beside the shared Firestore/Auth one (one per worktree).
 const PORT=/^\d{4,5}$/.test(new URLSearchParams(globalThis.location?.search||'').get('functionsPort')||'')?new URLSearchParams(globalThis.location.search).get('functionsPort'):'5001';
@@ -44,18 +44,19 @@ export function createGardenClient(transport){
   buy:(itemId,packages)=>queue(()=>{const item=snapshot.catalog.find(i=>i.id===itemId);if(!item)throw Error('Vật tư chưa mở.');return mutate('buyHagridGardenSupplies',{itemId,quantity:packages,catalogVersion:snapshot.catalogVersion,expectedTotal:packTotal(item,packages)});}),
  };
 }
-export function createEmulatorClient({decorQA=false}={}){
+// `client`: the client over the transport (garden-contest.mjs createContestClient for ?contest=…).
+export function createEmulatorClient({decorQA=false,client=createGardenClient}={}){
  const uid=decorQA?'garden-decor-browser-qa':UID;
  if(!['127.0.0.1','localhost'].includes(location.hostname))throw Error('Ví thử nghiệm chỉ mở trên máy local.');
- return createGardenClient(async(name,data)=>{let response;const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),18000);try{response=await fetch(BASE+name,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+fixtureToken(uid)},body:JSON.stringify({data}),signal:abort.signal});}catch{throw Error('Chưa nhận được phản hồi. Thử lại đúng thao tác để kiểm tra giao dịch; mã mua được giữ nguyên.');}finally{clearTimeout(timer);}const body=await response.json();if(body.error){const e=Error(body.error.message||'Máy chủ từ chối thao tác.');e.definitive=true;e.reason=body.error.details?.reason;e.details=body.error.details||{};throw e;}return body.result;});
+ return client(async(name,data)=>{let response;const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),18000);try{response=await fetch(BASE+name,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+fixtureToken(uid)},body:JSON.stringify({data}),signal:abort.signal});}catch{throw Error('Chưa nhận được phản hồi. Thử lại đúng thao tác để kiểm tra giao dịch; mã mua được giữ nguyên.');}finally{clearTimeout(timer);}const body=await response.json();if(body.error){const e=Error(body.error.message||'Máy chủ từ chối thao tác.');e.definitive=true;e.reason=body.error.details?.reason;e.details=body.error.details||{};throw e;}return body.result;});
 }
 // Inside HPVN (/phongsinhoatchung/khu-vuon-hagrid) the game runs in an opaque sandbox; the shell
 // puts a per-session ticket in the hash and makes each call with the member's own sign-in.
 export function hpvnTicket(){return new URLSearchParams(location.hash.slice(1)).get('hpvn-ticket');}
-export function createHpvnClient(nonce){
+export function createHpvnClient(nonce,makeClient=createGardenClient){
  let seq=0;const waiting=new Map();
  addEventListener('message',event=>{const m=event.data;if(event.source!==parent||m?.channel!=='hpvn-game'||m.nonce!==nonce||!waiting.has(m.id))return;const done=waiting.get(m.id);waiting.delete(m.id);done(m);});
- const client=createGardenClient((name,data)=>new Promise((resolve,reject)=>{
+ const client=makeClient((name,data)=>new Promise((resolve,reject)=>{
   const id='garden-'+(++seq);
   // A lost answer keeps the requestId (definitive stays false), so the retry cannot pay twice.
   const timer=setTimeout(()=>{waiting.delete(id);reject(Error('Chưa nhận được phản hồi. Thử lại đúng thao tác để kiểm tra giao dịch; mã mua được giữ nguyên.'));},20000);

@@ -1,4 +1,4 @@
-import {SOFT_WINTER_ROWS} from './soft-winter-products.mjs?v=26.16';
+import {SOFT_WINTER_ROWS} from './soft-winter-products.mjs?v=26.17';
 // «Sản phẩm đặc biệt»: 30 decorations from the books (art and lore: special-products-assets/manifest.json,
 // runtime sprites in decor-assets-manifest.json). Decoration only: no XP, yield, power or reward.
 // Owner 04/11/2026 (big update 25.0 S1): on sale at the §3 prices (garden-store-catalog storePrice); the HPVN server

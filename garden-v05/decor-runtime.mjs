@@ -26,10 +26,31 @@ export const DECOR_LABELS = Object.freeze({
   herbology_greenhouse: 'Nhà kính Thảo dược',
 });
 
+// Contest gardens (garden-contest.mjs) hold copies `<baseId>~<n>` of a piece; art, footprint and lights are the base's.
+export const baseDecorId = id => typeof id === 'string' ? id.replace(/~\d+$/, '') : id;
+
 export function decorLabelFor(itemOrId) {
   if (!itemOrId) return 'Vật phẩm trang trí';
   if (typeof itemOrId === 'string') return DECOR_LABELS[itemOrId] || itemOrId;
   return itemOrId.label || itemOrId.title || DECOR_LABELS[itemOrId.id] || itemOrId.id || 'Vật phẩm trang trí';
+}
+
+const copyNumber = id => Number(/~(\d+)$/.exec(id)?.[1]);
+/** Contest only: `assets` (Map by id) also answers for copies, the base piece labelled « · bản n». Changes and returns it. */
+export function withDecorCopies(assets) {
+  if (assets.copies) return assets;
+  const get = assets.get.bind(assets), has = assets.has.bind(assets), made = new Map();
+  assets.get = id => {
+    const base = baseDecorId(id);
+    if (base === id) return get(id);
+    const asset = get(base);
+    if (!asset) return undefined;
+    if (made.get(id)?.of !== asset) made.set(id, {of: asset, copy: {...asset, label: `${decorLabelFor(asset)} · bản ${copyNumber(id)}`}});
+    return made.get(id).copy;
+  };
+  assets.has = id => has(baseDecorId(id));
+  assets.copies = true;
+  return assets;
 }
 
 export function normalizeDecorFacing(value) {

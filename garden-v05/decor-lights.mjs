@@ -1,10 +1,11 @@
-import {decorFrameAt} from './scene-animation.mjs?v=26.16';
-import {DECOR_LIGHTS} from './decor-lights-spec.mjs?v=26.16';
-import {DECOR_LIGHT_POINTS} from './decor-light-points.mjs?v=26.16';
+import {decorFrameAt} from './scene-animation.mjs?v=26.17';
+import {DECOR_LIGHTS} from './decor-lights-spec.mjs?v=26.17';
+import {DECOR_LIGHT_POINTS} from './decor-light-points.mjs?v=26.17';
+import {baseDecorId} from './decor-runtime.mjs?v=26.17';
 
 export function nightDecorFrame(object,clock=0,{hd=false}={}){
  if(!object?.asset||!object.xy||object.preview)return null;
- const id=object.kind==='festival'?object.asset.id:object.id,spec=DECOR_LIGHTS[id];
+ const id=object.kind==='festival'?object.asset.id:baseDecorId(object.id),spec=DECOR_LIGHTS[id];
  if(!spec)return null;
  const frame=decorFrameAt(object.asset,clock,{facing:object.facing,seed:object.kind==='festival'?object.id:`${object.id}:${object.slot}`,reducedMotion:clock===0});
  const records=DECOR_LIGHT_POINTS[id]?.[frame.facing],record=records?.[frame.index]??records?.[0];
