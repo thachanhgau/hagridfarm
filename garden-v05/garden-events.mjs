@@ -680,7 +680,8 @@ export function evaluateCreatureAffinity(gameState = {}, storage = getGardenStor
     const card = fromServer.get(cr.species);
     if (card) {
       const {gifts = [], ...info} = card;
-      return {...info, claimableGifts: gifts.filter((g) => g.claimable).map(({giftId, level, title, reward}) => ({giftId, level, title, reward}))};
+      const next = gifts.find((g) => g.level === info.level + 1);
+      return {...info, next: next ? {level: next.level, title: next.title, reward: next.reward} : null, claimableGifts: gifts.filter((g) => g.claimable).map(({giftId, level, title, reward}) => ({giftId, level, title, reward}))};
     }
     const saved = affState.bySpecies[cr.species];
     // Give adult creatures a baseline affinity if not yet interacted
@@ -694,6 +695,8 @@ export function evaluateCreatureAffinity(gameState = {}, storage = getGardenStor
       xp: baseXp,
       pets: saved?.pets || 0,
       ...info,
+      next: CREATURE_AFFINITY_LEVELS[info.level] || null,
+      petsLeftToday: Math.max(0, AFFINITY_PETS_PER_DAY - (saved?.petDay === dayKeyFor(Date.now()) ? saved.petsToday || 0 : 0)),
       claimableGifts: claimableLevels.map((lv) => ({
         giftId: `${cr.species}:lv${lv.level}`,
         level: lv.level,
