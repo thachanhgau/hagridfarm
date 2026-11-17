@@ -1,11 +1,11 @@
 // «Đàn thú: tâm trạng và tương tác» (25.0 S4, server garden-mood-core): one creature's mood and this cycle's
 // interactions (action tendCreature), its tricks and its rare-coat grooming. The server keeps every number; this
 // panel only shows snapshot.mood. mobile-game imports it on the first «Chăm bé» tap or a tap on Norbert.
-import {$,el,icon,duration,closeOnBackdrop} from './ui-utils.mjs?v=26.8';
-import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.8';
-import {COAT_STEPS,groomLabel} from './garden-winter.mjs?v=26.8';
-import {skillCard,skillText,skillTitle,section} from './garden-skills-card.mjs?v=26.8';
-import {skillOf} from './garden-skills-ui.mjs?v=26.8';
+import {$,el,icon,duration,closeOnBackdrop} from './ui-utils.mjs?v=26.9';
+import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.9';
+import {COAT_STEPS,groomLabel} from './garden-winter.mjs?v=26.9';
+import {skillCard,skillText,skillTitle,section} from './garden-skills-card.mjs?v=26.9';
+import {skillOf} from './garden-skills-ui.mjs?v=26.9';
 
 export const NORBERT='norbert';
 // Play toys (roadmap §4: Đào mỏ – đồ lấp lánh, Kneazle – cuộn len, Chó ba đầu – thổi sáo cho ngủ, HP1).
@@ -67,9 +67,14 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
  const prev=iconButton('chevron','Bé trước',()=>step(-1),{class:'mood-nav is-prev'}),next=iconButton('chevron','Bé sau',()=>step(1),{class:'mood-nav is-next'});
  const title=el('h2',{id:'creatureMoodTitle',text:'Chăm bé'}),sub=el('small',{class:'mood-sub'}),face=el('span',{class:'mood-portrait'});
  const dialog=el('dialog',{id:'creatureMood',class:'owl-letter mood-care','aria-labelledby':'creatureMoodTitle'},[
-  el('div',{class:'popover-heading mood-head'},[prev,face,el('div',{class:'mood-head-copy'},[title,sub]),next,iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
-  body,
+  el('div',{class:'popover-heading mood-head'},[face,el('div',{class:'mood-head-copy'},[title,sub]),iconButton('close','Đóng',()=>dialog.close(),{class:'gp-close'})]),
+  body,prev,next,
  ]);
+ // The arrows sit on the frame's left and right edges at mid-height (owner 17/11/2026: «để ở trên ko ai để ý»), fixed
+ // to the viewport so they stay put while the list scrolls.
+ const placeNav=()=>{if(!dialog.open)return;const r=dialog.getBoundingClientRect(),top=Math.round(r.top+r.height/2-32)+'px';
+  prev.style.top=next.style.top=top;prev.style.left=Math.round(r.left-12)+'px';next.style.left=Math.round(r.right-20)+'px';};
+ addEventListener('resize',placeNav);
  ($('gameShell')||document.body).append(dialog);
  closeOnBackdrop(dialog);
  let species=null,timer=0;
@@ -80,6 +85,7 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
   if(!entry){face.replaceChildren();sub.textContent='';body.replaceChildren(el('p',{class:'meta mood-wide',text:view?'Chưa có bé này trong vườn.':'Cần kết nối tài khoản.'}));return;}
   const now=Date.now(),norbert=species===NORBERT,happy=entry.mood>=view.happy;
   prev.hidden=next.hidden=order().length<2;
+  requestAnimationFrame(placeNav);
   title.textContent=labelOf(species);
   sub.textContent=norbert?'':skillTitle(skillOf(snap,species));
   face.replaceChildren(norbert?el('img',{src:'environment/elves/norbert/idle.png',width:40,height:40,alt:'',style:'image-rendering:pixelated'}):icon(items,species,3,40));
@@ -107,7 +113,7 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
   if(dialog.open&&entry.roamUntil&&entry.roamUntil>now)timer=setTimeout(render,Math.min(60000,entry.roamUntil-now+500));
  }
  return {
-  open(id){species=id;render();dialog.showModal();},
+  open(id){species=id;render();dialog.showModal();placeNav();},
   // After each server reply: refresh an open panel.
   sync(){if(dialog.open)render();},
  };
