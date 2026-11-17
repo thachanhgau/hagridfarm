@@ -2163,7 +2163,29 @@ export async function createGarden(canvas, options = {}) {
     interactiveOrchard=objects.filter(o=>o.type==='prop'&&String(o.id).startsWith('orchard-'));
     interactiveActors=objects.filter(o=>o.item?.kind==='creature').map(o=>({species:o.species,xy:o.xy,asset:o.asset,facing:o.facing,authoredFacing:o.authoredFacing,affinityLevel:o.affinityLevel,guest:o.guest===true}));
     lastOrder = objects.map((object) => ({id: object.id ?? object.species, x: object.xy?.[0] ?? 0, y: object.xy?.[1] ?? 0, type: object.type, species: object.species}));
-    for (const object of objects) drawObject(object, logicalNow, clock);
+    // A decoration drawn over a creature standing behind it fades, so the creature stays visible (owner 17/11/2026:
+    // «tượng che mất con vong mã»): sprite boxes from pivot + bounds, faded when it covers over 15 % of the creature.
+    const spriteBox = (object) => {
+      const a = object.kind === 'decoration' ? earnedDecorArt(object.id, object.facing) : object.asset;
+      if (!a || !object.xy) return null;
+      const b = a.bounds || {x: 0, y: 0, w: a.width || 0, h: a.height || 0};
+      return {l: object.xy[0] - (a.pivotX ?? (a.width || 0) / 2) + b.x, t: object.xy[1] - (a.pivotY ?? (a.height || 0)) + b.y, w: b.w, h: b.h};
+    };
+    const behind = [];
+    for (const object of objects) {
+      if (object.item?.kind === 'creature') { const box = spriteBox(object); if (box?.w && box.h) behind.push(box); continue; }
+      object.xray = false;
+      if (!behind.length || (object.kind !== 'store-decor' && object.kind !== 'decoration' && object.kind !== 'festival')) continue;
+      const d = spriteBox(object);
+      if (d) object.xray = behind.some((c) => {
+        const w = Math.min(c.l + c.w, d.l + d.w) - Math.max(c.l, d.l), h = Math.min(c.t + c.h, d.t + d.h) - Math.max(c.t, d.t);
+        return w > 0 && h > 0 && w * h > c.w * c.h * 0.15;
+      });
+    }
+    for (const object of objects) {
+      if (!object.xray) { drawObject(object, logicalNow, clock); continue; }
+      context.save(); context.globalAlpha = 0.5; drawObject(object, logicalNow, clock); context.restore();
+    }
     drawPenLabels(state, logicalNow, objects);
     drawAnimationEffects(state, activeAnimations);
     if (tutorialFocus && map.plots[tutorialFocus.plot]) drawTutorialFocus(context, plotCorners(map.plots[tutorialFocus.plot], map), clock);
