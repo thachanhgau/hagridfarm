@@ -52,22 +52,25 @@ export function homeChoices(land,spots,{built=new Set(),pastureOpen=built.has('e
  return groups;
 }
 
-/** «Dời chuồng» dialog: pens as a grid of groups, each spot a tile with the occupant's portrait; picking one calls
- * move(target). DOM only, opened from mobile-game (`portrait(species)` is the pet dock's icon). */
-export function openCreatureHomes({el,closeOnBackdrop,iconButton,portrait,label,labelOf,groups,current,move}){
- const close=()=>dialog.close();
- const tile=(g,c)=>{
+/** «Dời chuồng» dialog: pens as a grid of groups, each spot a tile with the occupant's portrait. A tap calls
+ * move(target) and, when it lands, redraws from view() = {groups,current}: the dialog stays open so several creatures can
+ * be arranged in a row (owner 17/11/2026: «cứ ấn vô là tắt»). DOM only, opened from mobile-game. */
+export function openCreatureHomes({el,closeOnBackdrop,iconButton,portrait,label,labelOf,view,move}){
+ const close=()=>dialog.close(),body=el('div',{class:'home-groups'});
+ let pending=false;
+ const tile=(g,c,current)=>{
   const here=c.spot===current,name=c.species?labelOf(c.species):'Trống';
   const b=el('button',{type:'button',class:'home-cell'+(here?' is-here':'')+(c.species?'':' is-empty'),disabled:here,'aria-label':`${g.name} · ${name}`,title:name},
    [c.species?portrait(c.species):el('span',{class:'home-cell-art'}),el('small',{text:name})]);
-  b.onclick=async()=>{b.disabled=true;if(await move(c.spot,g.name))close();else b.disabled=false;};
+  b.onclick=async()=>{if(pending)return;pending=true;body.setAttribute('aria-busy','true');b.disabled=true;
+   try{await move(c.spot,g.name);}finally{pending=false;body.removeAttribute('aria-busy');render();}};
   return b;
  };
+ function render(){const {groups,current}=view();body.replaceChildren(...groups.map(g=>el('section',{class:'home-group'+(g.name==='Bãi chăn'?' is-pasture':''),'aria-label':g.name},
+  [el('h3',{text:g.name}),el('div',{class:'home-cells'},g.cells.map(c=>tile(g,c,current)))])));}
  const dialog=el('dialog',{id:'creatureHomes',class:'owl-letter creature-homes','aria-labelledby':'creatureHomesTitle'},[
-  el('div',{class:'popover-heading'},[el('h2',{id:'creatureHomesTitle',text:`Dời chuồng · ${label}`}),iconButton('close','Đóng',close,{class:'gp-close'})]),
-  el('div',{class:'home-groups'},groups.map(g=>el('section',{class:'home-group'+(g.name==='Bãi chăn'?' is-pasture':''),'aria-label':g.name},
-   [el('h3',{text:g.name}),el('div',{class:'home-cells'},g.cells.map(c=>tile(g,c)))]))),
- ]);
+  el('div',{class:'popover-heading'},[el('h2',{id:'creatureHomesTitle',text:`Dời chuồng · ${label}`}),iconButton('close','Đóng',close,{class:'gp-close'})]),body]);
+ render();
  dialog.addEventListener('close',()=>dialog.remove());
  closeOnBackdrop(dialog,close);
  (document.getElementById('gameShell')||document.body).append(dialog);
