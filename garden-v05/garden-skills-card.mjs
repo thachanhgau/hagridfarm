@@ -16,7 +16,7 @@ const WHAT=Object.freeze({
  thestral:['Bé ở Rừng Cấm về sau 1 bữa dụ','Mọi bé'],unicorn:['Chữa 1 bé ốm (trước cấp 130: +15 tâm trạng)','Chữa xong thêm +15 tâm trạng'],
  'three-headed-dog':['22:00–06:00 ma lùm không ăn cây','Thêm đuổi 1 ma lùm mỗi ngày'],dragon:['Dọn thửa khô hoặc thửa ma lùm phá','4 thửa mỗi ngày'],
  grindylow:['Hồ không đục, tự kéo lưới cá chín','Câu trúng rộng gấp đôi, thêm 1 cá con mỗi ngày'],crup:['Ăn 1 ma lùm mỗi ngày','3 ma lùm mỗi ngày'],
- knarl:['1 thửa hết đất mỏi','2 thửa mỗi ngày'],salamander:['Giữ 2 thửa khi cháy và tuần sương giá','4 thửa'],
+ knarl:['Xới 1 thửa bạc màu: hết −25% thu hoạch','2 thửa mỗi ngày'],salamander:['Giữ 2 thửa khi cháy và tuần sương giá','4 thửa'],
  kappa:['Hạn hán: cây 3 giờ tốn 1 Nước mỗi ô','Hạn hán: cây 3 giờ gieo không tốn Nước'],porlock:['Bằng-Mã, Vong mã, Kỳ lân không dưới 50 tâm trạng','Không dưới 60'],
 });
 export const WHY=Object.freeze({'skills-off':'Kỹ năng đang tạm tắt','fled':'Bé đang ở Rừng Cấm','locked':'Bậc 1: trưởng thành và gắn bó cấp 3','sick':'Bé đang ốm','roaming':'Bé đang đi rông','sad':'Bé buồn: cần tâm trạng từ 50'});
@@ -91,7 +91,7 @@ export function skillText(r){
   hippogriff:()=>`${who} chở về +${r.water} Nước`,
   unicorn:()=>r.cured?`${who} chữa lành ${label(r.target)}${r.gain?` · +${r.gain} tâm trạng`:''}`:`${label(r.target)} +${r.gain} tâm trạng`,
   dragon:()=>`${who} thiêu cỏ ${plot}${r.gnome?': ma lùm chạy mất':`: dọn ${r.cleared} ô khô`}`,
-  knarl:()=>`${who} xới ${plot}: đất hết mỏi`,
+  knarl:()=>`${who} xới ${plot}: hết bạc màu`,
  }[r.species==='mooncalf'?'bowtruckle':r.species];
  return text?text()+` · còn ${r.left} lượt.`:'';
 }

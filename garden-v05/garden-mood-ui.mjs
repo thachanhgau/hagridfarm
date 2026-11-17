@@ -3,7 +3,7 @@
 // panel only shows snapshot.mood. mobile-game imports it on the first «Chăm bé» tap or a tap on Norbert.
 import {$,el,icon,duration,closeOnBackdrop} from './ui-utils.mjs?v=26.6';
 import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.6';
-import {COAT_STEPS} from './garden-winter.mjs?v=26.6';
+import {COAT_STEPS,groomLabel} from './garden-winter.mjs?v=26.6';
 import {skillCard,skillText,skillTitle,section} from './garden-skills-card.mjs?v=26.6';
 import {skillOf} from './garden-skills-ui.mjs?v=26.6';
 
@@ -23,7 +23,6 @@ export const TRICKS=Object.freeze({
 });
 const LESSONS=3;
 const RIDERS=['hippogriff','thestral'];
-const groomLabel=sp=>sp==='dragon'||sp===NORBERT?'Chải vảy':sp==='fwooper'||sp==='diricawl'?'Tắm':sp==='grindylow'?'Gỡ rêu':sp==='knarl'?'Gỡ gai':sp==='salamander'?'Thêm củi':sp==='kappa'?'Tưới đĩa nước':sp==='porlock'?'Chải bờm':'Chải lông';
 export const trickNames=(species,lessons)=>(TRICKS[species]||[]).slice(0,Math.floor((lessons||0)/LESSONS));
 // What a visited garden's creatures perform (snapshot visit.tricks = {species: whole tricks}).
 export function visitShow(tricks={},labelOf=sp=>sp){
@@ -59,7 +58,7 @@ export function tendText(tend,labelOf){
 }
 
 export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,bondOf,onTended,onSkill}){
- // One frame: header (portrait · name over skill · rank · close), then blocks Tâm trạng · Kỹ năng · Chăm sóc · Trò · Bộ lông.
+ // One frame: header (portrait · name over skill · rank · close), then blocks Tâm trạng · Kỹ năng · Chăm sóc · Trò · Màu hiếm.
  const body=el('div',{class:'mood-care-body'});
  const title=el('h2',{id:'creatureMoodTitle',text:'Chăm bé'}),sub=el('small',{class:'mood-sub'}),face=el('span',{class:'mood-portrait'});
  const dialog=el('dialog',{id:'creatureMood',class:'owl-letter mood-care','aria-labelledby':'creatureMoodTitle'},[
@@ -96,7 +95,7 @@ export function createMoodCare({getSnapshot,tend,useSkill,items,notify,labelOf,b
     return b;
    }))),
    section('Trò',`${entry.lessons||0}/${LESSONS*3} bài`,el('div',{class:'mood-rows'},tricks)),
-   coats.length?section('Bộ lông','',el('div',{class:'mood-rows'},coats)):null,
+   coats.length?section('Màu hiếm','',el('div',{class:'mood-rows'},coats)):null,
   ].filter(Boolean));
   clearTimeout(timer);
   if(dialog.open&&entry.roamUntil&&entry.roamUntil>now)timer=setTimeout(render,Math.min(60000,entry.roamUntil-now+500));

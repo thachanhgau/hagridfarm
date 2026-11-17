@@ -135,9 +135,9 @@ export function snowCapImageData(image,pixelDensity=1) {
 // Rare coats: the creature's dominant colour ramp maps onto the coat's ramp; outline, eyes and accents stay.
 // 25.0 S4: each also needs grooming points (server garden-mood-core `coat`, 2 a grooming when happy, 1 otherwise).
 export const RARE_COATS = Object.freeze([
-  Object.freeze({id: 'winter', label: 'Lông đông', minAffinity: 2, coat: 3, ramp: ['#687486', '#A6B1AE', '#D6D8BF', '#E8F0ED'], when: (w) => w.active}),
-  Object.freeze({id: 'noel', label: 'Lông Noel', minAffinity: 3, coat: 6, ramp: ['#4A3042', '#874056', '#C75B4B', '#E8F0ED'], when: (w) => w.christmas}),
-  Object.freeze({id: 'silver', label: 'Lông bạc', minAffinity: 5, coat: 12, ramp: ['#41465C', '#687486', '#A6B1AE', '#B7DEE0'], when: () => true}),
+  Object.freeze({id: 'winter', label: 'Màu đông', minAffinity: 2, coat: 3, ramp: ['#687486', '#A6B1AE', '#D6D8BF', '#E8F0ED'], when: (w) => w.active}),
+  Object.freeze({id: 'noel', label: 'Màu Noel', minAffinity: 3, coat: 6, ramp: ['#4A3042', '#874056', '#C75B4B', '#E8F0ED'], when: (w) => w.christmas}),
+  Object.freeze({id: 'silver', label: 'Màu bạc', minAffinity: 5, coat: 12, ramp: ['#41465C', '#687486', '#A6B1AE', '#B7DEE0'], when: () => true}),
 ]);
 export const COAT_STEPS = Object.freeze(RARE_COATS.map((c) => [c.label, c.coat]));
 const COAT_BY_ID = new Map(RARE_COATS.map((c) => [c.id, c]));
@@ -157,12 +157,14 @@ export function wornCoats(coats = {}, affinities = {}, winter = {}) {
 }
 // The coat button: next unlocked coat (or back to the normal one), with the toast text.
 export function cycleCoat(coats, species, affinityLevel, winter, coat) {
-  if (!unlockedCoats(affinityLevel, winter, coat).length) return {coats, text: 'Bộ lông hiếm · chưa mở · Chăm bé → Chải lông'};
+  if (!unlockedCoats(affinityLevel, winter, coat).length) return {coats, text: `Màu hiếm · chưa mở · Chăm bé → ${groomLabel(species)}`};
   const next = nextCoat(coats[species], affinityLevel, winter, coat), out = {...coats, [species]: next};
   if (!next) delete out[species];
   return {coats: out, text: coatLabel(next) + ' · chỉ để ngắm.'};
 }
-export function coatLabel(id) { return COAT_BY_ID.get(id)?.label || 'Lông thường'; }
+// Grooming differs by body: scales, quills, moss, fire (not every creature has fur, owner 17/11/2026).
+export const groomLabel=(sp)=>sp==='dragon'||sp==='norbert'?'Chải vảy':sp==='fwooper'||sp==='diricawl'?'Tắm':sp==='grindylow'?'Gỡ rêu':sp==='knarl'?'Gỡ gai':sp==='salamander'?'Thêm củi':sp==='kappa'?'Tưới đĩa nước':sp==='porlock'?'Chải bờm':'Chải lông';
+export function coatLabel(id) { return COAT_BY_ID.get(id)?.label || 'Màu thường'; }
 
 const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
 const SPRITE_RGB = SPRITE_PALETTE.map(rgb);

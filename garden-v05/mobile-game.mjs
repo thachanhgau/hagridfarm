@@ -905,7 +905,7 @@ function closeCelebration(){$('levelCelebration').hidden=true;celebrationFocus?.
 $('closeCelebration').onclick=closeCelebration;
 $('levelCelebration').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closeCelebration();}if(e.key==='Tab'){e.preventDefault();$('closeCelebration').focus();}});
 const rotateCreatureBtn=button('Xoay',()=>{rotateCreatureFacing(species);},{id:'rotateCreatureButton','aria-label':'Đổi hướng nhìn của sinh vật'});
-$('petButton')?.after(rotateCreatureBtn,button('Chăm bé',()=>{openMoodCare(species);},{id:'moodButton','aria-label':'Chơi, chải lông, dạy trò'}),button('Bộ lông',()=>{cycleCreatureCoat(species);},{id:'coatButton','aria-label':'Đổi bộ lông hiếm'}),button('Dời chuồng',()=>{openCreatureHome(species);},{id:'homeButton','aria-label':'Dời sang chuồng khác'}),button('Quà gắn kết',()=>{panels.show('affinity');},{id:'affinityButton'}));
+$('petButton')?.after(rotateCreatureBtn,button('Chăm bé',()=>{openMoodCare(species);},{id:'moodButton','aria-label':'Chơi, chăm sóc, dạy trò'}),button('Màu hiếm',()=>{cycleCreatureCoat(species);},{id:'coatButton','aria-label':'Đổi màu hiếm'}),button('Dời chuồng',()=>{openCreatureHome(species);},{id:'homeButton','aria-label':'Dời sang chuồng khác'}),button('Quà gắn kết',()=>{panels.show('affinity');},{id:'affinityButton'}));
 $('careAllButton').onclick=()=>{panels.show('creatures');};
 renderPetCareButtons(items);
 $('seedOptionsButton').onclick=()=>$('seedOptions').showModal();
