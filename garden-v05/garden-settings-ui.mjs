@@ -8,6 +8,7 @@ const ICONS=Object.freeze({
  motion:svg('<path d="M4 15c3-6 5-6 8 0s5 6 8 0"/><path d="M4 9c3-6 5-6 8 0s5 6 8 0"/>'),
  props:svg('<path d="m12 3 2.4 5.1L20 9l-4 3.9.9 5.6-4.9-2.6-4.9 2.6.9-5.6L4 9l5.6-.9z"/><path d="M12 16v5M9 21h6"/>'),
  grid:svg('<path d="M4 4h16v16H4zM4 10h16M4 16h16M10 4v16M16 4v16"/>'),
+ zoom:svg('<path d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13zM15.2 15.2 20 20M10.5 7.5v6M7.5 10.5h6"/>'),
  fullscreen:svg('<path d="M8 4H4v4M16 4h4v4M20 16v4h-4M4 16v4h4"/>'),
  save:svg('<path d="M5 3h11l3 3v15H5zM8 3v6h8V3M8 21v-7h8v7"/>'),
 });
@@ -26,6 +27,7 @@ function settingState(ctx){
   systemReducedMotion,
   props:bool(prefs.propsVisible??true),
   grid:bool(prefs.grid??false),
+  zoom:bool(prefs.autoZoom??false),
  };
 }
 function sessionStatus(ctx){
@@ -49,6 +51,7 @@ export function renderGardenSettings(ctx={},options={}){
     title:state.systemReducedMotion?'Theo cài đặt giảm chuyển động của hệ điều hành':'Chuyển động'},
    {key:'props',label:'Cảnh vật',value:state.props,action:()=>ctx.toggleProps?.()},
    {key:'grid',label:'Lưới',value:state.grid,action:()=>ctx.toggleGrid?.()},
+   {key:'zoom',label:'Tự zoom',value:state.zoom,action:()=>ctx.toggleAutoZoom?.(),title:'Chọn thú hoặc món đã đặt thì máy quay bay tới'},
   ];
   const grid=el('div',{class:'settings-grid','aria-label':'Thiết lập hiển thị'});
   for(const item of cards){

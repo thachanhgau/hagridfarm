@@ -2306,6 +2306,8 @@ export async function createGarden(canvas, options = {}) {
     growthBounds: () => stageWorldBounds(map, currentStage),
     fitBounds: (narrow) => fitBounds(map, currentStage, narrow),
     growthStage: () => currentStage,
+    // A real ground is on screen (not the plain backdrop fill while the stored ground is looked up or built).
+    groundShown: () => shownTerrain !== null,
     images,
     loaded: assetFiles.length - missing.size,
     missing: [...missing],

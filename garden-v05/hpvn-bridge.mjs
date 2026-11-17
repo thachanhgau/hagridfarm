@@ -45,6 +45,7 @@ export function loadVisualPrefs(storage = getGardenStorage()) {
     motionEnabled: true,
     propsVisible: true,
     grid: false,
+    autoZoom: false,
   };
   if (!storage || typeof storage.getItem !== 'function') return defaults;
   try {
@@ -73,6 +74,7 @@ export function loadVisualPrefs(storage = getGardenStorage()) {
       motionEnabled: parsed.motionEnabled !== false,
       propsVisible: parsed.propsVisible !== false,
       grid: parsed.grid === true,
+      autoZoom: parsed.autoZoom === true,
     };
   } catch {
     return defaults;
@@ -92,6 +94,8 @@ export function saveVisualPrefs(prefs = {}, storage = getGardenStorage()) {
     motionEnabled: prefs.motionEnabled !== false,
     propsVisible: prefs.propsVisible !== false,
     grid: prefs.grid === true,
+    // Camera glides to a creature or a placed piece when it is chosen: opt-in (owner 17/11/2026).
+    autoZoom: prefs.autoZoom === true,
   };
   if (!storage || typeof storage.setItem !== 'function') return normalized;
   try {
