@@ -1,7 +1,7 @@
-import {stageContains} from './garden-growth.mjs?v=26.24';
-import {clearOfBuildings,worldPhase} from './garden-seasonal-world.mjs?v=26.24';
-import {densityOf,fillAt} from './device-pixels.mjs?v=26.24';
-import {pathSegments} from './garden-path-details.mjs?v=26.24';
+import {stageContains} from './garden-growth.mjs?v=26.25';
+import {clearOfBuildings,worldPhase} from './garden-seasonal-world.mjs?v=26.25';
+import {densityOf,fillAt} from './device-pixels.mjs?v=26.25';
+import {pathSegments} from './garden-path-details.mjs?v=26.25';
 // A bank (|dx| + 2|dy| ≤ 26 px) covers ±26/64 cell around its centre; a path is one cell wide along its centre line
 // (GARDEN_PATHS plus the map's pond, edge and pen routes). Owner 15/11/2026: no snow bank lying across a path.
 const BANK_HALF=26/64;

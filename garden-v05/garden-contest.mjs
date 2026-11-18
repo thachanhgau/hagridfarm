@@ -1,6 +1,6 @@
-import {createGardenClient} from './garden-emulator-client.mjs?v=26.24';
-import {baseDecorId,withDecorCopies} from './decor-runtime.mjs?v=26.24';
-import {el,button} from './ui-utils.mjs?v=26.24';
+import {createGardenClient} from './garden-emulator-client.mjs?v=26.25';
+import {baseDecorId,withDecorCopies} from './decor-runtime.mjs?v=26.25';
+import {el,button} from './ui-utils.mjs?v=26.25';
 
 // Cuộc thi Trang Trí Vườn Hagrid · Giáng Sinh 2026 (owner 17/11/2026). ?contest=xmas2026 opens the member's contest
 // garden (HPVN callable hagridContest), never the real garden: no wallet, no prices, every decoration owned, copies of a

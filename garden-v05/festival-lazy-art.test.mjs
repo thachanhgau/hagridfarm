@@ -309,3 +309,13 @@ test('creatures sleep visibly at night, wake for interaction, then resume rest; 
  drawCalls.length=0;garden.render(state,{...base,clock:5000,animationClock:5000,atmosphereMode:'night'});assert.ok(drawCalls.some(c=>c.file?.includes('creature-sleep/dragon-3')),'returns to sleep');
  assert.equal(JSON.stringify(state),before,'sleep is visual only');
 });
+
+test('a lit statue behind the built pond renders at night (pond has no sprite file to cut out, 18/11/2026)', async () => {
+  const winterKit = await import('./garden-winter.mjs');
+  const {canvas}=recordingCanvas(),garden=await createGarden(canvas,{decorAssets:manifest.items});
+  const now=1_700_000_000_000,state=E.testProfile(500,now),id='ev_dark_dobby_red';
+  state.built=[...new Set([...state.built,'pond_1','pond_2','pond_3'])];
+  const options={now,clock:0,propsVisible:true,eventMode:'none',winterKit,atmosphereMode:'night',decorations:{owned:[id],placements:[id],positions:{[id]:[19,-2]},rotations:{}}};
+  garden.render(state,options);await new Promise(r=>setImmediate(r));
+  assert.doesNotThrow(()=>garden.render(state,options));
+});
