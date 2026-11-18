@@ -1,23 +1,24 @@
-import {previewable} from "./art-preview.mjs?v=26.25";
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.25';
-import {edgeStepText} from './garden-orchard-ui.mjs?v=26.25';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.25';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.25';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.25";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.25";
-import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.25";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.25";
-import {renderTourSection} from "./garden-tour.mjs?v=26.25";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.25";
-import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.25";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.25";
-import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.25";
-import {STORE_BUILDING_LEVEL,storableBuildings,storedSet} from "./stored-buildings.mjs?v=26.25";
-import {runtimeImageUrl} from "./runtime-image-url.mjs?v=26.25";
+import {previewable} from "./art-preview.mjs?v=26.26";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.26';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=26.26';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.26';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.26';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.26";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.26";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.26";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.26";
+import {renderTourSection} from "./garden-tour.mjs?v=26.26";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.26";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.26";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.26";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.26";
+import {STORE_BUILDING_LEVEL,storableBuildings,storedSet} from "./stored-buildings.mjs?v=26.26";
+import {CREATURE_HOMES_LEVEL} from "./creature-homes.mjs?v=26.26";
+import {runtimeImageUrl} from "./runtime-image-url.mjs?v=26.26";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
- let active=null,petBurst=null,previousFocus=null,profileTab="achievements",postcardNode=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false,buildTab="build";
+ let active=null,petBurst=null,previousFocus=null,profileTab="achievements",postcardNode=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false,confirmStoreAll=false,buildTab="build";
  const names={roadmap:"Lộ trình",profile:"Hồ sơ người giữ vườn",tour:"Thăm vườn",events:"Lễ hội",affinity:"Gắn kết",scenery:"Khung cảnh",settings:"Cài đặt",plots:"Thửa đất",crops:"Hạt giống",creatures:"Sinh vật",craft:"Chế biến",build:"Xây dựng",inventory:"Kho",layout:"Bố trí",collection:"Trang trí",menu:"Khu vườn",guide:"Sổ tay bác Hagrid"};
  const label=id=>labels[id]||id,now=()=>E.nowFor(getState(),Date.now()),paragraph=(text,cls="")=>el("p",{text,class:cls}),actions=(...children)=>el("div",{class:"actions"},children),toolbar=(...children)=>el("div",{class:"panel-toolbar"},children),keepsake=(px,text,label,fn)=>{const b=button("",fn,{"aria-label":label,title:label});b.append(pixelIcon(px,2),el("span",{text}));return b;},grid=()=>el("div",{class:"cards"});
  const detail=text=>el("details",{class:"v24-detail"},[el("summary",{text:"Chi tiết"}),paragraph(text)]);
@@ -437,6 +438,11 @@ export function createPanels(ctx){
    const decorAngles=(id,opts)=>size=>["default","right"].map(facing=>visualItemIcon(items,id,{...opts,size,badge:"",facing}));
    const tile=(name,id,opts,...rest)=>el("article",{class:"card gp-tile","data-item-id":id},[previewable(el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:88,...opts})]),name,opts?.kind==="decoration"?decorAngles(id,opts):size=>[visualItemIcon(items,id,{...opts,size,badge:""})],opts?.kind==="decoration"?2:1),el("strong",{class:"gp-tile-name",text:name}),...rest]);
    const turnText=facing=>facing==="right"?"Đang nhìn phải":"Đang nhìn trái";
+   // «Cất hết» (owner 18/11/2026, level 130): a second tap within 5 s confirms (a sandboxed game has no confirm()).
+   if(ctx.storeAllDecor&&s.level>=CREATURE_HOMES_LEVEL)body.append(toolbar(button(confirmStoreAll?"Bấm lần nữa để cất hết":"Cất hết đồ trang trí",()=>{
+    if(!confirmStoreAll){confirmStoreAll=true;refresh();setTimeout(()=>{if(confirmStoreAll){confirmStoreAll=false;refresh();}},5000);return;}
+    confirmStoreAll=false;ctx.storeAllDecor();
+   },{class:confirmStoreAll?"danger":"","data-store-all-decor":"true",title:"Cất mọi món đang bày vào kho; bày lại từng món sau"})));
    body.append(renderGardenDefaults(ctx,{s,wallet,tile,priceRow,canPay,run,refresh,turnText}));
 
    const decorState=ctx.getDecorations?.()??session?.decorations??{};

@@ -1,6 +1,6 @@
 // Owner 18/11/2026 «hình rất nhỏ, ko có chức năng preview thì ko xem được hình»: tapping a picture in the store or the
 // Trang trí tab opens it large; a decoration shows both of its drawn angles side by side.
-import {el,button} from './ui-utils.mjs?v=26.25';
+import {el,button} from './ui-utils.mjs?v=26.26';
 
 /** Opens a modal with `title` and the nodes `makeViews(size)` returns, drawn at `size` px; `actions(close)` adds buttons
  *  beside «Đóng» (the store's «Mua» and «Mua cả lễ hội», owner 18/11/2026). */
