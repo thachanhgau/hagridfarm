@@ -2,8 +2,8 @@
 // storeBuilding, garden.decorations.storedBuildings). The renderer then draws nothing there and its ground takes
 // decorations (decorSpotProblem); «Bày lại» is free once no decoration stands on that ground (mobile-game run()).
 // The Herbology greenhouse (wizard-scenery `greenhouse`) goes the same way: it only opens a «Hạt giống» note.
-import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=26.20';
-import {sceneryGroundRect} from './garden-object-metrics.mjs?v=26.20';
+import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=26.21';
+import {sceneryGroundRect} from './garden-object-metrics.mjs?v=26.21';
 export const STORE_BUILDING_LEVEL=200;
 /** Ground the greenhouse stands on: «Bày lại» waits until no decoration covers it. */
 export const GREENHOUSE_GROUND=sceneryGroundRect('herbology_greenhouse',WIZARD_LAYOUT.greenhouse.col,WIZARD_LAYOUT.greenhouse.row);

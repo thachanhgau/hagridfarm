@@ -1,22 +1,22 @@
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.20';
-import {edgeStepText} from './garden-orchard-ui.mjs?v=26.20';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.20';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.20';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.20";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.20";
-import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.20";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.20";
-import {renderTourSection} from "./garden-tour.mjs?v=26.20";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.20";
-import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.20";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.20";
-import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.20";
-import {STORE_BUILDING_LEVEL,storableBuildings,storedSet} from "./stored-buildings.mjs?v=26.20";
-import {runtimeImageUrl} from "./runtime-image-url.mjs?v=26.20";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.21';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=26.21';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.21';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.21';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.21";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.21";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.21";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.21";
+import {renderTourSection} from "./garden-tour.mjs?v=26.21";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.21";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.21";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.21";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.21";
+import {STORE_BUILDING_LEVEL,storableBuildings,storedSet} from "./stored-buildings.mjs?v=26.21";
+import {runtimeImageUrl} from "./runtime-image-url.mjs?v=26.21";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
- let active=null,petBurst=null,previousFocus=null,profileTab="achievements",postcardNode=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false;
+ let active=null,petBurst=null,previousFocus=null,profileTab="achievements",postcardNode=null,recipeFilter="all",batches=1,roadStart=1,roadFilter="all",invFilter="all",confirmUproot=false,buildTab="build";
  const names={roadmap:"Lộ trình",profile:"Hồ sơ người giữ vườn",tour:"Thăm vườn",events:"Lễ hội",affinity:"Gắn kết",scenery:"Khung cảnh",settings:"Cài đặt",plots:"Thửa đất",crops:"Hạt giống",creatures:"Sinh vật",craft:"Chế biến",build:"Xây dựng",inventory:"Kho",layout:"Bố trí",collection:"Trang trí",menu:"Khu vườn",guide:"Sổ tay bác Hagrid"};
  const label=id=>labels[id]||id,now=()=>E.nowFor(getState(),Date.now()),paragraph=(text,cls="")=>el("p",{text,class:cls}),actions=(...children)=>el("div",{class:"actions"},children),toolbar=(...children)=>el("div",{class:"panel-toolbar"},children),keepsake=(px,text,label,fn)=>{const b=button("",fn,{"aria-label":label,title:label});b.append(pixelIcon(px,2),el("span",{text}));return b;},grid=()=>el("div",{class:"cards"});
  const detail=text=>el("details",{class:"v24-detail"},[el("summary",{text:"Chi tiết"}),paragraph(text)]);
@@ -40,6 +40,7 @@ export function createPanels(ctx){
  const PROFILE_TABS=[["achievements","Thành tựu"],["almanac","Sổ tay"],["guestbook","Lưu bút"],["postcard","Bưu thiếp"]],TAB_ICONS={achievements:"trophy",almanac:"book",guestbook:"quill",postcard:"scenery"};
  function show(name){
   if(PROFILE_TABS.some(([id])=>id===name)){if(profileTab!==name)postcardNode=null;profileTab=name;name="profile";}
+  if(BUILD_TABS.some(([id])=>id===name)){buildTab=name;name="build";}
   for(const d of document.querySelectorAll("dialog.decor-placement,dialog.store-overlay")){try{d.close();}catch{}d.remove();}
   if(!active)previousFocus=document.activeElement;
   active=name;panel.dataset.view=name;confirmUproot=false;
@@ -70,6 +71,7 @@ export function createPanels(ctx){
   return section;
  }
 
+ const BUILD_TABS=[["build","Xây"],["layout","Bố trí"],["collection","Trang trí"]];
  const views={
   roadmap(){
    const s=getState(),info=E.levelInfo(s),current=ctx.getGardenStage?.()??gardenStage(s);
@@ -231,24 +233,36 @@ export function createPanels(ctx){
   },
 
   build(){
-   const s=getState(),g=grid(),wallet=ctx.getGalleons?.()??Infinity;
-   body.append(el("details",{class:"v24-detail"},[el("summary",{text:"Mở rộng vườn"}),spatialStagesVisual(s)]));
-   body.append(paragraph(s.plots.length+"/"+E.plotLimit(s)+" thửa · "+E.housingCapacity(s)+"/18 chỗ nuôi."),toolbar(button("Bố trí",()=>show("layout")),button("Bộ sưu tập",()=>show("collection")),button("Nhận công trình",()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã mở sử dụng.",{action:"claimBuildings"}))));
-   // the next locked build of each kind shows as "Chờ cấp N" so an empty panel never reads as broken
-   for(const e of DB.expansions.filter(e=>e.level<=s.level||e===DB.expansions.find(x=>x.kind===e.kind&&x.level>s.level))){
-    const same=DB.expansions.filter(x=>x.kind===e.kind),at=same.indexOf(e),number=Number(e.id.split("_")[1]),title=e.label||(e.kind==="plot"?"Thửa ":"Chuồng ")+number,done=s.built.includes(e.id),job=s.construction.find(j=>j.id===e.id),prev=at<1||s.built.includes(same[at-1].id),locked=s.level<e.level,k=card(title,levelName(e.level)+" · xây "+hours(realHours(e,s.level)),e.id),short=!canPay(s,e,wallet);
-    k.classList.toggle("locked",locked);
-    if(!done&&!job)k.append(priceRow(s,e,wallet));
-    k.append(paragraph(e.kind==="edge"?edgeStepText(at+1,same.length,e.galleons):(e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi")));
-    if(done)k.append(paragraph("Đã xây","ready-text"));
-    else if(job)k.append(timer(job.readyAt,"Đang xây · còn "),readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})),...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt));
-    else k.append(paragraph(locked?"Chờ "+levelName(e.level):!prev?"Hoàn thành công trình trước cùng loại.":""),button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||short,class:"primary"}));
-    g.append(k);
+   // Owner 18/11/2026 «tạo thành các tab để di chuyển cho dễ»: Xây · Bố trí · Trang trí are tabs of one Xây dựng panel
+   // (show("layout") / show("collection") open their tab), one segmented row like Sinh vật, then cells.
+   const s=getState(),wallet=ctx.getGalleons?.()??Infinity;
+   const todo=DB.expansions.filter(e=>!s.built.includes(e.id)&&(e.level<=s.level||e===DB.expansions.find(x=>x.kind===e.kind&&x.level>s.level&&!s.built.includes(x.id))));
+   const open=todo.filter(e=>e.level<=s.level).length;
+   const pick=id=>{if(id===buildTab)return;show(id);$("buildTab-"+id)?.focus();};
+   const seg=el("div",{class:"creature-seg build-tabs",role:"tablist","aria-label":"Xây dựng"});
+   for(const [id,text] of BUILD_TABS){const t=button(text,()=>pick(id),{role:"tab",id:"buildTab-"+id,"aria-selected":String(id===buildTab),tabindex:id===buildTab?"0":"-1"});if(id==="build"&&open)t.append(el("b",{text:String(open)}));seg.append(t);}
+   seg.addEventListener("keydown",e=>{const i=BUILD_TABS.findIndex(([id])=>id===buildTab),n=BUILD_TABS.length,j={ArrowRight:i+1,ArrowLeft:i-1+n,Home:0,End:n-1}[e.key];if(j===undefined)return;e.preventDefault();pick(BUILD_TABS[j%n][0]);});
+   body.append(el("div",{class:"creature-bar"},[el("span",{class:"creature-count",text:s.plots.length+"/"+E.plotLimit(s)+" thửa · "+E.housingCapacity(s)+"/18 chỗ"}),seg]));
+   if(buildTab!=="build")return views[buildTab]();
+   // Only what is left to build; built plots and pens live in «Bố trí».
+   if(!todo.length){body.append(paragraph("Đã xây hết","empty"));return;}
+   const g=el("div",{class:"creature-grid build-grid"});
+   for(const e of todo){
+    const same=DB.expansions.filter(x=>x.kind===e.kind),at=same.indexOf(e),number=Number(e.id.split("_")[1]),title=e.label||(e.kind==="plot"?"Thửa ":"Chuồng ")+number,job=s.construction.find(j=>j.id===e.id),prev=at<1||s.built.includes(same[at-1].id),locked=s.level<e.level;
+    const effect=e.kind==="edge"?edgeStepText(at+1,same.length,e.galleons):e.kind==="plot"?"Thêm 9 ô trồng":"Tổng "+e.capacityAfter+" chỗ nuôi";
+    const copy=el("div",{class:"creature-cell-copy"},[el("strong",{text:title})]);
+    let acts;
+    if(job){copy.append(timer(job.readyAt,"Đang xây · còn "));acts=[readyButton("Nhận",job.readyAt,()=>run(x=>E.claimBuildings(x,Date.now()),"Công trình đã hoàn tất.",{action:"claimBuildings"})),...speedButton("spring",{action:"spring",expansionId:job.id},job.readyAt)];}
+    else{
+     copy.append(el("small",{text:locked?"Chờ "+levelName(e.level):!prev?"Xây "+(same[at-1].label||(e.kind==="plot"?"Thửa ":"Chuồng ")+same[at-1].id.split("_")[1])+" trước":hours(realHours(e,s.level))+" · "+effect}),priceRow(s,e,wallet));
+     acts=[button("Xây",()=>run(x=>E.build(x,e.id,Date.now()),"Đã khởi công "+title+".",{action:"build",expansionId:e.id}),{disabled:locked||!prev||!canPay(s,e,wallet),class:"primary"})];
+    }
+    g.append(el("article",{class:"creature-cell build-cell"+(locked?" locked":"")},[visualItemIcon(items,e.id,{size:40}),copy,el("div",{class:"build-acts"},acts)]));
    }
    body.append(g);
   },
 
-  inventory(){
+ inventory(){
    const s=getState(),supplies=ctx.getSupplies?.();
    const cropIds=new Set(DB.crops.map(c=>c.id));
    const seedEntries=supplies?Object.entries(supplies.seeds||{}).filter(([,n])=>n>0):[];
@@ -488,30 +502,37 @@ export function createPanels(ctx){
    const barBtns=[button("Xem toàn vườn",()=>{ctx.camera.overview();close();})];
    if(ctx.openVisualLayout)barBtns.unshift(button("Sắp xếp",()=>{close();ctx.openVisualLayout();},{class:"primary","data-open-visual-layout":"true"}));
    body.append(toolbar(...barBtns));
-   // Owner 18/11/2026 «cất bớt đất/chuồng để trang trí» (level 200, server storeBuilding): «Cất» / «Bày lại» on each card.
+   // Owner 18/11/2026 «cất bớt đất/chuồng để trang trí» (level 200, server storeBuilding): «Cất» / «Bày lại» on each cell;
+   // a stored one also gets «Đặt đồ», straight to the Trang trí tray (owner: «lối tắt … để chọn cất hay đặt»).
    const shelf=getSession().connected&&s.level>=STORE_BUILDING_LEVEL?new Map(storableBuildings(s,ctx.getDecorations?.(),E.POND_SPECIES).map(b=>[b.id,b])):null;
-   const storeButton=b=>b?[button(b.stored?"Bày lại":"Cất",()=>run(null,(b.stored?"Đã bày lại ":"Đã cất ")+b.name+".",{action:"storeBuilding",buildingId:b.id,stored:!b.stored}),{disabled:!b.stored&&!!b.why,title:b.why||(b.stored?"Bày lại trên nền cũ":"Cất đi, nền trống để trang trí"),"data-store-building":b.id})]:[];
-   const note=b=>b?.stored?" · Đã cất":b?.why?" · "+b.why:"";
-   const g=grid();
+   const storeActs=b=>b?[button(b.stored?"Bày lại":"Cất",()=>run(null,(b.stored?"Đã bày lại ":"Đã cất ")+b.name+".",{action:"storeBuilding",buildingId:b.id,stored:!b.stored}),{disabled:!b.stored&&!!b.why,title:b.why||(b.stored?"Bày lại trên nền cũ":"Cất đi, nền trống để trang trí"),"data-store-building":b.id}),
+    ...(b.stored&&ctx.openDecorDock?[button("Đặt đồ",()=>ctx.openDecorDock(),{class:"primary","data-place-on":b.id})]:[])]:[];
+   const note=b=>b?.stored?"Đã cất":b?.why||"";
+   const cell=(id,name,icon,line,b)=>el("article",{class:"creature-cell build-cell"+(b?.stored?" is-stored":"")},[icon,el("div",{class:"creature-cell-copy"},[el("strong",{text:name}),line]),el("div",{class:"build-acts"},storeActs(b))]);
+   const g=el("div",{class:"creature-grid build-grid"});
    for(const kind of ["plot","pen"]){
     const total=kind==="plot"?E.plotLimit(s):6,count=kind==="plot"?s.plots.length:Math.min(6,E.housingCapacity(s)/2),positions=s.layout?.[kind==="plot"?"plots":"pens"]||Array.from({length:total},(_,i)=>i);
     for(let i=0;i<count;i++){
-     const id=kind+"_"+(i+1),name=(kind==="plot"?"Thửa ":"Chuồng ")+(i+1),k=card(name,"Đang ở nền "+(positions[i]+1)+note(shelf?.get(id)),id),sel=el("select",{"aria-label":"Vị trí "+name,class:"quantity",style:"width:auto"});
+     const id=kind+"_"+(i+1),name=(kind==="plot"?"Thửa ":"Chuồng ")+(i+1),b=shelf?.get(id),sel=el("select",{"aria-label":"Nền của "+name,class:"quantity build-slot",disabled:!!b?.stored});
      for(let j=0;j<total;j++){
       const slot=ctx.layoutSlots?.[kind==="plot"?"plots":"pens"]?.[j],current=ctx.getGardenStage?.()??gardenStage(s),fits=stage=>!slot||stageContains(stage,slot.col-.5,slot.row-.5)&&stageContains(stage,slot.col+slot.width,slot.row+slot.height),available=fits(current),required=GARDEN_STAGES.find(fits)?.level;
       sel.append(el("option",{value:j,disabled:!available,text:"Nền "+(j+1)+(available?"":" · mở khu cấp "+required)}));
      }
      sel.value=positions[i];
-     k.append(actions(sel,button("Chuyển",()=>run(x=>E.moveBuilding(x,kind,i,Number(sel.value)),"Đã chuyển "+name+".",{action:"moveBuilding",kind,index:i,targetSlot:Number(sel.value)})),...storeButton(shelf?.get(id))));
-     g.append(k);
+     // Picking another ground moves it at once (the old «Chuyển» button was one more tap for the same thing).
+     sel.onchange=()=>run(x=>E.moveBuilding(x,kind,i,Number(sel.value)),"Đã chuyển "+name+".",{action:"moveBuilding",kind,index:i,targetSlot:Number(sel.value)});
+     g.append(cell(id,name,visualItemIcon(items,id,{size:40}),el("div",{class:"build-line"},[sel,note(b)?el("small",{text:note(b)}):null].filter(Boolean)),b));
     }
    }
-   // «Chuồng mở rộng» and the greenhouse stand on fixed ground (no «Chuyển»), so their card holds only «Cất».
-   for(const b of shelf?.values()??[])if(b.id.startsWith("pen_ext_")||b.id==="greenhouse"){const k=card(b.name,"Nền cố định"+note(b),b.id==="greenhouse"?null:b.id);if(b.id==="greenhouse")k.firstChild.prepend(el("div",{class:"visual-slot",style:"width:52px;height:52px"},[el("img",{src:runtimeImageUrl("native-complete-objects/herbology_greenhouse/frame-01.png"),alt:"",style:"width:100%;height:100%;object-fit:contain"})]));k.append(actions(...storeButton(b)));g.append(k);}
+   // «Chuồng mở rộng» and the greenhouse stand on fixed ground (no ground to pick).
+   for(const b of shelf?.values()??[])if(b.id.startsWith("pen_ext_")||b.id==="greenhouse"){
+    const icon=b.id==="greenhouse"?el("div",{class:"visual-slot",style:"width:40px;height:40px"},[el("img",{src:runtimeImageUrl("native-complete-objects/herbology_greenhouse/frame-01.png"),alt:"",style:"width:100%;height:100%;object-fit:contain"})]):visualItemIcon(items,b.id,{size:40});
+    g.append(cell(b.id,b.name,icon,el("small",{text:["Nền cố định",note(b)].filter(Boolean).join(" · ")}),b));
+   }
    body.append(g);
   },
 
-  tour(){
+ tour(){
    if(ctx.memberVisits)body.append(ctx.memberVisits(close));
    body.append(
     renderTourSection({

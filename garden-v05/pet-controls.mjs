@@ -1,5 +1,5 @@
-import {$,el,button,icon,duration,num,visualItemIcon} from './ui-utils.mjs?v=26.20';
-import {setAction,pixelIcon,ICONS} from './pixel-icons.mjs?v=26.20';
+import {$,el,button,icon,duration,num,visualItemIcon} from './ui-utils.mjs?v=26.21';
+import {setAction,pixelIcon,ICONS} from './pixel-icons.mjs?v=26.21';
 
 // A species whose sprite has not shipped yet (phase 2 before the creatures-art-2 merge) shows the paw icon.
 export const petIcon=(items,id,size)=>{const w=icon(items,id,3,size);if(w.classList?.contains('is-art-missing'))w.append(pixelIcon(ICONS.paw?'paw':'pen',Math.max(1,Math.floor(size/16))));return w;};

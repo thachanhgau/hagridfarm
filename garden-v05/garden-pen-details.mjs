@@ -1,5 +1,5 @@
 // Low, native pixel-art habitat details. Paint the whole layer below actors.
-import {densityOf,deviceLine,fillAt} from './device-pixels.mjs?v=26.20';
+import {densityOf,deviceLine,fillAt} from './device-pixels.mjs?v=26.21';
 const styles={
  clear:{ground:'#777044',shade:'#4a3c2c',grass:'#71934b',wood:'#8b4a3f',cap:'#b49a66',dark:'#4a3c2c',stone:'#777044',water:'#687486',hay:'#b49a66',moss:'#3f6a45'},
  rain:{ground:'#5d6046',shade:'#24483f',grass:'#777044',wood:'#735044',cap:'#b49a66',dark:'#24483f',stone:'#687486',water:'#70a8b6',hay:'#b49a66',moss:'#3f6a45'},

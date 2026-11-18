@@ -1,9 +1,9 @@
-import {setupBuildDecorDock} from './build-decor-dock.mjs?v=26.20';
-import { setAction, pixelIcon } from './pixel-icons.mjs?v=26.20';
-import { $, button, el, duration, hours, levelName, num, realHours, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=26.20';
-import { DB } from './balance-data.mjs?v=26.20';
-import { WATER_CROPS } from './water-crop-art.mjs?v=26.20';
-import { makeRecipeIcon } from './recipe-art-ui.mjs?v=26.20';
+import {setupBuildDecorDock} from './build-decor-dock.mjs?v=26.21';
+import { setAction, pixelIcon } from './pixel-icons.mjs?v=26.21';
+import { $, button, el, duration, hours, levelName, num, realHours, itemDisplayName, visualItemIcon } from './ui-utils.mjs?v=26.21';
+import { DB } from './balance-data.mjs?v=26.21';
+import { WATER_CROPS } from './water-crop-art.mjs?v=26.21';
+import { makeRecipeIcon } from './recipe-art-ui.mjs?v=26.21';
 
 const MAX_CRAFT_BATCHES = DB.limits.maxCraftBatches;
 const MODES = Object.freeze(['craft', 'build']);
@@ -571,8 +571,9 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
       dom.captionTitle.textContent = 'Đã xây hết';
       dom.captionMeta.textContent = 'Vườn đã đủ mọi thửa và chuồng';
       dom.detailText.replaceChildren();
-      dom.action.disabled = true;
-      setAction(dom.action, { icon: 'build', label: 'Xong hết' });
+      // Owner 18/11/2026: nothing left to build → the button opens «Bố trí» (move, Cất / Bày lại, Đặt đồ) instead of a dead «Xong hết».
+      dom.action.disabled = false;
+      setAction(dom.action, { icon: 'build', label: 'Bố trí', text: 'Bố trí thửa và chuồng' });
       return;
     }
 
@@ -701,6 +702,7 @@ export function setupWorkTrays({ E, items, labels, getState, getReady, run, show
     if (!getReady()) return;
     const selectedId = local.build.selectedId;
     const state = currentState();
+    if (!expansionsFor(state).some(item => item.id === selectedId)) { showPanel('layout'); return; }
     const expansion = db.expansions.find(item => item.id === selectedId);
     const derived = buildAction(expansion, state, stateNow(E, state), db.expansions, getGalleons());
     if (!derived) {
