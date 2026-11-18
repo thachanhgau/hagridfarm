@@ -1,22 +1,22 @@
-import {createPlacementInput} from './placement-input.mjs?v=26.23';
-import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot,pondHome,pondFootprint,pondBedRects,pondBedCount,POND_NOOK,POND_FACING} from './default-decor.mjs?v=26.23';
-import {SHORE_THICKETS} from './pond-woodland.mjs?v=26.23';
-import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=26.23';
-import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=26.23';
-export {decorFootprint} from './garden-object-metrics.mjs?v=26.23';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.23';
-import {hdSrcset} from './render-resolution.mjs?v=26.23';
-import {HD_ART} from './hd-art.mjs?v=26.23';
-import {GARDEN_STAGES,inEdgeStrip,inPondLand,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=26.23';
-import {el,button} from './ui-utils.mjs?v=26.23';
-import {iconButton} from './pixel-icons.mjs?v=26.23';
-import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap,snapDecorSpot} from './decor-runtime.mjs?v=26.23';
-import {GARDEN_PATHS} from './garden-landscape.mjs?v=26.23';
-import {plotPhysicalBounds} from './scene-renderer.mjs?v=26.23';
-import {KEEPSAKE_ART} from './complete-object-art.mjs?v=26.23';
-import {earnedDecorArt} from './earned-decor-sprites.mjs?v=26.23';
-import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=26.23';
-import {keepsakeDisplayPlacements,keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=26.23';
+import {createPlacementInput} from './placement-input.mjs?v=26.24';
+import {isDefaultDecorHidden,decorationPlacements,defaultDecorFootprint,defaultDecorSpot,pondHome,pondFootprint,pondBedRects,pondBedCount,POND_NOOK,POND_FACING} from './default-decor.mjs?v=26.24';
+import {SHORE_THICKETS} from './pond-woodland.mjs?v=26.24';
+import {GRID_STEP,spriteGridMetrics,worldToGrid} from './garden-grid.mjs?v=26.24';
+import {decorFootprint,sceneryGroundRect} from './garden-object-metrics.mjs?v=26.24';
+export {decorFootprint} from './garden-object-metrics.mjs?v=26.24';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.24';
+import {hdSrcset} from './render-resolution.mjs?v=26.24';
+import {HD_ART} from './hd-art.mjs?v=26.24';
+import {GARDEN_STAGES,GREENHOUSE_BAY,inEdgeStrip,inPondLand,stageContains,keepsakeAnchorRow} from './garden-growth.mjs?v=26.24';
+import {el,button} from './ui-utils.mjs?v=26.24';
+import {iconButton} from './pixel-icons.mjs?v=26.24';
+import {decorFacingFor,decorFootprintRect,decorLabelFor,decorSpot,rectsOverlap,snapDecorSpot} from './decor-runtime.mjs?v=26.24';
+import {GARDEN_PATHS} from './garden-landscape.mjs?v=26.24';
+import {plotPhysicalBounds} from './scene-renderer.mjs?v=26.24';
+import {KEEPSAKE_ART} from './complete-object-art.mjs?v=26.24';
+import {earnedDecorArt} from './earned-decor-sprites.mjs?v=26.24';
+import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=26.24';
+import {keepsakeDisplayPlacements,keepsakeObstacles,placementSuggestions,rectIntersects} from './decor-placement-geometry.mjs?v=26.24';
 
 // Ground that is never free: the hut, trees and pond (scene `objects`), Hagrid, the greenhouse and the owl post.
 // Art bible §2: a large piece keeps 0.9 tile off the fence so its body never sits on the rails.
@@ -46,6 +46,13 @@ const COTTAGE_GROUND=Object.freeze({c0:-3.5,c1:-1.5,r0:3.5,r1:5.5});
 export const HEARTH_GROUND=Object.freeze(decorFootprintRect(16,1.3,[2,2]));
 // S7 part 2: the elves' Đêm Noel feast (garden-xmas FEAST_SPOT [12, 0.4], 24–25/12), kept free the same way.
 export const FEAST_GROUND=Object.freeze(decorFootprintRect(12,0.4,[2,2]));
+
+// Owner 18/11/2026 «cất nhưng ko thể add đồ mới lên chỗ đó»: the greenhouse stands in a bay of the north fence
+// (GREENHOUSE_BAY, rows above the opened land); once it is put away that bay is open ground for decorations.
+const [[BAY_C0],[,BAY_R0],[BAY_C1]]=GREENHOUSE_BAY;
+const bayOpen=decorations=>Boolean(decorations?.storedBuildings?.includes?.('greenhouse'));
+const inBay=(c,r)=>c>=BAY_C0&&c<=BAY_C1&&r>=BAY_R0&&r<=-.5;
+const openLand=(stage,c,r,decorations)=>stageContains(stage,c,r)||bayOpen(decorations)&&inBay(c,r);
 
 function segmentRectDistance([a,b],[c,d],r){
  let best=Infinity;
@@ -82,7 +89,7 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
  const rect=decorFootprintRect(col,row,footprint,facing);
  const inset=0.05,margin=big?FENCE_CLEARANCE:SMALL_FENCE_CLEARANCE;
  if(stage)for(const c of [rect.c0-margin+inset,(rect.c0+rect.c1)/2,rect.c1+margin-inset])for(const r of [rect.r0-margin+inset,(rect.r0+rect.r1)/2,rect.r1+margin-inset]){
-  if(!stageContains(stage,c,r)||inEdgeStrip(c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
+  if(!openLand(stage,c,r,decorations)||inEdgeStrip(c,r))return big?'Món lớn cần cách rào và đất chưa mở ít nhất 1 ô.':'Khu đất này chưa mở hoặc quá sát rào.';
  }
  // Owner 16/11/2026: the «Bờ hồ» meadow takes decorations too (stageContains has it once the pond is dug), never
  // astride its north fence, and off the lake with its woodland, the paddies, the willow, the thickets and both paths.
@@ -127,12 +134,12 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
 }
 
 /** Every foot spot on opened ground whose footprint fills whole cells (`snap`), and whether the item may stand there. */
-export function decorSpotGrid(stage,problemAt,snap=at=>at){
+export function decorSpotGrid(stage,problemAt,snap=at=>at,decorations=null){
  const list=[];
  if(!stage)return list;
- for(let row=stage.pond?-13.5:-1;row<=stage.bottom;row+=GRID_STEP)for(let col=-5;col<=stage.right;col+=GRID_STEP){
+ for(let row=stage.pond?-13.5:bayOpen(decorations)?BAY_R0:-1;row<=stage.bottom;row+=GRID_STEP)for(let col=-5;col<=stage.right;col+=GRID_STEP){
   const [c,r]=snap([col,row]);
-  if(c===col&&r===row&&stageContains(stage,col,row))list.push({at:[col,row],ok:!problemAt([col,row])});
+  if(c===col&&r===row&&openLand(stage,col,row,decorations))list.push({at:[col,row],ok:!problemAt([col,row])});
  }
  return list;
 }
@@ -178,7 +185,7 @@ export function showDecorationPlacement({item,map,assetOf,getState,getStage,getD
  let pending=false,input;
  const problemAt=spot=>spot?decorSpotProblem(spot[0],spot[1],{map,stage:getStage?.(),state:getState?.(),decorations:getDecorations()??{},itemId:item.id,facing:selectedFacing,footprint}):'';
  let grid=[];
- const regrid=()=>{grid=decorSpotGrid(getStage?.(),problemAt,snap);};
+ const regrid=()=>{grid=decorSpotGrid(getStage?.(),problemAt,snap,getDecorations()??{});};
  regrid();
  // A new item starts on the free spot nearest the middle of the opened garden.
  if(at&&problemAt(at)&&!savedSpot())at=nearestFree(grid,at,Infinity)??at;

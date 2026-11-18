@@ -1,9 +1,9 @@
 // Season 2 «Tài năng sinh vật» (26.0): the skill rows inside «Chăm bé» and the receipt line. garden-mood-ui imports it,
 // so it loads on the first «Chăm bé» tap; the startup part (marks, passive lines) is garden-skills-ui.
-import {el,button} from './ui-utils.mjs?v=26.23';
-import {pixelIcon} from './pixel-icons.mjs?v=26.23';
-import * as E from './progression-engine.mjs?v=26.23';
-import {skillOf,isReady,skillTargets,kneazleMarks} from './garden-skills-ui.mjs?v=26.23';
+import {el,button} from './ui-utils.mjs?v=26.24';
+import {pixelIcon} from './pixel-icons.mjs?v=26.24';
+import * as E from './progression-engine.mjs?v=26.24';
+import {skillOf,isReady,skillTargets,kneazleMarks} from './garden-skills-ui.mjs?v=26.24';
 
 // Atlas order = Codex brief docs/codex-briefs/skills-s2.md (balance order): 6 × 3 cells of 64 px.
 export const SKILL_ORDER=Object.freeze(['puffskein','bowtruckle','niffler','mooncalf','kneazle','diricawl','fwooper','hippogriff','thestral','unicorn','three-headed-dog','dragon','grindylow','crup','knarl','salamander','kappa','porlock']);

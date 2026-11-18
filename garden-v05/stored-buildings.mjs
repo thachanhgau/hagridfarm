@@ -2,11 +2,14 @@
 // storeBuilding, garden.decorations.storedBuildings). The renderer then draws nothing there and its ground takes
 // decorations (decorSpotProblem); «Bày lại» is free once no decoration stands on that ground (mobile-game run()).
 // The Herbology greenhouse (wizard-scenery `greenhouse`) goes the same way: it only opens a «Hạt giống» note.
-import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=26.23';
-import {sceneryGroundRect} from './garden-object-metrics.mjs?v=26.23';
+import {WIZARD_LAYOUT} from './wizard-scenery.mjs?v=26.24';
+import {sceneryGroundRect} from './garden-object-metrics.mjs?v=26.24';
+import {GREENHOUSE_BAY} from './garden-growth.mjs?v=26.24';
 export const STORE_BUILDING_LEVEL=200;
-/** Ground the greenhouse stands on: «Bày lại» waits until no decoration covers it. */
-export const GREENHOUSE_GROUND=sceneryGroundRect('herbology_greenhouse',WIZARD_LAYOUT.greenhouse.col,WIZARD_LAYOUT.greenhouse.row);
+/** Ground the greenhouse takes back: its own ground and the whole fence bay it stands in, which is open for decorations
+ *  while it is put away (decorSpotProblem). «Bày lại» waits until no decoration stands there. */
+const house=sceneryGroundRect('herbology_greenhouse',WIZARD_LAYOUT.greenhouse.col,WIZARD_LAYOUT.greenhouse.row);
+export const GREENHOUSE_GROUND=Object.freeze({c0:Math.min(house.c0,GREENHOUSE_BAY[0][0]),c1:Math.max(house.c1,GREENHOUSE_BAY[2][0]),r0:Math.min(house.r0,GREENHOUSE_BAY[1][1]),r1:Math.max(house.r1,GREENHOUSE_BAY[0][1])});
 const isPen=id=>id.startsWith('pen_');
 
 export const storedSet=decorations=>new Set(decorations?.storedBuildings??[]);

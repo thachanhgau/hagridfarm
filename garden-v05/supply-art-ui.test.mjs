@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { ITEM_ART } from './item-art.mjs?v=26.23';
+import { ITEM_ART } from './item-art.mjs?v=26.24';
 
 class FakeText {
  constructor(text) { this.textContent = String(text); this.parentNode = null; }
@@ -46,7 +46,7 @@ globalThis.document = {
  getElementById: () => null,
 };
 
-const { itemArtKey, visualItemIcon } = await import('./ui-utils.mjs?v=26.23');
+const { itemArtKey, visualItemIcon } = await import('./ui-utils.mjs?v=26.24');
 
 function findAttribute(node, name) {
  if (node?.attributes?.[name] !== undefined) return node.attributes[name];

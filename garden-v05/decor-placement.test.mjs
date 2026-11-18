@@ -34,6 +34,11 @@ test('free placement: open ground is free; plots, pens, buildings, locked land a
   // Owner 18/11/2026: a plot or pen put away (level 200, decorations.storedBuildings) is free ground again.
   assert.equal(at(29, 1, {state: {decorations: [], built: ['pen_1']}, decorations: {...decorations, storedBuildings: ['pen_1']}}), '');
   assert.equal(at(3, 4, {decorations: {...decorations, storedBuildings: ['plot_1']}}), '');
+  // Owner 18/11/2026: the greenhouse's bay in the north fence opens only once the greenhouse is put away.
+  assert.notEqual(at(2, -2), '');
+  assert.equal(at(2, -2, {decorations: {...decorations, storedBuildings: ['greenhouse']}}), '');
+  assert.ok(decorSpotGrid(last, () => '', s => s, {storedBuildings: ['greenhouse']}).some(g => g.at[0] === 2 && g.at[1] === -2));
+  assert.ok(!decorSpotGrid(last, () => '').some(g => g.at[1] < -1));
   assert.match(at(0, 4), /cảnh vật/);
   assert.match(at(1, 8), /công trình/);
   assert.match(at(12.5, 8.5), /Chồng/);
