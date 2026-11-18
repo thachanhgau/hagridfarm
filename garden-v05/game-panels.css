@@ -853,7 +853,7 @@
 #gameShell #panel .decor-tiles .gp-tile-actions{gap:4px;padding-top:0}
 #gameShell #panel .decor-tiles .gp-tile-actions button{min-height:40px;padding:0 10px;font-size:12px}
 #gameShell #panel .decor-tiles .cost-row{flex-wrap:wrap}
-#gameShell .store-popover .decor-card .gp-tile-art{width:92px;height:92px}
+#gameShell :is(#panel,.store-popover) .store-card.decor-card .gp-tile-art{width:96px;height:96px}
 #gameShell .is-previewable{cursor:zoom-in}
 #gameShell .is-previewable:focus-visible{outline:2px solid #FFF0C2;outline-offset:2px}
 .art-preview{box-sizing:border-box;max-width:min(580px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;padding:16px;border:2px solid #B49A66;border-radius:8px;background:#142D24;color:#F8EFD8;scrollbar-width:none}
