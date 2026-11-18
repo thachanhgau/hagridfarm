@@ -2,7 +2,7 @@
 
 Owner 18/11/2026: «lên plan để khi thu thập đủ thì có tác dụng thay vì chỉ là sưu tập».
 Trạng thái: **owner duyệt 18/11/2026** — giữ mốc 5 / 15 / 40, làm cả hai «Dùng ngay» mới, thử trên emulator trước khi deploy.
-«Bón phân trăng» và «Hướng dẫn: Đất mệt» đã live ở V26.18 (HPVN a9e9960a6). **P0 xong 18/11/2026** (mục 8): có 4 điểm cần owner chọn trước P1 (mục 8.4).
+«Bón phân trăng» và «Hướng dẫn: Đất mệt» đã live ở V26.18 (HPVN a9e9960a6). **P0 xong 18/11/2026** (mục 8); owner duyệt cả 4 đề nghị ở mục 8.4 cùng ngày. Sẵn sàng P1.
 
 ## 1. Hiện trạng (đã kiểm trong code HPVN `functions/games`, a9e9960a6)
 
@@ -26,7 +26,7 @@ Kỷ vật đã đổi không trả lại được, nên đây là chỗ tiêu t
 
 ## 3. Hiệu ứng từng loài và điểm nối (P0 đã rà, 18/11/2026)
 
-Đường dẫn tính từ `functions/games/` của HPVN ở a9e9960a6. **Đổi** = P0 đề nghị khác plan cũ, chờ owner chọn (mục 8.4).
+Đường dẫn tính từ `functions/games/` của HPVN ở a9e9960a6. **Đổi** = P0 đổi so với plan cũ, owner đã duyệt 18/11 (mục 8.4).
 
 | Loài · sản vật | Ấn 1 / 2 / 3 | Dùng ngay | Điểm nối thật |
 |---|---|---|---|
@@ -78,7 +78,7 @@ Owner yêu cầu: có bảng hướng dẫn, ghi rõ ràng, **không viết tắ
   số liệu lấy từ cùng hằng số server (một nguồn), không gõ tay hai nơi.
 - Bậc hiện tại của người chơi được tô đậm trên dòng của loài đó.
 - Thẻ «Đất mệt» đã ra cùng «Bón phân trăng» (V26.18); hai thẻ còn lại ra ở P1 và cập nhật dần theo P2, P3.
-- Số liệu dưới đây **đã chốt theo code ở P0** (a9e9960a6). Dòng có dấu * chờ owner chọn ở mục 8.4.
+- Số liệu dưới đây **đã chốt theo code ở P0** (a9e9960a6) và owner duyệt 18/11/2026.
 
 **Thẻ 1 — Ấn kỷ vật**
 
@@ -97,16 +97,16 @@ Owner yêu cầu: có bảng hướng dẫn, ghi rõ ràng, **không viết tắ
 | Quái lùng nhùng | Len quái lùng nhùng | Tâm trạng của mọi sinh vật giảm chậm hơn 10% | Giảm chậm hơn 20% | Giảm chậm hơn 30% |
 | Que Xạo | Mảnh vỏ cành rụng | Cây ăn quả trong vườn cây ra quả sau 66 giờ (thường là 72 giờ) | Sau 60 giờ | Sau 54 giờ |
 | Đào mỏ | Cúc áo lấp lánh nhặt được | Đơn hàng hằng ngày cho thêm 5% điểm kinh nghiệm | Thêm 10% | Thêm 15% |
-| Bê trăng * | Phân bón trăng đóng gói | Mỗi lần bón phân trăng, thửa đất lùi lại 12 ô thu hoạch (thường là 9 ô) | Lùi lại 15 ô | Lùi lại 18 ô |
+| Bê trăng | Phân bón trăng đóng gói | Mỗi lần bón phân trăng, thửa đất lùi lại 12 ô thu hoạch (thường là 9 ô) | Lùi lại 15 ô | Lùi lại 18 ô |
 | Mèo đốm | Sợi lông Mèo đốm | Cây chín chưa thu hoạch sau 27 giờ mới héo (thường là 24 giờ; cây héo chỉ cho một nửa sản lượng) | Sau 30 giờ | Sau 36 giờ |
 | Chim ẩn hiện | Lông vũ Chim ẩn hiện | Mỗi bữa ăn của mọi sinh vật xong sớm hơn 5% | Sớm hơn 10% | Sớm hơn 15% |
 | Chim lông rực | Lông vũ bốn màu | Khi thu sản vật, sinh vật có tâm trạng từ 75 được thêm một sản vật (thường là từ 80; giá bán gấp đôi ở Quầy chợ vẫn cần 80) | Từ 70 | Từ 65 |
 | Bằng-Mã | Lông cánh Bằng-Mã rụng | Mỗi lần mua nước tưới được tặng thêm 5% số phần nước, làm tròn xuống | Tặng thêm 10% | Tặng thêm 15% |
 | Vong mã | Sợi bờm Vong mã | Trong 30 ngày, Bác Hagrid trông vườn giúp được 8 ngày (thường là 7 ngày) | 9 ngày | 10 ngày |
 | Kỳ lân | Sợi bờm Kỳ lân rụng | Sinh vật chỉ ốm khi tâm trạng xuống dưới 22 (thường là 25) | Dưới 18 | Dưới 15 |
-| Chó ba đầu * | Sợi lông trắng Chó ba đầu | Ma lùm chỉ kéo đến khi vườn vắng chủ 27 giờ (thường là 24 giờ; tuần mưa dầm vẫn đến sớm gấp đôi) | 30 giờ | 36 giờ |
+| Chó ba đầu | Sợi lông trắng Chó ba đầu | Ma lùm chỉ kéo đến khi vườn vắng chủ 27 giờ (thường là 24 giờ; tuần mưa dầm vẫn đến sớm gấp đôi) | 30 giờ | 36 giờ |
 | Rồng | Vảy Rồng rụng | Thời gian chế biến ngắn hơn 5% | Ngắn hơn 10% | Ngắn hơn 15% |
-| Thủy quái * | Rong thủy quái | Cá trong ao lớn nhanh hơn 5% | Nhanh hơn 10% | Nhanh hơn 15% |
+| Thủy quái | Rong thủy quái | Cá trong ao lớn nhanh hơn 5% | Nhanh hơn 10% | Nhanh hơn 15% |
 | Chó đuôi nĩa | Vòng cổ lông | Ma lùm cắn cây sau 7 giờ (thường là 6 giờ) | Sau 8 giờ | Sau 9 giờ |
 | Nhím quậy | Lông gai | Đất mệt mỗi vụ chỉ giảm thêm 22% sản lượng (thường là 25%), thấp nhất vẫn là 50% | Giảm thêm 20% | Giảm thêm 18% |
 | Kỳ nhông lửa | Tro kỳ nhông | Trong tuần sương giá, cây 8 giờ chỉ chậm gấp 1,4 lần (thường là 1,5 lần) | Gấp 1,3 lần | Gấp 1,2 lần |
@@ -121,7 +121,7 @@ Owner yêu cầu: có bảng hướng dẫn, ghi rõ ràng, **không viết tắ
 |---|---|---|---|---|
 | Phân bón trăng đóng gói | 1 gói | Thửa đất đang mệt được tính lùi lại một vụ (9 ô thu hoạch) | Từ cấp 160, khi thửa đất đang mệt | Mỗi thửa một lần mỗi ngày |
 | Sợi bờm Kỳ lân rụng | 3 sợi | Chữa khỏi một sinh vật đang ốm, không tốn Galleon hay Thuốc Mọc Xương | Từ cấp 130, khi có sinh vật đang ốm | Một lần mỗi ngày |
-| Rong thủy quái * | 5 cây rong | Mọi lô cá đang lớn trong ao bớt một phần tư thời gian còn lại | Từ cấp 150, khi ao có cá đang lớn | Một lần mỗi ngày |
+| Rong thủy quái | 5 cây rong | Mọi lô cá đang lớn trong ao bớt một phần tư thời gian còn lại | Từ cấp 150, khi ao có cá đang lớn | Một lần mỗi ngày |
 
 **Thẻ 3 — Đất mệt** (đã live V26.18, garden-soil-guide.mjs; số khớp server)
 
@@ -157,8 +157,9 @@ Khi có Ấn Nhím quậy (P2), dòng «Vụ thứ ba» và «Từ vụ thứ t�
 ## 7. Owner đã quyết (18/11/2026)
 
 1. Giữ mốc 5 / 15 / 40 kỷ vật.
-2. Làm «Chữa bệnh» (Sợi bờm Kỳ lân rụng) và «Vớt rêu» (Rong thủy quái) — P0 thấy «Vớt rêu» đã miễn phí, đề nghị đổi (mục 8.4).
+2. Làm «Chữa bệnh» (Sợi bờm Kỳ lân rụng); «Vớt rêu» (Rong thủy quái) đổi thành «Rải rong cho cá» vì «Vớt rêu» đã miễn phí.
 3. Mọi phần thử trên emulator, owner duyệt rồi mới deploy.
+4. Sau P0 (18/11/2026): duyệt cả 4 đề nghị ở mục 8.4 — Bê trăng 12 / 15 / 18 ô; Chó ba đầu: ma lùm kéo đến muộn hơn; Thủy quái: cá lớn nhanh hơn; «Rải rong cho cá» thay «Vớt rêu».
 
 ## 8. Kết quả P0 (18/11/2026, Claude Code, chỉ đọc code và dữ liệu)
 
@@ -198,13 +199,13 @@ Kết luận: **không có đường nào**. Mỗi tài khoản tự nuôi; tài
    - Phân bón trăng → garden-soil-core.js:171 (số ô theo mục 8.4)
    - Sợi lông Mèo đốm → `WILT_MS` ở duty-core:105, challenge-core:138, skill-core:308 (thay hằng số bằng hàm theo vườn, không thêm dòng vào duty-core)
    - Vòng cổ lông → `GNOME_BITE_MS` duty-core:212, :214
-   - Rong thủy quái → `ms` lô cá pond-core.js:171, :301 (nếu owner chọn «Cá lớn nhanh»; nếu không, P1 thay bằng Vảy Rồng ở action-core:118)
+   - Rong thủy quái → `ms` lô cá pond-core.js:171, :301 («Cá trong ao lớn nhanh hơn», owner duyệt)
 4. View: `keepsakes` trong phản hồi `getHagridGarden` (bậc, mốc kế tiếp, hiệu ứng) để client chỉ hiển thị.
 5. Client hagrid-farm: thẻ «Bộ sưu tập» `Bậc 2 · 15/40` + một dòng hiệu ứng; hộp «Hướng dẫn» thêm thẻ «Ấn kỷ vật» và «Dùng ngay» (mục 5a), số lấy từ view server; tô đậm bậc của người chơi.
 6. Test: lõi bậc (4, 5, 14, 15, 39, 40 kỷ vật), từng Ấn có và không có bậc, fence #65 (không Galleon), #66 (client gửi bậc bị bỏ qua), #69 (không có lệnh đổi ngược); test HPVN giữ số bảng hướng dẫn bằng số server.
 7. Emulator: vườn mẫu có 0 / 5 / 15 / 40 kỷ vật một loài, xem ở 390 px và 320 px; owner duyệt.
 
-### 8.4 Cần owner chọn trước P1
+### 8.4 Bốn đề nghị — owner duyệt cả 4 (18/11/2026)
 
 1. **Bê trăng**: Ấn lùi 12 / 15 / 18 ô (đề nghị) thay cho 9 / 13 / 18 (Bậc 1 = 9 ô bằng gốc, không có tác dụng).
 2. **Chó ba đầu**: «Đốt vườn» không có tốc độ cháy. Đề nghị «Ma lùm kéo đến khi vườn vắng 27 / 30 / 36 giờ».
