@@ -1,11 +1,11 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=26.22";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=26.22";
-import {previewable} from "./art-preview.mjs?v=26.22";
-import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=26.22";
-import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=26.22";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=26.22";
-import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=26.22";
-import {marketCards} from "./garden-market-ui.mjs?v=26.22";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=26.23";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=26.23";
+import {previewable} from "./art-preview.mjs?v=26.23";
+import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=26.23";
+import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=26.23";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=26.23";
+import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=26.23";
+import {marketCards} from "./garden-market-ui.mjs?v=26.23";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -101,6 +101,32 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   return "";
  }
 
+ const seasonOf=i=>i.season??STORE_CATALOG.find(c=>c.id===i.id)?.season;
+ // «Mua cả lễ hội»: every festival piece of that season the member can still buy, one server purchase each (the same
+ // checked `buy` as a single card), stopping at the first refusal. Two taps: the first shows the count and total.
+ const festivalSet=(season,all,snap)=>all.filter(i=>seasonOf(i)===season&&i.kind==="decoration"&&!i.locked&&i.forSale!==false&&!snap?.garden?.decorations?.owned?.includes(i.id));
+ async function buyAll(list){
+  if(purchasing)return;
+  purchasing=true;let done=0;render();
+  try{
+   for(const i of list){notice.textContent=`Đang mua ${done+1}/${list.length}: ${i.label}…`;await onPurchase(i.id,1,true);done++;}
+   notice.textContent=`Đã mua ${done} món lễ hội. Bấm Đặt để trang trí vườn.`;
+  }catch(e){notice.textContent=`Đã mua ${done}/${list.length} món · dừng lại: ${e.message}`;}
+  finally{purchasing=false;render();}
+ }
+ function buyAllButton(season,all,snap,spendable,closePreview=null){
+  const list=festivalSet(season,all,snap);
+  if(!list.length)return null;
+  const total=list.reduce((n,i)=>n+packTotal(i,1),0),short=total-spendable,name=SEASON_LABELS[season]||"lễ hội";
+  let armed=false;
+  const b=button("",()=>{if(!armed){armed=true;paint();return;}closePreview?.();buyAll(list);},{class:"primary store-buy-all","data-buy-season":season});
+  const paint=()=>{
+   b.replaceChildren(pixelIcon("coin",1),el("span",{text:short>0?`Mua cả ${name} · thiếu ${num(short)} Galleons`:armed?`Bấm lần nữa: mua ${list.length} món · ${num(total)}`:`Mua cả ${name} · ${list.length} món · ${num(total)}`}));
+   b.disabled=short>0||purchasing;b.setAttribute("aria-label",`Mua cả ${name}: ${list.length} món, ${num(total)} Galleons`);
+  };
+  paint();return b;
+ }
+
  function render(){
   const snap=wallet?.snapshot;
   const allItems=catalog();
@@ -178,7 +204,16 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
    const artVisual=visualItemIcon(items,artId,{size:isDecor?84:56,kind:item.kind,decorAssets,badge:packBadge,facing:shownFacing});
 
    // Tap the picture to see it large (owner 18/11/2026); a decoration shows both angles.
-   const head=previewable(el("div",{class:"gp-tile-art"},[artVisual]),item.label,size=>(isDecor?["default","right"]:[shownFacing]).map(facing=>visualItemIcon(items,artId,{size,kind:item.kind,decorAssets,facing})),isDecor?2:1);
+   // Owner 18/11/2026 «cho thêm nút mua luôn ở đây và 1 nút mua cả lễ hội»: the preview carries the card's own buy button
+   // (same label, same guard, same handler) and, for a festival piece, «Mua cả …».
+   const previewActions=close=>{
+    const out=[];
+    if(action===buy){const b=button("",()=>{close();buy.click();},{class:"primary",disabled:buy.disabled,"aria-label":buy.getAttribute("aria-label")});b.append(...[...buy.childNodes].map(n=>n.cloneNode(true)));out.push(b);}
+    const all=seasonOf(item)&&snap?buyAllButton(seasonOf(item),allItems,snap,spendable,close):null;
+    if(all)out.push(all);
+    return out;
+   };
+   const head=previewable(el("div",{class:"gp-tile-art"},[artVisual]),item.label,size=>(isDecor?["default","right"]:[shownFacing]).map(facing=>visualItemIcon(items,artId,{size,kind:item.kind,decorAssets,facing})),isDecor?2:1,previewActions);
    const angleBtn=isDecor?iconButton("replay",`Xem góc ${shownFacing==="right"?"trái":"phải"} của ${item.label}`,()=>{previewFacing.set(item.id,shownFacing==="right"?"default":"right");render();},{class:"gp-step store-angle-btn","data-store-angle":item.id}):null;
    // An item the HPVN server lists without selling (`forSale: false`: switched off in the ACP or waiting for its price).
    const pendingPrice=item.forSale===false;
@@ -259,6 +294,10 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
   }
   if(!cards.childElementCount){
    cards.append(el("p",{class:"empty",text:"Chưa có vật tư thuộc nhóm này ở cấp hiện tại."}));
+  }
+  if(filter==="festival"&&snap&&!onlyIds){
+   const row=[...new Set(allItems.map(seasonOf).filter(Boolean))].map(season=>buyAllButton(season,allItems,snap,spendable)).filter(Boolean);
+   if(row.length)cards.prepend(el("div",{class:"store-buy-all-row"},row));
   }
  }
  cards.setAttribute("aria-label","Danh mục cửa hàng");

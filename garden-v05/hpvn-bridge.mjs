@@ -1,16 +1,16 @@
-import {getGardenStorage} from './garden-storage.mjs?v=26.22';
-import {levelLabel} from './progression-engine.mjs?v=26.22';
-import { normalizeDecorFacing } from './decor-runtime.mjs?v=26.22';
+import {getGardenStorage} from './garden-storage.mjs?v=26.23';
+import {levelLabel} from './progression-engine.mjs?v=26.23';
+import { normalizeDecorFacing } from './decor-runtime.mjs?v=26.23';
 import {
   normalizeAtmosphereMode,
   atmosphereConfig,
   normalizeWeatherMode,
   weatherConfig,
-} from './garden-atmosphere.mjs?v=26.22';
+} from './garden-atmosphere.mjs?v=26.23';
 import {
   normalizeEventMode,
   eventConfig,
-} from './garden-events.mjs?v=26.22';
+} from './garden-events.mjs?v=26.23';
 
 export const VISUAL_PREFS_STORAGE_KEY = 'hpvn-garden-v20-visual-prefs';
 export const LEGACY_DECOR_STORAGE_KEY = 'hpvn-garden-v18-decor-layout';
