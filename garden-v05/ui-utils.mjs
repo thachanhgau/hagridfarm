@@ -239,7 +239,8 @@ export function earnedDecorIcon(decorId, { size = 48, facing = "default" } = {})
 }
 
 // 0.5× keeps pixels whole; only a decoration whose ink is bigger than the slot at 0.5× shrinks further (ponytail: fractional then, store thumbnails would fix it).
-const decorScale=(b,size)=>Math.min(0.5,size/b.w,size/b.h);
+// Owner 18/11/2026 «hình rất nhỏ»: the ink fills ~86 % of the slot (the HD srcset keeps it sharp), never past 1.5×.
+const decorScale=(b,size)=>Math.min(1.5,size*0.86/b.w,size*0.86/b.h);
 // The slot centres the whole canvas; a tall canvas (Noel pieces: 128×256, ink at the bottom) would show its empty top,
 // so shift the image until its ink sits in the middle.
 const decorThumbStyle=(asset,right,size)=>{const b=(right?asset.rightBounds:asset.bounds)||asset.bounds||{x:0,y:0,w:asset.width,h:asset.height},k=decorScale(b,size);
@@ -349,7 +350,7 @@ export function visualItemIcon(items, id, { size = 52, kind = "", decorAssets = 
   const src = isRight
    ? (asset?.rightFile || asset?.file || `decor-assets/native/${rawId}_right.png`)
    : (asset?.file || `decor-assets/native/${rawId}.png`);
-  const halfSize=img=>{const k=Math.min(0.5,size/img.naturalWidth,size/img.naturalHeight);img.style.width=img.naturalWidth*k+"px";img.style.height=img.naturalHeight*k+"px";};
+  const halfSize=img=>{const k=Math.min(1.5,size*0.86/img.naturalWidth,size*0.86/img.naturalHeight);img.style.width=img.naturalWidth*k+"px";img.style.height=img.naturalHeight*k+"px";};
   slot.append(el("img", { src, alt: "", class: `visual-decor-img${isRight && !asset?.rightFile ? " is-flipped" : ""}`,style:asset?decorThumbStyle(asset,isRight&&Boolean(asset.rightFile),size):"max-width:none;image-rendering:pixelated",...(asset?{}:{onload:e=>halfSize(e.target)}) }));
  } else if (rawId.startsWith("decoration-")) {
   slot.classList.add("is-decor", "is-earned-decor-slot");
