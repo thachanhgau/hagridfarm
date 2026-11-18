@@ -596,6 +596,7 @@
 
 #gameShell #seedOptions .sheet-care{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 #gameShell #seedOptions .sheet-care button{min-width:0;padding:4px}
+#gameShell #seedOptions #fertilizeButton{grid-column:span 2}#gameShell #seedOptions #soilGuideButton{grid-column:1/-1;order:1}
 
 #gameShell #panel .achievements-grid .gp-tile-name{align-self:start}
 #gameShell #panel .guestbook-card{grid-row:span 2;grid-template-rows:subgrid}
@@ -819,4 +820,4 @@
 #gameShell .soil-guide-table{display:grid;gap:6px;margin:8px 0}
 #gameShell .soil-guide-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;padding:8px 10px;border-radius:6px;background:#2E5446;color:#E8F0ED;font-size:13px;line-height:1.4}
 #gameShell .soil-guide-row.is-head{padding:2px 10px;background:none;color:#F5D69A;font-size:12px;font-weight:700}
-@media(max-width:420px){#gameShell .soil-guide-row{grid-template-columns:1fr;gap:2px}#gameShell .soil-guide-row.is-head{display:none}#gameShell .soil-guide-row>span::before{content:attr(data-label) ": ";color:#F5D69A;font-weight:700}}
+@media(max-width:420px){#gameShell .soil-guide-row{grid-template-columns:1fr;gap:2px}#gameShell .soil-guide-row.is-head{display:none}#gameShell .soil-guide-row>span:first-child{color:#F5D69A;font-weight:700}#gameShell .soil-guide-row>span+span::before{content:attr(data-label) ": ";color:#C9D3C4}}
