@@ -12,6 +12,7 @@ import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSect
 import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.19";
 import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.19";
 import {STORE_BUILDING_LEVEL,storableBuildings,storedSet} from "./stored-buildings.mjs?v=26.19";
+import {runtimeImageUrl} from "./runtime-image-url.mjs?v=26.19";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -506,7 +507,7 @@ export function createPanels(ctx){
     }
    }
    // «Chuồng mở rộng» and the greenhouse stand on fixed ground (no «Chuyển»), so their card holds only «Cất».
-   for(const b of shelf?.values()??[])if(b.id.startsWith("pen_ext_")||b.id==="greenhouse"){const k=card(b.name,"Nền cố định"+note(b),b.id==="greenhouse"?"herbology_greenhouse":b.id);k.append(actions(...storeButton(b)));g.append(k);}
+   for(const b of shelf?.values()??[])if(b.id.startsWith("pen_ext_")||b.id==="greenhouse"){const k=card(b.name,"Nền cố định"+note(b),b.id==="greenhouse"?null:b.id);if(b.id==="greenhouse")k.firstChild.prepend(el("div",{class:"visual-slot",style:"width:52px;height:52px"},[el("img",{src:runtimeImageUrl("native-complete-objects/herbology_greenhouse/frame-01.png"),alt:"",style:"width:100%;height:100%;object-fit:contain"})]));k.append(actions(...storeButton(b)));g.append(k);}
    body.append(g);
   },
 
