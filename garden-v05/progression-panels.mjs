@@ -472,8 +472,8 @@ export function createPanels(ctx){
      el("small",{class:"gp-tile-sub",text:`${num(q)} sản vật · ${sealText}`}),
      seal?.effect?el("small",{class:"gp-tile-sub seal-effect",text:seal.effect}):null,
      el("div",{class:"gp-tile-actions"},[iconButton("trophy","Đổi kỷ vật "+a.label,()=>run(x=>E.exchangeKeepsake(x,a.id),"Đã đổi kỷ vật "+a.label+".",{action:"exchangeKeepsake",species:a.id}),{text:"Đổi",class:q>=5?"primary":"",disabled:q<5}),
-      ...(seals&&q>=25?[button("×5",()=>many(5),{"aria-label":`Đổi 5 kỷ vật ${a.label}`})]:[]),
-      ...(seals&&all>5?[button("Đổi hết",()=>many(all),{"aria-label":`Đổi hết: ${all} kỷ vật ${a.label}`})]:[])]));
+      seals&&q>=25?el("div",{class:"seal-row"},[button("×5",()=>many(5),{"aria-label":`Đổi 5 kỷ vật ${a.label}`}),
+       ...(all>5?[button("Đổi hết",()=>many(all),{"aria-label":`Đổi hết: ${all} kỷ vật ${a.label}`})]:[])]):null].filter(Boolean)));
     if(kept>0)k.append(defaultDecorToggle(ctx,"keepsake:"+a.id,"đài kỷ vật "+a.label,refresh));
     g.append(k);
    }
