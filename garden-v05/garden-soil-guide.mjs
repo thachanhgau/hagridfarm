@@ -1,7 +1,7 @@
 // Owner 18/11/2026: a player guide for «Đất mệt» and «Bón phân trăng», full words, no abbreviations.
 // The numbers mirror HPVN functions/games/garden-soil-core.js; HPVN test garden-soil-guide.test.js keeps them equal.
-import {el,closeOnBackdrop} from './ui-utils.mjs?v=26.17';
-import {iconButton} from './pixel-icons.mjs?v=26.17';
+import {el,closeOnBackdrop} from './ui-utils.mjs?v=26.18';
+import {iconButton} from './pixel-icons.mjs?v=26.18';
 
 export const SOIL_GUIDE = Object.freeze({level: 160, cellsPerRun: 9, tiredFrom: 3, step: 25, floor: 50});
 

@@ -3,9 +3,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import * as E from './progression-engine.mjs?v=26.17';
-import {nextGoal} from './next-goal.mjs?v=26.17';
-import {levelName} from './ui-utils.mjs?v=26.17';
+import * as E from './progression-engine.mjs?v=26.18';
+import {nextGoal} from './next-goal.mjs?v=26.18';
+import {levelName} from './ui-utils.mjs?v=26.18';
 
 const NOW = 1_800_000_000_000;
 

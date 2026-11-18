@@ -1,10 +1,10 @@
-import {FOREST_ASSETS} from './forest-surround.mjs?v=26.17';
-import {FESTIVAL_HEROES} from './garden-seasonal-world.mjs?v=26.17';
-import {spriteGridMetrics, footprintPixels} from './garden-grid.mjs?v=26.17';
-import {STORE_CATALOG} from './garden-store-catalog.mjs?v=26.17';
-import {COMPLETE_SCENERY, HABITAT_ART, KEEPSAKE_ART} from './complete-object-art.mjs?v=26.17';
-import {ITEM_ART} from './item-art.mjs?v=26.17';
-import {baseDecorId} from './decor-runtime.mjs?v=26.17';
+import {FOREST_ASSETS} from './forest-surround.mjs?v=26.18';
+import {FESTIVAL_HEROES} from './garden-seasonal-world.mjs?v=26.18';
+import {spriteGridMetrics, footprintPixels} from './garden-grid.mjs?v=26.18';
+import {STORE_CATALOG} from './garden-store-catalog.mjs?v=26.18';
+import {COMPLETE_SCENERY, HABITAT_ART, KEEPSAKE_ART} from './complete-object-art.mjs?v=26.18';
+import {ITEM_ART} from './item-art.mjs?v=26.18';
+import {baseDecorId} from './decor-runtime.mjs?v=26.18';
 
 // Ground dimensions; the canopy, roof or head can overhang this base. Native
 // raster bounds remain a separate screen-occlusion check during placement.
