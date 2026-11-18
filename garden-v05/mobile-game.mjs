@@ -37,6 +37,7 @@ import {nextGoal} from './next-goal.mjs?v=26.17';
 import {GUIDE,guideFacts,guideAutoDone,nextLesson} from './garden-guide.mjs?v=26.17';
 import {createMissions} from './garden-missions-ui.mjs?v=26.17';
 import {createHagridWork} from './garden-work-ui.mjs?v=26.17';
+import {openSoilGuide,SOIL_GUIDE} from './garden-soil-guide.mjs?v=26.17';
 import {buildVisitSnapshot,renderMemberVisits,nextVisit,newHelpers,visitBannerParts,avatarSrc} from './garden-visits-ui.mjs?v=26.17';
 import {FIRE_BANNER,fireTimeLeft} from './garden-fire.mjs?v=26.17';
 import {createFireSheet,fireOutPrice} from './garden-fire-ui.mjs?v=26.17';
@@ -693,7 +694,7 @@ function refresh(){
  const readyBuilds=state.construction.filter(j=>j.readyAt<=now).length;$('buildReady').hidden=!readyBuilds;$('buildReady').textContent=readyBuilds;
  if(connected&&$('boostButton')){$('boostButton').disabled=!walletReady||busy||(wallet.snapshot?.garden.supplies.boost||0)<1||chosen().some(i=>!slots[i]||E.growth(slots[i],now).mature||(wallet.snapshot?.garden.boostedCropIds||[]).includes(slots[i].id));$('dockBoost').hidden=$('boostButton').disabled;}
  if(connected&&$('springButton')){const n=wallet.snapshot?.garden.supplies.spring||0;$('springButton').textContent='Suối thần ×'+n;const uses=wallet.snapshot?.daily?.springUses;$('springButton').title='Nước suối thần: cả thửa chín và gặt luôn'+(uses?' · hôm nay còn '+Math.max(0,uses.cap-uses.used)+'/'+uses.cap+' chai':'');$('springButton').hidden=n<1&&state.level<30;$('springButton').disabled=!walletReady||busy||n<1||!slots.some(Boolean);}
- if(connected&&$('fertilizeButton')){const soil=currentSoil()?.[selectedPlot],bags=state.inventory?.produce_mooncalf||0,b=$('fertilizeButton');b.hidden=!(soil&&(soil.tired<1||Object.keys(soil.seeds||{}).length));b.textContent=soil?.fed?'Đã bón hôm nay':'Bón phân trăng ×'+num(bags);b.title='Phân bón trăng đóng gói: đất thửa '+(selectedPlot+1)+' bớt mệt một vụ · mỗi thửa một lần một ngày';b.disabled=!walletReady||busy||bags<1||Boolean(soil?.fed);}
+ if(connected&&$('fertilizeButton')){const soil=currentSoil()?.[selectedPlot],bags=state.inventory?.produce_mooncalf||0,b=$('fertilizeButton');b.hidden=!(soil&&(soil.tired<1||Object.keys(soil.seeds||{}).length));b.textContent=soil?.fed?'Đã bón hôm nay':'Bón phân trăng ×'+num(bags);b.title='Phân bón trăng đóng gói: đất thửa '+(selectedPlot+1)+' bớt mệt một vụ · mỗi thửa một lần một ngày';b.disabled=!walletReady||busy||bags<1||Boolean(soil?.fed);}if($('soilGuideButton'))$('soilGuideButton').hidden=state.level<SOIL_GUIDE.level;
  if(connected&&$('mealBoostButton')){const meal=owned(species)?.meal;$('mealBoostButton').title='Nước phép'+(!meal||meal.readyAt<=now?' · chỉ dùng khi bé đang ăn':'');$('mealBoostButton').disabled=!walletReady||busy||(wallet.snapshot?.garden.supplies.boost||0)<1||!meal||meal.readyAt<=now||(wallet.snapshot?.garden.boostedCropIds||[]).includes(meal.id);}
  if(connected)refreshPremiumControls({snapshot:wallet.snapshot,state,species,now,ready:walletReady&&!busy,items});
  syncKeeperTitleBadge();
@@ -995,7 +996,7 @@ if(connected){
  // Nước suối thần: the whole selected plot ripens and is harvested in one go (server action `spring`).
  const spring=button('Suối thần',()=>{$('seedOptions').close();return run(null,'Nước suối thần: cả thửa chín và đã gặt.',{action:'spring',plotIndex:selectedPlot});},{id:'springButton',disabled:true});boost.after(spring);
  // Owner 18/11/2026 (member idea): «Phân bón trăng đóng gói» on a tired plot takes one vụ off, once a plot a day (garden-soil-core).
- const fertilize=button('Bón phân trăng',()=>{$('seedOptions').close();return run(null,'Đã bón phân trăng: đất thửa bớt mệt.',{action:'fertilize',plotIndex:selectedPlot});},{id:'fertilizeButton',hidden:true});spring.after(fertilize);
+ const fertilize=button('Bón phân trăng',()=>{$('seedOptions').close();return run(null,'Đã bón phân trăng: đất thửa bớt mệt.',{action:'fertilize',plotIndex:selectedPlot});},{id:'fertilizeButton',hidden:true});spring.after(fertilize);const soilGuide=button('Hướng dẫn đất mệt',()=>{$('seedOptions').close();openSoilGuide();},{id:'soilGuideButton',hidden:true});fertilize.after(soilGuide);
  // Level-500 P4 (wallet only): Mưa suối thần harvests the whole garden; Phúc Lạc Dược runs 2 hours.
  const premium=(id,label,done,extra=()=>({}),sheet='seedOptions')=>{const b=button(label,()=>{$(sheet)?.close();return run(null,done,{action:'usePremium',itemId:id,...extra()});},{id:'premium-'+id,disabled:true,'data-label':label});b.hidden=true;return b;};
  spring.after(premium('spring_rain','Mưa suối thần','Mưa suối thần: cả vườn chín và đã gặt.'),premium('felix_felicis','Phúc Lạc Dược','Đã uống Phúc Lạc Dược: XP ×1,5 trong 2 giờ.'));
