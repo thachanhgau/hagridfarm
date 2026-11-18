@@ -489,7 +489,7 @@ export function createPanels(ctx){
    body.append(toolbar(...barBtns));
    // Owner 18/11/2026 «cất bớt đất/chuồng để trang trí» (level 200, server storeBuilding): «Cất» / «Bày lại» on each card.
    const shelf=getSession().connected&&s.level>=STORE_BUILDING_LEVEL?new Map(storableBuildings(s,ctx.getDecorations?.(),E.POND_SPECIES).map(b=>[b.id,b])):null;
-   const storeButton=b=>b?[button(b.stored?"Bày lại":"Cất",()=>run(null,(b.stored?"Đã bày lại ":"Đã cất ")+b.name+".",{action:"storeBuilding",buildingId:b.id,stored:!b.stored}),{class:b.stored?"primary":"",disabled:!b.stored&&!!b.why,title:b.why||(b.stored?"Bày lại trên nền cũ":"Cất đi, nền trống để trang trí"),"data-store-building":b.id})]:[];
+   const storeButton=b=>b?[button(b.stored?"Bày lại":"Cất",()=>run(null,(b.stored?"Đã bày lại ":"Đã cất ")+b.name+".",{action:"storeBuilding",buildingId:b.id,stored:!b.stored}),{disabled:!b.stored&&!!b.why,title:b.why||(b.stored?"Bày lại trên nền cũ":"Cất đi, nền trống để trang trí"),"data-store-building":b.id})]:[];
    const note=b=>b?.stored?" · Đã cất":b?.why?" · "+b.why:"";
    const g=grid();
    for(const kind of ["plot","pen"]){
