@@ -505,8 +505,8 @@ export function createPanels(ctx){
      g.append(k);
     }
    }
-   // «Chuồng mở rộng» stand on fixed ground (no «Chuyển»), so their card holds only «Cất».
-   for(const b of shelf?.values()??[])if(b.id.startsWith("pen_ext_")){const k=card(b.name,"Nền cố định"+note(b),b.id);k.append(actions(...storeButton(b)));g.append(k);}
+   // «Chuồng mở rộng» and the greenhouse stand on fixed ground (no «Chuyển»), so their card holds only «Cất».
+   for(const b of shelf?.values()??[])if(b.id.startsWith("pen_ext_")||b.id==="greenhouse"){const k=card(b.name,"Nền cố định"+note(b),b.id==="greenhouse"?"herbology_greenhouse":b.id);k.append(actions(...storeButton(b)));g.append(k);}
    body.append(g);
   },
 

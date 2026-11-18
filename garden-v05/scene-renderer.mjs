@@ -1961,7 +1961,7 @@ export async function createGarden(canvas, options = {}) {
     // muteHagridSpeech: the tutorial shows Hagrid's line as a screen-space bubble instead.
     const showPeriodicSpeech = !options.muteHagridSpeech && (Boolean(hagridLine) || greetingActive || options.showHagridSpeech === true || (clock > 0 && Math.floor(clock / 4800) % 3 === 0));
     const wizList = propsVisible
-      ? wizardObjects(iso, clock, {reactionUntil}).map((w) => (
+      ? wizardObjects(iso, clock, {reactionUntil}).filter((w) => !storedBuildings.has(w.id)).map((w) => (
         w.id === 'gardener' && showPeriodicSpeech
           ? {
             ...w,
@@ -2267,7 +2267,7 @@ export async function createGarden(canvas, options = {}) {
       const {xy,asset,flip}=elf,b=asset.bounds,left=flip?xy[0]+asset.pivotX-b.x-b.w:xy[0]-asset.pivotX+b.x,top=xy[1]-asset.pivotY+b.y;
       if(world.x>=left-5&&world.x<=left+b.w+5&&world.y>=top-5&&world.y<=top+b.h+5)return {kind:'elf',id:elf.id,friend:elf.friend};
     }
-    if(sceneryVisible)for(const target of wizardTargets(iso).sort((a,b)=>b.xy[1]-a.xy[1])){
+    if(sceneryVisible)for(const target of wizardTargets(iso).filter(t=>!storedBuildings.has(t.id)).sort((a,b)=>b.xy[1]-a.xy[1])){
       const b=target.hitbox;if(world.x>=b.left&&world.x<=b.right&&world.y>=b.top&&world.y<=b.bottom)return {kind:'wizard',id:target.id};
     }
     if (plotHit) return plotHit;

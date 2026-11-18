@@ -3,7 +3,7 @@ import {setupPetControls,renderPetCareButtons,petControlState,petIcon} from './p
 import {openGardenLayout} from './garden-layout-ui.mjs?v=26.19';
 import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=26.19';
 import {CREATURE_HOMES_LEVEL,resolveCreatureHomes,spotPoint,swapHome,homeChoices,openCreatureHomes} from './creature-homes.mjs?v=26.19';
-import {openPlot,storedSet} from './stored-buildings.mjs?v=26.19';
+import {GREENHOUSE_GROUND,openPlot,storedSet} from './stored-buildings.mjs?v=26.19';
 import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=26.19';
 import {setupGardenControls} from './garden-controls-ui.mjs?v=26.19';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=26.19';
@@ -521,7 +521,7 @@ async function run(action,text='Đã hoàn tất.',command=null){
  // «Bày lại» (level 200) brings a stored plot or pen back on its ground: the same rule as a build.
  const back=command?.action==='storeBuilding'&&!command.stored?command.buildingId:null,id=command?.action==='build'?command.expansionId:back;
  const ground=id?(/^plot_(\d+)$/.test(id)?['plot',map.plots[id.slice(5)-1]]:['pen',map.pens.find(p=>p.id===id)]):command?.action==='moveBuilding'?[command.kind,layoutSlots[command.kind==='plot'?'plots':'pens'][command.targetSlot]]:null;
- const onGround=ground?.[1]&&decorOnGround(groundRect(ground[0],ground[1],map),currentDecorations());
+ const onGround=back==='greenhouse'?decorOnGround(GREENHOUSE_GROUND,currentDecorations()):ground?.[1]&&decorOnGround(groundRect(ground[0],ground[1],map),currentDecorations());
  if(onGround){message(`Dời ${decorLabelFor(decorAssets.get(onGround)||onGround)} ra khỏi nền này trước khi ${command.action==='build'?'xây':back?'bày lại':'chuyển công trình tới'}.`);return;}
  if(connected){if(!walletReady||busy)return;if(!command){message('Thao tác này chỉ dành cho phiên thử trên thiết bị.');return;}busy=true;petControls?.refresh();try{const before=state;await wallet.act(command);playCommandSound(command,before);acceptWallet(before,tutorial?'':text);}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'',false);}catch{}}showRefusal(e);}finally{busy=false;workTrays?.refresh(mode);wizard?.refresh?.();petControls?.refresh();}return;}
  if(busy)return;busy=true;
