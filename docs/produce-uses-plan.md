@@ -38,7 +38,7 @@ Cột «Điểm nối» là hằng số/hàm đã thấy trong code; dấu **(x�
 | Fwooper · Lông vũ bốn màu | Ngưỡng «vui» được thưởng thêm sản vật: 80 → 75 / 70 / 65 | — | mood-core `HAPPY` |
 | Bằng-Mã · Lông cánh | Nước tưới: mỗi lần mua tặng thêm 5 / 10 / 15% | — | (xác minh) |
 | Vong mã · Sợi bờm | Hagrid trông vườn được thêm 1 / 2 / 3 ngày | — | duty-core `leave.days` (xác minh trần) |
-| Kỳ lân · Sợi bờm | Bé ít ốm hơn: ngưỡng ốm 25 → 22 / 18 / 15 | **Chữa bệnh**: 3 sợi bờm chữa 1 bé, 1 lần/ngày (thay Galleon / Skele-Gro) | duty-core `SICK_MOOD`, `treat` |
+| Kỳ lân · Sợi bờm | Bé ít ốm hơn: ngưỡng ốm 25 → 22 / 18 / 15 | **Chữa bệnh**: 3 sợi bờm chữa 1 bé, 1 lần/ngày (thay Galleon / Thuốc Mọc Xương) | duty-core `SICK_MOOD`, `treat` |
 | Chó ba đầu · Sợi lông trắng | «Đốt vườn» thật cháy chậm hơn 10 / 20 / 30% | — | fire-core (xác minh) |
 | Rồng · Vảy | Chế biến nhanh hơn 5 / 10 / 15% | — | recipe `hours` |
 | Thủy quái · Rong | Hồ đục chậm hơn: 2 → 2,5 / 3 / 4 ngày | **Vớt rêu**: 5 rong làm sạch hồ ngay, 1 lần/ngày | pond-core `MURKY_AFTER` |
