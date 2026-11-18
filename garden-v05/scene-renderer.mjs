@@ -1478,7 +1478,7 @@ export async function createGarden(canvas, options = {}) {
 
   function plotIsBuilt(state, index, logicalNow) {
     const plot = map.plots[index];
-    if (!plot || !Array.isArray(state?.plots) || index >= state.plots.length) return false;
+    if (!plot || !Array.isArray(state?.plots) || index >= state.plots.length || storedBuildings.has(`plot_${index + 1}`)) return false;
     return constructionOverlay(state, logicalNow, plotAliases(plot, index), 'Thửa').ready;
   }
 
@@ -1488,7 +1488,7 @@ export async function createGarden(canvas, options = {}) {
 
   function plotIsVisible(state, index, logicalNow) {
     const plot = map.plots[index];
-    if (!plot) return false;
+    if (!plot || storedBuildings.has(`plot_${index + 1}`)) return false;
     if (plotIsBuilt(state, index, logicalNow) || plotConstruction(state, index)) return true;
     return (Number(state?.level) || 1) >= Number(plot.requiredLevel || 1);
   }
@@ -1613,7 +1613,7 @@ export async function createGarden(canvas, options = {}) {
 
   function drawSelection(state, selectedPlot, lineCells) {
     const index = Number(selectedPlot);
-    if (!Number.isInteger(index) || index < 0 || index >= map.plots.length || !Array.isArray(state?.plots) || index >= state.plots.length) return;
+    if (!Number.isInteger(index) || index < 0 || index >= map.plots.length || !Array.isArray(state?.plots) || index >= state.plots.length || storedBuildings.has(`plot_${index + 1}`)) return;
     const plot = plotBounds(map.plots[index]);
     context.lineWidth = 2;
     for (const slot of asArray(lineCells)) {
@@ -1626,9 +1626,10 @@ export async function createGarden(canvas, options = {}) {
   }
 
   function drawPenLabels(state, logicalNow, objects) {
-    const built = new Set(asArray(state?.built).map((id) => String(typeof id === 'object' ? id.id : id)));
+    const built = openBuiltIds(state);
     for (let index = 0; index < map.pens.length; index += 1) {
       const pen = map.pens[index];
+      if (storedBuildings.has(String(pen.id))) continue;
       const isBuilt = built.has(String(pen.id));
       const constructionJob = constructionFor(state, penAliases(pen), 'Chuồng');
       const construction = constructionProgress(constructionJob, logicalNow);
@@ -1834,6 +1835,10 @@ export async function createGarden(canvas, options = {}) {
   let lastOrder = [];
   let interactiveDecor = [], interactiveEarnedDecor = [], interactiveKeepsakes = [], interactivePond = [], interactiveOrchard = [], interactiveActors = [], sceneryVisible=true, reactionUntil=0;
   let lastBuiltPlotCount = 0;
+  // Owner 18/11/2026 (level 200): plots and pens put away (decorations.storedBuildings) are not drawn at all, so
+  // their ground shows and takes decorations; their creatures stand in the open pens.
+  let storedBuildings = new Set();
+  const openBuiltIds = (state) => new Set(asArray(state?.built).map((id) => String(typeof id === 'object' ? id?.id : id)).filter((id) => !storedBuildings.has(id)));
   let lastPlotReady = [];
 
   function applyLayout(layout) {
@@ -1916,6 +1921,7 @@ export async function createGarden(canvas, options = {}) {
     tiredPlots = options.tiredPlots instanceof Set ? options.tiredPlots : new Set(); // level-160 luân canh: plot indexes
     skillMarks = options.skillMarks ?? null;
     for (const file of duty?.kit.GNOME_FILES ?? []) deferredFiles.add(file);
+    storedBuildings = new Set(asArray(options.decorations?.storedBuildings));
     const builtPlotCount = Math.min(map.plots.length, asArray(state.plots).length);
     lastBuiltPlotCount = builtPlotCount;
     lastPlotReady = map.plots.map((_, index) => plotIsBuilt(state, index, logicalNow));
@@ -1929,7 +1935,7 @@ export async function createGarden(canvas, options = {}) {
     if (terrain) context.drawImage(terrain, 0, 0, map.width, map.height);
     drawPlotSoil(state, logicalNow, grid);
     drawV24Ground(context,{weatherMode,clock,iso,stage:currentStage,map});
-    const hasEdge = currentStage.id === 8, builtIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id?.id : id)));
+    const hasEdge = currentStage.id === 8, builtIds = openBuiltIds(state);
     resolveCreaturePoints(state, options.decorations, builtIds);
     map.columns = hasEdge ? 46 : 34;
     if (hasEdge) drawEdgeGround(context, builtIds);
@@ -2010,7 +2016,7 @@ export async function createGarden(canvas, options = {}) {
       objects.push(...cached.fences);
     }
 
-    const builtPenIds = new Set(asArray(state.built).map((id) => String(typeof id === 'object' ? id.id : id)));
+    const builtPenIds = openBuiltIds(state);
     for (const pen of map.pens ?? []) {
       const construction = constructionOverlay(state, logicalNow, penAliases(pen), 'Chuồng');
       const isBuilt = builtPenIds.has(String(pen.id));

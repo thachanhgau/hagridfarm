@@ -93,9 +93,10 @@ export function decorSpotProblem(col,row,{map,stage,state,decorations,itemId,fac
   if(sides.has(true)){const why=pondLandProblem(rect,state?.built??[],big&&!walksThrough(itemId));if(why)return why;}
  }
  // Owner 20/10/2026: unbuilt bases are free ground; building there asks to move the piece first (decorOnGround).
- const queued=new Set((state?.construction??[]).map(j=>j.id)),built=new Set(state?.built??[]);
- const plotRects=(map?.plots??[]).filter((_,i)=>i<(state?.plots?.length??3)||queued.has('plot_'+(i+1))).map(plot=>groundRect('plot',plot,map));
- const penRects=(map?.pens??[]).filter(pen=>built.has(pen.id)||queued.has(pen.id)).map(pen=>groundRect('pen',pen,map));
+ // Owner 18/11/2026: a plot or pen put away (level 200, decorations.storedBuildings) leaves its ground free too.
+ const queued=new Set((state?.construction??[]).map(j=>j.id)),built=new Set(state?.built??[]),stored=new Set(decorations?.storedBuildings??[]);
+ const plotRects=(map?.plots??[]).filter((_,i)=>!stored.has('plot_'+(i+1))&&(i<(state?.plots?.length??3)||queued.has('plot_'+(i+1)))).map(plot=>groundRect('plot',plot,map));
+ const penRects=(map?.pens??[]).filter(pen=>!stored.has(pen.id)&&(built.has(pen.id)||queued.has(pen.id))).map(pen=>groundRect('pen',pen,map));
  if(plotRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền thửa đất.';
  if(penRects.some(b=>rectsOverlap(rect,b)))return 'Chỗ này là nền chuồng.';
  // Garden defaults stand where the member moved them; the piece being moved never blocks itself.

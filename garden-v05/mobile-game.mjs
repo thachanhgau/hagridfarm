@@ -3,6 +3,7 @@ import {setupPetControls,renderPetCareButtons,petControlState,petIcon} from './p
 import {openGardenLayout} from './garden-layout-ui.mjs?v=26.19';
 import {changeDefaultDecorationVisibility} from './default-decor-actions.mjs?v=26.19';
 import {CREATURE_HOMES_LEVEL,resolveCreatureHomes,spotPoint,swapHome,homeChoices,openCreatureHomes} from './creature-homes.mjs?v=26.19';
+import {openPlot,storedSet} from './stored-buildings.mjs?v=26.19';
 import {isDefaultDecorHidden,defaultDecorSpot} from './default-decor.mjs?v=26.19';
 import {setupGardenControls} from './garden-controls-ui.mjs?v=26.19';
 import {configureGardenStorage,applyGardenReward} from './garden-storage.mjs?v=26.19';
@@ -517,9 +518,11 @@ function questAmounts(act,command,before){return questAmountsFor(act,before,conn
 
 async function run(action,text='Đã hoàn tất.',command=null){
  // A plot or pen is never built or moved onto a store decoration; the player moves the piece first.
- const ground=command?.action==='build'?(/^plot_(\d+)$/.test(command.expansionId)?['plot',map.plots[command.expansionId.slice(5)-1]]:['pen',map.pens.find(p=>p.id===command.expansionId)]):command?.action==='moveBuilding'?[command.kind,layoutSlots[command.kind==='plot'?'plots':'pens'][command.targetSlot]]:null;
+ // «Bày lại» (level 200) brings a stored plot or pen back on its ground: the same rule as a build.
+ const back=command?.action==='storeBuilding'&&!command.stored?command.buildingId:null,id=command?.action==='build'?command.expansionId:back;
+ const ground=id?(/^plot_(\d+)$/.test(id)?['plot',map.plots[id.slice(5)-1]]:['pen',map.pens.find(p=>p.id===id)]):command?.action==='moveBuilding'?[command.kind,layoutSlots[command.kind==='plot'?'plots':'pens'][command.targetSlot]]:null;
  const onGround=ground?.[1]&&decorOnGround(groundRect(ground[0],ground[1],map),currentDecorations());
- if(onGround){message(`Dời ${decorLabelFor(decorAssets.get(onGround)||onGround)} ra khỏi nền này trước khi ${command.action==='build'?'xây':'chuyển công trình tới'}.`);return;}
+ if(onGround){message(`Dời ${decorLabelFor(decorAssets.get(onGround)||onGround)} ra khỏi nền này trước khi ${command.action==='build'?'xây':back?'bày lại':'chuyển công trình tới'}.`);return;}
  if(connected){if(!walletReady||busy)return;if(!command){message('Thao tác này chỉ dành cho phiên thử trên thiết bị.');return;}busy=true;petControls?.refresh();try{const before=state;await wallet.act(command);playCommandSound(command,before);acceptWallet(before,tutorial?'':text);}catch(e){if(e.definitive){try{await wallet.read();acceptWallet(state,'',false);}catch{}}showRefusal(e);}finally{busy=false;workTrays?.refresh(mode);wizard?.refresh?.();petControls?.refresh();}return;}
  if(busy)return;busy=true;
  const actionKey=key;
@@ -533,7 +536,7 @@ function switchSession(next,level){if(connected)return;session=next;key=prefix+'
 function exportSave(){const blob=new Blob([JSON.stringify(connected?{kind:'garden-emulator-recovery',capturedAt:new Date().toISOString(),snapshot:wallet.snapshot}:state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a',{href:url,download:'hagrid-v05-'+session+'-level-'+state.level+'.json'});a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function selectCrop(id){seed=id;setMode('plant');$('seedTray').querySelector('[aria-pressed=true]')?.scrollIntoView({block:'nearest',inline:'nearest'});}
 // «Dời chuồng» (level 130): land creatures and the spot each stands on (creature-homes.mjs, same rule as the renderer).
-function creatureHomesView(){const land=state.creatures.filter(e=>!E.POND_SPECIES.has(e.species)),built=new Set((state.built||[]).map(id=>String(typeof id==='object'?id?.id:id)));return {land,built,spots:resolveCreatureHomes(land,currentDecorations()?.creatureHomes,{built})};}
+function creatureHomesView(){const land=state.creatures.filter(e=>!E.POND_SPECIES.has(e.species)),stored=storedSet(currentDecorations()),built=new Set((state.built||[]).map(id=>String(typeof id==='object'?id?.id:id)).filter(id=>!stored.has(id)));return {land,built,spots:resolveCreatureHomes(land,currentDecorations()?.creatureHomes,{built})};}
 const canMoveHome=sp=>connected&&walletReady&&!activeTourSnapshot&&state.level>=CREATURE_HOMES_LEVEL&&!E.POND_SPECIES.has(sp)&&state.creatures.some(e=>e.species===sp);
 function openCreatureHome(sp=species){
  if(!canMoveHome(sp))return;
@@ -652,7 +655,7 @@ function refresh(){
  syncQuestContext();
  if(tutorial)queueMicrotask(checkTutorial);
  queueMicrotask(syncGuide);
- selectedPlot=Math.min(selectedPlot,state.plots.length-1);const now=logical(),slots=state.plots[selectedPlot].slots,c=CROP[seed],n=slots.filter(Boolean).length,types=new Set(slots.filter(Boolean).map(e=>e.species)),info=E.levelInfo(state);
+ selectedPlot=openPlot(state,currentDecorations(),Math.min(selectedPlot,state.plots.length-1));const now=logical(),slots=state.plots[selectedPlot].slots,c=CROP[seed],n=slots.filter(Boolean).length,types=new Set(slots.filter(Boolean).map(e=>e.species)),info=E.levelInfo(state);
  $('shopButton').disabled=connected&&!walletReady;
  const tanSuc=state.level>E.TAN_SUC_LEVEL,top=state.level===E.MAX_LEVEL;$('levelValue').replaceChildren(...(tanSuc?tanSucMark(state.level-E.TAN_SUC_LEVEL):[String(state.level)]));$('levelValue').classList.toggle('is-tan-suc',tanSuc);$('xpText').textContent=top?'Đã đạt cấp '+E.MAX_LEVEL:num(info.xpInLevel)+' / '+num(info.xpToNext)+' XP';$('levelButton').style.setProperty('--xp',(top?100:Math.min(100,info.xpInLevel/info.xpToNext*100)).toFixed(1));$('levelButton').setAttribute('aria-label','Hồ sơ · '+E.levelLabel(state.level)+' · '+$('xpText').textContent);
  syncSupplies();syncGoal();
@@ -729,7 +732,7 @@ function followGoal(){
  if(goal.route==='build'){setMode('build');return;}
  if(goal.route==='creature'){selectCreature(goal.target.id);return;}
  if(id&&CROP[id]&&CROP[id].level<=state.level)seed=id;
- const ready=state.plots.findIndex(p=>p.slots.some(e=>e&&E.growth(e,logical()).mature)),free=state.plots.findIndex(p=>p.slots.some(e=>!e));
+ const ready=state.plots.findIndex(p=>p.slots.some(e=>e&&E.growth(e,logical()).mature)),stored=storedSet(currentDecorations()),free=state.plots.findIndex((p,i)=>!stored.has('plot_'+(i+1))&&p.slots.some(e=>!e));
  focusPlot(ready>=0?ready:free>=0?free:selectedPlot);
 }
 function tickTimers(){const now=logical();document.querySelectorAll('[data-until]').forEach(e=>{const remaining=Number(e.dataset.until)-now;e.textContent=remaining<=0?'Sẵn sàng nhận':(e.dataset.prefix||'')+duration(remaining);e.classList.toggle('ready-text',remaining<=0);});document.querySelectorAll('[data-ready-button]').forEach(e=>e.disabled=Number(e.dataset.readyButton)>now);}

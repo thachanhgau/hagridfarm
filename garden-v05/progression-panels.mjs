@@ -11,6 +11,7 @@ import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.19";
 import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.19";
 import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.19";
 import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.19";
+import {STORE_BUILDING_LEVEL,storableBuildings,storedSet} from "./stored-buildings.mjs?v=26.19";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -154,8 +155,9 @@ export function createPanels(ctx){
    const s=getState(),sel=getSelection();
    body.append(toolbar(button("Mở thêm thửa",()=>show("build")),button("Bố trí",()=>show("layout")),button("Gặt tất cả",()=>run(x=>E.harvest(x,null,null,Date.now()),"Đã gặt cây chín.",{action:"harvest"}))));
    // Bare rows on one grid (audit S4 #5): icon, name and counts, then the two buttons.
-   const g=el("ul",{class:"plot-list"});
+   const g=el("ul",{class:"plot-list"}),stored=storedSet(ctx.getDecorations?.());
    s.plots.forEach((p,i)=>{
+    if(stored.has("plot_"+(i+1)))return; // put away (level 200): «Bố trí» brings it back
     const n=p.slots.filter(Boolean).length,ready=p.slots.filter(e=>e&&E.growth(e,now()).mature).length;
     g.append(el("li",{class:"plot-row"},[
      visualItemIcon(items,"plot_"+(i+1),{size:44}),
@@ -500,6 +502,16 @@ export function createPanels(ctx){
     }
    }
    body.append(g);
+   // Owner 18/11/2026 «cất bớt đất/chuồng để trang trí» (level 200, server storeBuilding).
+   if(getSession().connected&&s.level>=STORE_BUILDING_LEVEL){
+    const shelf=grid();
+    for(const b of storableBuildings(s,ctx.getDecorations?.(),E.POND_SPECIES)){
+     const k=card(b.name,b.stored?"Đã cất · nền trống":b.why||"Đang bày",b.id);
+     k.append(actions(button(b.stored?"Bày lại":"Cất",()=>run(null,(b.stored?"Đã bày lại ":"Đã cất ")+b.name+".",{action:"storeBuilding",buildingId:b.id,stored:!b.stored}),{class:b.stored?"primary":"",disabled:!b.stored&&!!b.why,"data-store-building":b.id})));
+     shelf.append(k);
+    }
+    body.append(el("h3",{class:"gp-section-title",text:"Cất bớt để trang trí"}),shelf);
+   }
   },
 
   tour(){
