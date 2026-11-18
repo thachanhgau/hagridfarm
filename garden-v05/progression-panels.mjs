@@ -487,31 +487,27 @@ export function createPanels(ctx){
    const barBtns=[button("Xem toàn vườn",()=>{ctx.camera.overview();close();})];
    if(ctx.openVisualLayout)barBtns.unshift(button("Sắp xếp",()=>{close();ctx.openVisualLayout();},{class:"primary","data-open-visual-layout":"true"}));
    body.append(toolbar(...barBtns));
+   // Owner 18/11/2026 «cất bớt đất/chuồng để trang trí» (level 200, server storeBuilding): «Cất» / «Bày lại» on each card.
+   const shelf=getSession().connected&&s.level>=STORE_BUILDING_LEVEL?new Map(storableBuildings(s,ctx.getDecorations?.(),E.POND_SPECIES).map(b=>[b.id,b])):null;
+   const storeButton=b=>b?[button(b.stored?"Bày lại":"Cất",()=>run(null,(b.stored?"Đã bày lại ":"Đã cất ")+b.name+".",{action:"storeBuilding",buildingId:b.id,stored:!b.stored}),{class:b.stored?"primary":"",disabled:!b.stored&&!!b.why,title:b.why||(b.stored?"Bày lại trên nền cũ":"Cất đi, nền trống để trang trí"),"data-store-building":b.id})]:[];
+   const note=b=>b?.stored?" · Đã cất":b?.why?" · "+b.why:"";
    const g=grid();
    for(const kind of ["plot","pen"]){
     const total=kind==="plot"?E.plotLimit(s):6,count=kind==="plot"?s.plots.length:Math.min(6,E.housingCapacity(s)/2),positions=s.layout?.[kind==="plot"?"plots":"pens"]||Array.from({length:total},(_,i)=>i);
     for(let i=0;i<count;i++){
-     const name=(kind==="plot"?"Thửa ":"Chuồng ")+(i+1),k=card(name,"Đang ở nền "+(positions[i]+1),kind+"_"+(i+1)),sel=el("select",{"aria-label":"Vị trí "+name,class:"quantity",style:"width:auto"});
+     const id=kind+"_"+(i+1),name=(kind==="plot"?"Thửa ":"Chuồng ")+(i+1),k=card(name,"Đang ở nền "+(positions[i]+1)+note(shelf?.get(id)),id),sel=el("select",{"aria-label":"Vị trí "+name,class:"quantity",style:"width:auto"});
      for(let j=0;j<total;j++){
       const slot=ctx.layoutSlots?.[kind==="plot"?"plots":"pens"]?.[j],current=ctx.getGardenStage?.()??gardenStage(s),fits=stage=>!slot||stageContains(stage,slot.col-.5,slot.row-.5)&&stageContains(stage,slot.col+slot.width,slot.row+slot.height),available=fits(current),required=GARDEN_STAGES.find(fits)?.level;
       sel.append(el("option",{value:j,disabled:!available,text:"Nền "+(j+1)+(available?"":" · mở khu cấp "+required)}));
      }
      sel.value=positions[i];
-     k.append(actions(sel,button("Chuyển",()=>run(x=>E.moveBuilding(x,kind,i,Number(sel.value)),"Đã chuyển "+name+".",{action:"moveBuilding",kind,index:i,targetSlot:Number(sel.value)}))));
+     k.append(actions(sel,button("Chuyển",()=>run(x=>E.moveBuilding(x,kind,i,Number(sel.value)),"Đã chuyển "+name+".",{action:"moveBuilding",kind,index:i,targetSlot:Number(sel.value)})),...storeButton(shelf?.get(id))));
      g.append(k);
     }
    }
+   // «Chuồng mở rộng» stand on fixed ground (no «Chuyển»), so their card holds only «Cất».
+   for(const b of shelf?.values()??[])if(b.id.startsWith("pen_ext_")){const k=card(b.name,"Nền cố định"+note(b),b.id);k.append(actions(...storeButton(b)));g.append(k);}
    body.append(g);
-   // Owner 18/11/2026 «cất bớt đất/chuồng để trang trí» (level 200, server storeBuilding).
-   if(getSession().connected&&s.level>=STORE_BUILDING_LEVEL){
-    const shelf=grid();
-    for(const b of storableBuildings(s,ctx.getDecorations?.(),E.POND_SPECIES)){
-     const k=card(b.name,b.stored?"Đã cất · nền trống":b.why||"Đang bày",b.id);
-     k.append(actions(button(b.stored?"Bày lại":"Cất",()=>run(null,(b.stored?"Đã bày lại ":"Đã cất ")+b.name+".",{action:"storeBuilding",buildingId:b.id,stored:!b.stored}),{class:b.stored?"primary":"",disabled:!b.stored&&!!b.why,"data-store-building":b.id})));
-     shelf.append(k);
-    }
-    body.append(el("h3",{class:"gp-section-title",text:"Cất bớt để trang trí"}),shelf);
-   }
   },
 
   tour(){
