@@ -2,6 +2,8 @@
 
 Owner 18/11/2026: «lên plan để khi thu thập đủ thì có tác dụng thay vì chỉ là sưu tập».
 Trạng thái: **owner duyệt 18/11/2026** — giữ mốc 5 / 15 / 40, làm cả hai «Dùng ngay» mới, thử trên emulator trước khi deploy.
+
+**18/11/2026: P1–P3 đã làm xong local** (V26.19; client da6aa2a1 + 046048e8, HPVN `claude/hagrid-produce-p0-c8a32b` 0c096a4df). Đủ 18 Ấn, chữa bệnh bằng Sợi bờm Kỳ lân, Rải rong cho cá, đổi ×5 / Đổi hết, Hướng dẫn 3 thẻ. Chờ owner thử trên emulator rồi duyệt deploy (P4).
 «Bón phân trăng» và «Hướng dẫn: Đất mệt» đã live ở V26.18 (HPVN a9e9960a6). **P0 xong 18/11/2026** (mục 8); owner duyệt cả 4 đề nghị ở mục 8.4 cùng ngày. Sẵn sàng P1.
 
 ## 1. Hiện trạng (đã kiểm trong code HPVN `functions/games`, a9e9960a6)
