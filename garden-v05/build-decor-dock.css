@@ -45,19 +45,28 @@
 .contest-garden #sowTool,.contest-garden #harvestTool,.contest-garden #creatureTool,.contest-garden #craftTool,
 .contest-garden #pondTool,.contest-garden #orchardTool,.contest-garden .emulator-badge{display:none!important}
 #playDock #decorDockSubmit{background:#e6cd92;color:#192e24;border-color:#b2995e}
-.contest-submit{max-width:min(420px,calc(100vw - 32px));width:100%;box-sizing:border-box;padding:16px;border:2px solid #b2995e;border-radius:8px;background:#142d24;color:#f8efd8;font:inherit}
+.contest-submit{max-width:min(420px,calc(100vw - 32px));width:100%;max-height:calc(100dvh - 24px);overflow:auto;scrollbar-width:thin;scrollbar-color:#b2995e transparent;box-sizing:border-box;padding:16px;border:2px solid #b2995e;border-radius:8px;background:#142d24;color:#f8efd8;font:inherit}
 .contest-submit::backdrop{background:#04110cb3}
 .contest-submit form{display:flex;flex-direction:column;gap:6px}
 .contest-submit h2{margin:0 0 6px;font-size:18px;color:#f3d593}
-.contest-submit label{font-size:13px;font-weight:700}
+.contest-submit label,.contest-submit .contest-label{font-size:13px;font-weight:700}
 .contest-submit input:not([type=checkbox]),.contest-submit textarea{width:100%;box-sizing:border-box;padding:8px;border:1px solid #718569;border-radius:5px;background:#081b15;color:#f8efd8;font:inherit;font-size:16px}
 .contest-submit .contest-count{align-self:flex-end;color:#c8dbab;font-size:11px}
 .contest-submit .contest-sure{display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:4px}
 .contest-submit .contest-sure input{width:20px;height:20px;flex:0 0 auto;margin:0}
 .contest-submit .contest-status{min-height:1.2em;margin:4px 0 0;color:#f3d593;font-size:13px}
 .contest-submit .contest-actions{display:flex;justify-content:flex-end;gap:8px}
-.contest-submit .contest-actions button{min-height:44px;padding:0 16px;border-radius:5px;border:1px solid #718569;background:#29483a;color:#f8efd8;font:inherit;font-weight:700}
-.contest-submit .contest-actions button.primary{background:#e6cd92;color:#192e24;border-color:#b2995e}
+.contest-submit .contest-cover{aspect-ratio:16/10;border:1px solid #718569;border-radius:5px;background:#081b15;overflow:hidden}
+.contest-submit .contest-cover canvas{display:block;width:100%;height:100%}
+.contest-submit #contestCoverPick{align-self:flex-start}
+.contest-submit .contest-actions button,.contest-submit #contestCoverPick,.cover-framing button{min-height:44px;padding:0 16px;border-radius:5px;border:1px solid #718569;background:#29483a;color:#f8efd8;font:inherit;font-weight:700}
+.contest-submit .contest-actions button.primary,.cover-framing button.primary{background:#e6cd92;color:#192e24;border-color:#b2995e}
+@media(pointer:coarse){.contest-submit{scrollbar-width:none}}
+/* «Chọn góc chụp»: only the garden and the 16:10 frame; pointer events fall through to the camera. */
+body.framing-cover>:not(#gameShell,.cover-framing),body.framing-cover>:not(#gameShell,.cover-framing) *,body.framing-cover #gameShell>:not(#cameraViewport),body.framing-cover #gameShell>:not(#cameraViewport) *{visibility:hidden!important}
+.cover-framing{position:fixed;inset:0;z-index:2147483000;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;box-sizing:border-box;overflow:hidden}
+.cover-frame{width:min(100%,calc((100dvh - 108px) * 1.6));aspect-ratio:16/10;box-sizing:border-box;border:2px solid #e6cd92;border-radius:4px;box-shadow:0 0 0 100vmax #04110cb3}
+.cover-framing .contest-actions{display:flex;gap:8px;pointer-events:auto}
 .tour-banner.is-member.is-contest .tour-banner-copy{grid-column:1/-1}
 /* Contest dock on one row (compact-dock.css grid): «Thêm bản» icon only, «Nộp bài» short; «Vườn & kỷ vật» steps aside
    (the garden's own pieces are in the tray already). */

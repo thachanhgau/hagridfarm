@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {contestQuery,createContestClient,contestReadOnly,contestVisit,withDecorCopies,baseDecorId} from './garden-contest.mjs';
+import {contestQuery,createContestClient,contestReadOnly,contestVisit,withDecorCopies,baseDecorId,centeredFrame,coverSize,encodeCover} from './garden-contest.mjs';
 import {ownedDecorChoices} from './build-decor-dock.mjs';
 import {decorObjects} from './decor-runtime.mjs';
 import {decorFootprint} from './garden-object-metrics.mjs';
@@ -102,4 +102,21 @@ test('an entry opens read only in the visit view and refuses every write',async(
  assert.equal(view.tour.contest,true);assert.equal(view.tour.no,3);assert.equal(view.tour.title,'Đêm tuyết');
  assert.equal(view.atmosphereMode,'night');assert.equal(view.weatherMode,'snow');assert.equal(view.state,garden.progression);
  await assert.rejects(client.act({action:'placeDecoration',itemId:'one',at:null}),e=>e.definitive);
+});
+
+test('the cover: a centred 16:10 frame, at most 1600 px on its long side',()=>{
+ assert.deepEqual(centeredFrame(375,812),{left:0,top:288.8125,width:375,height:234.375});
+ assert.deepEqual(centeredFrame(1280,600),{left:160,top:0,width:960,height:600});
+ assert.deepEqual(coverSize(1029,643),[1029,643]);
+ assert.deepEqual(coverSize(2560,1600),[1600,1000]);
+ assert.deepEqual(coverSize(.2,.1),[1,1]);
+});
+
+test('the cover blob steps down until it is under 2 MB: quality .7, then smaller',async()=>{
+ const tries=[],fake=sizes=>async(scale,quality)=>{tries.push([scale,quality]);return {size:sizes[tries.length-1]};};
+ assert.equal((await encodeCover(fake([5e5]))).size,5e5);assert.deepEqual(tries,[[1,.85]]);
+ tries.length=0;assert.equal((await encodeCover(fake([3e6,2.5e6,1.9e6]))).size,1.9e6);
+ assert.deepEqual(tries,[[1,.85],[1,.7],[.75,.7]]);
+ tries.length=0;assert.equal(await encodeCover(async()=>null),null,'no blob at all (canvas refused) gives null');
+ assert.equal(await encodeCover(async()=>({size:9e6})),null,'still too big after the smallest size');
 });
