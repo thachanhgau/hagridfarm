@@ -1,7 +1,7 @@
-import {decorFrameAt} from './scene-animation.mjs?v=26.18';
-import {DECOR_LIGHTS} from './decor-lights-spec.mjs?v=26.18';
-import {DECOR_LIGHT_POINTS} from './decor-light-points.mjs?v=26.18';
-import {baseDecorId} from './decor-runtime.mjs?v=26.18';
+import {decorFrameAt} from './scene-animation.mjs?v=26.19';
+import {DECOR_LIGHTS} from './decor-lights-spec.mjs?v=26.19';
+import {DECOR_LIGHT_POINTS} from './decor-light-points.mjs?v=26.19';
+import {baseDecorId} from './decor-runtime.mjs?v=26.19';
 
 export function nightDecorFrame(object,clock=0,{hd=false}={}){
  if(!object?.asset||!object.xy||object.preview)return null;

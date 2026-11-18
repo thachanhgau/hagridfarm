@@ -5,7 +5,7 @@
  * functions paint with integer fillRect stamps so they can sit below the
  * existing crop/actor layers without introducing a second interaction area.
  */
-import {densityOf, deviceLine, fillAt} from './device-pixels.mjs?v=26.18';
+import {densityOf, deviceLine, fillAt} from './device-pixels.mjs?v=26.19';
 
 export const COTTAGE_ANCHORS = Object.freeze({
   hut: Object.freeze([0, 4]),

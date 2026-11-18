@@ -1,10 +1,10 @@
 // «Bậc trách nhiệm» (25.0 S5, server garden-duty-core): from level 130 a neglected garden pays for it. The server
 // keeps every clock; this panel shows snapshot.duty: what happened, the time to each next consequence and the way
 // out of each (action duty: clear, gnome, treat, lure, leave). mobile-game imports it on the first chip tap.
-import {CREATURE} from './balance-data.mjs?v=26.18';
-import {witherCanvas} from './garden-duty-art.mjs?v=26.18';
-import {$,el,visualItemIcon,closeOnBackdrop} from './ui-utils.mjs?v=26.18';
-import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.18';
+import {CREATURE} from './balance-data.mjs?v=26.19';
+import {witherCanvas} from './garden-duty-art.mjs?v=26.19';
+import {$,el,visualItemIcon,closeOnBackdrop} from './ui-utils.mjs?v=26.19';
+import {iconButton,pixelIcon} from './pixel-icons.mjs?v=26.19';
 
 const HOUR=3600000;
 export const left=(at,now=Date.now())=>{const ms=Math.max(0,at-now),h=Math.floor(ms/HOUR),m=Math.floor(ms%HOUR/60000);return h>=48?`${Math.floor(h/24)} ngày`:h?`${h} giờ${m?' '+m+' phút':''}`:`${m} phút`;};
@@ -76,6 +76,9 @@ export function createDutyPanel({getSnapshot,act,notify,labelOf}){
   for(const s of duty.sick||[]){
    const name=labelOf(s.species),bottles=getSnapshot()?.garden?.supplies?.skeleGro||0;
    tiles.push(tile(visualItemIcon(new Map(),'skele_gro',{size:40}),`${name} · Thuốc Mọc Xương`,bottles?`còn ${bottles} chai`:'hết thuốc',bottles?()=>run({kind:'treat',species:s.species,pay:'skeleGro'},r=>`💊 ${name} khỏe lại · tâm trạng ${r.mood}.`):null));
+   // «Dùng ngay» (owner 18/11/2026): 3 Sợi bờm Kỳ lân rụng cure one creature, once a day.
+   const hairs=getSnapshot()?.garden?.progression?.inventory?.produce_unicorn||0,cured=getSnapshot()?.keepsakes?.cureUsed,canHair=hairs>=3&&!cured;
+   if(hairs)tiles.push(tile(visualItemIcon(new Map(),'produce_unicorn',{size:40}),`${name} · Sợi bờm Kỳ lân`,cured?'hôm nay đã dùng':`3 sợi · còn ${hairs}`,canHair?()=>run({kind:'treat',species:s.species,pay:'unicorn'},r=>`${name} khỏe lại · tâm trạng ${r.mood}.`):null));
    tiles.push(tile('coin',`${name} · ${duty.curePrice} G`,'khám bệnh',()=>run({kind:'treat',species:s.species,pay:'galleons'},r=>`💊 ${name} khỏe lại · tâm trạng ${r.mood}.`)));
   }
   for(const f of duty.fled||[]){
@@ -85,7 +88,7 @@ export function createDutyPanel({getSnapshot,act,notify,labelOf}){
   }
   const leave=duty.leave
    ?[tile('book','Về vườn',`bác trông tới ${clockText(duty.leave.until)}`,()=>run({kind:'leave',days:0},r=>`🏡 Con về rồi · còn ${left(Date.now()+r.leftMs)} nhờ bác.`))]
-   :[1,3,7].filter(d=>d*24*HOUR<=duty.leaveLeftMs).map(d=>tile('book',`Nhờ bác ${d} ngày`,'vườn dừng lại',()=>run({kind:'leave',days:d},r=>`🧔 Bác Hagrid trông vườn tới ${clockText(r.until)}.`)));
+   :[...new Set([1,3,7,duty.leaveDays])].filter(d=>d*24*HOUR<=duty.leaveLeftMs).map(d=>tile('book',`Nhờ bác ${d} ngày`,'vườn dừng lại',()=>run({kind:'leave',days:d},r=>`🧔 Bác Hagrid trông vườn tới ${clockText(r.until)}.`)));
   const clocks=dutyClocks(duty,labelOf);
   body.replaceChildren(...[
    el('div',{class:'duty-clocks'},clocks.length?clocks.map(([art,label,at])=>el('div',{class:'duty-clock'+(at-now<6*HOUR?' is-soon':'')},[pixelIcon(art,1),el('span',{text:label}),el('b',{text:left(at,now)})])):[el('p',{class:'meta',text:duty.leave?'Vườn đang dừng.':'Không có gì sắp tới.'})]),

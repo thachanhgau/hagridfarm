@@ -1,10 +1,10 @@
 // 25.0 S3 «Mùa đông thật» (loaded with import() after the first frame: 25.0 speed budget): a real winter from 01/12 to the end of February (VN time). Snow lies on the ground
 // even under a clear sky and deepens with each snowy day; fog, breath and fence lanterns come and go with it.
 // Rare coats (đông, bạc, Noel) only recolour a creature inside the 32-colour palette: looks, never economy (#39).
-export {drawStatueAura} from './statue-aura.mjs?v=26.18';
-import {decorFrameAt,stableHash} from './scene-animation.mjs?v=26.18';
-import {SPRITE_PALETTE} from './palette.mjs?v=26.18';
-import {WINTER_NIGHT_TINT} from './garden-atmosphere.mjs?v=26.18';
+export {drawStatueAura} from './statue-aura.mjs?v=26.19';
+import {decorFrameAt,stableHash} from './scene-animation.mjs?v=26.19';
+import {SPRITE_PALETTE} from './palette.mjs?v=26.19';
+import {WINTER_NIGHT_TINT} from './garden-atmosphere.mjs?v=26.19';
 
 const VN_OFFSET_MS = 7 * 3600000, DAY_MS = 86400000;
 const vnDate = (ms) => new Date(ms + VN_OFFSET_MS);

@@ -1,16 +1,16 @@
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.18';
-import {edgeStepText} from './garden-orchard-ui.mjs?v=26.18';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.18';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.18';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.18";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.18";
-import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.18";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.18";
-import {renderTourSection} from "./garden-tour.mjs?v=26.18";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.18";
-import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.18";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.18";
-import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.18";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.19';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=26.19';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.19';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.19';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.19";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.19";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.19";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.19";
+import {renderTourSection} from "./garden-tour.mjs?v=26.19";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.19";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.19";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.19";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.19";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -461,17 +461,23 @@ export function createPanels(ctx){
     body.append(sg);
    }
 
-   const g=el("div",{class:"cards gp-tiles"});
+   const g=el("div",{class:"cards gp-tiles"}),seals=ctx.getKeepsakes?.();
    for(const a of DB.animals.filter(a=>a.level<=s.level)){
-    const q=s.inventory["produce_"+a.id]||0,kept=s.keepsakes[a.id]||0;
+    const q=s.inventory["produce_"+a.id]||0,kept=s.keepsakes[a.id]||0,seal=seals?.species?.[a.id];
+    // «Ấn kỷ vật» (owner 18/11/2026): the tier, the next mark and one effect line from the server; ×5 and «Đổi hết» in one action.
+    const sealText=seal?(seal.tier?`Bậc ${seal.tier} · ${kept}${seal.next?"/"+seal.next:""} kỷ vật`:`Chưa có Ấn · ${kept}/${seal.next} kỷ vật`):`${kept} kỷ vật`;
+    const many=n=>run(null,`Đã đổi ${n} kỷ vật ${a.label}.`,{action:"exchangeKeepsake",species:a.id,count:n}),all=Math.min(200,Math.floor(q/5));
     const k=tile(a.label,"produce_"+a.id,{kind:"produce"},
      el("div",{class:"gp-meter",role:"progressbar","aria-label":`${a.produce} ${q}/5`,"aria-valuemin":"0","aria-valuemax":"5","aria-valuenow":String(Math.min(q,5))},[el("span",{style:`width:${Math.min(100,q*20)}%`})]),
-     el("small",{class:"gp-tile-sub",text:`${num(q)}/5 · ${kept} kỷ vật`}),
-     el("div",{class:"gp-tile-actions"},[iconButton("trophy","Đổi kỷ vật "+a.label,()=>run(x=>E.exchangeKeepsake(x,a.id),"Đã đổi kỷ vật "+a.label+".",{action:"exchangeKeepsake",species:a.id}),{text:"Đổi",class:q>=5?"primary":"",disabled:q<5})]));
+     el("small",{class:"gp-tile-sub",text:`${num(q)} sản vật · ${sealText}`}),
+     seal?.effect?el("small",{class:"gp-tile-sub seal-effect",text:seal.effect}):null,
+     el("div",{class:"gp-tile-actions"},[iconButton("trophy","Đổi kỷ vật "+a.label,()=>run(x=>E.exchangeKeepsake(x,a.id),"Đã đổi kỷ vật "+a.label+".",{action:"exchangeKeepsake",species:a.id}),{text:"Đổi",class:q>=5?"primary":"",disabled:q<5}),
+      ...(seals&&q>=25?[button("×5",()=>many(5),{"aria-label":`Đổi 5 kỷ vật ${a.label}`})]:[]),
+      ...(seals&&all>5?[button("Đổi hết",()=>many(all),{"aria-label":`Đổi hết: ${all} kỷ vật ${a.label}`})]:[])]));
     if(kept>0)k.append(defaultDecorToggle(ctx,"keepsake:"+a.id,"đài kỷ vật "+a.label,refresh));
     g.append(k);
    }
-   if(g.childElementCount)body.append(el("h3",{class:"gp-section-title",text:"Kỷ vật sinh vật"}),g);
+   if(g.childElementCount)body.append(el("h3",{class:"gp-section-title",text:"Kỷ vật sinh vật"}),...(seals?[toolbar(button("Hướng dẫn",()=>ctx.openGuide?.("seal",ctx.getKeepsakes?.())))]:[]),g);
   },
 
   layout(){

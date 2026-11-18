@@ -1,12 +1,12 @@
-import {POND_SCENERY} from './pond-art.mjs?v=26.18';
+import {POND_SCENERY} from './pond-art.mjs?v=26.19';
 export {POND_SCENERY};
 // Garden expansion phase 1 «Hồ nuôi» (docs/garden-expansion-plan.md §2.1, §6): the pond dock, the fishing game and the
 // pond art paths. Everything comes from the server's snapshot.pond (HPVNN garden pond core); the server keeps every
 // number and rule, this module only shows them and sends {action:'pond', kind, …}.
-import {DB} from './balance-data.mjs?v=26.18';
-import {el, button, closeOnBackdrop, num, duration, itemDisplayName, itemArtKey, itemArtVisual, visualItemIcon, icon, packTotal} from './ui-utils.mjs?v=26.18';
-import {pixelIcon, ICONS, costChips} from './pixel-icons.mjs?v=26.18';
-import {flowArtSpec} from './flow-item-ui.mjs?v=26.18';
+import {DB} from './balance-data.mjs?v=26.19';
+import {el, button, closeOnBackdrop, num, duration, itemDisplayName, itemArtKey, itemArtVisual, visualItemIcon, icon, packTotal} from './ui-utils.mjs?v=26.19';
+import {pixelIcon, ICONS, costChips} from './pixel-icons.mjs?v=26.19';
+import {flowArtSpec} from './flow-item-ui.mjs?v=26.19';
 
 export const POND_LEVEL = 130;
 export const POND_TIERS = Object.freeze(DB.expansions.filter(e => e.kind === 'pond'));
@@ -248,6 +248,8 @@ export function createPondDock({dock, items, act, openCast, care, buy = null, op
    el('div', {class: 'seed-caption'}, [el('strong', {text: pick.label}), p.metaNode || el('span', {text: p.meta})]),
    el('div', {class: 'pond-tools'}, [
     ...(a.murky ? [actionButton('algae', 'tired', 'Vớt rêu', 'Rêu', () => act({action: 'pond', kind: 'clean'}, 'Đã vớt rêu.'), {id: 'pondClean'})] : []),
+    // «Rải rong cho cá» (owner 18/11/2026): 5 Rong thủy quái, every growing lot a quarter sooner, once a day (server pond `feed`).
+    ...(lotTiles(pond, now).some(l => l.state === 'growing') && ctx.rong >= 5 && !ctx.fed ? [actionButton('algae', 'quill', 'Rải rong cho cá · 5 Rong thủy quái', 'Rải rong', () => act({action: 'pond', kind: 'feed'}, 'Đã rải rong: cá lớn nhanh hơn.'), {id: 'pondFeed'})] : []),
     actionButton('rod', 'quill', a.castOpen ? 'Câu cá' : 'Hôm nay đã câu · mai câu tiếp', a.castOpen ? 'Câu' : 'Đã câu', () => openCast(), {disabled: !a.castOpen, id: 'pondCast'}),
    ]),
    go,
