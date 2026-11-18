@@ -1,7 +1,7 @@
 # Sản vật sinh vật có tác dụng — plan (18/11/2026)
 
 Owner 18/11/2026: «lên plan để khi thu thập đủ thì có tác dụng thay vì chỉ là sưu tập».
-Trạng thái: **chờ owner duyệt**. Chưa có dòng code nào ngoài «Bón phân trăng» (đã làm, chưa release).
+Trạng thái: **owner duyệt 18/11/2026** — giữ mốc 5 / 15 / 40, làm cả hai «Dùng ngay» mới, thử trên emulator trước khi deploy. Chưa có dòng code nào ngoài «Bón phân trăng» (đã làm, chưa release).
 
 ## 1. Hiện trạng (đã kiểm trong code HPVN `functions/games`, 18/11)
 
@@ -149,7 +149,8 @@ Owner yêu cầu: có bảng hướng dẫn, ghi rõ ràng, **không viết tắ
 | P3 | 6 Ấn còn lại (sau P0) + «Dùng ngay» Chữa bệnh, Vớt rêu | Test + #70 hai tab |
 | P4 | Release cùng stamp mới, đọc chỉ-đọc mọi vườn trước khi deploy | Release verified |
 
-## 7. Cần owner quyết
+## 7. Owner đã quyết (18/11/2026)
 
-1. Mốc 5 / 15 / 40 kỷ vật (25 / 75 / 200 sản vật): người chơi lâu năm sẽ lên Bậc III gần như ngay. Giữ mốc này (thưởng người chơi lâu), hay nâng lên 10 / 30 / 80?
-2. Có làm hai «Dùng ngay» mới (Chữa bệnh bằng sợi bờm Kỳ lân, Vớt rêu bằng rong) không?
+1. Giữ mốc 5 / 15 / 40 kỷ vật.
+2. Làm «Chữa bệnh» (Sợi bờm Kỳ lân rụng) và «Vớt rêu» (Rong thủy quái).
+3. Mọi phần thử trên emulator, owner duyệt rồi mới deploy.
