@@ -1,8 +1,8 @@
-import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=26.21';
-import {pixelIcon,setAction} from './pixel-icons.mjs?v=26.21';
-import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=26.21';
-import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=26.21';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.21';
+import {$,el,button,visualItemIcon} from './ui-utils.mjs?v=26.22';
+import {pixelIcon,setAction} from './pixel-icons.mjs?v=26.22';
+import {decorLabelFor,decorSpot,decorFacingFor,decorPlaceFields} from './decor-runtime.mjs?v=26.22';
+import {defaultDecorChoices,isDefaultDecorHidden} from './default-decor.mjs?v=26.22';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.22';
 
 export function ownedDecorChoices(decorations,assets) {
  return [...new Set(decorations?.owned||[])].filter(id=>assets.has(id)).map(id=>({
@@ -16,10 +16,11 @@ export function defaultDecorRows(progression,decorations,rotations={}) {
  return defaultDecorChoices(progression).map(d=>({...d,isDefault:true,placed:!isDefaultDecorHidden(decorations,d.id),facing:rotations[d.id]==='right'?'right':'default'}));
 }
 
+// Owner 18/11/2026 «hình rất nhỏ»: the picture fills the 64 px choice.
 function rowIcon(items,row,assets) {
- if(row.id==='scene:pond')return el('img',{src:runtimeImageUrl('environment/layers/pond.png'),alt:'',width:44,height:28,class:'decor-choice-pond'});
- if(row.id.startsWith('keepsake:'))return visualItemIcon(items,'keepsake_'+row.id.slice(9),{size:32,kind:'keepsake'});
- return visualItemIcon(items,row.id,{size:32,kind:'decoration',decorAssets:row.isDefault?null:assets,facing:row.facing});
+ if(row.id==='scene:pond')return el('img',{src:runtimeImageUrl('environment/layers/pond.png'),alt:'',width:56,height:36,class:'decor-choice-pond'});
+ if(row.id.startsWith('keepsake:'))return visualItemIcon(items,'keepsake_'+row.id.slice(9),{size:52,kind:'keepsake'});
+ return visualItemIcon(items,row.id,{size:52,kind:'decoration',decorAssets:row.isDefault?null:assets,facing:row.facing});
 }
 
 // Construction keeps its existing grid and handlers inside buildPane; decor shares only the shell.

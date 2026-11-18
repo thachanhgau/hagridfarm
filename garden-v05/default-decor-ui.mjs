@@ -1,7 +1,8 @@
-import {el} from './ui-utils.mjs?v=26.21';
-import {iconButton} from './pixel-icons.mjs?v=26.21';
-import {isDefaultDecorHidden} from './default-decor.mjs?v=26.21';
-import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.21';
+import {el} from './ui-utils.mjs?v=26.22';
+import {iconButton} from './pixel-icons.mjs?v=26.22';
+import {isDefaultDecorHidden} from './default-decor.mjs?v=26.22';
+import {runtimeImageUrl} from './runtime-image-url.mjs?v=26.22';
+import {previewable} from './art-preview.mjs?v=26.22';
 
 export function defaultDecorToggle(ctx, id, label, refresh) {
   const hidden = isDefaultDecorHidden(ctx.getDecorations?.(), id);
@@ -22,9 +23,10 @@ export function defaultDecorToggle(ctx, id, label, refresh) {
 export function renderGardenDefaults(ctx, {s, wallet, tile, priceRow, canPay, run, refresh, turnText}) {
   const root = el('section', {class: 'garden-default-decor'});
   root.append(el('h3', {class: 'gp-section-title', text: 'Trang trí của vườn'}));
-  const grid = el('div', {class: 'cards gp-tiles'});
+  const grid = el('div', {class: 'cards gp-tiles decor-tiles'});
+  const pondImg = width => el('img', {src: runtimeImageUrl('environment/layers/pond.png'), alt: '', width, height: Math.round(width * 0.64)});
   const pond = el('article', {class: 'gp-tile'}, [
-    el('div', {class: 'gp-tile-art'}, [el('img', {src: runtimeImageUrl('environment/layers/pond.png'), alt: '', width: 88, height: 56})]),
+    previewable(el('div', {class: 'gp-tile-art'}, [pondImg(120)]), 'Ao trang trí', size => [pondImg(size * 1.6)]),
     el('strong', {class: 'gp-tile-name', text: 'Ao trang trí'}),
     el('div', {class: 'gp-tile-actions'}, [defaultDecorToggle(ctx, 'scene:pond', 'ao trang trí', refresh)]),
   ]);

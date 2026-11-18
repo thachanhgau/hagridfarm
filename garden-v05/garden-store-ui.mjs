@@ -1,10 +1,11 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=26.21";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=26.21";
-import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=26.21";
-import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=26.21";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=26.21";
-import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=26.21";
-import {marketCards} from "./garden-market-ui.mjs?v=26.21";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=26.22";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=26.22";
+import {previewable} from "./art-preview.mjs?v=26.22";
+import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=26.22";
+import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=26.22";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=26.22";
+import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=26.22";
+import {marketCards} from "./garden-market-ui.mjs?v=26.22";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",
@@ -174,9 +175,10 @@ export function showStore({state,items,wallet,connected,onPurchase,onSell,onDeco
    // Decorations preview either angle in the card (both are drawn views, never a mirror).
    const shownFacing=previewFacing.get(item.id)||facing;
    const artId=item.kind==="food"?item.id:item.icon||item.id;
-   const artVisual=visualItemIcon(items,artId,{size:56,kind:item.kind,decorAssets,badge:packBadge,facing:shownFacing});
+   const artVisual=visualItemIcon(items,artId,{size:isDecor?84:56,kind:item.kind,decorAssets,badge:packBadge,facing:shownFacing});
 
-   const head=el("div",{class:"gp-tile-art"},[artVisual]);
+   // Tap the picture to see it large (owner 18/11/2026); a decoration shows both angles.
+   const head=previewable(el("div",{class:"gp-tile-art"},[artVisual]),item.label,size=>(isDecor?["default","right"]:[shownFacing]).map(facing=>visualItemIcon(items,artId,{size,kind:item.kind,decorAssets,facing})),isDecor?2:1);
    const angleBtn=isDecor?iconButton("replay",`Xem góc ${shownFacing==="right"?"trái":"phải"} của ${item.label}`,()=>{previewFacing.set(item.id,shownFacing==="right"?"default":"right");render();},{class:"gp-step store-angle-btn","data-store-angle":item.id}):null;
    // An item the HPVN server lists without selling (`forSale: false`: switched off in the ACP or waiting for its price).
    const pendingPrice=item.forSale===false;

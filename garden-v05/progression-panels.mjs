@@ -1,18 +1,19 @@
-import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.21';
-import {edgeStepText} from './garden-orchard-ui.mjs?v=26.21';
-import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.21';
-import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.21';
-import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.21";
-import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.21";
-import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.21";
-import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.21";
-import {renderTourSection} from "./garden-tour.mjs?v=26.21";
-import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.21";
-import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.21";
-import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.21";
-import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.21";
-import {STORE_BUILDING_LEVEL,storableBuildings,storedSet} from "./stored-buildings.mjs?v=26.21";
-import {runtimeImageUrl} from "./runtime-image-url.mjs?v=26.21";
+import {previewable} from "./art-preview.mjs?v=26.22";
+import {defaultDecorToggle,renderGardenDefaults} from './default-decor-ui.mjs?v=26.22';
+import {edgeStepText} from './garden-orchard-ui.mjs?v=26.22';
+import {renderGardenMenu} from './garden-menu-ui.mjs?v=26.22';
+import {renderGardenSettings} from './garden-settings-ui.mjs?v=26.22';
+import {GARDEN_STAGES,gardenStage,stageContains} from "./garden-growth.mjs?v=26.22";
+import {DECOR_SLOTS,decorFacingFor,decorLabelFor} from "./decor-runtime.mjs?v=26.22";
+import {$,el,button,icon,num,duration,hours,levelName,realHours,timer,visualItemIcon,stageVisualIcon,levelUnlockVisual,FEED_CREATURE_MAP,itemDisplayName} from "./ui-utils.mjs?v=26.22";
+import {renderAlmanacSection,renderPostcardSection} from "./garden-postcard.mjs?v=26.22";
+import {renderTourSection} from "./garden-tour.mjs?v=26.22";
+import {renderAchievementsSection} from "./garden-achievements.mjs?v=26.22";
+import {renderEventsAndTasksSection,evaluateCreatureAffinity,renderGuestbookSection,CREATURE_AFFINITY_LEVELS,AFFINITY_PETS_PER_DAY} from "./garden-events.mjs?v=26.22";
+import {renderSceneryPicker,navIcon} from "./v24-visuals.mjs?v=26.22";
+import {costChips,pixelIcon,iconButton,lockBadge,tanSucMark} from "./pixel-icons.mjs?v=26.22";
+import {STORE_BUILDING_LEVEL,storableBuildings,storedSet} from "./stored-buildings.mjs?v=26.22";
+import {runtimeImageUrl} from "./runtime-image-url.mjs?v=26.22";
 export function createPanels(ctx){
  const {E,items,labels,getState,run,notify,selectCrop,selectCreature,focusPlot,getSelection,getSession,switchSession,exportSave,exportPlaytest,tickTimers}=ctx,{DB}=E;
  const panel=$("panel"),body=$("panelBody"),shade=$("popoverShade");
@@ -432,7 +433,9 @@ export function createPanels(ctx){
 
   collection(){
    const s=getState(),session=getSession(),wallet=ctx.getGalleons?.()??Infinity;
-   const tile=(name,id,opts,...rest)=>el("article",{class:"card gp-tile","data-item-id":id},[el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:56,...opts})]),el("strong",{class:"gp-tile-name",text:name}),...rest]);
+   // Owner 18/11/2026: bigger pictures, tap one to see it large (both angles for a decoration).
+   const decorAngles=(id,opts)=>size=>["default","right"].map(facing=>visualItemIcon(items,id,{...opts,size,badge:"",facing}));
+   const tile=(name,id,opts,...rest)=>el("article",{class:"card gp-tile","data-item-id":id},[previewable(el("div",{class:"gp-tile-art"},[visualItemIcon(items,id,{size:88,...opts})]),name,opts?.kind==="decoration"?decorAngles(id,opts):size=>[visualItemIcon(items,id,{...opts,size,badge:""})],opts?.kind==="decoration"?2:1),el("strong",{class:"gp-tile-name",text:name}),...rest]);
    const turnText=facing=>facing==="right"?"Đang nhìn phải":"Đang nhìn trái";
    body.append(renderGardenDefaults(ctx,{s,wallet,tile,priceRow,canPay,run,refresh,turnText}));
 
@@ -450,7 +453,7 @@ export function createPanels(ctx){
      body.append(el("p",{class:"meta",text:`Chưa có món nào trong ${special.length} món · xem ở Cửa hàng.`}),...(ctx.openStore?[iconButton("shop","Xem Sản phẩm đặc biệt ở Cửa hàng",()=>{close();ctx.openStore("special");},{text:"Cửa hàng"})]:[]));
      continue;
     }
-    const sg=el("div",{class:"cards gp-tiles"});
+    const sg=el("div",{class:"cards gp-tiles decor-tiles"});
     for(const item of storeDecors){
      const owned=Boolean(decorState?.owned?.includes(item.id));
      const slotIdx=owned?(decorState.placements?.indexOf(item.id)??-1):-1;
@@ -478,7 +481,7 @@ export function createPanels(ctx){
     body.append(sg);
    }
 
-   const g=el("div",{class:"cards gp-tiles"}),seals=ctx.getKeepsakes?.();
+   const g=el("div",{class:"cards gp-tiles decor-tiles"}),seals=ctx.getKeepsakes?.();
    for(const a of DB.animals.filter(a=>a.level<=s.level)){
     const q=s.inventory["produce_"+a.id]||0,kept=s.keepsakes[a.id]||0,seal=seals?.species?.[a.id];
     // «Ấn kỷ vật» (owner 18/11/2026): the tier, the next mark and one effect line from the server; ×5 and «Đổi hết» in one action.

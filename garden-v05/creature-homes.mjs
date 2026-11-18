@@ -1,7 +1,7 @@
 // «Dời chuồng» (level 130): where each land creature stands. Spots 0–17 are the pen spots (two per pen: pen_1..pen_6,
 // pen_ext_1..3, map.creatureSpots order), 18–22 the pasture spots (edge_2). The server stores the chosen map in
 // garden.decorations.creatureHomes (action setCreatureHomes); with none saved this is the old placement.
-import {PASTURE_ROAMERS,pastureSpot} from './garden-growth.mjs?v=26.21';
+import {PASTURE_ROAMERS,pastureSpot} from './garden-growth.mjs?v=26.22';
 
 export const CREATURE_HOMES_LEVEL=130;
 export const PASTURE_HOME=18, HOME_SPOTS=23;

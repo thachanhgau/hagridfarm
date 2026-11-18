@@ -2,9 +2,9 @@
 // one segmented row, rows as separate cells. «Đất mệt» numbers mirror HPVN functions/games/garden-soil-core.js (HPVN
 // test garden-soil-guide.test.js keeps them equal); «Ấn kỷ vật» and «Dùng ngay» rows come from the server view
 // (snapshot.keepsakes, garden-keepsake-core), so their numbers live on the server only.
-import {el,closeOnBackdrop} from './ui-utils.mjs?v=26.21';
-import {iconButton} from './pixel-icons.mjs?v=26.21';
-import {DB} from './balance-data.mjs?v=26.21';
+import {el,closeOnBackdrop} from './ui-utils.mjs?v=26.22';
+import {iconButton} from './pixel-icons.mjs?v=26.22';
+import {DB} from './balance-data.mjs?v=26.22';
 
 export const SOIL_GUIDE = Object.freeze({level: 160, cellsPerRun: 9, tiredFrom: 3, step: 25, floor: 50});
 
