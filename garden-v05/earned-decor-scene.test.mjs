@@ -2,9 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
-import {DB} from './progression-engine.mjs?v=26.19';
-import {ITEM_ART} from './item-art.mjs?v=26.19';
-import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=26.19';
+import {DB} from './progression-engine.mjs?v=26.20';
+import {ITEM_ART} from './item-art.mjs?v=26.20';
+import {earnedDecorArt,earnedDecorFiles,drawEarnedDecorSprite} from './earned-decor-sprites.mjs?v=26.20';
 
 const decorationIds = DB.decorations.map(({id}) => id);
 const rightRecord = (id) => ITEM_ART[`${id}_right`];

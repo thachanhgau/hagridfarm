@@ -2,7 +2,7 @@
 // ready skill, Kneazle «Mắt tinh»), what a skill can be used on, and the passive skills that ran between snapshots.
 // The server keeps every number; this module only reads snapshot.skills, .duty, .soil. mobile-game loads it after the
 // first wallet accept; the «Chăm bé» row is garden-skills-card.
-import * as E from './progression-engine.mjs?v=26.19';
+import * as E from './progression-engine.mjs?v=26.20';
 
 const HOUR=3600000,DAY=24*HOUR,SOON=3*HOUR;
 const label=sp=>E.CREATURE[sp]?.label||sp;

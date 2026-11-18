@@ -1,6 +1,6 @@
-import {el,button,closeOnBackdrop} from './ui-utils.mjs?v=26.19';
-import {pixelIcon,iconUrl} from './pixel-icons.mjs?v=26.19';
-import {HAGRID_LETTER} from './garden-tutorial.mjs?v=26.19';
+import {el,button,closeOnBackdrop} from './ui-utils.mjs?v=26.20';
+import {pixelIcon,iconUrl} from './pixel-icons.mjs?v=26.20';
+import {HAGRID_LETTER} from './garden-tutorial.mjs?v=26.20';
 
 // Hagrid's welcome letter (docs/core-design.md section 6). 'welcome' arrives sealed: tap the
 // envelope, read, press Bắt đầu. 'keepsake' (Hồ sơ) opens straight on the parchment.

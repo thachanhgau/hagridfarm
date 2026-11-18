@@ -1,6 +1,6 @@
-import {getGardenStorage} from './garden-storage.mjs?v=26.19';
-import {el, button, itemArtVisual} from './ui-utils.mjs?v=26.19';
-import {pixelIcon, rewardChips, lockBadge, iconButton} from './pixel-icons.mjs?v=26.19';
+import {getGardenStorage} from './garden-storage.mjs?v=26.20';
+import {el, button, itemArtVisual} from './ui-utils.mjs?v=26.20';
+import {pixelIcon, rewardChips, lockBadge, iconButton} from './pixel-icons.mjs?v=26.20';
 
 export const ACHIEVEMENTS_STORAGE_KEY = 'hpvn-garden-v22-achievements';
 
