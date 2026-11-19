@@ -1,5 +1,4 @@
 import {el, button, num, hours, realHours, cropVisualKind, visualItemIcon} from './ui-utils.mjs?v=26.27';
-import {GARDEN_STAGES} from './garden-growth.mjs?v=26.27';
 import {levelLabel} from './progression-engine.mjs?v=26.27';
 import {pixelIcon, iconButton, lockBadge} from './pixel-icons.mjs?v=26.27';
 
@@ -113,79 +112,54 @@ export function renderPostcardCanvas(sourceCanvas, metaInput = {}, doc = globalT
   ctx.lineWidth = 2;
   ctx.strokeRect(viewX, viewY, viewW, viewH);
 
-  // Bottom plaque
-  const plaqueY = 514;
-  const plaqueH = 78;
-  ctx.fillStyle = '#142620';
-  ctx.fillRect(28, plaqueY, width - 56, plaqueH);
-  ctx.strokeStyle = '#a57554';
-  ctx.lineWidth = 2;
-  ctx.strokeRect(28, plaqueY, width - 56, plaqueH);
-
-  // Crimson & gold Hogwarts/Hagrid Wax Seal
-  const sealX = 68;
-  const sealY = plaqueY + 39;
+  // Bottom plaque (owner 19/11/2026 «bỏ bớt info đi cho đẹp»): no box of its own, the seal, the keeper's name, level and land;
+  // the game's name on the right. XP, counts, weather, festival and the keeper title stay in the game, not on the card.
+  const plaqueY = 504;
+  const midY = plaqueY + (height - 26 - plaqueY) / 2;
+  const sealX = 64;
   ctx.fillStyle = '#8b4a3f';
   if (ctx.beginPath && ctx.arc) {
     ctx.beginPath();
-    ctx.arc(sealX, sealY, 24, 0, Math.PI * 2);
+    ctx.arc(sealX, midY, 22, 0, Math.PI * 2);
     ctx.fill();
     ctx.lineWidth = 2;
     ctx.strokeStyle = '#f5d69a';
     ctx.stroke();
   } else {
-    ctx.fillRect(sealX - 22, sealY - 22, 44, 44);
+    ctx.fillRect(sealX - 22, midY - 22, 44, 44);
   }
   ctx.fillStyle = '#f5d69a';
   ctx.font = 'bold 20px Georgia, serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText('H', sealX, sealY + 1);
+  ctx.fillText('H', sealX, midY + 1);
 
-  // Text details
-  // Left lines stop before the right stamp; fillText's maxWidth narrows long names instead of overlapping.
-  const stamp = ['HPVN · DIỄN ĐÀN HARRY POTTER VIỆT NAM', `Tổng tích lũy: ${num(meta.xp)} XP`, 'Bưu thiếp kỷ niệm Rừng Cấm'];
-  ctx.font = 'bold 12px monospace';
-  const stampWidth = Math.max(...stamp.map((text) => ctx.measureText(text).width));
-  const lineWidth = Math.max(120, width - 44 - stampWidth - 16 - 108);
-  ctx.textAlign = 'left';
+  const spaced = (px) => { if ('letterSpacing' in ctx) ctx.letterSpacing = px; };
   ctx.textBaseline = 'alphabetic';
-  ctx.fillStyle = '#f5d69a';
-  ctx.font = 'bold 17px Georgia, serif';
-  const plain=text=>String(text).replace(/[\p{Extended_Pictographic}\uFE0F\u200D]/gu,'').trim();
-  const titleSuffix = meta.keeperTitle ? ` · [${plain(meta.keeperTitle)}]` : '';
-  ctx.fillText(`KHU VƯỜN HAGRID · ${meta.playerName.toUpperCase()}${titleSuffix}`, 108, plaqueY + 28, lineWidth);
-
-  ctx.fillStyle = '#d6d8bf';
-  ctx.font = 'bold 13px sans-serif';
-  const weatherSuffix = meta.weatherLabel ? ` · ${meta.weatherLabel}` : '';
-  const eventSuffix = meta.eventLabel ? ` · ${plain(meta.eventLabel)}` : '';
-  ctx.fillText(
-    `${levelLabel(meta.level)} · Chương ${meta.stageId}/${GARDEN_STAGES.length}: ${meta.stageName} · ${meta.atmosphereLabel}${weatherSuffix}${eventSuffix}`,
-    108,
-    plaqueY + 50,
-    lineWidth,
-  );
-
-  ctx.fillStyle = '#b7dee0';
-  ctx.font = '12px sans-serif';
-  const affSuffix = meta.totalAffinity > 0 ? `   Gắn kết ${meta.totalAffinity}` : '';
-  ctx.fillText(
-    `${meta.plots}/12 Thửa đất   ${meta.creatures}/12 Sinh vật   ${meta.keepsakeTotal} Kỷ vật   ${meta.decorTotal} Trang trí${affSuffix}`,
-    108,
-    plaqueY + 69,
-    lineWidth,
-  );
-
-  // Right stamp badge
   ctx.textAlign = 'right';
+  ctx.font = 'bold 13px Georgia, serif';
+  spaced('3px');
+  const brand = 'KHU VƯỜN HAGRID';
+  const brandWidth = ctx.measureText(brand).width;
   ctx.fillStyle = '#ffc36b';
-  ctx.font = 'bold 12px monospace';
-  ctx.fillText(stamp[0], width - 44, plaqueY + 30);
+  ctx.fillText(brand, width - 44, midY - 2);
   ctx.fillStyle = '#a6b1ae';
-  ctx.font = '11px monospace';
-  ctx.fillText(stamp[1], width - 44, plaqueY + 50);
-  ctx.fillText(stamp[2], width - 44, plaqueY + 68);
+  ctx.font = '11px sans-serif';
+  spaced('2px');
+  ctx.fillText('HPVN', width - 44, midY + 16);
+
+  // Left lines stop before the brand; fillText's maxWidth narrows long names instead of overlapping.
+  const lineWidth = Math.max(120, width - 44 - brandWidth - 32 - 100);
+  const plain = (text) => String(text).replace(/[\p{Extended_Pictographic}\uFE0F\u200D]/gu, '').trim();
+  ctx.textAlign = 'left';
+  ctx.fillStyle = '#f5d69a';
+  ctx.font = 'bold 22px Georgia, serif';
+  spaced('1px');
+  ctx.fillText(plain(meta.playerName).toUpperCase(), 100, midY - 2, lineWidth);
+  spaced('0px');
+  ctx.fillStyle = '#d6d8bf';
+  ctx.font = '14px Georgia, serif';
+  ctx.fillText(`${levelLabel(meta.level)} · ${meta.stageName}`, 100, midY + 18, lineWidth);
 
   return out;
 }
