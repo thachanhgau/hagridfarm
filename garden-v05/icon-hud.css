@@ -65,7 +65,7 @@
  /* Row 2: Nhiệm vụ sits next to the toggle and stays when the row folds. */
  #gameShell .hud #hudToggle,#gameShell .hud #missionButton,#gameShell .hud #sceneryButton,#gameShell .hud #eventButton,#gameShell .hud #shopButton{top:52px}
  #gameShell #hudToggle{right:0}#gameShell #missionButton{right:48px}#gameShell #sceneryButton{right:96px}#gameShell #eventButton{right:144px}#gameShell #shopButton{right:192px}
- #gameShell .hud .hud-res{max-width:calc(100% - 52px - 148px)}
+ #gameShell .hud .hud-res{max-width:calc(100% - 52px - 148px);gap:5px;padding:0 8px 0 5px}
  #gameShell .hud .next-goal{max-width:calc(100% - 244px)}
  .hud-compact #gameShell .hud .next-goal{max-width:calc(100% - 104px)}
  #gameShell .goal-label{display:none}
