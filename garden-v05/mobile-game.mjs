@@ -91,7 +91,7 @@ if(hpvnNonce&&wallet?.host){
  gardenStorage.setItem=(k,v)=>{set(k,v);if(DEVICE_PREFS.includes(k))wallet.host('prefs',{values:{[k]:String(v)}});};
 }
 // Galleons the wallet can spend; local play has no wallet, so builds are never blocked by Galleons there.
-const COMPACT_GALLEONS=new Intl.NumberFormat('vi-VN',{notation:'compact',maximumFractionDigits:1});
+const COMPACT_GALLEONS=new Intl.NumberFormat('vi-VN',{notation:'compact',maximumFractionDigits:0});
 function getGalleons(){return connected?(walletReady?Number(wallet.snapshot?.wallet?.spendable)||0:0):Infinity;}
 function currentSupplies(){return wallet?.snapshot?.garden?.supplies||JSON.parse(gardenStorage.getItem('supplies')||'{"water":0,"boost":0,"seeds":{}}');}
 async function receiveReward(claim){
@@ -720,8 +720,8 @@ function shortHours(h){const m=Math.round(h*60),H=Math.floor(m/60),r=m%60;return
 function khoCount(){const seeds=connected?Object.values(currentSupplies().seeds||{}).reduce((a,b)=>a+(Number(b)||0),0):0;return seeds+Object.values(state.inventory).reduce((a,b)=>a+b,0);}
 // Local play (no wallet): water and seeds are free, so show ∞ instead of a misleading 0.
 function syncSupplies(){const sup=currentSupplies(),water=connected?num(sup.water||0):'∞',magic=sup.boost||0;$('waterValue').textContent=water;$('magicValue').textContent=num(magic);$('magicCounter').hidden=!connected||state.level<6;$('suppliesButton').classList.toggle('res-free',!connected);$('suppliesButton').setAttribute('aria-label',(connected&&!$('galleonCounter').hidden?num(getGalleons())+' Galleons · ':'')+(connected?water+' nước · '+num(magic)+' nước phép':'Nước tưới và hạt miễn phí')+' · mở cửa hàng');fitPurse();}
-// One line in the purse pill (audit 19/11/2026: 927.889.868 G on a 361px frame cut Nước phép off): first «927,9 Tr», then, if
-// still too long, Nước phép leaves the pill rather than being cut (it is on the shop and meal buttons), then «11,5 N» water. Full numbers in the label.
+// One line in the purse pill (audit 19/11/2026: 927.889.868 G on a 361px frame cut Nước phép off): first «927 Tr», then, if
+// still too long, Nước phép leaves the pill rather than being cut (it is on the shop and meal buttons), then «12 N» water. Full numbers in the label.
 function fitPurse(){const pill=$('suppliesButton'),over=()=>pill.scrollWidth>pill.clientWidth;if($('galleonCounter').hidden)return;const g=getGalleons();$('walletValue').textContent=num(g);if(over())$('walletValue').textContent=COMPACT_GALLEONS.format(g);if(over())$('magicCounter').hidden=true;if(over())$('waterValue').textContent=COMPACT_GALLEONS.format(currentSupplies().water||0);}
 // Always-visible next goal (next-goal.mjs): [what is missing] → [what it opens].
 let goal=null,goalKey='';
