@@ -721,8 +721,8 @@ function khoCount(){const seeds=connected?Object.values(currentSupplies().seeds|
 // Local play (no wallet): water and seeds are free, so show ∞ instead of a misleading 0.
 function syncSupplies(){const sup=currentSupplies(),water=connected?num(sup.water||0):'∞',magic=sup.boost||0;$('waterValue').textContent=water;$('magicValue').textContent=num(magic);$('magicCounter').hidden=!connected||state.level<6;$('suppliesButton').classList.toggle('res-free',!connected);$('suppliesButton').setAttribute('aria-label',(connected&&!$('galleonCounter').hidden?num(getGalleons())+' Galleons · ':'')+(connected?water+' nước · '+num(magic)+' nước phép':'Nước tưới và hạt miễn phí')+' · mở cửa hàng');fitPurse();}
 // One line in the purse pill (audit 19/11/2026: 927.889.868 G on a 361px frame cut Nước phép off): first «927,9 Tr», then, if
-// still too long, Nước phép leaves the pill rather than being cut (it is on the shop and meal buttons). Full numbers in the label.
-function fitPurse(){const pill=$('suppliesButton'),over=()=>pill.scrollWidth>pill.clientWidth;if($('galleonCounter').hidden)return;const g=getGalleons();$('walletValue').textContent=num(g);if(over())$('walletValue').textContent=COMPACT_GALLEONS.format(g);if(over())$('magicCounter').hidden=true;}
+// still too long, Nước phép leaves the pill rather than being cut (it is on the shop and meal buttons), then «11,5 N» water. Full numbers in the label.
+function fitPurse(){const pill=$('suppliesButton'),over=()=>pill.scrollWidth>pill.clientWidth;if($('galleonCounter').hidden)return;const g=getGalleons();$('walletValue').textContent=num(g);if(over())$('walletValue').textContent=COMPACT_GALLEONS.format(g);if(over())$('magicCounter').hidden=true;if(over())$('waterValue').textContent=COMPACT_GALLEONS.format(currentSupplies().water||0);}
 // Always-visible next goal (next-goal.mjs): [what is missing] → [what it opens].
 let goal=null,goalKey='';
 function goalIcon(id,scale=2){return id==='xp'?pixelIcon(id,scale):items.has(id)?icon(items,id,3,16*scale):pixelIcon(DB.crops.some(c=>c.id===id)?'seed':'feed',scale);}
