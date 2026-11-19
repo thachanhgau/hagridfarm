@@ -59,21 +59,25 @@ export function createMissions({getSnapshot,claim,claimBacklog,claimEvent,notify
   const view=getSnapshot()?.missions;
   const m=view?.current;
   if(!m){body.replaceChildren(el('p',{class:'meta',text:view?'Con đã làm xong mọi nhiệm vụ của bác. Giỏi lắm!':'Nhiệm vụ cần kết nối tài khoản.'}));return;}
-  const action=m.claimable
-   ? iconButton('chest',`Nhận quà: ${m.reward.label}`,async()=>{const res=await claim(m.id);if(res?.ok){notify(`🎁 Xong nhiệm vụ «${m.title}»: ${res.reward.label}!`);render();}},{text:'Nhận',class:'primary','data-claim-mission':m.id})
-   : iconButton('lock',m.open?'Chưa xong':`Mở ở cấp ${m.level}`,null,{disabled:true});
+  // Owner 19/11/2026 «làm lại UI»: the current mission and each upcoming one are cells (flat fill, gap, no border) on one grid —
+  // a 52px column (icon, or «Cấp N») then the text. «Nhận» only when there is a gift; no locked button.
+  const action=m.claimable?iconButton('chest',`Nhận quà: ${m.reward.label}`,async()=>{const res=await claim(m.id);if(res?.ok){notify(`🎁 Xong nhiệm vụ «${m.title}»: ${res.reward.label}!`);render();}},{text:'Nhận',class:'primary mission-claim','data-claim-mission':m.id}):null;
+  const progress=s=>el('div',{class:'mission-meter'},[meter(s.current,s.target),el('b',{text:`${s.current}/${s.target}`})]);
   body.replaceChildren(
-   el('div',{class:`gp-hero owl-chest${m.claimable?' is-ready':m.open?'':' is-locked'}`},[
-    el('div',{class:'gp-tile-art'},[pixelIcon(m.chapter?'book':'quill',3)]),
-    el('div',{class:'gp-hero-copy'},[
-     el('small',{text:`${m.chapter?'Chương':'Nhiệm vụ'} · Cấp ${m.level} · ${view.claimedCount}/${view.totalCount}`}),
-     el('strong',{text:m.title}),
-     ...m.steps.flatMap(s=>[m.chapter?el('small',{class:'mission-step'+(s.done?' is-done':''),text:(s.done?'':'')+s.label}):null,el('div',{class:'owl-chest-meter'},[meter(s.current,s.target),el('b',{text:`${s.current}/${s.target}`})])]),
-     el('small',{class:'mission-reward',text:'Quà: '+m.reward.label}),
+   el('div',{class:`mission-cell is-current${m.claimable?' is-ready':m.open?'':' is-locked'}`},[
+    el('div',{class:'mission-mark'},[pixelIcon(m.chapter?'book':'quill',2)]),
+    el('div',{class:'mission-copy'},[
+     el('small',{class:'mission-kicker',text:`${m.chapter?'Chương':'Nhiệm vụ'} · ${m.open?'Cấp '+m.level:'Mở ở cấp '+m.level} · ${view.claimedCount}/${view.totalCount}`}),
+     el('strong',{class:'mission-title',text:m.title}),
+     ...m.steps.flatMap(st=>[m.chapter?el('small',{class:'mission-step'+(st.done?' is-done':''),text:st.label}):null,progress(st)]),
+     el('small',{class:'mission-reward'},[el('span',{text:'Quà'}),el('b',{text:m.reward.label})]),
     ]),
     action,
    ]),
-   ...(view.upcoming.length?[el('p',{class:'sheet-label',text:'Sắp tới'}),...view.upcoming.map(u=>el('p',{class:'meta',text:`Cấp ${u.level} · ${u.title} — ${u.reward.label}`}))]:[]),
+   ...(view.upcoming.length?[el('p',{class:'sheet-label mission-next-label',text:'Sắp tới'}),...view.upcoming.map(u=>el('div',{class:'mission-cell is-next'},[
+    el('div',{class:'mission-mark mission-level'},[el('small',{text:'Cấp'}),el('b',{text:String(u.level)})]),
+    el('div',{class:'mission-copy'},[el('strong',{class:'mission-title',text:u.title}),el('small',{class:'mission-reward'},[el('span',{text:'Quà'}),el('b',{text:u.reward.label})])]),
+   ]))]:[]),
   );
  }
 

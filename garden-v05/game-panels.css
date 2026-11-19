@@ -868,3 +868,28 @@
 .art-preview-actions button:disabled{opacity:.55}
 #gameShell .store-popover .store-buy-all-row{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
 #gameShell .store-popover .store-buy-all-row>button{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px}
+/* Nhiệm vụ (owner 19/11/2026 «làm lại UI»): cells on one grid — flat fill, 8px gap, no border, no framed icon box.
+   Column 1 (52px) holds the quill/book or «Cấp N»; every title, meter and reward starts on the same left edge. */
+#gameShell #missionLetter .mission-body{display:grid;gap:8px}
+#gameShell #missionLetter .mission-cell{display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:center;gap:10px;padding:12px 12px 12px 6px;border-radius:6px;background:#2E5446}
+#gameShell #missionLetter .mission-cell.is-next{background:#284B3F;padding-top:10px;padding-bottom:10px}
+#gameShell #missionLetter .mission-cell.is-ready{background:#3A5A3E;box-shadow:inset 0 0 0 2px #F5D69A}
+#gameShell #missionLetter .mission-cell.is-locked{opacity:.7}
+#gameShell #missionLetter .mission-mark{display:grid;place-items:center;align-self:start;width:52px;min-height:40px}
+#gameShell #missionLetter .mission-mark .px-icon{width:36px;height:36px}
+#gameShell #missionLetter .mission-level{align-self:center;gap:0;line-height:1}
+#gameShell #missionLetter .mission-level small{color:#A6B1AE;font:700 10px/1.1 var(--gp-body);text-transform:uppercase}
+#gameShell #missionLetter .mission-level b{color:#F5D69A;font:900 20px/1.1 var(--gp-display)}
+#gameShell #missionLetter .mission-copy{display:grid;gap:4px;min-width:0}
+#gameShell #missionLetter .mission-kicker{color:#A6B1AE;font:700 11px/1.2 var(--gp-body);text-transform:uppercase}
+#gameShell #missionLetter .mission-title{margin:0;color:#F5D69A;font:900 18px/1.2 var(--gp-display);text-shadow:0 2px #231F2E;overflow-wrap:anywhere}
+#gameShell #missionLetter .is-next .mission-title{font-size:15px;color:#F4E4BB}
+#gameShell #missionLetter .mission-step{color:#D6D8BF;font:700 12px/1.25 var(--gp-body)}
+#gameShell #missionLetter .mission-step.is-done{color:#9FD39A}
+#gameShell #missionLetter .mission-meter{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px}
+#gameShell #missionLetter .mission-meter b{color:#F4E4BB;font:900 13px/1 var(--gp-display)}
+#gameShell #missionLetter .mission-reward{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font:700 12px/1.3 var(--gp-body)}
+#gameShell #missionLetter .mission-reward span{color:#A6B1AE;font-size:10px;text-transform:uppercase}
+#gameShell #missionLetter .mission-reward b{color:#FFC36B;font-weight:700}
+#gameShell #missionLetter .mission-next-label{margin:8px 0 0;padding-left:6px}
+#gameShell #missionLetter .mission-claim{align-self:center;min-width:72px}
