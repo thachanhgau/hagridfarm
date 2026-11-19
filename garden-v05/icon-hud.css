@@ -65,8 +65,10 @@
  /* Row 2: Nhiệm vụ sits next to the toggle and stays when the row folds. */
  #gameShell .hud #hudToggle,#gameShell .hud #missionButton,#gameShell .hud #sceneryButton,#gameShell .hud #eventButton,#gameShell .hud #shopButton{top:52px}
  #gameShell #hudToggle{right:0}#gameShell #missionButton{right:48px}#gameShell #sceneryButton{right:96px}#gameShell #eventButton{right:144px}#gameShell #shopButton{right:192px}
- /* A long purse (700.000 G + water + Nước phép, audit 19/11/2026) wraps to a second line inside the 44px pill instead of cutting Nước phép off. */
+ /* Galleons on their own line, water and Nước phép under them, inside the 44px pill: a long purse (527.005 G + 11.525 nước,
+    audit 19/11/2026) no longer cuts Nước phép off, and never wraps to a third line. */
  #gameShell .hud .hud-res{max-width:calc(100% - 52px - 148px);flex-wrap:wrap;row-gap:0;align-content:center}
+ #gameShell .hud .hud-res>#galleonCounter{flex-basis:100%}
  #gameShell .hud .next-goal{max-width:calc(100% - 244px)}
  .hud-compact #gameShell .hud .next-goal{max-width:calc(100% - 104px)}
  #gameShell .goal-label{display:none}
