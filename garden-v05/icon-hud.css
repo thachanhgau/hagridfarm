@@ -179,8 +179,8 @@
 .touring #playDock{display:none}
 /* «Gieo cả thửa» (level 130+, owner 13/11/2026): end of the seed row under «⋯»/«Gieo», so the seed name and the boost
    shortcut keep the top row at every width; the seed tray (it scrolls anyway) gives up those two columns. */
-/* «Gieo cả thửa» is a second button under «Gieo», its width and a smaller height: the seed tray keeps the rest of the row (owner 19/11/2026 «UI tệ»). */
-#playDock #fillPlotButton{grid-column:4;grid-row:2;align-self:end;display:flex;align-items:center;justify-content:center;gap:4px;width:100%;height:40px;min-height:40px;padding:0 4px;letter-spacing:0;margin:0;white-space:nowrap;font-size:12px}
+/* «Gieo cả thửa» is a second button under «Gieo», its width and the seed tray's height (no gap above it): the tray keeps the rest of the row (owner 19/11/2026 «UI tệ»). */
+#playDock #fillPlotButton{grid-column:4;grid-row:2;align-self:stretch;display:flex;align-items:center;justify-content:center;gap:4px;width:100%;height:auto;min-height:40px;padding:0 4px;letter-spacing:0;margin:0;white-space:nowrap;font-size:12px}
 #playDock #fillPlotButton[hidden]{display:none}
 #playDock #fillPlotButton .action-label{white-space:nowrap;text-align:center;font-size:11px;letter-spacing:-.02em}
 #playDock #fillPlotButton .px-icon{width:24px;height:24px}
