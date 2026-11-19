@@ -868,28 +868,49 @@
 .art-preview-actions button:disabled{opacity:.55}
 #gameShell .store-popover .store-buy-all-row{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
 #gameShell .store-popover .store-buy-all-row>button{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px}
-/* Nhiệm vụ (owner 19/11/2026 «làm lại UI»): cells on one grid — flat fill, 8px gap, no border, no framed icon box.
-   Column 1 (52px) holds the quill/book or «Cấp N»; every title, meter and reward starts on the same left edge. */
-#gameShell #missionLetter .mission-body{display:grid;gap:8px}
-#gameShell #missionLetter .mission-cell{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:center;gap:10px;padding:12px 12px 12px 6px;border-radius:6px;background:#2E5446}
-#gameShell #missionLetter .mission-cell.is-next{background:#284B3F;padding-top:10px;padding-bottom:10px}
-#gameShell #missionLetter .mission-cell.is-ready{background:#3A5A3E;box-shadow:inset 0 0 0 2px #F5D69A}
-#gameShell #missionLetter .mission-cell.is-locked{opacity:.7}
-#gameShell #missionLetter .mission-mark{display:grid;place-items:center;align-self:start;width:52px;min-height:40px}
-#gameShell #missionLetter .mission-mark .px-icon{width:36px;height:36px}
-#gameShell #missionLetter .mission-level{align-self:center;gap:0;line-height:1}
-#gameShell #missionLetter .mission-level small{color:#A6B1AE;font:700 10px/1.1 var(--gp-body);text-transform:uppercase}
-#gameShell #missionLetter .mission-level b{color:#F5D69A;font:900 20px/1.1 var(--gp-display)}
-#gameShell #missionLetter .mission-copy{display:grid;gap:4px;min-width:0}
-#gameShell #missionLetter .mission-kicker{color:#A6B1AE;font:700 11px/1.2 var(--gp-body);text-transform:uppercase}
-#gameShell #missionLetter .mission-title{margin:0;color:#F5D69A;font:900 18px/1.2 var(--gp-display);text-shadow:0 2px #231F2E;overflow-wrap:anywhere}
-#gameShell #missionLetter .is-next .mission-title{font-size:15px;color:#F4E4BB}
-#gameShell #missionLetter .mission-step{color:#D6D8BF;font:700 12px/1.25 var(--gp-body)}
-#gameShell #missionLetter .mission-step.is-done{color:#9FD39A}
-#gameShell #missionLetter .mission-meter{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px}
-#gameShell #missionLetter .mission-meter b{color:#F4E4BB;font:900 13px/1 var(--gp-display)}
-#gameShell #missionLetter .mission-reward{display:flex;align-items:baseline;gap:8px;font:700 12px/1.3 var(--gp-body)}
-#gameShell #missionLetter .mission-reward span{flex:none;color:#A6B1AE;font-size:10px;text-transform:uppercase}
-#gameShell #missionLetter .mission-reward b{min-width:0;color:#FFC36B;font-weight:700}
-#gameShell #missionLetter .mission-next-label{margin:8px 0 0;padding-left:6px}
-#gameShell #missionLetter .mission-claim{grid-column:2;justify-self:stretch;width:100%}
+/* Nhiệm vụ (owner 19/11/2026 «làm lại UI», then «stunning hơn»). One quest card, then a path of stops. No border on any cell:
+   depth from fill, light and shadow. Column 1 is 56px everywhere (medal, path line, level nodes); text starts at one left edge. */
+#gameShell #missionLetter .mission-body{display:grid;gap:12px}
+#gameShell #missionLetter .mission-quest{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);align-items:center;gap:10px 12px;padding:16px 14px 12px 10px;border-radius:10px;
+ background:radial-gradient(120% 90% at 0 0,#4C7D63 0,#0000 55%),linear-gradient(165deg,#3A6553,#22423A);box-shadow:0 6px 16px #0006,inset 0 1px #ffffff22,inset 0 -2px #0000003a}
+#gameShell #missionLetter .mission-quest>:not(.mission-medal){grid-column:2}
+#gameShell #missionLetter .mission-medal{grid-row:1/3;align-self:start;display:grid;place-items:center;width:56px;height:56px}
+#gameShell #missionLetter .mission-medal>span{display:grid;place-items:center;width:44px;height:44px;transform:rotate(45deg);border:1px solid #BCA269;background:linear-gradient(135deg,#4A6B52,#16302A);box-shadow:inset 0 0 0 3px #11271F,inset 0 0 0 4px #A48B5366,0 4px 10px #0007}
+#gameShell #missionLetter .mission-medal .px-icon{width:30px;height:30px;transform:rotate(-45deg)}
+#gameShell #missionLetter .mission-copy{display:grid;gap:3px;min-width:0}
+#gameShell #missionLetter .mission-kicker{color:#B9C7B4;font:700 10px/1.2 var(--gp-body);letter-spacing:.08em;text-transform:uppercase}
+#gameShell #missionLetter .mission-title{margin:0;color:#FFE3A1;font:900 22px/1.15 var(--gp-display);text-shadow:0 2px #1A1720,0 0 14px #F5D69A33;overflow-wrap:anywhere}
+#gameShell #missionLetter .mission-steps{display:grid;gap:6px}
+#gameShell #missionLetter .mission-step{color:#E6E2C8;font:700 12px/1.25 var(--gp-body)}
+#gameShell #missionLetter .mission-step.is-done{color:#B6E0A8}
+#gameShell #missionLetter .mission-meter{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px}
+#gameShell #missionLetter .mission-meter .gp-meter{height:14px;border:0;border-radius:7px;background:#14241F;box-shadow:inset 0 2px 3px #000a}
+#gameShell #missionLetter .mission-meter .gp-meter>span{border-radius:7px;background:linear-gradient(#9CCB6A,#5E8A3E);box-shadow:inset 0 2px #D8F0A066}
+#gameShell #missionLetter .mission-meter.is-done .gp-meter>span{background:linear-gradient(#FFE3A1,#D7A85E);box-shadow:inset 0 2px #FFF6D888}
+#gameShell #missionLetter .mission-meter b{min-width:34px;text-align:right;color:#FFF0C2;font:900 15px/1 var(--gp-display)}
+#gameShell #missionLetter .mission-gift-row{display:grid;gap:5px}
+#gameShell #missionLetter .mission-gifts{display:flex;flex-wrap:wrap;gap:6px}
+#gameShell #missionLetter .mission-gift{display:inline-flex;align-items:center;gap:6px;min-height:30px;padding:3px 10px 3px 4px;border-radius:15px;background:#152A24;box-shadow:inset 0 1px #ffffff14;color:#FFD58A;font:700 12px/1.2 var(--gp-body)}
+#gameShell #missionLetter .mission-gift>:first-child:not(span:only-child){flex:none;width:22px;height:22px;image-rendering:pixelated}
+#gameShell #missionLetter .mission-gift .sprite-icon{width:22px!important;height:22px!important}
+#gameShell #missionLetter .mission-claim{justify-self:stretch;width:100%;min-height:48px;border-radius:12px;font-size:15px}
+#gameShell #missionLetter .mission-quest.is-ready{background:radial-gradient(120% 90% at 0 0,#7C8A4E 0,#0000 60%),linear-gradient(165deg,#4A6A4A,#27463A);box-shadow:0 6px 18px #0006,0 0 0 2px #F5D69A,0 0 24px #F5D69A55}
+#gameShell #missionLetter .mission-quest.is-ready .mission-medal>span{background:linear-gradient(135deg,#F5D69A,#B78535);border-color:#FFF0C2}
+#gameShell #missionLetter .mission-quest.is-locked{filter:saturate(.55);opacity:.85}
+#gameShell #missionLetter .mission-chain{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px;margin-top:2px;padding-top:10px;border-top:1px solid #ffffff14}
+#gameShell #missionLetter .mission-chain small{color:#B9C7B4;font:700 10px/1 var(--gp-body);letter-spacing:.08em;text-transform:uppercase}
+#gameShell #missionLetter .mission-chain-bar{height:6px;border-radius:3px;background:#14241F;overflow:hidden}
+#gameShell #missionLetter .mission-chain-bar>span{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,#B78535,#F5D69A)}
+#gameShell #missionLetter .mission-chain b{color:#FFF0C2;font:900 12px/1 var(--gp-display)}
+/* «Sắp tới»: a dotted line runs down column 1 behind the level nodes. */
+#gameShell #missionLetter .mission-path{position:relative;display:grid;gap:8px}
+#gameShell #missionLetter .mission-path:before{content:'';position:absolute;left:27px;top:30px;bottom:28px;border-left:2px dashed #F5D69A55}
+#gameShell #missionLetter .mission-path-label{margin:2px 0 0 68px;color:#B9C7B4;font:700 10px/1.2 var(--gp-body);letter-spacing:.08em;text-transform:uppercase}
+#gameShell #missionLetter .mission-stop{display:grid;grid-template-columns:56px minmax(0,1fr);align-items:center;gap:12px;padding:10px 14px 10px 0;border-radius:10px;background:#1F3B33;box-shadow:inset 0 1px #ffffff10}
+#gameShell #missionLetter .mission-node{position:relative;z-index:1;display:grid;place-items:center;justify-self:center;width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3D6553,#152A24);box-shadow:0 0 0 3px #1F3B33,0 3px 8px #0008,inset 0 1px #ffffff22;line-height:1}
+#gameShell #missionLetter .mission-node small{color:#B9C7B4;font:700 8px/1 var(--gp-body);letter-spacing:.08em;text-transform:uppercase}
+#gameShell #missionLetter .mission-node b{color:#FFE3A1;font:900 17px/1 var(--gp-display)}
+#gameShell #missionLetter .mission-stop .mission-title{font-size:15px;color:#F4E4BB;text-shadow:0 1px #1A1720}
+#gameShell #missionLetter .mission-stop .mission-gift{min-height:26px;font-size:11px;background:#16302A}
+@media(prefers-reduced-motion:no-preference){#gameShell #missionLetter .mission-quest.is-ready .mission-claim{animation:mission-glow 1.8s ease-in-out infinite}}
+@keyframes mission-glow{50%{box-shadow:0 0 0 3px #FFF0C266,0 0 18px #F5D69A99}}

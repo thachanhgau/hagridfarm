@@ -779,7 +779,7 @@ async function openMoodCare(sp=species){
   onTended:r=>{if(r.species!=='norbert')renderer?.animate(r.kind==='ride'?'ride':'care',{species:r.species});petControls?.refresh();}});
  moodCare.open(sp);
 }
-const missions=createMissions({getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),claim:missionId=>serverClaim({action:'claimMission',missionId}),claimBacklog:()=>serverClaim({action:'claimMissionBacklog'}),claimEvent:taskId=>serverClaim({action:'claimDayEvent',taskId}),notify:message});
+const missions=createMissions({itemIcon:(id,size)=>items.has(id)?icon(items,id,3,size):null,getSnapshot:()=>(connected&&walletReady?wallet.snapshot:null),claim:missionId=>serverClaim({action:'claimMission',missionId}),claimBacklog:()=>serverClaim({action:'claimMissionBacklog'}),claimEvent:taskId=>serverClaim({action:'claimDayEvent',taskId}),notify:message});
 {const showPanel=panels.show;panels.show=(name,...rest)=>{playtest.track('panel',{name:String(name)});guideEvent('panel:'+name);return showPanel(name,...rest);};}
 // In HPVN on a phone Floo rides the dock (like 7 Potters): the shell's floating bubble covered the
 // dock's right end. The shell answers with the home-bar inset the sandbox cannot read; the dock pads by it.
