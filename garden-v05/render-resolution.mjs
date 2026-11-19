@@ -55,12 +55,12 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
   });pump();
  }
  // Swap a tagged draw for its HD image when cached, else ask for it. `visible` (main canvas only) skips off-screen draws.
- function draw(own,image,args,visible){
+ function draw(own,image,args,visible,fetch=true){
   const source=image?.[ART_SOURCE],record=source&&art[source.file];
   if(enabled&&density>1&&record&&(!visible||visible(args,record))){
    const key=JSON.stringify(source),entry=cache.get(key);
    if(entry){cache.delete(key);cache.set(key,entry);hits++;return own(entry.image,...drawArguments(args,record,record.density));}
-   request(key,source,record);
+   if(fetch)request(key,source,record);
    if(!visible&&pending.has(key))layerWaiting.add(key);
   }
   return own(image,...args);
@@ -74,14 +74,17 @@ export function createResolution(canvas,world,{art={},enabled=true,pixelRatio,ef
  // surfaceDensity caps at 16 MP, so it has its own allowance next to the HD image budget (owner left the call to us
  // 15/11/2026: 44 MB extra at 2560×1440 on desktop, 18 MB on phones). adopt() gives a layer's context the same HD swap
  // with no visibility test; once every HD image it asked for has settled and one landed, onSharper() rebuilds it.
+ // The rebuild itself passes sharper=null: it draws the HD already cached and asks for nothing, so it is the last one
+ // (audit 19/11/2026: a pan reopened admission, the rebuild asked again, evicted, landed, rebuilt — 4 ground builds
+ // of 1.3–2.2 s in 4 s of panning on a phone, and the ground was never finished enough to be stored).
  const layerWaiting=new Set();let layerLanded=false,onSharper=()=>{};
  function landed(key){if(layerWaiting.has(key))layerLanded=true;}
  function settled(key){if(layerWaiting.delete(key)&&!layerWaiting.size&&layerLanded){layerLanded=false;onSharper();}}
  const layer=()=>density;
  function adopt(layerContext,sharper=()=>{}){
-  layerWaiting.clear();layerLanded=false;onSharper=sharper;
+  layerWaiting.clear();layerLanded=false;onSharper=sharper||(()=>{});const fetch=sharper!==null;
   const own=layerContext.drawImage.bind(layerContext);
-  layerContext.drawImage=function(image,...args){return draw(own,image,args,null);};
+  layerContext.drawImage=function(image,...args){return draw(own,image,args,null,fetch);};
  }
  // A side canvas drawn onto the main one (night statue copies): the same HD swap, always drawn and never tied to the
  // ground layer's rebuild. The returned check is true while an HD image it drew is still on its way (owner 17/11/2026:

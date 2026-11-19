@@ -1,6 +1,6 @@
-import {el,button} from './ui-utils.mjs?v=26.26';
-import {V24_ART,navIcon} from './v24-visuals.mjs?v=26.26';
-import {pixelIcon} from './pixel-icons.mjs?v=26.26';
+import {el,button} from './ui-utils.mjs?v=26.27';
+import {V24_ART,navIcon} from './v24-visuals.mjs?v=26.27';
+import {pixelIcon} from './pixel-icons.mjs?v=26.27';
 
 // Four destinations; the garden illustration stays decorative so every target is explicit.
 export function renderGardenMenu(ctx,actions){
@@ -22,5 +22,6 @@ export function renderGardenMenu(ctx,actions){
    'aria-label':label});
   b.append(medal,el('span',{class:'garden-menu-label',text:label}));root.append(b);
  }
+ root.style.setProperty('--menu-rows',Math.max(2,Math.ceil((root.children.length-1)/2)));
  return root;
 }

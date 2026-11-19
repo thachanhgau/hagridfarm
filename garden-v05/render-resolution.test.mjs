@@ -47,6 +47,10 @@ test('the ground layer follows the surface density and swaps its art for HD off 
  for(let i=0;i<5&&!rebuilt;i++)await new Promise(resolve=>setTimeout(resolve,0));
  assert.equal(rebuilt,1,'one rebuild once both settled');
  layer.drawImage(sign,0,0);assert.ok(calls.at(-1)[0] instanceof FakeImage);
+ // The rebuild (sharper=null) draws cached HD and asks for nothing new, so it cannot start another rebuild (audit 19/11/2026).
+ const again={drawImage:(...args)=>calls.push(args)};surface.adopt(again,null);
+ again.drawImage(tagArt({width:100,height:100},'sign.png',{season:'snow'}),0,0);
+ assert.equal(loaded.length,2,'no new request from the rebuild');assert.equal(surface.layerPending(),0,'finished, so it can be stored');
  surface.setEnabled(false);assert.equal(surface.layer(),1);
 });
 test('a tinted copy (forest trees) gets the same tint painted over its HD image',async()=>{
@@ -66,15 +70,15 @@ test('per-frame atlas records (atlasRects / rightAtlasRects, e.g. the Halloween 
 });
 test('shop, dock and bag <img> get a 2× srcset from HD_ART through el(); no HD, no srcset; placement thumb clears a stale one',async()=>{
  const {hdSrcset,artKey}=await import('./render-resolution.mjs');
- const {HD_ART}=await import('./hd-art.mjs?v=26.26');
- const {runtimeImageUrl}=await import('./runtime-image-url.mjs?v=26.26');
+ const {HD_ART}=await import('./hd-art.mjs?v=26.27');
+ const {runtimeImageUrl}=await import('./runtime-image-url.mjs?v=26.27');
  const file=Object.keys(HD_ART).find(k=>k.startsWith('decor-assets/native/')),record=HD_ART[file];
  for(const src of [file,'./'+file+'?v=24.0',runtimeImageUrl(file)])assert.equal(artKey(src),file);
  assert.equal(hdSrcset('./'+file,HD_ART,runtimeImageUrl),`${runtimeImageUrl('./'+file)} 1x, ${record.file} 2x`);
  assert.equal(hdSrcset('decor-assets/native/__none__.png',HD_ART,runtimeImageUrl),'');
  const made=[];globalThis.document={createElement:tag=>{const e={tag,attrs:{},style:{},setAttribute(k,v){this.attrs[k]=v;},append(){}};made.push(e);return e;},createTextNode:t=>t};
  try{
-  const {el}=await import('./ui-utils.mjs?v=26.26');
+  const {el}=await import('./ui-utils.mjs?v=26.27');
   const hd=el('img',{src:file,alt:'',width:40,height:40}),plain=el('img',{src:'decor-assets/native/__none__.png'});
   assert.equal(hd.attrs.src,runtimeImageUrl(file));assert.equal(hd.attrs.srcset,hdSrcset(file,HD_ART,runtimeImageUrl));
   assert.equal(hd.attrs.width,'40');assert.equal(plain.attrs.srcset,undefined);

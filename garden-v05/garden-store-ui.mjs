@@ -1,11 +1,11 @@
-import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=26.26";
-import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=26.26";
-import {previewable} from "./art-preview.mjs?v=26.26";
-import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=26.26";
-import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=26.26";
-import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=26.26";
-import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=26.26";
-import {marketCards} from "./garden-market-ui.mjs?v=26.26";
+import {DECOR_SLOTS,decorFacingFor} from "./decor-runtime.mjs?v=26.27";
+import {$,el,button,num,visualItemIcon,packTotal} from "./ui-utils.mjs?v=26.27";
+import {previewable} from "./art-preview.mjs?v=26.27";
+import {STORE_CATALOG,storeLock,storeVisible} from "./garden-store-catalog.mjs?v=26.27";
+import {pixelIcon,iconButton,ICONS} from "./pixel-icons.mjs?v=26.27";
+import {SPECIAL_COLLECTION,BOOK_TITLES,SEASON_LABELS} from "./special-products.mjs?v=26.27";
+import {BUNDLE_SIZES,bundlePercent,saleLeft} from "./premium-products.mjs?v=26.27";
+import {marketCards} from "./garden-market-ui.mjs?v=26.27";
 
 const DECOR_COPY = Object.freeze({
  decor_pumpkin_lantern: "Ánh bí ngô ấm bên lối đi (hỗ trợ 2 góc đặt).",

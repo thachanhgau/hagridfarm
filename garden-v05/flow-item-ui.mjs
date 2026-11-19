@@ -1,10 +1,10 @@
-import {CATALOG_ART} from './catalog-art.mjs?v=26.26';
-import { ITEM_ART } from "./item-art.mjs?v=26.26";
-import { FLOW_ITEM_ART } from "./flow-item-art.mjs?v=26.26";
-import { KEEPSAKE_ART } from "./complete-object-art.mjs?v=26.26";
-import { UI_AUDIT_ART } from "./ui-audit-art.mjs?v=26.26";
-import { POND_ART, POND_SCENERY } from "./pond-art.mjs?v=26.26";
-import { EDGE_ART } from "./edge-art.mjs?v=26.26";
+import {CATALOG_ART} from './catalog-art.mjs?v=26.27';
+import { ITEM_ART } from "./item-art.mjs?v=26.27";
+import { FLOW_ITEM_ART } from "./flow-item-art.mjs?v=26.27";
+import { KEEPSAKE_ART } from "./complete-object-art.mjs?v=26.27";
+import { UI_AUDIT_ART } from "./ui-audit-art.mjs?v=26.27";
+import { POND_ART, POND_SCENERY } from "./pond-art.mjs?v=26.27";
+import { EDGE_ART } from "./edge-art.mjs?v=26.27";
 
 // A recipe can have a different illustration while still producing one of
 // these canonical inventory items. ITEM_ART supplies the shared recipe icon;
